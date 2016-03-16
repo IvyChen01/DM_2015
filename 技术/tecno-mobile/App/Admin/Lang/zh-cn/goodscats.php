@@ -1,0 +1,23 @@
+<?php
+return array(
+   'top-level' =>  '顶级分类',
+    'goods_cats_name' =>  '你要添加的商品分类名称',
+    'sort'=>'排序',
+    'submit'=>'确定添加',
+    'refresh' => '刷新',
+    'operation' => '功能操作',
+    'new_add' => '新增数据',
+    'cats_name' => '分类名称',
+    'cat_pic'=>'分类图片',
+    'is_show' => '是否显示',
+    'delete' => '删除',
+    'edit' => '编辑',
+    'add_child' =>'新增子分类',
+    'show' =>'显示',
+    'hidden' => '隐藏',
+    'parent_level' => '上级分类',
+    'cat_desc' => '分类描述',
+    'close' => '关闭',
+    'save' => '保存',
+    'lang' => '语言选择',
+);

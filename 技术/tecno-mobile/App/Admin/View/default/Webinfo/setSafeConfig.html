@@ -1,0 +1,42 @@
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <form action="{:U($tdink.ACTION_NAME)}" class="pageForm" data-toggle="validate" data-reload-navtab="true">
+        <table data-toggle="tablefixed" data-widtd="100%" data-layout-h="0" data-nowrap="true">
+            <tr>
+                <td width="120">
+                    <label class="control-label x100">后台登陆标示：</label>
+                    <input name="admin_marked" type="text" size="40" value="{:C('TOKEN.admin_marked')}" placeholder="后台登陆COOKIE标示，在COOKIE里已MD5加密该值存储登陆信息" />
+                </td>
+                <td>
+                    <label class="control-label x100">后台登陆有效期：</label>
+                    <input name="admin_timeout" type="text" size="40" value="{:C('TOKEN.admin_timeout')}" placeholder="登陆后如未操作时间超过该设定值时就自动退出系统，单位为秒，最小值为100" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label x100">前台登陆标示：</label>
+                    <input name="member_marked" type="text" size="40" value="{:C('TOKEN.member_marked')}" />
+                </td>
+                <td>
+                    <label class="control-label x100">前台登陆有效期：</label>
+                    <input name="member_timeout" type="text" size="40" value="{:C('TOKEN.member_timeout')}" />
+                </td>
+            </tr>
+        </table>
+        <div class="bjui-footBar">
+            <!-- 底部工具条  -->
+            <ul>
+                <li><button type="button" class="btn-close">关闭</button></li>
+                <li><button type="submit" class="btn-default">保存</button></li>
+            </ul>
+        </div>
+    </form>
+</div>
+
+<include file="./App/Common/View/Common/pageFooter.html" />
+
+<script type="text/javascript">
+    $(".submit").click(function() {
+        ajaxSubmit();
+    });
+</script>

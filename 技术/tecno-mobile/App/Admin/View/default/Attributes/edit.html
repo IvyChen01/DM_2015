@@ -1,0 +1,68 @@
+ <div class="bjui-pageContent">
+	    <form action="{:U('edit')}" id="myform" class="pageForm" data-toggle="validate" data-reload-navtab="true" name="myform" role="form">
+        <input type='hidden' id='id' name="id" value='{$object.attrId}'/>
+        <table class="table table-hover table-striped table-bordered wst-form">
+           <tr>
+             <th align='right'>{$Think.lang.goods_cat}<font color='red'>*</font>：</th>
+             <td>
+             <select id='catId' name="catId">
+                <volist name="goodsCatList" id="vo">
+                <option value='{$vo['catId']}' <if condition="$object.catId == $vo['catId'] ">selected</if>>{$vo['catName']}</option>
+                </volist>
+             </select>
+             </td>
+           </tr>
+           <tr>
+             <th width='150' align='right'>{$Think.lang.goods_attribute}<font color='red'>*</font>：</th>
+             <td><input type='text' id='attrName' name="attrName" class="form-control wst-ipt" value='{$object.attrName}' maxLength='25'/></td>
+           </tr>
+           <tr>
+             <th width='150' align='right'>{$Think.lang.price_attr}<font color='red'>*</font>：</th>
+             <td><select id='attrType_{$i}' name="attrType" onchange='javascript:hideSelVal(this.value);'>
+	               <option value='0' <if condition="$object.attrType ==0">selected</if>>{$Think.lang.input}</option/>
+	               <option value='1' <if condition="$object.attrType ==1">selected</if>>{$Think.lang.option}</option/>
+	               <option value='2' <if condition="$object.attrType ==2">selected</if>>{$Think.lang.drop_down}</option/>
+               </select></td>
+           </tr>
+           <tr>
+             <th width='150' align='right'>{$Think.lang.price_attr}<font color='red'>*</font>：</th>
+              <td><input type='radio' id='isPriceAttr0' value='1' name='isPriceAttr' <if condition="$object['isPriceAttr'] ==1 ">checked</if>/>{$Think.lang.yes}
+                    <input type='radio' id='isPriceAttr1' value='0' name='isPriceAttr' <if condition="$object['isPriceAttr'] ==0 ">checked</if>/>{$Think.lang.no}
+             </td>
+           </tr>
+           <tr id="SelVal">
+             <th width='200' >{$Think.lang.attr_option_value}：</th>
+              <td><input type='text' id='attrContent' name="attrContent" class="form-control wst-ipt" value='{$object.attrContent}'/>
+             </td>
+           </tr>
+           
+           <tr>
+             <th align='right'>{$Think.lang.sort}：</th>
+             <td>
+             <input type='text' id='attrSort' name="attrSort" class="form-control"  value='{$object.attrSort}' style='width:80px' onkeypress="return WST.isNumberKey(event)" onkeyup="javascript:WST.isChinese(this,1)" maxLength='8'/>
+             </td>
+           </tr>
+        </table>
+       </form>
+</div>
+<div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">{$Think.lang.close}</button></li>
+		<!-- <li><button type="submit" class="btn-default" data-icon="save">保存</button></li> -->
+		<li><button id="submit" type="submit" class="btn btn-success" data-icon="save">{$Think.lang.save}</button></li>
+	</ul>
+</div>
+<script>
+   function hideSelVal(val){
+	   if(val==0){
+		   $("#SelVal").css("display","none");
+	   }else{
+		   $("#SelVal").show();
+	   }
+   }
+   $(function(){
+	   <if condition="$object.attrType ==0 ">
+	       $("#SelVal").css("display","none");
+	   </if>
+   })
+</script>

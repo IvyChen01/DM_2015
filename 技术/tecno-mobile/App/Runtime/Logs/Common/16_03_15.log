@@ -1,0 +1,24 @@
+[ 2016-03-15T10:30:05+08:00 ] 81.30.198.142 /index.php?m='0=A&c=Article&a=detail&cid=38&id=237
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+ERR: _MODULE_NOT_EXIST_:'0=A
+
+[ 2016-03-15T10:30:05+08:00 ] 81.30.198.142 /index.php?m=(%2f**%2fsElEcT+1+%2f**%2ffRoM(%2f**%2fsElEcT+count(*),%2f**%2fcOnCaT((%2f**%2fsElEcT(%2f**%2fsElEcT+%2f**%2fuNhEx(%2f**%2fhEx(%2f**%2fcOnCaT(0x217e21,0x4142433134355a5136324457514146504f4959434644,0x217e21))))+%2f**%2ffRoM+information_schema.%2f**%2ftAbLeS+%2f**%2flImIt+0,1),floor(rand(0)*2))x+%2f**%2ffRoM+information_schema.%2f**%2ftAbLeS+%2f**%2fgRoUp%2f**%2fbY+x)a)&c=Article&a=detail&cid=38&id=237
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000059s ]
+ERR: _MODULE_NOT_EXIST_:(/**/sElEcT 1 /**/fRoM(/**/sElEcT count(*),/**/cOnCaT((/**/sElEcT(/**/sElEcT /**/uNhEx(/**/hEx(/**/cOnCaT(0x217e21,0x4142433134355a5136324457514146504f4959434644,0x217e21)))) /**/fRoM information_schema./**/tAbLeS /**/lImIt 0,1),floor(rand(0)*2))x /**/fRoM information_schema./**/tAbLeS /**/gRoUp/**/bY x)a)
+
+[ 2016-03-15T22:08:15+08:00 ] 91.205.205.83 /index.php?m=Home'A=0&c=Article&a=detail&cid=38&id=230
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+ERR: _MODULE_NOT_EXIST_:Home'A=0
+
+[ 2016-03-15T22:48:49+08:00 ] 91.205.205.83 /index.php?m='0=A&c=Article&a=detail&cid=38&id=230
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+ERR: _MODULE_NOT_EXIST_:'0=A
+

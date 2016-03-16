@@ -1,0 +1,60 @@
+
+<link rel="stylesheet" href="__PUBLIC__/css/daterangepicker-bs3.css">
+<script type="text/javascript" src="__PUBLIC__/Js/daterangepicker.js"></script>
+   <script>
+   function query(id){
+	   var date = $('#logDate').val().split(' -> ');
+	   $('#startDate').val(date[0]);
+	   $('#endDate').val(date[1]);
+       $('#form1').submit();   
+   }
+   $(function(){
+	   $('#logDate').daterangepicker({format:'YYYY-MM-DD',separator:' -> '});
+   })
+   </script>
+   <div class="bjui-pageHeader">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="{:U($Think.ACTION_NAME)}" method="post">
+	    <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+       <input type='hidden' id='startDate' name='search[startDate]' value='{$search.startDate}'/>
+       <input type='hidden' id='endDate' name='search[endDate]' value='{$search.endDate}'/>
+                     {$Think.lang.login_time}：<input type='text' id='logDate' class="form-control" readonly='true' style='width:250px' value='{$startDate} -> {$endDate}'/>
+       <input placeholder="{$Think.lang.account}" id="loginName" type="text" name="search[loginName]" value="{$search.loginName}"  autocomplete="off"/>
+       <button type="submit" class="btn btn-primary glyphicon glyphicon-search" onclick='javascript:query()'>{$Think.lang.search}</button> 
+		<!-- <span><a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">刷新</a></span> -->
+		<!-- <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">功能操作<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                        <li><a href="{:U('toEdit')}" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">新增数据</a></li></ul>
+                </div>
+            </div> -->
+	</form>
+</div>
+<div class="bjui-pageContent">   
+        <table class="table table-hover table-striped table-bordered wst-list">
+           <thead>
+             <tr>
+               <th width='40'>{$Think.lang.id}</th>
+               <th width='80'>{$Think.lang.account}</th>
+               <th width='80'>{$Think.lang.name}</th>
+               <th width='150'>{$Think.lang.login_time}</th>
+               <th width='150'>{$Think.lang.login_ip}</th>
+             </tr>
+           </thead>
+           <tbody>
+            <volist name="Page['info']" id="vo" key='i'>
+             <tr>
+               <td>{$vo['loginId']}</td>
+               <td>{$vo['loginName']}</td>
+               <td>{$vo['staffName']}</td>
+               <td>{$vo['loginTime']}</td>
+               <td>{$vo['loginIp']}</td>   
+             </tr>
+             </volist>
+           </tbody>
+        </table>
+</div>
+<include file="./App/Common/View/Common/pageFooter.html" /> 

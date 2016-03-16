@@ -1,0 +1,96 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="{:U(ACTION_NAME)}" method="post">
+        <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <div class="bjui-searchBar">
+            <label>{$Think.lang.total_tables}{$tables}{$Think.lang.ables}，{$Think.lang.total}{$total}</label>
+            <div class="pull-right">
+                <div class="btn-group">
+                   <!--  <button type="submit" class="btn-default" data-icon="search">备份所选</button> -->
+                    <a type="button" class="btn" href="{:U('SysData/backup')}" data-toggle="doajaxchecked" data-group="table" data-idname="table">{$Think.lang.batch_backup}</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <form>
+        <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+            <thead>
+                <tr>
+                    <th width="90">
+                        <label>
+                            <input name="" class="chooseAll" type="checkbox" onclick='javascript:checkAll(this.checked)' />
+                        </label>
+           
+                    </th>
+                    <th>{$Think.lang.table_name}</th>
+                    <th>{$Think.lang.table_desc}</th>
+                    <th>{$Think.lang.line_number}</th>
+                    <th>{$Think.lang.engine_type}</th>
+                    <th>{$Think.lang.charset}</th>
+                    <th>{$Think.lang.table_size}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <volist name="list" id="tab">
+                    <tr>
+                        <td>
+                            <input type="checkbox" class='chk' name="table" value="{$tab.Name}" />
+                        </td>
+                        <td align="left">{$tab.Name}</td>
+                        <td>{$tab.Comment}</td>
+                        <td>{$tab.Rows}</td>
+                        <td>{$tab.Engine}</td>
+                        <td>{$tab.Collation}</td>
+                        <td>{$tab.size}</td>
+                    </tr>
+                </volist>
+                    <tr>
+                        <th width="90">
+                            <label>
+                                <input name="" class="chooseAll" type="checkbox" onclick='javascript:checkAll(this.checked)'/>{$Think.lang.all}</label>
+                            <!-- <label>
+                                <input name="" class="unsetAll" type="checkbox" onclick='javascript:clickCheckbox()'/>反选</label> -->
+                        </th>
+                     <th>{$Think.lang.table_name}</th>
+                    <th>{$Think.lang.table_desc}</th>
+                    <th>{$Think.lang.line_number}</th>
+                    <th>{$Think.lang.engine_type}</th>
+                    <th>{$Think.lang.charset}</th>
+                        <th>{$Think.lang.total}：{$total}</th>
+                    </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+function checkAll(v){
+	   $('.chk').each(function(){
+		   $(this).prop('checked',v);
+	   })
+}
+/*     $(function() {
+        $(".submit").click(function() {
+            if ($("tbody input[type='checkbox']:checked").size() == 0) {
+                popup.alert("请先选择你要备份的数据库表吧");
+                return false;
+            }
+            if ($(this).attr("disabledSubmit")) {
+                popup.alert("已提交，系统在处理中...");
+            } else {
+                $(this).attr("disabledSubmit", true).html("提交处理中...");
+                ajaxSubmit("__URL__/backup");
+                //                        popup.alert("系统处理中，如果数据库中数据较多可能需要较长时间，请稍候....");
+                setTimeout(function() {
+                    popup.close("asyncbox_alert");
+                }, 2000);
+            }
+        });
+    }); */
+</script>

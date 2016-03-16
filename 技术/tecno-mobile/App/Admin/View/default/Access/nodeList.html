@@ -1,0 +1,115 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="{:U(ACTION_NAME)}" method="post">
+        <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <div class="bjui-searchBar">
+            <!-- <input type="text" name="search[name]" value="{$search.name}" class="form-control" size="10" />
+            <input type="text" name="search[date]" value="{$search.date}" class="form-control" size="8" />
+            <button type="button" class="btn showMoreSearch" data-toggle="moresearch" data-name="moresearch" title="更多查询条件"><i class="fa fa-angle-double-down"></i></button>
+            <button type="submit" class="btn-default" data-icon="search">查询</button> -->
+            <!-- <a class="btn btn-orange" href="javascript:;" data-toggle="reloadsearch" data-clear-query="true" data-icon="undo">清空查询</a> -->
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">{$Think.lang.operation}<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                    <li><a href="{:U('addNode')}" data-toggle="dialog" data-width="800" data-height="600" data-id="dialog-mask" data-mask="true"><i class="fa fa-plus"></i>{$Think.lang.new_add}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+        <thead>
+            <tr>
+                <th>{$Think.lang.sort_num}</th>
+                <th>{$Think.lang.node_structure} 
+                </th>
+                <th>{$Think.lang.node_id}</th>
+                <th>{$Think.lang.node_name}</th>
+                <th>{$Think.lang.show_name}</th>
+                <th>{$Think.lang.sort}</th>
+                <th>{$Think.lang.type}</th>
+                <th>{$Think.lang.status}</th>
+                <th width="150">{$Think.lang.operation}</th>
+            </tr>
+        </thead>
+        <volist name="list" id="vo" key="k">
+            <tr id="{$vo.id}" pid="{$vo.pid}">
+                <td>{$k}</td>
+                <td align="left" class="tree" style="cursor: pointer;">{$vo.fullname}</td>
+                <td>{$vo.id}</td>
+                <td>{$vo.name}</td>
+                <td>{$vo.title}</td>
+                <td edit="0" fd="sort">{$vo.sort}</td>
+                <td>{$vo.level}</td>
+                <td>{$vo.statusText}</td>
+                <td>
+                  <a href="{:U('editNode?id='.$vo[id])}" class="btn btn-red glyphicon glyphicon-trash" data-toggle="dialog" data-id="nodeEdit" data-width="800" data-height="480">{$Think.lang.edit}</a>
+                  <!-- <a href="javascript:void(0);" class="btn btn-default opStatus" val="{$vo.status}">{$vo.chStatusText}</a> -->
+                  <a href="{:U('del?id=' . $vo[id])}" class="btn btn-red glyphicon glyphicon-trash" data-toggle="doajax" data-confirm-msg="{$Think.lang.delete_confirm}">{$Think.lang.delete}</a>
+                </td>
+            </tr>
+        </volist>
+    </table>
+</div>
+
+<!-- <include file="./App/Common/View/Common/pageFooter.html" /> -->
+
+<script type="text/javascript">
+    $(function() {
+        //快捷启用禁用操作
+        $(".opStatus").click(function() {
+            alert('123');
+        });
+
+        //快捷改变操作排序dblclick
+        $("tbody>tr>td[fd]").click(function() {
+            var inval = $(this).html();
+            var infd = $(this).attr("fd");
+            var inid = $(this).parents("tr").attr("id");
+            if ($(this).attr('edit') == 0) {
+                $(this).attr('edit', '1').html("<input class='input' size='5' id='edit_" + infd + "_" + inid + "' value='" + inval + "' />").find("input").select();
+            }
+            $("#edit_" + infd + "_" + inid).focus().bind("blur", function() {
+                var editval = $(this).val();
+                $(this).parents("td").html(editval).attr('edit', '0');
+                if (inval != editval) {
+                    $.post("__URL__/opSort", {
+                        id: inid,
+                        fd: infd,
+                        sort: editval
+                    });
+                }
+            })
+        });
+
+        var chn = function(cid, op) {
+            if (op == "show") {
+                $("tr[pid='" + cid + "']").each(function() {
+                    $(this).removeAttr("status").show();
+                    chn($(this).attr("id"), "show");
+                });
+            } else {
+                $("tr[pid='" + cid + "']").each(function() {
+                    $(this).attr("status", 1).hide();
+                    chn($(this).attr("id"), "hide");
+                });
+            }
+        }
+        $(".tree").click(function() {
+            if ($(this).attr("status") != 1) {
+                chn($(this).parent().attr("id"), "hide");
+                $(this).attr("status", 1);
+            } else {
+                chn($(this).parent().attr("id"), "show");
+                $(this).removeAttr("status");
+            }
+        });
+    });
+</script>

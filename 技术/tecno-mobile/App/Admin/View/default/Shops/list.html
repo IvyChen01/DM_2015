@@ -1,0 +1,102 @@
+   <div class="bjui-pageHeader">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="{:U($Think.ACTION_NAME)}" method="post">
+	    <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <input placeholder="{$Think.lang.shop_name}" type="text" id='shopName' name="search[shopName]" value="{$search.shopName}" />
+        <input placeholder="{$Think.lang.shop_sn}" type="text" id='shopSn' name="search[shopSn]" value="{$search.shopSn}" />
+		<button type="submit" class="btn-default" data-icon="search">{$Think.lang.search}</button>
+		<span><a class="btn btn-default" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">{$Think.lang.refresh}</a></span>
+		<div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">{$Think.lang.operation}<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                        <li><a type="button" class="btn" href="{:U('toEdit')}" id="addshops" data-toggle="dialog" data-width="800" data-height="600" data-id="dialog-mask" data-mask="true">{$Think.lang.new_add}</a></li>
+                    </ul>
+                </div>
+        </div>
+	</form>	    
+</div>
+<div class="bjui-pageContent">
+	<!-- 内容区 -->
+        <table class="table table-hover table-striped table-bordered wst-list">
+           <thead>
+             <tr>
+               <th width='30'>{$Think.lang.sort}</th>
+               <th width='80'>{$Think.lang.shop_name}</th>
+               <!-- <th width='80'>{$Think.lang.shop_sn}</th> -->
+               <!-- <th width='80'>{$Think.lang.manager}</th> -->
+               <th width='200'>{$Think.lang.address}</th>
+               <th width='120'>{$Think.lang.operation}</th>
+             </tr>
+           </thead>
+           <tbody>
+            <volist name="Page['info']" id="vo" key='i'>
+             <tr >
+               <td>{$i}</td>
+               <td>{$vo['shopName']}</td>
+               <!-- <td>{$vo['shopSn']}&nbsp;</td> -->
+               <!-- <td>{$vo['userName']}&nbsp;</td> -->
+               <td>{$vo['areaId1']}{$vo['areaId1']}{$vo['shopAddress']}</td>
+               <td>
+               
+               <a class="btn btn-default glyphicon glyphicon-pencil" href="{:U('toEdit',array('id' => $vo['shopId']))}" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">{$Think.lang.edit}</a>
+			   <a class="btn btn-red glyphicon glyphicon-trash" data-confirm-msg="确定要删除该行信息吗？" data-toggle="doajax" href="{:U('del',array('id' => $vo['shopId']))}">{$Think.lang.delete}</a>
+               
+               </td>
+               </td>
+             </tr>
+             </volist>
+             
+           </tbody>
+        </table>
+</div>
+<include file="./App/Common/View/Common/pageFooter.html" />
+   <script>
+   function del(id){
+	   Plugins.confirm({title:'信息提示',content:'您确定要删除该商家吗?',okText:'确定',cancelText:'取消',okFun:function(){
+		   Plugins.closeWindow();
+		   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+		   $.post("{:U('Admin/Shops/del')}",{id:id},function(data,textStatus){
+					var json = WST.toJson(data);
+					if(json.status=='1'){
+						Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000,callback:function(){
+							location.reload();
+						}});
+					}else{
+						Plugins.closeWindow();
+						parent.showMsg({msg:'操作失败!',status:'danger'});
+					}
+				});
+	      }});
+   }
+   function getAreaList(objId,parentId,t,id){
+	   var params = {};
+	   params.parentId = parentId;
+	   $('#'+objId).empty();
+	   if(t<1){
+		   $('#areaId3').empty();
+		   $('#areaId3').html('<option value="">请选择</option>');
+	   }
+	   var html = [];
+	   $.post("{:U('Admin/Shops/queryShowByList')}",params,function(data,textStatus){
+		    html.push('<option value="">{$Think.lang.select}</option>');
+			var json = WST.toJson(data);
+			if(json.status=='1' && json.list.length>0){
+				var opts = null;
+				for(var i=0;i<json.list.length;i++){
+					opts = json.list[i];
+					html.push('<option value="'+opts.id+'" '+((id==opts.areaId)?'selected':'')+'>'+opts.areaName+'</option>');
+				}
+			}
+			$('#'+objId).html(html.join(''));
+	   });
+   }
+   $(document).ready(function(){
+	    <notempty name='areaId1'>
+		   getAreaList("areaId2",'{$areaId1}',0,'{$areaId2}');
+		</notempty>
+   });
+   
+   </script>

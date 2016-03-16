@@ -1,0 +1,75 @@
+
+<div class="bjui-pageHeader">
+	<form action="{:U(index)}" method="POST" class="pageForm"
+		data-toggle="validate" data-reload="true">
+		<!--    店铺分类：<select id='shopCatId1' autocomplete="off" onchange='javascript:getShopCatListForGoods(this.value,"{$object['shopCatId2']}")'>
+	         <option value='0'>请选择</option>
+	         <volist name="shopCatsList" id="vo">
+	         <option value='{$vo['catId']}' <if condition="$shopCatId1 == $vo['catId'] ">selected</if>>{$vo['catName']}</option>
+	         </volist>
+	     </select>
+	     <select id='shopCatId2' autocomplete="off">
+	         <option value='0'>请选择</option>
+	     </select>
+        <input placeholder="商品名称" type="text" name="goodsName" value="{$goodsName}" data-rule="required" />
+		<button type="submit"  class="btn btn-default" data-icon="search" onclick='javascript:queryOnSale()'>查询</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+		<span><a class="btn btn-default" href="javascript:;"
+			onclick="$(this).navtab('reloadForm', true);" data-icon="undo">刷新</a></span>
+		<div class="pull-right">
+			<div class="btn-group">
+				<button type="button" class="btn-default dropdown-toggle"
+					data-toggle="dropdown" data-icon="copy">
+					功能操作<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu right" role="menu">
+					<li><a type="button" class="btn" href="{:U('toEdit')}"
+						id="addgoods" data-toggle="dialog" data-width="600"
+						data-height="400" data-id="dialog-mask" data-mask="true">新增数据</a></li>
+				</ul>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="bjui-pageContent">
+	<table class="table table-hover table-striped table-bordered wst-list">
+		<volist name="Page['info']" id="vo" key='key'>
+		<thead>
+			<tr>
+				<th colspan='6'>{$key}.订单：{$vo['orderNo']}<span
+					style='margin-left: 100px;'>{$vo['shopName']}</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div style='width: 150px;'>
+						<volist name="vo['goodslist']" id="goods"> <img
+							style='margin: 2px;' src="__ROOT__/{$goods['goodsThums']}"
+							height="50" width="50" title='{$goods[' goodsName']}'/> </volist>
+					</div>
+				</td>
+				<td>{$vo['userName']}</td>
+				<td>{$vo['totalMoney']+$vo['deliverMoney']}<br /> <if
+						condition="$vo['payType'] ==1 ">在线支付<else />货到付款</if>
+				</td>
+				<td>{$vo['createTime']}</td>
+				<td><if condition='$vo["orderStatus"] eq -3'>会员拒收 <elseif
+						condition='$vo["orderStatus"] eq -5' />店铺确认取消 <elseif
+						condition='$vo["orderStatus"] eq -4' />店铺确认拒收 <elseif
+						condition='$vo["orderStatus"] eq -2' />未付款 <elseif
+						condition='$vo["orderStatus"] eq -1' />用户取消 <elseif
+						condition='$vo["orderStatus"] eq 0' />未受理 <elseif
+						condition='$vo["orderStatus"] eq 1' />已受理 <elseif
+						condition='$vo["orderStatus"] eq 2' />打包中 <elseif
+						condition='$vo["orderStatus"] eq 3' />配送中 <elseif
+						condition='$vo["orderStatus"] eq 4' />已到货 <elseif
+						condition='$vo["orderStatus"] eq 5' />店铺确认到货 </if></td>
+				<td><a class="btn btn-primary glyphicon"
+					href="{:U('Admin/Orders/toView',array('id'=>$vo['orderId']))}"">查看</a>&nbsp;
+				</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+</div>
+<include file="./App/Common/View/Common/pageFooter.html" />

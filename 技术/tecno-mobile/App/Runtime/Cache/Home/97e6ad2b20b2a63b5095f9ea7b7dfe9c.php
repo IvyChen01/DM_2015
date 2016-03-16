@@ -1,0 +1,449 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Contact Us - TECNO</title>
+    <link rel="stylesheet" href="/Public/css/grid.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/Public/css/reset.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/Public/css/default.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/Public/css/jquery.bxslider.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/Public/css/contact.css" media="screen" title="no title" charset="utf-8">
+    <link rel="shortcut icon" href="/Public/Img/logo/favicon.ico">
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+  <script type="text/javascript" src="http://www.google.com/uds/api/search/1.0/432dd570d1a386253361f581254f9ca1/default+en.I.js"></script>
+  <style type="text/css">
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Arial, sans-serif;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+border-color: #D9D9D9;
+}
+input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+border-color: #666666;
+background-color: #CECECE;
+background-image: none;
+filter: none;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #E9E9E9;
+background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-color: #FF9900;
+border-bottom-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #FF9900;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #0000CC;
+}
+.gsc-cursor-page {
+color: #0000CC;
+}
+a.gsc-trailing-more-results:link {
+color: #0000CC;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #000000;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #008000;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #008000;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #E9E9E9;
+background-color: #FFFFFF;
+color: #0000CC;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #FF9900;
+background-color: #FFFFFF;
+color: #0000CC;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #336699;
+background-color: #FFFFFF;
+}
+.gsc-completion-title {
+color: #0000CC;
+}
+.gsc-completion-snippet {
+color: #000000;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #0000CC;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #000000;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #008000;
+}</style>
+<style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gscsep_a{display:none}.gsq_a{padding:0}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 9px}.gsib_a{padding-right:8px;padding-left:8px}.gsst_a{padding-top:3px}.gssb_e{border:0}.gssb_l{margin:5px 0}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style>
+<style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gscsep_a{display:none}.gsq_a{padding:0}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 9px}.gsib_a{padding-right:8px;padding-left:8px}.gsst_a{padding-top:3px}.gssb_e{border:0}.gssb_l{margin:5px 0}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style>
+<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/23/2/intl/fr_ALL/common.js"></script>
+<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/23/2/intl/fr_ALL/map.js"></script>
+<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/23/2/intl/fr_ALL/util.js"></script>
+<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/23/2/intl/fr_ALL/onion.js"></script>
+<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/23/2/intl/fr_ALL/stats.js"></script>
+<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/23/2/intl/fr_ALL/controls.js"></script>
+<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/23/2/intl/fr_ALL/marker.js"></script>
+  </head>
+  <body id="top" class="english">
+    <!--nav-->
+<header class="slide">
+    			<ul id="navToggle" class="burger slide">
+    				<li></li><li></li><li></li>
+    			</ul>
+    			<a href="javascript:;" class="head-brand"><img src="/Public/Img/logo/brand.png" class="img-res" alt="brand" /></a>
+
+          <!--select lang-->
+          <div class="select_down" id="sel">
+            <dl class="">
+              <dt><h3>CHANGE LANGUAGE</h3><a href="javascript:;"></a></dt>
+              <ul>
+                <li><a href="javascript:select_en()">English</a></li>
+                <li><a href="javascript:select_fr()">French</a></li>
+              </ul>
+            </dl>
+          </div>
+          <!--end select lang-->
+
+          <div class="searchbox rightRs">
+            <input type="text" class="search-int" name="name" value="">
+            <a href="<?php echo U('Home/Index/index','','');?>" class="searchbtn"><img src="/Public/Img/logo/tecno-search.png" alt="" /></a>
+          </div>
+    </header>
+    <!--/nav-->
+    <nav class="slide">
+			<ul>
+				<li><a href="<?php echo U('Home/Index/index','','');?>"><?php echo (L("home")); ?></a></li>
+				<li class="addall"><a href="<?php echo U('Home/Product/index','','');?>"><?php echo (L("product")); ?></a>
+          <ul class="tele-products">
+            <li><a href="<?php echo U('Home/Product/index','','');?>"><?php echo (L("all")); ?></a></li>
+            <?php if(is_array($goodsCatslist)): $i = 0; $__LIST__ = $goodsCatslist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('Home/Product/goodsCatDetail',array('cid'=>$vo['catId']));?>"><?php echo ($vo['catName']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+          </ul>
+        </li>
+				<li><a href="<?php echo U('Home/Article/index','','');?>"><?php echo (L("news")); ?></a></li>
+				<li><a href="<?php echo U('Home/Index/service','','');?>"><?php echo (L("retail_center")); ?></a></li>
+				<li><a href="http://bbs.tecno-mobile.com/">TECNO SPOT</a></li>
+				<li><a href="<?php echo U('Home/Index/contact','','');?>" class="active"><?php echo (L("contact_us")); ?></a></li>
+			</ul>
+		</nav>
+<!--div tecnonav-->
+    <!--addnav desktop-->
+    <section>
+      <div class="addnav">
+        <ul>
+           <li><a href="<?php echo U('Home/Product/index','','');?>"><div class="icon all"></div><i class="addnav-title"><?php echo (L("all")); ?></i></a></li>
+           <?php if(is_array($goodsCatslist)): $i = 0; $__LIST__ = $goodsCatslist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('Home/Product/goodsCatDetail',array('cid'=>$vo['catId']));?>"><div class="icon" id="goodscat<?php echo ($i); ?>"></div><i class="addnav-title"><?php echo ($vo['catName']); ?></i></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+        </ul>
+      </div>
+    </section>
+    <!--end addnav desktop-->
+
+    <div class="content slide">
+      <!--main-wrapper-->
+      <div class="main-wrapper">
+        <div id="contacts-wrapper">
+          <div class="cols-wrapper">
+            <div class="col col-1">
+              <h2>Talk to us</h2>
+              <div class="contacts-container equal-height clearfloat">
+                <div class="details">
+                  <h3>TECNO MOBILE</h3>
+                  <p><?php echo (L("sale_email")); ?>
+                    <a href="mailto:sales@tecnotelecom.com">Sales@tecnotelecom.com</a>
+                  </p>
+                  <p><?php echo (L("service_email")); ?>
+                    <a href="mailto:service@tecnotelecom.com">service@tecnotelecom.com</a>
+                  </p>
+                  <p><?php echo (L("hr_email")); ?>
+                  <a href="mailto:hr@tecnotelecom.com">HR@tecnotelecom.com</a></p>
+                  <div class="follow-wrapper">
+                    <h3><?php echo (L("follow_our_conversation")); ?></h3>
+                    <ul class="follow-list">
+                      <li><a href="https://twitter.com/TecnoAfrica" class="twitter">Twitter</a></li>
+                      <li><a href="https://www.facebook.com/TECNOMobileAfrica?fref=ts" class="facebook">Facebook</a></li>
+                      <li><a href="https://www.youtube.com/user/TecnoTelecomLimited" class="youtube">Youtube</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <form class="frm_contactus" id="frm_contactus" novalidate="novalidate" action="" method="post">
+                  <ul class="fieldset">
+                    <li><label for="name"><?php echo (L("your_name")); ?></label>
+                    <input type="text" class="textbox valid" id="name" maxlength="30" autocomplete="off" name="name" value="">
+                    <label for="name" class="error valid"></label></li>
+
+                    <li><label for="name"><?php echo (L("mobile_num")); ?></label>
+                    <input type="text" class="textbox error" name="mobile" id="mobile" maxlength="20" autocomplete="off" value="">
+                    <label for="mobile" class="error"></label></li>
+
+                    <li><label for="email"><?php echo (L("your_email")); ?></label>
+                    <input type="text" class="textbox" name="email" id="email" maxlenght="50" autocomplete="off" value=""></li>
+
+                    <li><label for="enquiry"><?php echo (L("your_enquiry")); ?></label>
+                    <textarea name="enquiry" id="enquiry" class="textarea" maxlength="500" rows cols></textarea></li>
+
+                    <li><label for="captcha">7+1=</label>
+                    <input type="text" class="textbox" name="captcha" id="captcha" maxlength="2" autocomplete="off" rel="8" value=""></li>
+
+                    <div class="message error"></div>
+
+                    <li class="clearfloat"><input type="hidden" name="code" id="code" value="5FA3897925">
+                    <input type="submit" class="btn" id="btn_contactus" value="<?php echo (L("submit")); ?>"></li>
+                  </ul>
+                </form>
+              </div>
+            </div>
+
+
+            <div class="col col-2">
+              <h2><?php echo (L("OUR_STORES")); ?></h2>
+              <div class="maps equal-height">
+                <div class="map-wrapper" id="stories_location">
+
+                </div>
+                <h2><?php echo (L("SERVICE_LOCATIONS")); ?></h2>
+                <div class="map-wrapper" id="services_location">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--main-wrapper-->
+
+      <!--backtotop-->
+      <a href="javascript:;" class="back-to-top fade-out">
+        <span class="arrow"></span>
+        <span class="text"><?php echo (L("back_to_top")); ?></span>
+      </a>
+      <!--end backtotop-->
+
+      <!--overlay-->
+      <div class="overlay"></div>
+      <!--end overlay-->
+      <!--popup-->
+      <div class="popup">
+        <a href="javascript:;" id="video-close" class="closevideo"></a>
+        <div class="video-content">
+          <iframe src="https://www.youtube.com/embed/3rFqbin4h38" frameboder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <!--end popup-->
+
+      <!--footer-->
+      <div class="footer clearfloat">
+        <div class="logo-wrapper clearfloat">
+          <a href="<?php echo U('Home/Index/index','','');?>" class="logoset"><img src="/Public/Img/logo/footer-logo.png" alt="TECNO Mobile" /></a>
+          <div class="copyright">
+            <strong>© 2015 TECNO Mobile.</strong>
+          </div>
+          <ul class="social">
+            <li><a href="https://www.facebook.com/tecnomobile/" target="_block" class="icon facebook">Facebook</a></li>
+            <li><a href="https://twitter.com/TecnoAfrica" target="_block" class="icon twitter">Twitter</a></li>
+            <li><a href="https://www.youtube.com/user/TecnoTelecomLimited" target="_block" class="icon rss">Youtube</a></li>
+          </ul>
+          <div class="language-selector">
+            <div class="lang-popup">
+              <ul>
+                <li><a href="<?php echo U('Home/Index/index',array('l'=>'en-gb'));?>">English</a></li>
+                <!-- <li><a href="<?php echo U('Home/Index/index','','');?>">العربية</a></li> -->
+                <li><a href="<?php echo U('Home/Index/index',array('l'=>'fr-fr'));?>">French</a></li>
+              </ul>
+            </div>
+            <a href="javascript:;" class="select-lang">CHange Language</a>
+          </div>
+        </div>
+
+        <div class="links-wrapper">
+          <ul>
+            <li class="title"><a href="<?php echo U('Home/Product/index','','');?>"><?php echo (L("product")); ?></a></li>
+            <?php if(is_array($goodsCatslist)): $i = 0; $__LIST__ = $goodsCatslist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('Home/Product/goodsCatDetail',array('cid'=>$vo['catId']));?>"><?php echo ($vo['catName']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+          </ul>
+
+          <ul>
+            <li class="title"><a href="<?php echo U('Home/Article/index','','');?>"><?php echo (L("news")); ?></a></li>
+            
+            <?php if(is_array($articleCatList)): $i = 0; $__LIST__ = $articleCatList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('Home/Article/articleCatDetail',array('catId'=>$vo['catId']));?>"><?php echo ($vo['catName']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+          </ul>
+
+          <ul>
+             <li class="title"><a href="javascript:void(0);"><?php echo (L("links")); ?></a></li>
+            <li><a href="http://www.carlcare.com/"><?php echo (L("carlcare")); ?></a></li>
+            <li><a href="/TERMS_AND_CONDITIONS.pdf"><?php echo (L("terms")); ?></a></li>
+			<li><a href="http://bbs.tecno-mobile.com/">TECNO forum</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--end footer-->
+
+		</div>
+
+  <script src="/Public/Js/jquery.js" charset="utf-8"></script>
+  <script src="/Public/Js/jquery.bxslider.min.js" charset="utf-8"></script>
+  <script src="/Public/Js/main.js" charset="utf-8"></script>
+  <script src="/Public/Js/nav.js" charset="utf-8"></script>
+  <script src="/Public/Js/contact.js" charset="utf-8"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;language=fr"></script>
+  <script src="/Public/Js/markerclusterer.js"></script>
+  <script src="/Public/Js/modernizr.custom.97074.js" type="text/javascript"></script>
+  <script src="/Public/Js/maps.js" charset="utf-8"></script>
+  <script src="/Public/Js/maps2.js" charset="utf-8"></script>
+  <script src="/Public/Js/additional-methods.min.js" type="text/javascript"></script>
+  <script src="/Public/Js/fr.js" charset="utf-8"></script>
+<script>
+  $(function(){
+		 $('#goodscat1').addClass('phantom');
+		 $('#goodscat2').addClass('boom');
+		 $('#goodscat3').addClass('other');
+		 $('#goodscat4').addClass('feature');
+		 $('#goodscat5').addClass('table');
+		 
+		 var cid = '<?php echo ($id); ?>';
+		 if(cid){
+			 $('.products-content-nav li').removeClass('products-cent-active');
+			 $('#goodsCat<?php echo ($id); ?>').addClass('products-cent-active');
+		 }else{
+			 $('.products-content-nav li:first').addClass('products-cent-active');
+		 }
+		 
+	  });
+  function select_en(){
+	 	 url = '/index.php?m=Home&c=Index&a=contact';
+	 	 var reg = 'l=';
+	 	 var r = url.match(reg);
+	 	 var regurl = 'index.php';
+	 	 var rs = url.match(regurl);
+	 	 if(rs==null){
+		    url = url + "index.php?l=en-gb"; 
+		 }else{
+		    if(r==null){
+		    	url = url + "&l=en-gb";
+		    }else{
+		    	url = url.replace('en-gb','');
+				url = url.replace('fr-fr','');
+				url = url + "en-gb"; 
+		    }
+				
+		}
+	 	location.href  = url;
+	 }
+	 function select_fr(){
+		 url = '/index.php?m=Home&c=Index&a=contact';
+	 	 var reg = 'l=';
+	 	 var r = url.match(reg);
+	 	 var regurl = 'index.php';
+	 	 var rs = url.match(regurl);
+	 	 if(rs==null){
+		    url = url + "index.php?l=fr-fr"; 
+		 }else{
+		    if(r==null){
+		    	url = url + "&l=fr-fr";
+		    }else{
+		    	url = url.replace('en-gb','');
+				url = url.replace('fr-fr','');
+				url = url + "fr-fr"; 
+		    }
+				
+		}
+	 	 location.href  = url;
+	 }
+  </script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+  ga('create', 'UA-59533821-2', 'auto');
+  ga('send', 'pageview');
+ 
+</script>
+  </body>
+</html>

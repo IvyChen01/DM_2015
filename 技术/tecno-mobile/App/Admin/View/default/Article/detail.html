@@ -1,0 +1,40 @@
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <form action="{:U('replyAdd')}" id="addForm" class="pageForm" data-toggle="validate" data-reload="true">
+        <input type="hidden" name="info[pid]" value="{$info.id}" />
+        <div data-layout-h="0">
+            <div class="container-fluid">
+                <div class="row" style="padding:8px;">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3 class="panel-title text-center">{$info.title} <a class="pull-right" href="#replyList">查看回复</a></h3>
+                            </div>
+                            <div class="panel-body">
+                                <p class="text-center"></p>
+                                <p>{$info.content|htmlspecialchars_decode}</p>
+                            </div>
+                            <div class="panel-footer text-right">
+                                {$info.cName} 发表于 {$info.cTime|timeFormat}
+                            </div>
+                            <ul id="replyList" class="list-group">
+                                <volist name="replyList" id="replyVo">
+                                    <li class="list-group-item green"><strong>回复人：{$replyVo.cName} &nbsp;&nbsp;时间：{$replyVo.cTime|timeFormat}</strong></li>
+                                <li class="list-group-item">{$replyVo.content}</li>
+                                </volist>
+                            </ul>
+                        </div>
+                        <textarea name="info[content]" style="width:100%;height:10px" data-toggle="kindeditor"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bjui-footBar">
+            <!-- 底部工具条  -->
+            <ul>
+                <li><button type="button" class="btn-close">关闭</button></li>
+                <li><button type="submit" class="btn btn-default">回复</button></li>
+            </ul>
+        </div>
+    </form>
+</div>

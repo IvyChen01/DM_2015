@@ -1,0 +1,42 @@
+<div class="bjui-pageContent">
+    <form action="{:U('edit')}" class="pageForm" data-toggle="validate" data-reload-navtab="true">
+        <input type="hidden" name="id" value="{$info.id}" />
+        <table class="table table-condensed table-hover" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <label class="control-label x100">{$Think.lang.role_name}：</label>
+                        <input name="title" type="text" size="40" value="{$info.name}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label x100">{$Think.lang.status}：</label>
+                        <select name="status" data-toggle="selectpicker">
+                        <if condition="$info.status eq 1">
+                            <option value="1" selected>{$Think.lang.enable}</option>
+                            <option value="0">{$Think.lang.forbid}</option>
+                            <else/>
+                            <option value="1">{$Think.lang.enable}</option>
+                            <option value="0" selected>{$Think.lang.forbid}</option>
+                        </if>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label x100">{$Think.lang.desc}：</label>
+                        <textarea name="remark" style="width: 400px;">{$info.remark}</textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close" data-icon="close">{$Think.lang.close}</button></li>
+        <li><button type="submit" class="btn-default" data-icon="save">{$Think.lang.save}</button></li>
+    </ul>
+</div>

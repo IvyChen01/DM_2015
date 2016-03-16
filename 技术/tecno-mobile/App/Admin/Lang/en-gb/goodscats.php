@@ -1,0 +1,23 @@
+<?php
+return array(
+    'top-level' =>  'top-level',
+    'goods_cats_name' =>  'goods categories name',
+    'sort'=>'Sort',
+    'submit'=>'Submit',
+    'refresh' => 'Refresh',
+    'operation' => 'Operation',
+    'new_add' => 'Add new goods categories',
+    'cats_name' => 'Categories',
+    'cat_pic'=>'Categories Photo',
+    'is_show' => 'Show|Hidden',  
+    'delete' => 'Delete',
+    'edit' => 'Edit',
+    'add_child' =>'Add New Child',
+    'show' =>'Show',
+    'hidden' => 'Hidden',
+    'parent_level' => 'Parent Level',
+    'cat_desc' => 'Categories Description',
+    'close' => 'Close',
+    'save' => 'Save',
+    'lang' => 'language select',
+);

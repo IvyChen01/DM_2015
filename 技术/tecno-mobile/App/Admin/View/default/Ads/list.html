@@ -1,0 +1,77 @@
+   <div class="bjui-pageHeader">
+	 <form id="pagerForm" data-toggle="ajaxsearch" action="{:U($Think.ACTION_NAME)}" method="post">
+	<input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+		 <select name="search[adPositionId]" data-toggle="selectpicker">
+			<option value="">{$Think.lang.select_position}</option>
+			<option value='-1' >{$Think.lang.home_ad}</option>
+			<option value='0' >{$Think.lang.product_ad}</option>
+			<option value='1' >{$Think.lang.about_ad}</option>
+			<option value='2' >{$Think.lang.support_ad}</option>
+			<option value='3' >{$Think.lang.service_ad}</option>
+			<volist name="goodsCatList" id="vo">
+		       		 <option value='{$vo['catId']}' >{$vo['catName']}</option>
+		    </volist>
+		</select>
+		<input placeholder='{$Think.lang.ad_title}' id="adName" type="text" name="search[adName]" value="{$search.adName}" />
+		<button type="submit" class="btn-default" data-icon="search">{$Think.lang.search}</button>
+		<!-- <span><a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">刷新</a></span> -->
+		<div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">{$Think.lang.operation}<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                        <li><a href="{:U('toEdit')}" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">{$Think.lang.new_add}</a></li></ul>
+                </div>
+            </div>
+	</form>
+</div>
+<div class="bjui-pageContent">
+	<!-- 内容区 -->
+
+	<table class="table table-bordered table-hover table-striped table-top" data-layout-h="0" data-selected-multi="true">
+		<thead>
+			<tr>
+				<th width='40'>&nbsp;</th>
+               <th width='120'>{$Think.lang.ad_title}</th>
+               <th>{$Think.lang.ad_position}</th>
+               <th>{$Think.lang.ad_url}</th>
+               <th>{$Think.lang.ad_time}</th>
+               <!-- <th>所属地区</th> -->
+               <th width='80'>{$Think.lang.ad_pic}</th>
+               <!-- <th width='80'>点击数</th> -->
+               <th width='150'>{$Think.lang.operation}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="list" id="vo" key='i'>
+             <tr>
+               <td>{$i}</td>
+               <td>{$vo['adName']}</td>
+               <td>
+               <if condition="$vo['adPositionId'] == -1 ">{$Think.lang.home_ad}
+               <elseif condition="$vo['adPositionId'] ==0 "/>{$Think.lang.product_ad}
+               <elseif condition="$vo['adPositionId'] ==1 "/>{$Think.lang.about_ad}
+               <else/>
+               <volist name="goodsCatList" id="gvo">
+		       		 <if condition="$vo['adPositionId'] == $gvo['catId'] ">{$gvo['catName']}</if>
+		      </volist>
+		    </if>
+               </td>
+               <td><a href="{$vo['adURL']}">{$vo['adURL']}</a></td>
+               <td>{$vo['adStartDate']}->{$vo['adEndDate']}</td>
+               <!-- <td>{$vo['areaName1']}{$vo['areaName2']}</td> -->
+               <td><img src='__ROOT__/{$vo['adFile']}' width='60' height='30'></td>
+               <!-- <td>{$vo['adClickNum']}</td> -->
+               <td>
+                <a href="{:U('del?id=' . $vo[adId])}" class="btn btn-red glyphicon glyphicon-trash" data-toggle="doajax" data-confirm-msg="{$Think.lang.delete_confirm}">{$Think.lang.delete}</a>
+				<a href="{:U('toEdit?id=' . $vo[adId])}" class="btn btn-default glyphicon glyphicon-pencil" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">{$Think.lang.edit}</a>
+               </td>
+             </tr>
+             </volist>
+		</tbody>
+	</table>
+	</form>
+</div>
+<include file="./App/Common/View/Common/pageFooter.html" />   

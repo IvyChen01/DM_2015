@@ -1,0 +1,18 @@
+[ 2016-03-04T06:56:05+08:00 ] 196.46.245.25 /index.php?m=Hom'e&c=Article&a=detail&cid=40&id=239
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+ERR: _MODULE_NOT_EXIST_:Hom'e
+
+[ 2016-03-04T07:01:00+08:00 ] 196.46.245.25 /index.php?m=Hom'e&c=Article&a=detail&cid=40&id=239
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+ERR: _MODULE_NOT_EXIST_:Hom'e
+
+[ 2016-03-04T15:10:55+08:00 ] 54.183.147.62 /index.php?m=Home'A=0&c=Article&a=detail&cid=38&id=225
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+ERR: _MODULE_NOT_EXIST_:Home'A=0
+

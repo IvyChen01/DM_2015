@@ -1,0 +1,49 @@
+<div class="bjui-pageContent">
+    <div data-layout-h="0">
+        <!-- 内容区 -->
+        <table class="table table-condensed table-hover" width="100%">
+            <tr>
+                <td><label class="control-label x100">姓名：</label>{$info.name}</td>
+                <td><label class="control-label x100">性别：</label><php>echo $info['sex'] == 1 ? '男' : '女';</php></td>
+            </tr>
+            <tr>
+                <td><label class="control-label x100">办公电话：</label>{$info.tel}</td>
+                <td><label class="control-label x100">移动电话：</label>{$info.mobile}</td>
+            </tr>
+            <tr>
+                <td><label class="control-label x100">电子邮箱：</label>{$info.email}</td>
+                <td><label class="control-label x100">办公地址：</label>{$info.address}</td>
+            </tr>
+        </table>
+        <p></p>
+        <table class="table table-condensed table-hover" width="100%">
+            <thead>
+                <tr>
+                    <th>机构类型</th>
+                    <th>公司</th>
+                    <th>部门</th>
+                    <th>科室</th>
+                    <th>职务</th>
+                </tr>
+            </thead>
+            <tbody>
+                <volist name="orgList" id="orgVo">
+                <tr>
+                    <td><php>if($key == 0){echo '所属机构';}else{echo '兼任机构';}</php></td>
+                    <td>{$orgVo.company}</td>
+                    <td>{$orgVo.department}</td>
+                    <td>{$orgVo.office}</td>
+                    <td>{$orgVo.duty}</td>
+                </tr>
+                </volist>
+            </tbody>
+        </table>
+    </div>
+    <div class="bjui-footBar">
+        <!-- 底部工具条  -->
+        <ul>
+            <li><button type="button" class="btn-close submitForm">关闭</button></li>
+        </ul>
+    </div>
+</div>
+

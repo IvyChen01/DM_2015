@@ -1,0 +1,10 @@
+<div class="list-group">
+	<php>if(is_array($brotherMenu)){</php>
+	    <volist name="brotherMenu" id="vo">
+	    <a href="{$vo.link}" class="list-group-item <php>if($_GET[cid]==$vo[cid]){echo 'active';}</php>">
+	             <i class="fa fa-tree fa-fw"></i> {$vo.name}
+	             <span class="pull-right text-muted small"><em>...</em></span>
+	         </a>
+	    </volist>
+	<php>}</php>
+</div>

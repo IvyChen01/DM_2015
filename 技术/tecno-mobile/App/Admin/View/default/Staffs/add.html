@@ -1,0 +1,155 @@
+<div class="bjui-pageContent">
+    <iframe name="upload" style="display:none"></iframe>
+		<form id="uploadform_Filedata" autocomplete="off" style="<if condition='$object[staffId] gt 0'>top:139px;<else/>top:169px;</if>position:absolute;left:121px;z-index:10;" enctype="multipart/form-data" method="POST" target="upload" action="{:U('uploadPic')}" >
+			<div style="position:relative;">
+			<input id="staffPhoto" name="staffPhoto" class="form-control wst-ipt" type="text" value="{$object.staffPhoto}" readonly style="margin-right:4px;float:left;margin-left:2px;width:250px;"/>
+			<div class="div1" style="position:absolute;top:25px;left:2px">
+				<!-- <div class="div2">浏览</div> -->
+				<input type="file" class="inputstyle" id="Filedata" name="Filedata" onchange="updfile('Filedata');" >
+			    <div >&nbsp;{$Think.lang.pic_size}:150 x 150 (px)( gif, jpg, jpeg, png)</div>
+			</div>
+			<div style="clear:both;"></div>
+			
+			<input type="hidden" name="dir" value="staffs">
+			<input type="hidden" name="width" value="150">
+			<input type="hidden" name="folder" value="Filedata">
+			<input type="hidden" name="sfilename" value="Filedata">
+			<input type="hidden" name="fname" value="staffPhoto">
+			<input type="hidden" id="s_Filedata" name="s_Filedata" value="">
+			
+			</div>
+		</form>
+	<form action="{:U('edit')}" id="addForm" class="pageForm" data-toggle="validate" data-reload-navtab="true" name="addForm" role="form">
+		<input type='hidden' id='id' name='id' value='{$object.staffId}'/>
+        <input type='hidden' id='staffPhoto' name='staffPhoto' value='{$object.staffPhoto}'/>
+        <table class="table table-hover table-striped table-bordered wst-form">
+           <tr>
+             <th width='120' align='right'>{$Think.lang.account}<font color='red'>*</font>：</th>
+             <td><input type='text' id='loginName' name='loginName' class="form-control wst-ipt" value='{$object.loginName}'></td>
+             <td rowspan='6'>
+             	<div id="preview_Filedata">
+                 <img id='staffPhotoPreview' src='<if condition="$object['staffPhoto'] =='' ">__PUBLIC__/Img/staff.png<else/>__ROOT__/{$object['staffPhoto']}</if>'  height='152'/><br/>
+	             </div>
+             </td>
+           </tr>
+           <if condition="$object['staffId'] ==0 ">
+           <tr>
+             <th width='120' align='right'>{$Think.lang.password}<font color='red'>*</font>：</th>
+             <td>
+             <input type='password' id='loginPwd' name='loginPwd' class="form-control wst-ipt" maxLength='20'/>
+             <if condition="$object['staffId'] !=0 ">(为空则说明不修改密码)</if></td>
+           </tr>
+           </if>
+           <tr>
+             <th align='right'>{$Think.lang.name}<font color='red'>*</font>：</th>
+             <td>
+             <input type='text' id='staffName' name='staffName' class="form-control wst-ipt" value='{$object.staffName}' maxLength='20'/>
+             </td>
+           </tr>
+           <tr>
+             <th align='right'>{$Think.lang.role}<font color='red'>*</font>：</th>
+             <td>
+             <select id='staffRoleId' name='staffRoleId'>
+                 <option value=''>{$Think.lang.select}</option>
+                 <volist name="roleList" id="rvo">
+                 <option value='{$rvo['id']}' <if condition="$object['staffRoleId'] == $rvo['id'] ">selected</if>>{$rvo['name']}</option>
+                 </volist>
+             </select>
+             </td>
+           </tr>
+           <tr>
+             <th align='right'>{$Think.lang.account_id}：</th>
+             <td>
+             <input type='text' id='staffNo' name='staffNo' class="form-control wst-ipt" value='{$object.staffNo}' maxLength='20'/>
+             </td>
+           </tr>
+           <tr style="height:90px;">
+             <th align='right'>{$Think.lang.avatar}：</th>
+             <td>
+             	<td><input type="hidden" id="staffPic" name="staffPic" class="form-control wst-ipt" value=""/>
+             </td>
+           </tr>
+           <tr>
+             <th align='right'>{$Think.lang.status}<font color='red'>*</font>：</th>
+             <td>
+             <label>
+             <input type='radio' id='workStatus1' name='workStatus' value='1' <if condition="$object['workStatus'] ==1 ">checked</if> />{$Think.lang.onjob}&nbsp;&nbsp;
+             </label>
+             <label>
+             <input type='radio' id='workStatus0' name='workStatus' value='0' <if condition="$object['workStatus'] ==0 ">checked</if> />{$Think.lang.turnover}
+             </label>
+             </td>
+           </tr>
+           <tr>
+             <th align='right'>{$Think.lang.account_status}<font color='red'>*</font>：</th>
+             <td <if condition="$object['staffId'] !=0 ">colspan='2'</if>> 
+             <label>
+             <input type='radio' id='staffStatus1' name='staffStatus' value='1' <if condition="$object['staffStatus'] ==1 ">checked</if> />{$Think.lang.enable}&nbsp;&nbsp;
+             </label>
+             <label>
+             <input type='radio' id='staffStatus0' name='staffStatus' value='0' <if condition="$object['staffStatus'] ==0 ">checked</if> />{$Think.lang.forbid}
+             </label>
+             </td>
+           </tr>
+			</tbody>
+		</table>
+	</form>
+</div>
+<div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">{$Think.lang.close}</button></li>
+		<!-- <li><button type="submit" class="btn-default" data-icon="save">保存</button></li> -->
+		<li><button type="submit" id="submit" class="btn btn-success" data-icon="save">{$Think.lang.save}</button></li>
+	</ul>
+</div>
+<script>
+$("#submit").click(function(){
+    $("#staffPic").val($.trim($("#staffPhoto").val()));
+	$("#addForm").submit();
+});
+var filetypes = ["gif","jpg","png","jpeg"];
+var ThinkPHP = window.Think = {
+	        "ROOT"   : "__ROOT__"
+	}
+$(function () {
+	   $.formValidator.initConfig({
+		   theme:'Default',mode:'AutoTip',formID:"myform",debug:true,submitOnce:true,onSuccess:function(){
+				   edit();
+			       return false;
+			}});
+	   
+	   $("#loginName").formValidator({onShow:"",onFocus:"会员账号应该为5-16字母、数字或下划线",onCorrect:"输入正确"}).inputValidator({min:5,max:16,onError:"会员账号应该为5-16字母、数字或下划线"}).regexValidator({
+	       regExp:"username",dataType:"enum",onError:"会员账号格式错误"
+		}).ajaxValidator({
+			dataType : "json",
+			async : false,
+			url : "{:U('Admin/Staffs/checkLoginKey')}",
+			success : function(data){
+				var json = WST.toJson(data);
+	            if( json.status == "1" ) {
+	                return true;
+				} else {
+	                return false;
+				}
+				return "该账号已被使用";
+			},
+			error : function() {
+			    alert("服务器忙，请重试");
+			   },
+			buttons: $("#dosubmit"),
+			onError : "该账号已存在。",
+			onWait : "请稍候..."
+		});
+	  
+	   <if condition="$object['staffId'] !=0 ">
+	   $("#loginName").defaultPassed();
+	   </if>
+	   $("#loginPwd").formValidator({
+			onShow:"",onFocus:"登录密码长度应该为5-20位之间"
+			}).inputValidator({
+				min:5,max:50,onError:"登录密码长度应该为5-20位之间"
+			});
+	   $("#staffName").formValidator({empty:false,onFocus:"请输入职员名称"}).inputValidator({min:1,onError: "请输入职员名称"});
+	   $("#staffRoleId").formValidator({onFocus:"请选择角色"}).inputValidator({min:1,onError: "请选择角色"});
+});
+</script>

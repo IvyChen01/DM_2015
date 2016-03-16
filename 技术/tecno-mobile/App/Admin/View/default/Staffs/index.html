@@ -1,0 +1,97 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="{:U($Think.ACTION_NAME)}" method="post">
+        <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <div class="bjui-searchBar">
+            <label>{$Think.lang.account}：</label><input type="text" name="search[loginName]" value="{$search.loginName}" class="form-control" size="10" />
+            <label>{$Think.lang.account_id}：</label><input type="text" name="search[staffId]" value="{$search.staffId}" class="form-control" size="10" /></li>
+            <button type="submit" class="btn-default" data-icon="search">{$Think.lang.search}</button>
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">{$Think.lang.operation}<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                        <li><a href="{:U('toEdit')}" data-toggle="dialog" data-width="800" data-height="600" data-id="dialog-mask" data-mask="true">{$Think.lang.new_add}</a></li></ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+        <thead>
+            <tr>
+                <th>{$Think.lang.sort}</th>
+                <th>{$Think.lang.account}</th>
+                <th>{$Think.lang.name}</th>
+                <th>{$Think.lang.role}</th>
+                <th>{$Think.lang.account_id}</th>
+                <th>{$Think.lang.status}</th>
+			    <th>{$Think.lang.last_login}</th>
+			    <th>{$Think.lang.last_ip}</th>
+			    <th>{$Think.lang.account_status}</th>
+			    <th>{$Think.lang.operation}</th>
+            </tr>
+        </thead>
+        <volist name="list" id="vo">
+            <!-- <tr aid="{$vo.aid}">
+                <volist name="tableFields" id="tvo">
+                    <td>{$vo.$key}</td>
+                </volist>
+                <td>
+                    <if condition="$vo.email eq C('ADMIN_AUTH_KEY')">
+                        <else/><a href="__URL__/editAdmin/uid/{$vo.uid}" data-toggle="modal" data-target="#myModal">编辑</a></if> 
+                </td>
+            </tr> -->
+            <tr aid="{$vo.staffId}">
+				<td>{$i}</td>
+               <td>{$vo['loginName']}</td>
+               <td>{$vo['staffName']}&nbsp;</td>
+               <td>{$vo['roleName']}&nbsp;</td>
+               <td>{$vo['staffNo']}&nbsp;</td>
+               <td>
+               <if condition="$vo['workStatus'] ==1 ">{$Think.lang.onjob}</if>
+               <if condition="$vo['workStatus'] ==0 ">{$Think.lang.turnover}</if>&nbsp;
+               </td>
+               <td>{$vo['lastTime']}&nbsp;</td>
+               <td>{$vo['lastIP']}&nbsp;</td>
+               <td>{$vo['status']}&nbsp;</td>
+				<td>
+				    <a class="btn btn-default glyphicon glyphicon-pencil" href="{:U('toEdit',array('staffId' => $vo['staffId']))}" data-toggle="dialog" data-width="800" data-height="600" data-id="dialog-mask" data-mask="true">{$Think.lang.edit}</a>
+				    <a class="btn btn-red glyphicon glyphicon-trash" data-confirm-msg="{$Think.lang.delete_confirm}" data-toggle="doajax" href="{:U('del',array('staffId' => $vo['staffId']))}">{$Think.lang.delete}</a>
+				</td>
+			</tr>
+        </volist>
+    </table>
+</div>
+
+<include file="./App/Common/View/Common/pageFooter.html" />
+
+<script type="text/javascript">
+    //show完毕前执行
+    $('#myModal').on('shown.bs.modal', function () {
+        // 提交表单
+        $(".submitForm").click(function() {
+            var url;
+            if ($("#pk").val()){
+                url = '__URL__/editAdmin';
+            } else {
+                <if condition = "ACTION_NAME neq 'editAdmin'">
+                    if (!isEmail($("#email").val())) {
+                        popup.alert("账号邮件地址格式错误");
+                        return false;
+                    }
+                    if ($.trim($("#pwd").val()) == '') {
+                        popup.alert("密码不能为空");
+                        return false;
+                    }
+                </if>
+                url = '__URL__/addAdmin';
+            }
+            ajaxSubmit(url, '#addForm');
+        });
+    });
+</script>

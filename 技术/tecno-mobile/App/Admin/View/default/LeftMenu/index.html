@@ -1,0 +1,99 @@
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <form action="{:U($Think.ACTION_NAME)}" method="POST" class="pageForm" data-toggle="validate" data-reload="true">
+    <input type="hidden" name="data[cid]" value="{$tree.cid}" />
+    <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+    <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+    <table class="table table-bordered table-hover table-striped table-top" data-layout-h="0" data-selected-multi="true">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>{$Think.lang.cat_structure}</th>
+                <th>{$Think.lang.new_cat}</th>
+                <th>{$Think.lang.sort}</th>
+                <th>{$Think.lang.menu}</th>
+                <th>{$Think.lang.operation}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="list" id="tree" key="i">
+                    <tr>
+                        <td>{$tree.id}</td>
+                        <td>
+                            <if condition="$tree.fid eq 0"><b>{$tree.fullname}</b>
+                                <else/>{$tree.fullname}</if>
+                            <if condition="$tree.status eq 0">[
+                                <font color="red">禁</font>]</if>
+                        </td>
+                        <td>
+                            <select name="data[fid]" data-toggle="selectpicker" dataId='{$tree.id}' onchange='javascript:editPid(this)'>
+                                <option value="0">{$Think.lang.top}</option>
+                                <volist name="list" id="vo1">
+                                    <if condition="$vo1['id'] eq $tree['id']">
+                                        <option value="{$vo1.id}" selected="selected" readonly>{$vo1.fullname}</option>
+                                        <else/>
+                                        <option value="{$vo1.id}">{$vo1.fullname}</option>
+                                    </if>
+                                </volist>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" value="{$tree.oid}" onchange='javascript:editSort(this)' dataId='{$tree.id}' name="data[oid]" placeholder="{$Think.lang.sort}" size="5" />
+                        </td>
+               
+                        <td>
+                            <input type="text" value="{$tree.name}" onchange='javascript:editName(this)' dataId='{$tree.id}' name="data[name]" placeholder="{$Think.lang.menu}" size="20" />
+                        </td>
+                       
+                        <td>
+                            <a href="{:U('delMenu?id=' . $tree[id])}" class="btn btn-default glyphicon glyphicon-trash" data-toggle="doajax" data-confirm-msg="{$Think.lang.delete_confirm}">{$Think.lang.delete}</a>
+                        </td>
+                    </tr>
+                
+            </volist>
+        </tbody>
+    </table>
+    </form>
+</div>
+<!-- <include file="./App/Common/View/Common/pageFooter.html" /> -->
+<script>
+function editName(obj){
+	   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+	   $.post("{:U('Admin/LeftMenu/editName')}",{id:$(obj).attr('dataId'),menuName:obj.value},function(data,textStatus){
+			var json = WST.toJson(data);
+			if(json.status=='1'){
+				Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000});
+				$(this).navtab('refresh');  
+			}else{
+				Plugins.closeWindow();
+				Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+			}
+		});
+}
+function editSort(obj){
+	   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+	   $.post("{:U('Admin/LeftMenu/editSort')}",{id:$(obj).attr('dataId'),menuSort:obj.value},function(data,textStatus){
+			var json = WST.toJson(data);
+			if(json.status=='1'){
+				Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000});
+				$(this).navtab('refresh');  
+			}else{
+				Plugins.closeWindow();
+				Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+			}
+		});
+}
+function editPid(obj){
+	   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+	   $.post("{:U('Admin/LeftMenu/editPid')}",{id:$(obj).attr('dataId'),menuPid:obj.value},function(data,textStatus){
+			var json = WST.toJson(data);
+			if(json.status=='1'){
+				Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000});
+				$(this).navtab('refresh');  
+			}else{
+				Plugins.closeWindow();
+				Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+			}
+		});
+}
+</script>

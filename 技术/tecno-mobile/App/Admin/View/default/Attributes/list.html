@@ -1,0 +1,79 @@
+   <div class="bjui-pageHeader">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="{:U($Think.ACTION_NAME)}" method="post">
+	    <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+		<select name="search[catId]" data-toggle="selectpicker" >
+			<option value="">{$Think.lang.select_cat}</option>
+			<option value="0">{$Think.lang.all}</option>
+			<volist name="goodsCatList" id="vo" key='i'>
+		       		<option <if condition="$vo['catId'] eq $search.catId">selected</if> value="{$vo['catId']}" >{$vo["catName"]}</option>
+		    </volist>
+		</select>            
+		<input placeholder='{$Think.lang.attr_name}' id="attrName" type="text" name="search[attrName]" value="{$search.attrName}"  autocomplete="off"/>
+		<button type="submit" class="btn-default" data-icon="search">{$Think.lang.search}</button>
+		
+     <!--    店铺分类：<select id='shopCatId1' autocomplete="off" onchange='javascript:getShopCatListForGoods(this.value,"{$object['shopCatId2']}")'>
+	         <option value='0'>请选择</option>
+	         <volist name="shopCatsList" id="vo">
+	         <option value='{$vo['catId']}' <if condition="$shopCatId1 == $vo['catId'] ">selected</if>>{$vo['catName']}</option>
+	         </volist>
+	     </select>
+	     <select id='shopCatId2' autocomplete="off">
+	         <option value='0'>请选择</option>
+	     </select>
+        <input placeholder="商品名称" type="text" name="goodsName" value="{$goodsName}" data-rule="required" />
+		<button type="submit"  class="btn btn-default" data-icon="search" onclick='javascript:queryOnSale()'>查询</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+		<span><a class="btn btn-default" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">{$Think.lang.refresh}</a></span>
+		<div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">{$Think.lang.operation}<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                        <li><a type="button" class="btn" href="{:U('toEdit')}" id="addgoods" data-toggle="dialog" data-width="600" data-height="400" data-id="dialog-mask" data-mask="true">{$Think.lang.new_add}</a></li>
+                    </ul>
+                </div>
+        </div>
+	</form>	    
+</div>
+<div class="bjui-pageContent">
+	<!-- 内容区 -->
+        <table class="table table-hover table-striped table-bordered wst-list">
+           <thead>
+             <tr>
+               <th width='20'>{$Think.lang.attr_id}</th>
+               <th width='120'>{$Think.lang.goods_cat}</th>
+               <th width='120'>{$Think.lang.goods_attribute}</th>
+               <th width='80'>{$Think.lang.price_attr}</th>
+               <th width='80'>{$Think.lang.attr_type}</th>
+               <th width='80'>{$Think.lang.attr_option}</th>
+               <th width='50'>{$Think.lang.sort}</th>
+               <th width='100'>{$Think.lang.operation}</th>
+             </tr>
+           </thead>
+           <tbody id='tbody'>
+            <volist name="list" id="vo" key='i'>
+             <tr id='tr_{$i}' dataId='{$vo['attrId']}'>
+               <td>{$vo['attrId']}</td>
+               <td><volist name="goodsCatList" id="gvo">
+		       		 <if condition="$vo['catId'] == $gvo['catId'] ">{$gvo['catName']}</if>
+		      </volist></td>
+               <td>{$vo['attrName']}</td>
+               <td><if condition="$vo['isPriceAttr'] ==1">{$Think.lang.yes}<else/>{$Think.lang.no}</if></td>
+               <td>
+	               <if condition="$vo['attrType'] ==0">{$Think.lang.input}<elseif condition="$vo['attrType'] ==1"/>{$Think.lang.option}<else/>{$Think.lang.drop_down}</if>
+               </td>
+               <td>{$vo['attrContent']}</td>
+               <td>{$vo['attrSort']}</td>
+               <td>
+               <a href="{:U('del?id=' . $vo[attrId])}" class="btn btn-red glyphicon glyphicon-trash" data-toggle="doajax" data-confirm-msg='{$Think.lang.delete_confirm}'>{$Think.lang.delete}</a>
+				<a href="{:U('toEdit?id=' . $vo[attrId])}" class="btn btn-default glyphicon glyphicon-pencil" data-toggle="dialog" data-width="600" data-height="400" data-id="dialog-mask" data-mask="true">{$Think.lang.edit}</a>
+               </td>
+             </tr>
+             </volist>
+             <tfoot>
+             </tfoot>
+           </tbody>
+        </table>
+</div>
+<include file="./App/Common/View/Common/pageFooter.html" />

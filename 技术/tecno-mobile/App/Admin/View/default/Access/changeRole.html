@@ -1,0 +1,124 @@
+<div class="bjui-pageContent">
+    <form action="{:U(ACTION_NAME)}" id="myform" class="pageForm" data-toggle="validate" data-reload-navtab="true">
+        <input type="hidden" name="id" value="{$info.id}" />
+        <input type="hidden" name="checkvalue" id="checkvalue" value="" />
+        <h4> <b>{$info.name}</b></h4>
+        <table class="table table-condensed table-hover" width="100%">
+            <volist name="nodeList" id="level1">
+                <tr>
+                    <td style="font-size: 14px; color:red;">
+                        <input name="data[]" id="{$level1.id}" level="1" type="checkbox" obj="node_{$level1.id}" value="{$level1.id}" data-toggle="icheck" data-label="[{$Think.lang.system}{$key+1}] {$level1.title}" />
+                    </td>
+                </tr>
+                <volist name="level1['data']" id="level2">
+                    <tr>
+                        <td style="padding-left: 30px; font-size: 14px; color:#BF3EFF">
+                            <input name="data[]" id="{$level2.id}" level="2" type="checkbox" obj="node_{$level1.id}_{$level2.id}" value="{$level2.id}" data-toggle="icheck" data-label="[{$Think.lang.model}{$key+1}] {$level2.title}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 60px;">
+                            <volist name="level2['data']" id="level3">
+                                <input name="data[]" id="{$level3.id}" level="3" type="checkbox" obj="node_{$level1.id}_{$level2.id}_{$level3.id}" value="{$level3.id}" data-toggle="icheck" data-label="{$level3.title}" />&nbsp;&nbsp;&nbsp;&nbsp;
+                            </volist>
+                        </td>
+                    </tr>
+                </volist>
+            </volist>
+        </table>
+    </form>
+</div>
+
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close" data-icon="close">{$Think.lang.close}</button></li>
+        <li><button id="submit" type="submit" class="btn-default" data-icon="save">{$Think.lang.save}</button></li>
+        <li><button type="button" class="btn-default reset" data-icon="reply">{$Think.lang.reset}</button></li>
+        <li><button type="button" class="btn-default empty" data-icon="refresh">{$Think.lang.clear}</button></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    //初始化数据
+    function setAccess() {
+        //清空所有已选中的
+        $("input[type='checkbox']").iCheck('uncheck');
+        //数据格式：
+        //节点ID：node_id；1，项目；2，模块；3，操作
+        //节点级别：level；
+        //父级节点ID：pid
+        var access = $.parseJSON('{$info.access}');
+        //alert(access[0]['val']);
+        var access_length = access.length;
+        if (access_length > 0) {
+            for (var i = 0; i < access_length; i++) {
+                $("input[type='checkbox'][value='" + access[i]['val'] + "']").iCheck('check');
+            }
+        }
+    }
+
+    $(function() {
+        //执行初始化数据操作
+        //alert(1);
+        setAccess();
+        //为项目时候全选本项目所有操作
+        $("input[level='1']").on('ifClicked', function(event){
+            var obj = $(this).attr("obj") + "_";
+            if (!$(this).prop('checked')) {
+                $("input[obj^='" + obj + "']").iCheck('check');
+            } else {
+                $("input[obj^='" + obj + "']").iCheck('uncheck');
+            }
+        });
+        //为模块时候全选本模块所有操作
+
+
+        $("input[level='2']").on('ifClicked', function(event){
+            var obj = $(this).attr("obj") + "_";
+            //$("input[obj^='" + obj + "']").prop("checked", $(this).prop("checked"));
+            if (!$(this).prop('checked')) {
+                $("input[obj^='" + obj + "']").iCheck('check');
+            } else {
+                $("input[obj^='" + obj + "']").iCheck('uncheck');
+            }
+            //分隔obj为数组
+            var tem = obj.split("_");
+            //将当前模块父级选中
+            if (!$(this).prop('checked')) {
+                $("input[obj='node_" + tem[1] + "']").iCheck('check');
+            }
+        });
+
+
+        //为操作时只要有勾选就选中所属模块和所属项目
+        $("input[level='3']").on('ifClicked', function(event){
+            var tem = $(this).attr("obj").split("_");
+            if (!$(this).prop('checked')) {
+                //所属项目
+                $("input[obj='node_" + tem[1] + "']").iCheck('check');
+                //所属模块
+                $("input[obj='node_" + tem[1] + "_" + tem[2] + "']").iCheck('check');
+            }
+        });
+
+        //重置初始状态，勾选错误时恢复
+        $(".reset").click(function() {
+            setAccess();
+        });
+
+        //清空当前已经选中的
+        $(".empty").click(function() {
+            $("input[type='checkbox']").iCheck('uncheck');
+        });
+
+        $("#submit").click(function() {
+        	var chk_value =[];
+        	$('input[name="data[]"]:checked').each(function(){
+        		chk_value.push($(this).attr("obj"));
+        	});
+        	$('#checkvalue').val(chk_value);
+        	$('#myform').submit();
+        });
+
+    });
+</script>

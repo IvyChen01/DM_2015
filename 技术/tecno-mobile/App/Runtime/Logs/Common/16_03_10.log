@@ -1,0 +1,30 @@
+[ 2016-03-10T19:02:32+08:00 ] 194.187.249.106 /index.php?a=service&c=Index&m=Home'
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+ERR: _MODULE_NOT_EXIST_:Home'
+
+[ 2016-03-10T19:02:33+08:00 ] 194.187.249.106 /index.php?a=contact&c=Index&m=Home'
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+ERR: _MODULE_NOT_EXIST_:Home'
+
+[ 2016-03-10T19:02:33+08:00 ] 194.187.249.106 /index.php?cid=357&c=Product&a=goodsCatDetail&m=Home'
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+ERR: _MODULE_NOT_EXIST_:Home'
+
+[ 2016-03-10T19:02:34+08:00 ] 194.187.249.106 /index.php?catId=39&c=Article&a=articleCatDetail&m=Home'
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+ERR: _MODULE_NOT_EXIST_:Home'
+
+[ 2016-03-10T21:33:42+08:00 ] 178.206.118.64 /index.php?m=-1%27&c=Article&a=detail&cid=39&id=242
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+ERR: _MODULE_NOT_EXIST_:-1'
+

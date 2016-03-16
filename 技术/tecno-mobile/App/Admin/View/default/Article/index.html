@@ -1,0 +1,52 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="{:U($Think.ACTION_NAME)}" method="post">
+        <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <div class="bjui-searchBar">
+            <label>{$Think.lang.title}：</label><input type="text" name="search[title]" value="{$search.title}" />
+            <label>{$Think.lang.content}：</label><input type="text" name="search[content]" value="{$search.content}" /></li>
+            <button type="submit" class="btn-default" data-icon="search">{$Think.lang.search}</button>
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">{$Think.lang.operation}<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                        <li><a href="{:U('add')}" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true"><i class="fa fa-plus"></i> {$Think.lang.new_add}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+        <thead>
+            <tr>
+                <th width='40'>ID</th>
+               <th width='80'>{$Think.lang.cat}</th>
+               <th width='160'>{$Think.lang.title}</th>
+               <th width='40'>{$Think.lang.hit_num}</th>
+               <th width='80'>{$Think.lang.author}</th>
+               <th width='100'>{$Think.lang.last_update}</th>
+                <th width="150">{$Think.lang.operation}</th>
+            </tr>
+        </thead>
+        <volist name="list" id="vo">
+            <tr>
+                <volist name="tableFields" id="tvo">
+                    <td>{$vo.$key}</td>
+                </volist>
+                <td>
+
+                    <a href="{:U('edit?id=' . $vo[id])}" class="btn btn-default glyphicon glyphicon-pencil" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">{$Think.lang.edit}</a>
+                    <a href="{:U('remove?id='.$vo[id])}" class="btn btn-red glyphicon glyphicon-trash" data-toggle="doajax" data-confirm-msg="{$Think.lang.delete_confirm}">{$Think.lang.delete}</a>
+                </td>
+            </tr>
+        </volist>
+    </table>
+</div>
+
+<include file="./App/Common/View/Common/pageFooter.html" />

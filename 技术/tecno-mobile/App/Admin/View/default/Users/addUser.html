@@ -1,0 +1,108 @@
+   <div class="bjui-pageContent">
+	<iframe name="upload" style="display:none"></iframe>
+			<form id="uploadform_Filedata" autocomplete="off" style="position:absolute;top:20px;left:115px;z-index:10;" enctype="multipart/form-data" method="POST" target="upload" action="{:U('uploadPic')}" >
+				<div style="position:relative;">
+				<input id="userPhoto" name="userPhoto"  class="form-control wst-ipt" type="text" value="{$info.userPhoto}" readonly style="margin-right:4px;float:left;margin-left:8px;width:250px;"/>
+				<div class="div1" style="position:absolute;left:280px;">
+					<!-- <div class="div2">浏览</div> -->
+					<input type="file" class="inputstyle" id="Filedata" name="Filedata" onchange="updfile('Filedata');" >
+				</div>
+				<div style="clear:both;"></div>
+				<!-- <div >&nbsp;图片大小:1400 x 300 (px)(格式为 gif, jpg, jpeg, png)</div> -->
+				<input type="hidden" name="dir" value="user">
+				<input type="hidden" name="width" value="1400">
+				<input type="hidden" name="folder" value="Filedata">
+				<input type="hidden" name="sfilename" value="Filedata">
+				<input type="hidden" name="fname" value="userPhoto">
+				<input type="hidden" id="s_Filedata" name="s_Filedata" value="">
+				
+				</div>
+		</form>
+       <form id="addForm" class="form-horizontal required-validate" role="form" action="{:U($Think.ACTION_NAME)}" data-toggle="validate" data-reload-navtab="true">
+            <input type="hidden" id="pk" name="userId" value="{$info[userId]}">
+        <table class="table table-hover table-striped table-bordered wst-form">
+           
+           <tr style="height:60px;">
+             <th align='right'>{$Think.lang.avatar}：</th>
+             <td><!-- <input type="hidden" id="adPic" name="adPic" class="form-control wst-ipt" value=""/> -->
+               <input type="hidden" id="userPic"  name="userPic" value="" />
+             </td>
+           </tr>
+           <tr>
+             <th align='right'>{$Think.lang.preview}：</th>
+             <td height='40'>
+             	<div id="preview_Filedata">
+               <img id='preview' src='__ROOT__/{$info.userPhoto}' height='152' <if condition="$info['userPhoto'] =='' ">style='display:none'</if>/>
+               </div>
+             </td>
+             
+           </tr>
+           <tr>
+             <th align='right'>{$Think.lang.account}<font color='red'>*</font>：</th>
+             <td>
+                 <input data-rule="required" <if condition="ACTION_NAME eq 'edit'">disabled="disabled"</if>name="loginName" type="text" class="form-control input-sm" value="{$info[loginName]}" />
+             </td>
+           </tr>
+           <tr>
+             <th align='right'>{$Think.lang.password}<font color='red'>*</font>：</th>
+             <td>
+                 <input class="form-control input-sm" data-rule="required" name="loginPwd" id="pwd" type="password" value="{$info[loginPwd]}" />
+             </td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>{$Think.lang.email}<font color='red'>*</font>：</th>
+             <td><input name="userEmail" id="email" type="text" data-rule="required email"  class="form-control input-sm" value="{$info[userEmail]}" /></td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>{$Think.lang.name}</th>
+             <td><input name="userName"  type="text" class="form-control input-sm" value="{$info[userName]}" /></td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>{$Think.lang.mobile}<font color='red'>*</font>：</th>
+             <td> <input class="form-control input-sm" name="userPhone" data-rule="required" type="text" value="{$info[userPhone]}" /></td>
+           </tr>
+          <tr>
+             <th width='120' align='right'>{$Think.lang.credit}：</th>
+             <td>
+             <input class="form-control input-sm" name="userScore" type="text" value="{$info[userScore]}" /></td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>{$Think.lang.status}：</th>
+             <td> <select name="userStatus" class="form-control input-sm">
+                             <if condition="$info.userStatus eq 1">
+                                <option value="1" selected>{$Think.lang.enable}</option>
+                                <option value="0">{$Think.lang.forbid}</option>
+                                <else/>
+                                <option value="1">{$Think.lang.enable}</option>
+                                <option value="0" selected>{$Think.lang.forbid}</option>
+                            </if>
+                    </select></td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>{$Think.lang.sex}：</th>
+             <td> <select name="userSex" class="form-control input-sm">
+                         <if condition="$info.sex eq 1">
+                                <option value="1" selected>{$Think.lang.male}</option>
+                                <option value="2">{$Think.lang.female}</option>
+                                <else/>
+                                <option value="1">{$Think.lang.male}</option>
+                                <option value="2" selected>{$Think.lang.female}</option>
+                            </if>
+                    </select></td>
+           </tr> 
+        </table>
+       </form>
+</div>
+<div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">{$Think.lang.close}</button></li>
+		<!-- <li><button type="submit" class="btn-default" data-icon="save">保存</button></li> -->
+		<li><button id="submit" type="submit" class="btn btn-success" data-icon="save">{$Think.lang.save}</button></li>
+	</ul>
+</div>
+<script>
+$("#submit").click(function(){
+    $("#userPic").val($.trim($("#userPhoto").val()));
+	$("#addForm").submit();
+});
+</script>

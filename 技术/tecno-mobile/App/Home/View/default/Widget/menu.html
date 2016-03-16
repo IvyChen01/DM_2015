@@ -1,0 +1,16 @@
+<ul class="nav navbar-nav">
+    <volist name="cate" id="vo">
+         <php>if(is_array($vo['child'][0])){</php>
+         <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{$vo.name}">{$vo.name}<span class="caret"></span></a>
+             <ul class="dropdown-menu">
+                 <php>foreach($vo['child'] as $childKey=>$childValue){</php>
+                 <li>{$childValue.link}</li>
+                 <php>}</php>
+             </ul>
+         </li>
+         <php>}else{</php>
+         <li <php>if($vo["cid"] == $_GET["cid"]){echo 'class="active"';}elseif($key == 0 && $_GET[cid] == ""){echo 'class="active"';}</php>>{$vo.link}</li>
+         <php>}</php>
+    </volist>
+</ul>

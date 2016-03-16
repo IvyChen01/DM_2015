@@ -1,0 +1,58 @@
+<div class="bjui-pageHeader">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="{:U($Think.ACTION_NAME)}" method="post">
+	    <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+		<select name="search[catId]" data-toggle="selectpicker" >
+			<option value="">{$Think.lang.select_cat}</option>
+			<option value="0">{$Think.lang.all}</option>
+			<volist name="cats" id="vo" key='i'>
+		       		<option <if condition="$vo['catId'] eq $search.catId">selected</if> value="{$vo['catId']}" >{$vo["catName"]}</option>
+		    </volist>
+		</select>            
+		<input placeholder='{$Think.lang.brands_name}' id="brandName" type="text" name="search[brandName]" value="{$search.brandName}"  autocomplete="off"/>
+		<button type="submit" class="btn-default" data-icon="search">{$Think.lang.search}</button>
+		<!-- <span><a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">刷新</a></span> -->
+		<div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">{$Think.lang.operation}<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                        <li><a href="{:U('toEdit')}" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">{$Think.lang.new_add}</a></li></ul>
+                </div>
+            </div>
+	</form>
+</div>
+
+<div class="bjui-pageContent">
+	<!-- 内容区 -->
+	
+	<table class="table table-bordered table-hover table-striped table-top" data-layout-h="0" data-selected-multi="true">
+		<thead>
+			<tr>
+				<!-- <th>序号</th> -->
+				<th width='30'>{$Think.lang.sort}</th>
+               <th width='80'>{$Think.lang.brands_name}</th>
+               <th width="400">{$Think.lang.brand_desc}</th>
+               <th width='50'>{$Think.lang.brand_pic}</th>
+               <th width='150'>{$Think.lang.operation}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="list" id="vo" key='i'>
+             <tr>
+               <td>{$i}</td>
+               <td>{$vo['brandName']}</td>
+               <td style="height:100px; overflow:hidden;">{$vo['brandDesc']|strip_tags|substr=###,0,360}</td>
+               <td><img src='{$vo['brandIco']}' height='50'/></td>
+               <td>
+                <a href="{:U('del?id=' . $vo[brandId])}" class="btn btn-red glyphicon glyphicon-trash" data-toggle="doajax" data-confirm-msg='{$Think.lang.delete_confirm}'>{$Think.lang.delete}</a>
+				<a href="{:U('toEdit?id=' . $vo[brandId])}" class="btn btn-default glyphicon glyphicon-pencil" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">{$Think.lang.edit}</a>
+               </td>
+             </tr>
+             </volist>
+		</tbody>
+	</table>
+	
+</div>
+<include file="./App/Common/View/Common/pageFooter.html" />

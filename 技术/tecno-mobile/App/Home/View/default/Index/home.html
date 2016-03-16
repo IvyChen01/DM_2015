@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>tecno-mobile</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/grid.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="__PUBLIC__/css/reset.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="__PUBLIC__/css/default.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="__PUBLIC__/css/jquery.bxslider.css" media="screen" title="no title" charset="utf-8">
+    <link rel="shortcut icon" href="__PUBLIC__/Img/logo/favicon.ico">
+    <style media="screen">
+    @media(min-width:780px){
+      .content.slide{height:100%}
+    }
+    </style>
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+  </head>
+  <body id="top" class="english">
+    <!--nav-->
+<header class="slide">
+    			<ul id="navToggle" class="burger slide">
+    				<li></li><li></li><li></li>
+    			</ul>
+    			<a href="{:U('Home/Index/index','','')}" class="head-brand"><img src="__PUBLIC__/Img/logo/brand.png" class="img-res" alt="brand" /></a>
+
+          <!--select lang-->
+          <div class="select_down" id="sel">
+            <dl class="">
+              <dt><h3>CHANGE LANGUAGE</h3><a href="javascript:;"></a></dt>
+              <ul>
+                <li><a href="javascript:select_en()">English</a></li>
+                <li><a href="javascript:select_fr()">French</a></li>
+              </ul>
+            </dl>
+          </div>
+          <!--end select lang-->
+
+          <div class="searchbox rightRs">
+            <input type="text" class="search-int" name="name" value="">
+            <a href="javascript:;" class="searchbtn"><img src="__PUBLIC__/Img/logo/tecno-search.png" alt="" /></a>
+          </div>
+    </header>
+    <!--/nav-->
+    <nav class="slide">
+			<ul>
+				<li><a href="{:U('Home/Index/index','','')}" class="active">{$Think.lang.home}</a></li>
+				<li class="addall"><a href="{:U('Home/Product/index','','')}">{$Think.lang.product}</a>
+          <ul class="tele-products">
+            <li><a href="{:U('Home/Product/index','','')}">{$Think.lang.all}</a></li>
+            <volist name="goodsCatslist" id="vo">
+                 <li><a href="{:U('Home/Product/goodsCatDetail',array('cid'=>$vo['catId']))}">{$vo['catName']}</a></li>
+             </volist>
+            <!-- <li><a href="javascript:;">Phantom</a></li>
+            <li><a href="javascript:;">Boom</a></li>
+            <li><a href="javascript:;">Other Smart Phones</a></li>
+            <li><a href="javascript:;">Tablets</a></li>
+            <li><a href="javascript:;">Feature Phones</a></li> -->
+          </ul>
+        </li>
+				<li><a href="{:U('Home/Article/index','','')}">{$Think.lang.news}</a></li>
+				<li><a href="{:U('Home/Index/service','','')}">{$Think.lang.retail_center}</a></li>
+				<li><a href="http://bbs.tecno-mobile.com/">TECNO SPOT</a></li>
+				<li><a href="{:U('Home/Index/contact','','')}">{$Think.lang.contact_us}</a></li>
+			</ul>
+		</nav>
+<!--div tecnonav-->
+    <!--addnav desktop-->
+    <section>
+      <div class="addnav">
+        <ul>
+           <li><a href="{:U('Home/Product/index','','')}"><div class="icon all"></div><i class="addnav-title">{$Think.lang.all}</i></a></li>
+           <volist name="goodsCatslist" id="vo" key='i'>
+                 <li><a href="{:U('Home/Product/goodsCatDetail',array('cid'=>$vo['catId']))}"><div class="icon" id="goodscat{$i}"></div><i class="addnav-title">{$vo['catName']}</i></a></li>
+             </volist>
+          <!-- <li><a href="javascript:;"><div class="icon phantom"></div><i class="addnav-title">Phantom</i></a></li>
+          <li><a href="javascript:;"><div class="icon boom"></div><i class="addnav-title">Boom</i></a></li>
+          <li><a href="javascript:;"><div class="icon other"></div><i class="addnav-title">Other Smart Phones</i></a></li>
+          <li><a href="javascript:;"><div class="icon feature"></div><i class="addnav-title">Feature Phones</i></a></li>
+          <li><a href="javascript:;"><div class="icon table"></div><i class="addnav-title">Tablets</i></a></li> -->
+        </ul>
+      </div>
+    </section>
+    <!--end addnav desktop-->
+
+    <div class="content slide">
+      <!--bxslider-->
+      <div class="home-slide">
+        <ul id="bxslider">
+          <volist name="adsList" id="avo" key='i'>
+          <li><a href="{$avo.adURL}" style="background-image:url({$avo.adFile})"><img src="{$avo.adFile}" class="hide-dp" alt="" /></a></li>
+          </volist>
+        </ul>
+        <div class="star-product hide-dl" id="starproducts">
+          <a href="javascropt:;" class="closestar">×</a>
+          <a href="#starproducts" class="trigger">
+            <span class="scroll-arrow"></span>
+            {$Think.lang.product_star}
+          </a>
+        </div>
+      </div>
+
+      <!--moduletable-->
+      <div class="moduletable-container">
+      <div class="moduletable">
+        <div class="headerable">
+          {$Think.lang.product_star}
+        </div>
+        <ul id="moduletable">
+          <volist name="recommGoodsList" id="rvo" key="i">
+     
+           <li class="purple"><div class="pic"><img src="{$rvo['goodsImg']}" alt="" /></div>
+            <div class="details"><h2>{$rvo['goodsName']}</h2>
+              <div class="btn-container"><a href="{:U('Home/Product/getGoodsDetail',array('goodsCatId1'=>$rvo['goodsCatId1'],'goodsCatId2'=>$rvo['goodsCatId2'],'goodsId'=>$rvo['goodsId']))}" class="btn">Learn More</a></div>
+            </div>
+          </li>
+          </volist>
+         
+
+          <!-- <li class="blue"><div class="pic"><img src="__PUBLIC__/Img/test/ad_m6.png" alt="" /></div>
+            <div class="details"><h2>J7</h2>
+              <div class="btn-container"><a href="javascript:;" class="btn">En savoir plus</a></div>
+            </div>
+          </li>
+
+          <li class="green"><div class="pic"><img src="__PUBLIC__/Img/test/ad_z_mini.png" alt="" /></div>
+            <div class="details"><h2>J7</h2>
+              <div class="btn-container"><a href="javascript:;" class="btn">En savoir plus</a></div>
+            </div>
+          </li>
+
+          <li class="blue"><div class="pic"><img src="__PUBLIC__/Img/test/ad_h6.png" alt="" /></div>
+            <div class="details"><h2>J7</h2>
+              <div class="btn-container"><a href="javascript:;" class="btn">En savoir plus</a></div>
+            </div>
+          </li> -->
+        </ul>
+      </div></div>
+      <!--end moduletable-->
+
+      <!--last news-->
+      <div class="lastnews">
+        <ul>
+          <li class="press-block block purple">
+            <div class="icon-wrapper clearfloat">
+              <span class="icon press"></span>
+                {$Think.lang.press_reless}</div>
+              <ul class="press-list">
+                 <volist name="articleList" id="atvo" offset="0" length='3'>
+                     <li class="press-item"><a href="{:U('Home/Article/detail',array('cid'=>$atvo['cid'],'id'=>$atvo['id']))}" class="clearfloat">
+                  <span class="date-wrapper">
+                    <span class="date">{$atvo['day']}</span><span class="month">{$atvo['mon']},{$atvo['year']}</span>
+                  </span>
+                  <span class="details-wrapper"><span class="title">{$atvo['title']}</span>
+                    <span class="desc">{$atvo['description']}
+                  </span>
+                </a></li>
+                 </volist>
+                <!-- <li class="press-item"><a href="javascript:;" class="clearfloat">
+                  <span class="date-wrapper">
+                    <span class="date">9th</span><span class="month">Apr,15</span>
+                  </span>
+                  <span class="details-wrapper"><span class="title">Mini Z PHANTOM TECNO qui vous fascine</span>
+                    <span class="desc">Étant le tout premier téléphone TECNO sortie pour 2015, le Phantom Z Mini (alias mini-Z</span>
+                  </span>
+                </a></li>
+
+                <li class="press-item"><a href="javascript:;" class="clearfloat">
+                  <span class="date-wrapper">
+                    <span class="date">9th</span><span class="month">Apr,15</span>
+                  </span>
+                  <span class="details-wrapper"><span class="title">Mini Z PHANTOM TECNO qui vous fascine</span>
+                    <span class="desc">Étant le tout premier téléphone TECNO sortie pour 2015, le Phantom Z Mini (alias mini-Z</span>
+                  </span>
+                </a></li>
+
+                <li class="press-item"><a href="javascript:;" class="clearfloat">
+                  <span class="date-wrapper">
+                    <span class="date">9th</span><span class="month">Apr,15</span>
+                  </span>
+                  <span class="details-wrapper"><span class="title">Mini Z PHANTOM TECNO qui vous fascine</span>
+                    <span class="desc">Étant le tout premier téléphone TECNO sortie pour 2015, le Phantom Z Mini (alias mini-Z</span>
+                  </span>
+                </a></li> -->
+
+              </ul>
+          </li>
+
+
+          <li class="updates-block block grey">
+            <div class="campaigns">
+              <div class="icon-wrapper clearfloat">
+                <span class="icon campaigns"></span>
+                                {$Think.lang.campagnes}
+              </div>
+              <volist name="articleList2" id="atvo2" offset="0" length='1'>
+              <a href="{:U('Home/Article/detail',array('cid'=>$atvo2['cid'],'id'=>$atvo2['id']))}" class="pic-wrapper"><img src="{$atvo2['thumbnail']}" class="pic" alt="Campaignes" /></a>
+              <div class="details-wrapper">
+                <h2>{$atvo2['title']}</h2>
+                <p>
+                  {$atvo2['description']}
+                </p>
+                <a href="{:U('Home/Article/detail',array('cid'=>$atvo2['cid'],'id'=>$atvo2['id']))}"class="btn">{$Think.lang.learn_more}</a>
+              </div>
+              </volist>
+            </div>
+          </li>
+
+          <li class="updates-block block light-grey">
+            <div class="reviews">
+              <div class="icon-wrapper clearfloat">
+                <span class="icon reviews"></span>
+                    {$Think.lang.reviews}
+              </div>
+              <volist name="articleList3" id="atvo" offset="0" length='1'>
+              <a href="{:U('Home/Article/detail',array('cid'=>$atvo['cid'],'id'=>$atvo['id']))}" class="pic-wrapper video-popup" id="video-open">
+                <img src="{$atvo['thumbnail']}" class="pic" alt="Reviews" />
+                <div class="btn-play" data-video="{$atvo['vediourl']}">
+                  <img src="__PUBLIC__/Img/logo/video-play.png"  alt="Play" />
+                </div>
+              </a>
+              <div class="details-wrapper">
+                <h2>{$atvo['title']}</h2>
+                <p>
+                  {$atvo['description']}
+                </p>
+                <a href="{:U('Home/Article/detail',array('cid'=>$atvo3['cid'],'id'=>$atvo['id']))}" class="btn">{$Think.lang.learn_more}</a>
+              </div>
+              </volist>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+      <!--end last news-->
+
+      <!--backtotop-->
+      <a href="javascript:;" class="back-to-top fade-out">
+        <span class="arrow"></span>
+        <span class="text">{$Think.lang.back_to_top}</span>
+      </a>
+      <!--end backtotop-->
+
+      <!--overlay-->
+      <div class="overlay"></div>
+      <!--end overlay-->
+      <!--popup-->
+      <div class="popup">
+        <a href="javascript:;" id="video-close" class="closevideo"></a>
+        <div class="video-content">
+          <iframe id="ifrm" frameboder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <!--end popup-->
+
+      <!--footer-->
+      <div class="footer clearfloat">
+        <div class="logo-wrapper clearfloat">
+          <a href="{:U('Home/Index/index','','')}" class="logoset"><img src="__PUBLIC__/Img/logo/footer-logo.png" alt="TECNO Mobile" /></a>
+          <div class="copyright">
+            <strong>© 2015 TECNO Mobile.</strong>
+          </div>
+          <ul class="social">
+            <li><a href="https://www.facebook.com/tecnomobile/" target="_block" class="icon facebook">Facebook</a></li>
+            <li><a href="https://twitter.com/TecnoAfrica" target="_block" class="icon twitter">Twitter</a></li>
+            <li><a href="https://www.youtube.com/user/TecnoTelecomLimited" target="_block" class="icon rss">Youtube</a></li>
+          </ul>
+          <div class="language-selector">
+            <div class="lang-popup">
+              <ul>
+                <li><a href="{:U('Home/Index/index',array('l'=>'en-gb'))}">English</a></li>
+                <!-- <li><a href="{:U('Home/Index/index','','')}">العربية</a></li> -->
+                <li><a href="{:U('Home/Index/index',array('l'=>'fr-fr'))}">French</a></li>
+              </ul>
+            </div>
+            <a href="javascript:;" class="select-lang">CHange Language</a>
+          </div>
+        </div>
+
+        <div class="links-wrapper">
+          <ul>
+            <li class="title"><a href="{:U('Home/Product/index','','')}">{$Think.lang.product}</a></li>
+            <volist name="goodsCatslist" id="vo">
+                 <li><a href="{:U('Home/Product/goodsCatDetail',array('cid'=>$vo['catId']))}">{$vo['catName']}</a></li>
+             </volist>
+             
+            <!-- <li><a href="http://123.56.100.227/fr/component/products/category/4">Fantôme</a></li>
+            <li><a href="http://123.56.100.227/fr/component/products/category/5">Boom</a></li>
+            <li><a href="http://123.56.100.227/fr/component/products/category/2">Autres téléphones intelligents</a></li>
+            <li><a href="http://123.56.100.227/fr/component/products/category/3">Tablettes</a></li>
+            <li><a href="http://123.56.100.227/fr/component/products/category/1">Fonctionnalité des téléphones</a></li> -->
+          </ul>
+
+          <ul>
+            <li class="title"><a href="{:U('Home/Article/index','','')}">{$Think.lang.news}</a></li>
+            <volist name="articleCatList" id="vo">
+               <li><a href="{:U('Home/Article/articleCatDetail',array('catId'=>$vo['catId']))}">{$vo['catName']}</a></li>
+            </volist>
+            
+            <!-- <li><a href="{:U('Home/Article/index',array('catId'=>'38'))}">{$Think.lang.press_reless}</a></li> -->
+          </ul>
+
+          <ul>
+            <li class="title"><a href="javascript:void(0);">{$Think.lang.links}</a></li>
+            <li><a href="http://www.carlcare.com/">{$Think.lang.carlcare}</a></li>
+            <li><a href="/TERMS_AND_CONDITIONS.pdf">{$Think.lang.terms}</a></li>
+			<li><a href="http://bbs.tecno-mobile.com/">TECNO forum</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--end footer-->
+
+		</div>
+  
+  <!-- <script src="__PUBLIC__/Js/jquery.js" charset="utf-8"></script> -->
+  <script src="{:C('STATIC_PATH')}Plugins/BJUI/js/jquery-1.9.1.js"></script>
+  <script src="__PUBLIC__/Js/jquery.bxslider.min.js" charset="utf-8"></script>
+  <script src="__PUBLIC__/Js/main.js" charset="utf-8"></script>
+  <script src="__PUBLIC__/Js/nav.js" charset="utf-8"></script>
+  <script>
+  $(function(){
+		 $('#goodscat1').addClass('phantom');
+		 $('#goodscat2').addClass('boom');
+		 $('#goodscat3').addClass('other');
+		 $('#goodscat4').addClass('feature');
+		 $('#goodscat5').addClass('table');
+	  });
+  function select_en(){
+ 	 url = '__SELF__';
+ 	 var reg = 'l=';
+ 	 var r = url.match(reg);
+ 	 var regurl = 'index.php';
+ 	 var rs = url.match(regurl);
+ 	 if(rs==null){
+	    url = url + "index.php?l=en-gb"; 
+	 }else{
+	    if(r==null){
+	    	url = url + "&l=en-gb";
+	    }else{
+	    	url = url.replace('en-gb','');
+			url = url.replace('fr-fr','');
+			url = url + "en-gb"; 
+	    }
+			
+	}
+ 	location.href  = url;
+ }
+ function select_fr(){
+	 url = '__SELF__';
+ 	 var reg = 'l=';
+ 	 var r = url.match(reg);
+ 	 var regurl = 'index.php';
+ 	 var rs = url.match(regurl);
+ 	 if(rs==null){
+	    url = url + "index.php?l=fr-fr"; 
+	 }else{
+	    if(r==null){
+	    	url = url + "&l=fr-fr";
+	    }else{
+	    	url = url.replace('en-gb','');
+			url = url.replace('fr-fr','');
+			url = url + "fr-fr"; 
+	    }
+			
+	}
+ 	 location.href  = url;
+ }
+  </script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+  ga('create', 'UA-59533821-2', 'auto');
+  ga('send', 'pageview');
+ 
+</script>
+  </body>
+</html>

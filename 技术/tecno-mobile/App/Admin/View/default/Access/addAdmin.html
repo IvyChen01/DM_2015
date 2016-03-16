@@ -1,0 +1,75 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">
+            <strong>添加/编辑信息</strong>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <form id="addForm" action="" method="post">
+            <input type="hidden" id="pk" name="uid" value="{$info.uid}" />
+            <input name="username" type="hidden" value="{$info.username}" />
+            <table class="table table-hover">
+                <tr>
+                    <th width="120">用户名：</th>
+                    <td>
+                        <input <if condition="ACTION_NAME eq 'editAdmin'">disabled="disabled"</if>name="username" type="text" class="form-control input-sm" value="{$info.username}" /></td>
+                </tr>
+                <tr>
+                    <th width="120">邮箱地址：</th>
+                    <td>
+                        <input <if condition="ACTION_NAME eq 'editAdmin'">disabled="disabled"</if>name="email" type="text" class="form-control input-sm" value="{$info.email}" />
+                    </td>
+                </tr>
+                <tr>
+                    <th width="120">姓名：</th>
+                    <td>
+                        <input name="name" type="text" class="form-control input-sm" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>新密码：</th>
+                    <td>
+                        <input class="form-control input-sm" name="pwd" type="password" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>状态：</th>
+                    <td>
+                        <select name="status" class="form-control input-sm">
+                            <if condition="$info.status eq 1">
+                                <option value="1" selected>启用</option>
+                                <option value="0">禁用</option>
+                                <else/>
+                                <option value="1">启用</option>
+                                <option value="0" selected>禁用</option>
+                            </if>
+                        </select>
+                        如果禁用了将无法登陆本系统</td>
+                </tr>
+                <tr>
+                    <th>所属用户组</th>
+                    <td>
+                        <select name="role_id" class="form-control input-sm">{$info.roleOption}</select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>备注：</th>
+                    <td>
+                        <textarea name="remark" rows="5" class="form-control input-sm">{$info.remark}</textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div class="btn-group">
+            <button type="button" class="btn btn-info btn-sm submitForm">
+                <i class="fa fa-save"></i>保存</button>
+            <button type="button" class="btn btn-danger btn-sm del" link="__URL__/remove/id/{$info.id}">
+                <i class="fa fa-minus"></i>删除</button>
+            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">
+                <i class="fa fa-remove"></i>关闭</button>
+        </div>
+    </div>
+</div>

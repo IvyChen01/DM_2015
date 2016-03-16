@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+    <head>
+        <title>使用ThinkPHP、jQuery和JSON创建公共API实例演示</title>
+        <script type="text/javascript" src="http://localhost:86/App/Public/Js/jquery-1.9.0.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $.getJSON("http://localhost:86/Admin/Json/getMemberList",function(data){
+                    $.each(data, function(index, content){
+                        $("#output").append("<li>"+index+"."+content.title+"</li>");
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <ul id="output"></ul>
+    </body>
+</html>

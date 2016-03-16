@@ -1,0 +1,36 @@
+<div class="bjui-pageContent">
+   <form id="addForm" class="form-horizontal required-validate" role="form" action="{:U('edit')}" data-toggle="validate" data-reload-navtab="true">
+			<input type="hidden" id="pk" name="rankId" value="{$info.rankId}">
+        <table class="table table-hover table-striped table-bordered wst-form">
+           <tr>
+             <th width='120' align='right'>{$Think.lang.level_name}<font color='red'>*</font>：</th>
+             <td><input data-rule="required" name="rankName" type="text" class="form-control input-sm" value="{$info.rankName}" /></td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>{$Think.lang.credit_fr}<font color='red'>*</font>：</th>
+             <td><input name="startScore" id="startScore" type="text" data-rule="required" class="form-control input-sm" value="{$info.startScore}" />
+             </td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>{$Think.lang.credit_to}<font color='red'>*</font>：</th>
+             <td><input name="endScore" id="endScore" type="text" data-rule="required" class="form-control input-sm" value="{$info.endScore}" />
+             </td>
+           </tr>
+           <tr>
+             <th align='right'>{$Think.lang.discount}<font color='red'>*</font>：</th>
+             <td>
+             <input name="rebate" id="rebate" type="text" data-rule="required" class="form-control input-sm" value="{$info.rebate}" />
+             </td>
+           </tr>
+    </table>
+        </form>
+    </div>
+    
+<div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">{$Think.lang.close}</button></li>
+		<!-- <li><button type="submit" class="btn-default" data-icon="save">保存</button></li> -->
+		<li><button id="submit" type="submit" class="btn btn-success" data-icon="save">{$Think.lang.save}</button></li>
+	</ul>
+</div>
+<script src="__PUBLIC__/Js/functions.js"></script>

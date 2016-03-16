@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{:C('siteName')}</title>
+<meta name="Keywords" content="{:C('siteName')}"/> 
+<include file="./App/Common/View/Common/intoHead.html" />
+
+</head>
+<body>
+    <include file="./App/Common/View/Common/header.html" />
+    <div id="bjui-container" class="clearfix">
+	   <include file="./App/Common/View/Common/leftMenu.html" />
+        <div id="bjui-navtab" class="tabsPage">
+            <div class="tabsPageHeader">
+                <div class="tabsPageHeaderContent">
+                    <ul class="navtab-tab nav nav-tabs">
+                        <li data-tabid="main" class="main active"><a href="javascript:;"><span><i class="fa fa-home"></i> {$Think.lang.maintab}</span></a></li>
+                    </ul>
+                </div>
+                <div class="tabsLeft"><i class="fa fa-angle-double-left"></i></div>
+                <div class="tabsRight"><i class="fa fa-angle-double-right"></i></div>
+                <div class="tabsMore"><i class="fa fa-angle-double-down"></i></div>
+            </div>
+            <ul class="tabsMoreList">
+                <li><a href="javascript:;">{$Think.lang.maintab}</a></li>
+            </ul>
+            <div class="navtab-panel tabsPageContent layoutBox">
+                <div class="page unitBox">
+                    <div class="bjui-pageHeader" style="background:#FFF;">
+                        <div style="padding: 0 5px; border-bottom: 1px #DDD solid;">
+                            <h4>{$Think.lang.system_management}</h4>
+                            <hr style="margin: 12px 0 0px;">
+                            <div class="row">
+                                <div class="col-md-4">
+                                   {$Think.lang.welcome}, {$myInfo.loginName}!
+                                </div>
+                            </div>
+                            <hr style="margin: 10px 0 0px;">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <!-- <h5>X'club论坛：<a href="http://bbs.infinixmobility.com" target="_blank">http://bbs.infinixmobility.com</a></h5> -->
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- <h5>项目地址：<a href="https://git.oschina.net/xvpindex/BJUI_TP_CMS" target="_blank">https://git.oschina.net/xvpindex/BJUI_TP_CMS</a></h5> -->
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- <h5>演示地址：<a href="http://www.topstack.cn" target="_blank">http://www.topstack.cn</a></h5> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bjui-pageFormContent" data-layout-h="0">
+                        <div style="position: absolute;top:10px;right:0;width:300px;">
+                            
+                        </div>
+                        <div style="overflow: hidden;">
+                            <div class="row" style="padding: 0 8px;">
+                                 <!-- <div class="col-md-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"><h3 class="panel-title"><i class="fa fa-bar-chart fa-fw"></i> 文章发布统计</h3></div>
+                                        <div class="panel-body">
+                                            <div style="min-width:400px;height:350px;" data-toggle="echarts" data-type="bar,line" data-url="{:U('barChart')}"></div>
+                                        </div>
+                                    </div>
+                                </div>  -->
+                                <!-- <div class="col-md-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"><h3 class="panel-title"><i class="fa fa-line-chart fa-fw"></i> 会员新增统计</h3></div>
+                                        <div class="panel-body">
+                                            <div style="min-width:400px;height:350px;" data-toggle="echarts" data-type="line,bar" data-url="{:U('lineChart')}"></div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <include file="./App/Common/View/Common/footer.html" />
+</body>
+</html>

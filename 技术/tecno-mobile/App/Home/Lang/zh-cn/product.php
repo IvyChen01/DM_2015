@@ -1,0 +1,22 @@
+<?php
+return array(
+    'product' => 'PRODUCTS',
+    'home' => 'HOME',
+    'news'  => 'TECNO BUZZ',
+    'retail_center' => 'RETAIL CENTER',
+    'contact_us' => 'CONTACT US',
+    'links' => 'OTHER LINKS',
+    'carlcare' => 'CarlCare',
+    'terms' => 'Terms & Conditions',
+    'learn_more' => 'LEARN MORE',
+    'back_to_top' => 'BACK　TO TOP',
+    'product_star' => 'STAR PRODUCTS',
+    'press_reless' => 'PRESS RELEASES',
+    'campagnes' => 'Campagnes',
+    'reviews' => 'Reviews',
+    'filter_filter' => 'Filter through all our products using our smart filter',
+    'compare' =>'Compare',
+    'more' => 'More',
+    'highlights' => 'Highlights',
+    'specifications' => 'Specifications',
+);
