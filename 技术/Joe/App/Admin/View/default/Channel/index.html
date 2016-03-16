@@ -1,0 +1,106 @@
+<div class="bjui-pageHeader">
+    <form action="{:U($Think.ACTION_NAME)}"  method="POST" class="pageForm" data-toggle="validate" data-reload="true">
+            <input type="hidden" name="act" value="add" />
+            <select name="data[fid]" data-toggle="selectpicker" data-rule="required">
+                <option value="">请选择分类</option>
+                <option value="0">顶级分类</option>
+                <volist name="list" id="vo">
+                    <option value="{$vo.cid}">{$vo.fullname}</option>
+                </volist>
+            </select>
+            <select name="data[model]" id="newModel" data-toggle="selectpicker" data-rule="required">
+                <option value="">请选择模型</option>
+                <option value="singlePage">单独页</option>
+                <option value="news">新闻模型</option>
+                <option value="product">产品模型</option>
+            </select>
+            <input placeholder="你要添加的栏目名称" id="newName" type="text" name="data[name]" value="" data-rule="required" />
+            <input placeholder="你要添加的栏目代码" id="newCode" type="text" name="data[code]" value="" data-rule="required" />
+            <button type="submit" class="btn-default">确定添加</button>
+    </form>
+</div>
+
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <table class="table table-bordered table-hover table-striped table-top" data-layout-h="0" data-selected-multi="true">
+        <thead>
+            <tr>
+                <th>排序</th>
+                <th>原分类结构</th>
+                <th>操作属性</th>
+                <th>新分类</th>
+                <th>修改排序</th>
+                <th>显示位置</th>
+                <th>栏目名称</th>
+                <th>栏目模型</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="list" id="tree">
+                <form action="{:U($Think.ACTION_NAME)}" method="POST" class="pageForm" data-toggle="validate" data-reload="true">
+                    <input type="hidden" name="data[cid]" value="{$tree.cid}" />
+                    <tr>
+                        <td>{$tree.oid}</td>
+                        <td>
+                            <if condition="$tree.fid eq 0"><b>{$tree.fullname}</b>
+                                <else/>{$tree.fullname}</if>
+                            <if condition="$tree.status eq 0">[
+                                <font color="red">禁</font>]</if>
+                        </td>
+                        <td>
+                            <select name="act" data-toggle="selectpicker" class="act">
+                                <option selected="selected" value="edit">修改分类</option>
+                                <option value="del">删除分类</option>
+                                <option value="add">添加子类</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="data[fid]" data-toggle="selectpicker">
+                                <option value="0">顶级分类</option>
+                                <volist name="list" id="vo1">
+                                    <if condition="$vo1['cid'] eq $tree['cid']">
+                                        <option value="{$vo1.cid}" selected="selected" readonly>{$vo1.fullname}</option>
+                                        <else/>
+                                        <option value="{$vo1.cid}">{$vo1.fullname}</option>
+                                    </if>
+                                </volist>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" value="{$tree.oid}" name="data[oid]" placeholder="排序" size="5" />
+                        </td>
+                        <td>
+                            <select name="data[position]" data-toggle="selectpicker">
+                                <option value="1" <if condition="1 eq $tree['position']">selected="selected"</if>>顶部</option>
+                                <option value="2" <if condition="2 eq $tree['position']">selected="selected"</if>>菜单</option>
+                                <option value="3" <if condition="3 eq $tree['position']">selected="selected"</if>>底部</option>
+                                <option value="12" <if condition="12 eq $tree['position']">selected="selected"</if>>顶部+菜单</option>
+                                <option value="13" <if condition="13 eq $tree['position']">selected="selected"</if>>顶部+底部</option>
+                                <option value="23" <if condition="23 eq $tree['position']">selected="selected"</if>>菜单+底部</option>
+                                <option value="123" <if condition="123 eq $tree['position']">selected="selected"</if>>顶+菜+底部</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" value="{$tree.name}" name="data[name]" placeholder="新栏目名称" size="20" />
+                        </td>
+                        <td>
+                            <select name="data[model]" data-toggle="selectpicker">
+                                <option value="page" <if condition="page eq $tree['model']">selected="selected"</if>>单页模型</option>
+                                <option value="article" <if condition="article eq $tree['model']">selected="selected"</if>>文章模型</option>
+                                <option value="product" <if condition="product eq $tree['model']">selected="selected"</if>>产品模型</option>
+                                <option value="url" <if condition="url eq $tree['model']">selected="selected"</if>>链接模型</option>
+                                <option value="link" <if condition="link eq $tree['model']">selected="selected"</if>>外链模型</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="{:U('del?id=' . $tree[cid])}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删除</a>
+                            <button type="submit" class="btn-default">确定</button><a href="{:U('edit?cid=' . $tree[cid])}" class="btn btn-default" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">更多</a>
+                        </td>
+                    </tr>
+                </form>
+            </volist>
+        </tbody>
+    </table>
+</div>
+<include file="./App/Common/View/Common/pageFooter.html" />

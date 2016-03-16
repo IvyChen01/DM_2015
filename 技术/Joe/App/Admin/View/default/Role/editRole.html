@@ -1,0 +1,42 @@
+<div class="bjui-pageContent">
+    <form action="{:U('edit')}" class="pageForm" data-toggle="validate" data-reload-navtab="true">
+        <input type="hidden" name="id" value="{$info.id}" />
+        <table class="table table-condensed table-hover" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <label class="control-label x100">角色组名称：</label>
+                        <input name="title" type="text" size="40" value="{$info.name}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label x100">状态：</label>
+                        <select name="status" data-toggle="selectpicker">
+                        <if condition="$info.status eq 1">
+                            <option value="1" selected>启用</option>
+                            <option value="0">禁用</option>
+                            <else/>
+                            <option value="1">启用</option>
+                            <option value="0" selected>禁用</option>
+                        </if>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label x100">描述：</label>
+                        <textarea name="remark" style="width: 400px;">{$info.remark}</textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+        <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+    </ul>
+</div>

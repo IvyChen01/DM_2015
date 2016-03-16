@@ -1,0 +1,47 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="__URL__/{$Think.ACTION_NAME}" method="post">
+        <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <div class="bjui-searchBar">
+            <label>姓名：</label><input type="text" name="search[name]" value="{$search.name}" size="10" /></li>
+            <button type="submit" class="btn-default" data-icon="search">查询</button>
+            <a class="btn btn-orange" href="javascript:;" data-toggle="reloadsearch" data-clear-query="true" data-icon="undo">清空查询</a>
+            <li class="pull-right">
+                <input type="checkbox" name="lookupType" value="1" data-toggle="icheck" data-label="追加" checked>
+                <button type="button" class="btn-blue" data-toggle="lookupback" data-lookupid="ids" data-type="clearSelect" data-warn="请至少选择一项" data-icon="check-square-o">选择选中</button>
+            </li>
+        </div>
+    </form>
+</div>
+<div class="bjui-pageContent">
+    <table data-toggle="tablefixed" data-width="100%" data-layout-h="0">
+        <thead>
+            <tr>
+                <th data-order-field="cid">UID</th>
+                <th data-order-field="name">员工号</th>
+                <th data-order-field="name">姓名</th>
+                <th data-order-field="description">描述</th>
+                <th width="28"><input type="checkbox" class="checkboxCtrl" data-group="ids" data-toggle="icheck"></th>
+                <th width="74">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="list" id="vo">
+            <tr>
+                <td>{$vo.uid}</td>
+                <td>{$vo.username}</td>
+                <td>{$vo.name}</td>
+                <td>{$vo.description}</td>
+                <td><input type="checkbox" name="ids" data-toggle="icheck" value="{<php>echo I('get.field')</php>:'<php>echo $vo[uid]</php>', <php>echo I('get.fieldDisplay')</php>:'<php>echo $vo[name]</php>', uNameDisplay:'<php>echo $vo[name]</php>'}"></td>
+                <td>
+                <a href="javascript:;" data-toggle="lookupback" data-args="{<php>echo I('get.field')</php>:'<php>echo $vo[uid]</php>', <php>echo I('get.fieldDisplay')</php>:'<php>echo $vo[name]</php>', uNameDisplay:'<php>echo $vo[name]</php>'}" class="btn btn-blue" title="选择本项" data-icon="check">选择</a>
+                </td>
+            </tr>
+            </volist>
+        </tbody>
+    </table>
+</div>
+
+<include file="./App/Common/View/Common/pageFooter.html" />

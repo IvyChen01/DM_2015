@@ -1,0 +1,268 @@
+ <!-- <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=37f0869604ca86505487639427d52bf6"></script> -->
+
+<!-- <script src="{:C('STATIC_PATH')}Plugins/kindeditor/kindeditor.js"></script>
+<script src="{:C('STATIC_PATH')}Plugins/kindeditor/lang/en.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Js/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/formValidator/formValidator-4.1.3.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/functions.js"></script> -->
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDEnIWUwYQdFvJQUO5puGnqFWAHoDECL2U&sensor=false"></script>
+<script>
+   var ThinkPHP = window.Think = {
+	        "ROOT"   : "__ROOT__"
+	}
+   $(function () {
+	   $.formValidator.initConfig({
+		   theme:'Default',mode:'AutoTip',formID:"myform",debug:true,submitOnce:true,onSuccess:function(){
+				   edit();
+			       return false;
+			},onError:function(msg){
+		}});
+	   $("#loginName").formValidator({onShow:"",onFocus:"会员账号应该为5-16字母、数字或下划线",onCorrect:"输入正确"}).inputValidator({min:5,max:16,onError:"会员账号应该为5-16字母、数字或下划线"}).regexValidator({regExp:"username",dataType:"enum",onError:"会员账号格式错误"
+		}).ajaxValidator({
+			dataType : "json",
+			async : true,
+			url : "{:U('Admin/Users/checkLoginKey')}",
+			success : function(data){
+				var json = WST.toJson(data);
+	            if( json.status == "1" ) {
+	                return true;
+				} else {
+	                return false;
+				}
+				return "该账号已被使用";
+			},
+			buttons: $("#dosubmit"),
+			onError : "该账号已存在。",
+			onWait : "请稍候..."
+		}).defaultPassed();
+	   $("#loginPwd").formValidator({
+			onShow:"",onFocus:"登录密码长度应该为5-20位之间"
+			}).inputValidator({
+				min:5,max:50,onError:"登录密码长度应该为5-20位之间"
+			});
+		$("#userPhone_shop").inputValidator({min:0,max:11,onError:"你输入的手机号码非法,请确认"}).regexValidator({
+		   regExp:"mobile",dataType:"enum",onError:"手机号码格式错误"
+		}).ajaxValidator({
+			dataType : "json",
+			async : true,
+			url : "{:U('Admin/Users/checkLoginKey',array('id'=>$object.userId))}",
+			success : function(data){
+				var json = WST.toJson(data);
+	            if( json.status == "1" ) {
+	                return true;
+				} else {
+	                return false;
+				}
+				return "该手机号码已被使用";
+			},
+			buttons: $("#dosubmit"),
+			onError : "该手机号码已存在。",
+			onWait : "请稍候..."
+		}).defaultPassed().unFormValidator(true);
+		$("#shopSn_shop").formValidator({onShow:"",onFocus:"店铺编号不能超过20个字符",onCorrect:"输入正确"}).inputValidator({min:1,max:20,onError:"店铺编号不符合要求,请确认"});
+		$("#shopName_shop").formValidator({onShow:"",onFocus:"店铺名称不能超过20个字符",onCorrect:"输入正确"}).inputValidator({min:1,max:20,onError:"店铺名称不符合要求,请确认"});
+		$("#userName_shop").formValidator({onShow:"",onFocus:"请输入店主姓名",onCorrect:"输入正确"}).inputValidator({min:1,max:20,onError:"店主姓名不能为空,请确认"});
+		$("#shopCompany").formValidator({onShow:"",onFocus:"请输入公司名称",onCorrect:"输入正确"}).inputValidator({min:1,max:50,onError:"公司名称不能为空,请确认"});
+		$("#shopAddress").formValidator({onShow:"",onFocus:"请输入店铺地址",onCorrect:"输入正确"}).inputValidator({min:1,max:120,onError:"店铺地址不能为空,请确认"});
+		//$("#areaId3").formValidator({onFocus:"请选择所属地区"}).inputValidator({min:1,onError: "请选择所属地区"});
+		$("#goodsCatId1").formValidator({onFocus:"请选择所属行业"}).inputValidator({min:1,onError: "请选择所属行业"});
+		$("#bankId").formValidator({onFocus:"请选择所属银行"}).inputValidator({min:1,onError: "请选择所属银行"});
+		$("#bankNo").formValidator({onShow:"",onFocus:"请输入银行卡号",onCorrect:"输入正确"}).inputValidator({min:16,max:19,onError:"银行卡号格式错误,请确认"}) .functionValidator({fun:luhmCheck,onError:"请输入正确的银行卡号！"});;
+	
+		$("#serviceStartTime").formValidator({onShow:"",onFocus:"请选择营业时间"}).inputValidator({min:1,max:50,onError:"请选择营业时间"});
+		$("#serviceEndTime").formValidator({onShow:"",onFocus:"请选择营业时间"}).inputValidator({min:1,max:50,onError:"请选择营业时间"});
+
+		$("#userPhone_shop").blur(function(){
+			  if($("#userPhone_shop").val()==''){
+				  $("#userPhone_shop").unFormValidator(true);
+			  }else{
+				  $("#userPhone_shop").unFormValidator(false);
+			  }
+		});
+		//ShopMapInit();
+		initialize();
+		<if condition="$object['shopId'] !=0 ">
+		   getAreaList("areaId2",{$object.areaId1},0,{$object.areaId2});
+		   //getAreaList("areaId3",{$object.areaId2},1,{$object.areaId3});
+		</if>
+   });
+	var map;
+	var markersArray = [];
+	function initialize() {
+	  var haightAshbury = new google.maps.LatLng(37.7699298, -122.4469157);
+	  var mapOptions = {
+	    zoom: 12,
+	    center: haightAshbury,
+	    mapTypeId: google.maps.MapTypeId.ROADMAP
+	  };
+      
+	  map = new google.maps.Map(document.getElementById("mapContainer"),mapOptions);
+	  google.maps.event.addListener(map, 'click', function(event) {
+	    addMarker(event.latLng);
+	  });
+	}
+
+	function addMarker(location) {
+	  deleteOverlays();//清除地图中的标记
+	  marker = new google.maps.Marker({
+	    position: location,
+	    map: map
+	  });
+	  $('#longitude').val(location.lng());
+		$('#latitude').val(location.lat());
+		//$('#mapLevel').val(this.getZoom());
+	  markersArray.push(marker);
+	  var infowindow = new google.maps.InfoWindow({
+		  content:"Hello World!"
+		  });
+		infowindow.open(map,marker);
+	}
+	// Removes the overlays from the map, but keeps them in the array
+	function clearOverlays() {
+	  if (markersArray) {
+	    for (i in markersArray) {
+	      markersArray[i].setMap(null);
+	    }
+	  }
+	}
+	// Shows any overlays currently in the array
+
+	function showOverlays() {
+	  if (markersArray) {
+	    for (i in markersArray) {
+	      markersArray[i].setMap(map);
+	    }
+	  }
+	}
+	// Deletes all markers in the array by removing references to them
+	function deleteOverlays() {
+	  if (markersArray) {
+	    for (i in markersArray) {
+	      markersArray[i].setMap(null);
+	    }
+	    markersArray.length = 0;
+	  }
+	}
+   function getAreaList(objId,parentId,t,id){
+	   var params = {};
+	   params.parentId = parentId;
+	   $('#'+objId).empty();
+	   if(t<1){
+		   $('#areaId3').empty();
+		   $('#areaId3').html('<option value="">请选择</option>');
+	   }else{
+		   if(t==1 && $('#areaId2').find("option:selected").text()!=''){
+			   geocoder = new google.maps.Geocoder(); 
+			   geocoder.geocode( { 'address': $('#areaId2').find("option:selected").text()}, function(results, status) { 
+				      if (status == google.maps.GeocoderStatus.OK) { 
+				        console.log(results[0].geometry.location) 
+				        map.setCenter(results[0].geometry.location); 
+				      }
+			   });
+			   //map.setZoom();
+			   //map.setCity($('#areaId2').find("option:selected").text());
+			   //$('#showLevel').val(shopMap.getZoom());
+		   }
+	   }
+	   var html = [];
+	   $.post("{:U('Admin/Shops/queryShowByList')}",params,function(data,textStatus){
+		    html.push('<option value="">请选择</option>');
+			var json = WST.toJson(data);
+			if(json.status=='1' && json.list.length>0){
+				var opts = null;
+				for(var i=0;i<json.list.length;i++){
+					opts = json.list[i];
+					html.push('<option value="'+opts.areaId+'" '+((id==opts.areaId)?'selected':'')+'>'+opts.areaName+'</option>');
+				}
+			}
+			$('#'+objId).html(html.join(''));
+	   });
+   }
+  
+</script>
+<div class="bjui-pageContent">
+	<form action="{:U('edit')}" id="addForm" class="pageForm" data-toggle="validate" data-reload-navtab="true" name="addForm" role="form">
+		<input type='hidden' id='id' name='id' value='{$object.shopId}' />
+		<table class="table table-condensed table-hover" width="100%">
+			<tbody>
+				<tr>
+					<td colspan="2">
+					    <label class="control-label x100">店铺编号<font color='red'>*</font>：</label> 
+					    <input type='text' id='shopSn_shop' class="form-control wst-ipt" name="shopSn" value='{$object.shopSn}' maxLength='25' />
+					 </td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					    <label class="control-label x100">店铺名称<font color='red'>*</font>：</label> 
+					    <input type='text' id='shopName_shop' class="form-control wst-ipt" name="shopName" value='{$object.shopName}' maxLength='25' />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<label class="control-label x100">负责人<font color='red'>*</font>：</label> 
+					<!-- <input type='text' id='userName_shop' class="form-control wst-ipt" name="userName" value='{$object.userName}' maxLength='25' /> -->
+					<select id='staffsId' name="staffsId">
+							<option value=''>请选择</option>
+							<volist name="userList" id="vo">
+							    <option value='{$vo['uid']}' <if condition="$object['userId'] == $vo['uid'] ">selected</if>>{$vo['username']}</option>
+							</volist>
+					    </select> 
+					</td>
+				</tr>
+				<tr>
+				    <td colspan="2">
+					<label class="control-label x100">负责人手机<font color='red'>*</font>：</label>
+					<input type='text' id='userPhone_shop' class="form-control wst-ipt" name="userPhone" value='{$object.userPhone}' maxLength='25' />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<label class="control-label x100">店铺电话<font color='red'>*</font>：</label>
+					<input type='text' id='shopTel_shop' class="form-control wst-ipt" name="shopTel" value='{$object.shopTel}' maxLength='25' />
+					</td>
+				</tr>
+				<tr>
+				    <td colspan="2">
+				        <label class="control-label x100">所属地区<font color='red'>*</font>：</label> 
+					    <select id='areaId1' name="areaId1" onchange='javascript:getAreaList("areaId2",this.value,0)'>
+							<option value=''>请选择</option>
+							<volist name="areaList" id="vo">
+							    <option value='{$vo['areaId']}' <if condition="$object['areaId1'] == $vo['areaId'] ">selected</if>>{$vo['areaName']}</option>
+							</volist>
+					    </select> 
+					    <select id='areaId2' name="areaId2">
+							<option value=''>请选择</option>
+					    </select> 
+					    <!-- <select id='areaId3' name="areaId3">
+							<option value=''>请选择</option>
+					    </select> -->
+					</td>
+				</tr>
+				<tr>
+				    <td colspan="2">
+					    <label class="control-label x100">店铺地址<font color='red'>*</font>：</label> 
+					    <input type='text' id='shopAddress' class="form-control wst-ipt" name="shopAddress" value='{$object.shopAddress}' maxLength='120' />
+					</td>
+				</tr>
+				<tr id='shopMap'>
+					<td colspan="2">
+						<div id="mapContainer" style='height: 400px; width: 90%;'>等待地图初始化...</div>
+						<div style='display: none'>
+							<input type='text' id='latitude' name='latitude' value="{$object['latitude']}" />
+						    <input type='text' id='longitude' name='longitude' value="{$object['longitude']}" />
+							<input type='text' id='mapLevel' name='mapLevel' value="{$object['mapLevel']}" />
+						</div>
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</div>
+<div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+		<!-- <li><button type="submit" class="btn-default" data-icon="save">保存</button></li> -->
+		<li><button type="submit" class="btn btn-success" data-icon="save">保&nbsp;存</button></li>
+	</ul>
+</div>

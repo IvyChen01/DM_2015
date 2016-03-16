@@ -1,0 +1,855 @@
+[ 2016-01-24T23:41:00+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000383s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018185s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018226s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000361s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000400s ]
+
+[ 2016-01-24T23:42:01+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018123s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018164s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000362s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000401s ]
+
+[ 2016-01-24T23:43:03+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018167s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018208s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000368s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000406s ]
+
+[ 2016-01-24T23:44:08+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018176s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018217s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000378s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000417s ]
+
+[ 2016-01-24T23:45:10+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000402s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018144s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018185s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000378s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000416s ]
+
+[ 2016-01-24T23:46:13+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018037s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018077s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000361s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000400s ]
+
+[ 2016-01-24T23:47:15+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000383s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018098s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018139s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000127s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000376s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000414s ]
+
+[ 2016-01-24T23:48:17+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018039s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018080s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000390s ]
+
+[ 2016-01-24T23:49:19+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018293s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018334s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000414s ]
+
+[ 2016-01-24T23:50:21+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000131s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018017s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018058s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000364s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000402s ]
+
+[ 2016-01-24T23:51:24+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018161s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018215s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000355s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000392s ]
+
+[ 2016-01-24T23:52:25+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018275s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018315s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000367s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000403s ]
+
+[ 2016-01-24T23:53:28+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000384s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018031s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018071s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000360s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000399s ]
+
+[ 2016-01-24T23:54:31+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000381s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018065s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018115s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000403s ]
+
+[ 2016-01-24T23:55:33+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018059s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000354s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000415s ]
+
+[ 2016-01-24T23:56:36+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018034s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018074s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000355s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000398s ]
+
+[ 2016-01-24T23:57:38+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018586s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018629s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000391s ]
+
+[ 2016-01-24T23:58:41+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000131s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018079s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018120s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2016-01-24T23:59:43+08:00 ] 159.8.94.69 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ec_channel` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [8] Undefined index: field /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 224 行.
+SQL: SELECT * FROM `ec_channel` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_goods_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=0 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=342 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=343 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=344 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=345 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=346 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=347 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=348 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ec_goods_cats` WHERE ( catFlag=1 and parentId=357 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE ( catFlag=1 and parentId=32 ) ORDER BY catSort asc,catId asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_ads` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ec_ads` WHERE `adPositionId` = -1 ORDER BY adSort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ec_goods` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ec_goods` WHERE `goodsStatus` = 1 AND `goodsFlag` = 1 AND `isRecomm` = 1  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018030s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018069s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000364s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000416s ]
+

@@ -1,0 +1,157 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+        <h4 class="modal-title" id="myModalLabel">
+            <strong>添加会员</strong>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <form id="addForm" class="form-horizontal required-validate" role="form" action="{:U($Think.ACTION_NAME)}" data-toggle="validate" data-reload-navtab="true">
+            <input type="hidden" id="pk" name="userId" value="{$info[userId]}">
+            <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">账号</label>
+                <div class="col-sm-4">
+                    <input data-rule="required" <if condition="ACTION_NAME eq 'edit'">disabled="disabled"</if>name="loginName" type="text" class="form-control input-sm" value="{$info[loginName]}" />
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">邮箱地址</label>
+                <div class="col-sm-4">
+                    <input name="userEmail" id="email" type="text" data-rule="required"  class="form-control input-sm" value="{$info[userEmail]}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">姓名</label>
+                <div class="col-sm-4">
+                    <input name="userName" data-rule="required" type="text" class="form-control input-sm" value="{$info[userName]}" />
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">密码</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" data-rule="required" name="loginPwd" id="pwd" type="password" value="{$info[loginPwd]}" />
+                </div>
+            </div>
+           <!--  <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">性别</label>
+                <div class="col-sm-4">
+                    <select name="userSex" class="form-control input-sm">
+                         <if condition="$info.sex eq 1">
+                                <option value="1" selected>男</option>
+                                <option value="2">女</option>
+                                <else/>
+                                <option value="1">男</option>
+                                <option value="2" selected>女</option>
+                            </if>
+                    </select>
+                </div> -->
+                <!-- <label for="inputField" class="col-sm-2 control-label">生日</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm datePicker" name="birthday" type="text" value="{$info[birthday]}" />
+                </div> -->
+           <!--  </div> -->
+          <!--  <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">身份证号</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" name="info[idCardNo]" type="text" value="{$info.idCardNo}" />
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">籍贯</label>
+                <div class="col-sm-4">
+                    <select name="info[native]" class="form-control input-sm">
+                        <option value=""></option>
+                        <volist name="nativeList" id="nativeVo">
+                        <option value="{$nativeVo.cid}" <if condition="$nativeVo[cid] eq $info[native]">selected="true"</if>>{$nativeVo.name}</option>
+                        </volist>
+                    </select>
+                </div>
+            </div> -->
+            <!-- <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">民族</label>
+                <div class="col-sm-4">
+                    <select name="info[nation]" class="form-control input-sm">
+                        <option value=""></option>
+                        <volist name="nationList" id="nationVo">
+                        <option value="{$nationVo.cid}" <if condition="$nationVo[cid] eq $info[nation]">selected="true"</if>>{$nationVo.name}</option>
+                        </volist>
+                    </select>
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">毕业院校</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" name="info[education]" type="text" value="{$info.education}" />
+                </div>
+            </div> -->
+            <!-- <div class="form-group"> -->
+                <!-- <label for="inputField" class="col-sm-2 control-label">学历</label>
+                <div class="col-sm-4">
+                    <select name="info[degree]" class="form-control input-sm">
+                        <option value=""></option>
+                        <volist name="degreeList" id="degreeVo">
+                        <option value="{$degreeVo.cid}" <if condition="$degreeVo[cid] eq $info[degree]">selected="true"</if>>{$degreeVo.name}</option>
+                        </volist>
+                    </select>
+                </div> -->
+              <!--   <label for="inputField" class="col-sm-2 control-label">电话</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" name="tel" type="text" value="{$info[tel]}" />
+                </div>
+            </div> -->
+            <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">手机</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" name="userPhone" data-rule="required" type="text" value="{$info[userPhone]}" />
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">会员积分</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" name="userScore" type="text" value="{$info[userScore]}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">会员头像</label>
+                <div class="col-sm-4">
+                    <input type="file" name="userPhoto" value="{$info[userPhoto]}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">性别</label>
+                <div class="col-sm-4">
+                    <select name="userSex" class="form-control input-sm">
+                         <if condition="$info.sex eq 1">
+                                <option value="1" selected>男</option>
+                                <option value="2">女</option>
+                                <else/>
+                                <option value="1">男</option>
+                                <option value="2" selected>女</option>
+                            </if>
+                    </select>
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">状态</label>
+                <div class="col-sm-4">
+                    <select name="userStatus" class="form-control input-sm">
+                             <if condition="$info.userStatus eq 1">
+                                <option value="1" selected>启用</option>
+                                <option value="0">禁止</option>
+                                <else/>
+                                <option value="1">启用</option>
+                                <option value="0" selected>禁止</option>
+                            </if>
+                    </select>
+                </div>
+                <!-- <label for="inputField" class="col-sm-2 control-label">所属用户组</label>
+                <div class="col-sm-4">
+                    <select name="info[role_id]" class="form-control input-sm">{$info.roleOption}</select>
+                </div> -->
+            </div>
+            <!-- <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">备注</label>
+                <div class="col-sm-10">
+                    <textarea name="remark" rows="5" class="form-control input-sm">{$info[remark]}</textarea>
+                </div>
+            </div> -->
+            <div class="modal-footer">
+        <div class="btn-group">
+            <button class="btn btn-default" data-icon="save" type="submit">保存</button>
+            <button type="button" class="btn  btn-close">
+                <i class="fa fa-remove"></i>关闭</button>
+        </div>
+    </div>
+        </form>
+    </div>
+    
+</div>
+<script src="__PUBLIC__/Js/functions.js"></script>

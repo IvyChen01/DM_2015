@@ -1,0 +1,3 @@
+<?php
+//000000000060a:16:{s:2:"id";s:3:"211";s:3:"cid";N;s:5:"title";N;s:9:"visitNums";s:1:"0";s:8:"keywords";N;s:11:"description";N;s:6:"status";N;s:7:"summary";s:0:"";s:9:"thumbnail";N;s:7:"content";s:0:"";s:5:"isDel";s:1:"0";s:5:"uTime";s:10:"1456740438";s:4:"cUid";s:1:"1";s:5:"cTime";s:10:"1456740438";s:4:"uUid";N;s:9:"cacheInfo";s:132:"<i class="fa fa-clock-o fw"></i> <em>耗时 0.461 毫秒</em> / <i class="fa fa-database fw"></i> <em>从 MySQL 数据库读取</em>";}
+?>

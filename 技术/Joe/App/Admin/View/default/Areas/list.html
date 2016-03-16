@@ -1,0 +1,126 @@
+ <div class="bjui-pageHeader">
+	<form action="{:U(edit)}"  method="POST" class="pageForm" data-toggle="validate" data-reload="true">
+		<select name="parentId" data-toggle="selectpicker" data-rule="required">
+			<option value="0">国家</option>
+			<volist name="list" id="vo">
+			    <option value="{$vo.areaId}">{$vo.areaName}</option>
+			</volist>
+		</select> 
+		<input placeholder="你要添加的国家名称" id="areaName" type="text" name="areaName" value="" data-rule="required" />
+		<input placeholder="排序" id="areaSort" type="text" name="areaSort" value="" data-rule="required" />
+		<button type="submit" class="btn-default">确定添加</button>
+		<span><a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">刷新</a></span>
+		<!-- <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">功能操作<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                        <li><a href="{:U('toEdit')}" data-toggle="dialog" data-width="600" data-height="300" data-id="dialog-mask" data-mask="true">新增数据</a></li></ul>
+                </div>
+            </div> -->
+	</form>
+</div>
+<div class="bjui-pageContent">
+   
+      <!--  <input type='hidden' id='parentId' value='{$pArea[areaId]}'/> -->
+      <!--  <div class='wst-tbar' style='height:25px;'>
+       <if condition="$pArea['areaId'] !=0 ">
+       上级地区：{$pArea['areaName']}
+       </if>
+       <if condition="$pArea['areaId'] !=0 ">
+       <a class="btn glyphicon btn-success" href="{:U('Admin/Areas/index',array('parentId'=>$pArea['parentId']))}" style='float:right;margin-left:5px;'>返回</a>
+       </if>
+       
+       <a class="btn btn-success glyphicon glyphicon-plus" href="{:U('Admin/Areas/toEdit',array('parentId'=>$pArea['areaId']))}" style='float:right'>新增</a>
+       
+       </div> -->
+       
+        <table class="table table-hover table-striped table-bordered wst-list">
+           <thead>
+             <tr>
+               <th width='40'>序号</th>
+               <th>地区</th>
+               <th width='80'>是否显示</th>
+               <th width='80'>排序号</th>
+               <th width='250'>操作</th>
+             </tr>
+           </thead>
+           <tbody>
+            <volist name="list" id="vo" key='i'>
+             <tr>
+               <td>{$i}</td>
+               <td>{$vo['areaName']}</td>
+               <td>
+               <div class="dropdown">
+               <if condition="$vo['isShow']==0 ">
+                   <button class="btn btn-danger dropdown-toggle wst-btn-dropdown"  type="button" data-toggle="dropdown">
+					     隐藏
+					  <span class="caret"></span>
+				   </button>
+               <else/>
+                   <button class="btn btn-success dropdown-toggle wst-btn-dropdown" type="button" data-toggle="dropdown">
+					     显示
+					  <span class="caret"></span>
+				   </button>
+               </if>
+                   <ul class="dropdown-menu" role="menu">
+					  <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:toggleIsShow(1,{$vo['areaId']})">显示</a></li>
+					  <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:toggleIsShow(0,{$vo['areaId']})">隐藏</a></li>
+				   </ul>
+               </div>
+               </td>
+               <td><input type="text" onchange='javascript:editSort(this)' dataId='{$vo.areaId}' value="{$vo['areaSort']}" name="catSort" maxLength='50'></td>
+               <td>
+               <a href="{:U('del?id=' . $vo[areaId])}" class="btn btn-red glyphicon glyphicon-trash" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删除</a>
+				<a href="{:U('toEdit?id=' . $vo[areaId])}" class="btn btn-default glyphicon glyphicon-pencil" data-toggle="dialog" data-width="600" data-height="300" data-id="dialog-mask" data-mask="true">编辑</a>
+				<a class="btn btn-default glyphicon glyphicon-plus" data-toggle="dialog" data-width="600" data-height="300" data-id="dialog-mask" data-mask="true" href="{:U('toEdit',array('parentId'=>$vo[areaId]))}" >新增子分类</a>&nbsp;
+               
+               </td>
+             </tr>
+             </volist>
+           </tbody>
+        </table>
+       </div>
+       <!-- <include file="./App/Common/View/Common/pageFooter.html" /> -->
+  <script>
+   function toggleIsShow(t,v){
+	   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+	   $.post("{:U('Admin/Areas/editiIsShow')}",{id:v,isShow:t},function(data,textStatus){
+			var json = WST.toJson(data);
+			if(json.status=='1'){
+				Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000,callback:function(){
+					$(this).navtab('refresh');  
+				}});
+			}else{
+				Plugins.closeWindow();
+				Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+			}
+	   });
+   }
+   function editName(obj){
+	   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+	   alert(obj.value);
+	   $.post("{:U('Admin/Areas/editName')}",{id:$(obj).attr('dataId'),areaName:obj.value},function(data,textStatus){
+			var json = WST.toJson(data);
+			if(json.status=='1'){
+				Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000});
+				$(this).navtab('refresh');  
+			}else{
+				Plugins.closeWindow();
+				Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+			}
+		});
+}
+   function editSort(obj){
+	   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+	   $.post("{:U('Admin/Areas/editSort')}",{id:$(obj).attr('dataId'),areaSort:obj.value},function(data,textStatus){
+			var json = WST.toJson(data);
+			if(json.status=='1'){
+				Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000});
+				$(this).navtab('refresh');  
+			}else{
+				Plugins.closeWindow();
+				Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+			}
+		});
+}
+   </script>

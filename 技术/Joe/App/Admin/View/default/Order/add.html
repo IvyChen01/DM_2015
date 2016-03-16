@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>添加、编辑用户-后台管理-{:C('siteName')}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='用户管理 > 添加编辑用户';
+        </php>
+        <include file="Common:intoHead" />
+    </head>
+    <body>
+        <div class="wrap">
+            <include file="Common:head" />
+            <div class="mainBody">
+                <include file="Common:left" />
+                <div id="Right">
+                    <div class="Item hr">
+                        <div class="current">添加编辑用户</div>
+                    </div>
+                    <form>
+                        <table class="table table-hover">
+                            <tr>
+                                <th width="100">邮箱：</th>
+                                <td><input id="email" type="text" class="form-control input-sm" size="60" name="info[email]" value="{$info.email}"/></td>
+                            </tr>
+                            <tr>
+                                <th width="100">姓名：</th>
+                                <td><input type="text" class="form-control input-sm" size="60" name="info[name]" value="{$info.name}"/></td>
+                            </tr>
+                            <tr>
+                                <th>性别：</th>
+                                <td>
+                                    <label><input type="radio" name="info[sex]" value="1" <if condition="$info.sex eq 1"> checked="checked"</if> /> 男</label> &nbsp; 
+                                    <label><input type="radio" name="info[sex]" value="2" <if condition="$info.sex eq 2"> checked="checked"</if> /> 女</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>电话：</th>
+                                <td><input type="text" class="form-control input-sm" size="60" name="info[mobile]" value="{$info.mobile}"/></td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="info[id]" value="{$info.id}" />
+                    </form>
+                    <div class="commonBtnArea" >
+                        <button class="btn btn-sm btn-info submit">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <include file="Common:foot" />
+        <js href="__PUBLIC__kindeditor/kindeditor.js,__PUBLIC__kindeditor/lang/zh_CN.js"/>
+        <script type="text/javascript">
+            $(function(){
+                $(".submit").click(function(){
+                    ajaxSubmit();
+                    return false;
+                });
+            });
+        </script>
+    </body>
+</html>

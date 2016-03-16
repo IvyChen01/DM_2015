@@ -1,0 +1,466 @@
+[ 2016-03-07T10:38:49+08:00 ] 27.115.63.14 /index.php?m=Admin&c=Public&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000387s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005978s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006017s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000114s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000376s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000427s ]
+
+[ 2016-03-07T10:38:53+08:00 ] 27.115.63.14 /index.php?m=Admin&c=Public&a=verify_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000366s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000410s ]
+
+[ 2016-03-07T10:38:57+08:00 ] 27.115.63.14 /index.php?m=Admin&c=Public&a=verify_code&rand=0.3929284818004817
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000383s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000426s ]
+
+[ 2016-03-07T10:39:01+08:00 ] 27.115.63.14 /index.php?m=Admin&c=Public&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `ec_staffs` [ RunTime:0.0011s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\PublicModel::auth(), called in /userdata/www/syinix/App/Admin/Controller/PublicController.class.php on line 37 and defined /userdata/www/syinix/App/Admin/Model/PublicModel.class.php 第 11 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_staffs` WHERE ( `loginName`='admin' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_staffs` WHERE ( `loginName`='admin' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: infoList /userdata/www/syinix/App/Admin/Model/PublicModel.class.php 第 21 行.
+NOTIC: [2] Invalid argument supplied for foreach() /userdata/www/syinix/App/Admin/Model/PublicModel.class.php 第 21 行.
+NOTIC: [8] Undefined index: op_type /userdata/www/syinix/App/Admin/Model/PublicModel.class.php 第 27 行.
+NOTIC: [8] Undefined index: loginId /userdata/www/syinix/App/Admin/Model/PublicModel.class.php 第 45 行.
+SQL: UPDATE `ec_staffs` SET `staffId`='1',`loginName`='admin',`loginPwd`='93b9eaeef5117bd47082078f2ba11d93',`secretKey`='9365',`staffName`='admin',`staffNo`='001',`staffPhoto`='Uploads/staffs/2015-10/5632d1a0dc660.jpg',`workStatus`='1',`staffStatus`='1',`staffFlag`='1',`createTime`='2014-04-06 11:47:20',`lastTime`='2016-03-07 10:39:01',`lastIP`='27.115.63.14' WHERE (  staffId=1 ) [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ec_log_staff_logins` [ RunTime:0.0006s ]
+SQL: INSERT INTO `ec_log_staff_logins` (`staffId`,`loginTime`,`loginIp`) VALUES ('1','2016-03-07 10:39:01','27.115.63.14') [ RunTime:0.0160s ]
+
+[ 2016-03-07T10:39:02+08:00 ] 27.115.63.14 /index.php?m=Admin&c=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000391s ]
+NOTIC: [8192] Non-static method Common\Model\CommonModel::leftMenu() should not be called statically, assuming $this from incompatible context /userdata/www/syinix/App/Admin/Controller/IndexController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `ec_leftmenu` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`level`,`name`,`fullname` FROM `ec_leftmenu` WHERE `pid` = 0 AND `status` = 1 ORDER BY oid ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_leftmenu` WHERE `status` = 1 AND `id` <> '2' AND `level` = 2 ORDER BY oid ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ec_leftmenu` WHERE `status` = 1 AND `id` <> '12' AND `level` = 12 ORDER BY oid ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ec_leftmenu` WHERE `status` = 1 AND `id` <> '57' AND `level` = 57 ORDER BY oid ASC  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+NOTIC: [8] Undefined variable: currArea /userdata/www/syinix/App/Runtime/Cache/Admin/220f72f7e6ae0a9673378392936f2785.php 第 153 行.
+NOTIC: [8] Undefined variable: currArea /userdata/www/syinix/App/Runtime/Cache/Admin/220f72f7e6ae0a9673378392936f2785.php 第 154 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' /userdata/www/syinix/App/Runtime/Cache/Admin/220f72f7e6ae0a9673378392936f2785.php 第 313 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' /userdata/www/syinix/App/Runtime/Cache/Admin/220f72f7e6ae0a9673378392936f2785.php 第 313 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' /userdata/www/syinix/App/Runtime/Cache/Admin/220f72f7e6ae0a9673378392936f2785.php 第 313 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' /userdata/www/syinix/App/Runtime/Cache/Admin/220f72f7e6ae0a9673378392936f2785.php 第 313 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' /userdata/www/syinix/App/Runtime/Cache/Admin/220f72f7e6ae0a9673378392936f2785.php 第 313 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' /userdata/www/syinix/App/Runtime/Cache/Admin/220f72f7e6ae0a9673378392936f2785.php 第 313 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041357s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041394s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000127s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000356s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000406s ]
+
+[ 2016-03-07T10:40:09+08:00 ] 27.115.63.14 /index.php?m=Admin&c=ArticleCats&a=index&_=1457318220983
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000394s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+NOTIC: [8] Use of undefined constant edit - assumed 'edit' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 2 行.
+NOTIC: [8] Use of undefined constant edit - assumed 'edit' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 25 行.
+NOTIC: [8] Undefined index:  catId /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 52 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 67 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 68 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 69 行.
+NOTIC: [8] Undefined index:  catId /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 52 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 67 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 68 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 69 行.
+NOTIC: [8] Undefined index:  catId /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 52 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 67 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 68 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 69 行.
+NOTIC: [8] Undefined index:  catId /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 52 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 67 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 68 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 69 行.
+NOTIC: [8] Undefined index:  catId /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 52 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 67 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 68 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/108edd38aa1537faf914b0e59f050dfb.php 第 69 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018208s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018243s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000374s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000411s ]
+
+[ 2016-03-07T10:40:12+08:00 ] 27.115.63.14 /index.php?m=Admin&c=Article&a=index&type=1&_=1457318220984
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000383s ]
+NOTIC: [2048] Declaration of Admin\Model\ArticleModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `ec_article` [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: search /userdata/www/syinix/App/Common/Controller/CommonController.class.php 第 56 行.
+NOTIC: [2] Invalid argument supplied for foreach() /userdata/www/syinix/App/Common/Controller/CommonController.class.php 第 66 行.
+NOTIC: [8] Undefined variable: condition /userdata/www/syinix/App/Common/Controller/CommonController.class.php 第 69 行.
+NOTIC: [8] Undefined index: orderField /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 84 行.
+NOTIC: [8] Undefined index: pageCurrent /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 91 行.
+NOTIC: [8] Undefined index: pageSize /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 93 行.
+SQL: SHOW COLUMNS FROM `ec_article` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 106 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article` WHERE `isDel` = 0 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 113 行.
+NOTIC: [8] Undefined index: pageCurrent /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 117 行.
+SQL: SELECT * FROM `ec_article` WHERE `isDel` = 0 ORDER BY uTime DESC LIMIT 0,20   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 59 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `ec_staffs` [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SELECT `staffId`,`loginName` FROM `ec_staffs` WHERE `staffId` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 61 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `ec_article_reply` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article_reply` WHERE `pid` = 211 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 59 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 61 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article_reply` WHERE `pid` = 207 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 59 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 61 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article_reply` WHERE `pid` = 212 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 59 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 61 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article_reply` WHERE `pid` = 208 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 59 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 61 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article_reply` WHERE `pid` = 209 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: search /userdata/www/syinix/App/Common/Controller/CommonController.class.php 第 56 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+NOTIC: [8] Undefined variable: Think /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 2 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 36 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 37 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 36 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 37 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 36 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 37 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 36 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 37 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 36 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 37 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008312s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008361s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000358s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000394s ]
+
+[ 2016-03-07T10:40:22+08:00 ] 27.115.63.14 /index.php?m=Admin&c=Article&a=add&_=1457318220985
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+NOTIC: [2048] Declaration of Admin\Model\ArticleModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `ec_article` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+NOTIC: [8] Undefined variable: Think /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 2 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 3 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 9 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant cid - assumed 'cid' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant catName - assumed 'catName' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 18 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant cid - assumed 'cid' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant catName - assumed 'catName' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 18 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant cid - assumed 'cid' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant catName - assumed 'catName' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 18 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant cid - assumed 'cid' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant catName - assumed 'catName' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 18 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant catId - assumed 'catId' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant cid - assumed 'cid' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 17 行.
+NOTIC: [8] Use of undefined constant catName - assumed 'catName' /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 18 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 24 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 25 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 31 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 37 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 43 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 49 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 57 行.
+NOTIC: [8] Undefined variable: info /userdata/www/syinix/App/Runtime/Cache/Admin/fe1c87638d59422a3a4705a3bbe517b6.php 第 94 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006643s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006676s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000145s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000376s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000409s ]
+
+[ 2016-03-07T10:46:09+08:00 ] 27.115.63.14 /index.php?m=Admin&c=Article&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000272s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000380s ]
+NOTIC: [2048] Declaration of Admin\Model\ArticleModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `ec_article` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ec_article` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 252 行.
+SQL: INSERT INTO `ec_article` (`id`,`title`,`cid`,`status`,`keywords`,`description`,`summary`,`thumbnail`,`content`,`uTime`,`isDel`,`cUid`,`cTime`) VALUES ('0','Syinix co-sponsored the 16th Nigerian Oil & Gas Industry Games ','33','0','Syinix cooperates','','OnMarch 5th, 2016, Syinix co-sponsored the&nbsp;16th Nigerian Oil &amp; Gas Industry Games with TECNO Mobile, the leading mobilebrand in Africa. The&hellip;','/Static/Plugins/BJUI/plugins/kindeditor_4.1.10/attached/image/20160307/20160307024602_91031.jpg','<p class=\"MsoNormal\">
+	On
+March 5<sup>th</sup>, 2016, Syinix co-sponsored the<span>&nbsp;16<sup>th</sup> Nigerian Oil &amp; Gas Industry Games </span>with TECNO Mobile, the leading mobile
+brand in Africa. The game event takes place every two years and has caught
+attentions within the entire Oil &amp; Gas Industry and Lagos.&nbsp;
+</p>
+<p class=\"MsoNormal\">
+	As
+one of cosponsors, Syinix gave out gift items to key winners of the Games and also
+sold Syinix Products on the ground.
+</p>
+<p class=\"MsoNormal\">
+	This
+event has raised enough awareness for Syinix brand, generated goodwill with the
+entire Oil &amp; Gas Industry and also made
+positive impressions with potential corporate organizations, customers and the
+media.<span></span>
+</p>','1457318769','0','1','1457318769') [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: uid /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ec_operationlog` [ RunTime:0.0007s ]
+SQL: INSERT INTO `ec_operationlog` (`content`,`cTime`) VALUES ('INSERT INTO `ec_article` (`id`,`title`,`cid`,`status`,`keywords`,`description`,`summary`,`thumbnail`,`content`,`uTime`,`isDel`,`cUid`,`cTime`) VALUES (\'0\',\'Syinix co-sponsored the 16th Nigerian Oil & Gas Industry Games \',\'33\',\'0\',\'Syinix cooperates\',\'\',\'OnMarch 5th, 2016, Syinix co-sponsored the&nbsp;16th Nigerian Oil &amp; Gas Industry Games with TECNO Mobile, the leading mobilebrand in Africa. The&hellip;\',\'/Static/Plugins/BJUI/plugins/kindeditor_4.1.10/attached/image/20160307/20160307024602_91031.jpg\',\'<p class=\\\"MsoNormal\\\">
+	On
+March 5<sup>th</sup>, 2016, Syinix co-sponsored the<span>&nbsp;16<sup>th</sup> Nigerian Oil &amp; Gas Industry Games </span>with TECNO Mobile, the leading mobile
+brand in Africa. The game event takes place every two years and has caught
+attentions within the entire Oil &amp; Gas Industry and Lagos.&nbsp;
+</p>
+<p class=\\\"MsoNormal\\\">
+	As
+one of cosponsors, Syinix gave out gift items to key winners of the Games and also
+sold Syinix Products on the ground.
+</p>
+<p class=\\\"MsoNormal\\\">
+	This
+event has raised enough awareness for Syinix brand, generated goodwill with the
+entire Oil &amp; Gas Industry and also made
+positive impressions with potential corporate organizations, customers and the
+media.<span></span>
+</p>\',\'1457318769\',\'0\',\'1\',\'1457318769\')','1457318769') [ RunTime:0.0544s ]
+NOTIC: [8] Undefined index: returnUrl /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 261 行.
+
+[ 2016-03-07T10:46:09+08:00 ] 27.115.63.14 /index.php?m=Admin&c=Article&a=index&type=1&_=1457318220986
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000406s ]
+NOTIC: [2048] Declaration of Admin\Model\ArticleModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `ec_article` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: search /userdata/www/syinix/App/Common/Controller/CommonController.class.php 第 56 行.
+NOTIC: [2] Invalid argument supplied for foreach() /userdata/www/syinix/App/Common/Controller/CommonController.class.php 第 66 行.
+NOTIC: [8] Undefined variable: condition /userdata/www/syinix/App/Common/Controller/CommonController.class.php 第 69 行.
+NOTIC: [8] Undefined index: orderField /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 84 行.
+NOTIC: [8] Undefined index: pageCurrent /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 91 行.
+NOTIC: [8] Undefined index: pageSize /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: pageSize /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 96 行.
+SQL: SHOW COLUMNS FROM `ec_article` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 106 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article` WHERE `isDel` = 0 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 113 行.
+NOTIC: [8] Undefined index: pageCurrent /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 117 行.
+SQL: SELECT * FROM `ec_article` WHERE `isDel` = 0 ORDER BY uTime DESC LIMIT 0,20   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 59 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+SQL: SHOW COLUMNS FROM `ec_staffs` [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SELECT `staffId`,`loginName` FROM `ec_staffs` WHERE `staffId` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `ec_article_cats` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 61 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SHOW COLUMNS FROM `ec_article_reply` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article_reply` WHERE `pid` = 213 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 59 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 61 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article_reply` WHERE `pid` = 211 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 59 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 61 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article_reply` WHERE `pid` = 207 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 59 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 61 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article_reply` WHERE `pid` = 212 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 59 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 61 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article_reply` WHERE `pid` = 208 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 59 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+NOTIC: [2] Missing argument 3 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [2] Missing argument 4 for Com\Category::__construct(), called in /userdata/www/syinix/App/Admin/Model/ArticleCatsModel.class.php on line 236 and defined /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 24 行.
+NOTIC: [8] Undefined variable: connection /userdata/www/syinix/ThinkPHP/Library/Com/Category.class.php 第 26 行.
+SQL: SELECT * FROM `ec_article_cats` WHERE `catFlag` = 1 ORDER BY catSort asc  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for Common\Model\CommonModel::getUserFullNameByUid(), called in /userdata/www/syinix/App/Admin/Model/ArticleModel.class.php on line 61 and defined /userdata/www/syinix/App/Common/Model/CommonModel.class.php 第 106 行.
+NOTIC: [8] Undefined index: modelType /userdata/www/syinix/App/Common/Model/BaseModel.class.php 第 206 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ec_article_reply` WHERE `pid` = 209 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: search /userdata/www/syinix/App/Common/Controller/CommonController.class.php 第 56 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+NOTIC: [8] Undefined variable: Think /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 2 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 36 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 37 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 36 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 37 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 36 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 37 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 36 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 37 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 36 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 37 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 36 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /userdata/www/syinix/App/Runtime/Cache/Admin/f7a4145c49882bc20989508234541a17.php 第 37 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008498s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008531s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000361s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000398s ]
+

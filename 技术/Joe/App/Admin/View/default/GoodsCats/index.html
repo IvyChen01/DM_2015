@@ -1,0 +1,133 @@
+<div class="bjui-pageHeader">
+	<form action="{:U(edit)}"  method="POST" class="pageForm" data-toggle="validate" data-reload="true">
+		<select name="parentId" data-toggle="selectpicker" data-rule="required">
+			<option value="0">顶级分类</option>
+			<volist name="list" id="vo">
+			    <option value="{$vo.catId}">{$vo.catName}</option>
+			</volist>
+		</select> 
+		<input placeholder="你要添加的商品分类名称" id="newName" type="text" name="catName" value="" data-rule="required" />
+		<input placeholder="排序" id="catId" type="text" name="catSort" value="" data-rule="required" />
+		<button type="submit" class="btn-default">确定添加</button>
+		<span><a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">刷新</a></span>
+		<div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">功能操作<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                        <li><a href="{:U('toEdit')}" data-toggle="dialog" data-width="800" data-height="600" data-id="dialog-mask" data-mask="true">新增数据</a></li></ul>
+                </div>
+            </div>
+	</form>
+</div>
+
+<div class="bjui-pageContent">
+	<!-- 内容区 -->
+	<form action="{:U(edit)}"  method="POST" class="pageForm" data-toggle="validate" data-reload="true">
+	<table class="table table-bordered table-hover table-striped table-top" data-layout-h="0" data-selected-multi="true">
+		<thead>
+			<tr>
+				<!-- <th>序号</th> -->
+				<th>ID</th>
+				<th>分类名称</th>
+				<th>分类图标</th>
+				<th>排序</th>
+				<th>是否显示</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="list" id="tree" key='i'>
+			<tr id='tr_0_{$i}' class="tr_0">
+				<!-- <td>{$i}</td> -->
+				<td>{$tree.catId}</td>
+				<td><!-- <span class='glyphicon glyphicon-plus' onclick='javascript:loadChildTree(this,{$tree.catId},"tr_0_{$i}")' style='margin-right: 3px; cursor: pointer'></span> --><input type="text" onchange='javascript:editName(this)' dataId='{$tree.catId}' value="{$tree.catName}" name="catName" size="20"></td>
+				<td><img src='{$tree['goodsCatImg']}' height='50'/></td>
+				<td><input type="text" onchange='javascript:editSort(this)' dataId='{$tree.catId}' value="{$tree.catSort}" name="catSort" size="10">
+				</td>
+				
+				<td>
+					<div class="dropdown">
+						<if condition="$tree['isShow']==0 ">
+						<button class="btn btn-danger dropdown-toggle wst-btn-dropdown"
+							id='btn_{$tree[' catId']}' type="button" data-toggle="dropdown">
+							隐藏 <span class="caret"></span>
+						</button>
+						<else />
+						<button class="btn btn-success dropdown-toggle wst-btn-dropdown"
+							id='btn_{$tree[' catId']}' type="button" data-toggle="dropdown">
+							显示 <span class="caret"></span>
+						</button>
+						</if>
+
+						<ul class="dropdown-menu" role="menu"
+							aria-labelledby="btn_{$tree['catId']}">
+							<li role="presentation"><a role="menuitem" tabindex="-1"
+								href="javascript:toggleIsShow(1,{$tree['catId']})">显示</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1"
+								href="javascript:toggleIsShow(0,{$tree['catId']})">隐藏</a></li>
+						</ul>
+
+					</div>
+				</td>
+				<td>
+				<a href="{:U('del?id=' . $tree[catId])}" class="btn btn-red glyphicon glyphicon-trash" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删除</a>
+				<a href="{:U('toEdit?id=' . $tree[catId])}" class="btn btn-default glyphicon glyphicon-pencil" data-toggle="dialog" data-width="800" data-height="600" data-id="dialog-mask" data-mask="true">编辑</a>
+				<a class="btn btn-default glyphicon glyphicon-plus" data-toggle="dialog" data-width="800" data-height="600" data-id="dialog-mask" data-mask="true" href="{:U('toEdit',array('parentId'=>$tree[catId]))}" >新增子分类</a>&nbsp;
+				<!-- <button data-toggle="doedit" class="btn btn-green" type="button">编辑</button> -->
+				</td>
+			</tr>
+			
+			</volist>
+		</tbody>
+	</table>
+	</form>
+</div>
+<script type="text/javascript">
+function toEdit(id,pid){
+	   var url = "{:U('Admin/GoodsCats/toEdit',array('id'=>'__0','parentId'=>'__1'))}";
+	   url = WST.replaceURL(url,[id,pid]);
+       location.href=url;     
+}
+function editName(obj){
+	   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+	   $.post("{:U('Admin/GoodsCats/editName')}",{id:$(obj).attr('dataId'),catName:obj.value},function(data,textStatus){
+			var json = WST.toJson(data);
+			if(json.status=='1'){
+				Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000});
+				$(this).navtab('refresh');  
+			}else{
+				Plugins.closeWindow();
+				Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+			}
+		});
+}
+function editSort(obj){
+	   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+	   $.post("{:U('Admin/GoodsCats/editSort')}",{id:$(obj).attr('dataId'),catSort:obj.value},function(data,textStatus){
+			var json = WST.toJson(data);
+			if(json.status=='1'){
+				Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000});
+				$(this).navtab('refresh');  
+			}else{
+				Plugins.closeWindow();
+				Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+			}
+		});
+}
+function toggleIsShow(t,v){
+	   Plugins.waitTips({title:'信息提示',content:'正在操作，请稍后...'});
+	   $.post("{:U('Admin/GoodsCats/editIsShow')}",{id:v,isShow:t},function(data,textStatus){
+			var json = WST.toJson(data);
+			if(json.status=='1'){
+				Plugins.setWaitTipsMsg({content:'操作成功',timeout:1000,callback:function(){
+				   //location.reload();
+					 $(this).navtab('refresh');  
+				}});
+			}else{
+				Plugins.closeWindow();
+				Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+			}
+	   });
+}
+</script>
+<!-- <include file="./App/Common/View/Common/pageFooter.html" /> -->

@@ -1,0 +1,49 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="{:U($Think.ACTION_NAME)}" method="post">
+        <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <div class="bjui-searchBar">
+            <label>标题：</label><input type="text" name="search[title]" value="{$search.title}" />
+            <label>内容：</label><input type="text" name="search[content]" value="{$search.content}" /></li>
+            <button type="submit" class="btn-default" data-icon="search">查询</button>
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">功能操作<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                        <li><a href="{:U('add')}" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true"><i class="fa fa-plus"></i> 新增数据</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+        <thead>
+            <tr>
+                <volist name="tableFields" id="tvo">
+                <th>{$tvo.name}</th>
+                </volist>
+                <th width="150">操作</th>
+            </tr>
+        </thead>
+        <volist name="list" id="vo">
+            <tr>
+                <volist name="tableFields" id="tvo">
+                    <td>{$vo.$key}</td>
+                </volist>
+                <td>
+
+                    <a href="{:U('edit?id=' . $vo[id])}" class="btn btn-default" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">编辑</a>
+                    <a href="{:U('remove?id='.$vo[id])}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删除</a>
+                </td>
+            </tr>
+        </volist>
+    </table>
+</div>
+
+<include file="./App/Common/View/Common/pageFooter.html" />

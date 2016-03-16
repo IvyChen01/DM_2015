@@ -1,0 +1,104 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="{:U(ACTION_NAME)}" method="post">
+        <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <div class="bjui-searchBar">
+            <label>共有{$list|count}张表，共计{$totalsize.table|byteFormat}</label>
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default optimize">优化所选</button>
+                    <button type="button" class="btn-green repair">修复所选</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <form>
+        <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+            <thead>
+                <tr>
+                    <th width="90">
+                        <label>
+                            <input name="" class="chooseAll" type="checkbox" />全选</label>
+                        <label>
+                            <input name="" class="unsetAll" type="checkbox" />反选</label>
+                    </th>
+                    <th>表名</th>
+                    <th>表用途</th>
+                    <th>记录行数</th>
+                    <th>引擎类型</th>
+                    <th>字符集</th>
+                    <th>碎片</th>
+                    <th>表大小</th>
+                    <th>数据</th>
+                    <th>索引</th>
+                </tr>
+            </thead>
+            <tbody>
+                <volist name="list" id="tab">
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="table[]" value="{$tab.Name}" />
+                        </td>
+                        <td align="left">{$tab.Name}</td>
+                        <td>{$tab.Comment}</td>
+                        <td>{$tab.Rows}</td>
+                        <td>{$tab.Engine}</td>
+                        <td>{$tab.Collation}</td>
+                        <td>{$tab.Data_free}</td>
+                        <td>{$tab.size}</td>
+                        <td>{$tab.Data_length}</td>
+                        <td>{$tab.Index_length}</td>
+                    </tr>
+                </volist>
+                    <tr>
+                        <th width="90">
+                            <label>
+                                <input name="" class="chooseAll" type="checkbox" />全选</label>
+                            <label>
+                                <input name="" class="unsetAll" type="checkbox" />反选</label>
+                        </th>
+                        <th>表名</th>
+                        <th>表用途</th>
+                        <th>记录行数</th>
+                        <th>引擎类型</th>
+                        <th>字符集</th>
+                        <th><b>{$totalsize.free|byteFormat}</b>
+                        </th>
+                        <th><b>{$totalsize.table|byteFormat}</b>
+                        </th>
+                        <th><b>{$totalsize.data|byteFormat}</b>
+                        </th>
+                        <th><b>{$totalsize.index|byteFormat}</b>
+                        </th>
+                    </tr>
+            </tbody>
+        </table>
+        <input type="hidden" name="act" id="act" />
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        clickCheckbox();
+        var handle = function(act) {
+            if ($("tbody input[type='checkbox']:checked").size() == 0) {
+                popup.alert("请先选择你要优化的数据库表吧");
+                return false;
+            }
+            $("#act").val(act);
+            ajaxSubmit();
+        }
+        $(".optimize").click(function() {
+            handle("optimize");
+        });
+        $(".repair").click(function() {
+            handle("repair");
+        });
+    });
+</script>

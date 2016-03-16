@@ -1,0 +1,76 @@
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <form action="{:U($tdink.ACTION_NAME)}" class="pageForm" data-toggle="validate" data-reload-navtab="true">
+        <table data-toggle="tablefixed" data-widtd="100%" data-layout-h="0" data-nowrap="true">
+            <tr>
+                <td widtd="120">
+                    <label class="control-label x100">邮件服务器：</label>
+                    <input name="smtp_host" type="text" size="40" value="{:C('smtp_host')}" />
+                </td>
+                <td>
+                    <label class="control-label x100">邮件发送端口：</label>
+                    <input name="smtp_port" type="text" size="40" value="{:C('smtp_port')}" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label x100">发件人地址：</label>
+                    <input name="from_email" type="text" size="40" value="{:C('from_email')}" />
+                </td>
+                <td>
+                    <label class="control-label x100">发件人名称：</label>
+                    <input name="from_name" type="text" size="40" value="{:C('from_name')}" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label x100">验证用户名：</label>
+                    <input name="smtp_user" type="text" size="40" value="{:C('smtp_user')}" />
+                </td>
+                <td>
+                    <label class="control-label x100">验证密码：</label>
+                    <input name="smtp_pass" type="password" size="40" value="{:C('smtp_pass')}" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label x100">回复EMAIL：</label>
+                    <input name="reply_email" type="text" size="40" value="{:C('reply_email')}" placeholder="留空则为发件人EMAIL" /></td>
+                <td>
+                    <label class="control-label x100">回复名称：</label>
+                    <input name="reply_name" type="text" size="40" value="{:C('reply_name')}" placeholder="留空则为发件人名称" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label x100">接收测试邮件地址：</label>
+                    <input name="test_email" type="text" size="40" value="{:C('test_email')}" placeholder="只有填写了接收测试邮件地址方可测试邮件配置是否成功" /></td>
+                <td>
+                <label class="control-label x100"></label>
+                    
+                </td>
+            </tr>
+        </table>
+        <div class="bjui-footBar">
+            <!-- 底部工具条  -->
+            <ul>
+                <li><button type="button" class="btn-close">关闭</button></li>
+                <li><button type="submit" class="btn-default">保存</button></li>
+            </ul>
+        </div>
+    </form>
+</div>
+
+<include file="./App/Common/View/Common/pageFooter.html" />
+
+<script type="text/javascript">
+    $(".submit").click(function() {
+        ajaxSubmit();
+    });
+    $(".test").click(function() {
+        if ($.trim($("input[name='test_email']").val()) == '') {
+            popup.alert("没有填写接收测试邮件地址，无法发送测试邮件");
+            return;
+        }
+        ajaxSubmit('{:U("Webinfo/testEmailConfig")}');
+    });
+</script>

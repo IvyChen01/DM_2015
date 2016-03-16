@@ -1,0 +1,81 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="{:U(ACTION_NAME)}" method="post">
+        <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <div class="bjui-searchBar">
+            <label>创建人:</label>
+            <select name="search[cUid]" data-toggle="selectpicker">
+                <option value="" <if condition="$search.cUid eq ''">selected="selected"</if>>全部</option>
+                <option value="1" <if condition="$search.cUid eq '1'">selected="selected"</if>>赵峡策</option>
+                <option value="4" <if condition="$search.cUid eq '4'">selected="selected"</if>>曹先鹏</option>
+            </select>
+            <label>会议名称：</label><input type="text" name="search[name]" value="{$search.name}" class="form-control" size="10" />
+            <label>会议日期：</label><input type="text" name="search[date]" value="{$search.date}" class="form-control" size="8" />
+            <button type="button" class="btn showMoreSearch" data-toggle="moresearch" data-name="moresearch" title="更多查询条件"><i class="fa fa-angle-double-down"></i></button>
+            <button type="submit" class="btn-default" data-icon="search">查询</button>
+            <a class="btn btn-orange" href="javascript:;" data-toggle="reloadsearch" data-clear-query="true" data-icon="undo">清空查询</a>
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">功能操作<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                    <li><a href="{:U('add')}" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true"><i class="fa fa-plus"></i> 新增数据</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bjui-moreSearch">
+            <label>地点：</label><input type="text" name="search[address]" value="{$search.address}" size="15" />
+            <label>&nbsp;主持人:</label><input type="text" name="search[presenter]" value="{$search.presenter}" size="10">
+        </div>
+    </form>
+</div>
+
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+        <thead>
+            <tr>
+                <volist name="tableFields" id="tvo">
+                <th <if condition="$tvo.order eq 1">data-order-field="{$key}"</if>>{$tvo.name}</th>
+                </volist>
+            </tr>
+        </thead>
+        <volist name="list" id="vo">
+            <tr>
+                <volist name="tableFields" id="tvo">
+                    <td>{$vo.$key}</td>
+                </volist>
+            </tr>
+        </volist>
+    </table>
+</div>
+
+<include file="./App/Common/View/Common/pageFooter.html" />
+
+<script type="text/javascript">
+    //show完毕前执行
+    $('#myModal').on('shown.bs.modal', function () {
+        // 提交表单
+        $(".submitForm").click(function() {
+            <if condition = "ACTION_NAME neq 'editAdmin'">
+                if (!isEmail($("input[name='email']").val())) {
+                    popup.alert("账号邮件地址格式错误");
+                    return false;
+                }
+                if ($.trim($("input[name='pwd']").val()) == '') {
+                    popup.alert("密码不能为空");
+                    return false;
+                }
+            </if>
+
+            var url;
+            if ($("#pk").val())
+                url = '__URL__/editAdmin';
+            else
+                url = '__URL__/addAdmin';
+            ajaxSubmit(url, '#addForm');
+        });
+    });       
+</script>

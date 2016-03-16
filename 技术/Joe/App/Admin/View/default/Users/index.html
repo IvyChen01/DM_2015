@@ -1,0 +1,92 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="{:U($Think.ACTION_NAME)}" method="post">
+        <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <div class="bjui-searchBar">
+            <label>用户名：</label><input type="text" name="search[loginName]" value="{$search.loginName}" class="form-control" size="10" />
+            <label>会员ID：</label><input type="text" name="search[userId]" value="{$search.userId}" class="form-control" size="10" /></li>
+            <button type="submit" class="btn-default" data-icon="search">查询</button>
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">功能操作<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                        <li><a href="{:U('addUser')}" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">新增数据</a></li></ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>用户名</th>
+                <th>手机号码</th>
+                <th>Email</th>
+                <th>积分</th>
+                <th>等级</th>
+			    <th>添加时间</th>
+			    <th>状态</th>
+			    <th>操作</th>
+            </tr>
+        </thead>
+        <volist name="list" id="vo">
+            <!-- <tr aid="{$vo.aid}">
+                <volist name="tableFields" id="tvo">
+                    <td>{$vo.$key}</td>
+                </volist>
+                <td>
+                    <if condition="$vo.email eq C('ADMIN_AUTH_KEY')">
+                        <else/><a href="__URL__/editAdmin/uid/{$vo.uid}" data-toggle="modal" data-target="#myModal">编辑</a></if> 
+                </td>
+            </tr> -->
+            <tr aid="{$vo.userId}">
+				<td>{$vo['userId']}</td>
+				<td>{$vo['loginName']}</td>
+				<td>{$vo['userPhone']}</td>
+				<td>{$vo['userEmail']}</td>
+				<td>{$vo['userScore']}</td>
+				<td>{$vo['userEmail']}</td>
+				<td>{$vo['createTime']}</td>
+				<td>{$vo['userStatus']}</td>
+				<td>
+				    <a class="btn btn-default" href="{:U('edit',array('uid' => $vo['userId']))}" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">编辑</a>
+				    <a class="btn btn-red" data-confirm-msg="确定要删除该行信息吗？" data-toggle="doajax" href="{:U('del',array('uid' => $vo['userId']))}">删除</a>
+				</td>
+			</tr>
+        </volist>
+    </table>
+</div>
+
+<include file="./App/Common/View/Common/pageFooter.html" />
+
+<script type="text/javascript">
+    //show完毕前执行
+    $('#myModal').on('shown.bs.modal', function () {
+        // 提交表单
+        $(".submitForm").click(function() {
+            var url;
+            if ($("#pk").val()){
+                url = '__URL__/editAdmin';
+            } else {
+                <if condition = "ACTION_NAME neq 'editAdmin'">
+                    if (!isEmail($("#email").val())) {
+                        popup.alert("账号邮件地址格式错误");
+                        return false;
+                    }
+                    if ($.trim($("#pwd").val()) == '') {
+                        popup.alert("密码不能为空");
+                        return false;
+                    }
+                </if>
+                url = '__URL__/addAdmin';
+            }
+            ajaxSubmit(url, '#addForm');
+        });
+    });       
+</script>

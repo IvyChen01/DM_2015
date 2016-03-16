@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>订单管理-后台管理首页-{:C('siteName')}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='订单管理 > 会员列表';
+        </php>
+        <include file="Common:intoHead" />
+    </head>
+    <body>
+        <div class="wrap">
+            <include file="Common:head" />
+            <div class="mainBody">
+                <include file="Common:left" />
+                <div id="Right">
+                    <div class="Item hr">
+                        <div class="current">订单管理</div>
+                    </div>
+                    <table class="table table-hover">
+                        <tr>
+                            <td>ID</td>
+                            <td>订单编号</td>
+                            <td>预订餐位号</td>
+                            <td>就餐时间</td>
+                            <td>联系电话</td>
+                            <td>预订人</td>
+                            <td>提交时间</td>
+                            <!--td>操作</td-->
+                        </tr>
+                        <volist name="orderList" id="orderListVo">
+                            <tr>
+                                <td>{$orderListVo.id}</td>
+                                <td>{$orderListVo.orderNo}</td>
+                                <td>{$orderListVo.canWeiHao}</td>
+                                <td>{$orderListVo.yongCanTime}</td>
+                                <td>{$orderListVo.mobile}</td>
+                                <td>{$orderListVo.submitter}</td>
+                                <td>{$orderListVo.subTime}</td>
+                                <!--td>[ <a href="__URL__/edit/id/{$orderListVo.id}">编辑 </a> ] [ <a link="{:U('Order/del/',array('id'=>$orderListVo['id']))}" href="javascript:void(0)" name="{$orderListVo.orderNo}" class="del">删除 </a> ]</td-->
+                            </tr>
+                        </volist>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <include file="Common:foot" />
+    </body>
+</html>

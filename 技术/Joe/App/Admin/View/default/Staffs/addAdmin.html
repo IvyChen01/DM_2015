@@ -1,0 +1,140 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+        <h4 class="modal-title" id="myModalLabel">
+            <strong>添加后台用户</strong>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <form id="addForm" class="form-horizontal required-validate" role="form" action="{:U($Think.ACTION_NAME)}">
+            <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">用户名</label>
+                <div class="col-sm-4">
+                    <input <if condition="ACTION_NAME eq 'editAdmin'">disabled="disabled"</if>name="username" type="text" class="form-control input-sm" value="{$info[username]}" />
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">邮箱地址</label>
+                <div class="col-sm-4">
+                    <input name="email" id="email" type="text" class="form-control input-sm" value="{$info[email]}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">姓名</label>
+                <div class="col-sm-4">
+                    <input name="name" type="text" class="form-control input-sm" value="{$info[name]}" />
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">新密码</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" name="pwd" id="pwd" type="password" value="{$info[pwd]}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">性别</label>
+                <div class="col-sm-4">
+                    <select name="sex" class="form-control input-sm">
+                         <if condition="$info.sex eq 1">
+                                <option value="1" selected>男</option>
+                                <option value="2">女</option>
+                                <else/>
+                                <option value="1">男</option>
+                                <option value="2" selected>女</option>
+                            </if>
+                    </select>
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">生日</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm datePicker" name="birthday" type="text" value="{$info[birthday]}" />
+                </div>
+            </div>
+          <!--  <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">身份证号</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" name="info[idCardNo]" type="text" value="{$info.idCardNo}" />
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">籍贯</label>
+                <div class="col-sm-4">
+                    <select name="info[native]" class="form-control input-sm">
+                        <option value=""></option>
+                        <volist name="nativeList" id="nativeVo">
+                        <option value="{$nativeVo.cid}" <if condition="$nativeVo[cid] eq $info[native]">selected="true"</if>>{$nativeVo.name}</option>
+                        </volist>
+                    </select>
+                </div>
+            </div> -->
+            <!-- <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">民族</label>
+                <div class="col-sm-4">
+                    <select name="info[nation]" class="form-control input-sm">
+                        <option value=""></option>
+                        <volist name="nationList" id="nationVo">
+                        <option value="{$nationVo.cid}" <if condition="$nationVo[cid] eq $info[nation]">selected="true"</if>>{$nationVo.name}</option>
+                        </volist>
+                    </select>
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">毕业院校</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" name="info[education]" type="text" value="{$info.education}" />
+                </div>
+            </div> -->
+            <div class="form-group">
+                <!-- <label for="inputField" class="col-sm-2 control-label">学历</label>
+                <div class="col-sm-4">
+                    <select name="info[degree]" class="form-control input-sm">
+                        <option value=""></option>
+                        <volist name="degreeList" id="degreeVo">
+                        <option value="{$degreeVo.cid}" <if condition="$degreeVo[cid] eq $info[degree]">selected="true"</if>>{$degreeVo.name}</option>
+                        </volist>
+                    </select>
+                </div> -->
+                <label for="inputField" class="col-sm-2 control-label">电话</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" name="tel" type="text" value="{$info[tel]}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">手机</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" name="mobile" type="text" value="{$info[mobile]}" />
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">办公地址</label>
+                <div class="col-sm-4">
+                    <input class="form-control input-sm" name="address" type="text" value="{$info[address]}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">状态</label>
+                <div class="col-sm-4">
+                    <select name="status" class="form-control input-sm">
+                             <if condition="$info.status eq 1">
+                                <option value="1" selected>启用</option>
+                                <option value="0">禁止</option>
+                                <else/>
+                                <option value="1">启用</option>
+                                <option value="0" selected>禁止</option>
+                            </if>
+                    </select>
+                </div>
+                <label for="inputField" class="col-sm-2 control-label">所属用户组</label>
+                <div class="col-sm-4">
+                    <select name="info[role_id]" class="form-control input-sm">{$info.roleOption}</select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputField" class="col-sm-2 control-label">备注</label>
+                <div class="col-sm-10">
+                    <textarea name="remark" rows="5" class="form-control input-sm">{$info[remark]}</textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div class="btn-group">
+            <button type="button" class="btn btn-info btn-sm submitForm">
+                <i class="fa fa-save"></i>保存</button>
+            <button type="button" class="btn btn-danger btn-sm del" link="{:U('edit',array('uid' => $vo['uid']))}">
+                <i class="fa fa-minus"></i>删除</button>
+            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">
+                <i class="fa fa-remove"></i>关闭</button>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/Js/functions.js"></script>

@@ -1,0 +1,69 @@
+<div class="bjui-pageContent">
+    <form action="{:U(ACTION_NAME)}" data-toggle="validate" data-reload-navtab="true">
+        <input type="hidden" name="id" value="{$info.id}" />
+        <div class="pageFormContent" data-layout-h="0">
+            <!-- 内容区 -->
+            <table class="table table-condensed table-hover" width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label class="control-label x100">名称：</label>
+                            <input name="name" type="text" size="40" value="{$info.name}" /> 英文，为MODEL_NAME的时候首字母大写
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label x100">显示名：</label>
+                            <input name="title" type="text" size="40" value="{$info.title}" /> 中英文均可
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label x100">状态：</label>
+                            <select name="status" data-toggle="selectpicker">
+                            <if condition="$info.status eq 1">
+                                <option value="1" selected>启用</option>
+                                <option value="0">禁用</option>
+                                <else/>
+                                <option value="1">启用</option>
+                                <option value="0" selected>禁用</option>
+                            </if>
+                            </select> 如果禁用那么只有超级管理员才可以访问，其他用户都无权访问
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label x100">类型：</label>
+                            <select name="level" data-toggle="selectpicker">{$info.levelOption}</select> 项目（GROUP_NAME; 模块(MODEL_NAME); 操作（ACTION_NAME）
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label x100">父级节点：</label>
+                            <select name="pid" data-toggle="selectpicker">{$info.pidOption}</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label x100">显示排序：</label>
+                            <input name="sort" type="text" size="40" value="{$info.sort}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label x100">描述：</label>
+                            <textarea name="remark" style="width: 400px;">{$info.remark}</textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+        <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+    </ul>
+</div>

@@ -1,0 +1,76 @@
+<div class="bjui-pageContent">
+    <div data-layout-h="0">
+        <!-- 内容区 -->
+        <form action="{:U('myInfo')}" method="post"  id="myform" class="pageForm" data-toggle="validate" data-reload-navtab="true" name="myform" role="form">
+            <input name="username" type="hidden" value="{$info.loginName}" />
+            <input name="staffId" type="hidden" value="{$info.staffId}" />
+            <table class="table table-hover">
+                <!-- <tr>
+                    <th width="120">当前账号：</th>
+                    <td>
+                        <input disabled="disabled" name="email" type="text" class="form-control input-sm" value="{$myInfo.username}" />
+                    </td>
+                </tr> -->
+                <tr>
+                    <th>现密码：</th>
+                    <td>
+                        <input id="oldpwd" class="form-control input-sm" name="pwd0" type="password" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>新密码：</th>
+                    <td>
+                        <input id="newpwd" class="form-control input-sm" name="pwd" type="password" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>确认密码：</th>
+                    <td>
+                        <input id="renewpwd" class="form-control input-sm" name="pwd1" type="password" value="" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="bjui-pageFooter">
+        <!-- 底部工具条  -->
+        <ul>
+            <li><button type="button" class="btn-close">关闭</button></li>
+            <li><button type="submit" id="submit" class="btn-default">保存</button></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+$(function () {
+	$.formValidator.initConfig({
+		   theme:'Default',
+		   mode:'AutoTip',
+		   formID:"myform",
+		   submitOnce:true,
+	});
+	
+	$("#oldpwd").formValidator({
+		onShow:"请输入现在密码",
+		
+		}); 
+	$("#newpwd").formValidator({
+		onShow:"请输入密码",
+		onFocus:"密码长度为5-20位之间",
+		
+		}).inputValidator({
+			min:5,max:20,onError:"密码长度为5-20位之间"
+		});
+	$("#renewpwd").formValidator({
+		onShow: "请确认密码",
+		onFocus: "2次密码必须一致",
+		
+    }).compareValidator({
+    	desID: "newpwd",
+        operateor: "=",
+        onError: "2次密码不一致,请确认"
+    });
+});
+$("#submit").click(function(){
+	$("#myform").submit();
+});
+</script>

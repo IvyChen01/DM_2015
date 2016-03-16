@@ -1,0 +1,105 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="{:U(ACTION_NAME)}" method="post">
+        <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <div class="bjui-searchBar">
+            <label>创建人:</label>
+            <select name="search[cUid]" data-toggle="selectpicker">
+                <option value="" <if condition="$search.cUid eq ''">selected="selected"</if>>全部</option>
+                <option value="1" <if condition="$search.cUid eq '1'">selected="selected"</if>>赵峡策</option>
+                <option value="4" <if condition="$search.cUid eq '4'">selected="selected"</if>>曹先鹏</option>
+            </select>
+            <label>会议名称：</label><input type="text" name="search[name]" value="{$search.name}" class="form-control" size="10" />
+            <label>会议日期：</label><input type="text" name="search[date]" value="{$search.date}" class="form-control" size="8" />
+            <button type="button" class="btn showMoreSearch" data-toggle="moresearch" data-name="moresearch" title="更多查询条件"><i class="fa fa-angle-double-down"></i></button>
+            <button type="submit" class="btn-default" data-icon="search">查询</button>
+            <a class="btn btn-orange" href="javascript:;" data-toggle="reloadsearch" data-clear-query="true" data-icon="undo">清空查询</a>
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">功能操作<span class="caret"></span></button>
+                    <ul class="dropdown-menu right" role="menu">
+                    <li><a href="{:U('addRole')}" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true"><i class="fa fa-plus"></i> 新增数据</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bjui-moreSearch">
+            <label>地点：</label><input type="text" name="search[address]" value="{$search.address}" size="15" />
+            <label>&nbsp;主持人:</label><input type="text" name="search[presenter]" value="{$search.presenter}" size="10">
+        </div>
+    </form>
+</div>
+
+<div class="bjui-pageContent">
+    <!-- 内容区 -->
+    <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>组ID</th>
+                <th>组名</th>
+                <th>描述</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <volist name="list" id="vo" key="k">
+            <tr id="{$vo.id}">
+                <td>{$k}</td>
+                <td>{$vo.id}</td>
+                <td>{$vo.name}</td>
+                <td align="left">{$vo.remark}</td>
+                <td>{$vo.statusText}</td>
+                <td>
+                    <a href="{:U('editRole?id='.$vo[id])}" class="btn btn-default" data-toggle="dialog" data-id="nodeEdit" data-width="800" data-height="480">编辑</a>
+                    <a href="{:U('changeRole?id='.$vo[id])}" class="btn btn-default" data-toggle="navtab" data-id="nodeEdit">权限分配</a>
+                    <if condition="$vo.pid eq 0">
+                    <else/>
+                        <a href="javascript:void(0);" class="btn btn-default opStatus" val="{$vo.status}">{$vo.chStatusText}</a>
+                    </if>
+                </td>
+            </tr>
+        </volist>
+    </table>
+</div>
+
+<include file="./App/Common/View/Common/pageFooter.html" />
+
+    <script type="text/javascript">
+        //show完毕前执行
+        $('#myModal').on('shown.bs.modal', function () {
+            // 提交表单
+            $(".submitForm").click(function() {
+                var url;
+                if ($("#pk").val())
+                    url = '__URL__/edit';
+                else
+                    url = '__URL__/add';
+                ajaxSubmit(url, '#addForm');
+            });
+        });       
+    </script>
+
+    <script type="text/javascript">
+    $(function() {
+        //快捷启用禁用操作
+        $(".opStatus").click(function() {
+            var obj = $(this);
+            var id = $(this).parents("tr").attr("id");
+            var status = $(this).attr("val");
+            $.getJSON("__URL__/opRoleStatus", {
+                id: id,
+                status: status
+            }, function(json) {
+                if (json.status == 1) {
+                    popup.success(json.info);
+                    $(obj).attr("val", json.data.status).html(status == 1 ? "启用" : "禁用").parents("td").prev().html(status == 1 ? "禁用" : "启用");
+                } else {
+                    popup.alert(json.info);
+                }
+            });
+        });
+    });
+    </script>

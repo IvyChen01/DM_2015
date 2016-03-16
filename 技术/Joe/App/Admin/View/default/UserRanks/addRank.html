@@ -1,0 +1,60 @@
+<div class="modal-content">
+	<div class="modal-header">
+		<!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+		<h4 class="modal-title" id="myModalLabel">
+			<strong>添加会员</strong>
+		</h4>
+	</div>
+	<div class="modal-body">
+		<form id="addForm" class="form-horizontal required-validate"
+			role="form" action="{:U('edit')}" data-toggle="validate"
+			data-reload-navtab="true">
+			<input type="hidden" id="pk" name="rankId" value="{$info.rankId}">
+			<div class="form-group">
+				<label for="inputField" class="col-sm-2 control-label">会员等级名称</label>
+				<div class="col-sm-4">
+					<input data-rule="required" name="rankName" type="text"
+						class="form-control input-sm" value="{$info.rankName}" />
+				</div>
+
+			</div>
+			<div class="form-group">
+				<label for="inputField" class="col-sm-2 control-label">积分下限</label>
+				<div class="col-sm-4">
+					<input name="startScore" id="startScore" type="text"
+						data-rule="required" class="form-control input-sm"
+						value="{$info.startScore}" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputField" class="col-sm-2 control-label">积分上限</label>
+				<div class="col-sm-4">
+					<input name="endScore" id="endScore" type="text"
+						data-rule="required" class="form-control input-sm"
+						value="{$info.endScore}" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputField" class="col-sm-2 control-label">折扣率</label>
+				<div class="col-sm-4">
+					<input name="rebate" id="rebate" type="text" data-rule="required"
+						class="form-control input-sm" value="{$info.rebate}" />
+				</div>
+			</div>
+
+
+			<div class="modal-footer">
+				<div class="btn-group">
+					<button class="btn btn-default" data-icon="save" type="submit">
+						保存
+					</button>
+					<button type="button" class="btn  btn-close">
+						<i class="fa fa-remove"></i>关闭
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+</div>
+<script src="__PUBLIC__/Js/functions.js"></script>

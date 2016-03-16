@@ -1,0 +1,84 @@
+<div class="bjui-pageHeader">
+     <form id="pagerForm" data-toggle="ajaxsearch" action="{:U($Think.ACTION_NAME)}" method="post">
+	    <input type="hidden" name="pageSize" value="{$Think.session.pageSize}">
+        <input type="hidden" name="pageCurrent" value="{$Think.session.pageCurrent}">
+        <input type="hidden" name="orderField" value="{$Think.session.orderField}">
+        <input type="hidden" name="orderDirection" value="{$Think.session.orderDirection}">
+        <input placeholder="商品" id="goodsName" type="text" name="search[goodsName]" value="{$search.goodsName}" />
+		<button type="submit" class="btn-default" data-icon="search">查询</button>
+		<!-- <span><a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">刷新</a></span> -->
+		<div class="pull-right">
+			<div class="btn-group">
+				<button type="button" class="btn-default dropdown-toggle"
+					data-toggle="dropdown" data-icon="copy">
+					功能操作<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu right" role="menu">
+					<li><a href="{:U('toEdit')}" data-toggle="dialog"
+						data-width="1000" data-height="600" data-id="dialog-mask"
+						data-mask="true">新增数据</a></li>
+				</ul>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="bjui-pageContent">
+	<table class="table table-hover table-striped table-bordered wst-list">
+		<thead>
+			<tr>
+				<th width='40'>序号</th>
+				<th colspan='2'>商品</th>
+				<th width='60'>状态</th>
+				<th>商品评分</th>
+				<th>时效评分</th>
+				<th>服务评分</th>
+				<th width='150'>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="Page['info']" id="vo" key='i'>
+			<tr>
+				<td rowspan='2'>{$i}</td>
+				<td rowspan='2' width='50' style='border-right: 0px;'><img src='__ROOT__/{$vo[' goodsThums']}' width='50' /></td>
+				<td rowspan='2' width='140' style='border-left: 0px;'><span
+					style='font-weight: bold;'>{$vo['goodsName']}</span><br />订单：{$vo['orderNo']}</td>
+				<td><if condition="$vo['isShow'] == 1 "> <span class='label label-success'>显示</span> 
+				    <else /> <span class='label label-warning'>隐藏</span> </if>
+				</td>
+				<td>
+					<div>
+						<for start="0" end="$vo['goodsScore']"> <img
+							src="__PUBLIC__/Img/icon_score_yes.png" />
+						</for>
+						&nbsp;{$vo['goodsScore']} 分
+					</div>
+				</td>
+				<td>
+					<div>
+						<for start="0" end="$vo['timeScore']"> <img
+							src="__PUBLIC__/Img/icon_score_yes.png" />
+						</for>
+						&nbsp;{$vo['timeScore']} 分
+					</div>
+				</td>
+				<td>
+					<div>
+						<for start="0" end="$vo['serviceScore']"> <img
+							src="__PUBLIC__/Img/icon_score_yes.png" />
+						</for>
+						&nbsp;{$vo['serviceScore']} 分
+					</div>
+				</td>
+				<td rowspan='2'>
+				    <a class="btn btn-default glyphicon glyphicon-pencil" href="{:U('toEdit',array('id'=>$vo['id']))}" data-toggle="dialog" data-width="1000" data-height="600" data-id="dialog-mask" data-mask="true">修改</a>&nbsp;
+				    <a class="btn btn-default glyphicon glyphicon-trash" href="{:U('del',array('id'=>$vo['id']))}">刪除</button>
+				</td>
+			</tr>
+			<tr>
+				<td colspan='4' style='word-break: break-all;'>评价[{$vo['loginName']}]：{$vo['content']}</td>
+			</tr>
+			</volist>
+		</tbody>
+	</table>
+</div>
+<include file="./App/Common/View/Common/pageFooter.html" />  

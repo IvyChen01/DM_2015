@@ -1,0 +1,143 @@
+  <div class="bjui-pageContent">
+       <form name="myform" method="post" id="myform" autocomplete="off" >
+        <input type='hidden' id='id' name="id" value='{$object.id}'/>
+        <table class="table table-hover table-striped table-bordered wst-form">
+          <tbody>
+           <tr>
+             <th width='120' align='right'>商品：</th>
+             <td><img src='__ROOT__/{$object['goodsThums']}' width='50'/>&nbsp;{$object['goodsName']}</td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>所属订单：</th>
+             <td>{$object['orderNo']}</td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>用户：</th>
+             <td>{$object['loginName']}</td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>评价：</th>
+             <td>
+             <div style='width:500px;'>
+                <div style='float:left;width:70px;'>商品评分：</div>
+                <div style='float:left;width:430px;'>
+                <div class="goodsScore"  style='float:left'></div>
+				<div id="goodsScore_hint"  style='float:left'></div>
+				</div>
+			 </div>
+			 <div style='width:500px;'>
+                <div style='float:left;width:70px;'> 时效评分：</div>
+                <div style='float:left;width:430px;'>
+                <div class="timeScore"  style='float:left'></div>
+				<div id="timeScore_hint" style='float:left'></div>
+				</div>
+			 </div>
+			 <div style='width:500px;'>
+                <div style='float:left;width:70px;'>服务评分：</div>
+                <div style='float:left;width:430px;'>
+                <div class="serviceScore"  style='float:left'></div>
+				<div id="serviceScore_hint"  style='float:left'></div>
+				</div>
+			 </div>
+             </td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>状态：</th>
+             <td>
+             <input type='radio' id='isShow1' name='isShow' value='1' <if condition="$object['isShow'] == 1 ">checked</if>/>显示
+             <input type='radio' id='isShow0' name='isShow' value='0' <if condition="$object['isShow'] == 0 ">checked</if>/>隐藏
+             </td>
+           </tr>
+           <tr>
+             <th width='120' align='right'>评语：</th>
+             <td><textarea id='content' name='content' style='width:450px;height:100px;'>{$object['content']}</textarea></td>
+           </tr>
+          <!--  <tr>
+             <td colspan='2' style='padding-left:250px;'>
+                 <button type="submit" class="btn btn-success">保&nbsp;存</button>
+                 <button type="button" class="btn btn-primary" onclick='javascript:location.href="{:U('Admin/GoodsAppraises/index')}"'>返&nbsp;回</button>
+             </td>
+           </tr> -->
+           </tbody>
+        </table>
+       </form>
+ </div>
+ <div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+		<!-- <li><button type="submit" class="btn-default" data-icon="save">保存</button></li> -->
+		<li><button id="submit" type="submit" class="btn btn-success" data-icon="save">保&nbsp;存</button></li>
+	</ul>
+</div>
+<script>
+   $(function () {
+	   var options = {
+				hints         : ['很不满意', '不满意', '一般', '满意', '非常满意'],
+				width:200,
+				targetKeep: true,
+				starHalf:'__PUBLIC__/Js/raty/img/star-half-big.png',
+				starOff:'__PUBLIC__/Js/raty/img/star-off-big.png',
+				starOn:'__PUBLIC__/Js/raty/img/star-on-big.png',
+				cancelOff: '__PUBLIC__/Js/raty/img/cancel-off-big.png',
+			    cancelOn: '__PUBLIC__/Js/raty/img/cancel-on-big.png'
+	    }
+	  options.target='#goodsScore_hint';
+	  options.score='{$object['goodsScore']}';
+	  $('.goodsScore').raty(options);
+	  options.target='#timeScore_hint';
+	  options.score='{$object['timeScore']}';
+	  $('.timeScore').raty(options);
+	  options.target='#serviceScore_hint';
+	  options.score='{$object['serviceScore']}';
+	  $('.serviceScore').raty(options);
+	   $.formValidator.initConfig({
+		   theme:'Default',mode:'AutoTip',formID:"myform",debug:true,submitOnce:true,onSuccess:function(){
+				   edit();
+			       return false;
+			},onError:function(msg){
+		}});
+	   $("#content").formValidator({onShow:"",onFocus:"评价内容为3-50个字 !",onCorrect:"输入正确"}).inputValidator({min:3,max:150,onError:"评价内容为3-50个字 !"});
+	   
+   });
+   function edit(){
+	   var params = {};
+	   params.id = $('#id').val();
+	   params.isShow = document.getElementById('isShow1').checked?1:0;
+	   params.goodsScore = $('.goodsScore > input[name="score"]').val();
+	   if(params.goodsScore==0){
+		   Plugins.Tips({title:'信息提示',icon:'error',content:'选择商品评分!',timeout:1000});
+		   return;
+	   }
+	   params.timeScore = $('.timeScore > input[name="score"]').val();
+	   if(params.timeScore==0){
+		   Plugins.Tips({title:'信息提示',icon:'error',content:'请选择时效得分 !',timeout:1000});
+		   return;
+	   }
+	   params.serviceScore = $('.serviceScore > input[name="score"]').val();
+	   if(params.serviceScore==0){
+		   Plugins.Tips({title:'信息提示',icon:'error',content:'请选择服务得分 !',timeout:1000});
+		   return;
+	   }
+	   params.content = $.trim($('#content').val());
+	   if(params.content.length<3 || content.length>50){
+		   Plugins.Tips({title:'信息提示',icon:'error',content:'评价内容为3-50个字 !',timeout:1000});
+		   return;
+	   }
+	   //Plugins.waitTips({title:'信息提示',content:'正在提交数据，请稍后...'});
+	   $.post("{:U('Admin/GoodsAppraises/edit')}",params,function(data,textStatus){
+		    var json = WST.toJson(data);
+			if(json.status=='1'){
+				//$(this).closeCurrent();
+				$(this).dialog('close', $.CurrentDialog);
+				$(this).navtab('reloadForm', true);
+				/* Plugins.setWaitTipsMsg({ content:'操作成功',timeout:1000,callback:function(){
+				   //location.href='{:U("Admin/GoodsAppraises/index")}';
+					$(this).navtab('reloadForm', true);
+				}}); */
+			}else{
+				Plugins.closeWindow();
+				Plugins.Tips({title:'信息提示',icon:'error',content:'操作失败!',timeout:1000});
+			}
+	  });
+   }
+   </script>
