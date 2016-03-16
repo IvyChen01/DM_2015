@@ -1,0 +1,66 @@
+.main-wrapper{transition:all 0.4s ease-in-out 0s;position:relative;background-color:#f7f7f7}
+#contacts-wrapper{background-color:#e3e3e3;padding:29px;margin-top:5px}
+#contacts-wrapper .cols-wrapper{font-size:0;background-color:#fff;padding:40px 20px 20px 20px}
+#contacts-wrapper .col-1{width:52%}
+#contacts-wrapper .col{display:inline-block;zoom:1;vertical-align:top}
+#contacts-wrapper .col h2{font-size:24px;margin-bottom:15px}
+#contacts-wrapper .contacts-container{padding:30px;background-color:#e3e3e3}
+.clearfloat{zoom:1}
+@media(max-width:1400px){
+  #contacts-wrapper .contacts-container .details{float:none;width:auto!important;padding-right:0}
+  #contacts-wrapper .contacts-container form{margin:40px 0 0 0}
+  form .btn{padding:9px 30px}
+}
+#contacts-wrapper .contacts-container .details{width:420px;float:left;padding-right:30px;font-size:16px}
+form .fieldset li{margin-top:20px}
+#contacts-wrapper .contacts-container form label{font-family:'prime-regular', Arial, sans-serif;font-size:16px;color:#074491}
+form label{display:block;color:#414042;font-size:16px}
+form .textbox{display:block;height:40px;line-height:40px;font-family:'bariol-regular', Arial, sans-serif;border:0 none;background-color:#fff;color:#939598;width:100%;font-size:18px;padding:0 15px;border-sizing:border-box}
+#contacts-wrapper .contacts-container form label.error{color:#c00d10;font-size:13px;font-style:italic}
+#contacts-wrapper .contacts-container form label{font-family:'prime-regular', Arial, sans-serif;font-size:16px;color:#074491}
+#contacts-wrapper .contacts-container form .textarea{height:150px}
+form .textarea{display:block;font-family:'bariol-regular', Arial, sans-serif;border:0 none;background-color:#fff;color:#939598;width:100%;font-size:18px;padding:15px;resize:none;height:200px;overflow:auto;border-sizing:border-box}
+.message{font-size:16px;padding:15px;margin-bottom:15px;border:1px solid;}
+.message.error{background:#ffa9a9;border-color:#b90000;color:#b90000}
+input#code{margin-top:20px;}
+#contacts-wrapper .contacts-container form .btn{float:right}
+form .btn{display:inline-block;zoom:1;vertical-align:top;border:1px solid #074491;background-color:#074491;cursor:pointer;font-family:'prime-regular', Arial, sans-serif;font-size:24px;color:#fff;padding:13px 40px 12px 40px;margin-top:10px;transition:all 0.5s linear}
+#contacts-wrapper .col-2{width:48%}
+#contacts-wrapper .col-2 h2{text-transform:uppercase;}
+h1, h2, h3{font-family:'ralewaybold', Arial, sans-serif;font-weight:normal;line-height:29px;color:#074491}
+#contacts-wrapper .maps{background-color:#e3e3e3;}
+#contacts-wrapper .map-wrapper{height:300px;background:url(../Img/logo/loader.gif) center center no-repeat #e3e3e3}
+#contacts-wrapper .maps h2{padding-top:20px;margin-bottom:20px}
+#contacts-wrapper .col-2 h2{text-transform:uppercase}
+#contacts-wrapper .contacts-container .details h3{font-size:24px;text-transform:uppercase;margin-bottom:40px}
+p{margin-bottom:30px;line-height:29px;display:block}
+@media(max-width:1600px){
+  p{line-height:24px}
+}
+#contacts-wrapper .contacts-container .details a{display:block;font-family:'bariol-italic', Arial, sans-serif}
+#contacts-wrapper .contacts-container .details a:hover{color:#414042}
+#contacts-wrapper .follow-list{font-size:0}
+#contacts-wrapper .follow-list li:first-child{margin-left:0}
+#contacts-wrapper .follow-list li{margin-left:8px;display:inline-block;zoom:1;vertical-align:top}
+#contacts-wrapper .follow-list li a.twitter{background-position:0 0}
+#contacts-wrapper .follow-list li a{background:url(../Img/logo/social-sprites-contacts.png) 0 0 no-repeat;display:block;text-indent:-9999px;width:40px;height:40px;transition:none}
+#contacts-wrapper .follow-list li a.facebook{background-position:-40px 0}
+#contacts-wrapper .follow-list li a.youtube{background-position:-80px 0}
+#contacts-wrapper .follow-list li a.youtube:hover{background-position:-80px -40px}
+#contacts-wrapper .follow-list li a.facebook:hover{background-position:-40px -40px}
+#contacts-wrapper .follow-list li a.twitter:hover{background-position:0 -40px}
+@media(max-width:800px){
+  #contacts-wrapper .col-1{width:100%;display:block}
+  #contacts-wrapper .col-2{width:100%;display:block;margin-top:30px}
+  #contacts-wrapper{margin-top:0}
+  #contacts-wrapper .contacts-container .details h3{margin-bottom:15px}
+  p{margin-bottom:20px}
+}
+#frm_contactus{margin-left:450px}
+@media(max-width:1400px){
+  #frm_contactus{margin-left:0px}
+  .follow-wrapper{margin-bottom:40px}
+}
+.fieldset li:after{clear:none}
+.clearfloat:after{clear:both}
+.message{display:none}
