@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>抢红包数据统计</title>
+<link href="css/admin.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="topbar">
+	<span><a href="?m=admin" target="_self">管理中心</a> | <a href="?m=admin&a=logout" target="_self">退出</a></span>
+</div>
+<div class="change-pw">
+	<h3>抢红包数据统计</h3>
+	总抢红包人次: {#$_totalLucky#}<br />
+	<br />
+	<cmd>foreach ($_dayList as $_value) {</cmd>
+	[{#$_value['date']#}] 抢红包人次: {#$_value['num']#}<br />
+	<cmd>}</cmd>
+</div>
+</body>
+</html>

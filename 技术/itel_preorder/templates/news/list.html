@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>test</title>
+<meta name="keywords" content="test" />
+<meta name="description" content="test" />
+<link rel="shortcut icon" href="images/favicon.ico"/>
+<link href="css/index.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="topbar">
+	<p class="float-left"><a href="/" target="_self">test</a></p>
+	<div class="clear"></div>
+</div>
+<div class="news-list">
+	<ul>
+		<cmd>foreach ($_news as $_value) {</cmd>
+			<cmd>$_str = System::fixTitle($_value['content']);</cmd>
+			<cmd>$_str = Utils::msubstr($_str, 0, 200);</cmd>
+			<li><a href="?m=news&a=detail&id={#$_value['id']#}" target="_self">{#$_str#}</a>
+			<p class="date"><cmd>echo Utils::mdate('Y-m-d', $_value['pubdate']);</cmd></p>
+			</li>
+		<cmd>}</cmd>
+	</ul>
+</div>
+<div class="footer align-center">
+	<p>Copyright &copy; 2015 test.com. All Rights Reserved</p>
+</div>
+{#$_countCode#}
+</body>
+</html>
