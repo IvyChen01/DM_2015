@@ -1,0 +1,94 @@
+<table bgcolor="#efefef" align="center" width="740" border="0" cellpadding="0" cellspacing="0" style="font-size: 18px; color: #727171;">
+	<tr align="left" bgcolor="#FFFFFF" style="font-size: 18px; color: #000000;">
+		<td><br/>Dear Sir/Madam<br/>
+ <br/>
+Thanks for your constant support to TECNO.<br/>
+This is from oraimo, the exclusive accessories partner of TECNO. Please kindly take a few minutes to read the email as you may need!<br/>
+ <br/>
+oraimo offers:<br/>
+√   Perfect accessories solution for all TECNO models, including battery, flip case, screen protector, etc.<br/>
+√   Quality guaranteed smart accessories such as power-bank and Bluetooth devices.<br/>
+√   A Professional team supported services.  <br/>
+<br/>
+We are trying to provide what market wants and to bring more value to your business. Here is a brief view of our products, especially introducing you our power-banks:<br/><br/></td>
+	</tr>
+	<tr>
+		<td><a href="http://www.oraimo.com"><img src="http://www.geyaa.com/oraimo_images/img3_01.jpg" width="740" height="127" alt="oraimo"></a></td>
+	</tr>
+	<tr>
+		<td>
+			<table align="center" width="740" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><img src="http://www.geyaa.com/oraimo_images/img3_02.jpg" width="249" height="490" alt="POWER BANK"></td>
+					<td><img src="http://www.geyaa.com/oraimo_images/img3_03.jpg" width="248" height="490" alt="PB-52AR"></td>
+					<td><img src="http://www.geyaa.com/oraimo_images/img3_04.jpg" width="243" height="490" alt="PB-26AT"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><img src="http://www.geyaa.com/oraimo_images/img3_05.jpg" width="740" height="71" alt="MORE PRODUCTS"></td>
+	</tr>
+	<tr>
+		<td>
+			<table align="center" width="740" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><a href="http://www.oraimo.com/products/power/power-bank/194.html"><img src="http://www.geyaa.com/oraimo_images/img3_06.jpg" width="365" height="306" alt="Power Bank(5200mAh)_PB-52AR"></a></td>
+					<td><a href="http://www.oraimo.com/products/power/power-bank/122.html"><img src="http://www.geyaa.com/oraimo_images/img3_07.jpg" width="375" height="306" alt="Power Bank(5200mAh)_PB-52BT"></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table align="center" width="740" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><a href="http://oraimo.com/products/power/power-bank/195.html"><img src="http://www.geyaa.com/oraimo_images/img3_08.jpg" width="365" height="314" alt="Power Bank(7800mAh)_PB-78AR"></a></td>
+					<td><a href="http://oraimo.com/products/power/power-bank/140.html"><img src="http://www.geyaa.com/oraimo_images/img3_09.jpg" width="375" height="314" alt="Power Bank(10400mAh)_PB-10AR"></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table align="center" width="740" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><a href="http://www.oraimo.com/products/power/power-bank/143.html"><img src="http://www.geyaa.com/oraimo_images/img3_10.jpg" width="365" height="313" alt="Power Bank(2600mAh)_PB-26AT"></a></td>
+					<td><a href="http://www.oraimo.com/products/power/Battery/116.html"><img src="http://www.geyaa.com/oraimo_images/img3_11.jpg" width="375" height="313" alt="Battery_BL-5C"></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><img src="http://www.geyaa.com/oraimo_images/img3_12.jpg" width="740" height="157" alt="Certificate of Authorization"></td>
+	</tr>
+	<tr>
+		<td>
+			<table align="center" width="740" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><img src="http://www.geyaa.com/oraimo_images/img3_13.jpg" width="234" height="472" alt="Certificate of Authorization"></a></td>
+					<td><img src="http://www.geyaa.com/oraimo_images/img3_14.jpg" width="275" height="472" alt="Certificate of Authorization"></a></td>
+					<td><img src="http://www.geyaa.com/oraimo_images/img3_15.jpg" width="231" height="472" alt="Certificate of Authorization"></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><img src="http://www.geyaa.com/oraimo_images/img3_16.jpg" width="740" height="92" alt="line"></td>
+	</tr>
+	<tr>
+		<td align="center">For further co-operation, contact us at: <a style="text-decoration: underline; color: #727171;" href="mailto:smd.hq@oraimo.com">smd.hq@oraimo.com</a></td>
+	</tr>
+	<tr>
+		<td align="center">For more information, please visit: <a style="text-decoration: underline; color: #727171;" href="http://www.oraimo.com">www.oraimo.com</a></td>
+	</tr>
+	<tr>
+		<td align="center">Like oraimo <a href="https://www.facebook.com/OraimoAccessories"><img style="vertical-align: middle; border: none;" src="http://www.geyaa.com/oraimo_images/fb.png"/></a></td>
+	</tr>
+	<tr>
+		<td height="68px"></td>
+	</tr>
+	<tr align="left" bgcolor="#FFFFFF" style="font-size: 18px; color: #000000;">
+		<td><br/>Thanks for your time, looking forward to your reply!<br/><br/></td>
+	</tr>
+</table>

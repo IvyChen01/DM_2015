@@ -1,0 +1,84 @@
+<table bgcolor="#efefef" align="center" width="740" border="0" cellpadding="0" cellspacing="0" style="font-size: 18px; color: #727171;">
+	<tr align="left" bgcolor="#FFFFFF" style="font-size: 18px; color: #000000;">
+		<td><br/>Oraimo is the exclusive accessories partner of TECNO, we are looking for distributors who have strong willing of cooperation in the accessories market.<br/>
+Here's a brief introduction of our products.<br/><br/></td>
+	</tr>
+	<tr>
+		<td><a href="http://www.oraimo.com"><img src="http://www.oraimo.com/oraimo_email/img_01.jpg" width="740" height="119" alt="oraimo"></a></td>
+	</tr>
+	<tr>
+		<td>
+			<table align="center" width="740" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><a href="http://www.oraimo.com/products/power/power-bank/143.html"><img src="http://www.oraimo.com/oraimo_email/img_02.jpg" width="441" height="475" alt="TECNO"></a></td>
+					<td><img src="http://www.oraimo.com/oraimo_email/img_03.jpg" width="299" height="475" alt="POWER BANK PB-26AT"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><img src="http://www.oraimo.com/oraimo_email/img_04.jpg" width="740" height="85" alt="MORE PRODUCT"></td>
+	</tr>
+	<tr>
+		<td>
+			<table align="center" width="740" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><a href="http://www.oraimo.com/products/power/Battery/116.html"><img src="http://www.oraimo.com/oraimo_email/img_05.jpg" width="370" height="315" alt="Battery_BL-5C"></a></td>
+					<td><a href="http://www.oraimo.com/products/protector/case/156.html"><img src="http://www.oraimo.com/oraimo_email/img_06.jpg" width="370" height="315" alt="Colorful Flip Case-TECNO A7"></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table align="center" width="740" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><a href="http://oraimo.com/products/audio-equipment/bluetooth-headset/2014/0919/154.html"><img src="http://www.oraimo.com/oraimo_email/img_07.jpg" width="370" height="314" alt="Bluetooth headset"></a></td>
+					<td><a href="http://oraimo.com/products/protector/case/151.html"><img src="http://www.oraimo.com/oraimo_email/img_08.jpg" width="370" height="314" alt="Colorful Flip Case-TECNO P5"></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table align="center" width="740" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><a href="http://www.oraimo.com/products/Memory/microsd-card/132.html"><img src="http://www.oraimo.com/oraimo_email/img_09.jpg" width="370" height="313" alt="Micro SD Card"></a></td>
+					<td><a href="http://www.oraimo.com/products/Cable/data-cable/155.html"><img src="http://www.oraimo.com/oraimo_email/img_10.jpg" width="370" height="313" alt="OTG Cable Data"></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><img src="http://www.oraimo.com/oraimo_email/img_11.jpg" width="740" height="151" alt="Certificate of Authorization"></td>
+	</tr>
+	<tr>
+		<td>
+			<table align="center" width="740" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><img src="http://www.oraimo.com/oraimo_email/img_12.jpg" width="276" height="483" alt="Certificate of Authorization"></a></td>
+					<td><img src="http://www.oraimo.com/oraimo_email/img_13.jpg" width="226" height="483" alt="Certificate of Authorization"></a></td>
+					<td><img src="http://www.oraimo.com/oraimo_email/img_14.jpg" width="238" height="483" alt="Certificate of Authorization"></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><img src="http://www.oraimo.com/oraimo_email/img_15.jpg" width="740" height="86" alt=""></td>
+	</tr>
+	<tr>
+		<td align="center">For further co-operation, contact us at: <a style="text-decoration: underline; color: #727171;" href="mailto:smd.hq@oraimo.com">smd.hq@oraimo.com</a></td>
+	</tr>
+	<tr>
+		<td align="center">For more information, please visit: <a style="text-decoration: underline; color: #727171;" href="http://www.oraimo.com">www.oraimo.com</a></td>
+	</tr>
+	<tr>
+		<td align="center">Like oraimo <a href="https://www.facebook.com/OraimoAccessories"><img style="vertical-align: middle; border: none;" src="http://www.oraimo.com/oraimo_email/fb.png"/></a></td>
+	</tr>
+	<tr>
+		<td height="68px"></td>
+	</tr>
+	<tr align="left" bgcolor="#FFFFFF" style="font-size: 18px; color: #000000;">
+		<td><br/>Are you the one we are looking for?<br/><br/></td>
+	</tr>
+</table>
