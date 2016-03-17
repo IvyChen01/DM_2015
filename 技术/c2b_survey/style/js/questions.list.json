@@ -1,0 +1,1203 @@
+[
+    {
+        "id": 1,
+        "title": "Which one of the following phones is your most frequently used phone?",
+        "answer": {
+            "sortCount":"",
+            "isSingleSelection": 1,
+            "allowNumSed": 3,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "TECNO Phantom A+ (F7+)"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "TECNO P5"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "Other TECNO smartphone (Android phone)"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "Other TECNO phone (Not smartphone/ not Android phone)"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "Other Brand's phone"
+                }
+            ]
+        },
+        "bgColor": "#14DBD6"
+    },
+    {
+        "id": 2,
+        "title": "To what extent are you satisfied with your{q1_selection_phone}",
+        "answer": {
+            "sortCount": "",
+            "isSingleSelection": 1,
+            "allowNumSed": 3,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "Very satisfied"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "Somewhat satisfied"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "Neither satisfied nor dissatisfied"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "Somewhat dissatisfied"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "Very dissatisfied"
+                }
+            ]
+        },
+        "bgColor": "#7CB854"
+    },
+    {
+        "id": 3,
+        "title": "Which aspects of {q1_selection_phone} are you dissatisfied with or you think need to be improved?  (Multi-select)",
+        "answer": {
+            "sortCount": 13,
+            "isSingleSelection": 0,
+            "allowNumSed": 3,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "Quality"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "Signal"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "Appearance"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "Screen"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "Lasting battery"
+                },
+                {
+                    "o_id": 5,
+                    "op_p": "Photography experience"
+                },
+                {
+                    "o_id": 6,
+                    "op_p": "Music experience"
+                },
+                {
+                    "o_id": 7,
+                    "op_p": "Video experience"
+                },
+                {
+                    "o_id": 8,
+                    "op_p": "Social media (chatting tools)"
+                },
+                {
+                    "o_id": 9,
+                    "op_p": "Internet surfing "
+                },
+                {
+                    "o_id": 10,
+                    "op_p": "Pre-loaded APP "
+                },
+                {
+                    "o_id": 11,
+                    "op_p": "Running speed"
+                },
+                {
+                    "o_id": 12,
+                    "op_p": "Memory capacity"
+                },
+                {
+                    "o_id": 13,
+                    "op_p": "UI (user interface)"
+                },
+                {
+                    "o_id": 14,
+                    "op_p": "Accessories"
+                },
+                {
+                    "o_id": 15,
+                    "op_p": "Others <textarea class='custom-fill' onfocus='custom_fill_focus(this);' onblur='custom_fill_blur(this);'>Please specify</textarea>"
+                },
+                {
+                    "o_id": 16,
+                    "op_p": "No unsatisfying aspect"
+                }
+            ]
+        },
+        "bgColor": "#09A275"
+    },
+    {
+        "id": 4,
+        "title": "Please select your three most unsatisfying  aspects among those you have selected in Q3?",
+        "answer": {
+            "sortCount": "",
+            "allowNumSed": 3,
+            "isSingleSelection": 0,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "Quality"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "Signal"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "Appearance"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "Screen"
+                },
+                {
+                    "o_id": 5,
+                    "op_p": "Lasting battery"
+                },
+                {
+                    "o_id": 6,
+                    "op_p": "Photography experience"
+                },
+                {
+                    "o_id": 7,
+                    "op_p": "Music experience"
+                },
+                {
+                    "o_id": 8,
+                    "op_p": "Video experience"
+                },
+                {
+                    "o_id": 9,
+                    "op_p": "Social media (chatting tools)"
+                },
+                {
+                    "o_id": 10,
+                    "op_p": "Internet surfing "
+                },
+                {
+                    "o_id": 11,
+                    "op_p": "Pre-loaded APP "
+                },
+                {
+                    "o_id": 12,
+                    "op_p": "Running speed"
+                },
+                {
+                    "o_id": 13,
+                    "op_p": "Memory capacity"
+                },
+                {
+                    "o_id": 14,
+                    "op_p": "Others <textarea class='custom-fill' onfocus='custom_fill_focus(this);' onblur='custom_fill_blur(this);'>Please specify</textarea>"
+                },
+                {
+                    "o_id": 15,
+                    "op_p": "No unsatisfying aspect"
+                }
+            ]
+        },
+        "bgColor": "#F2B701"
+    },
+    {
+        "id": 5,
+        "title": "Specifically, which aspects of the screen performance of your {q1_selection_phone} you are not satisfied with or you think need to be improved?  (Multi-select)",
+        "answer": {
+            "sortCount": "10",
+            "isSingleSelection": 0,
+            "allowNumSed": "",
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "Screen size (too large)"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "Screen size (too small)"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "The screen is not clear enough"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "The color is not bright enough"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "It's not clear under the sun"
+                },
+                {
+                    "o_id": 5,
+                    "op_p": "It's not clear to see from other angles"
+                },
+                {
+                    "o_id": 6,
+                    "op_p": "The touch feeling is not good"
+                },
+                {
+                    "o_id": 7,
+                    "op_p": "The lighting of the screen is uneven"
+                },
+                {
+                    "o_id": 8,
+                    "op_p": "Easy to break"
+                },
+                {
+                    "o_id": 9,
+                    "op_p": "Easy to scratch"
+                },
+                {
+                    "o_id": 10,
+                    "op_p": "Take a long time to response (Sensitivity)"
+                },
+                {
+                    "o_id": 11,
+                    "op_p": "No screen protector"
+                },
+                {
+                    "o_id": 12,
+                    "op_p": "Others <textarea class='custom-fill' onfocus='custom_fill_focus(this);' onblur='custom_fill_blur(this);'>Please specify</textarea>"
+                }
+            ]
+        },
+        "bgColor": "#E57D04"
+    },
+    {
+        "id": 6,
+        "title": "Specifically, which aspects of the battery performance of your {q1_selection_phone} you are not satisfied with or you think need to be improved? (Multi-select)",
+        "answer": {
+            "sortCount": "",
+            "isSingleSelection": 0,
+            "allowNumSed": "",
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "The capacity is less than that of other phones"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "Drain out fast in normal use"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "Over heat while using the phone"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "Take a long time to charge"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "Cannot get fully charged"
+                },
+                {
+                    "o_id": 5,
+                    "op_p": "Others <textarea class='custom-fill' onfocus='custom_fill_focus(this);' onblur='custom_fill_blur(this);'>Please specify</textarea>"
+                }
+            ]
+        },
+        "bgColor": "#FF7F66"
+    },
+    {
+        "id": 7,
+        "title": "Specifically, which aspects of the photography experience of your {q1_selection_phone} you are not satisfied with or you think need to be improved?  (Multi-select)",
+        "answer": {
+            "sortCount": "",
+            "allowNumSed": 3,
+            "isSingleSelection": 0,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "Take a long time to start up"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "The photos are not clear"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "Take a long time to focus"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "Out of focus/cannot auto-focus"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "Continuous shoot speed is low"
+                },
+                {
+                    "o_id": 5,
+                    "op_p": "No continuous shoot"
+                },
+                {
+                    "o_id": 6,
+                    "op_p": "Shutter speed is low"
+                },
+                {
+                    "o_id": 7,
+                    "op_p": "No photograph shortcut key"
+                },
+                {
+                    "o_id": 8,
+                    "op_p": "The night shoot is not good"
+                },
+                {
+                    "o_id": 9,
+                    "op_p": "The flashlight is not bright enough"
+                },
+                {
+                    "o_id": 10,
+                    "op_p": "No dual cameras"
+                },
+                {
+                    "o_id": 11,
+                    "op_p": "The pixels of rear camera is low"
+                },
+                {
+                    "o_id": 12,
+                    "op_p": "The pixels of front camera is low"
+                },
+                {
+                    "o_id": 13,
+                    "op_p": "Photograph modes are poor"
+                },
+                {
+                    "o_id": 14,
+                    "op_p": "The colors of the photo distort"
+                },
+                {
+                    "o_id": 15,
+                    "op_p": "Photo edition is weak."
+                },
+                {
+                    "o_id": 16,
+                    "op_p": "Inconvenient to invoke photograph"
+                },
+                {
+                    "o_id": 17,
+                    "op_p": "Inconvenient to upload/share photos"
+                },
+                {
+                    "o_id": 18,
+                    "op_p": "Photo albums are not sorted properly"
+                },
+                {
+                    "o_id": 19,
+                    "op_p": "Others <textarea class='custom-fill' onfocus='custom_fill_focus(this);' onblur='custom_fill_blur(this);'>Please specify</textarea>"
+                }
+            ]
+        },
+        "bgColor": "#DD0A41"
+    },
+    {
+        "id": 8,
+        "title": "Specifically, which aspects of the music experience of your {q1_selection_phone} you are not satisfied with or you think need to be improved? (Multi-select)",
+        "answer": {
+            "sortCount": "",
+            "allowNumSed": 3,
+            "isSingleSelection": 0,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "The sound is too low"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "The sound is too loud"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "Too few sound modes"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "The bass effect is bad"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "The UI of music player is not good-looking"
+                },
+                {
+                    "o_id": 5,
+                    "op_p": "Music player is complicated to use"
+                },
+                {
+                    "o_id": 6,
+                    "op_p": "No music shortcut key"
+                },
+                {
+                    "o_id": 7,
+                    "op_p": "No Dolby/SRS/Beats Certification"
+                },
+                {
+                    "o_id": 8,
+                    "op_p": "The tone of the speaker is poor"
+                },
+                {
+                    "o_id": 9,
+                    "op_p": "The tone of the earpiece is poor"
+                },
+                {
+                    "o_id": 10,
+                    "op_p": "The memory capacity is limited"
+                },
+                {
+                    "o_id": 11,
+                    "op_p": "Too few pre-installed music apps"
+                },
+                {
+                    "o_id": 12,
+                    "op_p": "Sharing music is inconvenient."
+                },
+                {
+                    "o_id": 13,
+                    "op_p": "Support too few music formats"
+                },
+                {
+                    "o_id": 14,
+                    "op_p": "No recording function"
+                },
+                {
+                    "o_id": 15,
+                    "op_p": "No lyric displaying function"
+                },
+                {
+                    "o_id": 16,
+                    "op_p": "Music download is inconvenient"
+                },
+                {
+                    "o_id": 17,
+                    "op_p": "music preloaded"
+                },
+                {
+                    "o_id": 18,
+                    "op_p": "The system ringtone is unpleasant"
+                },
+                {
+                    "o_id": 19,
+                    "op_p": "Others <textarea class='custom-fill' onfocus='custom_fill_focus(this);' onblur='custom_fill_blur(this);'>Please specify</textarea>"
+                }
+            ]
+        },
+        "bgColor": "#B10058"
+    },
+    {
+        "id": 9,
+        "title": "Specifically, which aspects of the video experience of your {q1_selection_phone} you are not satisfied with or you think need to be improved? (Multi-select)",
+        "answer": {
+            "sortCount": "",
+            "allowNumSed": "",
+            "isSingleSelection": 0,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "The UI of video player is not good-looking"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "Video player is complicated to use"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "No video shortcut key"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "Support too few video formats"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "The video image is not clear"
+                },
+                {
+                    "o_id": 5,
+                    "op_p": "Video playing is not smooth"
+                },
+                {
+                    "o_id": 6,
+                    "op_p": "Video download is inconvenient"
+                },
+                {
+                    "o_id": 7,
+                    "op_p": "Sharing video is inconvenient"
+                },
+                {
+                    "o_id": 8,
+                    "op_p": "The memory capacity is limited"
+                },
+                {
+                    "o_id": 9,
+                    "op_p": "Too few pre-installed video apps"
+                },
+                {
+                    "o_id": 10,
+                    "op_p": "Do not support to connect other devices"
+                },
+                {
+                    "o_id": 11,
+                    "op_p": "No video preloaded"
+                },
+                {
+                    "o_id": 12,
+                    "op_p": "Others <textarea class='custom-fill' onfocus='custom_fill_focus(this);' onblur='custom_fill_blur(this);'>Please specify</textarea>"
+                }
+            ]
+        },
+        "bgColor": "#CE1588"
+    },
+    {
+        "id": 10,
+        "title": "Specifically, which aspects of the internet surfing of your {q1_selection_phone} you are not satisfied with or you think need to be improved? (Multi-select)",
+        "answer": {
+            "sortCount": "",
+            "allowNumSed": "",
+            "isSingleSelection": 0,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "The network setting is too complicated"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "Do not like the pre-installed browser"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "Take a long time to start up"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "The UI of the browser is not good looking"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "The browser loading time is too long"
+                },
+                {
+                    "o_id": 5,
+                    "op_p": "The browser is complicated to use"
+                },
+                {
+                    "o_id": 6,
+                    "op_p": "The internet connection is slow"
+                },
+                {
+                    "o_id": 7,
+                    "op_p": "Consume a lot of data"
+                },
+                {
+                    "o_id": 8,
+                    "op_p": "Bad webpage browsing experience"
+                },
+                {
+                    "o_id": 9,
+                    "op_p": "Browser crashes always"
+                },
+                {
+                    "o_id": 10,
+                    "op_p": "Download speed is too slow"
+                },
+                {
+                    "o_id": 11,
+                    "op_p": "Others <textarea class='custom-fill' onfocus='custom_fill_focus(this);' onblur='custom_fill_blur(this);'>Please specify</textarea>"
+                }
+            ]
+        },
+        "bgColor": "#7C378A"
+    },
+    {
+        "id": 11,
+        "title": "Specifically, which aspects of the pre-loaded apps of your {q1_selection_phone} you are not satisfied with or you think need to be improved? (Multi-select)",
+        "answer": {
+            "sortCount": "",
+            "allowNumSed": "",
+            "isSingleSelection": 0,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "Too many pre-loaded apps"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "Cannot uninstall pre-installed apps"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "Too few pre-loaded apps"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "No favorite pre-loaded apps"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "The version of pre-loaded apps are too old"
+                },
+                {
+                    "o_id": 5,
+                    "op_p": "Others <textarea class='custom-fill' onfocus='custom_fill_focus(this);' onblur='custom_fill_blur(this);'>Please specify</textarea>"
+                }
+            ]
+        },
+        "bgColor": "#5B3789"
+    },
+    {
+        "id": 12,
+        "title": "Specifically, which aspects of the accessories of your {q1_selection_phone} you are not satisfied with or you think need to be improved? (Multi-select)",
+        "answer": {
+            "sortCount": "",
+            "allowNumSed": "",
+            "isSingleSelection": 0,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "Too few accessories"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "The quality of accessories is not good"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "The accessories are not good-looking"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "Others <textarea class='custom-fill' onfocus='custom_fill_focus(this);' onblur='custom_fill_blur(this);'>Please specify</textarea>"
+                }
+            ]
+        },
+        "bgColor": "#3465AA"
+    },
+    {
+        "id": 13,
+        "title": "Are there any problems with the mobile phone that needed repair at the after-sales service center?",
+        "answer": {
+            "sortCount": "",
+            "allowNumSed": "",
+            "isSingleSelection": 1,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "Yes"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "No"
+                }
+            ]
+        },
+        "bgColor": "#4E96DD"
+    },
+    {
+        "id": 14,
+        "title": "How long did the above problem occur after purchased this phone?  <textarea class='custom-fill' onfocus='custom_fill_focus(this);' onblur='custom_fill_blur(this);'></textarea>  Months",
+        "answer": {
+            "sortCount": "",
+            "allowNumSed": "",
+            "isSingleSelection": 0,
+            "options": []
+        },
+        "bgColor": "#7CB854"
+    },
+    {
+        "id": 15,
+        "title": "Have you been to the after-sales service center of TECNO?",
+        "answer": {
+            "sortCount": "",
+            "allowNumSed": "",
+            "isSingleSelection": 1,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "Yes"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "No"
+                }
+            ]
+        },
+        "bgColor": "#7CB854"
+    },
+    {
+        "id": 16,
+        "title": "To what extent are you satisfied with the after-sales service center of TECNO?",
+        "answer": {
+            "sortCount": "",
+            "allowNumSed": "",
+            "isSingleSelection": 1,
+            "options": [
+                {
+                    "o_id": 0,
+                    "op_p": "Very satisfied"
+                },
+                {
+                    "o_id": 1,
+                    "op_p": "Somewhat satisfied"
+                },
+                {
+                    "o_id": 2,
+                    "op_p": "Neither satisfied nor dissatisfied"
+                },
+                {
+                    "o_id": 3,
+                    "op_p": "Somewhat dissatisfied"
+                },
+                {
+                    "o_id": 4,
+                    "op_p": "Very dissatisfied"
+                }
+            ]
+        },
+        "bgColor": "#7CB854"
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
