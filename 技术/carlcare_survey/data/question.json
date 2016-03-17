@@ -1,0 +1,20 @@
+[
+  [
+    {"lang":"EN","question":[{"q":"Are you satisfied with the maintenance services?","a":["Very Satisfied","Somewhat Satisfied","Neither satisfied nor dissatisfied","Somewhat Dissatisfied","Very Dissatisfied","I do not know"]}]}
+  ],
+  [
+    {"lang":"EN","question":[{"q":"Are you satisfied with the maintenance quality of the mobile phone which you sent to Calcare?","a":["Very Satisfied","Somewhat Satisfied","Neither satisfied nor dissatisfied","Somewhat Dissatisfied","Very Dissatisfied","I do not know"]}]}
+  ],
+  [
+    {"lang":"EN","question":[{"q":"Are you satisfied with the time it took to repair your phone?","a":["Very Satisfied","Somewhat Satisfied","Neither satisfied nor dissatisfied","Somewhat Dissatisfied","Very Dissatisfied","I do not know"]}]}
+  ],
+  [
+    {"lang":"EN","question":[{"q":"Are you satisfied with our service staff's attitude during service?","a":["Very Satisfied","Somewhat Satisfied","Neither satisfied nor dissatisfied","Somewhat Dissatisfied","Very Dissatisfied","I do not know"]}]}
+  ],
+  [
+    {"lang":"EN","question":[{"q":"Did you pay for the maintenance service this time?","qm":"Compared to your expectation, are you satisfied with the maintenance cost?","a":["Yes","No"],"ma":["Very Satisfied","Somewhat Satisfied","Neither satisfied nor dissatisfied","Somewhat Dissatisfied","Very Dissatisfied","I do not know"]}]}
+  ],
+  [
+    {"lang":"EN","question":[{"q":"Would you like to offer some constructive suggestions to help us improve our service?","a":"Write here: Would you like to offer some constructive suggestions to help us improve our service?Would you like to offer some con structive suggestions to help us improve our service?"}]}
+  ]
+]

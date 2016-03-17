@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script>
+    f = function(){return true}
+    g = function (){return false};
+    (function(){
+        if(f() && [] == ![]){
+            f = function f(){return false}
+            function f(){return true}
+        }
+    })()
+    alert(f())
+</script>
+</body>
+</html>
