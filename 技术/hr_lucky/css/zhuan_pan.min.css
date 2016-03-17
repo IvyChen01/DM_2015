@@ -1,0 +1,28 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,img{margin:0px;padding:0px;}
+html,body{position:relative;width:100%;height:100%;background-color:#FFFFFF;line-height:120%;font-family:"Microsoft YaHei","微软雅黑","SimSun","宋体";font-size:18px;word-break:break-all;overflow:hidden;}
+li{list-style:none;}
+img{border:none;}
+a:link,a:visited{text-decoration:none;color:#000000;}
+a:hover{text-decoration:underline;color:#FF0000;}
+.clear{clear:both;}
+.align-left{text-align:left;}
+.align-right{text-align:right;}
+.align-center{text-align:center;}
+.float-left{float:left;}
+.float-right{float:right;}
+.bg{position:absolute;z-index:0;top:0px;left:0px;width:100%;height:100%;}
+#startPage{position:absolute;z-index:20;top:0px;left:0px;width:100%;height:100%;display:none;}
+.pan-box{position:relative;left:12%;top:28%;}
+.turntable{position:absolute;z-index:1;top:0px;left:0px;-webkit-transform-origin:center;-moz-transform-origin:center;-ms-transform-origin:center;-o-transform-origin:center;transform-origin:center;-webkit-transition:all 5s ease;-moz-transition:all 5s ease;-ms-transition:all 5s ease;-o-transition:all 5s ease;transition:all 5s ease;display:none;}
+.guide{position:absolute;z-index:2;top:120px;left:119px;display:none;}
+#dialog{position:absolute;z-index:10;left:0px;top:0px;width:100%;height:100%;display:none;}
+.dialog-bg{position:absolute;z-index:11;left:10%;top:32%;}
+.text-block{position:absolute;left:10%;top:32%;z-index:12;width:299px;height:216px;}
+#tip{position:absolute;z-index:13;width:100%;text-align:center;line-height:150%;color:#000000;font-size:16px;}
+.title{font-size:24px;padding-top:20px;padding-bottom:10px;}
+.title2{font-size:24px;padding-top:40px;padding-bottom:10px;}
+.red{color:#BE1E2D;}
+.prize-name{font-size:20px;font-weight:bold;}
+.bold{font-weight:bold;}
+.debug{position:absolute;z-index:100;}
+
