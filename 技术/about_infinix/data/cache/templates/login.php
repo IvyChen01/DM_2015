@@ -1,0 +1,24 @@
+<?php if (!defined('VIEW')) exit; ?>
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>How Much Do You Know About Infinix</title>
+    <link rel="stylesheet" href="css/main.css?v=2015.1.5_15.01" media="screen" title="no title" charset="utf-8">
+  </head>
+  
+  <body class="">
+    <!--pc-->
+      <!--cover-->
+      <section class="cover show-wrapper wrapper">
+        <img src="images/cover.png" class='hide-md' alt="" />
+        <img src="images/phonecover.png" class='hide-xs' alt="" />
+        <div class="btn-wrapper">
+          <a class="btn" href="<?php echo $loginUrl; ?>" target="_self">Start &nbsp;></a>
+        </div>
+      </section>
+    <!--end pc-->
+  </body>
+</html>

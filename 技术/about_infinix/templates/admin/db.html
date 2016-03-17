@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>查看数据库</title>
+<link rel="shortcut icon" href="images/favicon.ico"/>
+<link href="css/admin.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="topbar">
+	<span><a href="?m=admin" target="_self">管理中心</a> | <a href="?m=admin&a=logout" target="_self">退出</a></span>
+</div>
+<div class="db">
+	<h3>查看数据库</h3>
+	<cmd>foreach ($_tableList as $_tempList) {</cmd>
+		<!--表名-->
+		<p align="center">{#$_tempList['tbname']#}</p>
+		<table align="center" border="1" cellpadding="5" cellspacing="0" bgcolor="#FDF2F2">
+		<!--字段名-->
+		<tr>
+		<cmd>foreach ($_tempList['fields'] as $_tempField) {</cmd>
+			<td bgcolor="#F0C090">{#$_tempField#}</td>
+		<cmd>}</cmd>
+		</tr>
+		<!--表记录-->
+		<cmd>$_tempIsColor = false;</cmd>
+		<cmd>foreach ($_tempList['records'] as $_tempRecord) {</cmd>
+			<tr>
+			<cmd>if ($_tempIsColor) {</cmd>
+				<cmd>foreach ($_tempRecord as $_tempVar) {</cmd>
+					<td bgcolor="#F1EDFE">{#$_tempVar#}</td>
+				<cmd>}</cmd>
+			<cmd>} else {</cmd>
+				<cmd>foreach ($_tempRecord as $_tempVar) {</cmd>
+					<td>{#$_tempVar#}</td>
+				<cmd>}</cmd>
+			<cmd>}</cmd>
+			<cmd>$_tempIsColor = !$_tempIsColor;</cmd>
+			</tr>
+		<cmd>}</cmd>
+		</table><br />
+	<cmd>}</cmd>
+</div>
+</body>
+</html>
