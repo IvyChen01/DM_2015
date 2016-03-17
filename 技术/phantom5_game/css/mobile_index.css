@@ -1,0 +1,1172 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,img {
+	margin: 0px;
+	padding: 0px;
+}
+html, body {
+	position: relative;
+	background-color: #130e1f;
+	background-image: url(../images/bg_r.png);
+	line-height: 120%;
+	font-family: "Arial", "Times New Roman", Times, serif;
+	font-size: 18px;
+}
+li {
+	list-style: none;
+}
+img {
+	border: none;
+}
+a {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #FF0000;
+}
+.clear {
+	clear: both;
+}
+.alignLeft {
+	text-align: left;
+}
+.alignRight {
+	text-align: right;
+}
+.alignCenter {
+	text-align: center;
+}
+.floatLeft {
+	float: left;
+}
+.floatRight {
+	float: right;
+}
+.page1, .page2, .game, .page11, .page12 {
+	position: relative;
+	width: 720px;
+	height: 1280px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.page10 {
+	position: relative;
+	width: 720px;
+	height: 1920px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+}
+.page1 {
+}
+.page1 .fingerprint {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+}
+.page1 .phone {
+	position: absolute;
+	left: 0px;
+	top: 468px;
+	z-index: 10;
+}
+.page1 .title {
+	position: absolute;
+	left: 0px;
+	top: 446px;
+	z-index: 10;
+	font-size: 36px;
+	color: #ffc600;
+	width: 100%;
+	text-align: center;
+}
+.page1 .footer {
+	position: absolute;
+	left: 0px;
+	bottom: 25px;
+	z-index: 10;
+	font-size: 24px;
+	color: #d1a206;
+	width: 100%;
+	text-align: center;
+}
+.page1 .enter {
+	position: absolute;
+	left: 0px;
+	bottom: 183px;
+	z-index: 10;
+	font-size: 48px;
+	color: #ffc600;
+	width: 100%;
+	text-align: center;
+}
+.page2 .line {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+}
+.page2 .t2 {
+	position: absolute;
+	left: 0px;
+	top: 233px;
+	z-index: 10;
+	color: #ffc600;
+	font-size: 36px;
+	width: 100%;
+	text-align: center;
+}
+.page2 .t3 {
+	position: absolute;
+	left: 0px;
+	top: 282px;
+	z-index: 10;
+	color: #b0b0b0;
+	font-size: 30px;
+	line-height: 120%;
+	width: 100%;
+	text-align: center;
+}
+.page2 .t4 {
+	position: absolute;
+	left: 0px;
+	top: 505px;
+	z-index: 10;
+	color: #ffffff;
+	font-size: 36px;
+	width: 100%;
+	text-align: center;
+}
+.page2 .t5 {
+	position: absolute;
+	left: 0px;
+	top: 557px;
+	z-index: 10;
+	color: #b0b0b0;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+}
+.page2 .t6 {
+	position: absolute;
+	left: 0px;
+	top: 678px;
+	z-index: 10;
+	color: #ffffff;
+	font-size: 36px;
+	width: 100%;
+	text-align: center;
+}
+.page2 .t7 {
+	position: absolute;
+	left: 0px;
+	top: 738px;
+	z-index: 10;
+	color: #b0b0b0;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+}
+.page2 .t8 {
+	position: absolute;
+	left: 0px;
+	top: 781px;
+	z-index: 10;
+	color: #b0b0b0;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+}
+.page2 .t9 {
+	position: absolute;
+	left: 0px;
+	top: 824px;
+	z-index: 10;
+	color: #b0b0b0;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+}
+.page2 .checkboxEmpty {
+	position: absolute;
+	left: 69px;
+	top: 952px;
+	z-index: 10;
+	display: none;
+}
+.page2 .checkboxOk {
+	position: absolute;
+	left: 69px;
+	top: 952px;
+	z-index: 10;
+}
+.page2 .agree {
+	position: absolute;
+	left: 120px;
+	top: 958px;
+	z-index: 10;
+	color: #ffffff;
+	font-size: 30px;
+}
+.page2 .startBtn {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	z-index: 10;
+	width: 720px;
+	height: 280px;
+}
+.page2 .fingerprint {
+	position: absolute;
+	left: 96px;
+	bottom: 86px;
+	z-index: 10;
+}
+.page2 .enter {
+	position: absolute;
+	left: 281px;
+	bottom: 145px;
+	z-index: 10;
+	color: #ffc600;
+	font-size: 48px;
+}
+.game {
+	
+}
+.navBar {
+}
+.navBar .bg {
+	z-index: 10;
+	width: 100%;
+	height: 88px;
+	background-color: #000000;
+	filter:alpha(opacity=40);
+	-moz-opacity:0.4;
+	opacity:0.4;
+}
+.navBar .menuBtn {
+	position: absolute;
+	left: 39px;
+	top: 28px;
+	z-index: 11;
+}
+.navBar .username {
+	position: absolute;
+	left: 95px;
+	top: 0px;
+	z-index: 11;
+	width: 520px;
+	height: 88px;
+	line-height: 88px;
+	overflow: hidden;
+	text-align: center;
+	font-size: 36px;
+	color: #c9c9c9;
+}
+.navBar .photo {
+	position: absolute;
+	right: 32px;
+	top: 14px;
+	z-index: 11;
+	width: 60px;
+	height: 60px;
+}
+.navMenu {
+	position: absolute;
+	left: 0px;
+	top: 88px;
+	z-index: 21;
+	font-size: 36px;
+	color: #9e9e9e;
+	width: 100%;
+	border-top: 1px dashed #db9717;
+	display: none;
+}
+.navMenu li {
+	height: 88px;
+	line-height: 88px;
+	background-color: #000000;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	opacity:0.8;
+	padding-left: 50px;
+	border-bottom: 1px dashed #db9717;
+}
+.navMenu a {
+	color: #9e9e9e;
+	text-decoration: none;
+}
+.navMenu a:hover {
+	color: #ffb018;
+}
+.navMenu a .select {
+	color: #ffb018;
+}
+.coin {
+}
+.coin .coinNum {
+	position: absolute;
+	left: 0px;
+	bottom: 49px;
+	z-index: 11;
+	color: #d01a1a;
+	font-size: 36px;
+	font-family: Georgia, "Arial", "Times New Roman", Times, serif;
+	font-style: italic;
+	font-weight: bold;
+	width: 620px;
+	text-align: right;
+}
+.coin .gem2 {
+	position: absolute;
+	right: 40px;
+	bottom: 35px;
+	z-index: 11;
+}
+.page3 {
+	
+}
+.page3 .fingerprint {
+	position: absolute;
+	left: 214px;
+	top: 260px;
+	z-index: 10;
+}
+.page3 .tecno {
+	position: absolute;
+	right: 251px;
+	bottom: 379px;
+	z-index: 10;
+}
+.page3 .loading {
+	position: absolute;
+	left: 500px;
+	top: 617px;
+	z-index: 10;
+}
+.page3 .loadingTxt {
+	position: absolute;
+	left: 0px;
+	top: 617px;
+	z-index: 10;
+	color: #dfdfdf;
+	font-size: 48px;
+	width: 100%;
+	text-align: center;
+}
+.page3 .loadDesc {
+	position: absolute;
+	left: 0px;
+	top: 676px;
+	z-index: 10;
+	color: #a0a0a0;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+}
+.page4 {
+	display: none;
+}
+.page4 .dialogBg {
+	position: absolute;
+	left: 53px;
+	top: 174px;
+	z-index: 10;
+}
+.page4 .title {
+	position: absolute;
+	left: 0px;
+	top: 450px;
+	z-index: 10;
+	color: #414141;
+	font-size: 48px;
+	width: 100%;
+	text-align: center;
+}
+.page4 .desc {
+	position: absolute;
+	left: 0px;
+	top: 505px;
+	z-index: 10;
+	color: #414141;
+	font-size: 20px;
+	text-align: center;
+	line-height: 150%;
+	width: 100%;
+	text-align: center;
+}
+.page4 .btn {
+	position: absolute;
+	left: 51px;
+	bottom: 200px;
+	z-index: 10;
+	color: #ffc001;
+	font-size: 36px;
+	width: 621px;
+	height: 132px;
+	text-align: center;
+	line-height: 132px;
+}
+.page5 {
+	display: none;
+}
+.page5 .title {
+	position: absolute;
+	left: 0px;
+	top: 140px;
+	z-index: 10;
+	width: 100%;
+	text-align: center;
+	font-size: 60px;
+	color: #ffbd0a;
+	line-height: 120%;
+	font-weight: bold;
+}
+.page5 .content {
+	position: absolute;
+	left: 0px;
+	top: 313px;
+	z-index: 10;
+	width: 100%;
+	text-align: center;
+	font-size: 30px;
+	color: #f7bb18;
+}
+.page5 .phone {
+	position: absolute;
+	left: 213px;
+	top: 400px;
+	z-index: 10;
+}
+.page5 .musicIcon {
+	position: absolute;
+	left: 36px;
+	bottom: 33px;
+	z-index: 10;
+}
+.page5 .continue {
+	position: absolute;
+	left: 0px;
+	bottom: 122px;
+	z-index: 10;
+	font-size: 48px;
+	color: #ffc600;
+	width: 100%;
+	height: 120px;
+	line-height: 120px;
+	text-align: center;
+}
+.page6 {
+	display: none;
+}
+.page6 .title {
+	position: absolute;
+	left: 0px;
+	top: 150px;
+	z-index: 10;
+	width: 100%;
+	text-align: center;
+	font-size: 60px;
+	color: #ffbd0a;
+	line-height: 120%;
+	font-weight: bold;
+}
+.page6 .content {
+	position: absolute;
+	left: 0px;
+	top: 310px;
+	z-index: 10;
+	width: 100%;
+	text-align: center;
+	font-size: 30px;
+	color: #ffc600;
+	line-height: 120%;
+}
+.page6 .phone {
+	position: absolute;
+	left: 213px;
+	top: 430px;
+	z-index: 10;
+}
+.page6 .continue {
+	position: absolute;
+	left: 0px;
+	bottom: 100px;
+	z-index: 10;
+	font-size: 48px;
+	color: #ffc600;
+	width: 100%;
+	height: 120px;
+	line-height: 120px;
+	text-align: center;
+}
+.page7 {
+	display: none;
+}
+.page7, .page7 .bg, .page7 .iconBox, .page7 .iconBox img, .page7 .timeTxt, .page7 .addScore, .coin .coinNum {
+	/*阻止元素被选中*/
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.page7 .timeTxt {
+	position: absolute;
+	right: 46px;
+	top: 120px;
+	z-index: 10;
+	color: #ffbf13;
+	font-size: 72px;
+}
+.page7 .line1 {
+	position: absolute;
+	left: 0px;
+	top: 194px;
+	z-index: 10;
+}
+.page7 .line2 {
+	position: absolute;
+	left: 0px;
+	bottom: 106px;
+	z-index: 10;
+}
+.page7 .iconBox {
+	position: absolute;
+	left: 0px;
+	top: 208px;
+	z-index: 10;
+	width: 100%;
+	height: 950px;
+	overflow: hidden;
+}
+.page7 .iconBox img {
+	position: absolute;
+	left: 0px;
+	top: -120px;
+	z-index: 10;
+}
+.page7 .ready {
+	position: absolute;
+	left: 0px;
+	top: 550px;
+	z-index: 10;
+	color: #ffc600;
+	font-size: 48px;
+	width: 100%;
+	text-align: center;
+}
+.page7 .addScore {
+	position: absolute;
+	left: 0px;
+	top: -100px;
+	z-index: 10;
+	color: #df1919;
+	font-size: 48px;
+	font-family: Georgia, "Arial", "Times New Roman", Times, serif;
+	font-style: italic;
+	font-weight: bold;
+}
+.page8 {
+	display: none;
+}
+.page8 .dialog {
+	position: absolute;
+	left: 52px;
+	top: 279px;
+	z-index: 10;
+}
+.page8 .title {
+	position: absolute;
+	left: 0px;
+	top: 620px;
+	z-index: 10;
+	color: #333333;
+	font-size: 48px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+.page8 .describe {
+	position: absolute;
+	left: 0px;
+	top: 680px;
+	z-index: 10;
+	color: #414141;
+	font-size: 30px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+.page8 .coinNum {
+	color: #ef0e0e;
+	font-size: 36px;
+}
+.page8 .share_icon {
+	position: absolute;
+	left: 125px;
+	top: 816px;
+	z-index: 10;
+}
+.page8 .shareTxt {
+	position: absolute;
+	left: 175px;
+	top: 825px;
+	z-index: 10;
+	color: #ffc001;
+	font-size: 36px;
+	font-weight: bold;
+}
+.page8 .continueTxt {
+	position: absolute;
+	left: 443px;
+	top: 825px;
+	z-index: 10;
+	color: #ffc001;
+	font-size: 36px;
+	font-weight: bold;
+}
+.page9 {
+	display: none;
+}
+.page9 .dialog {
+	position: absolute;
+	left: 52px;
+	top: 233px;
+	z-index: 10;
+}
+.page9 .title {
+	position: absolute;
+	left: 0px;
+	top: 553px;
+	z-index: 10;
+	color: #414141;
+	font-size: 30px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+.page9 .coinNum {
+	color: #ef0e0e;
+	font-size: 36px;
+}
+.page9 .describe {
+	position: absolute;
+	left: 0px;
+	top: 610px;
+	z-index: 10;
+	color: #444444;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 120%;
+	text-align: center;
+	width: 100%;
+	text-align: center;
+}
+.page9 .describe .welcome {
+	font-size: 25px;
+	margin-top: 15px;
+}
+.page9 .share_icon {
+	position: absolute;
+	left: 121px;
+	top: 933px;
+	z-index: 10;
+}
+.page9 .shareTxt {
+	position: absolute;
+	left: 178px;
+	top: 942px;
+	z-index: 10;
+	color: #ffc001;
+	font-size: 36px;
+	font-weight: bold;
+}
+.page9 .continueTxt {
+	position: absolute;
+	left: 442px;
+	top: 942px;
+	z-index: 10;
+	color: #ffc001;
+	font-size: 36px;
+	font-weight: bold;
+}
+.page10 {
+}
+.page10 .title {
+	position: absolute;
+	left: 108px;
+	top: 124px;
+	z-index: 10;
+}
+.page10 .line1 {
+	position: absolute;
+	left: 0px;
+	top: 199px;
+	z-index: 10;
+}
+.page10 .line2 {
+	position: absolute;
+	left: 0px;
+	top: 761px;
+	z-index: 10;
+}
+.page10 .line3 {
+	position: absolute;
+	left: 0px;
+	top: 886px;
+	z-index: 10;
+}
+.page10 .line4 {
+	position: absolute;
+	left: 0px;
+	top: 1407px;
+	z-index: 10;
+}
+.page10 .list {
+	position: absolute;
+	left: 57px;
+	top: 227px;
+	z-index: 10;
+}
+.page10 .list li {
+	height: 100px;
+	line-height: 100px;
+}
+.page10 .list .photo {
+	width: 60px;
+	height: 60px;
+	vertical-align: middle;
+	margin-right: 35px;
+}
+.page10 .list .date {
+	color: #f5f5f5;
+	font-size: 30px;
+}
+.page10 .list .gem {
+	vertical-align: -2px;
+	margin-left: 120px;
+	margin-right: 20px;
+}
+.page10 .list .coin {
+	color: #ff1f1f;
+	font-size: 40px;
+	font-family: Georgia, "Arial", "Times New Roman", Times, serif;
+	font-style: italic;
+	font-weight: bold;
+}
+.page10 .leftBtn {
+	position: absolute;
+	left: 48px;
+	top: 803px;
+	z-index: 10;
+}
+.page10 .rightBtn {
+	position: absolute;
+	left: 610px;
+	top: 803px;
+	z-index: 10;
+}
+.page10 .page {
+	position: absolute;
+	left: 120px;
+	top: 809px;
+	z-index: 10;
+	color: #ffd308;
+	font-size: 36px;
+	width: 480px;
+	text-align: center;
+	line-height: 100%;
+}
+.page10 .page a {
+	color: #bcbcbc;
+	text-decoration: none;
+}
+.page10 .page a:hover {
+	color: #ffd308;
+}
+.page10 .smile {
+	position: absolute;
+	left: 523px;
+	top: 946px;
+	z-index: 10;
+}
+.page10 .friendsTip {
+	position: absolute;
+	left: 0px;
+	top: 962px;
+	z-index: 10;
+	color: #ffbd0a;
+	font-size: 48px;
+	width: 100%;
+	text-align: center;
+	line-height: 120%;
+}
+.page10 .friendsScore {
+	position: absolute;
+	left: 0px;
+	top: 1102px;
+	z-index: 10;
+	color: #ff1f1f;
+	font-size: 72px;
+	font-family: Georgia, "Arial", "Times New Roman", Times, serif;
+	font-style: italic;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+.page10 .friendsScore img {
+	margin-left: 20px;
+}
+.page10 .totalTip {
+	position: absolute;
+	left: 0px;
+	top: 1226px;
+	z-index: 10;
+	color: #ffbd0a;
+	font-size: 48px;
+	width: 100%;
+	text-align: center;
+}
+.page10 .totalScore {
+	position: absolute;
+	left: 0px;
+	top: 1302px;
+	z-index: 10;
+	color: #ff1f1f;
+	font-size: 72px;
+	font-family: Georgia, "Arial", "Times New Roman", Times, serif;
+	font-style: italic;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+.page10 .totalScore img {
+	margin-left: 20px;
+}
+.page10 .fingerprint {
+	position: absolute;
+	left: 52px;
+	bottom: 310px;
+	z-index: 10;
+}
+.page10 .rankTxt {
+	position: absolute;
+	left: 234px;
+	bottom: 360px;
+	z-index: 10;
+	color: #ffc600;
+	font-size: 48px;
+}
+.page10 a .rankTxt {
+	color: #ffc600;
+}
+.page10 a:hover .rankTxt {
+	color: #ff0000;
+}
+.page10 .facebook {
+	position: absolute;
+	left: 46px;
+	bottom: 136px;
+	z-index: 10;
+}
+.page10 .shareTxt {
+	position: absolute;
+	left: 210px;
+	bottom: 176px;
+	z-index: 10;
+	color: #ffc600;
+	font-size: 48px;
+}
+.page10 a .shareTxt {
+	color: #ffc600;
+}
+.page10 a:hover .shareTxt {
+	color: #ff0000;
+}
+.page11 {
+}
+.page11 .title {
+	position: absolute;
+	left: 157px;
+	top: 121px;
+	z-index: 10;
+}
+.page11 .line1 {
+	position: absolute;
+	left: 0px;
+	top: 205px;
+	z-index: 10;
+}
+.page11 .line2 {
+	position: absolute;
+	left: 0px;
+	top: 768px;
+	z-index: 10;
+}
+.page11 .line3 {
+	position: absolute;
+	left: 0px;
+	top: 893px;
+	z-index: 10;
+}
+.page11 .list {
+	position: absolute;
+	left: 30px;
+	top: 235px;
+	z-index: 10;
+}
+.page11 .list li {
+	position: relative;
+	width: 660px;
+	height: 100px;
+	line-height: 100px;
+}
+.page11 .list .selectFrame {
+	position: absolute;
+	left: 0px;
+	top: 3px;
+	z-index: 9;
+	width: 650px;
+	height: 100px;
+	border: 2px solid #ffbd0a;
+}
+.page11 .list .selectBg {
+	position: absolute;
+	left: 0px;
+	top: 3px;
+	z-index: 8;
+	width: 650px;
+	height: 100px;
+	background-color: #44287c;
+	filter:alpha(opacity=20);
+	-moz-opacity:0.2;
+	opacity:0.2;
+}
+.page11 .list .guang {
+	position: absolute;
+	left: 5px;
+	top: 18px;
+	z-index: 10;
+}
+.page11 .list .rankNum {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+	color: #dddddd;
+	font-size: 30px;
+	width: 100px;
+	text-align: center;
+}
+.page11 .list .photo {
+	position: absolute;
+	left: 105px;
+	top: 22px;
+	z-index: 10;
+	width: 60px;
+	height: 60px;
+	vertical-align: middle;
+}
+.page11 .list .name {
+	position: absolute;
+	left: 180px;
+	top: 0px;
+	z-index: 10;
+	color: #f5f5f5;
+	font-size: 30px;
+	width: 240px;
+	height: 100%;
+	overflow: hidden;
+}
+.page11 .list .gem {
+	position: absolute;
+	left: 430px;
+	top: 40px;
+	z-index: 10;
+}
+.page11 .list .coin {
+	position: absolute;
+	left: 470px;
+	top: 0px;
+	z-index: 10;
+	color: #ff1f1f;
+	font-size: 36px;
+	font-family: Georgia, "Arial", "Times New Roman", Times, serif;
+	font-style: italic;
+	font-weight: bold;
+	height: 100%;
+}
+.page11 .leftBtn {
+	position: absolute;
+	left: 53px;
+	top: 810px;
+	z-index: 10;
+}
+.page11 .rightBtn {
+	position: absolute;
+	left: 615px;
+	top: 810px;
+	z-index: 10;
+}
+.page11 .page {
+	position: absolute;
+	left: 127px;
+	top: 814px;
+	z-index: 10;
+	width: 478px;
+	text-align: center;
+	color: #ffd308;
+	font-size: 36px;
+	line-height: 100%;
+}
+.page11 .page a {
+	color: #bcbcbc;
+	text-decoration: none;
+}
+.page11 .page a:hover {
+	color: #ffd308;
+}
+.page11 .fingerprint {
+	position: absolute;
+	left: 80px;
+	bottom: 170px;
+	z-index: 10;
+}
+.page11 .ruleTxt {
+	position: absolute;
+	left: 220px;
+	bottom: 220px;
+	z-index: 10;
+	color: #ffc600;
+	font-size: 48px;
+}
+.page11 a .ruleTxt {
+	color: #ffc600;
+}
+.page11 a:hover .ruleTxt {
+	color: #ff0000;
+}
+.page12 {
+	
+}
+.page12 .bg2 {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+}
+.page12 .title {
+	position: absolute;
+	left: 122px;
+	top: 133px;
+	z-index: 10;
+}
+.page12 .kouHao {
+	position: absolute;
+	left: 0px;
+	top: 282px;
+	z-index: 10;
+	color: #ffc600;
+	font-size: 36px;
+	width: 100%;
+	text-align: center;
+}
+.page12 .ruleTxt {
+	position: absolute;
+	left: 0px;
+	top: 335px;
+	z-index: 10;
+	color: #b0b0b0;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+	line-height: 120%;
+}
+.page12 .gameTime {
+	position: absolute;
+	left: 0px;
+	top: 558px;
+	z-index: 10;
+	color: #ffffff;
+	font-size: 36px;
+	width: 100%;
+	text-align: center;
+}
+.page12 .timeTxt {
+	position: absolute;
+	left: 0px;
+	top: 611px;
+	z-index: 10;
+	color: #b0b0b0;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+}
+.page12 .prize {
+	position: absolute;
+	left: 0px;
+	top: 734px;
+	z-index: 10;
+	color: #ffffff;
+	font-size: 36px;
+	width: 100%;
+	text-align: center;
+}
+.page12 .tecnoPhantom {
+	position: absolute;
+	left: 0px;
+	top: 793px;
+	z-index: 10;
+	color: #b0b0b0;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+}
+.page12 .powerBank {
+	position: absolute;
+	left: 0px;
+	top: 836px;
+	z-index: 10;
+	color: #b0b0b0;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+}
+.page12 .selfieStick {
+	position: absolute;
+	left: 0px;
+	top: 880px;
+	z-index: 10;
+	color: #b0b0b0;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+}
+.page12 .finger {
+	position: absolute;
+	left: 60px;
+	bottom: 130px;
+	z-index: 10;
+}
+.page12 .returnBtn {
+	position: absolute;
+	left: 190px;
+	bottom: 180px;
+	z-index: 10;
+	color: #ffc600;
+	font-size: 48px;
+}
+.page12 a .returnBtn {
+	color: #ffc600;
+}
+.page12 a:hover .returnBtn {
+	color: #ff0000;
+}

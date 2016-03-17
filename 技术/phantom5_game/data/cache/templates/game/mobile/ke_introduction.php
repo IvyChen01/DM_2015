@@ -1,0 +1,70 @@
+<?php if (!defined('VIEW')) exit; ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.4, minimum-scale=0.4, maximum-scale=0.4, user-scalable=no" />
+<title>Phantom5</title>
+<link href="./css/ke_mobile_index.css?v=2015.12.9_18.52" rel="stylesheet" type="text/css" />
+<script src="./js/jquery-1.11.2.min.js" type="text/javascript" language="javascript"></script>
+</head>
+
+<body>
+<div class="page2">
+	<div id="navBar" class="navBar">
+		<div class="bg"></div>
+		<a id="menuBtn" href="javascript:void(0);"><img class="menuBtn" src="./images/ke/mobile/menu_btn.png" /></a>
+		<div class="username"><?php echo $personal['username']; ?></div>
+		<img class="photo" src="<?php echo $photo; ?>" />
+	</div>
+	<div id="navMenu" class="navMenu">
+		<ul>
+			<a href="./?m=game&a=introduction" target="_self"><li><span class="select">Rules</span></li></a>
+			<a href="./?m=game&a=main" target="_self"><li><span>Game</span></li></a>
+			<a href="./?m=game&a=lucky" target="_self"><li><span>Lucky</span></li></a>
+			<a href="./?m=game&a=winner" target="_self"><li><span>Winner</span></li></a>
+			<a href="./?m=game&a=rank" target="_self"><li><span>Rank</span></li></a>
+		</ul>
+	</div>
+	<a href="./?m=game&a=main" target="_self">
+		<img src="./images/ke/mobile/page2/bg.jpg" class="bg" />
+		<img src="./images/ke/mobile/line.png" class="line" />
+		<img src="./images/ke/mobile/page2/title.png" class="title" />
+		<p class="t2">Play Game, Win TECNO Phantom 5!!!</p>
+		<p class="t3">Play game to get entertaining coins. If you get 10,000 coins, you will have 1 chance to spin the lucky draw wheel; if you get 20,000 coins, you will have 2 chances to spin the wheel; if 30,000 coins, 3 times… If you share this game, you will get an extra chance to spin the wheel.</p>
+		<p class="t4">Game Time</p>
+		<p class="t5">December 9 – December 31</p>
+		<p class="t6">Prize</p>
+		<p class="t7">3 TECNO Phantom 5<br/>
+100 Coupons of 10% off for TECNO Smartphone<br/>
+500 Coupons of 5% off for TECNO Smartphone<br/>
+50 TECNO Cups<br/>
+25 TECNO Golf UmbrellaS<br/>
+50 TECNO T-shirts<br/>
+50 Selfie Sticks<br/>
+20 TECNO Fashion Bags<br/>
+20 Power Banks<br />
+25 Wall Clock
+</p>
+
+		<img src="./images/ke/mobile/page2/check_empty.png" class="checkboxEmpty" />
+		<img src="./images/ke/mobile/page2/check_ok.png" class="checkboxOk" />
+		<p class="agree">I AGREE TO THE TERMS OF SERVICE</p>
+		<img src="./images/ke/mobile/page2/finger.png" class="fingerprint" />
+		<div class="enter">Click to Start</div>
+	</a>
+</div>
+<script>
+$(document).ready(function()
+{
+	$("#navBar").click(onClickMenu);
+});
+
+function onClickMenu(e)
+{
+	$("#navMenu").slideToggle();
+}
+</script>
+<?php echo Config::$countCode; ?>
+</body>
+</html>

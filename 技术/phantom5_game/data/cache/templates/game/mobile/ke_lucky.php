@@ -1,0 +1,115 @@
+<?php if (!defined('VIEW')) exit; ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.4, minimum-scale=0.4, maximum-scale=0.4, user-scalable=no" />
+<title>Phantom5</title>
+<link href="./css/ke_mobile_index.css?v=2015.12.11_13.56" rel="stylesheet" type="text/css" />
+<script src="./js/jquery-1.11.2.min.js" type="text/javascript" language="javascript"></script>
+<script src="./js/jquery.rotate.min.js" type="text/javascript" language="javascript"></script>
+<script src="./js/mover.js?v=2015.12.8_14.52" type="text/javascript" language="javascript"></script>
+<script src="./js/ke_mobile_lucky.js?v=2015.12.11_13.56" type="text/javascript" language="javascript"></script>
+</head>
+
+<body>
+<div class="lucky">
+	<div id="navBar" class="navBar">
+		<div class="bg"></div>
+		<a id="menuBtn" href="javascript:void(0);"><img class="menuBtn" src="./images/ke/mobile/menu_btn.png" /></a>
+		<div class="username"><?php echo $personal['username']; ?></div>
+		<img class="photo" src="<?php echo $photo; ?>" />
+	</div>
+	<div id="navMenu" class="navMenu">
+		<ul>
+			<a href="./?m=game&a=introduction" target="_self"><li><span>Rules</span></li></a>
+			<a href="./?m=game&a=main" target="_self"><li><span>Game</span></li></a>
+			<a href="./?m=game&a=lucky" target="_self"><li><span class="select">Lucky</span></li></a>
+			<a href="./?m=game&a=winner" target="_self"><li><span>Winner</span></li></a>
+			<a href="./?m=game&a=rank" target="_self"><li><span>Rank</span></li></a>
+		</ul>
+	</div>
+	<div id="coinBar" class="coin">
+		<span class="coinNum"><?php echo $personal['totalscore']; ?></span>
+		<img class="gem2" src="./images/ke/mobile/gem.png" />
+	</div>
+	<img src="./images/ke/mobile/bg.jpg" class="bg" />
+	<img src="./images/ke/mobile/page10/title.png" class="title" />
+	<a id="startBtn" href="javascript:void(0);">
+		<img id="pan" src="./images/ke/mobile/page10/pan.png" class="pan" />
+		<img src="./images/ke/mobile/page10/start.png" class="start" />
+		<img src="./images/ke/mobile/page10/arrow.png" class="arrow" />
+	</a>
+	<p class="chance"><span id="restNum" class="restNum"><?php echo $restLucky; ?></span> Chances Left.</p>
+	<p class="shareTip"><?php if (!$isShared) {  ?>Share to facebook, get one more chance.<?php } ?></p>
+	<a id="shareBtn" href="javascript:void(0);">
+		<img src="./images/ke/mobile/page10/fb.png" class="fb" />
+		<div class="shareBtn"><p>Share To Facebook</p></div>
+	</a>
+	<a href="./?m=game&a=winner" target="_self">
+		<img src="./images/ke/mobile/page9/finger.png" class="finger" />
+		<div class="winnerBtn"><p>Winner List</p></div>
+	</a>
+	
+	<div class="win">
+		<div class="mask"></div>
+		<img src="./images/ke/mobile/page10/dlg.png" class="dlg" />
+		<div class="jiang"><img id="winPic" src="./images/ke/mobile/page10/0.png" /></div>
+		<img src="./images/ke/mobile/line2.png" class="line2" />
+		<p class="t1">Congratulations</p>
+		<p class="t2">You won a <br />
+		<span id="awardName">!</span></p>
+		<p class="t3">Please go to any of the below three<br/>
+		stores to collect your prize. </p>
+		<p class="t4">1.Trucom Mama Ngina <br/>
+		(Manangina street <img src="./images/ke/mobile/page10/address.png" />)<br/>
+		2.Gateway Mall<br/>
+		(Syokimau- Mombasa Road <img src="./images/ke/mobile/page10/address.png" />)<br/>
+		3.Garden City(Thika Road <img src="./images/ke/mobile/page10/address.png" />)</p>
+		<a id="winShare" href="javascript:void(0);">
+			<img src="./images/ke/mobile/share.png" class="share" />
+			<p class="shareTxt">Share</p>
+		</a>
+		<a id="winContinue" href="javascript:void(0);">
+			<p class="continueTxt">Continue</p>
+		</a>
+	</div>
+	
+	<div class="lost">
+		<div class="mask"></div>
+		<img src="./images/ke/mobile/page10/dlg.png" class="dlg" />
+		<div class="jiang"><img src="./images/ke/mobile/page10/0.png" /></div>
+		<img src="./images/ke/mobile/line2.png" class="line2" />
+		<p class="t1">Opps,Bad Luck</p>
+		<p class="t2">You haven’t got anything<br/>
+		Try it again!</p>
+		<a id="lostShare" href="javascript:void(0);">
+			<img src="./images/ke/mobile/share.png" class="share" />
+			<p class="shareTxt">Share</p>
+		</a>
+		<a id="lostContinue" href="javascript:void(0);">
+			<p class="continueTxt">Continue</p>
+		</a>
+	</div>
+</div>
+<input type="hidden" id="isLocal" value="<?php if (Config::$isLocal) { echo 1; } else { echo 0; } ?>" />
+<input type="hidden" id="isFb" value="<?php if (Config::$isFb) { echo 1; } else { echo 0; } ?>" />
+<input type="hidden" id="appId" value="<?php echo Config::$fbAppId; ?>" />
+<input type="hidden" id="shareUrl" value="<?php echo Config::$shareUrl; ?>" />
+<input type="hidden" id="sharePic" value="<?php echo Config::$sharePic; ?>" />
+<input type="hidden" id="restLucky" value="<?php echo $restLucky; ?>" />
+<input type="hidden" id="isShared" value="<?php if ($isShared) { echo 1; } else { echo 0; } ?>" />
+<script>
+$(document).ready(function()
+{
+	$("#navBar").click(onClickMenu);
+});
+
+function onClickMenu(e)
+{
+	$("#navMenu").slideToggle();
+}
+</script>
+<?php echo Config::$countCode; ?>
+</body>
+</html>

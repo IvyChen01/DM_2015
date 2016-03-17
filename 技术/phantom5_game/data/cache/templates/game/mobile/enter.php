@@ -1,0 +1,24 @@
+<?php if (!defined('VIEW')) exit; ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.4, minimum-scale=0.4, maximum-scale=0.4, user-scalable=no" />
+<title>Phantom5</title>
+<link href="css/mobile_index.css?v=2015.11.13_18.58" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="page1">
+	<a href="<?php echo $loginUrl; ?>" target="_self">
+		<img src="./images/mobile/bg.jpg" class="bg" />
+		<img src="./images/mobile/page1/1.png" class="fingerprint" />
+		<div class="title">Be Entertained with TECNO Phantom 5</div>
+		<img src="./images/mobile/page1/2.png" class="phone" />
+		<div class="footer">Explore the map of entertainment from the fingertip</div>
+		<div class="enter">Click to Enter</div>
+	</a>
+</div>
+<?php echo Config::$countCode; ?>
+</body>
+</html>
