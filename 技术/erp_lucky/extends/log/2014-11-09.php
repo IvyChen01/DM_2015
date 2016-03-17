@@ -1,0 +1,24 @@
+<?php exit(0); ?>
+[10:23:04 111.222.37.67]	[user login] userid: 170, jobnum: 80043, username: 史坤
+[12:53:41 183.14.152.127]	[user login] userid: 394, jobnum: 00632, username: 陈周涛
+[19:05:19 163.125.29.122]	[user cookie_login] userid: 2559, jobnum: 01057, username: 李扬
+[21:27:23 163.125.191.110]	[user login] userid: 2604, jobnum: 01127, username: 卢丽萍
+[22:54:26 163.125.29.149]	[user cookie_login] userid: 2559, jobnum: 01057, username: 李扬
+[00:53:22 116.25.200.118]	[user cookie_login] userid: 37, jobnum: 00587, username: 莫艳勇
+[00:54:10 116.25.200.118]	[user login] userid: 94, jobnum: 00938, username: 江民烽
+[00:54:34 116.25.200.118]	[user login] userid: 2582, jobnum: 01084, username: 吴广豪
+[00:55:05 116.25.200.118]	[user login] userid: 2579, jobnum: 01081, username: 彭参
+[00:55:41 116.25.200.118]	[user login] userid: 2581, jobnum: 01083, username: 张伟
+[00:56:02 116.25.200.118]	[user login] userid: 2568, jobnum: 01079, username: 金阳
+[00:56:22 116.25.200.118]	[user login] userid: 2567, jobnum: 01078, username: 楚聪
+[00:56:44 116.25.200.118]	[user login] userid: 2583, jobnum: 01085, username: 崔志鹏
+[00:57:11 116.25.200.118]	[user login] userid: 2574, jobnum: 01061, username: 彭珺
+[00:57:27 116.25.200.118]	[user login] userid: 2614, jobnum: 01062, username: 黄维维
+[00:58:02 116.25.200.118]	[user login] userid: 2558, jobnum: 01064, username: 张敏
+[00:58:26 116.25.200.118]	[user login] userid: 2571, jobnum: 01065, username: 李姣
+[00:58:46 116.25.200.118]	[user login] userid: 2572, jobnum: 01066, username: 崔天福
+[00:59:00 116.25.200.118]	[user login] userid: 2570, jobnum: 01059, username: 陈婷婷
+[00:59:20 116.25.200.118]	[user login] userid: 2560, jobnum: 01058, username: 余亚鹏
+[00:59:40 116.25.200.118]	[user login] userid: 2559, jobnum: 01057, username: 李扬
+[01:00:27 116.25.200.118]	[user login] userid: 96, jobnum: 00993, username: 谢先锐
+[07:30:00 103.242.203.65]	[user cookie_login] userid: 519, jobnum: 00772, username: 卫桂芬

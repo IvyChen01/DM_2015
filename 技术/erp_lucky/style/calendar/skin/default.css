@@ -1,0 +1,11 @@
+.EVAN-calendar-panel{font:14px/22px "HelveticaNeue","黑体","宋体";box-shadow: 2px 4px 4px rgba(0,0,0,0.16)}
+.EVAN-calendar-title{font-size: 21px;height:20%;border-radius: 5px 5px 0 0;overflow: hidden;text-align: center}
+.EVAN-calendar-change-bar{}
+.EVAN-calendar-last-year,.EVAN-calendar-last-month{float: left;margin-left: 30px;display: inline-block}
+.EVAN-calendar-change-bar a{color: #000;text-decoration: none;font-size: 15px;font-weight: bold;}
+.EVAN-calendar-change-bar .unable{color: #ddd}
+.EVAN-calendar-week-bar{border-bottom: 1px solid #ddd;clear: both}
+.EVAN-calendar-week-bar span{display: inline-block;text-align: center;font-size: 16px;}
+.EVAN-calendar-content span{display: inline-block;text-align: center;margin: 5px 0;position: relative}
+.EVAN-calendar-content span a{color: #000;position: absolute;top: 50%;left: 50%;display: inline-block;text-decoration: none;font-size: 16px;}
+.EVAN-calendar-next-year,.EVAN-calendar-next-month{float: right;margin-right: 30px;}

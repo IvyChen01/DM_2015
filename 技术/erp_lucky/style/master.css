@@ -1,0 +1,263 @@
+/**
+ * Created by rrr on 14-6-17.
+ */
+html,body{width: 100%;height: 100%;margin: 0;padding: 0}
+body{font: 13px '黑体', "微软雅黑",'宋体';}
+a{outline: none;text-decoration: none;color: #000}
+img{border: none}
+li{list-style: none}
+ul,li,p,h1,h2,h3,h4,h5,h6{margin: 0;padding: 0}
+.wrapper{width: 100%;min-height:100%;background-color: #fefef4;padding-top: 40px;overflow: hidden}
+.login-page .wrapper,.change-pwd-page .wrapper{height: 100%;padding: 0}
+.login-page .footer,.change-pwd-page .footer{position: absolute;width: 100%;bottom: 0}
+.top{background-color: #3cbcc8;height: 40px;width: 100%;position: absolute;top: 0;left: 0;z-index: 2}
+.main{width: 1170px;margin: 0 auto;position: relative;min-height: 100%;background: url("images/bg.png")  -70px -200px no-repeat}
+.wrapper .main{padding-top: 40px;}
+.login-page .main{background: none}
+.clearfix:after{display: block;content: "";height: 0;clear: both;overflow: hidden}
+/*top*/
+.home,.answer-page,.winners-list{float: left}
+.home a,.answer-page a,.winners-list a{font-size: 18px;line-height: 40px;color: #fff;}
+.home,.answer-page,.winners-list{padding: 0 20px;border-left: 1px solid rgba(255,255,255,0.4);border-right: 1px solid rgba(255,255,255,0.4)}
+.winners-list{border-left: none}
+.user-box{float: right;width:280px;background:url(images/icon_tx.png) no-repeat 0 center;font-size: 14px;color: #fff;line-height: 40px;}
+.user-name{float: left;padding-left:40px;}
+.login-out{color: #fff;text-decoration: underline;float: right;margin-right: 20px;}
+.change-pwd{color: #fff;text-decoration: underline;margin-left: 82px;margin-right: 3px }
+.cur-page{background-color: #25a4b0}
+/*top*/
+
+/*login*/
+#login,#admin_change_password{width: 400px;height: 300px;top: 50%;left: 50%;margin-left: -200px;margin-top: -220px;position: absolute;background-color: #fff;box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)}
+#admin_change_password{height: 320px;}
+.login-form-title,.change-pwd-form-title{line-height: 50px;text-align: center;font-size: 24px;display: inline-block;width: 100%;background-color: #3cbcc8;color: #fff}
+.employee-id,.employee-pwd,.submit{text-align: center}
+.login-form,.change-form{margin-top: 35px;}
+#admin_change_password label{width: 110px;text-align: right;display: block;float: left;font-size: 14px;color: #c6c6c6;line-height: 40px;}
+#admin_change_password .new-pwd input,#admin_change_password .cur-pwd input{border-bottom: 1px solid rgba(0, 0, 0, 0.05)}
+#login input,#admin_change_password input{text-indent:45px;width: 340px;height: 50px;line-height: 50px;font-size: 13px;color: #666;border:none;background-color: #f1f1f1}
+#admin_change_password input{width: 250px;display: block;float: left;height: 40px;line-height: 40px;text-indent: 10px;}
+#login .employee-id input{border-bottom: 1px solid rgba(0,0,0,0.05);background-image: url(images/icon_user.png);background-repeat: no-repeat;background-position:5px center}
+#login .employee-pwd input{background-image: url(images/icon_locked.png);background-repeat: no-repeat;background-position:5px center}
+.submit{margin-top: 30px;}
+.submit a,.change-pwd-bar a{line-height: 40px;text-align: center;font-size: 18px;display: inline-block;width: 230px;background-color: #3cbcc8;color: #fff}
+.change-pwd-bar{padding-left:112px;margin-top: 30px;}
+.change-pwd-bar a{width: 90px;margin-right: 15px;}
+/*login*/
+
+/*answer*/
+.question-model-title{width: 470px;height: 70px;background: url(images/anp_til_bg.png) no-repeat;text-indent: -999em;margin: 30px 0 30px 80px;}
+.question-panel{width: 600px;float: left}
+.question-item{margin: 10px 0 30px 0;clear: both}
+.qu-it-til{font-size: 18px;color: #0a5b63;margin-bottom: 10px;display: block;font-weight: bold}
+.question-result{display: inline-block;width: 30px;float: left;height:22px;}
+.question-content{margin-left: 40px;}
+.question-content ul{font-size: 15px;color: #0a5b63}
+.question-content ul li{padding: 5px 15px 5px 0;line-height: 20px;}
+.question-content label{cursor: pointer}
+.question-content ul li.selected{color: red}
+.check-icon{display: inline-block;position: relative;z-index:10;vertical-align:middle;top: -2px;margin-right: 10px;}
+.check-icon span{position: absolute;display: block;z-index: 11;}
+.radio{background-color: #ccc;border-radius: 10px;width:20px;height:20px;}
+.radio span{width: 10px;height: 10px;background: #fefef4;border-radius: 5px;top: 5px;left:5px;}
+.radio .selected{background-color: #ccc}
+.checkbox{border: 2px solid #ccc;width: 18px;height: 18px;border-radius: 3px;}
+.checkbox span{font-size: 18px;color: #3cbcc8;font-weight: bold;left: -1px;display: none}
+.question-content .selected .radio span{background-color: #ccc}
+.question-content .selected .checkbox span{display: block}
+.question-content ul li:nth-child(2n+1){clear: both}
+.submit-answer{text-align: center;margin:40px 0;}
+.submit-answer a{display: inline-block;padding: 10px 50px;background-color: #3cbcc8;font-size: 18px;font-weight:bold;color: #fff;border-radius: 3px;}
+.lottery-panel{position: relative;float: left;width: 570px;min-height:500px;}
+.turntable{ position: absolute;width: 564px;height: 564px;background: url(images/turntable.png) no-repeat;
+    -webkit-transform-origin: center;-moz-transform-origin: center;-ms-transform-origin: center;-o-transform-origin: center;transform-origin: center;
+    -webkit-transition: all 5s ease;-moz-transition: all 5s ease;-ms-transition: all 5s ease;-o-transition: all 5s ease;transition: all 5s ease;}
+.guide{position: absolute;left: 272px;width: 20px;height: 140px;background: url(images/guide_bg.png) no-repeat;top: 79px;}
+.right{background: url(images/result_bg.png) no-repeat 6px center}
+.wrong{background: url(images/result_bg.png) no-repeat -24px center}
+.fail-today,.lot-result{display:none;position: fixed;width: 550px;height: 280px;border: 2px solid red;border-radius: 2px;top: 50%;left: 50%;z-index:12;margin-left: -275px;margin-top: -140px;background-color: #fff;opacity: .85;filter:alpha(opacity=85)}
+.lot-result .title,.lot-yet{display: block;font-size: 29px;color: red;padding-left: 160px;line-height: 50px;margin: 30px 0}
+.lot-yet{margin-top: 100px}
+.prize{font-size: 24px;color: red;padding-left: 170px}
+.lot-result .bar-btn{text-align: center;margin-top: 50px;}
+.lot-result .bar-btn a,.fail-today .bar-btn a{font-size: 25px;color: white;background-color: red;padding: 10px 25px;display: inline-block;margin-right: 20px;}
+.fail-today{border-color: #3cbcc8}
+.fail-today .title,.fail-today .ad-yet{display: block;text-align: center;line-height: 50px;margin: 30px 0;color: #3cbcc8}
+.fail-today .bar-btn{text-align: center}
+.fail-today .bar-btn a{background-color: #3cbcc8}
+.fail-today .title{font-size: 29px;}
+.fail-today .ad-yet{font-size: 24px;}
+/*answer*/
+
+/*questions*/
+.questions .question-model-title{background: url(images/qup_til_bg.png) 12px 0 no-repeat}
+.qu-type-title,.qu-type-content{padding: 0 35px;}
+.qu-type-title li{float: left;background: #b0e3e8;line-height: 43px;color: #fff;}
+.qu-type-title li a{background: #b0e3e8;line-height: 33px;color: #25a4b0;font-size: 15px;display: block;text-align: center;border:1px solid #fff;border-top:none}
+.qu-type-title li:first-child a{border-left-color:#b0e3e8 }
+.qu-type-title li:last-child a{border-right-color:#b0e3e8}
+.qu-type-title .show a{border-bottom-color: #b0e3e8}
+.qu-type-content{font-size: 14px;color: #0a5b63;clear: both}
+.qu-type{display: none;border: 1px solid #b0e3e8}
+.qu-type:first-child{display: block}
+.qu-type-content .show{display: block;clear: both;padding: 20px 0}
+.qu-type-item{padding: 15px 30px}
+.qu-type-item:nth-child(2n){background-color: #effafb}
+.qu-page-turn{padding: 30px 30px 10px;text-align: center}
+.qu-page-turn a{text-decoration: underline;color: #0a5b63;font-size: 16px;margin: 0 3px;}
+.qu-page-turn .cur{text-decoration: none}
+/*questions*/
+/*winners list*/
+.winners-list-page .question-model-title{background:url(images/winners_list_title.png) 5px 0 no-repeat}
+.list-panel{width: 560px;float: left;padding: 20px;border: 1px solid #83d2d6;border-radius: 3px;margin-bottom: 40px;}
+.list-panel span{font-size: 20px;color: #0a5b63;width: 160px;text-align: center;display: block;float: left;margin: 10px 0;overflow: hidden;height: 24px;}
+.list-panel .prize-name{width: 200px;}
+.data-panel{width: 400px;float: right}
+/*winners list*/
+/*footer*/
+.footer{clear: both;background-color: #1b1e23;color: #919191;text-align: center;padding: 30px 0;font-family: Arial,"verdana","Helvetica";font-size: 12px;font-weight: bold;line-height: 22px;}
+.footer a{color: #646464;}
+
+/*footer*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            height: 100%
+        }
+
+        .wrapper {
+            width: 800px;
+            height: 700px;
+            background-color: #efefef;
+            margin: 100px auto 0;
+            position: relative
+        }
+        .circle{
+            position: absolute;
+            width: 564px;
+            height: 564px;
+            background: url(images/homepage_03.png) no-repeat;
+            top:100px;
+            left:120px;
+        }
+        .guide {
+            position: absolute;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom:150px solid #5bd1dc;
+            left: 400px;
+            top: 230px;
+
+            -webkit-transform-origin: bottom center;
+            -moz-transform-origin: bottom center;
+            -ms-transform-origin: bottom center;
+            -o-transform-origin: bottom center;
+            transform-origin: bottom center;
+            -webkit-transition: all 5s ease;
+            -moz-transition: all 5s ease;
+            -ms-transition: all 5s ease;
+            -o-transition: all 5s ease;
+            transition: all 5s ease;
+        }
+        .code{padding: 20px;}
+        .code select{width: 50px;text-align: center}
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="code">中奖代码 <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+    </select></div>
+    <div class="circle"></div>
+    <div class="guide"></div>
+</div>
+<script>
+
+        function handler(code){
+            var startDeg=360/16;
+//            var transform=document.querySelector(".wrap").style["transform"];
+//            var pat=/\d+/;
+//            var deg=parseInt(pat.exec(transform))+36+"deg";
+            startDeg+=1080+(~~code-1)*360/8;
+            ["Moz","0","Webkit","ms",""].forEach(function(brower){
+                document.querySelector(".guide").style[brower+"TransitionDuration"]="5s";
+                document.querySelector(".guide").style[brower+"Transform"]="rotate("+startDeg+"deg)";
+            });
+           setTimeout(function(){
+               ["Moz","0","Webkit","ms",""].forEach(function(brower){
+                   document.querySelector(".guide").style[brower+"TransitionDuration"]="0s";
+                   document.querySelector(".guide").style[brower+"Transform"]="rotate("+(startDeg-1080)+"deg)";
+               });
+
+           },5100)
+        }
+    document.querySelector(".code select").onchange=function(){handler(this.value);}
+</script>
+</body>
+</html>
