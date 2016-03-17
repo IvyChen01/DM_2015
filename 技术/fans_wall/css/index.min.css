@@ -1,0 +1,28 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,img{margin:0px;padding:0px;}
+html,body{position:relative;width:100%;height:100%;background-color:#fffbd4;line-height:120%;font-family:"Century Gothic","Arial","Times New Roman",Times,serif;font-size:18px;word-break:break-all;}
+li{list-style:none;}
+img{border:none;}
+a:link,a:visited{text-decoration:none;color:#000000;}
+a:hover{text-decoration:underline;color:#FF0000;}
+.clear{clear:both;}
+.header{text-align:center;}
+.sortBox{position:relative;width:277px;margin:0 auto;}
+.btnImg{}
+.btnText{position:absolute;left:25%;top:34%;font-size:24px;color:#fffbd4;}
+.listBox{position:relative;width:790px;margin:0 auto;margin-top:40px;}
+.listBox li{margin-bottom:45px;}
+.listLeft{width:106px;float:left;}
+.numBox{position:relative;padding-left:30px;}
+.numBox img{}
+.numBox p{position:absolute;width:64px;left:30px;top:20px;font-size:30px;text-align:center;color:#ffffde;}
+.listMiddle{width:342px;float:left;}
+.listRight{width:342px;float:left;}
+.rightWrap{padding-left:20px;padding-right:10px;word-break:normal;}
+.t1{font-size:28px;color:#194066;padding-top:20px;}
+.t2{font-size:16px;color:#a3a39c;padding-top:5px;}
+.t3{font-size:18px;color:#34506c;padding-top:20px;height:220px;overflow:auto;}
+.likeBox{margin-top:5px;}
+.likeBox img{vertical-align:bottom;}
+.likeTxt{font-size:32px;color:#da284e;margin-right:40px;}
+.shareTxt{font-size:32px;color:#2097a1;}
+
