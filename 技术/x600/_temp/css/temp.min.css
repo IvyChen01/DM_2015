@@ -1,0 +1,14 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,img{margin:0px;padding:0px;}
+html,body{position:relative;background-color:#130e1f;line-height:120%;font-family:"Arial","Times New Roman",Times,serif;font-size:18px;word-break:break-all;}
+li{list-style:none;}
+img{border:none;}
+a{text-decoration:none;color:#000000;}
+a:hover{text-decoration:underline;color:#FF0000;}
+.clear{clear:both;}
+.alignLeft{text-align:left;}
+.alignRight{text-align:right;}
+.alignCenter{text-align:center;}
+.floatLeft{float:left;}
+.floatRight{float:right;}
+.box{margin:0 auto;width:1140px;margin-bottom:50px;}
+

@@ -1,0 +1,282 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,img {
+	margin: 0px;
+	padding: 0px;
+}
+html, body {
+	position: relative;
+	background-color: #130e1f;
+	line-height: 120%;
+	font-family: "Arial", "Times New Roman", Times, serif;
+	font-size: 18px;
+	word-break: normal;
+}
+li {
+	list-style: none;
+}
+img {
+	border: none;
+}
+a {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #FF0000;
+}
+.clear {
+	clear: both;
+}
+.alignLeft {
+	text-align: left;
+}
+.alignRight {
+	text-align: right;
+}
+.alignCenter {
+	text-align: center;
+}
+.floatLeft {
+	float: left;
+}
+.floatRight {
+	float: right;
+}
+.info, .pan {
+	position: relative;
+	width: 720px;
+	height: 1280px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.info {
+	background-color: #ffffff;
+	
+}
+.info .note2 {
+	position: absolute;
+	right: 31px;
+	top: 27px;
+	z-index: 10;
+}
+.info .main {
+	position: absolute;
+	left: 0px;
+	top: 420px;
+	z-index: 10;
+}
+.info .date {
+	position: absolute;
+	left: 37px;
+	top: 150px;
+	z-index: 10;
+	font-size: 30px;
+	color: #333333;
+}
+.info .year {
+	font-size: 48px;
+}
+.info .desc {
+	position: absolute;
+	left: 37px;
+	top: 200px;
+	z-index: 10;
+	font-size: 30px;
+	color: #333333;
+	line-height: 120%;
+}
+.info .desc a {
+	text-decoration: none;
+	color: #333333;
+	font-weight: bold;
+}
+.info .desc a:hover {
+	color: #FF0000;
+}
+.pan {
+	display: none;
+}
+.pan .bg {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+}
+.pan .phone {
+	position: absolute;
+	left: 235px;
+	top: 430px;
+	z-index: 10;
+}
+.pan .dot {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+	display: none;
+}
+.pan .start {
+	position: absolute;
+	left: 40px;
+	top: 950px;
+	z-index: 10;
+}
+.pan .award {
+	position: absolute;
+	left: 40px;
+	top: 950px;
+	z-index: 10;
+}
+.pan a:hover img {
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	opacity:0.9;
+}
+.winDlg {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.winDlg .bg {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	opacity:0.9;
+}
+.winDlg .phone {
+	position: absolute;
+	left: 200px;
+	top: 150px;
+	z-index: 10;
+}
+.winDlg .awardName {
+	position: absolute;
+	left: 0px;
+	top: 530px;
+	z-index: 10;
+	color: #f0d28a;
+	font-size: 48px;
+	width: 100%;
+	text-align: center;
+}
+.winDlg .title {
+	position: absolute;
+	left: 0px;
+	top: 590px;
+	z-index: 10;
+	color: #f0d28a;
+	font-size: 48px;
+	width: 100%;
+	text-align: center;
+}
+.winDlg .desc {
+	position: absolute;
+	left: 5%;
+	top: 670px;
+	z-index: 10;
+	color: #ffffff;
+	font-size: 30px;
+	width: 90%;
+	text-align: center;
+	line-height: 120%;
+}
+.winDlg .shareBtn {
+	position: absolute;
+	left: 187px;
+	top: 800px;
+	z-index: 10;
+}
+.winDlg .likeBtn {
+	position: absolute;
+	left: 187px;
+	top: 930px;
+	z-index: 10;
+}
+.winDlg a:hover img {
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	opacity:0.9;
+}
+.winners {
+	position: relative;
+	width: 720px;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #FFFFFF;
+	margin-bottom: 10px;
+	display: none;
+}
+.winners .title {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+	font-size: 48px;
+	color: #444444;
+	width: 100%;
+	height: 88px;
+	background-color: #e0cea3;
+	line-height: 88px;
+	padding-left: 35px;
+}
+.winners li {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 175px;
+	border-top: 1px solid #e0cea3;
+	border-bottom: 1px solid #e0cea3;
+	border-right: 1px solid #e0cea3;
+	margin-top: 10px;
+}
+.winners .leftLine {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 20;
+	width: 12px;
+	height: 175px;
+	background-color: #e0cea3;
+}
+.winners .photo {
+	position: absolute;
+	left: 80px;
+	top: 33px;
+	z-index: 10;
+	width: 110px;
+	height: 110px;
+}
+.winners .name {
+	position: absolute;
+	left: 218px;
+	top: 60px;
+	z-index: 10;
+	font-size: 36px;
+	color: #333333;
+}
+.winners .date {
+	position: absolute;
+	left: 218px;
+	top: 98px;
+	z-index: 10;
+	font-size: 24px;
+	color: #767676;
+}
+.winners .prizeName {
+	position: absolute;
+	left: 425px;
+	top: 85px;
+	z-index: 10;
+	font-size: 30px;
+	color: #ff2929;
+}
