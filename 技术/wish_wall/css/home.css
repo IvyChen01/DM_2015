@@ -1,0 +1,40 @@
+@charset "utf-8";
+*{ margin:0; padding:0; list-style:none; }
+body{font:12px/1.5 tahoma,arial,"Hiragino Sans GB",宋体,sans-serif;color:#444;margin:0;min-width:800px;height:453px;/*scoll=no;overflow:hidden;*/}
+body,div,form,img,ul,ol,li,dl,dt,dd,p{margin:0; padding:0; border:0;}
+ul,li,ol,dl,dt,dd{list-style:none;}
+h1,h2,h3,h4,h5,h6{ margin:0; padding:0; }
+.clearfix:after, .clearfix:after, .main:after, .left:after, .right:after, dl:after, dt:after, dd:after, ul:after, li:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+i,em,var{ font-style:normal;}
+input,textarea{outline: none;}
+/* link */
+a{text-decoration: none;}
+a:link{  color:#444; text-decoration: none;}
+a:hover{ color:#444; text-decoration:none;}
+a.blue{color:#3366cc;}
+.ss{-webkit-background: -webkit-gradient(linear, 0 0, 0 100%, from(#33f0d4), to(#69efd2));background:#50efd3;}
+.home{background:url(../images/image/bg-new.jpg) no-repeat;width:760px;height:750px;margin:0 auto;position:relative;overflow:hidden;}
+.content{width:618px;height:353px;top:210px;left:60px;position:relative;}
+.title{width:210px;height:34px;background:url(../images/image/titlebg.png);margin:0 auto;top:20px;position:relative;}
+.title a{display:block;line-height:34px;text-align:center;color:#fff;}
+.btn{/*bottom:-140px;*/position:relative;margin:0 auto;width:56px;margin-top:66px;}
+.btn a{display:inline-block;line-height:26px;padding:2px 10px;;border-radius:4px;background:#eb5674;cursor:pointer;color:#fff;}
+.container{width:550px;height:220px;overflow-y:scroll;margin:0 auto;top:50px;position:relative;}
+.container p{color:#746113;padding:10px 10px 10px 25px;line-height:28px;font-size:14px;}
+.cover{width:16px;height:160px;background:#fbf1cd;float:right;top:-190px;position:relative;}
+.rule{width:605px;height:332px;background:url(../images/image/rule.png) no-repeat;top: 230px;position:relative;left:70px;display:none;}
+.hideRule{display:block;width:33px;height:33px;background:url(../images/image/button-1.png) no-repeat;position: absolute;right:0;cursor:pointer;}
+.hideRule:hover{background:url(../images/image/button-2.png) no-repeat;}
+.btno{top:460px;position:relative;width:360px;height:50px;margin:0 auto;}
+.rulefq{background:url(../images/image/right.png) no-repeat;display:inline-block;height:40px;line-height:30px;font-size:16px;cursor:pointer;}
+.rulefq:hover{text-decoration:underline}
+.rulefq i{width:16px;height:16px;display:inline-block;border:1px solid #333;border-radius:4px;top:4px;position:relative;margin-right:16px;}
+.rubtn{display:inline-block;padding:10px 40px;background:#eb5674;border-radius:10px;font-size:20px;color:#fff;margin-left:15px;}
+.rubtn:hover{background:#fff;color:#eb5674;cursor:pointer;}

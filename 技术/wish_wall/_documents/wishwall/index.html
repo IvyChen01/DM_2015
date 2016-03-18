@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="sl">
+  <head>
+    <meta charset="utf-8">
+    <title>wish-wall</title>
+    <link rel="stylesheet" href="./css/layout.css" media="screen" title="no title" charset="utf-8">
+    <script src="./js/jquery.js" charset="utf-8"></script>
+    <script src="./js/main.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="wishmain">
+        <div class="wish" ><span class="wall">
+            <img class="photo" src=""  width="56px" height="56px"><i class="name"></i><i class="time"></i><i class="soli"></i>
+            </span></div>
+         <div class="wish" ><span class="wall">
+            <img class="photo" src=""  width="56px" height="56px"><i class="name"></i><i class="time"></i><i class="soli"></i>
+            </span></div>
+           <div class="wish" ><span class="wall">
+            <img class="photo" src=""  width="56px" height="56px"><i class="name"></i><i class="time"></i><i class="soli"></i>
+            </span></div>
+           <div class="wish" ><span class="wall">
+            <img class="photo" src=""  width="56px" height="56px"><i class="name"></i><i class="time"></i><i class="soli"></i>
+            </span></div>
+           <div class="wish" ><span class="wall">
+            <img class="photo" src=""  width="56px" height="56px"><i class="name"></i><i class="time"></i><i class="soli"></i>
+            </span></div>
+           <div class="wish" ><span class="wall">
+            <img class="photo" src=""  width="56px" height="56px"><i class="name"></i><i class="time"></i><i class="soli"></i>
+            </span></div>
+           <div class="wish" ><span class="wall">
+            <img class="photo" src=""  width="56px" height="56px"><i class="name"></i><i class="time"></i><i class="soli"></i>
+            </span></div>
+           <div class="wish" ><span class="wall">
+            <img class="photo" src=""  width="56px" height="56px"><i class="name"></i><i class="time"></i><i class="soli"></i>
+            </span></div>
+           <div class="wish" ><span class="wall">
+            <img class="photo" src=""  width="56px" height="56px"><i class="name"></i><i class="time"></i><i class="soli"></i>
+            </span></div>
+           <div class="wish" ><span class="wall">
+            <img class="photo" src=""  width="56px" height="56px"><i class="name"></i><i class="time"></i><i class="soli"></i>
+            </span></div>
+      
+          
+      </div>
+      <div class="wishbtn">
+        <div class="wbtn">
+          <a class="sl-btn makeWish">MAKE A WISH</a>
+          <a class="sl-btn sl-search">SEARCH</a>
+          <a class="sl-btn sl-int"><input class="int-btn" type="text"><span class="search"></span></a>
+        </div>
+      </div>
+    </div>
+      
+    <div class="cont">
+        <div class="cont-int">
+            <div class="cont-preview"><p>NOTE TO PREVIEW</p><div class="preview" id="pre"></div></div>
+            <div class="cont-content"><P>NOTE TO CONTENT</P><div class="content" id="cot" onkeyup="SwapTxt()" contenteditable="true" ></div></div>
+            <div class="cont-select">
+                <P>Select note background:</P>
+                <span>
+                    <a><i>Hi</i></a>
+                    <a><i>Hi</i></a>
+                    <a><i>Hi</i></a>
+                    <a><i>Hi</i></a>
+                    <a><i>Hi</i></a>
+                </span>
+            </div>
+            <div class="sub-btn"><a class="submit">SUBMIT</a></div>
+        </div>
+    </div>
+    <div class="showall"><p></p></div>
+  </body>
+  <script>
+  //生成标签
+  var obj;//对象
+  var obj1;//对象
+  var mx; //鼠标位置
+  var my;
+  var ox; //对象位置
+  var oy;
+  var sx = $(document).width(); //系统宽度
+  var sy =($(document).height())*.6 ;
+
+  // 鼠标点击监听  每个wishmian下面的div
+  $("#wishmain div").mousedown(function(e){
+      obj=$(this);
+      obj.css("z-index",getz());
+      mx = e.pageX;my = e.pageY;  // 鼠标第一次点击获取坐标
+      ox = parseInt(obj.css("left")); // 对象的坐标
+      oy = parseInt(obj.css("top"));
+  });
+  // 鼠标移动监听
+  $(document).mousemove(function(e){
+      if(!obj)return; // 表示选中了对象
+      var cx=((e.pageX-mx+ox)<sx)&&(e.pageX-mx+ox)||(sx-310);
+      var cy=((e.pageY-my+oy)<sy/.6)&&(e.pageY-my+oy)||(sy/.6-350);
+      obj.css("z-index",getz());// 显示在最前面
+      obj.css({"top":cy+"px","left":cx+"px"});
+  })
+  // 鼠标抬起监听
+  $(document).mouseup(function(){
+      obj=null; // 释放对象
+  });
+  // 获取当前最前面的值
+  function getz(){
+      var max = 0;
+      var tmp = 0;
+      $("#wishmain div").each(function(){
+          tmp = parseInt($(this).css("z-index"));
+          if( max < tmp){max=tmp;}
+      });
+      return max+1;
+  }
+  /*****************下面自己设置*******************/
+  // 设置许愿条背景随机
+  /*function setback(){
+      var arr = new Array('#7E7DD4','#A0D581','#E2BBA7','#E3ABC4','#CAB3E6');
+      return arr[parseInt(Math.random()*5)];
+  }*/
+  // 设置许愿条开始随机位置
+  function setpos(){
+      $("#wishmain div").each(function(){
+          var rx = parseInt(Math.random()*(sx-$(this).width()));
+          var ry = parseInt(Math.random()*(sy-$(this).height()));
+      //    $(this).css("background",setback());
+          $(this).css({"top":ry+"px","left":rx+"px"});
+      });
+  }
+  setpos();
+  </script>
+</html>

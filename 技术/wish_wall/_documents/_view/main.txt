@@ -1,0 +1,13 @@
+<cmd>foreach ($wishList as $value) {</cmd>
+username: <#value['username']#><br/>
+photo: <#value['photo']#><br/>
+content: <#value['content']#><br/>
+bgcolor: <#value['bgcolor']#><br/>
+pubdate: <#value['pubdate']#><br/>
+------------------------------<br/>
+<cmd>}</cmd>
+isWished: <#isWished#><br/>±‰¡ø
+shareUrl: <#shareUrl#><br/>
+sharePic: <#sharePic#><br/>
+isFb: <#isFb#><br/>
+fbAppId: <#fbAppId#><br/>

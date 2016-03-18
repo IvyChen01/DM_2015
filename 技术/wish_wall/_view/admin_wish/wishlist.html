@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>许愿查看</title>
+<link href="css/admin.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="topbar">
+	<span><a href="?m=admin" target="_self">管理中心</a> | <a href="?m=admin&a=logout" target="_self">退出</a></span>
+</div>
+<div class="db">
+	<h3>许愿查看</h3>
+	<table align="center" border="1" cellpadding="5" cellspacing="0" bgcolor="#FDF2F2">
+		<tr>
+			<td bgcolor="#F0C090">头像</td>
+			<td bgcolor="#F0C090">姓名</td>
+			<td bgcolor="#F0C090">性别</td>
+			<td bgcolor="#F0C090">邮箱</td>
+			<td bgcolor="#F0C090">日期</td>
+			<td bgcolor="#F0C090">内容</td>
+			<td bgcolor="#F0C090">删除</td>
+		</tr>
+		<cmd>$isColor = false;</cmd>
+		<cmd>foreach ($wishList as $value) {</cmd>
+			<tr>
+				<cmd>if ($isColor) {</cmd>
+					<td bgcolor="#F1EDFE"><img src="<#value['photo']#>" width="56px" height="56px"/></td>
+					<td bgcolor="#F1EDFE"><#value['username']#></td>
+					<td bgcolor="#F1EDFE"><#value['gender']#></td>
+					<td bgcolor="#F1EDFE"><#value['email']#></td>
+					<td bgcolor="#F1EDFE"><#value['pubdate']#></td>
+					<td bgcolor="#F1EDFE"><#value['content']#></td>
+					<td bgcolor="#F1EDFE"><a href="?m=adminWish&a=deleteWish&id=<#value['id']#>&page=<#page#>" target="_self">删除</a></td>
+				<cmd>} else {</cmd>
+					<td><img src="<#value['photo']#>" width="56px" height="56px"/></td>
+					<td><#value['username']#></td>
+					<td><#value['gender']#></td>
+					<td><#value['email']#></td>
+					<td><#value['pubdate']#></td>
+					<td><#value['content']#></td>
+					<td><a href="?m=adminWish&a=deleteWish&id=<#value['id']#>&page=<#page#>" target="_self">删除</a></td>
+				<cmd>}</cmd>
+				<cmd>$isColor = !$isColor;</cmd>
+			</tr>
+		<cmd>}</cmd>
+	</table>
+	<br/>
+	<#pageStr#>
+	<br/>
+</div>
+</body>
+</html>

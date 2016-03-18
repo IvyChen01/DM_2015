@@ -1,0 +1,149 @@
+﻿body {
+  margin:0px;
+  background-image:none;
+  position:static;
+  left:auto;
+  width:964px;
+  margin-left:0;
+  margin-right:0;
+  text-align:left;
+}
+#base {
+  position:absolute;
+  z-index:0;
+}
+#u0 {
+  position:absolute;
+  left:700px;
+  top:470px;
+  width:60px;
+  height:25px;
+}
+#u0_input {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:60px;
+  height:25px;
+  font-family:'Arial Normal', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  text-decoration:none;
+  color:#000000;
+  text-align:center;
+}
+#u1 {
+  position:absolute;
+  left:190px;
+  top:70px;
+  width:774px;
+  height:660px;
+}
+#u1_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:774px;
+  height:660px;
+}
+#u2 {
+  position:absolute;
+  left:2px;
+  top:322px;
+  width:770px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u3 {
+  position:absolute;
+  left:300px;
+  top:80px;
+  width:360px;
+  height:363px;
+}
+#u3_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:360px;
+  height:363px;
+}
+#u4 {
+  position:absolute;
+  left:2px;
+  top:174px;
+  width:356px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u5 {
+  position:absolute;
+  left:520px;
+  top:630px;
+  width:10px;
+  height:140px;
+}
+#u5_start {
+  position:absolute;
+  left:-5px;
+  top:0px;
+  width:20px;
+  height:18px;
+}
+#u5_end {
+  position:absolute;
+  left:-5px;
+  top:123px;
+  width:20px;
+  height:18px;
+}
+#u5_line {
+  position:absolute;
+  left:5px;
+  top:0px;
+  width:1px;
+  height:140px;
+}
+#u6 {
+  position:absolute;
+  left:509px;
+  top:770px;
+  width:118px;
+  height:16px;
+}
+#u6_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:118px;
+  height:16px;
+}
+#u7 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:118px;
+  white-space:nowrap;
+}
+#u8 {
+  position:absolute;
+  left:460px;
+  top:583px;
+  width:120px;
+  height:27px;
+}
+#u8_input {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:120px;
+  height:27px;
+  font-family:'Arial Normal', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  text-decoration:none;
+  color:#000000;
+  text-align:center;
+}

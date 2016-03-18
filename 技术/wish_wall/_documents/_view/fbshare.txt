@@ -1,0 +1,72 @@
+<script type="text/javascript">
+var isFb = <#isFb#>;
+
+if (isFb)
+{
+	window.fbAsyncInit = function()
+	{
+		FB.init({
+			appId: "<#fbAppId#>",
+			status: true,
+			cookie: true,
+			xfbml: true
+		});
+	};
+
+	(function(d, s, id)
+	{
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/all.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+}
+
+function login()
+{
+	FB.login(function(response){ document.location.href = "./?m=wish&a=main"; });
+}
+
+//function feed(link, picture)
+function feed()
+{
+	var link = "<#shareUrl#>";
+	var picture = "<#sharePic#>";
+	
+	if (!isFb)
+	{
+		return;
+	}
+	
+	FB.ui(
+	  {
+		method: 'feed',
+		name: 'Wish Wall',
+		link: link,
+		picture: picture,
+		caption: 'www.infinixmobility.com',
+		description: 'Come to join us now!'
+	  },
+	  function(response) {
+		alert("Thanks!");
+		location.href = "./?m=wish&a=main";
+	  }
+	);
+}
+
+function invite()
+{
+	FB.ui({method: 'apprequests',
+	  message: 'Tecno'
+	}, function (response){});
+}
+
+function addPage(redirect_uri)
+{
+	FB.ui({
+	  method: 'pagetab',
+	  redirect_uri: redirect_uri
+	}, function(response){});
+}
+</script>

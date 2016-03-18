@@ -1,0 +1,38 @@
+<?php if (!defined('VIEW')) exit; ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SEARCH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="css/layst.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/wish.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      $(function(){
+        showWall('Input name or content.',4000)
+      })
+    </script>
+      <div class="searchwish">
+        <div class="fit">
+            <p class="sy ft12">1111</p>
+        </div>
+        <div class="content">
+            <div class="sent">
+                <input type="text" class="ft10">
+                <a class="sent-search sy ft12">Search</a>
+            </div>
+        </div>
+        <div class="searchto">
+          <img src="" width="100px" height="100px" alt="" />
+          <i class="sename"></i>
+          <i class="setime"></i>
+          <i class="sesoli"></i>
+          <a class="searchtobtn sy ft12">Back to home.</a>
+        </div>
+      </div>
+  </body>
+</html>

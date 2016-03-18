@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Wish wall</title>
+    <link rel="stylesheet" href="css/layst.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/wish.js" charset="utf-8"></script>
+    <script type="text/javascript">
+   isWished = <#isWished#>;
+   //console.log(isWished);
+   $('body').load(function(){
+     if(isWished==true){
+       $('.makewish').hide();
+     }
+   })
+   if(isWished==true)
+   {
+     $(".makewish").html("SHARE");
+   }
+</script>
+  </head>
+  <body class="sq">
+    <div class="container">
+      <div class="wishwall">
+          <div id="wishmain">
+              <cmd>foreach ($wishList as $value) {</cmd>
+            <!--    <script type="text/javascript">
+                  var oi='<#value['bgcolor']#>';
+                  oi=oi.replace(/(.{12})/, '$1s');
+                  //console.log(oi);
+                $('body').load($('.wish').css('background-image',oi))
+                </script>-->
+          <div class="wish" set="background:url() no-repeat;"><span class="wall">
+              <img class="photo" src="<#value['photo']#>">
+              <i class="name"><#value['username']#></i>
+              <i class="time"><#value['pubdate']#></i>
+              <i class="soli"><#value['content']#></i>
+              </span></div>
+                <cmd>}</cmd>
+      </div>
+    </div>
+
+      <div class="widget">
+<!--<i class="icon-spinner icon-spin icon-2x"></i>-->
+          <div class="widbar">
+              <a class="sq-wish" href="?m=wish&a=add&d=mobile"><i class="makewish sy ft10">MAKE WISH</i></a>
+              <a class="sq-sreach" href="?m=wish&a=pageSearch"><i class="makesearch sy ft10">SEARCH</i></a>
+          </div>
+      </div>
+    </div>
+    <script>
+  //生成标签
+  var obj;//对象
+  var obj1;//对象
+  var mx; //鼠标位置
+  var my;
+  var ox; //对象位置
+  var oy;
+  var sx = $(document).width(); //系统宽度
+  var sy =($(document).height())*.6 ;
+
+  // 鼠标点击监听  每个wishmian下面的div
+  $("#wishmain div").mousedown(function(e){
+      obj=$(this);
+      obj.css("z-index",getz());
+      mx = e.pageX;my = e.pageY;  // 鼠标第一次点击获取坐标
+      ox = parseInt(obj.css("left")); // 对象的坐标
+      oy = parseInt(obj.css("top"));
+  });
+  // 鼠标移动监听
+  $(document).mousemove(function(e){
+      if(!obj)return; // 表示选中了对象
+      var cx=((e.pageX-mx+ox)<sx)&&(e.pageX-mx+ox)||(sx-310);
+      var cy=((e.pageY-my+oy)<sy/.6)&&(e.pageY-my+oy)||(sy/.6-350);
+      obj.css("z-index",getz());// 显示在最前面
+      obj.css({"top":cy+"px","left":cx+"px"});
+  })
+  // 鼠标抬起监听
+  $(document).mouseup(function(){
+      obj=null; // 释放对象
+  });
+  // 获取当前最前面的值
+  function getz(){
+      var max = 100;
+      var tmp = 1;
+      $("#wishmain div").each(function(){
+          tmp = parseInt($(this).css("z-index"));
+          if( max < tmp){max=tmp;}
+      });
+      return max;
+  }
+  /*****************下面自己设置*******************/
+  // 设置许愿条背景随机
+  /*function setback(){
+      var arr = new Array('#7E7DD4','#A0D581','#E2BBA7','#E3ABC4','#CAB3E6');
+      return arr[parseInt(Math.random()*5)];
+  }*/
+  // 设置许愿条开始随机位置
+  function setpos(){
+      $("#wishmain div").each(function(){
+          var rx = parseInt(Math.random()*(sx-$(this).width()));
+          var ry = parseInt(Math.random()*(sy-$(this).height()));
+      //    $(this).css("background",setback());
+          $(this).css({"top":ry+"px","left":rx+"px"});
+      });
+  }
+  setpos();
+  </script>
+  <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-67472573-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </body>
+</html>

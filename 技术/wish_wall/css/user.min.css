@@ -1,0 +1,27 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,img{margin:0px;padding:0px;}
+html,body{position:relative;width:100%;height:100%;background-color:#FFFFFF;line-height:120%;font-family:"宋体","Times New Roman",Times,serif;font-size:18px;word-break:break-all;}
+li{list-style:none;}
+img{border:none;}
+a:link,a:visited{text-decoration:none;color:#000000;}
+a:hover{text-decoration:underline;color:#FF0000;}
+.clear{clear:both;}
+.align-left{text-align:left;}
+.align-right{text-align:right;}
+.align-center{text-align:center;}
+.float-left{float:left;}
+.float-right{float:right;}
+.login{padding-top:50px;}
+.login h3{padding-bottom:20px;}
+.login li{margin-bottom:5px;}
+.login #username{width:150px;}
+.login #password{width:150px;}
+.main{padding-top:30px;}
+.main h3{padding-bottom:20px;}
+.main li{margin-bottom:5px;}
+.change-password{padding-top:30px;}
+.change-password h3{padding-bottom:20px;}
+.change-password li{margin-bottom:5px;}
+.change-password #srcPassword{width:150px;}
+.change-password #newPassword{width:150px;}
+.change-password #confirm{width:150px;}
+
