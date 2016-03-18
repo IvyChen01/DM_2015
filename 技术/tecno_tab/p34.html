@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TECNO Mobile</title>
+<link href="css/index.min.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.1.min.js" type="text/javascript" language="javascript"></script>
+<style>.ig-b- { display: inline-block; }
+.ig-b- img { visibility: hidden; vertical-align: 15px;}
+.ig-b-:hover { background-position: 0 -60px; } .ig-b-:active { background-position: 0 -120px; }
+.ig-b-48 { width: 48px; height: 48px; background: url(//badges.instagram.com/static/images/ig-badge-sprite-48.png) no-repeat 0 0; }
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+.ig-b-48 { background-image: url(//badges.instagram.com/static/images/ig-badge-sprite-48@2x.png); background-size: 60px 178px; } }</style>
+</head>
+
+<body>
+<div class="container">
+	<div class="header">
+		<img class="logo" src="images/logo.png"/>
+		<div class="icon-smart">
+			<a href="http://instagram.com/tecnomobileegypt?ref=badge" class="ig-b- ig-b-48" target="_blank"><img src="//badges.instagram.com/static/images/ig-badge-48.png" alt="Instagram" /></a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img src="images/iocn_smart.png"/>
+			<img src="images/icon_warrantly.png"/>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="body">
+		<div class="selector">
+			<img class="top-btn" src="images/btn_up.png"/>
+			<ul>
+				<a href="./"><li><img src="images/s_r7.png"/><span>R7</span></li></a>
+				<a href="p21.html"><li><img src="images/s_h7.png"/><span>H7</span></li></a>
+				<li class="current"><img src="images/s_p5.png"/><span>P5</span></li>
+				<a href="p41.html"><li><img src="images/s_h5.png"/><span>H5</span></li></a>
+				<a href="p51.html"><li><img src="images/s_s9.png"/><span>S9</span></li></a>
+				<a href="p61.html"><li><img src="images/s_g9.png"/><span>G9</span></li></a>
+				<a href="p71.html"><li><img src="images/s_h6.png"/><span>H6</span></li></a>
+				<a href="p81.html"><li><img src="images/s_phantomz.png"/><span>V7</span></li></a>
+			</ul>
+			<div class="clear"></div>
+			<img class="bottom-btn" src="images/btn_down.png"/>
+		</div>
+		<div class="main">
+			<img class="nav-bg" src="images/nav_bg.png"/>
+			<img class="select-description display-none" src="images/nav_top.png"/>
+			<img class="select-images display-none" src="images/nav_top.png"/>
+			<img class="select-videos display-none" src="images/nav_top.png"/>
+			<div class="nav">
+				<a href="p31.html"><span class="description">Description</span></a>
+				<a href="p32.html"><span class="images">Images</span></a>
+				<a href="p33.html"><span class="videos">Videos</span></a>
+				<span class="h7"><span>P5</span></span>
+			</div>
+			<div class="find-btn">
+				<img src="images/icon_location.jpg"/><span>Find P5 Sold at...</span>
+			</div>
+			<div class="clear"></div>
+			<div class="location-box">
+				<span class="title">Stores :</span>
+				<p class="c-city">
+					<select id="city"></select>
+				</p>
+				<div id="location"></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="footer">
+		<span>Copyright © Tecno 2012-2015<br/><a href="http://www.tecno-mobile.com">www.tecno-mobile.com</a></span>
+	</div>
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+var dataList = null;
+var cityList = null;
+
+$(document).ready(function()
+{
+	dataList = getData();
+	cityList = getAllCity();
+	$("#city").append("<option value=\"" + cityList[0] + "\" selected=\"selected\">" + cityList[0] + "</option>");
+	for (var i = 1; i < cityList.length; i++)
+	{
+		$("#city").append("<option value=\"" + cityList[i] + "\">" + cityList[i] + "</option>");
+	}
+	$("#location").html(getLocationStr(cityList[0]));
+	$("#city").change(onClickCity);
+});
+
+function onClickCity(e)
+{
+	$("#location").html(getLocationStr($("#city").val()));
+}
+
+function getData()
+{
+	var arr = [];
+	
+	arr.push(["Abdul Aziz", "Al-Garhy", " Abdul Aziz St. ,Khafaga center , front Radio Tallat", "1014644146", ""]);
+	arr.push(["Abdul Aziz", "Al-Hares", "36 Abdul Azeez St. , al Hares Groub center", "1005078219", ""]);
+	arr.push(["Abdul Aziz", "El-Safa", " Abdul Aziz St", "", ""]);
+	arr.push(["Abdul Aziz", "Al-Hares", "1st  Abdul Aziz St. , Tabarak Center , beside qesm al mousky", "1005078219", "1144999343"]);
+	arr.push(["Abdul Aziz", "Ali Al-Mohaamy", " Abdul Aziz St. , mamarr (lane) El-Sebelgy", "1224222227", "1004030706"]);
+	arr.push(["Abdul Aziz", "Al-Kassas ", " Abdul Aziz St, after Omar Afandi mall", "1270444014", ""]);
+	arr.push(["Abdul Aziz", "Al-Rahma", " Abdul Aziz St. , mamarr (lane) El-Sebelgy", "1141051075", ""]);
+	arr.push(["Abdul Aziz", "Cairo Tel", "32 Abdul Aziz St.", "1223125611", ""]);
+	arr.push(["Abdul Aziz", "Ebad Al-Rahman", "26 Abdul Aziz St, front koshary atef al hendy", "1222444411", "1006677915"]);
+	arr.push(["Abdul Aziz", "Fanar Al-Togaryyah", " Abdul Aziz St.", "111524903", "1143008088"]);
+	arr.push(["Abdul Aziz", "G -Mahmoud Al Sheemy", "In front of Al Ghazawy mall ", "100922274", ""]);
+	arr.push(["Abdul Aziz", "G- Mahmoud Marzouq (El Garhy)", " Abdul Aziz St. , Beside Samsung", "1007722210", ""]);
+	arr.push(["Abdul Aziz", "Galaxy Shop ", "24 Abdul Azeez St.", "1224422982", "1116000404"]);
+	arr.push(["Abdul Aziz", "Hanafy Stores", " Abdul Aziz St.", "1222470888", ""]);
+	arr.push(["Abdul Aziz", "Lotfy Al Sharawy", " Abdul Aziz St", "1113550007", "1283650009"]);
+	arr.push(["Abdul Aziz", "Majed Sourour", " Abdul Aziz St. , Center Omran", "1201331414", "1227211020"]);
+	arr.push(["Abdul Aziz", "Olembiya", "37 Abdul Aziz St.", "23933290", "109097755"]);
+	arr.push(["6th  Of October", "Amr Phone", "Wadi El Molouk , 6 district ", "1221608822", ""]);
+	arr.push(["6th  Of October", "Raya", "Mall Of Arabia , Gate 22 ,near by Juhayna square", "1112500988", ""]);
+	arr.push(["6th  Of October", "Raya", "Hyber One Mall , Extension Of 26th Of July Spine,  El Sheikh Zayed city", "1112504385", ""]);
+	arr.push(["6th  Of October", "Wellz", "Shop 3 Ali El-Deen Mall disctractor 7", "38356767", ""]);
+	arr.push(["Abdul Aziz", "G-Khaled Al Monofy", " Abdul Aziz St.", "1002240940", ""]);
+	arr.push(["Abdul Aziz", "Hussien Gamaleya", "Abdul Aziz St.", "", ""]);
+	arr.push(["Ain Shams", "Al Batal Group", "Ain Shams St. , in front of church beside Ain Shams Metro", "1202070001", ""]);
+	arr.push(["Ain Shams", "Center El-Agayby", "2 Mohamed el Ebady St , El Winsh Square", "1003117730", ""]);
+	arr.push(["Ain Shams", "Al Fath", "29 Abou Al Fotouh Abdullah St. ", "1062758777", ""]);
+	arr.push(["Ain Shams", "Al Kaftawy", "2 Mahmoud Hassan St. , from Ahmed Orabi", "1002806263", ""]);
+	arr.push(["Ain Shams", "Al Rayan ", "22 Abou Al Fotouh", "1110142428", ""]);
+	arr.push(["Ain Shams", "Al-Masry", "El- Eshreen St. ,from ahmed esmast St.", "1016900642", "183555444"]);
+	arr.push(["Ain Shams", "Al-Mohandes", "Abo Al-Fotouh St.", "1117150250", "1063003517"]);
+	arr.push(["Ain Shams", "Bebo Live", "Ahmed Oraby St. , from Mostafa Hafez St.", "122069988", ""]);
+	arr.push(["Ain Shams", "Dagga", "Abo Al-Fotouh St.", "1117777252", ""]);
+	arr.push(["Ain Shams", "Dream", "Ahmed Esmat St.", "1157333464", "1008063566"]);
+	arr.push(["Ain Shams", "El Gendy", "1 mahmoud hassan , ahmed oraby ", "1009790995", ""]);
+	arr.push(["Ain Shams", "Free Call", "near by Ain Shams metro station", "1284500500", ""]);
+	arr.push(["Ain Shams", "Galaxy", "Al Eshreen St. , across 6 of october st ", "1008877815", ""]);
+	arr.push(["Ain Shams", "Gamal Al Islam", "Abo Al-Fotouh St.", "10114182082", ""]);
+	arr.push(["Ain Shams", "Habeebt Al-Moustafa", "13 Al Troll , in front of Al Tawoon Mosque ", "1112093815", ""]);
+	arr.push(["Ain Shams", "Iphone", "Ahmed Esmat St.", "1117017031", "1116101024"]);
+	arr.push(["Ain Shams", "Live", "Al Zahraa St. from Ain Shams St. ", "1145834899", ""]);
+	arr.push(["Ain Shams", "Mobinil Xpress", "236 Ahmed Esmat St.", "", ""]);
+	arr.push(["Ain Shams", "Nour Ala Nour", "Abo Al-Fotouh St. , beside gas station", "1271331330", "1270088323"]);
+	arr.push(["Ain Shams", "Ogret Al-Kahera", "87 Al-Wehda Al Arabiya St. , across Mostafa Hafez St.", "1099958408", "1204904097"]);
+	arr.push(["Ain Shams", "Online", "2 Mahmoud Hassan St. , from Ahmed Orabi", "1016148384", "22445411"]);
+	arr.push(["Ain Shams", "Qweedar Tel Tek", "Ahmed Esmat St.", "10064818660", ""]);
+	arr.push(["Ain Shams", "Seif ", "Ahmed Oraby St. , from Mostafa Hafez St.", "1062229220", ""]);
+	arr.push(["Ain Shams", "Tabarak", "Abo Al-Fotouh St. , front gas station", "1117777252", ""]);
+	arr.push(["Ain Shams", "Wifi ", "1 mahmoud hassan , ahmed oraby ", "1020101006", ""]);
+	arr.push(["Al-Matariyyah", "Abou El-Fotouh 1", "96 Matarawy St. . ", "1000528586", "22551999"]);
+	arr.push(["Al-Matariyyah", "Abou El-Fotouh 2", "130 Matarawy St. . ", "1114236694", ""]);
+	arr.push(["Al-Matariyyah", "Abou El-Fotouh 3", "173 Matarawy St. . ", "1014445952", ""]);
+	arr.push(["Al-Matariyyah", "Abou El-Fotouh 4", "172 Matarawy St. . ", "1061200001", ""]);
+	arr.push(["Al-Matariyyah", "Center Al Fares", "Matarawy St.", "", ""]);
+	arr.push(["Al-Matariyyah", "Dardasha", "Matarawy St. . El-Wensh station ,from Abbady St.", "1221856000", ""]);
+	arr.push(["Al-Matariyyah", "El Badr", "Matarawy st .", "", ""]);
+	arr.push(["Al-Matariyyah", "El-Batal", "Matariyyah Square ,front El-Anwar El-Mohammadyah mosque", "1224340044", "102860551"]);
+	arr.push(["Al-Matariyyah", "Habeebt Al-Moustafa", "1 Al Trolly St. , Mesalla square - front Al-Nour Al-Mohammady mosque", "1112093815", ""]);
+	arr.push(["Al-Matariyyah", "Radio Phone", "Matarawy St.", "1220306262", "1281118186"]);
+	arr.push(["Bab Al-Looq", "Moasaset Mohamed Ali", "1 El Mazlom St ", "111024693", ""]);
+	arr.push(["Bab Al-Looq", "El-Avokato", "36 Al-Bostaan St.  , Beside Mohamed Naguib metro station", "01271811514", "23920272"]);
+	arr.push(["Bab Al-Shariah", "Bakkar 1", "52 El-Fawatya square", "123099905", "1236079992"]);
+	arr.push(["Bab Al-Shariah", "Bakkar 3", "beside Al-Rahma hospital , near Bab Al-Shariah metro station", "", ""]);
+	arr.push(["Bab Al-Shariah", "Hoba Phone (bakkar 2)", "beside Al-Rahma hospital , near Bab Al-Shariah metro station", "1281895750", "1141742073"]);
+	arr.push(["Bolak El-Dakror", "Al-Afreet", "Awil Nahya ST", "", ""]);
+	arr.push(["Bolak El-Dakror", "Al-Khafeef", "Nahia St. , near by Hamada koshary restaurant ", "1001780800", "1001780800"]);
+	arr.push(["Bolak El-Dakror", "Dahab", "Nahia St.", "118370707", "112020057"]);
+	arr.push(["Bolak El-Dakror", "El-Afareet", "Nahia St , before Medicine Factory", "1002370700", "1002370700"]);
+	arr.push(["Bolak El-Dakror", "Google", "8 Nahia St. ,", "1119399809", "1110123958"]);
+	arr.push(["Bolak El-Dakror", "Mohamed Kamel", "Nahia St.", "1008208207", ""]);
+	arr.push(["Dar El-Salam", "Al Geel al thaleth", "Fayioum st ,", "", ""]);
+	arr.push(["Dar El-Salam", "Al-Magd", "Ezbet Khair Allah", "1289962100", "1225445005"]);
+	arr.push(["Dar El-Salam", "Al-Najaah", "Ezbet KhairAllah  , near by Al-Zahraa' metro station", "1288444262", ""]);
+	arr.push(["Dar El-Salam", "Al-Qouds", "2 Mahattah St. , front Dar El-Salam metro station", "1211303300", ""]);
+	arr.push(["Dar El-Salam", "Al masref", "27 Mostafa El Dandarawy St.", "1208085151", ""]);
+	arr.push(["Dar El-Salam", "Arafa Group", "el Zohour , from el malaf", "1277330340", ""]);
+	arr.push(["Dar El-Salam", "El Tounsy", "Ezzbet Khair Allah", "", ""]);
+	arr.push(["Dar El-Salam", "AVAKerolos", "76 Bahgat Al Islam St. ( Al Tahouna ) ", "1284378787", ""]);
+	arr.push(["Dar El-Salam", "Awlad Ragab", "Ezbet KhairAllah  , near by Al-Zahraa' metro station", "1224889060", ""]);
+	arr.push(["Dar El-Salam", "Connect", "Ezbet KhairAllah", "", ""]);
+	arr.push(["Dar El-Salam", "Ebad Al-Rahman", "Ezbet KhairAllah  , Al Tahouna , near by Al-Zahraa' metro station", "", ""]);
+	arr.push(["Dar El-Salam", "El Moslem", "Fayioum st ,", "1270063666", "1094670333"]);
+	arr.push(["Dar El-Salam", "Medo", "188 Al Imamayn St. , beside Abu Bakr Al Seddek mosque , Ezbet KhairAllah", "1205553992", ""]);
+	arr.push(["Dar El-Salam", "Mobinil Xpress", "1 Samy St. , from Ter'eet El-Khashaab", "", ""]);
+	arr.push(["Dar El-Salam", "Twins", "9 Abdel Khaled Saber St. , El Zahraa", "1112506603", ""]);
+	arr.push(["Dokki", "El-Wensh", "104 , Al Tahreer St. , El-Dokki Square ,front of El-Dokki metro station", "1000630222", ""]);
+	arr.push(["Dokki", "Markaz Etsalat Du", "El-Dokki Square ,near by El-Dokki metro station", "1007771557", ""]);
+	arr.push(["Dokki", "Mobinil Xpress", "18 Hassan Ramadan , beside Soliman Gawhar , near by El-Dokki metro station", "1227979652", ""]);
+	arr.push(["Dokki", "Raya", "44 Mosadak St.", "1112504406", ""]);
+	arr.push(["Dokki", "Raya", "25 Mosadak St.", "1122308555", ""]);
+	arr.push(["El-Basateen", "Ahla Kalam", "El-Basateen Al-Omoomy St. , front MicroBus station ", "1274130777", ""]);
+	arr.push(["El-Basateen", "Alo Al-Sehrry", "Mahran St. , beside El-Basateen Al-Omoomy St.", "1287220553", ""]);
+	arr.push(["El-Basateen", "Tofaahet Adam", "4 Abou al Fotouh Hegazy (Mahran ) St. , beside El-Basateen Al-Omoomy St.", "1288880195", "125556509"]);
+	arr.push(["El-Haram", "Al-Afreet", "El-eshreen St. , Faisal", "", ""]);
+	arr.push(["El-Haram", "Al-Moustafa", "El-eshreen St. , Faisal", "1090707766", ""]);
+	arr.push(["El-Haram", "Dream", "2 El-eshreen St. , Faisal", "1002518691", ""]);
+	arr.push(["El-Haram", "Maged Store 1", "El safa Wil Marwa ST.", "01100024922", ""]);
+	arr.push(["El-Haram", "Maged Store 2", "El Manshya St", "01100024922", ""]);
+	arr.push(["El-Haram", "Ali store", "El safa Wil Marwa ST.", "01100034922", ""]);
+	arr.push(["El-Haram", "El-Khayyam", "1 Kaabesh St. ,from El-Twabek, Faisal", "1003388638", ""]);
+	arr.push(["El-Haram", "El-Wensh", "389  El-Malek Faisal St , nasr el thawra , after Bon al Oteffy , Madkoor", "1002345600", ""]);
+	arr.push(["El-Haram", "El-Wensh 2", "1 Al-Otour , from tour SEl-Malek Faisal St. , El-Talbiya , front of First Mall", "1156675777", ""]);
+	arr.push(["El-Haram", "El-Wensh 3", "259 El-Malek Faisal St. , Al-Taawun  , front El-Mousky butcher", "", ""]);
+	arr.push(["El-Haram", "El-Wensh 4", "156 El-Malek Faisal St., El-kom Al-akhdar , beside El-bonn El-Brazilly", "1276777667", ""]);
+	arr.push(["El-Haram", "Gana", "El Malek faisal St.", "1228636322", ""]);
+	arr.push(["El-Haram", "Leader Stores", "Faisal St. , El-Koum Al-Akhdar", "1225284848", "1005576972"]);
+	arr.push(["El-Haram", "Mobinil Xpress", "156 El-Malek Faisal St. , Al-Forqaan tower", "1200833846", ""]);
+	arr.push(["El-Haram", "Raya", "269 El-Haram St. , Cairo Mall", "1112504391", ""]);
+	arr.push(["El-Haram", "Raya", "41 Ibn Battuta St. , Al-Tamemy station , Faisal", "1100884744", ""]);
+	arr.push(["El-Haram", "Tech-shop", "330 fisal st. giza", "1026647272", ""]);
+	arr.push(["El-Manial", "El-Wensh 1", "80 El-Manial St.", "1276777611", ""]);
+	arr.push(["El-Marg", "Al Akhawayn", "Cross between alter3a al salto7ya St. ,  kobry al a2nabeeb", "1008006671", "26623229"]);
+	arr.push(["El-Marg", "Al Ameer", "Ibrahim Al Gazar St. ", "109232952", "113711554"]);
+	arr.push(["El-Marg", "Al Farouk", "Al Felaha St. , 1 st of Kamal Hamza St  - dawaran Al Felaha", "1155999455", ""]);
+	arr.push(["El-Marg", "Al Mahallawy 1", "Al Sheikh Mansour St . , El-Mahatta El-Gharbyya  , Beside Al-Tayebyeen bakery", "1003330602/4", ""]);
+	arr.push(["El-Marg", "El-Basha", "Dawran Al Felaha", "1008689200", ""]);
+	arr.push(["El-Marg", "Dream", "alter3a al salto7ya St , Dawaran Al Felaha", "1123738309", "1114641380"]);
+	arr.push(["El-Marg", "El Salam", "in front of Al Marg al Gharbiya station beside Almadinah al mounawrah shop", "1228900032", "1156117772"]);
+	arr.push(["El-Marg", "Ezz Al-Regal", "Al Felaha St. - dawaran Al Felaha", "1005894980", "1148880593"]);
+	arr.push(["El-Marg", "Gharam Phone", "10 Sayed Ameen St.", "1067353324", ""]);
+	arr.push(["El-Marg", "Haha phone", "1 El Marg Al Gharbiyah , beside al khosoos parking , front shiekh mansour mosque", "", ""]);
+	arr.push(["El-Marg", "Hamada Ezoo", "Dawran Al Felaha", "1007682600", ""]);
+	arr.push(["El-Marg", "Islam Phone", "Al Felaha St. - Al-Nouras square", "1228465476", "1062280101"]);
+	arr.push(["El-Marg", "Abo lNeel", "El-Mahatta El-Sharqyya St. . Beside El-Marg metro station", "1150600500", ""]);
+	arr.push(["El-Marg", "Nassar", "Dawran Al Felaha", "1009959933", ""]);
+	arr.push(["El-Marg", "Rannet Kholkhal", "Al Ter3a St. , beside Al Rawda Al Shareefa Mosque , Al Marg Al sharkeya", "1120008787", ""]);
+	arr.push(["El-Marg", "Saree3 Al-Nadha", "10 Al  Al Game3  St. -  fro al Ter3a St, Al-Nouras square , al Marg al Sharqya ", "1066238683", "1093070704 / 1202430800"]);
+	arr.push(["El-Marg", "Share3 Abdul Azeez", "Kamal Hamza St. , Al Felaha", "1123118611", ""]);
+	arr.push(["El-Marg", "Top Line", "Dawran Al Felaha", "1094646999", ""]);
+	arr.push(["El-Marg", "Al Mahallawy 2", "Beside Al Marg , Metro Station", "1006004741", ""]);
+	arr.push(["El-Mohandseen", "Raya", "5 Al-Fawakeh St. , beside Mustafa Mahmoud mosque", "1112504398", ""]);
+	arr.push(["El-Mousky", "Al Ekhlas", "Al Bostan St. , in front of Muhammed Naguib Metro station", "1111636147", ""]);
+	arr.push(["El-Salaam", "Mobinil Xpress", "397 Gamal Abdel Nasser St. , Takseem Omar Ibn Al-Khattab , Gesr Al-Suez", "", ""]);
+	arr.push(["El-Sayyidah Zaynab", "Line 1", "4 Rateb Basha St", "1000067675", ""]);
+	arr.push(["El-Sayyidah Zaynab", "Moasah Mohamed Ail", "62 Abdeen St", "1110246963", ""]);
+	arr.push(["El-Sayyidah Zaynab", "El Genndy Phone", "5 Lazogly Square Front of el Khedawya School", "1221315185", ""]);
+	arr.push(["El-Sayyidah Zaynab", "El Ghalbaan", "178 Al Baraany front of Center Shaheen", "1150505036", ""]);
+	arr.push(["El-Sayyidah Zaynab", "El Ghalbaan", "6 El mobtadayan St Front of Kentaky", "1150505036", ""]);
+	arr.push(["El-Sayyidah Zaynab", "Nassar Phone", "246 Port Saeed St , Front of el Khedawya School", "1112502410", ""]);
+	arr.push(["El-Sayyidah Zaynab", "Line 2", "1 Yahya Ebn Yazeed , Ibrahem El Tonsy St", "1000067675", ""]);
+	arr.push(["El-Sayyidah Zaynab", "Abo Mazen ", "10 Seket El Geneya St , El Hlmya El Gdeeda", "1113676100", ""]);
+	arr.push(["El-Sayyidah Zaynab", "El-Maghraby", "inside El-Sayyidah Zaynab metro station", "1207045522", ""]);
+	arr.push(["El-Sayyidah Zaynab", "Mobinil Xpress", "214 Portsaied St.", "1204428662", ""]);
+	arr.push(["El-Warrak", "Al-Raay Al-Saleh", "in front of El-Warrak telephone Central", "1225874587", ""]);
+	arr.push(["El-Warrak", "Mobinil Xpress", "32 Kornish El-Nile St. , near by Sohag St. , Warrak Al-Hadar", "", ""]);
+	arr.push(["El-Warrak", "El-Dawlia", "", "", ""]);
+	arr.push(["El-Zeitoun", "Mobinil Xpress", "4 Zeitoun St. ( Nasouh St. )", "", ""]);
+	arr.push(["El-Zeitoun", "Raya", "60 Al-Layth St. , Gesr Al-Suez , front Vodafone and La Poire", "1119344480", ""]);
+	arr.push(["Embaba", "Diab Phone", "1 Al Mounira St. Nafq Embaba", "1114610004", ""]);
+	arr.push(["Ezbet El-Nakhl", "Al Fara3ena", "3 Al Fareed St. , in front of metro station", "1112509384", ""]);
+	arr.push(["Ezbet El-Nakhl", "Apple", "Al Fareed St.", "1211455940", ""]);
+	arr.push(["Ezbet El-Nakhl", "Arzaq", "near by Ezbet El-Nakhl metro station", "1273222666", ""]);
+	arr.push(["Ezbet El-Nakhl", "El-Maghraby", "2 El Seha St. , near by Ezbet El-Nakhl metro station", "1207044977", ""]);
+	arr.push(["Ezbet El-Nakhl", "Mena Team", "Shaikh Mansour St. ", "1202409060", ""]);
+	arr.push(["Ezbet El-Nakhl", "Om Al Nour", "36 El Keneesa Al Faransawy ", "", ""]);
+	arr.push(["Hadayek Al-Qobba", "Dream Online", "135 Masr W Al-Sudan St.", "1115555208", ""]);
+	arr.push(["Hadayk Helwan", "Calling", "32 Khaled ibn el waleed st. , from Gamal Abdul nasser st. , beside arafa resturant ", "1142466662", "1142466661"]);
+	arr.push(["Hadayk Helwan", "El Quds", "21 Gamal Abdel Nasser St. , near by Hadayek Helwan metro station", "1155055060", ""]);
+	arr.push(["Hadayk Helwan", "El Quds", "1 khaled ibn el waleed st. , Hadayek Helwan", "1155055060", ""]);
+	arr.push(["Hadayk Helwan", "El-Motaheda", "Gamal Abdel Nasser St. , near by Hadayek Helwan metro station", "", ""]);
+	arr.push(["Hadayk Helwan", "Mahmoud Ibrahim", "Al-Gaish St. ,from Gamal Abdel Nasser St. ,near by Hadayek Helwan metro station", "", ""]);
+	arr.push(["Hadayk Helwan", "Mobi Land (mohamed talat)", "Gamal Abdel Nasser St. , near by Hadayek Helwan metro station", "1069914899", "1095550500"]);
+	arr.push(["Hadayk Helwan", "Shehta 2", "Gamal Abdel Nasser St. , near by Hadayek Helwan metro station", "1224415100", ""]);
+	arr.push(["Heliopolis", "iStore", "127 El-Nozha st. , between Triumph square and saint fatima square", "1227005507", "228421000"]);
+	arr.push(["Heliopolis", "Lamsa", "Dameshq St. , front of darsh el soory resturant , medan al game3", "", ""]);
+	arr.push(["Heliopolis", "Raya", "63 El-Merghany St. - Kolyet Al Banat", "1112504382", ""]);
+	arr.push(["Heliopolis", "Raya", "50 Al-Hegaz St. , Beside Samsung , near by Heliopolis Square", "1112504392", ""]);
+	arr.push(["Heliopolis", "Raya", "20 Baghdad St. , Korba", "1112504383", ""]);
+	arr.push(["Heliopolis", "Raya", "12 El-Obour Buildings , Salah Salem Road", "1112504393", ""]);
+	arr.push(["Heliopolis", "Raya", "Sun City Mall , Gate 2 , Masaaken Sheraton", "1112504410", ""]);
+	arr.push(["Helmiet El-Zeitoun", "Ahsan Nas", "146 A ,Toman bay , in front of Atef Al Sadat Mosque", "1224060400", ""]);
+	arr.push(["Helmiet El-Zeitoun", "Central El-Amana", "Al Kamal towers , beside metro market , el helmya square - near bridge", "1000112288", ""]);
+	arr.push(["Helmiet El-Zeitoun", "Al Hawary", "18 Selim El Awal", "1061113333", ""]);
+	arr.push(["Helmiet El-Zeitoun", "Al-Fares", "Near by Al-Na3am square", "1228881011", ""]);
+	arr.push(["Helmiet El-Zeitoun", "Julia", "17 Nasooh Basha St. , near by Hadayek El-Zeitoun metro station", "1288818403", ""]);
+	arr.push(["Helmiet El-Zeitoun", "Mooga", "Selim Al-Awwal St. , near by Hadayek El-Zeitoun metro station", "1111002299", ""]);
+	arr.push(["Helmiet El-Zeitoun", "Orange", "3 Al Kamal towers , beside metro market , el helmya square - near bridge", "1111811621", "106602560"]);
+	arr.push(["Helwan", "Abeer Al-Zohour", "Mansour St. , near by Helwan metro station", "111816316", ""]);
+	arr.push(["Helwan", "Ali Al-Ogeel", "Mansour St. , near by Helwan metro station", "1284422150", ""]);
+	arr.push(["Helwan", "Alpha & Al Sobky", "34 Mansour St. , near by Helwan metro station", "1098111364", ""]);
+	arr.push(["Helwan", "Ekhtarna lak", "Mansour St. , near by Helwan metro station", "1111132030", "227644557"]);
+	arr.push(["Helwan", "El Dawleya lel Itsalat", "28 Mansour St. , near by Helwan metro station", "1005260008", ""]);
+	arr.push(["Helwan", "Galaxy", "Mansour St. , near by Helwan metro station", "", ""]);
+	arr.push(["Helwan", "Mobily", "Mansour St. , near by Helwan metro station", "1110161112", ""]);
+	arr.push(["Helwan", "Mobinil Xpress", "24 Sherif St. , Al-Esraa' Tower", "", ""]);
+	arr.push(["Helwan", "Mobinil Xpress", "9 Hamouda St. , beside Mahatta St. ,Hadayek El-Maadi metro station", "", ""]);
+	arr.push(["Helwan", "Smart Shop", "Mansour St. , near by Helwan metro station", "1090103310", ""]);
+	arr.push(["Helwan", "Xpress", "Mohamed Sayed Ahmed St. , Beside Al3a'elat resturant", "1008877221", ""]);
+	arr.push(["Maadi", "Al Fardous", "45  9ST. , across hassanen Desouky", "124458888", "223786064"]);
+	arr.push(["Maadi", "Collection", "64 A Abdul Moneim Reyad ,near by Arab Square , Hadayek El-Maadi metro station", "1006007080", "23584319"]);
+	arr.push(["Maadi", "Collection", "26 ElBahth Al Genaeey , Sakr Qoreesh ,New Maadi", "1006007748", "25200510"]);
+	arr.push(["Maadi", "El Dawleya lel Itsalat", "Abdul Hameed Mekky , from 9th St.", "1095777557", ""]);
+	arr.push(["Maadi", "El Mansy", "Ahmed Zaki St. , Faida kamel ", "", ""]);
+	arr.push(["Maadi", "El-Geel Al-Thales", "1 Hassanin Desouki - 3rd street from Hadayek El-Maadi metro station", "1006007126", ""]);
+	arr.push(["Maadi", "El-Joker", "Sakr Qoreesh - beside Al-Bahs Al-Genaa'y", "1210000277", ""]);
+	arr.push(["Maadi", "Mobi Land", "Faida Kamel St. , from Ahmed Zaki St.", "1228822282", "1278085233"]);
+	arr.push(["Maadi", "Mobinil Xpress", "9  Abdul Munim Riad St. , Ezbet Fahmi , Arab Al-Maadi", "", ""]);
+	arr.push(["Maadi", "New Alo", "Faida Kamel St. , from Ahmed Zaki St.", "1227474014", ""]);
+	arr.push(["Maadi", "Raya", "Al-Gazayer Square", "1112504390", ""]);
+	arr.push(["Maadi", "Sultan", "Saleh Hegazy ", "", ""]);
+	arr.push(["Maadi", "Turk phone", "Hassanin Desouki -", "1111248888", ""]);
+	arr.push(["Masara", "Android", "47 Mahmoud al masry st. , al Ma3sara station , beside Rabe3 lebrary", "1114620046", "11128787133"]);
+	arr.push(["Masara", "El-Araby", "Abd El-Fatah El Bheery St ,el Mahata station , Masara", "", ""]);
+	arr.push(["Masr El-Adīma", "Classic", "near by El-Malek El-Saleh metro station , Al Gayarah square", "1287120004", "1171905050"]);
+	arr.push(["Masr El-Adīma", "El-Tounissy", "22 Hassan Al-Anwar ,near by 'Amr ibn al-'As mosque ,front Vodafone ", "1114744550", ""]);
+	arr.push(["Mokattam", "Mobinil Xpress", "Block 13 , Masaaken Atlas 3 , entrance 1 ", "1212201234", ""]);
+	arr.push(["Nasr City", "Al Aqsa", "Al Hayy Al-Asher ( 10th district ) - beside Koshary (restaurant ) Al Sheikh", "", ""]);
+	arr.push(["Nasr City", "Ozkor Allah", "El Zhoor St.b Side Ayman Phone", "1147284800", ""]);
+	arr.push(["Nasr City", "Sakr", "El Zhoor St.b Side Ayman Phone", "1204813717", ""]);
+	arr.push(["Nasr City", "Al Salam Lel Itsalat", "Al warsha St. , beside Abo Samra cloths shop , Ezbet Al Hagganna , Al Tabba", "", ""]);
+	arr.push(["Nasr City", "Al Aqsa 2", "", "", ""]);
+	arr.push(["Nasr City", "Al-Badry", "Al Hayy Al-Asher ( 10th district ) - beside Koshary (restaurant ) Hend", "1007377555", "1099970092"]);
+	arr.push(["Nasr City", "Ayman Phone", "Al Gedawy St. , kilo 4.5 from13 suez st. ", "", ""]);
+	arr.push(["Nasr City", "Ayman Phone", "4 Al zohour St. , beside malek el Koshary resturant , behind Masaken Al Shourouk", "", ""]);
+	arr.push(["Nasr City", "Big Show", "Al Hayy Al-Asher ( 10th district ) - beside Koshary (restaurant ) Hend", "", ""]);
+	arr.push(["Nasr City", "Mobinil Xpress", "82 Al-Khalifa Al-Qaher , 6th district , front Al-Azhar university ( Student house)", "1221898889", ""]);
+	arr.push(["Nasr City", "Mobinil Xpress", "Mahmoud Shaltout St. Off El Tayaran St.,", "", ""]);
+	arr.push(["Nasr City", "Raya", "1 Abdul Hameed Lotfy , off Makram Ebeid St.", "1112504381", ""]);
+	arr.push(["Nasr City", "Raya", "City Stars Mall , ground floor , beside Spinneys Super market", "1112504387", ""]);
+	arr.push(["Ramsis", "Awlaad Nasser 1", "6 near by Ramsis square , beside Ramsis (Al Shohadaa' ) metro station", "1221080007", "25787464"]);
+	arr.push(["Ramsis", "Awlaad Nasser 2", "near by Ramsis square , beside Ramsis (Al Shohadaa' ) metro station", "1223533350", "25787464"]);
+	arr.push(["Rod El-Farag", "Al-Tayseer", "Beside El-Souq Al-Qadeem", "1221641996", ""]);
+	arr.push(["Rod El-Farag", "Al Maleka", "17 Rod l Farag St behined abo zekry", "1202067007", ""]);
+	arr.push(["Rod El-Farag", "Mooga", "137 Shubra St.  ,front Shoubra Faculty of Engineering", "", ""]);
+	arr.push(["Serag Mall ", "4G", "Mall one - first floor ", "1111141424", "1017720077"]);
+	arr.push(["Serag Mall ", "A.M", "Mall one", "1066592226", ""]);
+	arr.push(["Serag Mall ", "El Motahedoon", "Mall one - first floor ", "22760034", "1027772500/1"]);
+	arr.push(["Serag Mall ", "Harmony Phone 1", "Mall Two", "1005510117", ""]);
+	arr.push(["Serag Mall ", "Harmony Phone 2", "Mall Two", "1005510117", ""]);
+	arr.push(["Serag Mall ", "Fun Phone", "Serag Mall ", "", ""]);
+	arr.push(["Serag Mall ", "I Store 1", "Mall one", "1151614919", ""]);
+	arr.push(["Serag Mall ", "I Store 2", "Mall Two", "1149888272", ""]);
+	arr.push(["Serag Mall ", "Mac", "Serag Mall ", "1061367462", ""]);
+	arr.push(["Serag Mall ", "Faster ", "Mall one ", "", ""]);
+	arr.push(["Serag Mall ", "Matrex Pro", "Mall Two", "1140300500", "1222955563"]);
+	arr.push(["Serag Mall ", "Moment 2", "mall one ", "", ""]);
+	arr.push(["Serag Mall ", "5 Star ", "Mall one ", "", ""]);
+	arr.push(["Serag Mall ", "Moment 1", "Serag Mall ", "1200633456", ""]);
+	arr.push(["Serag Mall ", "Pink Phone 1", "Serag Mall ", "1007445977", ""]);
+	arr.push(["Serag Mall ", "Tiba", "Serag Mall ", "1112820076", "1112372028"]);
+	arr.push(["Serag Mall ", "Top Mobile 1", "Mall one - first floor ", "1125202014", "1140500337"]);
+	arr.push(["Serag Mall ", "Top Mobile 2", "Mall one - first floor ", "1125202014", "1140500337"]);
+	arr.push(["Serag Mall ", "Usb Phone", "Serag Mall ", "1200727170", ""]);
+	arr.push(["Shubra", "Al-Batal", " Victoria Square , beside Nasr Al-Islam mosque , near Saint Treze metro station", "1003525350", ""]);
+	arr.push(["Shubra", "Al-Batal 3", "Victoria Square , beside Nasr Al-Islam mosque , near Saint Treze metro station", "1003525350", ""]);
+	arr.push(["Shubra", "Attalla", "Victoria Square , beside Nasr Al-Islam mosque , near Saint Treze metro station", "1112509342", ""]);
+	arr.push(["Shubra", "Shad", "Mo2asasa Square , Shobra", "1220987149", ""]);
+	arr.push(["Shubra", "Tshaw", "15 shobra St .front of el Kasaas Shop", "", ""]);
+	arr.push(["Shubra", "El-Nady", "15 MayoSt .Shobra", "", ""]);
+	arr.push(["Shubra", "Center Mobily", "15 MayoSt .Shobra", "", ""]);
+	arr.push(["Shubra", "Mobile top", "3-victoria square ", "1228062003", ""]);
+	arr.push(["Shubra", "Victoria ( l basha Phone)", "3-victoria square ", "1225651558", ""]);
+	arr.push(["Shubra", "Ayed Home", "Victoria Square , beside Nasr Al-Islam mosque , near Saint Treze metro station", "1227371113", "22367327"]);
+	arr.push(["Shubra", "Felobateer", "1 Victoria Square , beside Nasr Al-Islam mosque , near Saint Treze metro station", "1226077277", ""]);
+	arr.push(["Shubra", "Modern", "Victoria Square , beside Nasr Al-Islam mosque , near Saint Treze metro station", "1001749818", ""]);
+	arr.push(["Shubra", "Radio Phone", "7 Victoria Square , beside Nasr Al-Islam mosque , near Saint Treze metro station", "1223536100", ""]);
+	arr.push(["Shubra", "Raya", "59 Shubra St. , front Dolly cinema , beside B-Tech", "1112504399", ""]);
+	arr.push(["Shubra", "Victoria 1", "Victoria Square , beside Nasr Al-Islam mosque , near Saint Treze metro station", "", ""]);
+	arr.push(["Shubra", "Victoria 2", "Victoria Square , beside Nasr Al-Islam mosque , near Saint Treze metro station", "", ""]);
+	arr.push(["Shubra El-Kheima", "Al-Kassas ", "15 Mayo St. , near by Morrour station , Shubra El-Kheima metro station", "1008875005", "1112502245"]);
+	arr.push(["Shubra El-Kheima", "Lo'lo'et Shubra", "near by Qahwet Sharaf station ,  Shubra El-Kheima metro station", "", ""]);
+	arr.push(["West El Balad", "Pass Word", "52 - 26 Yolyo St Near by Electricity Management Buld", "1111603360", "1115372889"]);
+	arr.push(["West El Balad", "El-Avokato", "Sherrief St. ", "", ""]);
+	arr.push(["West El Balad", "Sun Rise", "15 A Sherrief St. ", "1112503760", "23929274"]);
+	
+	return arr;
+}
+
+function getAllCity()
+{
+	var len = dataList.length;
+	var res = [];
+	
+	for (var i = 0; i < len; i++)
+	{
+		if (!existCity(dataList[i][0], res))
+		{
+			res.push(dataList[i][0]);
+		}
+	}
+	
+	return res;
+}
+
+function existCity(city, arr)
+{
+	var len = arr.length;
+	
+	for (var i = 0; i < len; i++)
+	{
+		if (arr[i] == city)
+		{
+			return true;
+		}
+	}
+	
+	return false;
+}
+
+function getShops(city)
+{
+	var len = dataList.length;
+	var res = [];
+	
+	for (var i = 0; i < len; i++)
+	{
+		if (dataList[i][0] == city)
+		{
+			res.push(dataList[i]);
+		}
+	}
+	
+	return res;
+}
+
+function getLocationStr(city)
+{
+	var res = "<ul>";
+	var shops = getShops(city);
+	var shopName = "";
+	var address = "";
+	var tel = "";
+	
+	for (var i = 0; i < shops.length; i++)
+	{
+		shopName = shops[i][1];
+		address = shops[i][2];
+		if (shops[i][3] != "" && shops[i][4] != "")
+		{
+			tel = shops[i][3] + ", " + shops[i][4];
+		}
+		else
+		{
+			tel = "" + shops[i][3] + shops[i][4];
+		}
+		res += '<li><p class="label">' + shopName + '</p><p> Address: ' + address + '</p><p>Tel: ' + tel + '</p></li>';
+	}
+	res += "</ul>";
+	
+	return res;
+}
+</script>
+</body>
+</html>
