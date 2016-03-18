@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tecno</title>
+    <link rel="stylesheet" href="./css/layout.css" media="screen" title="no title" charset="utf-8">
+    <script src="./js/jquery-1.9.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/jssor.js"></script>
+    <script type="text/javascript" src="./js/jssor.slider.js"></script>
+    <script src="./js/main.js"></script>
+    <script type="text/javascript">
+	$(document).ready(function(){
+		var $blocks = $('.container div.tab-data');
+		$('.tab-col li').click(function(){
+			$(this).addClass('here').siblings().removeClass('here');
+            $(this).addClass('tab-x').siblings().removeClass('tab-x');
+ $($blocks.get($(this).index())).removeClass('hidden').siblings().addClass('hidden');
+		});
+	});
+</script>
+        <script>
+
+        jQuery(document).ready(function ($) {
+            var options = {
+                $AutoPlay: true,
+                $AutoPlaySteps: 1,
+                $AutoPlayInterval: 4000,                           
+                $PauseOnHover: 1,                              
+
+                $ArrowKeyNavigation: true,   			          
+                $SlideDuration: 500,                               
+                $MinDragOffsetToSlide: 20,                         
+                //$SlideWidth: 600,                                
+                //$SlideHeight: 300,                               
+                $SlideSpacing: 0, 					                
+                $DisplayPieces: 1,                                  
+                $ParkingPosition: 0,                                
+                $UISearchMode: 1,                                   
+                $PlayOrientation: 1,                                
+                $DragOrientation: 3,                               
+
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$,             
+                    $ChanceToShow: 1,                              
+                    $AutoCenter: 2,                                 
+                    $Steps: 1                                      
+                },
+
+                $ThumbnailNavigatorOptions: {
+                    $Class: $JssorThumbnailNavigator$,              
+                    $ChanceToShow: 2,                               
+                    $ActionMode: 1,                                 
+                    $AutoCenter: 3,                                 
+                    $Lanes: 1,                                      
+                    $SpacingX: 3,                                   
+                    $SpacingY: 3,                                   
+                    $DisplayPieces: 9,                              
+                    $ParkingPosition: 260,                          
+                    $Orientation: 1,                                
+                    $DisableDrag: false                            
+                }
+            };
+
+            var jssor_slider2 = new $JssorSlider$("slider2_container", options);
+            
+            function ScaleSlider() {
+                var parentWidth = jssor_slider2.$Elmt.parentNode.clientWidth;
+                if (parentWidth)
+                    jssor_slider2.$ScaleWidth(Math.min(parentWidth, 600));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+        });
+    </script>
+  </head>
+  <body>
+    <div class="tecno">
+    <!--head-->
+    <div class="head">
+        <div class="head-title">
+          <a class="head-left"></a>
+          <a class="head-img"></a>
+          <a class="head-right"></a>
+        </div>
+        <div class="head-tab">
+            <ul class="tab-col">
+                <li class="ast tab-1 astl">Bands</li>
+                <li class="head-down ast tab-2 astl">Photos</li>
+                <li class="head-down ast tab-3 astl">Video</li>
+                <li class="ast tab-4 astl"><i>Location</i><i>&</i><i>Date</i></li>
+            </ul>
+        </div>
+    </div>
+    <!--head end-->
+    
+    
+    <div class="foot">
+        <!--container-->
+        <div class="container">
+        <div class="bands hidden tab-data">
+            <span>Bands.</span>
+            <ul>
+                <li><a class="bd1"></a></li>    
+            </ul>
+        </div>
+        <div class="photos tab-data">
+            <div class="phts">
+                <p>Photo:</p>
+                
+                <div id="slider2_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden; ">
+        <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+            <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+                background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
+            </div>
+            <div style="position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center;
+                top: 0px; left: 0px;width: 100%;height:100%;">
+            </div>
+        </div>
+
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; overflow: hidden;">
+            <div>
+                <img u="image" src="./img/vol4/vol4_1.jpg" />
+                <img u="thumb" src="./img/vol4/small4/vol4small_1.jpg" />
+            </div>
+            <div>
+                <img u="image" src="./img/vol4/vol4_2.jpg" />
+                <img u="thumb" src="./img/vol4/small4/vol4small_2.jpg" />
+            </div>
+            <div>
+                <img u="image" src="./img/vol4/vol4_3.jpg" />
+                <img u="thumb" src="./img/vol4/small4/vol4small_3.jpg" />
+            </div>
+            <div>
+                <img u="image" src="./img/vol4/vol4_4.jpg" />
+                <img u="thumb" src="./img/vol4/small4/vol4small_4.jpg" />
+            </div>
+            <div>
+                <img u="image" src="./img/vol4/vol4_5.jpg" />
+                <img u="thumb" src="./img/vol4/small4/vol4small_5.jpg" />
+            </div>
+        </div>
+        <style>
+            .jssora02l, .jssora02r {
+                display: block;
+                position: absolute;
+                /* size of arrow element */
+                width: 55px;
+                height: 55px;
+                cursor: pointer;
+                background: url(./image/a02.png) no-repeat;
+                overflow: hidden;
+            }
+            .jssora02l { background-position: -3px -33px; }
+            .jssora02r { background-position: -63px -33px; }
+            .jssora02l:hover { background-position: -123px -33px; }
+            .jssora02r:hover { background-position: -183px -33px; }
+            .jssora02l.jssora02ldn { background-position: -3px -33px; }
+            .jssora02r.jssora02rdn { background-position: -63px -33px; }
+        </style>
+        <span u="arrowleft" class="jssora02l" style="top: 123px; left: 8px;">
+        </span>
+        <span u="arrowright" class="jssora02r" style="top: 123px; right: 8px;">
+        </span>
+        <style>
+            .jssort03 {
+                position: absolute;
+                width: 600px;
+                height: 60px;
+            }
+
+                .jssort03 .p {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 62px;
+                    height: 32px;
+                }
+
+                .jssort03 .t {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+
+                .jssort03 .w, .jssort03 .pav:hover .w {
+                    position: absolute;
+                    width: 60px;
+                    height: 30px;
+                    border: white 1px dashed;
+                    box-sizing: content-box;
+                }
+
+                .jssort03 .pdn .w, .jssort03 .pav .w {
+                    border-style: solid;
+                }
+
+                .jssort03 .c {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 62px;
+                    height: 32px;
+                    background-color: #000;
+                    filter: alpha(opacity=45);
+                    opacity: .45;
+                    transition: opacity .6s;
+                    -moz-transition: opacity .6s;
+                    -webkit-transition: opacity .6s;
+                    -o-transition: opacity .6s;
+                }
+
+                .jssort03 .p:hover .c, .jssort03 .pav .c {
+                    filter: alpha(opacity=0);
+                    opacity: 0;
+                }
+
+                .jssort03 .p:hover .c {
+                    transition: none;
+                    -moz-transition: none;
+                    -webkit-transition: none;
+                    -o-transition: none;
+                }
+
+                * html .jssort03 .w {
+                    width /**/: 62px;
+                    height /**/: 32px;
+                }
+        </style>
+        <div u="thumbnavigator" class="jssort03" style="left: 0px; bottom: 0px;">
+            <div style=" background-color: #000; filter:alpha(opacity=30); opacity:.3; width: 100%; height:100%;"></div>
+            <div u="slides" style="cursor: default;">
+                <div u="prototype" class="p">
+                    <div class=w><div u="thumbnailtemplate" class="t"></div></div>
+                    <div class=c></div>
+                </div>
+            </div>
+        </div> 
+    </div>
+           <div class="tec-site">
+                <h4>BOOM：</h4>
+                <ul class="site">
+                    <li style="opacity:0.5"><a href="index1.html"><img src="./img/p1/small1/p1cover.jpg"><i>Vol 1</i></a></li>
+                    <li style="opacity:0.5"><a href="index2.html"><img src="./img/p2/small2/p2small.jpg"><i>Vol 2</i></a></li>
+                    <li style="opacity:0.5"><a href="index3.html"><img src="./img/vol3/small3/vol3cover.jpg"><i>Vol 3</i></a></li>
+                    <li style="opacity:1"><a href="javascript:;"><img src="./img/vol4/small4/vol4cover.jpg"><i>Vol 4</i></a></li>
+                    <li style="opacity:0.5"><a><img src="./image/imgbx-s.png"><i>More..</i></a></li>
+                </ul>
+            </div>                 
+            </div>
+        </div>
+        
+        
+        <div class="video tickets hidden tab-data">
+            <span class="ticket-inf">
+                <a>Video:</a>
+                <p>Details of the activation and how to obtain the ticket will be explained here.</p>
+            </span>
+            <div class="ticket-img">
+                <div ><iframe width="660" height="430" src="https://www.youtube.com/embed/3rFqbin4h38" frameborder="0" allowfullscreen></iframe></div>
+            </div>
+        
+
+        </div>
+        <div class="location hidden tab-data">
+            <span class="loct">
+                <h4>Location:</h4>
+                <p>Darb 1718</p>
+            </span>
+            <span class="loct-date">
+                <h4>Date:</h4>
+                <p class="week">Thursday 27-6-2015</p>
+                <p class="date-time">Time 5 PM</p>
+            </span>
+        </div>
+    </div>
+    <!--container end-->
+      <div class="foot-title">
+        <a>Copyright © Tecno 2012-2014</a>
+        <a href="http://www.tecno-mobile.com">www.tecno-mobile.com</a>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
