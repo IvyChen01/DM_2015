@@ -1,0 +1,161 @@
+<?php if (!defined('VIEW')) exit; ?>
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Survey </title>
+    <link rel="stylesheet" href="css/rest.css?v=2016.1.13_22.24" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <span class="process-tele process whide">
+
+    </span>
+    <div class="main-wrapper">
+        <div class="process-wrapper whide">
+          <span class="title show">Survey.</span>
+          <span class="process-table process">
+            <ul><li class="sur"></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+          </span>
+        </div>
+
+        <div class="wercty">
+			<section class="wer wer0 wer17 wshow wrapper">
+            <p class="werp0"><a href="javascript:;" class="cover1"></a></p>
+            <p class="survey">Survey</p>
+            <p class="surtitle">How much would you be willing to pay for a smartphone?</p>
+            <p><span class="surspan"><a href="javascript:;" class="only">Only 1 min</a><a href="javascript:;" class="let">Let us know what you need</a></span></p>
+            <p class="cover2p"><a href="javascript:;" class="cover2"></a></p>
+            <p class="sert"><a href="javascript:void(0);" target="_self" class="startbtn" >Start >></a></p>
+          </section>
+		  
+          <section class="wer wer1 wer17 whide wrapper">
+            <h3>How much would you be willing to pay for a smartphone?</h3>
+            <h4>Dear Consumer,</h4>
+            <p>
+              Thank you in advance for taking the time to complete the survey to help us</br>
+better understand your needs on the price of smartphones and help us to</br>
+provide products that meet your need.
+            </p>
+            <p>
+              It will take you approximately <i class="wer1i">1</i> minutes to answer all questions.We promise</br>
+we will not disclose your personal information to any third party.</br>
+            </p>
+            <p>
+With many thanks, you will have a chance to win a free <i class="wer1i"><?php echo Config::$brandName; ?></i></br>
+<i class="wer1i">smartphone</i> or special gifts from <?php echo Config::$brandName; ?> after complete this</br>
+survey.</p>
+            <p>Thank you!</p>
+            <p class="wer1start next">
+              Start >>
+            </p>
+          </section>
+
+          <section class="wer wer2 whide wrapper">
+            <h2 class="que">Which country are you from?</h2>
+            <ul>
+              <li class="quo squ">1. &nbsp;&nbsp; Nigeria</li>
+			  <li class="squ">2. &nbsp;&nbsp; Kenya</li>
+			  <li class="squ">3. &nbsp;&nbsp; Egypt</li>
+			  <li class="squ">4. &nbsp;&nbsp; Tanzania</li>
+              <li class="squ">5. &nbsp;&nbsp; Others(Please specify:<i class="eb"><input type="text" placeholder='_______________________________' name="name" value=""></i>)</li>
+            </ul>
+
+          </section>
+		  
+		  
+		  
+		  <section class="wer wer3 whide wrapper">
+            <h2 class="que">What is your family’s monthly household income?</h2>
+            <ul>
+              <li>Please specify:<i class="eb"><input type="text" id="incomeTxt" placeholder='_______________________________' name="name" value=""></i></li>
+            </ul>
+          </section>
+		  
+		  
+		  
+          <section class="wer wer4 whide wrapper">
+            <h2 class="que">What type of phone(s) are you using now?</h2>
+            <ul>
+              <li class="quo squ">1. &nbsp;&nbsp; Smart phone （Android Phone）</li>
+			  <li class="squ">2. &nbsp;&nbsp; 2 Smart phones or more</li>
+			  <li class="squ">3. &nbsp;&nbsp; 1 smart phone + 1 feature phone</li>
+			  <li class="squ">4. &nbsp;&nbsp; Feature phone</li>
+			  <li class="squ">5. &nbsp;&nbsp; 2 feature phones or more</li>
+			  <li class="squ">6. &nbsp;&nbsp; 3 phones or more</li>
+              <li class="sqt">(“Smartphone refers to mobile phones with Android operationg system, iOS operating system, BBOS operating system and WP operating system. Nokia Asha series,
+mobile phones with Symbian system and mobile phone with other system are not smart phones.”)</li>
+            </ul>
+          </section>
+
+          <section class="wer wer5 whide wrapper">
+            <h2 class="que">What is the brand of the phone you are using now ?</h2>
+            <ul>
+              <li class="quo squ">1. &nbsp;&nbsp; Nokia</li>
+			  <li class="squ">2. &nbsp;&nbsp; Lumia (Microsoft)</li>
+			  <li class="squ">3. &nbsp;&nbsp; TECNO</li>
+			  <li class="squ">4. &nbsp;&nbsp; Samsung</li>
+			  <li class="squ">5. &nbsp;&nbsp; Blackberry</li>
+			  <li class="squ">6. &nbsp;&nbsp; LG</li>
+			  <li class="squ">7. &nbsp;&nbsp; Sony</li>
+			  <li class="squ">8. &nbsp;&nbsp; itel</li>
+			  <li class="squ">9. &nbsp;&nbsp; Huawei</li>
+			  <li class="squ">10. &nbsp;&nbsp; Apple-iPhone</li>
+			  <li class="squ">11. &nbsp;&nbsp; Infinix</li>
+			  <li class="squ">12. &nbsp;&nbsp; Gionee</li>
+			  <li class="squ">13. &nbsp;&nbsp; Wiko</li>
+              <li class="squ">14. &nbsp;&nbsp; Others(Please specify:<i class="eb"><input type="text" placeholder='_______________________________' name="name" value=""></i>)</li>
+            </ul>
+          </section>
+
+          <section class="wer wer6 whide wrapper">
+            <h2 class="que">How much is the most expensive phone you have had?</h2>
+            <ul>
+              <li>Please specify:<i class="eb"><input type="text" id="int" placeholder='_______________________________' name="name" value=""></i></li>
+            </ul>
+          </section>
+
+          <section class="wer wer7 whide wrapper">
+            <h2 class="que">How much would you be willing to pay for your next smartphone?</h2>
+            <ul>
+              <li id="money1" class="quo squ">1. &nbsp;&nbsp; Below 60 USD</li>
+			  <li id="money2" class="squ">2. &nbsp;&nbsp; 60 - 80 USD</li>
+			  <li id="money3" class="squ">3. &nbsp;&nbsp; 81 - 100 USD</li>
+			  <li id="money4" class="squ">4. &nbsp;&nbsp; 101 - 150 USD</li>
+			  <li id="money5" class="squ">5. &nbsp;&nbsp; 151 - 200 USD</li>
+			  <li id="money6" class="squ">6. &nbsp;&nbsp; 201 - 300 USD</li>
+			  <li id="money7" class="squ">7. &nbsp;&nbsp; Above 300 USD</li>
+			  <li id="money8" class="squ">8. &nbsp;&nbsp; I DON’T KNOW</li>
+            </ul>
+          </section>
+
+          <section class="wer wer8 whide wrapper">
+            <h2 class="que">Thank you!</h2>
+            <ul>
+              <li class="sqh">Thank you for completing the survey.
+Your lucky draw number is <b><?php echo $luckyCode; ?></b>. The winners will be announced in January, 2016.</li>
+              <li>Please leave your email address here <i class="eb"><?php if ($isEmail) { ?><span><?php echo $profile['email2']; ?></span><input /><?php } else { ?><input type="text" id="address" placeholder='_______________________________' name="name" value=""><?php } ?></i></li>
+              <li class="sqh">if you win, we will inform you.</li>
+            </ul>
+            <span class="lev">
+              <a href="javascript:;" class="lebtn"></a>
+              <a href="javascript:;" class="levbtn">Submit >>.</a>
+            </span>
+          </section>
+        </div>
+
+        <div class="lift whide">
+          <a href="javascript:;" class="li"><< Previous</a>
+          <a href="javascript:;" class="ft">Next >></a>
+        </div>
+    </div>
+	
+	<input type="hidden" id="isPlayed" value="<?php if ($isPlayed) { echo 1; } else { echo 0; } ?>" />
+	<input type="hidden" id="isEmail" value="<?php if ($isEmail) { echo 1; } else { echo 0; } ?>" />
+	
+  <script src="js/jquery-1.11.2.min.js" charset="utf-8"></script>
+  <script src="js/main.js?v=2016.1.7_18.05" charset="utf-8"></script>
+  </body>
+</html>

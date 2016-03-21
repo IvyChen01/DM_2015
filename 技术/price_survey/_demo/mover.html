@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mover</title>
+<script src="../js/jquery-1.11.2.min.js" type="text/javascript" language="javascript"></script>
+<script src="../js/mover.js" type="text/javascript" language="javascript"></script>
+</head>
+
+<body>
+<div id="d1">1</div>
+<div id="d2">2</div>
+<div id="d3">3</div>
+<div id="d4">4</div>
+<div id="d5">5</div>
+<div id="d6">6</div>
+<div id="d7">7</div>
+<div id="d8">8</div>
+<div id="d9">9</div>
+<div id="d10">10</div>
+<input type="button" id="btn1" value="move" />
+<script>
+var mover1 = null;
+var mover2 = null;
+var mover3 = null;
+var mover4 = null;
+var mover5 = null;
+
+$(document).ready(function()
+{
+	mover1 = new Mover();
+	mover2 = new Mover();
+	mover3 = new Mover();
+	mover4 = new Mover();
+	mover5 = new Mover();
+	$("#btn1").click(onClickBtn1);
+	setInterval(onTimer, 20);
+});
+
+function onClickBtn1(e)
+{
+	mover1.moveTo(1000);
+	mover2.upTo(1000);
+	mover3.downTo(1000);
+	mover4.changeTo(200, 800, 1000);
+	mover5.down2To(500, 520, 1000);
+}
+
+function onTimer()
+{
+	if (mover1.moving)
+	{
+		mover1.move();
+		$("#d1").text(mover1.currentPlace);
+		$("#d2").text("move...");
+		if (!mover1.moving)
+		{
+			$("#d2").text("ok");
+		}
+	}
+	
+	if (mover2.moving)
+	{
+		mover2.move();
+		$("#d3").text(mover2.currentPlace);
+		$("#d4").text("move...");
+		if (!mover2.moving)
+		{
+			$("#d4").text("ok");
+		}
+	}
+	
+	if (mover3.moving)
+	{
+		mover3.move();
+		$("#d5").text(mover3.currentPlace);
+		$("#d6").text("move...");
+		if (!mover3.moving)
+		{
+			$("#d6").text("ok");
+		}
+	}
+	
+	if (mover4.moving)
+	{
+		mover4.move();
+		$("#d7").text(mover4.currentPlace);
+		$("#d8").text("move...");
+		if (!mover4.moving)
+		{
+			$("#d8").text("ok");
+		}
+	}
+	
+	if (mover5.moving)
+	{
+		mover5.move();
+		$("#d9").text(mover5.currentPlace);
+		$("#d10").text("move...");
+		if (!mover5.moving)
+		{
+			$("#d10").text("ok");
+		}
+	}
+}
+</script>
+</body>
+</html>

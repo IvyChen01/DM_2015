@@ -1,0 +1,194 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,img {
+	margin: 0px;
+	padding: 0px;
+}
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #FFFFFF;
+	line-height: 120%;
+	font-family: "宋体", "Times New Roman", Times, serif;
+	font-size: 18px;
+	word-break: break-all;
+}
+li {
+	list-style: none;
+}
+img {
+	border: none;
+}
+a:link, a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #FF0000;
+}
+.clear {
+	clear: both;
+}
+.align-left {
+	text-align: left;
+}
+.align-right {
+	text-align: right;
+}
+.align-center {
+	text-align: center;
+}
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.login {
+	padding-top: 50px;
+	text-align: center;
+}
+.login h3 {
+	padding-bottom: 30px;
+}
+.login li {
+	padding-bottom: 10px;
+}
+.login #username {
+	width: 150px;
+	height: 22px;
+}
+.login #password {
+	width: 150px;
+	height: 22px;
+}
+.login #verify {
+	width: 93px;
+	height: 22px;
+}
+.login #verifyPic {
+	vertical-align: middle;
+	margin-left: 8px;
+}
+.login #login {
+	margin-top: 10px;
+	width: 60px;
+	height: 25px;
+	font-size: 15px;
+}
+.topbar {
+	height: 28px;
+	line-height: 28px;
+	background-color: #8d8686;
+	text-align: right;
+	padding-left: 5%;
+	padding-right: 5%;
+	color: #FFFFFF;
+}
+.topbar a {
+	color: #FFFFFF;
+}
+.main {
+	padding: 20px 5% 20px 5%;
+}
+.main h3 {
+	padding-bottom: 20px;
+}
+.main li {
+	margin-bottom: 5px;
+}
+.change-pw {
+	padding-top: 20px;
+	text-align: center;
+}
+.change-pw h3 {
+	padding-bottom: 30px;
+}
+.change-pw li {
+	margin-bottom: 10px;
+}
+.change-pw #srcPassword {
+	width: 150px;
+	height: 22px;
+}
+.change-pw #newPassword {
+	width: 150px;
+	height: 22px;
+}
+.change-pw #confirm {
+	width: 150px;
+	height: 22px;
+}
+.change-pw #change {
+	margin-top: 10px;
+	width: 80px;
+	height: 25px;
+	font-size: 15px;
+}
+.db {
+	padding-top: 20px;
+	text-align: center;
+}
+.db h3 {
+	padding-bottom: 20px;
+}
+.news-main {
+	padding: 20px 5% 10px 5%;
+	text-align: center;
+}
+.news-main ul {
+	text-align: left;
+	padding-top: 20px;
+}
+.news-main li {
+	padding: 15px 0px 15px 0px;
+	border-top: 1px dashed #000000;
+}
+.news-main .art-title {
+	float: left;
+}
+.news-main .art-pubdate {
+	float: right;
+	padding-left: 10px;
+}
+.news-main .art-modify {
+	float: right;
+	padding-left: 10px;
+}
+.news-main .art-delete {
+	float: right;
+	padding-left: 10px;
+}
+.news-detail {
+	padding: 20px 5% 20px 5%;
+}
+.news-detail .date {
+	text-align: right;
+	padding-top: 10px;
+	color: #999999;
+	font-size: 16px;
+}
+.news-add {
+	padding: 20px 5% 20px 5%;
+	text-align: center;
+}
+.news-add h3 {
+	padding-bottom: 20px;
+	text-align: center;
+}
+.news-add .verify {
+	padding-top: 30px;
+}
+.news-add #verify {
+	width: 93px;
+	height: 22px;
+}
+.news-add #verifyPic {
+	vertical-align: middle;
+	margin-left: 8px;
+}
+.news-add #publish {
+	width: 80px;
+	height: 22px;
+	margin-top: 15px;
+}
