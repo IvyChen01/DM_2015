@@ -1,0 +1,36 @@
+<?php
+$typeArr[23] = 'Vehicle-mounted';
+$typeArr[22] = 'Audio Equipment';
+$typeArr[21] = 'Memory';
+$typeArr[20] = 'Cable';
+$typeArr[19] = 'Dustproof Plug';
+$typeArr[18] = 'Hanging Drop';
+$typeArr[17] = 'Case';
+$typeArr[15] = 'Protector';
+$typeArr[16] = 'Screen-Protector';
+$typeArr[12] = 'products';
+$typeArr[13] = 'POWER';
+$typeArr[14] = 'Battery';
+$typeArr[24] = 'Wearable Devices';
+$typeArr[25] = 'Data Cable';
+$typeArr[26] = 'Winder';
+$typeArr[27] = 'Cable Adapter';
+$typeArr[28] = 'Power Bank';
+$typeArr[29] = 'Charger/Component';
+$typeArr[30] = 'Micro SD Card';
+$typeArr[31] = 'Card Reader';
+$typeArr[39] = 'Bluetooth Headset';
+$typeArr[38] = 'Wired Headset';
+$typeArr[34] = 'Car charger';
+$typeArr[35] = 'Car Mount';
+$typeArr[37] = 'about us';
+$typeArr[41] = 'Smart Gear';
+$typeArr[40] = 'Bluetooth Speaker';
+$typeArr[42] = 'Smart Watch';
+$typeArr[43] = 'partners';
+$typeArr[44] = 'join us';
+$typeArr[45] = 'service';
+$typeArr[46] = 'club';
+$typeArr[47] = 'Mounts & Stands';
+$typeArr[48] = 'Selfie Stick';
+?>

@@ -1,0 +1,1 @@
+{dede:img text='' width='1920' height='610'} /uploads/140718/1-140GQ1321R91.jpg {/dede:img}
