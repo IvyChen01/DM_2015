@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="style/js/jquery-2.1.0.min.js"></script>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<style>
+    .bc{width:0px;z-index:1;height: 20px;background:#60a5c6;position: absolute}
+    .bd{background: #b9b9b9;z-index: 0;width: 350px;}
+    input{margin-top: 80px;}
+</style>
+<div class="bc"></div>
+<div class="bc bd"></div>
+<input type="button" value="暂停"/>
+<script>
+    $(".bc").eq(0).animate({"width":"350px"},10000)
+    $("input").click(function(){$(".bc").eq(0).stop().css("width",0)})
+
+    var a="a"||2;
+</script>
+<!-- JiaThis Button BEGIN -->
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_tools_1"></a>
+
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1397099950827171" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</body>
+</html>

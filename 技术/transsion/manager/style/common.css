@@ -1,0 +1,49 @@
+body{margin: 0px;padding: 0px;background-color: #FFFFFF;text-align: center;line-height: 120%;font-family: "Times New Roman", Times, serif;font-size: 18px;}
+div{margin: 0px;padding: 0px;}
+ul{margin: 0px; padding: 0px; list-style: none;}
+li{margin: 0px;padding: 0px;}
+img{margin: 0px;padding: 0px;border: none;}
+a:link, a:visited {text-decoration: none;color: #000000;}
+a:hover{text-decoration: underline;color: #FF0000;}
+.container{width: 1000px;margin: 5px auto 0px auto;position:relative;text-align: left;}
+.logo{width: 153px;margin: 0px 0px 10px 0px;float: left;}
+.nav{width: 847px;float: left;}
+.nav ul{padding: 10px 0px 0px 30px;}
+.nav li{padding: 0px 20px 0px 0px;float: left;display: block;}
+.index_main{width: 1000px;float: left;}
+.index_main li{line-height: 150%;}
+.tip{width: 1000px;float: left;margin: 20px 0px 0px 0px;padding: 0px;color: #999;font-size: 14px;}
+.footer{width: 1000px;margin: 20px 0px 0px 0px;float: left;text-align: center;color: #999;font-size: 14px;}
+.footer a:link, .footer a:visited{text-decoration: none;color: #999;}
+.footer a:hover{text-decoration: underline;color: #FF0000;}
+.ji_xiong{width: 1000px;float: left;}
+.ji_xiong_a1{width: 220px;float: left;}
+.ji_xiong_a2{width: 200px;float: left;}
+.ji_xiong_a3{width: 500px;float: left;}
+.nick_a1{width: 60px;float: left;}
+.nick_a2{width: 200px;float: left;}
+.nick_a3{width: 500px;float: left;}
+.sheng_xiao_pei_dui_a1{width: 100px;float: left;}
+.sheng_xiao_pei_dui_a2{width: 150px;float: left;}
+.sheng_xiao_pei_dui_a3{width: 100px;float: left;}
+.xing_ming_yuan_fen_a1{width: 100px;float: left;}
+.xing_ming_yuan_fen_a2{width: 200px;float: left;}
+.xing_ming_yuan_fen_a3{width: 100px;float: left;}
+.xing_zuo_pei_dui_a1{width: 100px;float: left;}
+.xing_zuo_pei_dui_a2{width: 150px;float: left;}
+.xing_zuo_pei_dui_a3{width: 100px;float: left;}
+.xing_zuo_sheng_xiao_a1{width: 60px;float: left;}
+.xing_zuo_sheng_xiao_a2{width: 500px;float: left;}
+.grey{color: #999;}
+.apptitle{margin: 20px 0px 10px 0px;font-size: 26px;}
+.admin_login{width:100%;}
+.admin_login li{ margin-bottom:5px;}
+.admin_login #username{ width: 150px;}
+.admin_login #password{ width: 150px;}
+.admin_main{width:100%;}
+.admin_main li{ margin-bottom:5px;}
+.admin_change_password{width:100%;}
+.admin_change_password li{ margin-bottom:5px;}
+.admin_change_password #src_password{ width: 150px;}
+.admin_change_password #new_password{ width: 150px;}
+.admin_change_password #confirm{ width: 150px;}
