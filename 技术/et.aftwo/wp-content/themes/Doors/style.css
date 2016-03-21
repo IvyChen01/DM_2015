@@ -1,0 +1,190 @@
+/*
+Theme Name: Doors
+Theme URI: http://themeforest.net/item/doors-onepage-multipurpose-wordpress-theme/8899186
+Author: Doors One page Parallax Theme
+Author URI: http://themeforest.net/user/XpeedStudio
+Description: Doors Onepage MultiPurpose wordpress theme
+Version: 2.0.3
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
+Text Domain: doors
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*=======================================================================
+[Table of contents]
+=========================================================================
+
+1. Typography
+2. Home / Navigation + Main Carousel
+3. Service
+4. parallax promo-One
+5. Recent-works
+6. About Us / Skills-Section + Team-member
+7. parallax promo-two
+8. Blog
+9. parallax promo-three
+10. Clients
+11. News Letter 
+12. Pricing Table
+13. Twitter
+14. Contact us
+15. Footer
+16. Preloader
+*/
+
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+        border: 0;
+        font-family: inherit;
+        font-size: 100%;
+        font-style: inherit;
+        font-weight: 200;
+        margin: 0;
+        outline: 0;
+        padding: 0;
+        vertical-align: baseline;
+}*/
+
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/*End Wordpress core css*/
+
+
+.dropdown-menu {
+display: block !important;
+}
+
+
+.sticky .entry-date {
+	display: none;
+}
+
+.normalclient li {list-style: none;}
+
+.navbar-brand img {margin: auto;}
+
+.form-allowed-tags{
+    display: none !important;
+}
+
+
+/*Language Switcher*/
+#lang_sel{
+    float: right;
+}
+#lang_sel li{
+    width: auto;
+}
+#lang_sel a.lang_sel_sel{
+    background: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+}
+#lang_sel a.lang_sel_sel:hover{
+    color: #D9232D;
+}
+#lang_sel ul ul{
+    width: 150%;
+    left: 9px;
+    border-top: none;
+}
+#lang_sel ul ul li{
+    width: 100%;
+}
+#lang_sel ul ul a, #lang_sel ul ul a:visited{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    padding-left: 0;
+}
+#lang_sel a:hover, #lang_sel ul ul a:hover {
+  background: none;
+  color: #D9232D;
+}
+/*Language Switcher*/
+
+

@@ -1,0 +1,52 @@
+<wpml-config>
+    <custom-types>
+        <custom-type translate="1">slider</custom-type>
+        <custom-type translate="1">portfolio</custom-type>
+        <custom-type translate="1">service</custom-type>
+        <custom-type translate="1">features</custom-type>
+        <custom-type translate="1">team</custom-type>
+        <custom-type translate="1">testimonial</custom-type>
+        <custom-type translate="1">client</custom-type>
+    </custom-types>
+    <taxonomies>
+        <taxonomy translate="1">carousel_cat</taxonomy>
+        <taxonomy translate="1">portfolio</taxonomy>
+        <taxonomy translate="1">service-category</taxonomy>
+    </taxonomies>
+    <custom-fields>
+        <custom-field action="translate">aboutPortfolio</custom-field>
+        <custom-field action="copy">clientlink</custom-field>
+        <custom-field action="copy">designation</custom-field>
+        <custom-field action="copy">doors_author_meta</custom-field>
+        <custom-field action="copy">doors_contact_image</custom-field>
+        <custom-field action="copy">doors_contact_map</custom-field>
+        <custom-field action="copy">doors_custom_page_title</custom-field>
+        <custom-field action="copy">doors_is_page_section</custom-field>
+        <custom-field action="copy">doors_menu_disable_page</custom-field>
+        <custom-field action="copy">doors_normal_page</custom-field>
+        <custom-field action="copy">doors_page_section</custom-field>
+        <custom-field action="copy">doors_page_subtitle</custom-field>
+        <custom-field action="copy">doors_show_page_title</custom-field>
+        <custom-field action="copy">drible</custom-field>
+        <custom-field action="copy">facebook</custom-field>
+        <custom-field action="copy">google</custom-field>
+        <custom-field action="copy">linkedin</custom-field>
+        <custom-field action="copy">liveLink</custom-field>
+        <custom-field action="copy">newave_comment_section</custom-field>
+        <custom-field action="copy">page_parallax-image_thumbnail_id</custom-field>
+        <custom-field action="copy">parallaxbgcolor</custom-field>
+        <custom-field action="copy">parallax_status</custom-field>
+        <custom-field action="copy">portfolioClients</custom-field>
+        <custom-field action="copy">releaseDate</custom-field>
+        <custom-field action="copy">serviceIcon</custom-field>
+        <custom-field action="copy">sidebar_status</custom-field>
+        <custom-field action="copy">title_status</custom-field>
+        <custom-field action="copy">twitter</custom-field>
+    </custom-fields>
+    <admin-texts>
+        <key name="quickPhone"/>
+        <key name="copyRight"/>
+        <key name="blog_title"/>
+        <key name="blogDes"/>
+    </admin-texts>
+</wpml-config>

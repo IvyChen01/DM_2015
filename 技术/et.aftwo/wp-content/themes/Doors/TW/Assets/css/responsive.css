@@ -1,0 +1,450 @@
+/* lg */ 
+@media (min-width: 1400px) {
+
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .brand-content {
+        padding: 25px 20px;
+    }
+    .overlay a.folio-detail {
+        font-size: 35px;
+        top: 25px;
+    }
+    .overlay a.folio-detail, 
+    .overlay a.folio-link {
+        left: 30px;
+    }
+    .overlay h2 {
+        top: 15%;
+        font-size: 20px;
+    }
+    .overlay p {
+        top: 15%;
+        font-size:14px;
+    }
+    .overlay a.folio-link {
+        bottom: 12px;
+    }
+    .social-icons {
+        bottom: 25px;
+    }
+}
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+    #navigation .navbar-right {
+        margin-right: 13px;
+    }
+    #navigation .navbar-right li a {
+        padding: 10px 8px;
+    }
+
+    #navigation .navbar-fixed-top .navbar-right li a {
+        padding: 15px 10px;
+    }
+
+    .container>.carousel-arrows {
+        left:15px;
+    }
+    .brand-content {
+        padding: 15px;
+    }
+    #service .col-md-3 {
+        margin-bottom: 45px;
+    }
+    .portfolio-items li {
+        width: 49.97%;
+    }
+    .portfolio-content .overlay {
+        padding: 40px;
+    }
+    .overlay a.folio-detail {
+        top:50px;			
+        font-size:45px;
+    }
+    .overlay a.folio-detail, 
+    .overlay a.folio-link {
+        left: 40px;
+    }
+    .overlay h2 {
+        top: 20%;
+    }
+    .overlay p {
+        top: 22%;
+        font-size: 14px;
+    }
+    .about-content {
+        text-align: justify;
+    }
+    .skills-section {
+        margin-left:-15px;
+    }
+    .skill-data {
+        margin-left: -22px;
+        line-height:160px;
+    }
+    .skill-circle canvas {
+        width:100% !important;
+    }
+    .team-member .overlay h4 {
+        top:0;
+    }
+    .team-member .overlay p {
+        top: -3%;
+        line-height: 20px;
+    }
+    .social-icons {
+        bottom: 7px;
+    }
+    .social-icons li {
+        margin-right: 17px;
+    }
+    .blog-image img {
+        width: 100%;
+    }
+    h3.timer {
+        font-size: 80px;
+    }
+    .client-left, .client-right {
+        bottom: -10px;
+        font-size: 48px;
+    }
+
+}
+
+
+/* xs */
+@media (max-width: 767px) {
+
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    h3 {
+        font-size: 17px;
+    }
+
+    /*Navigation*/
+    .top-bar {
+        display: none;
+    }
+    .search {
+        display: none;
+    }
+    .main-nav {
+        /*		background-color: #d9232d;*/
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    a.navbar-brand {
+        /*		background-color:#bd1e26;*/
+        height: 65px;
+        padding:15px 0 0 15px;
+    }
+    a.navbar-brand img {
+        margin-top: -32px;
+        width: 50%;
+    }
+    .navbar-brand h1 {
+        margin-left:7px;
+    }
+    .navbar-brand h2 {
+        font-size:10px;
+        margin-top:5px;
+    }
+    #navigation .navbar-right {
+        margin-right: 0;
+        margin-top: 0;
+    }
+    #navigation .navbar-right li a {
+        padding: 6px 17px;
+        font-size: 12px;
+    }
+    /*	#navigation .navbar-right li a.active, 
+            #navigation .navbar-right li a:hover, 
+            #navigation .navbar-right li a:focus, 
+            #navigation .navbar-right li.active a {
+                    background-color:#bd1e26;
+            }*/
+    /*Home Carousel*/
+    #home-carousel .item {
+        height: 650px;
+    }
+    .carousel-caption {
+        top: 75px;
+    }
+    .carousel-caption h1, 
+    .brand-content h2 {
+        font-size:20px;
+    }
+    .carousel-caption h2 {
+        font-size:36px;
+    }
+    .container > .carousel-arrows {
+        top:260px;
+        left:15px;
+    }
+    .home-carousel-left, 
+    .home-carousel-right {
+        font-size:24px;
+    }
+    .home-carousel-right {
+        left:18px;
+    }
+    .brand-promotion {
+        bottom: 25px;
+        left: 10px;
+        right: 25px;
+    }
+    .brand-content {
+        margin-bottom: 5px;
+        margin-right: -25px;
+        padding: 3px 15px 20px;
+    }
+    .brand-content p {
+        display: none;
+    }
+    /*Service*/
+    .padding-top {
+        padding-top: 45px
+    }
+    .padding-bottom, 
+    .section-title {
+        padding-bottom: 45px;
+    }
+
+    #service .col-md-3 {
+        float: left;
+        margin-bottom: 45px;
+        width: 50%;
+    }
+    .skill {
+        margin-bottom: 30px;
+    }
+    .skill-circle canvas {
+        /*        width:100% !important;*/
+        width: 150px !important;
+    }
+    .skill-data {
+        font-size: 20px;
+        /*        line-height: 195px;*/
+        line-height: 160px;
+        margin-left: -18px;
+    }
+    .service-text h4 {
+        margin-bottom: 15px;
+    }
+    .our-team .col-sm-3 , 
+    #team-carousel .carousel-inner .col-sm-3 {
+        //width: 50%;
+        float: left;
+    }
+    .team-carousel-left, 
+    .team-carousel-right {		
+        bottom: -65px;
+        font-size: 18px;
+        height: 40px;
+        line-height: 45px;
+        width: 40px;
+    }
+    .team-carousel-left {
+        margin-left: -50px;
+    } 
+    .team-carousel-right{
+        margin-right: -50px;
+    }
+    /*Parallax*/
+    .parallax-content h1 {
+        line-height: 30px;
+    }
+    /*Works*/
+    .portfolio-items li {
+        width: 49.97%;
+    }
+    .filter li a {
+        font-size: 16px;
+        padding: 2px 10px;
+    }
+    .portfolio-content .overlay {
+        padding: 20px;
+    }
+    .overlay a.folio-detail {
+        font-size: 35px;
+        top:25px;
+    }
+    .overlay a.folio-detail, 
+    .overlay a.folio-link {
+        left: 25px;
+    }
+    .overlay h2 {
+        top: 20%;	
+    }
+    .overlay p {
+        top: 22%;
+        font-size: 12px;
+    }
+
+    /*Blog*/
+
+    .entry-content {
+        padding: 10px 30px 30px;
+    }
+    .entry-content a h2 {
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+    .entry-meta span a {
+        font-size: 14;
+    }
+    .post-date {
+        font-size: 30px;
+        line-height: 24px;
+        padding: 10px 20px 0;
+    }
+    .post-date span {
+        font-size: 15px;
+    }
+    .blog-image {
+        padding-left: 68px;
+    }
+    /*fun fact*/
+    #fun-fact .funs i {
+        font-size: 35px;
+        margin-bottom: 0;
+    }
+    h3.timer {
+        font-size: 45px;
+        margin-top: 10px;
+    }
+    .btn-submit{
+        padding: 10px 50px 8px;
+    }
+
+    /*Clients*/
+    #clients {
+        overflow: hidden;
+    }
+    #clients-carousel .item ul li {
+        width: 50%;		
+    }
+
+    .client-left, .client-right {
+        display: none;
+    }
+    .normalclient li {width: 50%;}
+    /*Pricing Table*/
+    .pricing-table .col-sm-3 {
+        width: 50%;
+        float: left;
+    }
+    .single-table {
+        margin-bottom: 35px;
+    }
+    #twitter i {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+    /*Contact*/
+    .contact-content .col-sm-4 {
+        margin-bottom: 35px;
+    }
+    #gmap {
+        height: 300px;
+    }
+    #footer {
+        padding-bottom: 7px;
+        padding-top: 18px;
+    }
+    #footer a.to-top {
+        top:-12px;
+    }
+    .col-3-offest{margin-left: 0;}
+    .parallax-section {
+        background-attachment: scroll !important;
+        width: 100%;
+        height:100%;
+        max-width:100%;
+        overflow: hidden;
+    } 
+}
+
+/* XS Portrait */
+@media (max-width: 479px) {
+
+    .container > .carousel-arrows {
+        top:315px;
+    }
+    .col-3-offest{margin-left: 0;}
+    #service .col-md-3 {
+        float: none;
+        margin-bottom: 45px;
+        width: 100%;
+    }
+    .portfolio-items li {
+        width: 99.97%
+    }
+    .portfolio-content .overlay {
+        padding: 100px 30px 30px 30px;
+    }
+    .overlay a.folio-detail, 
+    .overlay a.folio-link {
+        left: 33px;
+    }
+    .overlay h2 {
+        top:0;
+    }
+    .overlay p {
+        top:5px;
+    }
+    .overlay a.folio-detail {
+        top:50px;
+    }
+    .team-member img{
+        width: 100%
+    }
+    .skill-data {
+        /*        line-height: 120px;*/
+        line-height: 160px;
+    }
+    #team-carousel .carousel-inner .col-sm-3, 
+    .pricing-table .col-sm-3 {
+        width: 100%;
+        float: none;
+    }
+    .blog-image {
+        padding-left: 0;
+    }
+    .single-blog {
+        height: auto;
+    }
+    .single-blog img {
+        width: 100%;
+    }
+    .blog-image, 
+    .entry-content {
+        float: none;
+        width: 100%;
+    }
+    .funs.col-xs-4 {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    .parallax-section {
+        background-attachment: scroll !important;
+        width: 100%;
+        height:100%;
+        max-width:100%;
+        overflow: hidden;
+    } 
+
+
+}

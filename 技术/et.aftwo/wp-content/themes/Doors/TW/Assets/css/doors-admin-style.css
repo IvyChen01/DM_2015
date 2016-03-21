@@ -1,0 +1,27 @@
+.meta_tr{
+    width: 50%;
+    float: left;
+    margin-bottom: 15px;
+}
+.meta_lable{
+    width: 25%;
+    float: left;
+    font-family: 'tahoma';
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.8em;
+    letter-spacing: .05em;
+}
+.meta_field{
+    width: 60%;
+    float: left;
+    margin-left: 10%
+}
+.meta_field input[type="text"]{
+    width: 100%;
+}
+.clr{
+    clear: both;
+}
+
+
