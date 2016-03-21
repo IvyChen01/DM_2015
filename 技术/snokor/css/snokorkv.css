@@ -1,0 +1,59 @@
+@charset "utf-8";
+*{ margin:0; padding:0; list-style:none; }
+body{font:12px/1.5 tahoma,arial,"Hiragino Sans GB",宋体,sans-serif;color:#444;margin:0;}
+body,div,form,img,ul,ol,li,dl,dt,dd,p{margin:0; padding:0; border:0;}
+ul,li,ol,dl,dt,dd{list-style:none;}
+h1,h2,h3,h4,h5,h6{ margin:0; padding:0; }
+.clearfix:after, .clearfix:after, .main:after, .left:after, .right:after, dl:after, dt:after, dd:after, ul:after, li:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+i,em,var{ font-style:normal;}
+input,textarea{outline: none;}
+a{text-decoration: none;}
+a:link{  color:#444; text-decoration: none;}
+a:hover{ color:#444; text-decoration:none;}
+a.blue{color:#3366cc;}
+/*snokor*/
+a:hover{
+    text-decoration: none;
+}
+.ft{font-size:20px}
+.ftd{font-size:16px!important}
+.bf{background:#fff}
+.bo{background:#ff6b00}
+.cf{color:#fff!important}
+.co{color:#ff6b00!important}
+@media (min-width: 1800px)
+.col-sg{
+  width: 1800px;
+}
+header .sn-nav{margin-bottom:0}
+.snokorkv .sn-kv{padding:0}
+footer .navbar{margin-bottom:0;background:#ff6b00;border:none;border-radius:0;}
+footer .navbar .navbar-nav a{color:#fff;font-size:16px}
+@media screen and (max-width: 760px){
+  #nav-main ul li a{font-size:14px;}
+}
+.fblink{display:inline-block;width:400px;position:relative;overflow:hidden}
+@media screen and (max-width: 760px){
+.fblink{display:inline-block;width:360px;}
+}
+
+.fblink li{display:inline-block;width:37px;height:37px;margin-right:30px;cursor:pointer}
+.fblink li:nth-child(1){background:url(../image/logo_01.png);background-size: cover}
+.fblink li:nth-child(2){background:url(../image/logo_02.png);background-size: cover}
+.fblink li:nth-child(3){background:url(../image/logo_03.png);background-size: cover}
+.fblink li:nth-child(4){background:url(../image/logo_04.png);background-size: cover}
+.fblink li:nth-child(5){background:url(../image/logo_05.png);background-size: cover;}
+
+@media screen and (max-width: 760px){
+  .footlink ul li a{font-size:14px;}
+  footer .navbar ul li a{font-size:14px!important;display:inline-block}
+  footer .navbar .navbar-nav>li{display:inline-block;float:left}
+.fblink{display:inline-block;width:360px;}
+}

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>snokor</title>
+	<script src="js/jquery.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/layout.css" media="screen" title="no title" charset="utf-8">
+
+</head>
+<body>
+	<!--nav-->
+	<!--header-->
+	<header>
+	<nav class="navbar navbar-default sn-nav">
+	<div class="container-fluid">
+	 <div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-main">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			</button>
+			<a href="http://www.snokor.com" class="navbar-brand"><img src="image/snokor.png" class="img-responsive" style="width:80%" alt=""></a>
+	</div>
+	<div class="navbar-collapse collapse" id="nav-main" aria-expanded="true">
+        <ul class="nav navbar-nav text-right">
+            <li><a href="snokor-z500.html" class="ft co">Rocket</a></li>
+            <li><a href="snokorsupport.html" class="ft co">Support</a></li>
+        </ul>
+    </div>
+ 	</div>
+	</nav>
+	</header>
+	<!--/nav-->
+	<!--/header-->
+		<!--banner-->
+<section class="sn-banner">
+	<div id="myCarousel" class="carousel slide">
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+
+   </ol>
+   <div class="carousel-inner">
+      <div class="item active">
+         <img src="image/banner1.png" class="hidden-xs" alt="First slide">
+      </div>
+      <div class="item">
+         <img src="image/banner3.png" alt="Third slide">
+      </div>
+			<div class="item">
+         <img src="image/banner4.png" alt="Third slide">
+      </div>
+   </div>
+   <a class="carousel-control" href="#myCarousel"
+      data-slide="prev">&lsaquo;</a>
+   <a class="carousel-control ri" href="#myCarousel"
+      data-slide="next">&rsaquo;</a>
+</div>
+</section>
+<script>
+	$(function(){
+		function pageEvent(){//屏蔽滚轮 侦听左右
+      document.onkeydown=function(event){
+        var e = event || window.event || arguments.callee.caller.arguments[0];
+        if(e && e.keyCode==37){//上,左
+          $("#myCarousel").carousel('prev');;
+        }
+        if(e && e.keyCode==39){//下,右
+          $("#myCarousel").carousel('next');
+        }
+      }
+    }
+    pageEvent();
+	})
+</script>
+	<!--/banner-->
+
+<!--contact-->
+<section class="sn-contact bo">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row hidden-xs">
+					<div class="col-md-4 col-sm-4 text-left">
+							<a href="snokorabout.html" class="ftd cf">about SNOKOR</a><i class="cf" style="margin:0 5px"></i><a href="mailto;" class="ftd cf">contact us</a>
+					</div>
+					<div class="col-md-4 col-sm-4 text-center">
+						<ul class="fblink">
+							<li><a href=""></a></li>
+							<li><a href="https://www.facebook.com/SnokorMobile"></a></li>
+							<li><a href=""></a></li>
+							<li><a href=""></a></li>
+							<li><a href=""></a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 col-sm-4 text-right">
+						<a href="javascript:;" class="ftg cf">Copyright © 2015 SNOKOR  All rights reserved. </a>
+					</div>
+				</div>
+				<div class="row hidden-sm hidden-lg hidden-md text-center">
+					<div class="col-xs-12">
+
+					</div>
+					<div class="col-xs-12">
+
+					</div>
+					<div class="col-xs-12">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/contact-->
+
+	<!--footer-->
+	<footer>
+
+	</footer>
+	<!--/footer-->
+
+	<!--slider-->
+	<!--/slider-->
+	<script src="js/bootstrap.min.js" charset="utf-8"></script>
+	<script src="js/main.js" charset="utf-8"></script>
+</body>
+</html>
