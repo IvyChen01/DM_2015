@@ -1,0 +1,32 @@
+  <div class="footer">
+    <div class="footer_box">
+      <div class="weixin"> <img src="/images/weixin.png"> </div>
+      <div class="fl">
+        <div class="foot_l_a">  </div>
+                 <div class="foot_l_b">        
+           Together, We Can！
+         </div> 
+
+      </div>
+      <div class="fr">
+        <div class="foot_r_a"> <a href="javascript:;" class="top"></a> <a  class="phone" href="/contact"> </a> </div>
+        <div class="foot_r_b"> <a href="/" class="top">Home</a>
+            {dede:channel type='top'}
+    | <a href='[field:typelink/]'  class="top">[field:typename/]</a>
+    {/dede:channel}
+    </div>
+        <div class="foot_r_c">{dede:global.cfg_powerby/}  {dede:global.cfg_beian/}</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script type="text/javascript">
+
+         $(function () {
+             $(".top").click(function () {
+                 $("html,body").animate({ scrollTop: 0 }, 500);
+             });
+         })
+
+</script>

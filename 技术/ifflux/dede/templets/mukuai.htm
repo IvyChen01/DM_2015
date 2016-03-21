@@ -1,0 +1,70 @@
+  <script language="javascript" type="text/javascript" src="../include/js/dedeajax2.js"></script>
+ <?php
+echo "<script language='javascript'>var curopenItem = '$openitem';</script>\r\n";
+?>
+<script language="javascript" type="text/javascript" src="js/leftmenu.js"></script>
+ <style type="text/css">
+ ::-webkit-scrollbar{
+width:10px;
+background:#949494;
+-webkit-transition:all 0.3s ease-out;
+-moz-transition:all 0.3s ease-out;
+-o-transition:all 0.3s ease-out;
+transition:all 0.3s ease-out
+}
+::-webkit-scrollbar-button{
+display:none
+}
+::-webkit-scrollbar-track{
+background:#1e242b
+}
+::-webkit-scrollbar-thumb{
+background:#808080;
+border-radius:100px;
+-webkit-border-radius:100px
+}
+::-webkit-scrollbar-thumb:active{
+background:#6BC30D
+}
+  </style>
+ <link href="css/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="js/jquery.js"></script>
+
+<script type="text/javascript">
+$(function(){	
+	//导航切换
+	$(".menuson li").click(function(){
+		$(".menuson li.active").removeClass("active")
+		$(this).addClass("active");
+	});
+	
+	$('.title').click(function(){
+		var $ul = $(this).next('ul');
+		$('dd').find('ul').slideUp();
+		if($ul.is(':visible')){
+			$(this).next('ul').slideUp();
+		}else{
+			$(this).next('ul').slideDown();
+		}
+	});
+})	
+</script>
+ 
+     <div id='ct1'>
+        <?php
+GetMenus($cuserLogin->getUserRank(), 'main');
+?>
+      </div>
+      <div id='ct100'></div>
+ <?php
+if(!empty($openitem) && $openitem!=100)
+{
+?>
+<script language='javascript'>
+	ShowMainMenu(100);
+</script>
+<?php
+}
+?>
+     
+  

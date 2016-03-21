@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{dede:field.seotitle/}_{dede:global.cfg_webname/}</title>
+<meta content="{dede:field name='keywords'/}" name=keywords>
+<meta content="{dede:field name='description' function='html2text(@me)'/}" name=description>
+<link href="/css/layout.css" rel="stylesheet" type="text/css">
+<!--[if IE 6]>
+    <script type="text/javascript" src="/js/DD_belatedPNG.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('div,img,a,a:hover,input,ul,li');</script>
+<![endif]-->
+</head>
+<body>
+{dede:include filename="head.htm"/}
+{dede:include filename="tonglan.htm"/}  
+  <div class="plate">
+    <div class="plate_bt"> <a href="#">{dede:field name='typeid' function="GetTopTypename(@me)" /}</a> </div>
+  <div class="in_nav"> {dede:channel type='sun' currentstyle="<a  href='~typelink~' class='cur'>~typename~</a>" } <a href="[field:typelink/]" title="[field:typename /]" >[field:typename /]</a> {/dede:channel} </div>
+    <ul class="news_list in_n_l">
+    
+    {dede:list pagesize=6} 
+      <li> <a href="[field:arcurl/]" class="news_list_img bl fl"> <img src="[field:litpic/]">
+        <div class="img_round"></div>
+        </a> &nbsp;
+        <div class="news_list_txt fr">
+          <div class="bt"> <a href="[field:arcurl/]">[field:title /]</a> <span class="fgx">/</span><span>[field:pubdate function="GetDateTimeMK(@me)"/]</span></div>
+          <div class="con">[field:body function='cn_substr(html2text(@me),500)'/]...</div>
+        </div>
+      </li>
+      {/dede:list} 
+    </ul>
+    <div class="in_news_cho">
+      {dede:pagelist listsize='4' listitem='pageno pre  next'/}
+    </div>
+  </div>
+  {dede:include filename="footer.htm"/} 
+</body>
+</html>

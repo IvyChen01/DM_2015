@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta content="{dede:field name='keywords'/}" name=keywords>
+<meta content="{dede:field name='description' function='html2text(@me)'/}" name=description>
+<link href="/css/layout.css" rel="stylesheet" type="text/css">
+<!--[if IE 6]>
+    <script type="text/javascript" src="/js/DD_belatedPNG.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('div,img,a,a:hover,input,ul,li');</script>
+<![endif]-->
+</head>
+<body>
+{dede:include filename="head.htm"/} 
+{dede:include filename="tonglan.htm"/} 
+  <div class="plate">
+    <div class="plate_bt"> <a href="#">{dede:field name='typeid' function="GetTopTypename(@me)" /}</a> </div>
+    <div class="news_detail_h">
+      <div class="detail_bt_box">
+        <div class="l"></div>
+        <div class="con">{dede:field.title/}</div>
+        <div class="r"></div>
+        <a href="javascript:void(0);" onClick="history.go(-1)" class="back"></a> </div>
+    </div>
+    <div class="news_detail_con">
+{dede:field name='body'/}
+    </div>
+    <div class="detail_f_box">
+      <div class="fl">Time：<span>{dede:field name='pubdate' function='GetDateTimeMK(@me)'/}</span>  Editor：{dede:adminname/} </div>
+      <a href="javascript:void(0);" onClick="history.go(-1)" class="fr bl">RETURN</a> </div>
+  </div>
+  {dede:include filename="footer.htm"/} 
+  </body>
+</html>

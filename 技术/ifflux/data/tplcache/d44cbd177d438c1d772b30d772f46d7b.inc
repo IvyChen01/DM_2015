@@ -1,0 +1,1 @@
+<a href="[field:typelink/]" class="[field:global runphp='yes' name=autoindex](@me < 1)?@me="no_bg":@me="";[/field:global] ">[field:typename/]</a>

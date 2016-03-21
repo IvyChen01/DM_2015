@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?php echo $cfg_webname; ?></title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){	
+	//顶部导航切换
+	$(".nav li a").click(function(){
+		$(".nav li a.selected").removeClass("selected")
+		$(this).addClass("selected");
+	})	
+})	
+</script>
+</head>
+<body style="background:url(images/topbg.gif) repeat-x;">
+<div class="topleft"> <a href="index.php" target="_parent"><img src="images/logo.png" title="<?php echo $cfg_softname." ".$cfg_version; ?>" /></a> </div>
+<ul class="nav">
+  <li><a href="index_menu.php" target="leftFrame"><img src="images/icon01.png" title="文档栏目" />
+    <h2>文档栏目</h2>
+    </a></li>
+  <li><a href="mukuai.php" target="leftFrame"><img src="images/icon02.png" title="模块插件" />
+    <h2>模块插件</h2>
+    </a></li>
+  <li><a href="index_menu.php?openitem=5"  target="leftFrame"><img src="images/icon04.png" title="网站更新" />
+    <h2>网站更新</h2>
+    </a></li>
+  <li><a href="index_menu.php?openitem=6"  target="leftFrame"><img src="images/users.png" title="会员管理" />
+    <h2>会员管理</h2>
+    </a></li>
+  <li><a href="index_menu.php?openitem=7"  target="leftFrame"><img src="images/icon05.png" title="模板管理" />
+    <h2>模板管理</h2>
+    </a></li>
+  <li><a href="index_menu.php?openitem=3"  target="leftFrame"><img src="images/icon03.png" title="采集管理" />
+    <h2>采集管理</h2>
+    </a></li>
+  <li><a href="index_menu.php?openitem=10" target="leftFrame"><img src="images/icon06.png" title="系统设置" />
+    <h2>系统设置</h2>
+    </a></li>
+</ul>
+<div class="topright">
+  <ul>
+    <li><a href="public_guide.php" target="main" >内容发布</a></li>
+    <li><a href="content_list.php"  target="main">内容维护</a></li>
+    <li><a href="index_body.php"  target="main">系统主页</a></li>
+    <li><a href="../index.php?upcache=1" target="_blank">网站主页</a></li>
+    <li><a href="../member" target="_blank">会员中心</a></li>
+    <li><a href="exit.php" target="_parent">退出</a></li>
+  </ul>
+  <div class="user"> <span><?php echo $cuserLogin->getUserName(); ?></span> </div>
+</div>
+</body>
+</html>

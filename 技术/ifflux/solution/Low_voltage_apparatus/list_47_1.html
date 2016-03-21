@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Low-voltage apparatus_IFLUX Lighting Ltd.</title>
+<meta content="" name=keywords>
+<meta content="" name=description>
+<link href="/css/layout.css" rel="stylesheet" type="text/css">
+<!--[if IE 6]>
+    <script type="text/javascript" src="/js/DD_belatedPNG.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('div,img,a,a:hover,input,ul,li');</script>
+<![endif]-->
+
+</head>
+<body>
+<link rel="shortcut icon" type="image/x-icon" href="/images/logo.ico">
+<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+<div class="header">
+  <div class="header_box">
+    <div class="logo"> <a href="/"><img src="/images/logo.png"></a> </div>
+    <ul class="nav">
+      <li> <a href="/" class="z ">Home</a> </li>
+      <li> <a href="/about/" class="z ">About Us</a>
+        <div class="nav2"></div>
+      </li><li> <a href="/case/" class="z ">Cases</a>
+        <div class="nav2"><a href="/case/chanyedichan/" class="no_bg ">Indoor</a><a href="/case/dushizongheti/" class=" ">Landscape</a><a href="/case/Road/" class=" ">Road</a></div>
+      </li><li> <a href="/solution/" class="z ">Products</a>
+        <div class="nav2"><a href="/solution/Hand_carry/" class="no_bg ">Hand carry</a><a href="/solution/hudongchuanbo/" class=" ">Indoor</a><a href="/solution/Outdoor/" class=" ">Outdoor</a><a href="/solution/Solar/" class=" ">Solar</a><a href="/solution/Low_voltage_apparatus/" class=" ">Low-voltage apparatus</a></div>
+      </li><li> <a href="/service/" class="z ">Services</a>
+        <div class="nav2"><a href="/service/" class="no_bg ">Consulting</a><a href="/service/chanyeyanjiu/" class=" ">Design</a><a href="/service/After_sales/" class=" ">After-sales</a></div>
+      </li><li> <a href="/news/" class="z ">News</a>
+        <div class="nav2"><a href="/news/" class="no_bg ">Industry Information</a><a href="/news/gongsidongtai/" class=" ">Company Dynamic</a></div>
+      </li><li> <a href="/strategy/" class="z ">Partners</a>
+        <div class="nav2"></div>
+      </li><li> <a href="/job/" class="z ">Join Us</a>
+        <div class="nav2"></div>
+      </li><li> <a href="/contact/" class="z ">Contact Us</a>
+        <div class="nav2"></div>
+      </li>
+    </ul>
+  
+  </div>
+</div>
+ 
+  <div class="in_banner" style="background:url(/images/small_19.jpg) no-repeat center;"> </div>
+  
+<div class="plate">
+  <div class="plate_bt"> <a href="#">Products</a> </div>
+  <div class="in_nav">  <a href="/solution/Hand_carry/" title="Hand carry" >Hand carry</a>  <a href="/solution/hudongchuanbo/" title="Indoor" >Indoor</a>  <a href="/solution/Outdoor/" title="Outdoor" >Outdoor</a>  <a href="/solution/Solar/" title="Solar" >Solar</a> <a href='/solution/Low_voltage_apparatus/' class='cur'>Low-voltage apparatus</a> </div>
+  <div class="case_plate2ab">
+    <ul class="case_plate">
+     
+      
+    </ul>
+    
+    
+    
+  </div>
+    <div class="in_news_cho">
+      
+
+    </div>
+</div>
+  <div class="footer">
+    <div class="footer_box">
+      <div class="weixin"> <img src="/images/weixin.png"> </div>
+      <div class="fl">
+        <div class="foot_l_a">  </div>
+                 <div class="foot_l_b">        
+           Together, We Can！
+         </div> 
+
+      </div>
+      <div class="fr">
+        <div class="foot_r_a"> <a href="javascript:;" class="top"></a> <a  class="phone" href="/contact"> </a> </div>
+        <div class="foot_r_b"> <a href="/" class="top">Home</a>
+            
+    | <a href='/about/'  class="top">About Us</a>
+    
+    | <a href='/case/'  class="top">Cases</a>
+    
+    | <a href='/solution/'  class="top">Products</a>
+    
+    | <a href='/service/'  class="top">Services</a>
+    
+    | <a href='/news/'  class="top">News</a>
+    
+    | <a href='/strategy/'  class="top">Partners</a>
+    
+    | <a href='/job/'  class="top">Join Us</a>
+    
+    | <a href='/contact/'  class="top">Contact Us</a>
+    
+    </div>
+        <div class="foot_r_c">Copyright &copy; 2015 IFLUX Lighting Ltd.  </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script type="text/javascript">
+
+         $(function () {
+             $(".top").click(function () {
+                 $("html,body").animate({ scrollTop: 0 }, 500);
+             });
+         })
+
+</script>
+</body>
+</html>
+<script type="text/javascript">
+        $(function () {
+            $(".in_nav a:eq(0)").addClass("cur").siblings().removeClass("cur");
+            var whichid = $("#whichid").val();           
+            $("#whichid" + whichid).addClass("cur").siblings().removeClass("cur");
+            var countid = $("#countid").val();
+            $(".case_plate2ab").css("width", 1180 * countid);
+            $(".case_cho a:eq(0)").addClass("cur").siblings().removeClass("cur");
+            $(".case_cho a").each(function (m) {
+                $(".case_cho a:eq(" + m + ")").click(function () {
+                    $(".case_plate2ab").animate({ left: -m * 1180 + "px", opacity: 1 }, 500);
+                    $(".case_cho a:eq(" + m + ")").addClass("cur").siblings().removeClass("cur");
+
+                })
+            })
+
+           $(".in_nav a").removeClass("cur");
+var string = document.location.href+"";
+if(string.indexOf("Hand_carry")>0){
+        $(".in_nav a:eq(0)").addClass("cur")
+}else if(string.indexOf("hudongchuanbo")>0){){
+        $(".in_nav a:eq(1)").addClass("cur")
+}else if(string.indexOf("Outdoor")>0){){
+        $(".in_nav a:eq(2)").addClass("cur")
+}else if(string.indexOf("Solar")>0){){
+        $(".in_nav a:eq(3)").addClass("cur")
+}else if(string.indexOf("Low_voltage_apparatus")>0){){
+        $(".in_nav a:eq(4)").addClass("cur")
+}
+
+        })
+</script>

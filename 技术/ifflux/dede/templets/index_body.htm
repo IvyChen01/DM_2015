@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title><?php echo $cfg_webname; ?></title>
+<!--新建样式开始-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jsapi.js"></script>
+<script type="text/javascript" src="js/format+zh_CN,default,corechart.I.js"></script>
+<script type="text/javascript" src="js/jquery.gvChart-1.0.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.ba-resize.min.js"></script>
+<script type="text/javascript">
+		gvChartInit();
+		jQuery(document).ready(function(){
+
+		jQuery('#myTable5').gvChart({
+				chartType: 'PieChart',
+				gvSettings: {
+					vAxis: {title: 'No of players'},
+					hAxis: {title: 'Month'},
+					width: 650,
+					height: 250
+					}
+			});
+		});
+		</script>
+<!--新建样式结束-->
+
+<base target="_self">
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/indexbody.css" />
+<script language="javascript" src="../include/js/dedeajax2.js"></script>
+<script type="text/javascript" src="../include/js/jquery/jquery.js" ></script>
+<script language="javascript" src="../include/js/jquery/ui.core.js"></script>
+<script language="javascript" src="../include/js/jquery/ui.draggable.js"></script>
+<script language="javascript" src="../include/js/jquery/ui.sortable.js"></script>
+<script language="javascript" src="js/jquery.json-2.2.min.js"></script>
+<script language="javascript" src="js/indexbody.js"></script>
+<script language="javascript" src="js/drag.js"></script>
+<script type="text/javascript">
+function showMore()
+{
+	$("#allInfo").toggle();
+	$("#allInfoTD").toggle();
+}
+
+$(function()
+{
+   $.get("index_testenv.php",function(data)
+  {
+	if(data !== '')
+	{
+		$("#__testEvn").html(data);
+	}
+  })
+})
+</script>
+<style type="text/css">
+.enter {
+	float:left;
+	margin:2px 5px
+}
+</style>
+</head>
+
+<body>
+<div class="place"> <span>位置：</span>
+  <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">工作台</a></li>
+  </ul>
+</div>
+<div class="mainbox">
+  <div class="mainleft">
+    <div class="leftinfo">
+      <div class="listtitle">系统更新消息</div>
+      <div class="maintj">
+        <div id="__testEvn"></div>
+        <div id='updatetest'>
+          <div id='updateinfos'>
+            <?php
+                            echo "<div class='updatedvt'><b>您系统版本最后更新时间为：{$oktime} </b><br/>";
+                            echo " <a href='javascript:LoadUpdateInfos();' class='enter'>进行在线更新</a> &nbsp; \r\n";
+                            echo " <a href='sys_repair.php' class='enter'>系统错误修复</a></div>\r\n";
+                            echo "<iframe name='stafrm' src='{$offUrl}&uptime={$oktime}' frameborder='0' id='stafrm' width='98%' height='85px'></iframe>";
+                        ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--leftinfo end-->
+    
+    <div class="leftinfos">
+      <div class="infoleft">
+        <div class="listtitle">系统基本信息</div>
+        <ul class="newlist">
+           <table width="100%">
+                    <tbody>
+                      <tr>
+                        <td width="35%" >您的级别</td>
+                        <td > <?php
+                                if($cuserLogin->getUserType()==10) {
+                                    echo "总管理员";
+                            } else if($cuserLogin->getUserType()==5) {
+                                echo "频道总编";
+                            } else {
+                                echo "信息采集员或其它管理员";
+                            }
+                        ?></td>
+                      </tr>
+                   
+                      <tr>
+                        <td width="35%" >操作系统</td>
+                        <td ><?php echo PHP_OS;?></td>
+                      </tr>
+                      <tr>
+                        <td width="35%">网站域名/IP</td>
+                        <td><?php echo $_SERVER['SERVER_NAME'];?>(<?php echo gethostbyname($_SERVER['SERVER_NAME']);?>)</td>
+                      </tr>
+                      <tr>
+                        <td width="35%" >服务器解译引擎</td>
+                        <td ><?php echo $_SERVER['SERVER_SOFTWARE'];?></td>
+                      </tr>
+                      <tr>
+                        <td width="35%">PHP</td>
+                        <td><?php echo "php ".PHP_VERSION;?></td>
+                      </tr>
+                      <tr>
+                        <td width="35%" >MySQL 版本</td>
+                        <td ><?php echo "mysql ".mysql_get_server_info();?></td>
+                      </tr>
+                       <tr>
+                        <td width="35%">服务器语言</td>
+                        <td><?php echo getenv("HTTP_ACCEPT_LANGUAGE");?></td>
+                      </tr>
+                    </tbody>
+                  </table>
+        </ul>
+      </div>
+      <div class="inforight">
+        <div class="listtitle"> 
+        <a href='#' onClick="AddNew()" class="more1"><b>【新增】</b></a><a href='#' onClick="ListAll()" class="more1"><b>【管理】</b></a>
+        常用工具</div>
+        <ul class="tooli">
+            <?php
+                        $dtp = new DedeTagparse();
+                        $dtp->SetNameSpace('menu','<','>');
+                        $dtp->LoadTemplet($myIcoFile);
+                        if(is_array($dtp->CTags)){
+                            foreach($dtp->CTags as $ctag){
+                                $title = $ctag->GetAtt('title');
+                                $ico = $ctag->GetAtt('ico');
+                                $link = $ctag->GetAtt('link');
+                                echo "<li><span><img src='$ico'/></span><p><a href='{$link}'>{$title}</a></p></li>\r\n";
+                            }
+                        }
+                    ?>
+                    
+                    
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--mainleft end-->
+  
+  <div class="mainright">
+    <div class="dflist">
+      <div class="listtitle"> 最新文章</div>
+      <ul class="newlist">
+       
+        <dd id='listNews'>
+<?php
+    $query = "SELECT arc.id, arc.arcrank, arc.title, arc.channel, ch.editcon  FROM `#@__archives` arc
+            LEFT JOIN `#@__channeltype` ch ON ch.id = arc.channel
+             WHERE arc.arcrank<>-2 ORDER BY arc.id DESC LIMIT 0, 9 ";
+    $arcArr = array();
+    $dsql->Execute('m', $query);
+    while($row = $dsql->GetArray('m'))
+    {
+        $arcArr[] = $row;
+    }
+?>
+     <?php
+    if(count($arcArr) > 1)
+    {
+        foreach($arcArr as $row)
+        {
+            if(trim($row['editcon'])=='') {
+                $row['editcon'] = 'archives_edit.php';
+            }
+            $linkstr = "<li><a href='{$row['editcon']}?aid={$row['id']}&channelid={$row['channel']}'>{$row['title']}</a></li>";
+            if($row['arcrank']==-1) $linkstr .= "<font color='red'>(未审核)</font>";
+        ?>
+                 <?php echo $linkstr; ?>
+           
+        <?php
+        }
+    } else {
+    ?>
+                 暂无新增内容
+     <?php
+    }
+    ?>
+             </dd>
+            
+       </ul>
+    </div>
+    <div class="dflist1">
+      <div class="listtitle"><a href="#" class="more1">更多</a>信息统计</div>
+      <ul class="newlist">
+        <dd id='listCount'>
+                正在载入中...
+            </dd>
+            
+      </ul>
+    </div>
+  </div>
+  <!--mainright end--> 
+  
+</div>
+
+
+<!--  下面是隐藏的项目  -->
+<div id='loaddiv' style='display:none'>
+    <p align='center' style='padding-top:200px'><img src='images/loadinglit.gif' /> 请稍后，正在下载更新文件列表...</p>
+</div>
+<div id="editTab">
+<span id='editTabBody'>请稍候，正在载入...</span>
+</div>
+<div id="addTab">
+<form name='addform' action='index_body.php'>
+<input type='hidden' name='dopost' value='addnew' />
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+     <td height='28' colspan='3' background="images/tbg.gif">
+         <div style='float:left'><b>增加快捷操作项</b></div>
+      <div style='float:right;padding:3px 10px 0 0;'>
+        <a href="javascript:CloseTab('addTab')"><img src="images/close.gif" width="12" height="12" border="0" /></a>
+      </div>
+     </td>
+   </tr>
+      <tr><td style="height:6px;font-size:1px;border-top:1px solid #8DA659" colspan="2">&nbsp;</td></tr>
+   <tr>
+     <td width="20%" height="28" align="right">链接标题：</td>
+     <td width="70%">
+         <input name="title" type="text" id="title" class='pubinputs' style="width:255px;"/>
+     </td>
+   </tr>
+   <tr>
+     <td height="28" width="20%" align="right">ICO图片：</td>
+     <td width="70%">
+         <input name="ico" type="text" id="ico" class='pubinputs' style="width:255px;"/>
+     </td>
+   </tr>
+   <tr>
+     <td height="28" width="20%" align="right">链接网址：</td>
+     <td width="70%">
+         <input name="link" type="text" id="link" class='pubinputs' style="width:255px;"/>
+     </td>
+   </tr>
+   <tr>
+     <td height="45">&nbsp;</td>
+     <td>
+         <input type="submit" name="Submit" value="保存项目" class="np coolbg" style="width:80px;cursor:pointer" />
+     </td>
+   </tr>
+  </table>
+</form>
+</div>
+</div>
+
+
+</body>
+<script type="text/javascript">
+	setWidth();
+	$(window).resize(function(){
+		setWidth();	
+	});
+	function setWidth(){
+		var width = ($('.leftinfos').width()-12)/2;
+		$('.infoleft,.inforight').width(width);
+	}
+</script>
+
+
+</html>

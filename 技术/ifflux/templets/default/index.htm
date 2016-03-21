@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:global.cfg_keywords/}">
+<meta name="author" content="design by www.ehuod.com" />
+<meta name="description" content="{dede:global.cfg_description/}">
+<link href="/css/layout.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<div class="banner">
+  <div class="main_image">
+    <ul>
+      {dede:arclist typeid=31}
+      <li><a href="/"><span style="background: url([field:litpic/]) center top no-repeat"></span></a></li>
+      {/dede:arclist}
+    </ul>
+  </div>
+  <div class="flicking_con">
+    <div class="flicking_inner"> {dede:arclist typeid=31}<a href="javascript:;" class="[field:global runphp='yes' name=autoindex](@me < 1)?@me="on":@me="";[/field:global] "></a>{/dede:arclist}</div>
+    <a href="javascript:;" id="btn_prev"></a> <a href="javascript:;" id="btn_next"></a> </div>
+</div>
+<div class="plate">
+  <div class="plate_bt"> <a href="/about/"> About Us </a> </div>
+  <div class="news_box">
+    <div class="news_con fl">
+      <div class="about_img fl"> <img src="/images/about_img1.jpg"> </div>
+      <div class="about_con fr">
+        <div class="about_con_bt"> <a href="/about/">IFLUX</a> </div>
+        <div class="about_con_txt">{dede:sql sql='Select content from #@__arctype where id=1'}
+          [field:content function='cn_substr(html2text(@me),400)'/].....
+          {/dede:sql}</div>
+      </div>
+    </div>
+    <div class="news_con fr">
+      <div class="about_img fl"> <img src="/images/about_img2.png"> </div>
+      <div class="about_con fr"> {dede:arclist typeid=29 row=1 flag=p channelid='1' addfields='body'}
+        <div class="about_con_bt zp_bt"> <a href="[field:arcurl/]"> [field:title/]</a> </div>
+        <div class="zp_time">[field:pubdate function="GetDateTimeMK(@me)"/]</div>
+        <div class="about_con_txt zp_txt"> [field:body function='cn_substr(html2text(@me),300)'/]......</div>
+        {/dede:arclist} </div>
+    </div>
+  </div>
+</div>
+<div class="plate">
+  <div class="plate_bt"> <a href="/case"> Cases </a> </div>
+  <ul class="case_plate">
+    {dede:arclist typeid=6}
+    <li>
+      <div class="img"><img src="[field:litpic/]" width="294" height="210"></div>
+      <a href="[field:arcurl/]" class="bl">
+      <div class="case_plate_txt"> [field:title/] </div>
+      <div class="case_plate_ico"> </div>
+      </a> </li>
+    {/dede:arclist}
+  </ul>
+</div>
+
+  <div class="plate_bt" style="margin:0 auto;"> <a href="/service"> Products </a> </div>
+
+<div class="jd">
+  <div class="jd_con"> <a href="/solution/Hand_carry/" target="_blank" class="a">
+    <div>Hand Carry</div>
+    </a>  <a href="/solution/hudongchuanbo/" target="_blank" class="b">
+     <div>Indoor</div>
+    </a><a href="/solution/Outdoor/" target="_blank" class="c">
+    <div>Outdoor</div>
+    </a> <a target="_blank" href="/solution/Solar/" class="d">
+    <div>Solar</div>
+    </a> <a target="_blank" href="/solution/Electrotechnical/" class="e">
+    <div>Electrotechnical</div>
+    </a></div>
+
+
+</div>
+<div class="plate">
+  <div class="plate_bt"> <a href="/service"> Services </a> </div>
+  <div class="plan_box">
+    <div class="plan">
+      <div class="plan_img"> <a href="/service/"><img src="/images/plan_img1.png"></a> </div>
+      <div class="plan_con">
+        <div class="plan_con_bt"> <a href="/service/">Consulting </a> </div>
+        <div class="plan_con_txt"> We’re here to help you if you need it. Our team of experts can be available for your ad-hoc consulting requirements.</div>
+        <a class="more bl" href="/service/">
+        <div class="more_txt">MORE</div>
+        </a> </div>
+    </div>
+    <div class="plan">
+      <div class="plan_img"> <a href="/service/chanyeyanjiu/"><img src="/images/plan_img2.png"></a> </div>
+      <div class="plan_con">
+        <div class="plan_con_bt"> <a href="/service/chanyeyanjiu/">Design </a> </div>
+        <div class="plan_con_txt">  We offer more energy-saving, healthy and environmental lighting design.</div>
+        <a class="more bl" href="/service/chanyeyanjiu/">
+        <div class="more_txt">MORE</div>
+        </a> </div>
+    </div>
+   <div class="plan">
+      <div class="plan_img"> <a href="/service/After_sales/"><img src="/images/plan_img3.png"></a> </div>
+      <div class="plan_con">
+        <div class="plan_con_bt"> <a href="/service/After_sales/">After-sales </a> </div>
+        <div class="plan_con_txt">We have perfect after-sale system.</div>
+        <a class="more bl" href="/service/After_sales/">
+        <div class="more_txt">MORE</div>
+        </a> </div>
+    </div>
+  </div>
+</div>
+<div class="plate">
+  <div class="plate_bt"> <a href="/news"> News </a> </div>
+  <div class="news_box">
+    <div class="news_con fl">
+      <div class="news_box_bt" id="news_box_btl"> <a href="/news/gongsidongtai/" class="a">Company dynamic</a> <a href="javascript:;" class="b cur">1</a> <a href="javascript:;" class="b">2</a></div>
+      <ul class="news_list" id="news_listl">
+        {dede:arclist typeid=27 row=4 flag=p channelid='1' addfields='body'}
+        <li style="display:none"> <a href="[field:arcurl/]" class="news_list_img bl fl"> <img src="[field:litpic/]" width="70" height="70"/>
+          <div class="img_round"></div>
+          </a>
+          <div class="news_list_txt fr">
+            <div class="bt"><a href="[field:arcurl/]" target="_blank">[field:title/]</a></div>
+            <div class="con">[field:body function='cn_substr(html2text(@me),180)'/]...</div>
+          </div>
+        </li>
+        {/dede:arclist}
+      </ul>
+    </div>
+    <div class="news_con fr">
+      <div class="news_box_bt" id="news_box_btr"> <a href="/news/" class="a">Industry information</a> <a href="javascript:;" class="b cur">1</a> <a href="javascript:;" class="b">2</a></div>
+      <ul class="news_list" id="news_listr">
+        {dede:arclist typeid=26 row=4 flag=p channelid='1' addfields='body'}
+        <li style="display:none"> <a href="[field:arcurl/]" class="news_list_img bl fl"> <img src="[field:litpic/]" width="70" height="70"/>
+          <div class="img_round"></div>
+          </a>
+          <div class="news_list_txt fr">
+            <div class="bt"><a href="[field:arcurl/]" target="_blank">[field:title/]</a></div>
+            <div class="con">[field:body function='cn_substr(html2text(@me),180)'/]...</div>
+          </div>
+        </li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{dede:include filename="footer.htm"/}
+</body>
+</html>
+<script type="text/javascript" src="/js/jquery.event.drag-1.5.min.js"></script>
+<script type="text/javascript" src="/js/jquery.touchSlider.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".main_visual").hover(function () {
+            $("#btn_prev,#btn_next").fadeIn()
+        }, function () {
+            $("#btn_prev,#btn_next").fadeOut()
+        })
+        $dragBln = false;
+        $(".main_image").touchSlider({
+            flexible: true,
+            speed: 200,
+            btn_prev: $("#btn_prev"),
+            btn_next: $("#btn_next"),
+            paging: $(".flicking_con a"),
+            counter: function (e) {
+                $(".flicking_con a").removeClass("on").eq(e.current - 1).addClass("on");
+            }
+        });
+        $(".main_image").bind("mousedown", function () {
+            $dragBln = false;
+        })
+        $(".main_image").bind("dragstart", function () {
+            $dragBln = true;
+        })
+        $(".main_image a").click(function () {
+            if ($dragBln) {
+                return false;
+            }
+        })
+        timer = setInterval(function () { $("#btn_next").click(); }, 5000);
+        $(".main_visual").hover(function () {
+            clearInterval(timer);
+        }, function () {
+            timer = setInterval(function () { $("#btn_next").click(); }, 5000);
+        })
+        $(".main_image").bind("touchstart", function () {
+            clearInterval(timer);
+        }).bind("touchend", function () {
+            timer = setInterval(function () { $("#btn_next").click(); }, 5000);
+        })
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#news_listl li:eq(0)").show();
+        $("#news_listl li:eq(1)").show();
+        $("#news_listr li:eq(0)").show();
+        $("#news_listr li:eq(1)").show();
+        var count = $("#countid").val();
+        if (count % 2 == 1)
+            count = count / 2 + 1;
+        else
+            count = count / 2;
+        var count2 = $("#countid2").val();
+        if (count2 % 2 == 1)
+            count2 = count2 / 2 + 1;
+        else
+            count2 = count2 / 2;
+        if(count<8)
+        {           
+            $("#news_box_btl a:eq(8)").hide();
+            if (count < 7) {
+                $("#news_box_btl a:eq(7)").hide();
+                if (count < 6) {
+                    $("#news_box_btl a:eq(6)").hide();
+                    if (count < 5) {
+                        $("#news_box_btl a:eq(5)").hide();
+                        if (count < 4) {
+                            $("#news_box_btl a:eq(4)").hide();
+                            if (count < 3) {
+                                $("#news_box_btl a:eq(3)").hide();
+                                if (count < 2) {
+                                    $("#news_box_btl a:eq(2)").hide();
+                                    if (count < 2) {
+                                        $("#news_box_btl a:eq(2)").hide();
+                                        if (count < 1) {
+                                            $("#news_box_btl a:eq(1)").hide();
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+      
+        if (count2 < 8) {
+            $("#news_box_btr a:eq(8)").hide();
+            if (count2 < 7) {
+                $("#news_box_btr a:eq(7)").hide();
+                if (count2 < 6) {
+                    $("#news_box_btr a:eq(6)").hide();
+                    if (count2 < 5) {
+                        $("#news_box_btr a:eq(5)").hide();
+                        if (count2 < 4) {
+                            $("#news_box_btr a:eq(4)").hide();
+                            if (count2 < 3) {
+                                $("#news_box_btr a:eq(3)").hide();
+                                if (count2 < 2) {
+                                    $("#.news_box_btr a:eq(2)").hide();
+                                    if (count2 < 2) {
+                                        $("#news_box_btr a:eq(2)").hide();
+                                        if (count2 < 1) {
+                                            $("#news_box_btr a:eq(1)").hide();
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        $("#news_box_btl a").each(function (i) {
+            $(this).mouseover(function () {               
+                $(this).addClass("cur").siblings().removeClass("cur");
+                if (i != 0) {
+                    $("#news_listl li").hide();
+                    $("#news_listl li:eq(" + (i - 1) * 2 + ")").show();
+                    $("#news_listl li:eq(" + ((i - 1) * 2 + 1) + ")").show();
+                }
+            })          
+        })
+        $("#news_box_btr a").each(function (i) {
+            $(this).mouseover(function () {
+                $(this).addClass("cur").siblings().removeClass("cur");
+                if (i != 0) {
+                    $("#news_listr li").hide();
+                    $("#news_listr li:eq(" + (i - 1) * 2 + ")").show();
+                    $("#news_listr li:eq(" + ((i - 1) * 2 + 1) + ")").show();
+                }
+            })
+        })
+    })
+</script>
+<!--[if IE 6]>
+    <script type="text/javascript" src="/js/DD_belatedPNG.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('div,img,a,a:hover,input,ul,li');</script>
+<![endif]-->

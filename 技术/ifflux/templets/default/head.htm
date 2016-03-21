@@ -1,0 +1,16 @@
+<link rel="shortcut icon" type="image/x-icon" href="/images/logo.ico">
+<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+<div class="header">
+  <div class="header_box">
+    <div class="logo"> <a href="/"><img src="/images/logo.png"></a> </div>
+    <ul class="nav">
+      <li> <a href="/" class="z {dede:field name=typeid runphp="yes"}(@me=="")? @me="cur":@me="";{/dede:field}">Home</a> </li>
+      {dede:channelartlist typeid='1,6,12,19,24,28,29,30' currentstyle='cur'}
+      <li> <a href="{dede:field name='typeurl'/}" class="z {dede:field.currentstyle/}">{dede:field name='typename'/}</a>
+        <div class="nav2">{dede:channel type='son' noself='yes'}<a href="[field:typelink/]" class="[field:global runphp='yes' name=autoindex](@me < 1)?@me="no_bg":@me="";[/field:global] ">[field:typename/]</a>{/dede:channel}</div>
+      </li>
+      {/dede:channelartlist}
+    </ul>
+  
+  </div>
+</div>

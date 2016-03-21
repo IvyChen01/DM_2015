@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{dede:field.seotitle/}_{dede:global.cfg_webname/}</title>
+<meta content="{dede:field name='keywords'/}" name=keywords>
+<meta content="{dede:field name='description' function='html2text(@me)'/}" name=description>
+<link href="/css/layout.css" rel="stylesheet" type="text/css">
+<!--[if IE 6]>
+    <script type="text/javascript" src="/js/DD_belatedPNG.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('div,img,a,a:hover,input,ul,li');</script>
+<![endif]-->
+
+</head>
+<body>
+{dede:include filename="head.htm"/} 
+{dede:include filename="tonglan.htm"/}
+<div class="plate">
+  <div class="plate_bt"> <a href="#">{dede:field name='typeid' function="GetTopTypename(@me)" /}</a> </div>
+  <div class="in_nav"> {dede:channel type='sun' currentstyle="<a  href='~typelink~' class='cur'>~typename~</a>" } <a href="[field:typelink/]" title="[field:typename /]" >[field:typename /]</a> {/dede:channel} </div>
+  <div class="case_plate2ab">
+    <ul class="case_plate">
+      <div class="case_new">
+      {dede:arclist flag=c}
+        <div class="img"><img src="[field:litpic/]"  width="589" height="421"/></div>
+        <a href="[field:arcurl/]" class="bl">
+        <div class="case_plate_txt">[field:title /]</div>
+        <div class="ico"></div>
+        </a>
+        <div class="case_new_ico"></div>
+        {/dede:arclist}
+      </div>
+      {dede:list pagesize=8}
+      <li>
+        <div class="img"><img src="[field:litpic/]" width="294" height="210"/></div>
+        <a href="[field:arcurl/]" class="bl">
+        <div class="case_plate_txt">[field:title /]</div>
+        <div class="case_plate_ico"></div>
+        </a></li>
+      {/dede:list}
+    </ul>
+    
+    
+    
+  </div>
+    <div class="in_news_cho">
+      {dede:pagelist listsize='4' listitem='pageno pre  next'/}
+    </div>
+</div>
+{dede:include filename="footer.htm"/}
+</body>
+</html>
+<script type="text/javascript">
+        $(function () {
+            $(".in_nav a:eq(0)").addClass("cur").siblings().removeClass("cur");
+            var whichid = $("#whichid").val();           
+            $("#whichid" + whichid).addClass("cur").siblings().removeClass("cur");
+            var countid = $("#countid").val();
+            $(".case_plate2ab").css("width", 1180 * countid);
+            $(".case_cho a:eq(0)").addClass("cur").siblings().removeClass("cur");
+            $(".case_cho a").each(function (m) {
+                $(".case_cho a:eq(" + m + ")").click(function () {
+                    $(".case_plate2ab").animate({ left: -m * 1180 + "px", opacity: 1 }, 500);
+                    $(".case_cho a:eq(" + m + ")").addClass("cur").siblings().removeClass("cur");
+
+                })
+            })
+           $(".in_nav a").removeClass("cur");
+var string = document.location.href+"";
+if(string.indexOf("chanyedichan")>0){
+        $(".in_nav a:eq(0)").addClass("cur")
+}else if(string.indexOf("dushizongheti")>0){){
+        $(".in_nav a:eq(1)").addClass("cur")
+}else if(string.indexOf("Road")>0){){
+        $(".in_nav a:eq(2)").addClass("cur")
+}
+        })
+</script>
