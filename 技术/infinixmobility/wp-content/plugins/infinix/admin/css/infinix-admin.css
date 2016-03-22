@@ -1,0 +1,275 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+#minor-publishing-actions {
+    display: none;
+}
+.button-primary .dashicons {
+    vertical-align: text-top;
+}
+
+/* ---------------------------------------------------------
+smartphone metabox
+--------------------------------------------------------- */
+.kv textarea {
+    width: 100%;
+    min-height: 100px;
+}
+.kv-bg {
+    min-width: 400px;
+}
+.sp-list,.acc-sp-list {
+    width: 100%;
+    margin-top: 10px;
+    border-spacing: 0;
+}
+.sp-item {
+    position: relative;
+    float: left;
+}
+.sp-item-content {
+    position: relative;
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+    border: 1px solid #23282d;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+.sp-item-head {
+    background-color: #23282d;
+    color: #fff;
+    padding: 10px;
+    cursor: move;
+}
+.sp-item-body {
+    padding: 5px 10px;
+}
+.sp-item-body hr {
+    margin: 10px 0;
+}
+.sp-item label {
+    font-weight: bold;
+}
+.sp-item textarea {
+    width: 100%;
+    min-height: 100px;
+}
+.sp-item-delete {
+    float: right;
+    color: #fff;
+}
+.sp-item-delete:hover {
+    color: #f00;
+}
+.sp-item a {
+    text-decoration: none;
+}
+.sp-list td,.acc-sp-list td {
+    width: 100%;
+}
+.sp-input-bg {
+    min-width: 400px;
+}
+
+.buy-links {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.buy-links caption {
+    font-size: 18px;
+    font-weight: bold;
+}
+.buy-links th {
+    text-align: left;
+}
+.buy-country {
+    /*width: 20%;*/
+}
+.buy-seller {
+    /*width: 20%;*/
+}
+.buy-url {
+    /*width: 60%;*/
+}
+.buy-item {
+    vertical-align: bottom;
+    clear: both;
+}
+.buy-item td {
+    vertical-align: middle;
+}
+.buy-item input {
+    width: 100%;
+}
+.buy-item-delete {
+    text-decoration: none;
+    float: right;
+}
+.photo-list {
+    width: 100%;
+}
+.photo-list th {
+    text-align: left;
+}
+.photo-add {
+    float: right;
+}
+.photo-input-url {
+    width: 100%;
+}
+.photo-thumbnail img {
+    max-width: 100%;
+}
+.feature-list {
+    width: 100%;
+}
+.feature-list th {
+    text-align: left;
+}
+.feature-item {
+    vertical-align: top;
+}
+.feature-item input,
+.feature-item textarea {
+    width: 100%;
+}
+.feature-item textarea {
+    height: 27px;
+    margin: 1px;
+    overflow: hidden;
+}
+.feature-item-delete {
+    float: right;
+    text-decoration: none;
+}
+.video input {
+    min-width: 400px;
+}
+
+
+.qa-list {
+    width: 100%;
+    margin-top: 10px;
+    border-spacing: 0;
+}
+.qa-item {
+    position: relative;
+    float: left;
+}
+.qa-item-content {
+    position: relative;
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+    border: 1px solid #23282d;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+.qa-item-head {
+    background-color: #23282d;
+    color: #fff;
+    padding: 10px;
+    cursor: move;
+}
+.qa-item-body {
+    padding: 5px 10px;
+}
+.qa-item-body hr {
+    margin: 10px 0;
+}
+.qa-item label {
+    font-weight: bold;
+}
+.qa-item input {
+    width: 100%;
+}
+.qa-item textarea {
+    width: 100%;
+    min-height: 100px;
+}
+.qa-item-delete {
+    float: right;
+    color: #fff;
+}
+.qa-item-delete:hover {
+    color: #f00;
+}
+.qa-item a {
+    text-decoration: none;
+}
+.qa-list td {
+    width: 100%;
+}
+.sn-list {
+    width: 100%;
+}
+.sn-list th {
+    text-align: left;
+}
+.sn-item {
+    vertical-align: top;
+}
+.sn-item input {
+    width: 100%;
+}
+.sn-item-delete {
+    float: right;
+    text-decoration: none;
+}
+
+.banner-info input {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.news-info input,.news-info textarea {
+    width: 100%;
+    margin:  5px 0;
+}
+
+.sn-city {
+    border: 2px solid #333;
+    margin-bottom: 15px;
+}
+.sn-city-head {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+}
+.sn-city-delete {
+    float: right;
+}
+
+.update-box {
+    border: 1px solid #23282d;
+    padding: 5px;
+}
+.update-box h4 {
+    color: #eee;
+    background-color: #23282d;
+    padding: 5px 0;
+    margin: -5px -5px 0;
+    text-indent: 5px;
+}
+.update-list {
+    width: 100%;
+    margin: 5px 0;
+}
+.manual-list {
+    width: 100%;
+}
+.update-list th,
+.manual-list th {
+    text-align: left;
+}
+.update-list input,
+.manual-list input {
+    width: 100%;
+}
+.update-list .update-delete,
+.manual-list .manual-add {
+    float: right;
+}

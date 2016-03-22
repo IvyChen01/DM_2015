@@ -1,0 +1,10 @@
+body {
+    text-align: right;
+    direction: rtl;
+}
+.phone-banner img {
+    margin: 0 0 0 auto;
+}
+.nav-pills > li {
+    float: right;
+}
