@@ -1,0 +1,32 @@
+<?php
+$_CACHE['settings'] = array (
+  'accessemail' => '',
+  'censoremail' => '',
+  'censorusername' => '',
+  'dateformat' => 'y-m-d',
+  'doublee' => '0',
+  'nextnotetime' => '0',
+  'timeoffset' => '28800',
+  'privatepmthreadlimit' => '25',
+  'chatpmthreadlimit' => '30',
+  'chatpmmemberlimit' => '35',
+  'pmfloodctrl' => '15',
+  'pmcenter' => '1',
+  'sendpmseccode' => '1',
+  'pmsendregdays' => '0',
+  'maildefault' => 'xclub@infinixmobility.com',
+  'mailsend' => '2',
+  'mailserver' => 'smtp.qiye.163.com',
+  'mailport' => '25',
+  'mailauth' => '1',
+  'mailfrom' => 'xclub@infinixmobility.com',
+  'mailauth_username' => 'xclub@infinixmobility.com',
+  'mailauth_password' => 'xclub@369',
+  'maildelimiter' => '0',
+  'mailusername' => '1',
+  'mailsilent' => '1',
+  'version' => '1.6.0',
+  'timeformat' => 'H:i',
+);
+
+?>

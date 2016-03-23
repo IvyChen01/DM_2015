@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	
+	<language type="pl" using="true">
+		<item key="inefficacy_save" value="Proszę wybrać obrazek z dysku lub utworzyć za pomocą kamerki internetowej.\21" />
+		<item key="camera_muted" value="Nie można połączyć się z urządzeniem.\21" />
+		<item key="camera_not_exist" value="Urządzenie nie zostało wykryte.\21" />
+		<item key="face_save_success" value="Awatar został zapisany poprawnie!\21" />
+		<item key="face_save_error" value="Upsss! Wystąpił błąd podczas dodawania awatara. Spróbuj raz jeszcze.\21" />
+		<item key="face_saving" value="Zapisuję awatar...  Jeszcze chwileczkę..." />
+		<item key="face_save_ioerror" value="I/O wystąpił błąd podczas wysyłania awatara.\21" />
+		<item key="upload_volume_1M" value="Proszę wybrać obrazek nie przekraczający wielkości 1MB.\21" />
+		<item key="upload_type_label" value="Obrazek" />
+		<item key="upload_type_error" value="Błęe rozszerzenie pliku. Akceptowane rozszerzenia jpg,gif,png." />
+		<item key="upload_uploading" value="Wczytuję obrazek, momencik..." />
+		<item key="upload_ioerror" value="I/O Upsss! Wystąpił błąd podczas dodawania awatara.\21" />
+		<item key="upload_httperror" value="Wystąpił błąd z serwerem HTTP podczas dodawania pliku.\21" />
+		<item key="upload_securityerror" value="Wystąpił błąd bezpieczeństwa podczas dodawania pliku.\21" />
+		<item key="upload_progress" value="Plik został dodany." />
+		<item key="please_select_region" value="Wybierz obszar obrazka" />
+		<item key="browse_file_cancel" value="Anuluj\21" />
+		<item key="callback_uploaded_ioerror" value="Bład podczas wczytywania. Proszę raz jeszcze wysłać obrazek.\21" />
+		<item key="uploaded_invalid_type" value="Dodany plik nie jest obrazkiem.\21" />
+		<item key="preview_note" value="Modyfikacja awatara została ukończona. Obrazek został przedstawiony w 3 rozmiarach.\3A" />
+		<item key="gif_submitting" value="Zapisuję obrazek..." />
+		<item key="gif_reopen" value="Otwieranie obrazka nie powiodło się, spróbuj raz jeszcze..." />
+		<item key="gif_frame_overflow" value="Obrazek zawiera zbyt wiele klatek. Proszę wybrać inny..." />
+		<item key="button_browse" value="Przeglądaj" />
+		<item key="button_camera_screen" value="Strzel fotkę" />
+		<item key="button_reset" value="Reset" />
+		<item key="button_return" value="Powrót" />
+		<item key="button_save" value="Zapisz awatar" />
+		<item key="button_submit" value="Potwierdź\20" />
+		<item key="tab_upload" value="Wybierz" />
+		<item key="tab_camera" value="Kamerka internetowa" />
+		<item key="note_right_text" value="Wybierz obszar obrazka" />
+		<item key="note_right_move" value="Przenieś" />
+		<item key="note_right_zoom" value="Zmniejsz" />
+		<item key="note_right_face" value="Podgląd awatara" />
+		<item key="note_main" value="Proszę wybrać obrazek z dysku lokalnego." />
+
+		<item key="note_success" value="Dodawanie zakończone!" />
+		<item key="note_3size" value="Obrazek został przedstawiony w 3 rozmiarach." />
+		<item key="button_finish" value="Ukończono" />
+		<item key="upload_downing" value="Ładowanie, jeszcze chwileczkę..." />
+		<item key="camera_no_device" value="Nie odnaleziono urządzenia" />
+		<item key="js_connect_error" value="javascriptConnect Error, Proszę odświeżyć stronę, aby zobaczyć nowy awatar." />
+		<item key="player_ver_error">
+			<value>
+				<![CDATA[
+					<font size='14' color='#FF0000'>Wygląda na to, że wtyczka flash w Twojej przeglądarce jest już nieaktualna. Proszę dokonać <font color='#0000FF'><u>aktualizacji!</u></font></font>
+				]]>
+			</value>
+		</item>
+	</language>
+
+</strings>
