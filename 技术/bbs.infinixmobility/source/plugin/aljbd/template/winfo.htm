@@ -1,0 +1,41 @@
+{template common/header_ajax}
+<script src="static/js/seditor.js" type="text/javascript" reload="1"></script>
+<h3 class="flb">
+	<em>{lang aljbd:s170}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<iframe name="formsubmit" width="1" height="1" ></iframe>
+<form id="addbc" method="post" action="plugin.php?id=aljbd&act=winfo"  target="formsubmit">
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+<input name="bid" type="hidden" value="{$_GET['bid']}" />
+		<div class="c">
+        
+        
+        	<table cellspacing="0" cellpadding="0" border="0">
+                
+  				<tbody>
+				<tr>
+				<td colspan="4">
+					<div class="tedt" style="width:400px;">
+					<div class="bar">
+					<div class="fpd">
+					<a href="javascript:;" title="{lang aljbd:s171}" class="fbld" onclick="seditor_insertunit('reply', '[b]', '[/b]');doane(event);">B</a>
+					<a fwin="apply" href="javascript:;" title="{lang aljbd:s172}" class="fclr" id="replyforecolor" onclick="showColorBox(this.id, 2, 'reply');doane(event);" initialized="true">Color</a>
+					<a fwin="apply" id="replyimg" href="javascript:;" title="{lang aljbd:s173}" class="fmg" onclick="seditor_menu('reply', 'img');doane(event);">Image</a>
+					<a fwin="apply" id="replyurl" href="javascript:;" title="{lang aljbd:s174}" class="flnk" onclick="seditor_menu('reply', 'url');doane(event);">Link</a>
+					</div></div>
+					<div class="area" style="background:#FFF;">
+					<textarea fwin="apply" rows="3" name="winfo" class="pt" id="replymessage" style="background:#FFF;"></textarea>
+					</div>
+					</div>
+				</td>
+				</tr>                            
+            </tbody></table>
+	
+</div>
+<p class="o pns">
+	<button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljbd:s175}</strong></button>
+</p>
+</form>
+{template common/footer_ajax}

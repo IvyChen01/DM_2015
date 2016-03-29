@@ -1,0 +1,123 @@
+{template common/header_ajax}
+<style type="text/css">
+	.tfm th {
+	  padding-right: 5px;
+	  padding-top: 9px;
+	  width: 130px;
+	}
+	.tfm th, .tfm td {
+  vertical-align: top;
+}
+caption, th {
+  font-weight: 400;
+  text-align: left;
+}
+.spre {
+  color: #CCCCCC;
+  cursor: pointer;
+}
+.tfm th, .tfm td {
+  padding: 7px 0;
+  vertical-align: top;
+}
+.mbn {
+  margin-bottom: 5px !important;
+  width:373px;
+}
+.tfm .pt, .tfm .px {
+  margin-right: 3px;
+  width: 330px;
+}
+.bupload {
+  background: none repeat scroll 0 0 #F5F5F5;
+  border: 1px dotted #DDDDDD;
+  padding: 10px;
+  width: 320px;
+}
+.mbm {
+  margin-bottom: 10px !important;
+}
+.vm {
+  vertical-align: middle !important;
+}
+label {
+  cursor: pointer;
+}
+.pr, .pc {
+  margin: 0 5px 1px 0;
+  padding: 0;
+  vertical-align: middle;
+}
+.tfm td.xg1 {
+  width: 420px;
+}
+.tfm th, .tfm td {
+  padding: 7px 0;
+  vertical-align: top;
+}
+.xg1, .xg1 a {
+  color: #999999 !important;
+}
+</style>
+<script src="static/js/seditor.js" type="text/javascript" reload="1"></script>
+<h3 class="flb">
+	<em>{lang aljbd:s201}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<iframe name="formsubmit" width="1" height="1" ></iframe>
+<form id="addbc" method="post" action="plugin.php?id=aljbd&act=adv"  target="formsubmit" enctype="multipart/form-data">
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+<input name="bid" type="hidden" value="{$_GET['bid']}" />
+		<div class="c">
+        
+        
+        	<table class="tfm" cellspacing="0" cellpadding="0" border="0">
+                
+  				<tbody>
+				<tr>
+				<th>{lang aljbd:s202}</th>
+				<td>
+				<div class="mbn"><input type="text" value="$advurl[1]" class="px" name="advurl[1]"></div>
+				<div class="bupload mbm">										
+				<input type="file" size="40" class="pf" name="adv[1]">
+				{if $adv[1]}
+				<div class="mtm">												
+				{if $advurl[1]}<a target="_blank" href="$advurl[1]"><img width="160" class="vm" alt="" src="$adv[1]"></a>{else}<img width="160" class="vm" alt="" src="$adv[1]">{/if}
+				<label><input type="checkbox" value="1" class="pc vm" name="advdelete[1]">{lang aljbd:s203}</label>
+				</div>
+				{/if}									
+				</div>
+
+				<div class="mbn"><input type="text" value="$advurl[2]" class="px" name="advurl[2]"></div>
+				<div class="bupload mbm">										
+				<input type="file" size="40" class="pf" name="adv[2]">
+				{if $adv[2]}
+				<div class="mtm">												
+				{if $advurl[2]}<a target="_blank" href="$advurl[2]"><img width="160" class="vm" alt="" src="$adv[2]"></a>{else}<img width="160" class="vm" alt="" src="$adv[2]">{/if}
+				<label><input type="checkbox" value="1" class="pc vm" name="advdelete[2]">{lang aljbd:s204}</label>
+				</div>
+				{/if}									
+				</div>								
+													
+				<div class="mbn"><input type="text" value="$advurl[3]" class="px" name="advurl[3]"></div>
+				<div class="bupload mbm">										
+				<input type="file" size="40" class="pf" name="adv[3]">
+				{if $adv[3]}
+				<div class="mtm">												
+				{if $advurl[3]}<a target="_blank" href="$advurl[3]"><img width="160" class="vm" alt="" src="$adv[1]"></a>{else}<img width="160" class="vm" alt="" src="$adv[3]">{/if}
+				<label><input type="checkbox" value="1" class="pc vm" name="advdelete[3]">{lang aljbd:s205}</label>
+				</div>
+				{/if}									
+				</div>
+				</td>
+				<td class="xg1">{lang aljbd:s206}<br></td>
+				</tr>
+            </tbody></table>
+	
+</div>
+<p class="o pns">
+	<button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljbd:s207}</strong></button>
+</p>
+</form>
+{template common/footer_ajax}

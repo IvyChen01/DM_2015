@@ -1,0 +1,190 @@
+{template common/header}
+<link href="source/plugin/aljes/css/v3.css" rel="stylesheet">
+<link href="source/plugin/aljes/css/v2.css" rel="stylesheet">
+<style id="diy_style" type="text/css"></style>
+<script type="text/javascript" src="source/plugin/aljes/js/jquery.js"></script>
+<script type="text/javascript">
+    var jq = jQuery.noConflict();
+</script>
+<style type="text/css">
+.media-cap img {
+  width: 64px;
+  height:64px;
+}
+	.media-cap {
+  background: none repeat scroll 0 0 #F8F8F8;
+  border: 1px solid #F2F1EC;
+  display: block;
+  float: left;
+  height: 64px;
+  margin-right: 10px;
+  overflow: hidden;
+  width: 64px;
+}
+.viewad-title {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 50px;
+  margin-bottom: 10px;
+}
+</style>
+<div style="width:960px;margin: 0 auto;">
+<div class="bm cl" id="pt">
+    <div class="z">
+        <a title="{$_G['setting']['bbname']}" class="nvhm" href="./">{$_G['setting']['bbname']}</a><em>&rsaquo;</em><a href="<!--{if $config['isrewrite']}-->{$config['re_index']}<!--{else}-->plugin.php?id=aljes<!--{/if}-->">$config['daohang']</a><em>&rsaquo;</em>{$lp['title']}</div>
+    {if $_G['uid']}<div class="z" style="float:right;padding-right:0;"><a data-type="user" data-toggle="userAuth" href="plugin.php?id=aljes&act=member" id="manage"><i class="icon-cog"></i>{lang aljes:index_1}</a></div>{/if}
+</div>
+<div class="wp cl">
+    <div class="wrapper clearfix"><!-- 定义一些公用的内容--><!-- 高亮关键字-->
+        <div class="viewad"><h2 class="viewad-title">{$lp['title']}&nbsp;</h2><div class="viewad-info sep"></div>
+        </div><div class="maincol">
+		<div class="viewad-meta">
+                <div class="pull-right action">
+				$config['fenxiang']
+				</div><span title="" data-toggle="tooltip" data-original-title="{lang aljes:view_2}{eval echo gmdate('Y-m-d H:i',$lp['addtime']+8*3600);}">{eval echo gmdate('Y-m-d H:i',$lp['updatetime']+8*3600);} &nbsp;</span>
+                <span id="counter">{$lp['views']}</span>{lang aljes:view_4}&nbsp;{lang aljes:view_5}{$lp['id']} &nbsp;<span class="frommobile"></span></div>
+            <!-- ad 描述信息-->
+			{if $lp[pic1]}
+            <div class="img sep">
+                {loop $pics $p $pic}
+                {if $lp[$pic]}
+                <div class="img-pane {if $pic=='pic1'}active{/if}" id="id_56bce4f5287ffb503ae8bfff4d34f397">
+                    <img alt="{$lp['title']}" src="{eval echo $lp[$pic].'.640x480.jpg';}">
+                </div>
+                <a class="img-trigger {if $pic=='pic1'}on{/if}" href="javascript:;" onclick="view(this)">
+                    <img src="{eval echo $lp[$pic].'.64x64.jpg';}">
+                </a>
+                {eval unset($pics[$p]);}
+                {/loop}
+                {/loop}
+
+                {loop $pics $p $pic}
+                <span class="img-trigger"><img src="{$config['mr_src']}"></span>
+                {/loop}
+                <div id="exif"></div></div>
+				{/if}
+<style type="text/css">
+	.normal {
+  font: 500 14px/1.8 'Hiragino Sans GB',Arial,SimSun,'WenQuanYi Micro Hei',sans-serif;
+}
+.textwrap {
+  font: 500 14px/1.8 'Hiragino Sans GB',Arial,SimSun,'WenQuanYi Micro Hei',sans-serif;
+}
+#metadata {
+  min-height: 0;
+}
+</style>
+            <div class="media media-box clearfix sep"><div class="media-cap"><i class="icon-phone"></i></div>
+                <div class="media-body">
+                    <span class="pull-left" id="num">{if $config['isyouke']}{if $_G['uid']}{$lp['contact']}{else}$tel{/if}{else}{$lp['contact']}{/if}</span>
+                    <div class="contact-actions">
+						{if !$_G['uid']&&$config['isyouke']}<a class="show-contact button_lj" onclick="<!--{if !$_G['uid']}-->showWindow('ljlogin', 'member.php?mod=logging&action=login&infloat=yes', 'get', 1);<!--{/if}-->">{lang aljes:view_100}</a>{/if}
+                    </div>
+				</div>
+			</div>
+			<div class="viewad-descript"><div class="typo-p textwrap" id="metadata"><span class="normal">{lang aljes:post_8}<a target="_blank" href="plugin.php?id=aljes&zufangtype={$lp['zufangtype']}">{$zufangtype[$lp['zufangtype']]}</a>&nbsp; </span><span class="normal">{lang aljes:post_9}{if $lp['zujin']}$lp['zujin']{lang aljes:index_16}{else}{lang aljes:view_14}{/if}</span>{if $lp['qq']}<span class="normal">{lang aljes:post_33}<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$lp['qq']}&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{$lp['qq']}:46" alt="{lang aljes:view_8}" title="{lang aljes:view_8}"></a></span>{/if}{if $lp['new']}<span class="normal">{lang aljes:post_35}$new_types[$lp['new']]</span>{/if}
+			{if $lp['lxr']}<span class="long">{lang aljes:post_37}{$lp['lxr']}</span>{/if}
+			<span class="long">{lang aljes:view_9}{$regions[$lp['region']]['subject']}
+                    <span>&nbsp;-&nbsp;</span>
+                    {$regions[$lp['region1']]['subject']}
+                    <span>&nbsp;-&nbsp;{$lp['region2']}&nbsp;</span>
+					<span class="long"><font style="color:red;">{lang aljes:view_11}</font>{$shengming}</span>
+					<a target="_blank" href="http://ditu.baidu.com/?s=s%26wd%3D{$url}">{lang aljes:view_1}</a></span><div class="clear"></div></div></div>
+            <div class="typo-p textwrap">
+				<style type="text/css">
+					.app-label {
+					  text-align: right;
+					}
+				</style>
+               {eval echo discuzcode($lp['content'])}
+			   {if $lp['phone']}<p class="app-label">{lang aljes:view_102}<a target="_blank" href="{$_G['siteurl']}plugin.php?id=aljes&mobile=yes">{$lp['phone']}{lang aljes:view_103}</a>{lang aljes:view_104}</p>{/if}
+			   </div>
+			{if file_exists('source/plugin/aljes/template/com/commen.htm')}
+				{template aljes:com/commen}
+			{/if}
+            <div class="alert">
+                <i class="icon-info">&nbsp;{lang aljes:view_6}</i>
+            </div>
+        </div>
+        <div class="sidecol last">
+            <div class="user-info">
+                <div class="media-cap">
+                    <a href="home.php?mod=space&uid={$lp['uid']}">
+                        <img src="{eval echo avatar($lp['uid'],'middle',true);}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a class="userinfo-name" href="home.php?mod=space&uid={$lp['uid']}" target="_blank">{$lp['username']}</a>
+                    <span class="icon-phone-done"></span>
+                    <div class="userinfo-des">{lang aljes:view_7}{eval $user=getuserbyuid($lp['uid']); echo gmdate('Y-m-d',$user['regdate']+28800);}</div>
+                    <div class="verify-info">
+						
+						<a class="button_lj" style="height:20px;line-height:20px;padding:0 10px;" title="{lang aljes:view_12}" onclick="showWindow('sendpm', this.href);" href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_$lp['uid']&amp;touid=$lp['uid']&amp;pmid=0&amp;daterange=2">{lang aljes:view_12}</a>
+						{if file_exists('source/plugin/aljes/template/com/guanzhu.htm')}
+							{template aljes:com/guanzhu}
+						{/if}
+                    </div>
+                </div>
+            </div>
+			{if $lp['qrcode']&&file_exists("source/plugin/aljes/template/com/qrcode.php")}
+			<div style="height:248px;width:248px;text-align:center;border: 1px solid #eee;padding: 10px;" >
+						<p >{lang aljes:qrcode_1}</p>
+                        <img style="height:240px;width:240px;" src="{$_G['siteurl']}/source/plugin/aljes/images/qrcode/{$lp['qrcode']}">
+						
+            </div>
+			{/if}
+			<div class="sep"></div>
+			<style type="text/css">
+.sidebar-filter dl{ width:260px;  padding:5px; height:70px; border-bottom:1px #e3e3e3 solid; border-top:1px #fff solid}
+.sidebar-filter dl dt{ float:left}
+.sidebar-filter dl dt img{ width:64px; height:64px }
+.sidebar-filter dl dd{ float:right; width:186px; height:65px; padding-top:5px}
+.sidebar-filter dl dd p em{color:#F60; padding:0 5px 0 0; font-family:Arial; font-size:14px;}
+.sidebar-filter ul{ padding:10px}
+.sidebar-filter h4 {
+  background: none repeat scroll 0 0 #F2F1EC;
+  margin: 0;
+  padding: 10px;
+}
+.sidebar-filter {
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+			</style>
+			<div class="sidebar-filter sep">
+			<h4 class="typo-h5">{lang aljes:view_10}{if file_exists("source/plugin/aljes/template/com/qita.php")}<a href="plugin.php?id=aljes&act=all&uid={$lp['uid']}" style="float:right;">{lang aljes:more}</a>{/if}</h4>
+              {loop $qita $t}          
+            <dl>
+                <dt>
+                    <a title="$t['title']" href="<!--{if $config['isrewrite']}-->{$t['rewrite']}<!--{else}-->plugin.php?id=aljes&act=view&lid={$t['id']}<!--{/if}-->"><img src="{if $t['pic1']}{eval echo $t['pic1'].'.64x64.jpg';}{else}{$config['mr_src']}{/if}"></a>
+                </dt>
+                <dd>
+               		<p>{if $t['wanted']}<font style="color:#EC5524">[{$wanted_types[$t['wanted']]}]</font>{/if}&nbsp;<a title="$t['title']" href="<!--{if $config['isrewrite']}-->{$t['rewrite']}<!--{else}-->plugin.php?id=aljes&act=view&lid={$t['id']}<!--{/if}-->"><!--{eval echo cutstr($t['title'],23,'');}--></a></p>
+                	<p><a href="<!--{if $config['isrewrite']}-->{$t['rewrite']}<!--{else}-->plugin.php?id=aljes&act=view&lid={$t['id']}<!--{/if}-->">{if $t['zujin']}<em>$t['zujin']</em>{lang aljes:index_16}{else}{lang aljes:view_14}{/if}</a></p>
+                    <p>{eval echo dgmdate($t['updatetime']);}</p>
+                </dd>
+            </dl>
+               {/loop} 
+                </div>
+            <div class="sep"></div>
+            <div style="width: 270px; top: 0px; position: static;" class="media-box-fixed">
+                {if file_exists('source/plugin/aljes/template/com/viewadv1.htm')}
+                {template aljes:com/viewadv1}
+                {/if}
+            </div>
+			<!--[diy=aljes_view_00]--><div id="aljes_view_00" class="area"></div><!--[/diy]-->
+            </div></div></div></div>
+        <script type="text/javascript">
+            function view(a) {
+                jq(".img-trigger").removeClass('on');
+                jq(a).addClass('on');
+                jq(".img-pane").removeClass('active');
+                jq(a).prev('.img-pane').addClass('active');
+            }
+        </script>
+		<!--[diy=aljes_view_01]--><div id="aljes_view_01" class="area"></div><!--[/diy]-->
+{if file_exists('source/plugin/aljes/template/com/color.htm')}
+{template aljes:com/color}
+{/if}
+{template common/footer}

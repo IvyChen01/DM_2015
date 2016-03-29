@@ -1,0 +1,459 @@
+{template aljbd:view_header}
+
+    <script language="javascript">
+    jq(function(){
+        jQuery.fn.extend({
+            showWordCount: function() {
+                var _max = 140;
+                var _length = jq(this).val().length;
+                if(_length > _max) {
+                    jq(this).val(jq(this).val().substring(0, _max));
+                }
+                jq(this).closest('form').find('.action .y i').text(_max-_length);
+            }
+        });
+    if(jq.browser.msie){
+        jq('textarea').bind('propertychange', function() {
+            jq(this).showWordCount();
+        });
+        }else{
+        	jq('textarea').bind('keyup mouseup', function() {
+            jq(this).showWordCount();
+        });
+        }
+        jq('textarea').each(function(){
+        	if(jq(this).val().length>0)
+        		jq(this).showWordCount();
+        })
+    });
+    </script><div class="wp cl" id="bdw">
+<div class="main">
+
+{if file_exists('source/plugin/aljbd/com/gg.php')&&$gg['0']}
+<div class="shop_notice">
+<span>{lang aljbd:s123}</span>
+<DIV id="announcement" onMouseOver="if(!anncount) {clearTimeout(annst);annst = 0}" onMouseOut="if(!annst) annst = setTimeout('announcementScroll()', anndelay);"> 
+<div id="announcementbody" style="overflow-y:hidden; line-height: 30px; height: 30px">
+{loop $gg $g}
+<ul id="shop_notice">
+<li>{$g}</li>
+</ul>
+{/loop}
+</div>
+</div>
+</div>
+{/if}
+<script type="text/javascript"> 
+var anndelay = 3000; 
+var anncount = 0; 
+var annheight = 30; 
+var annst = 0; 
+function announcementScroll() 
+{ 
+if( ! annst) 
+{ 
+$('announcementbody').innerHTML += '<br style="clear: both" />' + $('announcementbody').innerHTML; 
+$('announcementbody').scrollTop = 0; 
+if($('announcementbody').scrollHeight > annheight * 3) 
+{ 
+annst = setTimeout('announcementScroll()', anndelay); 
+} 
+else 
+{ 
+$('announcement').onmouseover = $('announcement').onmouseout = null; 
+} 
+return; 
+} 
+if(anncount == annheight) 
+{ 
+if($('announcementbody').scrollHeight - annheight <= $('announcementbody').scrollTop) 
+{ 
+$('announcementbody').scrollTop = $('announcementbody').scrollHeight / 2 - annheight; 
+} 
+anncount = 0; 
+annst = setTimeout('announcementScroll()', anndelay); 
+} 
+else 
+{ 
+$('announcementbody').scrollTop ++ ; 
+anncount ++ ; 
+annst = setTimeout('announcementScroll()', 10); 
+} 
+} 
+announcementScroll(); 
+</script> 
+<div class="intro_base">
+<div class="viewtitle cl">
+<h2>{lang aljbd:s124}</h2>{if $config['fenxiang1']}<div class="y">$config['fenxiang1']</div>{/if}
+</div>
+<div class="content cl">
+<div style="width:180px;float:left;margin:15px;"><img width="170" height="170" src="{if file_exists($bd['logo'])}$bd['logo']{else}source/plugin/aljbd/images/zz.jpg{/if}" alt=""></div>
+<div style="width:463px;float:left;">
+<p style="text-align:center;font-size:20px;"><b style="color:#ff7e00"><!--{eval echo cutstr($bd['name'],23,'');}--></b>{if $sign}<img title="{lang aljbd:attestation_9}" src="source/plugin/aljbd/images/vipper.png" style="margin-left:5px;position: relative;top: 4px;">{/if}</p>
+<p><span>{lang aljbd:s256}</span><a style="color:#999999;" href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($bd['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&type=&subtype=&region=$bd['region']&subregion={/if}" target="_blank">{$rlist[$bd['region']]['name']}</a>{if $bd['subregion']} > <a style="color:#999999;" href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($bd['region'])}_{eval echo intval($bd['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&type=&subtype=&region=$bd['region']&subregion=$bd['subregion']{/if}" target="_blank">{$rlist[$bd['subregion']]['name']}</a>{/if}</p>
+<p><span>{lang aljbd:s125}</span><font style="color:#999999;">{$bd['addr']}</font></p>
+<p class="tel"><span>{lang aljbd:s126}</span><font style="color:#999999;">{$bd['tel']}</font></p>
+<p><span>{lang aljbd:s127}</span><a style="color:#999999;" href="{if $config['isrewrite']}brand_{$bd['type']}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&type=$bd['type']&subtype=&region=&subregion={/if}" target="_blank">{$typelist[$bd['type']]['subject']}</a>{if $bd['subtype']} > <a style="color:#999999;" target="_blank" href="{if $config['isrewrite']}brand_{$bd['type']}_{eval echo intval($bd['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&type={$bd['type']}&subtype={$bd['subtype']}&region=&subregion={/if}">{$typelist[$bd['subtype']]['subject']}</a> {/if}</p>
+{if $bd['qq']}
+<style type="text/css">
+	.alj_qq img{
+		position:relative;
+		top:4px;
+	}
+</style>
+{if $bd['qq']&&strlen($bd['qq']) > 6}<p class="alj_qq"><span >{lang aljbd:qq}</span>{$qq}</p>{/if}
+{/if}
+<div class="shop_opt cl" style="bottom:90px;width:35%">
+{if $bd['business_hours']}
+<span >{lang aljbd:business_hours}&#65306;{$bd['business_hours']}</span>
+{/if}
+</div>
+<div class="shop_opt cl" style="bottom:60px;width:35%">
+{if $bd['bus_routes']}
+<span >{lang aljbd:bus_routes}&#65306;{$bd['bus_routes']}</span>
+{/if}
+</div>
+<div class="shop_opt cl" style="bottom:30px;">
+{if file_exists('source/plugin/aljbd/com/winfo.php')}
+<span onclick="showWindow('winfo', 'plugin.php?id=aljbd&act=winfo&bid={$_GET['bid']}');" id="iwantcorrect" class="btn_nomal z">{lang aljbd:s128}</span>
+{/if}
+{if file_exists('source/plugin/aljbd/template/com/iwantclaim.htm')}
+{template aljbd:com/iwantclaim}
+{/if}
+</div>
+</div>
+</div>
+</div>
+{if $t}
+<div class="shop_list cl">
+<div class="viewtitle cl">
+<h2>{lang aljbd:s266}</h2>
+<a href="{if $config['isrewrite']}brand_good_{$_GET['bid']}.html{else}plugin.php?id=aljbd&act=good&bid={$bd['id']}{/if}" class="more">{lang aljbd:s267}</a>
+</div>
+<!--shop new good--><ul>
+<!--{eval  $i=1;}-->
+{loop $t $g}
+<li <!--{if $i%3===0}-->class="mr0"<!--{/if}--> style="height:290px;">
+<div class="thumb"><a href="{if $config['isrewrite']}brand_good_{$g['bid']}_{$g[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$g['bid']}&gid={$g[id]}{/if}" target="_blank"><img alt="$g['name']" src="{$g['pic1']}.205x205.jpg"></a></div>
+<h3 class="xi2">
+<a title="$g['name']" href="{if $config['isrewrite']}brand_good_{$g['bid']}_{$g[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$g['bid']}&gid={$g[id]}{/if}" target="_blank">$g['name']</a>
+</h3>
+<p class="xg1 mtn cl">
+<a target="_blank" title="{$bdlist[$g['bid']]['name']}" href="{if $config['isrewrite']}brand_shop_{$g['bid']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}" class="z address">{$bdlist[$g['bid']]['name']}</a>
+<span class="y"></span>
+</p>
+<p class="xi1"><strong>{if $g['price1']}&#65509;{eval echo number_format($g['price1'],2);}{else}{lang aljbd:s268}{/if}</strong>{if $g['price2']}&nbsp;&nbsp;&nbsp;<s>&#65509;{eval echo number_format($g['price2'],2);}</s>{/if}</p>
+<p class="s2 xg1 cl">
+<span class="z">{eval echo gmdate('Y-m-d',$g['dateline']+8*3600);}</span>
+<span class="y">
+<a href="{if $config['isrewrite']}brand_good_{$g['bid']}_{$g[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$g['bid']}&gid={$g[id]}{/if}" target="_blank">{lang aljbd:s269}({$g['view']})</a>
+</span>
+</p><!--newcomment-->
+<div class="comment cl"></div>
+</li>
+<!--{eval  $i++;}-->
+{/loop}
+</ul></div>
+{/if}
+<div style="border-top:2px solid #588c0e;background-color:#FFFFFF;margin-top:20px;">
+<div class="intro_info">
+<h2 style="border-bottom:1px dotted #dedede;padding:5px 0;margin-top:-17px;" class="title">{lang aljbd:s130}</h2>
+<style type="text/css">
+	#intro_content img{
+		max-width:650px;
+	}
+</style>
+<div style="overflow:hidden;position:relative;padding:5px 0;" id="intro_content">
+{$bd['intro']}</div>
+</div>
+</div>
+<div style="border-top:2px solid #588c0e;background-color:#FFFFFF;margin-top:20px;">
+<div class="intro_info">
+<h2 style="border-bottom:1px dotted #dedede;padding:5px 0;margin-top:-17px;" class="title">{lang aljbd:s132}</h2>
+<div style="max-height:400px;_height: 400px;overflow:hidden;position:relative;padding:5px 0;" id="intro_content">
+{$bd['other']}</div>
+</div>
+</div>
+
+
+<div id="messages" style="margin-top:15px;">
+<div class="message_tab cl">
+<h3 class="c">{lang aljbd:s133}({$commentcount})</h3>
+{if file_exists('source/plugin/aljbd/template/com/ask.htm')}
+{template aljbd:com/ask}
+{/if}
+</div>
+
+<div class="remark c"><div class="viewtitle">
+{lang aljbd:s135}<b>{$bd['name']}</b>
+</div>
+<form id="msgForm_remark" action="plugin.php?id=aljbd&act=comment" method="post">
+<input type="hidden" name="formhash" value="{FORMHASH}">
+<div class="writemessage cl"><a onclick="showWindow('sendpm', this.href);" href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$_G['uid']}&touid={$_G['uid']}" class="avatar">
+<img width="50" height="50" alt="" src="{eval echo avatar($_G['uid'],'small',true);}">
+</a>
+<input type="hidden" id="commentscorestr" name="commentscorestr">
+<div id="comment_score_area">
+<ul>
+<li>
+<label>{lang aljbd:s136} </label>
+<p><img src="source/plugin/aljbd/images/star_grey.gif" onclick="return setreward(12,1);" onmouseout="star_restore(12);" onmouseover="star_hover(12,1);" id="reward1_12"><img src="source/plugin/aljbd/images/star_grey.gif" onclick="return setreward(12,2);" onmouseout="star_restore(12);" onmouseover="star_hover(12,2);" id="reward2_12"><img src="source/plugin/aljbd/images/star_grey.gif" onclick="return setreward(12,3);" onmouseout="star_restore(12);" onmouseover="star_hover(12,3);" id="reward3_12"><img src="source/plugin/aljbd/images/star_grey.gif" onclick="return setreward(12,4);" onmouseout="star_restore(12);" onmouseover="star_hover(12,4);" id="reward4_12"><img src="source/plugin/aljbd/images/star_grey.gif" onclick="return setreward(12,5);" onmouseout="star_restore(12);" onmouseover="star_hover(12,5);" id="reward5_12"> </p>
+</li>
+<li>
+<label>{lang aljbd:s137} </label>
+<p><img src="source/plugin/aljbd/images/star_grey.gif" onclick="return setreward(13,1);" onmouseout="star_restore(13);" onmouseover="star_hover(13,1);" id="reward1_13"><img src="source/plugin/aljbd/images/star_grey.gif" onclick="return setreward(13,2);" onmouseout="star_restore(13);" onmouseover="star_hover(13,2);" id="reward2_13"><img src="source/plugin/aljbd/images/star_grey.gif" onclick="return setreward(13,3);" onmouseout="star_restore(13);" onmouseover="star_hover(13,3);" id="reward3_13"><img src="source/plugin/aljbd/images/star_grey.gif" onclick="return setreward(13,4);" onmouseout="star_restore(13);" onmouseover="star_hover(13,4);" id="reward4_13"><img src="source/plugin/aljbd/images/star_grey.gif" onclick="return setreward(13,5);" onmouseout="star_restore(13);" onmouseover="star_hover(13,5);" id="reward5_13"> </p>
+</li>
+</ul>
+</div>
+<label>
+<textarea   name="commentmessage_1" id="commentmessage_1" rows="5" cols="10"></textarea>
+</label>
+<div id="ajaxwaitid"></div>
+<div class="action cl">
+<span id="span_score"></span>
+<input type="button"  value="{lang aljbd:s146}" onclick="ajaxpost('msgForm_remark','ajaxwaitid');" name="searchbtn" value="true" id="submitMsgForm">
+<span class="y">{lang aljbd:s147}</span><div class="z">
+</div><input type="hidden" name="submitcomm" value="submit">
+<input type="hidden" value="{$bd['id']}" name="bid" id="bid">
+</div>
+</div>
+</form><!--comment form-->
+<script charset="gbk" type="text/javascript">
+var hdrewardid = "commentscorestr";
+function setreward(rewardid,value) {
+var hdreward = document.getElementById(hdrewardid);
+if(hdreward.value.indexOf("@" + rewardid +"@") > -1 ) {
+var reg = new RegExp("@" + rewardid +"@\\d");
+hdreward.value = hdreward.value.replace(reg,"@" + rewardid +"@" + value);
+} else {
+hdreward.value += "@" + rewardid +"@" + value;
+}
+return false;
+}
+// onmouseover change the style
+function star_hover(rewardid,cur){
+for(var i = 1;i<6;i++) {
+var oldclick = document.getElementById("reward"+i+"_"+rewardid);
+if(i < (cur+1)) {
+oldclick.src = "source/plugin/aljbd/images/star_yellow.gif";
+}else{
+oldclick.src = "source/plugin/aljbd/images/star_grey.gif";
+}
+}
+}
+// onmouseout restore the style
+function star_restore(rewardid){
+var hdreward = document.getElementById(hdrewardid).value;
+var reg = new RegExp("@" + rewardid +"@(\\d)");
+oldscore = reg.exec(hdreward);
+if(oldscore == null || oldscore[1]==null){
+star_hover(rewardid,0);
+}else{
+star_hover(rewardid,parseInt(oldscore[1]));
+}
+}
+</script>
+{loop $commentlist $comment}
+{if $comment['uid']}
+<div id="comment{$comment['id']}">
+<dl class="commentli cl" id="commentdl{$comment['id']}">
+<dt>
+<a onclick="showWindow('sendpm', this.href);" href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$comment['uid']}&touid={$comment['uid']}" class="avatar">
+<img width="50" height="50" alt="" src="{eval echo avatar($comment['uid'],'small',true);}">
+</a>
+<div class="cominfo cl">
+<span class="author z"><a href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$comment['uid']}&touid={$comment['uid']}" onclick="showWindow('sendpm', this.href);" id="comauth_{$comment['id']}">$comment['username']</a>:
+</span>
+<span class="time y xg1">{eval echo gmdate('Y-m-d H:i:s',$comment['dateline']+8*3600);}</span>
+</div><div class="comment_score">
+<label>
+<img src="source/plugin/aljbd/images/$comment['avg'].gif"><span class="">
+{lang aljbd:s141} <font color="red">$comment['h']</font>
+{lang aljbd:s142}</span><span class="">
+{lang aljbd:s143} <font color="red">$comment['f']</font>
+{lang aljbd:s144}</span></label>
+</div></dt>
+<dd class="commentcontent">
+<p class="new">
+$comment['content']&nbsp;&nbsp;</p>
+<p class="option">
+$bd['name']&nbsp;&nbsp;&nbsp;<a href="javascript:;" class="replylink">{lang aljbd:s145}</a>
+&nbsp;&nbsp;&nbsp;</p>
+</dd>
+<dd class="replies_wp">
+<div class="replies">
+<form id="msgForm_remark_recomment_{$comment['id']}" action="plugin.php?id=aljbd&act=reply" method="post">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<label>
+<textarea cols="10" rows="5" id="commentmessage_r" name="commentmessage_1"></textarea>
+</label>
+<div id="ajax_status_display"></div>
+<div class="action cl">
+<span id="span_score"></span>
+<input type="button" onclick="ajaxpost('msgForm_remark_recomment_{$comment['id']}','ajaxwaitid');" value="{lang aljbd:s146}" name="searchbtn" id="submitMsgForm">
+<span class="y">{lang aljbd:s147}</span><div class="z">
+</div>
+<input type="hidden" value="{$comment['bid']}" name="bid" id="bid">
+<input type="hidden" size="5" value="{$comment['id']}" name="upid" id="upid">
+</div>
+</form>
+{loop C::t('#aljbd#aljbd_comment')->fetch_all_by_upid($comment['id']) $reply}
+<div class="replyli cl">
+<dl>
+<dt>
+<a  href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$reply['uid']}&touid={$reply['uid']}" onclick="showWindow('sendpm', this.href);" class="avatar">
+<img width="25" height="25" alt="" src="{eval echo avatar($reply['uid'],'small',true);}">
+</a>
+<div class="cominfo cl">
+<span class="author z">
+<a  href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$reply['uid']}&touid={$reply['uid']}" onclick="showWindow('sendpm', this.href);">$reply['username']</a>:
+</span>
+<span class="time y xg1">{eval echo gmdate('Y-m-d H:i:s',$reply['dateline']+8*3600);}</span>
+</div>
+</dt>
+<dd>
+<p class="new">
+<span>{eval echo dhtmlspecialchars($reply['content']);}&nbsp;&nbsp;</span>
+</p>
+</dd>
+</dl>
+</div>
+{/loop}
+</div>
+</dd>
+</dl>
+</div>
+{/if}
+{/loop}
+</div>
+<script charset="gbk" type="text/javascript">
+//	bindform('msgForm');
+</script>
+<div class="comment"><!--comment form-->
+<script charset="gbk" type="text/javascript">
+var hdrewardid = "commentscorestr";
+function setreward(rewardid,value) {
+var hdreward = document.getElementById(hdrewardid);
+if(hdreward.value.indexOf("@" + rewardid +"@") > -1 ) {
+var reg = new RegExp("@" + rewardid +"@\\d");
+hdreward.value = hdreward.value.replace(reg,"@" + rewardid +"@" + value);
+} else {
+hdreward.value += "@" + rewardid +"@" + value;
+}
+return false;
+}
+// onmouseover change the style
+function star_hover(rewardid,cur){
+for(var i = 1;i<6;i++) {
+var oldclick = document.getElementById("reward"+i+"_"+rewardid);
+if(i < (cur+1)) {
+oldclick.src = "source/plugin/aljbd/images/star_yellow.gif";
+}else{
+oldclick.src = "source/plugin/aljbd/images/star_grey.gif";
+}
+}
+}
+// onmouseout restore the style
+function star_restore(rewardid){
+var hdreward = document.getElementById(hdrewardid).value;
+var reg = new RegExp("@" + rewardid +"@(\\d)");
+oldscore = reg.exec(hdreward);
+if(oldscore == null || oldscore[1]==null){
+star_hover(rewardid,0);
+}else{
+star_hover(rewardid,parseInt(oldscore[1]));
+}
+
+}
+</script>
+<form method="post" action="plugin.php?id=aljbd&act=ask" id="msgForm_comm">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<input type="hidden" value="1" name="ask">
+<div class="writemessage cl">
+<a href="#" class="avatar">
+<img width="50" height="50" alt="" src="{eval echo avatar($_G['uid'],'small',true);}">
+</a>
+<label>
+<textarea name="commentmessage_2" id="commentmessage_2" rows="5" cols="10"></textarea>
+</label><div id="ajax_status_display"></div>
+<div class="action cl">
+<span id="span_score"></span>
+<input type="submit" id="submitMsgForm" name="searchbtn" value="{lang aljbd:s148}" onclick="ajaxpost('msgForm_comm','ajaxwaitid');">
+<span class="y">{lang aljbd:s147}</span><div class="z"></div><input type="hidden" name="submitcomm" value="submit">
+<input type="hidden" value="$bd['id']" name="bid">
+</div>
+</div>
+</form>
+{loop $asklist $comment}
+<div id="comment{$comment['id']}">
+<dl class="commentli cl" id="commentdl{$comment['id']}">
+<dt>
+<a onclick="showWindow('sendpm', this.href);" href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$comment['uid']}&touid={$comment['uid']}" class="avatar">
+<img width="50" height="50" alt="" src="{eval echo avatar($comment['uid'],'small',true);}">
+</a>
+<div class="cominfo cl">
+<span class="author z"><a href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$comment['uid']}&touid={$comment['uid']}" onclick="showWindow('sendpm', this.href);" id="comauth_$comment['id']">{$comment['username']}</a>:
+</span>
+<span class="time y xg1">{eval echo gmdate('Y-m-d H:i:s',$comment['dateline']);}</span>
+</div></dt>
+<dd class="commentcontent">
+<p class="new">
+{$comment['content']}&nbsp;&nbsp;</p>
+<p class="option">
+{$bd['name']}&nbsp;&nbsp;&nbsp;<a href="javascript:;"  class="replylink">{lang aljbd:s149}</a>
+&nbsp;&nbsp;&nbsp;</p>
+</dd>
+<dd class="replies_wp">
+<div class="replies">
+<form id="msgForm_remark_recomment_{$comment['id']}" action="plugin.php?id=aljbd&act=reply" method="post">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<label>
+<textarea cols="10" rows="5" id="commentmessage_r" name="commentmessage_1"></textarea>
+</label>
+<div id="ajax_status_display"></div>
+<div class="action cl">
+<span id="span_score"></span>
+<input type="submit" onclick="ajaxpost('msgForm_remark_recomment_{$comment['id']}','ajaxwaitid');" value="{lang aljbd:s146}" name="searchbtn" id="submitMsgForm">
+<span class="y">{lang aljbd:s147}</span><div class="z">
+</div>
+<input type="hidden" value="{$comment['bid']}" name="bid" id="bid">
+<input type="hidden" size="5" value="{$comment['id']}" name="upid" id="upid">
+</div>
+</form>
+
+{loop C::t('#aljbd#aljbd_comment')->fetch_all_by_upid($comment['id']) $reply}
+<div class="replyli cl">
+<dl>
+<dt>
+<a onclick="showWindow('sendpm', this.href);" href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$comment['uid']}&touid={$comment['uid']}" class="avatar">
+<img width="25" height="25" alt="" src="{eval echo avatar($reply['uid'],'small',true);}">
+</a>
+<div class="cominfo cl">
+<span class="author z">
+<a href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$reply['uid']}&touid={$reply['uid']}" onclick="showWindow('sendpm', this.href);">$reply['username']</a>:
+</span>
+<span class="time y xg1">{eval echo gmdate('Y-m-d H:i:s',$reply['dateline']);}</span>
+</div>
+</dt>
+<dd>
+<p class="new">
+<span>{eval echo dhtmlspecialchars($reply['content']);}&nbsp;&nbsp;</span>
+</p>
+</dd>
+</dl>
+</div>
+{/loop}
+
+</div>
+</dd>
+</dl>
+</div>
+{/loop}
+
+</div>
+
+<script charset="gbk" type="text/javascript">
+//	bindform('msgForm');
+</script></div>
+</div>
+{template aljbd:side}

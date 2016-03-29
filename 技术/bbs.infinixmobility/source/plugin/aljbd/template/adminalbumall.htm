@@ -1,0 +1,7 @@
+<tr>	
+{loop $alist $key $value}				
+<td width="20%" style="text-align:center;">
+<img width="120" height="120" src="$value[pic]"  /><p><a href="admin.php?action=plugins&operation=config&identifier=aljbd&pmod=admin&brand=album&act=admin_fm&aid={$value[aid]}&atid={$value[id]}">{lang aljbd:adminalbumall_1}</a></p><p><input class="checkbox" type="checkbox" name="delete[]" value="$value[id]"/></p>
+</td><!--{if !(($key+1)%5)}--></tr><!--{/if}-->
+{/loop}			
+<tr><td colspan="2"><div class="fixsel"><input type="checkbox" onclick="checkAll('prefix', this.form, 'delete')" class="checkbox" id="chkallUMP3" name="chkall"><label for="chkallUMP3">{lang aljbd:adminalbumall_2}</label>&nbsp;<input type="submit" value="{lang aljbd:adminalbumall_3}" title="{lang aljbd:adminalbumall_4}" name="submit" id="submit_submit" class="btn"></div></td><td colspan="15">$paging</td></tr>

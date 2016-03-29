@@ -1,0 +1,13 @@
+<script>disallowfloat = 'newthread';</script>
+<form id="cpform" action="admin.php?action=plugins&operation=config&identifier=$pluginid&pmod=attes&act=$_GET['act']" autocomplete="off" method="post" name="cpform">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<table class="tb tb2 nobdb">
+<tbody>{template aljlp:attes}
+<tr class="header"><th></th><th >{lang aljlp:attes_34}</th><th>{lang aljlp:attes_35}</th><th>{lang aljlp:attes_36}</th><th>ID</th><th>{lang aljlp:attes_37}</th><th>{lang aljlp:attes_38}</th><th>{lang aljlp:attes_39}</th></tr>
+{loop $atlist $bd}
+<tr class="header"><td><input type="checkbox" value="{$bd['id']}" name="delete[]" class="checkbox"></td>
+<td>{$bd['username']}</td><td>{$typearr[$bd['type']]}</td><td>{$bd['gongsiname']}/{$bd['mendianname']}</td><td>{$bd['num']}</td><td><img src="{$bd['pic']}" style="width:140px;height:100px;"></td><td>{eval echo gmdate('Y-m-d H:i:s',$bd['timestamp']+8*3600);}</td><td>{if $bd['sign']}{lang aljlp:attes_40}{else}{lang aljlp:attes_41}{/if}</td></tr>
+{/loop}
+<tr><td colspan="3"><div class="fixsel"><input type="checkbox" onclick="checkAll('prefix', this.form, 'delete','chkallUMP3')" class="checkbox" id="chkallUMP3" name="chkall"><label for="chkallUMP3">{if $_GET['act']!='yes'}{lang aljlp:attes_42}/{/if}{lang aljlp:attes_43}</label>&nbsp;{if $_GET['act']!='yes'}<input type="submit" value="{lang aljlp:attes_44}"  name="sh_submit" id="sh_submit" class="btn">&nbsp;<input type="submit" value="{lang aljlp:attes_45}"  name="del_submit" id="del_submit" class="btn">{else}<input type="submit" value="{lang aljlp:attes_46}" title="" name="submit" id="submit_submit" class="btn">{/if}</div></td><td>$paging</td></tr>
+</tbody></table>
+</form>

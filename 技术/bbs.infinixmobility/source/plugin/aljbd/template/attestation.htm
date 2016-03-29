@@ -1,0 +1,110 @@
+{template common/header}
+<script type="text/javascript" src="static/js/calendar.js"></script>
+<style type="text/css">
+	.bdtr {
+		 padding-left: 10px !important;
+	}
+</style>
+<div id="pt" class="bm cl">
+<div class="z">
+<a title="$_G['setting']['bbname']" class="nvhm" href="./">{$_G['setting']['bbname']}</a> <em>&rsquot;</em>
+        <a href="{if $config['isrewrite']}brand.html{else}plugin.php?id=aljbd{/if}">{lang aljbd:s74}</a>
+</div>
+</div>
+<div class="ct2_a wp cl" id="ct">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">{lang aljbd:s75}</h2>
+{template aljbd:mnav}
+</div>
+</div>
+<iframe  name="formsubmit" style="display:none;"></iframe>
+<div  style="float:left;width:80%" >
+<h1 class="ph mbm xi1" style="margin-left:10px;">{lang aljbd:attestation_1}</h1>
+{eval $sign=DB::result_first("select sign from ".DB::table('aljbd_attestation')." where sign=1 and bid=".$_GET['bid'])}
+{if $sign}
+<div class="notice" style="border:1px dashed #f60;background-color:#FFC;color:red;margin-left:10px">{lang aljbd:aedit_24}</div>
+{else}
+<div class="notice" style="border:1px dashed #f60;background-color:#FFC;color:red;margin-left:10px">$config['qiye_s']</div>
+{/if}
+
+<form enctype="multipart/form-data" target="formsubmit"  action="plugin.php?id=aljbd&act={$_GET['act']}" autocomplete="off" id="addgoods_form" method="post">
+ <input type="hidden" name="formhash" value="{FORMHASH}">
+ <input type="hidden" name="bid" value="$_GET[bid]">
+  <table cellspacing="0" cellpadding="0" class="tfm">
+      <tbody>
+		 <tr><td class="bdtr"><label class="p-label"><span style="color:red;">*</span> {lang aljbd:aedit_17}</label></td><td>$aljbd[$_GET[bid]]['name']</td>
+		</tr>
+		  <tr><td class="bdtr"><label class="p-label"><span style="color:red;">*</span> {lang aljbd:aedit_2}</label></td><td><div class="publish-detail-item ">
+				<input type="text" style="width:250px;" name="name" required="required" value="{$lp['name']}" title="{lang aljbd:aedit_3}" class="input input-5" data-parent=".p-line">
+			</div></td>
+		</tr>
+		<tr>
+              <th class="bdtr"><span style="color:red;">*</span><label class="p-label"> {lang aljbd:aedit_4}</label></th>
+              <td><label class="form-label"><input type="text" style="width:250px;" name="id_card" value="{$lp['id_card']}" title="{lang aljbd:aedit_5}" class="input input-10" data-parent=".p-line"></label></td>
+              <td>&nbsp;</td>
+        </tr>
+		<tr>
+              <th class="bdtr"><span style="color:red;">*</span><label class="p-label"> {lang aljbd:aedit_6}</label></th>
+              <td><input type="file" name="id_pic"><br><br>
+					{if $lp['id_pic']}<img src="{eval echo $lp['id_pic'];}" style="width:300px;height:200px;"><br>{/if}
+					</td>
+              <td class="xg1">{lang aljbd:aedit_18}<br><img class="mtm" src="source/plugin/aljbd/images/certification_id.jpg" width="150"></td>
+        </tr>
+		<tr>
+			<th class="bdtr"><span style="color:red;">*</span> {lang aljbd:aedit_19}</th>
+			<td>
+			<input type="file" name="ban_pic" class="pf" size="40">
+			</td>
+			<td class="xg1">{lang aljbd:aedit_20}<br><img class="mtm" src="source/plugin/aljbd/images/certification_id2.jpg" width="150"></td>
+		</tr>
+		<tr>
+			<th class="bdtr"><span style="color:red;">*</span>{lang aljbd:aedit_21}</th>
+			<td>
+			<input type="file" name="id_pic1" class="pf" size="40">
+			
+			</td>
+			<td class="xg1">{lang aljbd:aedit_22}</td>
+		</tr>
+		<tr>
+              <th class="bdtr"><span style="color:red;">*</span><label class="p-label"> {lang aljbd:aedit_7}</label></th>
+              <td><input type="text" style="width:250px;"  name="qiyename" value="{$lp['qiyename']}" title="{lang aljbd:aedit_8}" class="input input-10" data-parent=".p-line"></td>
+              <td>&nbsp;</td>
+        </tr>
+		<tr>
+              <th class="bdtr"><span style="color:red;">*</span><label class="p-label"> {lang aljbd:aedit_9}</label></th>
+              <td><input type="text" style="width:250px;"  name="email" value="{$lp['email']}" title="{lang aljbd:aedit_10}" class="input input-10" data-parent=".p-line"></td>
+              <td>&nbsp;</td>
+        </tr>
+		<tr>
+              <th class="bdtr"><span style="color:red;">*</span><label class="p-label"> {lang aljbd:aedit_11}</label></th>
+              <td><input type="text" style="width:250px;"  name="tel" value="{$lp['tel']}" title="{lang aljbd:aedit_12}" class="input input-10" data-parent=".p-line"></td>
+              <td>&nbsp;</td>
+        </tr>
+		
+		<tr>
+				<td class="bdtr"><span style="color:red;">*</span><label class="p-label"> {lang aljbd:aedit_13}</label></td>
+				<td colspan="4">
+					
+					<input type="file" name="pic"><br><br>
+					{if $lp['pic']}<img src="{eval echo $lp['pic'];}" style="width:200px;height:200px;"><br>{/if}
+					
+					
+				</td>
+				
+				</tr>
+		  <tr>
+              <th class="bdtr"><span style="color:red;">*</span><label class="p-label"> {lang aljbd:aedit_14}</label></th>
+              <td><textarea rows="5" cols="60" type="text" maxlength="5000" name="jieshao" value="{$lp['jieshao']}" title="{lang aljbd:aedit_15}" class="input" data-parent=".p-line">{$lp['jieshao']}</textarea></td>
+              <td>&nbsp;</td>
+        </tr>
+          <tr>
+              <th></th>
+              <td colspan="2"><button  class="pn pnc vm" value="true" id="submit" name="submit" type="submit"><strong>{lang aljbd:attestation_2}</strong></button></td>
+          </tr>
+      </tbody>
+  </table>
+  </form>
+</div>
+</div>
+{template common/footer}

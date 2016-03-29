@@ -1,0 +1,23 @@
+<ul>
+<li {if $_GET['act']=='member'}class="a"{/if}><a href="plugin.php?id=aljbd&act=member">{lang aljbd:s76}</a></li>
+<li {if $_GET['act']=='yes'}class="a"{/if}><a href="plugin.php?id=aljbd&act=member&act=yes">{lang aljbd:s77}</a></li>
+{if file_exists('source/plugin/aljbd/com/mark.php')}
+<li {if $_GET['act']=='point'}class="a"{/if}><a href="plugin.php?id=aljbd&act=point">{lang aljbd:s78}</a></li>
+{/if}
+
+{if file_exists('source/plugin/aljbd/com/good.php')}
+<li {if $_GET['act']=='goodslist'||$_GET['act']=='addgoods'}class="a"{/if}><a href="plugin.php?id=aljbd&act=goodslist">{lang aljbd:s258}</a></li>
+{/if}
+{if file_exists('source/plugin/aljbd/com/notice.php')}
+<li {if $_GET['act']=='noticelist'||$_GET['act']=='addnotice'||$_GET['act']=='editnotice'}class="a"{/if}><a href="plugin.php?id=aljbd&act=noticelist">{lang aljbd:mnav_1}</a></li>
+{/if}
+{if file_exists('source/plugin/aljbd/com/album.php')}
+<li {if $_GET['act']=='albumlist'||$_GET['act']=='albumall'}class="a"{/if}><a href="plugin.php?id=aljbd&act=albumlist">{lang aljbd:mnav_2}</a></li>
+{/if}
+{if file_exists('source/plugin/aljbd/com/consume.php')}
+<li {if $_GET['act']=='consumelist'}class="a"{/if}><a href="plugin.php?id=aljbd&act=consumelist">{lang aljbd:mnav_3}</a></li>
+{/if}
+{if file_exists('source/plugin/aljbd/com/attestation.php')&&$_GET['act']=='attestation'}
+<li {if $_GET['act']=='attestation'}class="a"{/if}><a href="plugin.php?id=aljbd&act=attestation">{lang aljbd:attestation_9}</a></li>
+{/if}
+</ul>

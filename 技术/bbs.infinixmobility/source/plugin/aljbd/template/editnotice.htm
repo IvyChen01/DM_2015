@@ -1,0 +1,70 @@
+
+<style type="text/css">
+	.bdtr {
+		 padding-left: 10px !important;
+	}
+</style>
+<script charset="$_G['charset']" src="source/plugin/aljbd/js/editor/kindeditor-min.js" reload="true"></script>
+<!--{if $_G['charset']=='gbk'}-->
+<script charset="gbk" src="source/plugin/aljbd/js/editor/lang/zh_CN.js" reload="true"></script>
+<!--{else}-->
+<script charset="utf-8" src="source/plugin/aljbd/js/editor/lang/zh_CN_U8.js" reload="true"></script>
+<!--{/if}-->
+<script type="text/javascript" reload="true">
+        KindEditor.ready(function(K) {
+              window.editor = KindEditor.create('#intro');
+        });
+		KindEditor.options.cssData = 'img { max-width:400px; }';
+</script>
+
+<iframe  name="formsubmit" style="display:none;"></iframe>
+<div  style="float:left;">
+<h1 class="ph mbm xi1" style="margin-left:10px;">{if $_GET['act']=='editnotice'}{lang aljbd:addnotice_2}{else}{lang aljbd:noticelist_1}{/if}</h1>
+<form enctype="multipart/form-data" target="formsubmit"  action="admin.php?action=plugins&operation=config&identifier=$pluginid&pmod=admin&brand=notice&act=$_GET['act']" autocomplete="off" id="addnotice_form" method="post">
+ <input type="hidden" name="formhash" value="{FORMHASH}">
+ <input type="hidden" name="nid" value="{$_GET['nid']}">
+  <table cellspacing="0" cellpadding="0" class="tfm">
+      <tbody>
+		  <tr>
+              <th class="bdtr">{lang aljbd:s283}</th>
+				<td>
+					<select name="bid">
+					<option value="">{lang aljbd:s252}</option>
+					{loop $bdlist $b}
+					<option value="$b['id']" {if $n['bid']==$b['id']}selected{/if}>$b['name']</option>
+					{/loop}
+					</select>
+				</td>
+              <td>&nbsp;</td>
+          </tr>
+		  <tr><td class="bdtr">{lang aljbd:addnotice_4}</td><td><input type="text" class="px" name="subject" value="$n['subject']"></td></tr>
+		  <tr>
+						<td class="bdtr"><span style="color:red;">*</span>{lang aljbd:s223}</td>
+    				<td colspan="4">
+						<select name="type" id="type" style="width:120px;" onchange="ajaxget('plugin.php?id=aljbd&act=gettype&type=notice&upid='+$('type').value,'subtype')">
+							<option value="">{lang aljbd:s224}</option>
+							<!--{loop $typelist $typeid $type}-->
+							<option value="$typeid" {if $typeid==$n['type']}selected{/if}>$type['subject']</option>
+							<!--{/loop}-->
+						</select>
+						&nbsp;&nbsp;&nbsp;
+						<span name="subtype" id="subtype">
+						{if $n['subtype']}
+						<select name="subtype" id="type" style="width:120px;">
+							<!--{loop C::t('#aljbd#aljbd_type_notice')->fetch_all_by_upid($n['type']) $typeid $type}-->
+							<option value="$typeid" {if $typeid==$n['subtype']}selected{/if}>$type['subject']</option>
+							<!--{/loop}-->
+						</select>
+						{/if}
+						</span>
+					</td>
+				</tr>
+		  <tr><td class="bdtr">{lang aljbd:addnotice_3}</td><td><textarea name="intro"  id="intro" style="height:500px;">$n['content']</textarea></td></tr>
+          <tr>
+              <th></th>
+              <td colspan="2"><button  class="pn pnc vm" value="true" id="submit" name="submit" type="submit"><strong>{lang aljbd:s289}</strong></button></td>
+          </tr>
+      </tbody>
+  </table>
+  </form>
+</div>

@@ -1,0 +1,42 @@
+{template common/header_ajax}
+<script src="static/js/seditor.js" type="text/javascript" reload="1"></script>
+<h3 class="flb">
+	<em>{lang aljbd:s29}{lang aljbd:s248}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<iframe name="formsubmit" width="1" height="1" ></iframe>
+<form id="addbc" method="post" action="plugin.php?id=aljbd&act=gg"  target="formsubmit">
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+<input name="bid" type="hidden" value="{$_GET['bid']}" />
+		<div class="c">
+        
+        
+        	<table cellspacing="0" cellpadding="0" border="0">
+                
+  				<tbody>
+				<tr>
+				<td width="80" height="30"><span style="color:red;">*</span>{lang aljbd:s30}</td>
+				<td colspan="4">
+					<div class="tedt" style="width:400px;height:200px;">
+					<div class="bar">
+					<div class="fpd">
+					<a href="javascript:;" title="{lang aljbd:s31}" class="fbld" onclick="seditor_insertunit('reply', '[b]', '[/b]');doane(event);">B</a>
+					<a fwin="apply" href="javascript:;" title="{lang aljbd:s32}" class="fclr" id="replyforecolor" onclick="showColorBox(this.id, 2, 'reply');doane(event);" initialized="true">Color</a>
+					<a fwin="apply" id="replyimg" href="javascript:;" title="{lang aljbd:s33}" class="fmg" onclick="seditor_menu('reply', 'img');doane(event);">Image</a>
+					<a fwin="apply" id="replyurl" href="javascript:;" title="{lang aljbd:s34}" class="flnk" onclick="seditor_menu('reply', 'url');doane(event);">Link</a>
+					</div></div>
+					<div class="area" style="background:#FFF;">
+					<textarea fwin="apply" rows="3" name="gg" class="pt" id="replymessage" style="background:#FFF;">$bd['gg']</textarea>
+					</div>
+					</div>
+				</td>
+				</tr>                            
+            </tbody></table>
+	
+</div>
+<p class="o pns">
+	<button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljbd:s35}</strong></button>
+</p>
+</form>
+{template common/footer_ajax}

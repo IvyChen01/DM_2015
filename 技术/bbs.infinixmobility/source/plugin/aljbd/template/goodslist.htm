@@ -1,0 +1,37 @@
+{template common/header}
+<script src="http://api.map.baidu.com/api?v=1.3" type="text/javascript" charset="utf-8"></script>
+<script src="source/plugin/aljbd/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+</script>
+<div class="bm cl" id="pt">
+<div class="z">
+<a title="$_G['setting']['bbname']" class="nvhm" href="./">{$_G['setting']['bbname']}</a> <em>&rsquot;</em>
+        <a href="{if $config['isrewrite']}brand.html{else}plugin.php?id=aljbd{/if}">{lang aljbd:s74}</a>
+</div>
+</div>
+<div class="ct2_a wp cl" id="ct">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">{lang aljbd:s75}</h2>
+{template aljbd:mnav}
+</div>
+</div>
+<div style="border:none; margin:0" class="mn pbm">
+<div class="tbmu cl">
+<a class="y pn pnc"  href="plugin.php?id=aljbd&act=addgoods"><strong>{lang aljbd:s273}</strong></a>
+
+<iframe name="submitform" style="display:none"></iframe>
+<table cellspacing="0" cellpadding="0" class="dt">
+<tbody><tr>
+<th>{lang aljbd:s80}</th><th>{lang aljbd:s274}</th><th>{lang aljbd:s275}</th><th>{lang aljbd:s276}</th><th>{lang aljbd:s277}</th><th>{lang aljbd:s278}</th><th>{lang aljbd:s86}</th>
+</tr>
+{loop $glist $g}
+<tr class="header"><td>{$g['id']}</td><td>{$g['name']}</td><td>{$bdlist[$g['bid']]['name']}</td><td>{$g[price1]}</td><td>{$g[price2]}</td><td>{eval echo gmdate('Y-m-d H:i:s',$g['dateline']+8*3600);}</td><td><a href="plugin.php?id=aljbd&act=editgoods&gid={$g['id']}">{lang aljbd:s279}</a>&nbsp;&nbsp;<a href="plugin.php?id=aljbd&act=deletegoods&gid={$g['id']}&formhash={FORMHASH}" target="submitform">{lang aljbd:s280}</a>
+<a href="{if $config['isrewrite']}brand_good_{$g['bid']}_{$g[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$g['bid']}&gid={$g[id]}{/if}" target="_blank">{lang aljbd:s87}</a>
+</td></td></tr>
+{/loop}
+</tbody></table>
+</div>
+</div></div>
+{template common/footer}

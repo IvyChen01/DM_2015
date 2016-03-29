@@ -1,0 +1,20 @@
+{template common/header}
+{if $typelist}
+{if $_GET['s']==1}
+<div class="select-box">
+<div class="select-info">
+{/if}
+<select name="subtype" {if $_GET['s']==1}class="select-info"{else}style="width:120px;"{/if}>
+{if $_GET['s']==1}
+<option value="" >{lang aljbd:s224}</option>
+{/if}
+<!--{loop $typelist $typeid $type}-->
+<option value="$typeid">$type['subject']</option>
+<!--{/loop}-->
+</select>
+{if $_GET['s']==1}
+</div>
+</div>
+{/if}
+{/if}
+{template common/footer}

@@ -1,0 +1,107 @@
+{template common/header_ajax}
+<script src="static/js/seditor.js" type="text/javascript" reload="1"></script>
+<h3 class="flb">
+	<em>{lang aljbd:s229}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<iframe name="formsubmit" width="1" height="1" ></iframe>
+<form id="addbc" method="post" action="plugin.php?id=aljbd&act=attend"  target="formsubmit" enctype="multipart/form-data">
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+		<div class="c">
+        
+        
+        	<table cellspacing="0" cellpadding="0" border="0">
+                
+  				<tbody>
+				<tr>
+    				<td width="80" height="30"><span style="color:red;">*</span>{lang aljbd:s230}</td>
+    				<td colspan="4"><input type="text" name="name" class="px" style="width:120px;" >&nbsp;&nbsp;&nbsp;<span style="color:red;">*</span>{lang aljbd:s231}<input type="text" name="tel" class="px" style="width:120px;" ></td>
+                </tr>
+				<tr>
+    				<td width="80" height="30"><span style="color:red;">*</span>{lang aljbd:s232}</td>
+    				<td colspan="4"><input type="file" name="logo"><font color="red">{lang aljbd:s233}</font></td>
+                </tr>
+				<tr>
+    				<td width="80" height="30"><span style="color:red;">*</span>{lang aljbd:s234}</td>
+    				<td colspan="4"><input type="text" name="addr" class="px" style="width:350px;" ></td>
+                </tr>
+				<tr>
+						<td width="80" height="30"><span style="color:red;">*</span>{lang aljbd:s235}</td>
+    				<td colspan="4">
+						<select name="type" id="type" style="width:120px;" onchange="ajaxget('plugin.php?id=aljbd&act=gettype&upid='+$('type').value,'subtype')">
+							<option value="">{lang aljbd:s236}</option>
+							<!--{loop $typelist $typeid $type}-->
+							<option value="$typeid">$type['subject']</option>
+							<!--{/loop}-->
+						</select>
+						&nbsp;&nbsp;&nbsp;
+						<span name="subtype" id="subtype">
+						</span>
+					</td>
+				</tr>
+				<tr>
+						<td width="80" height="30"><span style="color:red;">*</span>{lang aljbd:s237}</td>
+    				<td colspan="4">
+						<select name="region" id="region" style="width:120px;" onchange="ajaxget('plugin.php?id=aljbd&act=getregion&upid='+$('region').value,'subregion')">
+							<option value="">{lang aljbd:s238}</option>
+							<!--{loop $rlist $rid $r}-->
+							<option value="$rid">$r['name']</option>
+							<!--{/loop}-->
+						</select>
+						&nbsp;&nbsp;&nbsp;
+						<span name="subregion" id="subregion">
+						</span>
+					</td>
+				</tr>
+				<tr>
+				<td width="80" height="30"><span style="color:red;">*</span>{lang aljbd:s239}</td>
+				<td colspan="4">
+					<div class="tedt" style="width:100%;">
+					<div class="bar">
+					<div class="fpd">
+					<a href="javascript:;" title="{lang aljbd:s240}" class="fbld" onclick="seditor_insertunit('reply', '[b]', '[/b]');doane(event);">B</a>
+					<a fwin="apply" href="javascript:;" title="{lang aljbd:s241}" class="fclr" id="replyforecolor" onclick="showColorBox(this.id, 2, 'reply');doane(event);" initialized="true">Color</a>
+					<a fwin="apply" id="replyimg" href="javascript:;" title="{lang aljbd:s242}" class="fmg" onclick="seditor_menu('reply', 'img');doane(event);">Image</a>
+					<a fwin="apply" id="replyurl" href="javascript:;" title="{lang aljbd:s243}" class="flnk" onclick="seditor_menu('reply', 'url');doane(event);">Link</a>
+					</div></div>
+					<div class="area" style="background:#FFF;">
+					<textarea fwin="apply" rows="3" name="intro" class="pt" id="replymessage" style="background:#FFF;"></textarea>
+					</div>
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<td width="80" height="30"><span style="color:red;"></span>{lang aljbd:qq}</td>
+				<td colspan="4">
+					<div class="tedt" style="width:30%;">
+					<input type="text" name="qq" class="pt" id="replymessage" style="background:#FFF;">
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<td width="80" height="30"><span style="color:red;"></span>{lang aljbd:wurl_1}</td>
+				<td colspan="4">
+					
+					<input type="text" name="wurl" class="pt" id="replymessage" style="background:#FFF;" value="{$bd['wurl']}">&nbsp;{lang aljbd:wurl_2}
+					
+				</td>
+				
+				</tr>
+				<tr>
+				<td width="80" height="30"><span style="color:red;"></span>{lang aljbd:s244}</td>
+				<td colspan="4">
+					<div class="tedt" style="width:100%;">
+					<input type="text" name="other" class="pt" id="replymessage" style="background:#FFF;">
+					</div>
+				</td>
+				</tr>
+                                
+            </tbody></table>
+	
+</div>
+<p class="o pns">
+	<button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljbd:s207}</strong></button>
+</p>
+</form>
+{template common/footer_ajax}

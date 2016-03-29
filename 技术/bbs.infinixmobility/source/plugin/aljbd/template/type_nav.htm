@@ -1,0 +1,18 @@
+<div class="itemtitle">
+	<h3>
+		
+	</h3>
+	<ul class="tab1">
+		<li <!--{if !$_GET['lj']}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&identifier=$pluginid&pmod=brandtype"><span>{lang aljbd:admin_nav_1}</span></a></li>
+		{if file_exists('source/plugin/aljbd/com/good.php')}
+		<li <!--{if $_GET['lj']=='goodstype'}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&do=39&identifier=$pluginid&pmod=brandtype&lj=goodstype"><span>{lang aljbd:admin_nav_2}</a></li>
+		{/if}
+		{if file_exists('source/plugin/aljbd/com/consume.php')}
+		<li <!--{if $_GET['lj']=='consumetype'}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&do=39&identifier=$pluginid&pmod=brandtype&lj=consumetype"><span>{lang aljbd:consume_1}</a></li>
+		{/if}
+		{if file_exists('source/plugin/aljbd/com/notice.php')}
+		<li <!--{if $_GET['lj']=='noticetype'}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&do=39&identifier=$pluginid&pmod=brandtype&lj=noticetype"><span>{lang aljbd:index_header_13}</a></li>
+		{/if}
+	</ul>
+	
+</div>

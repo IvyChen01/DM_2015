@@ -1,0 +1,49 @@
+{template common/header_ajax}
+<script src="static/js/seditor.js" type="text/javascript" reload="1"></script>
+<h3 class="flb">
+	<em>{lang aljbd:addalbum_4}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<iframe name="formsubmit" width="1" height="1" ></iframe>
+<form id="addbc" method="post" action="admin.php?action=plugins&operation=config&identifier=aljbd&pmod=admin&brand=album&act=adminaedit"  target="formsubmit" enctype="multipart/form-data">
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+<input name="aid" type="hidden" value="{$_GET['aid']}" />
+
+		<div class="c">
+        
+        
+        	<table cellspacing="0" cellpadding="0" border="0">
+                
+  				<tbody>
+				 <tr>
+              <th class="bdtr"><span style="color:red;">*</span>{lang aljbd:addalbum_1}</th>
+				<td>
+					<select name="bid">
+					<option value="">{lang aljbd:s252}</option>
+					{loop $bdlist $b}
+					<option value="$b['id']" {if $a['bid']==$b['id']}selected{/if}>$b['name']</option>
+					{/loop}
+					</select>
+				</td>
+              <td>&nbsp;</td>
+          </tr>
+				
+				
+				<tr>
+    				<td width="80" height="30"><span style="color:red;">*</span>{lang aljbd:addalbum_2}</td>
+    				<td colspan="4"><input type="text" value="{$a['albumname']}" size="50" name="albumname" class=""></td>
+                </tr>
+				<tr>
+				<td width="80" height="30">&nbsp;{lang aljbd:addalbum_3}</td>
+				<td><textarea rows="3" cols="50" name="description">{$a['description']}</textarea></td>
+				 </tr>
+                                
+            </tbody></table>
+	
+</div>
+<p class="o pns">
+	<button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljbd:s28}</strong></button>
+</p>
+</form>
+{template common/footer_ajax}

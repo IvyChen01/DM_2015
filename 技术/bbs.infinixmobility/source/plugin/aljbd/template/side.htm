@@ -1,0 +1,157 @@
+<div class="side">
+<div class="wgt" id="shop_owner">
+<a onclick="showWindow('sendpm', this.href);" href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$bd['uid']}&touid={$bd['uid']}" class="ownerpic">
+<img width="60" height="60" src="{eval echo avatar($bd['uid'],'middle',true);}" alt="avatar">
+</a>
+<p>
+<span>{lang aljbd:s150}</span><a onclick="showWindow('sendpm', this.href);" href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$bd['uid']}&touid={$bd['uid']}">{$bd['username']}</a>
+</p>
+<p>
+<span>{lang aljbd:s151}</span>{eval echo gmdate('{lang aljbd:s152}',$bd['dateline']+3600*8)}</p>
+<p ><a id="followmod" style="background: url('source/plugin/aljbd//images/commentbt.jpg')!important;border: 1px solid #78ae42;color: #ffffff;cursor: pointer;height: 22px;line-height: 22px;text-align: center;margin-right:5px;padding:2px 5px 2px 5px;font-size:12px;" onclick="showWindow(this.id, this.href, 'get', 0);" href="home.php?mod=spacecp&ac=follow&op=add&hash={FORMHASH}&fuid={$bd['uid']}">{lang aljbd:side_1}</a><a style="background: url('source/plugin/aljbd/images/claimbt.jpg')!important;border: 1px solid #F97028;color:#fff;padding:2px 5px 2px 5px;font-size:12px;" onclick="showWindow('sendpm', this.href);" href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$bd['uid']}&touid={$bd['uid']}">{lang aljbd:side_2}</a></p>
+</div>
+<div class="wgt" id="shop_base_info">
+<div >
+{if file_exists("source/plugin/aljbd/com/qrcode.php")&&$_GET['act']=='view'}<p><b style="font-size:1em;">{lang aljbd:side_3}</b></p><img width="205"  alt="" src="{$_G['siteurl']}/source/plugin/aljbd/images/qrcode/$bd['qrcode']"><p style="text-align:center;">{lang aljbd:side_4}</p>{else}<img width="205"  alt="" src="{if file_exists($bd['logo'])}$bd['logo']{else}source/plugin/aljbd/images/zz.jpg{/if}">{/if}
+</div>
+<h2 class="viewtitle">
+<a href="javascript:;"><!--{eval echo cutstr($bd['name'],18,'');}--></a>{if $sign}<img title="{lang aljbd:attestation_9}" src="source/plugin/aljbd/images/vip.gif">{/if}</h2>
+{if $avg}
+<p class="star_area">
+<img alt="" src="source/plugin/aljbd/images/{$avg}_big.png">
+<a class="message_num" href="plugin.php?id=aljbd&bid={$bd['id']}#messages">{$commentcount}{lang aljbd:s153}</a>
+</p>
+<div class="score">
+<ul>
+<li><span>{lang aljbd:s154}</span><img alt="" src="source/plugin/aljbd/images/{if empty($khf[0][h])}0{else}$khf[0][h]{/if}.gif"></li><li><span>{lang aljbd:s155}</span><img alt="" src="source/plugin/aljbd/images/{if empty($khf[0][f])}0{else}$khf[0][f]{/if}.gif"></li></ul>
+</div>
+{/if}
+<p class="leavecomment cl">
+<a href="plugin.php?id=aljbd&act=view&bid={$bd['id']}#messages" class="btg">{lang aljbd:s156}</a>
+{if $bd['wurl']}<a href="{$bd['wurl']}" style="float:right;background: url('source/plugin/aljbd/images/claimbt.jpg') repeat-x scroll 0 0 rgba(0, 0, 0, 0);border: 1px solid #F97028;" target="_blank">{lang aljbd:wurl_3}</a>{/if}
+</p>
+<div class="devide"></div>
+<dl class="address cl">
+<dt>
+<span>{lang aljbd:s157}</span>
+</dt>
+<dd>$bd['addr']</dd>
+</dl>
+<p class="tel">
+<span>{lang aljbd:s158}</span><b>$bd['tel']</b>
+</p>
+<p class="category">
+<span>{lang aljbd:s159}</span>{if $typelist[$bd['subtype']]['subject']}{$typelist[$bd['subtype']]['subject']}{else}$typelist[$bd['type']]['subject']{/if} </p><dl class="aboutus cl">
+<dt>
+<span>{lang aljbd:s132}</span>
+</dt>
+<dd>&#12288;&#12288;{eval echo mb_substr($bd['other'],0,20,$_G['charset']);}...<a href="{if $config['isrewrite']}brand_shop_{$bd['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}">[{lang aljbd:s161}]</a>
+</dd>
+</dl><div class="view">
+{lang aljbd:s162}<b>$bd['view']</b>{lang aljbd:s163}
+</div>
+</div>
+{if file_exists('source/plugin/aljbd/template/com/visitor.htm')}
+{template aljbd:com/visitor}
+{/if}
+{if file_exists('source/plugin/aljbd/com/notice.php')}
+<div class="wgt" id="notice_list">
+<div class=" cl">
+<h2 class="z">{lang aljbd:view_header_1}</h2>
+<a href="{if $config['isrewrite']}brand_notice_{$bd['id']}.html{else}plugin.php?id=aljbd&act=notice&bid={$bd['id']}{/if}" class="more y">{lang aljbd:s267}</a>
+</div>
+<ul>
+{if $notice}
+{loop $notice $n}
+<li><a href="{if $config['isrewrite']}brand_notice_{$n['bid']}_{$n[id]}.html{else}plugin.php?id=aljbd&act=noticeview&bid={$n['bid']}&nid=$n['id']{/if}">{eval echo mb_substr($n['subject'],0,20,$_G['charset']);}</a></li>
+{/loop}
+{else}
+<li>{lang aljbd:side}</li>
+{/if}
+</ul>
+</div>
+{/if}
+{if file_exists('source/plugin/aljbd/com/mark.php')}
+<div id="map" class="wgt">
+<div style="width: 205px; height: 205px;" id="map_canvas"></div>
+<div class="cl">
+<a class="btn_nomal z" href="plugin.php?id=aljbd&act=map&bid={$_GET['bid']}" target="_blank">{lang aljbd:s167}</a><a class="btn_nomal y" href="plugin.php?id=aljbd&act=map&bid={$_GET['bid']}&op=change" target="_blank">{lang aljbd:s168}</a></div>
+</div>
+{/if}
+</div>
+</div>
+
+</div>
+ <script language="javascript">
+jq(function(){
+jQuery.fn.extend({
+showWordCount: function() {
+var _max = 140;
+var _length = jq(this).val().length;
+if(_length > _max) {
+jq(this).val(jq(this).val().substring(0, _max));
+}
+jq(this).closest('form').find('.action .y i').text(_max-_length);
+}
+});
+if(jq.browser.msie){
+jq('textarea').bind('propertychange', function() {
+jq(this).showWordCount();
+});
+}else{
+jq('textarea').bind('keyup mouseup', function() {
+jq(this).showWordCount();
+});
+}
+jq('textarea').each(function(){
+if(jq(this).val().length>0)
+jq(this).showWordCount();
+})
+});
+</script>
+
+<script src="http://api.map.baidu.com/api?v=1.3" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+function initialize() {
+
+var point;
+var mapapimark = "{if $bd['x']&&$bd['y']}({$bd['x']}, {$bd['y']}){/if}";
+var local = "";
+
+if(mapapimark) {
+var mapapimarkaction = true;
+point = new BMap.Point({$bd['x']}, {$bd['y']});
+} else {
+if(!local) {
+var defaultmapaction = true;
+point = new BMap.Point({$config['x']},{$config['y']});
+} else {
+var geoaction = true;
+}
+}
+
+var map = new BMap.Map("map_canvas");
+map.enableScrollWheelZoom();
+map.centerAndZoom(point, 14);
+
+if(mapapimarkaction) {
+var marker = new BMap.Marker(point, {title: "{$bd['name']}"});
+map.addOverlay(marker);
+} else if(geoaction) {
+var Geocoder = new BMap.Geocoder();
+if(Geocoder) {
+Geocoder.getPoint(local, function(point){
+if (point) {
+map.centerAndZoom(point, 14);
+//map.addOverlay(new BMap.Marker(point));
+} else {
+alert("{lang aljbd:s169}");
+}
+}, "");
+}
+}
+}
+initialize();
+</script>
+<div>
+{template common/footer}

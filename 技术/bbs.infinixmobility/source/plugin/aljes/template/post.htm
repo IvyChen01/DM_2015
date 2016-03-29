@@ -1,0 +1,177 @@
+{template common/header}
+<link href="source/plugin/aljes/css/v3.css" rel="stylesheet">
+<link href="source/plugin/aljes/css/post.css" rel="stylesheet"> 
+<div class="bm cl" id="pt">
+    <div class="z">
+        <a title="{$_G['setting']['bbname']}" class="nvhm" href="./">{$_G['setting']['bbname']}</a><em>&rsaquo;</em><a href="plugin.php?id=aljes">$config['daohang']</a><em>&rsaquo;</em><a href="plugin.php?id=aljes&act=member">{lang aljes:Management_Center}</a><em>&rsaquo;</em>{lang aljes:member_1}</div>
+    <div class="z"></div>
+</div>
+<div class="wrapper">
+    <ul class="flow clearfix sep-big">
+        <li class="flow-item flow-item-done"><span class="done">{lang aljes:post_2}<small>&nbsp;({$config['daohang']}{lang aljes:post_3}</small></span></li>
+        <li class="flow-item flow-item-current">{lang aljes:post_4}</li>
+        <li class="flow-item flow-item-last">{lang aljes:post_5}</li>
+    </ul>
+    <div class="clearfix">
+        <div class="publish-detail" id="publish">
+            <div class="separate">{lang aljes:post_6}</div>
+            <iframe style="display:none" name="myiframe" id="myiframe"></iframe>
+            <form class="form" method="post" id="postform"  enctype="multipart/form-data" action="plugin.php?id=aljes&act={$_GET['act']}&lid={$lp['id']}" target="myiframe">
+                <input type="hidden" value="{FORMHASH}" name="formhash">		
+				<div id="id_wanted" class="p-line" style="display: block;">
+			<label class="p-label"><span class="red required">*</span> {lang aljes:post_29}</label>
+			<div class="publish-detail-item publish-detail-item-top">
+				{loop $wanted_types $k $v}
+				<label class="form-label">
+				<input type="radio" data-parent=".p-line" value="$k"  class="form-radio" title="$v" {if $k==1&&!$lp['wanted']}checked="checked"{/if} name="wanted" maxlength="50" {if $lp['wanted']==$k}checked="checked"{/if}>$v</label>
+				{/if}
+			</div>
+		</div>
+                <div id="id_title" class="p-line ">
+                    <label class="p-label"><span class="red required">*</span> {lang aljes:post_7}</label>
+                    <div class="publish-detail-item ">
+                        <input type="text" value="$lp['title']" data-parent=".p-line" class="input input-60" title="$lp['title']" order="1"  name="title" maxlength="25">
+                    </div>
+                </div>		
+                <div id="id_fl" class="p-line ">
+                    <label class="p-label"> {lang aljes:post_8}</label>
+                    <div class="publish-detail-item ">
+                        <select value="" data-parent=".p-line" class="input" title="{lang aljes:post_27}" order="2" datatype="zufangtype" tagname="zufangtype" name="zufangtype" maxlength="100" type="text">
+                            <option value=""> </option>
+							{loop $zufangtype $k $v}
+                            <option value="$k" {if $lp['zufangtype']==$k}selected{/if}>$v</option>
+                           {/loop}
+                        </select>
+                    </div>
+
+
+                </div>		
+      
+                <div id="id_jg" class="p-line ">
+                    <label class="p-label"><span class="red required">&nbsp;</span> {lang aljes:post_9}</label>
+                    <div class="publish-detail-item ">
+                        <label class="form-label">
+                            <input type="text" value="{$lp['zujin']}" data-parent=".p-line" class="input input-5" title="{lang aljes:post_26}" order="5" pattern="^(.*[0-9]+.*|)$"  filterlabels="{lang aljes:post_28}" filters="[0 TO 500],[500 TO 1000],[1000 TO 1500],[1500 TO 2000],[2000 TO 3000],[3000 TO 4000],[4000 TO *]" numeric="1" name="zujin" maxlength="10" required="required">
+                            <span class="unit">{lang aljes:post_10}&nbsp;&nbsp;<font class="p-note">{lang aljes:post_39}</font></span>
+                        </label>
+                    </div>
+                </div>		
+                <div id="id_content" class="p-line ">
+                    <label class="p-label"> {lang aljes:post_11}</label>
+                    <div class="publish-detail-item publish-detail-item-top">
+                        <textarea value="{$lp['content']}" data-parent=".p-line" class="input input-5" title="{lang aljes:post_25}" order="6" name="content" maxlength="5000" type="text" style=" word-wrap: break-word; resize: none; height: 100px;">{$lp['content']}</textarea>
+                    </div>
+                </div>		
+                <div id="id_images" class="p-line  swfu">
+                    <label class="p-label"> {lang aljes:post_12}</label>
+                    <div class="publish-detail-item ">
+                        <ul class="postimg clearfix"></ul>
+                        <div class="pull-left" id="swfupload">
+                            <input type="file" name="pic1"><br>
+                            {if $lp['pic1']}<img src="{eval echo $lp['pic1'].'.64x64.jpg';}"><br>{/if}
+                            <input type="hidden" name="pic1" value="{$lp['pic1']}">
+                            <input type="file" name="pic2"><br>
+                            {if $lp['pic2']}<img src="{eval echo $lp['pic2'].'.64x64.jpg';}"><br>{/if}
+                            <input type="hidden" name="pic2" value="{$lp['pic1']}">
+                            <input type="file" name="pic3"><br> 
+                            {if $lp['pic3']}<img src="{eval echo $lp['pic3'].'.64x64.jpg';}"><br>{/if}
+                            <input type="hidden" name="pic3" value="{$lp['pic3']}">
+                            <input type="file" name="pic4"><br>
+                            {if $lp['pic4']}<img src="{eval echo $lp['pic4'].'.64x64.jpg';}"><br>{/if}
+                            <input type="hidden" name="pic4" value="{$lp['pic4']}">
+                            <input type="file" name="pic5"><br>   
+                            {if $lp['pic5']}<img src="{eval echo $lp['pic5'].'.64x64.jpg';}"><br>{/if}
+                            <input type="hidden" name="pic5" value="{$lp['pic5']}"> 
+                            <input type="file" name="pic6"><br>
+                            {if $lp['pic6']}<img src="{eval echo $lp['pic6'].'.64x64.jpg';}"><br>{/if}
+                            <input type="hidden" name="pic6" value="{$lp['pic6']}">
+                            <input type="file" name="pic7"><br>
+                            {if $lp['pic7']}<img src="{eval echo $lp['pic7'].'.64x64.jpg';}"><br>{/if}
+                            <input type="hidden" name="pic7" value="{$lp['pic7']}">
+                            <input type="file" name="pic8"><br>
+                            {if $lp['pic8']}<img src="{eval echo $lp['pic8'].'.64x64.jpg';}"><br>{/if}
+                            <input type="hidden" name="pic8" value="{$lp['pic8']}">
+                        </div>
+                    </div>
+
+                </div>		
+           	
+                <div id="id_region" class="p-line ">
+                    <label class="p-label"><span class="red required">*</span> {lang aljes:post_13}</label>
+                    <div class="publish-detail-item ">
+                        <select value="" data-parent=".p-line" class="input" title="{lang aljes:post_14}" order="9" data-sub="Linkage_region"  othername="{lang aljes:post_15}" area3="showEmptyFilter=1" area2="showEmptyFilter=1" level="area2,area3" remember="1" name="region" id="region" group="{lang aljes:post_16}" maxlength="100" type="text" onchange="ajaxget('plugin.php?id=aljes&act=getregion&rid=' + $('region').value, 'getregion')">
+                            <option data-target="#" value=""> </option>
+                            {loop $rs $r}
+                            <option  value="$r['id']" {if $lp['region']==$r['id']}selected{/if}>$r['subject']</option>
+                            {/loop}
+                        </select>
+                        <span id="getregion">
+                            {if $lp['region']&&$lp['region1']}
+                            <select required="required" name="region1" class="sub-area input active" id="m5627">
+                                <option value="" id=""> </option>
+                                {loop $rrs $rr}
+                                <option value="$rr['id']" {if $rr[id]==$lp['region1']}selected{/if}>$rr['subject']</option>
+                                {/loop}
+                            </select>
+                            {/if}
+                        </span>
+                        <input type="text" value="{$lp['region2']}" data-parent=".p-line" title="{lang aljes:post_17}" order="10" class="input" autocompletesource="xiaoqu_{context.city.objectId}" datatype="xiaoqu" name="region2" displayname="{lang aljes:post_16}" group="{lang aljes:post_16}" maxlength="100">
+                    </div>
+
+                </div>	
+				<div id="id_QQ" class="p-line">
+			<label class="p-label"> {lang aljes:post_33}</label>
+			<div class="publish-detail-item ">
+				<input type="text" value="{$lp['qq']}" data-parent=".p-line" class="input input-6" title="{lang aljes:post_34}" order="8" pattern="^(.*[0-9]+.*|)$" remember="true" numeric="1" name="qq" maxlength="14">
+			</div>
+			
+		</div>
+		 <div id="id_lxr" class="p-line ">
+                    <label class="p-label"><span class="red required"></span> {lang aljes:post_37}</label>
+                    <div class="publish-detail-item ">
+                        <input class="input input-5" type="text" value="$lp['lxr']" data-parent=".p-line" class="input input-60" title="$lp['lxr']" order="1"  name="lxr" maxlength="25">
+                    </div>
+					<span class="p-note">{lang aljes:post_38}</span>
+                </div>		
+                <div id="id_contact" class="p-line ">
+                    <label class="p-label"><span class="red required">*</span> {lang aljes:post_18}</label>
+                    <div class="publish-detail-item ">
+                        <input type="text" value="{$lp['contact']}" data-parent=".p-line" class="input input-5" title="{lang aljes:post_24}" order="11" pattern="^\d[\d-]{3,20}\d$"  hidevaluedinput="1" name="contact" maxlength="30"><small id="contact-tips"></small>
+                    </div>
+
+                    <span class="p-note">{lang aljes:post_19}</span>
+                </div>
+
+                <div class="hide separate button-hide" id="moreinfo" style="display: block;">
+                    <a class="pull-right" href="#">
+                        <span class="button-show"><i class="icon-plus"></i>&nbsp;{lang aljes:post_20}</span>
+                    </a>{lang aljes:post_21}<small>{lang aljes:post_22}</small>
+                </div>
+               
+<div id="id_new" class="p-line  meta-hidden" style="display: block;">
+			<label class="p-label"> {lang aljes:post_35}</label>
+			<div class="publish-detail-item ">
+				<select name="new" value="" data-parent=".p-line" class="input" title="{lang aljes:post_36}" order="10"  maxlength="100" type="text">
+				<option value=""></option>
+				{loop $new_types $k $n}
+				<option value="$k" {if $k==$lp['new']}selected{/if}>$n</option>
+				{/loop}
+				</select>
+			</div>
+			
+			
+			
+		</div>
+                <div id="ajaxwaitid"></div>
+                <p class="p-submit">
+                   
+                    <input type="submit"  class="form-submit button_lj button-green" id="fabu-form-submit" value="{lang aljes:post_23}">
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+{if file_exists('source/plugin/aljes/template/com/color.htm')}
+{template aljes:com/color}
+{/if}
+{template common/footer}

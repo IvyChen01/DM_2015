@@ -1,0 +1,26 @@
+<ul>
+    <li {if $_GET['act']=='member'}class="a"{/if}><a href="plugin.php?id=aljlp&act=member" >{lang aljlp:mnav_1}</a></li>
+    {if file_exists("source/plugin/aljlp/template/com/admin.php")}
+    {if $_G['groupid']==1}
+    <li {if $_GET['act']=='adminlp'}class="a"{/if}><a href="plugin.php?id=aljlp&act=adminlp" >{lang aljlp:mnav_2}</a></li>
+    {/if}
+    {/if}
+    {if $_G['groupid']==1}
+    {if file_exists("source/plugin/aljlp/template/com/user.php")}
+    <li {if $_GET['act']=='adminuser'}class="a"{/if}><a href="plugin.php?id=aljlp&act=adminuser" >{lang aljlp:mnav_3}</a></li>
+    {/if}
+    {/if}
+    {if file_exists("source/plugin/aljlp/template/com/reflash.php")}
+    {if $_G['groupid']==1}
+    <li {if $_GET['act']=='adminreflash'}class="a"{/if}><a href="plugin.php?id=aljlp&act=adminreflash" >{lang aljlp:mnav_4}</a></li>
+    {/if}
+    {/if}
+    {if file_exists("source/plugin/aljlp/template/com/top.php")}
+    {if $_G['groupid']==1}
+    <li {if $_GET['act']=='admintop'}class="a"{/if}><a href="plugin.php?id=aljlp&act=admintop" >{lang aljlp:mnav_5}</a></li>
+    {/if}
+    {/if}
+	{if file_exists("source/plugin/aljlp/template/com/attes.php")}
+	<li {if $_GET['act']=='attes'}class="a"{/if}><a href="plugin.php?id=aljlp&act=attes" >{lang aljlp:attes_1}</a></li>
+	{/if}
+</ul>

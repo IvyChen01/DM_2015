@@ -1,0 +1,23 @@
+{template aljbd:view_header}
+<div class="wp cl" id="bdw">
+<div class="main layout store_list" id="consumerlist">
+<div class="content">
+<h3>{lang aljbd:consume_1}<span>{lang aljbd:consume_2}{$num}{lang aljbd:consume_3}</span></h3>
+<div class="all_consumer cl">
+<!--{eval  $i=1;}-->
+{loop $nlist $c}
+<dl <!--{if $i%3===0}-->class="mr0"<!--{/if}-->>
+<dt><a target="_blank" href="{if $config['isrewrite']}brand_consume_{$bd['id']}_{$c['id']}.html{else}plugin.php?id=aljbd&act=consumeview&bid={$bd['id']}&cid={$c['id']}{/if}"><img width="205" height="125" border="0" alt="" src="$c['pic']"></a>{if TIMESTAMP< $c['end']||!$c['end']}<span class="ineffect">{lang aljbd:consume_5}</span>{else}<span class="expire">{lang aljbd:consume_4}</span>{/if}</dt>
+<dd>
+<h4><a target="_blank" title="" href="{if $config['isrewrite']}brand_consume_{$bd['id']}_{$c['id']}.html{else}plugin.php?id=aljbd&act=consumeview&bid={$bd['id']}&cid={$c['id']}{/if}">$c['subject']</a></h4>
+<p>{lang aljbd:consume_6}&nbsp;&nbsp;{if $c['end']}<!--{eval echo date('Y-m-d',$c['start']);}-->&nbsp;{lang aljbd:consume_7}&nbsp;<!--{eval echo date('Y-m-d',$c['end']);}-->{else}{lang aljbd:consume_8}{/if}</p>
+</dd>
+</dl>
+<!--{eval  $i++;}-->
+{/loop}
+<div class="c h10"></div>
+</div>
+</div>
+</div>
+
+{template aljbd:side}

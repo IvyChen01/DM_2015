@@ -1,0 +1,244 @@
+{template common/header}
+<script src="source/plugin/aljbd/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+</script>
+<link href="source/plugin/aljbd/css/common.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.dz_nvsec {
+  border-bottom: 2px solid #FF6600;
+  height: 40px;
+  margin: 10px 0;
+}
+.dz_nav {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+}
+.dz_nav a {
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 20px;
+  color:#666666;
+}
+.dz_nav a.a {
+  background: none repeat scroll 0 0 #FF6600;
+  color: #FFFFFF;
+}
+.dz_nav a:hover {
+  background: none repeat scroll 0 0 #FF6600;
+  color:#FFFFFF;
+  text-decoration: none;
+}
+.fr {
+  display: inline;
+  float: right !important;
+}
+.descxxx {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: block;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: -20px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+.descxxx{
+  color: #FFFFFF;
+}
+.profile a{
+color: #105CB6;
+    text-decoration: none;
+}
+.profile a:hover{
+color: #105CB6;
+    text-decoration: underline;
+}
+
+</style>
+<div class="wrap cl">
+<div class="main_lj">
+
+<div id="pt"> <a href="./" id="fjump" class="nvvv" title="{$_G['setting']['bbname']}">{$_G['setting']['bbname']}</a><em>&rsaquo;</em><a href="{if $config['isrewrite']}brand.html{else}plugin.php?id=aljbd{/if}">{lang aljbd:s36}</a>
+
+
+</div>
+
+<div class="search_lj">
+<div class="z">{lang aljbd:s37} <strong>$num</strong> {lang aljbd:s38}</div>
+<div id="search_form_wrap" {if !file_exists('source/plugin/aljbd/com/so.php')}style="width:300px;"{/if} class="y">
+<form method="post" name="" action="plugin.php?id=aljbd" onsubmit="return brand_search(this)" id="form_search">			
+<input type="text" autocomplete="off" name="kw" placeholder="{lang aljbd:list_1}" value="$_GET['kw']"  id="srchtxt">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<input type="submit" id="for_mod_sshop"  value="{lang aljbd:list_2}" name="submit" >
+{if file_exists('source/plugin/aljbd/com/so.php')}
+<label  for="mod_sgood" id="for_mod_sgood" style="margin-top:0px;" onclick="location.href='plugin.php?id=aljbd:so&kw='+$('srchtxt').value">{lang aljbd:so6}</label>
+{/if}
+</form>
+</div>
+</div>
+<div class="selection">
+<dl class="cl">
+<dt>{lang aljbd:s39}</dt>
+{if $_GET['type']}
+{eval $check=C::t('#aljbd#aljbd_type')->fetch_all_by_upid($_GET['type']);}
+{/if}
+{if empty($_GET['type'])||empty($check)}
+<dd class="cl">
+<ul>
+<li><a {if empty($_GET['type'])}class="a"{/if} href="{if $config['isrewrite']}brand_{eval echo intval(0)}_{eval echo intval(0)}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval($_GET['region1'])}.html{else}plugin.php?id=aljbd&type=0&subtype=0&region={$_GET['region']}&subregion={$_GET['subregion']}&region1={$_GET['region1']}&order={$_GET['order']}&view=$_GET['view']{/if}">{lang aljbd:s40}</a></li>
+{loop $tlist $t}
+<li>
+<a {if $t['id']==$_GET['type']}class="a"{/if} href="{if $config['isrewrite']}brand_{$t['id']}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval($_GET['region1'])}.html{else}plugin.php?id=aljbd&type={$t['id']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&region1={$_GET['region1']}&order={$_GET['order']}&view=$_GET['view']{/if}">
+$t['subject']({if $tcs[$t['id']]}$tcs[$t['id']]{else}0{/if})</a>
+</li>
+{/loop}
+</ul>
+</dd>
+{else}
+<dd class="cl">
+<ul>
+<li><a {if empty($_GET['subtype'])}class="a"{/if} href="{if $config['isrewrite']}brand_{eval echo intval(0)}_{eval echo intval(0)}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval($_GET['region1'])}.html{else}plugin.php?id=aljbd&type=0&subtype=&region={$_GET['region']}&subregion={$_GET['subregion']}&region1={$_GET['region1']}&order={$_GET['order']}&view=$_GET['view']{/if}">{lang aljbd:s40}</a></li>
+{loop C::t('#aljbd#aljbd_type')->fetch_all_by_upid($_GET['type'])  $tt}
+<li><a {if $_GET['subtype']==$tt['id']}class="a"{/if} href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($tt['id'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval($_GET['region1'])}.html{else}plugin.php?id=aljbd&type={$_GET['type']}&subtype={$tt['id']}&region={$_GET['region']}&subregion={$_GET['subregion']}&region1={$_GET['region1']}&order={$_GET['order']}&view=$_GET['view']{/if}">$tt['subject']</a></li>
+{/loop}
+</ul>
+</dd>
+{/if}
+</dl>
+<dl style="border: none;" class="cl">
+<dt>{lang aljbd:s41}</dt>
+<dd class="cl">
+<ul>
+<li><a {if empty($_GET['region'])}class="a"{/if} href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval(0)}_{eval echo intval(0)}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval(0)}.html{else}plugin.php?id=aljbd&type={$_GET['type']}&subtype={$_GET['subtype']}&region=0&subregion=0&region1=0&order={$_GET['order']}&view=$_GET['view']{/if}">{lang aljbd:s42}</a></li>
+{loop $rlist $k $r}
+<li><a {if $k==$_GET['region']}class="a"{/if} href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($k)}_{eval echo intval(0)}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval(0)}.html{else}plugin.php?id=aljbd&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$k}&subregion=0&region1=0&order={$_GET['order']}&view=$_GET['view']{/if}">$rlist[$k]['name']</a></li>
+{/loop}
+</ul>
+</dd>
+{eval $regionarray=C::t('#aljbd#aljbd_region')->fetch_all_by_upid('','',$_GET['region']);}
+{if $_GET['region']&&$regionarray}
+<dd class="cl">
+<ul>
+<li><a {if empty($_GET['subregion'])}class="a"{/if} href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval(0)}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval(0)}.html{else}plugin.php?id=aljbd&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion=0&region1=0&order={$_GET['order']}&view=$_GET['view']{/if}">{lang aljbd:s43}</a></li>
+{loop $regionarray  $tt}
+<li><a {if $_GET['subregion']==$tt['catid']}class="a"{/if} href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($tt['catid'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval(0)}.html{else}plugin.php?id=aljbd&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$tt['catid']}&region1=0&view=$_GET['view']{/if}">$tt['name']</a></li>
+{/loop}
+</ul>
+</dd>
+{/if}
+{eval $region1array=C::t('#aljbd#aljbd_region')->fetch_all_by_upid('','',$_GET['subregion']);}
+{if $_GET['subregion']&&$region1array}
+<dd class="cl">
+<ul>
+<li><a {if empty($_GET['region1'])}class="a"{/if} href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&order={$_GET['order']}&view=$_GET['view']{/if}">{lang aljbd:s43}</a></li>
+{loop $region1array  $tt}
+<li><a {if $_GET['region1']==$tt['catid']}class="a"{/if} href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval($tt['catid'])}.html{else}plugin.php?id=aljbd&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion=$_GET['subregion']&region1={$tt['catid']}&order={$_GET['order']}&view=$_GET['view']{/if}">$tt['name']</a></li>
+{/loop}
+</ul>
+</dd>
+{/if}
+</dl>
+
+</div><div class="mbm">
+<div class="bm_h">
+<ul class="filter cl">
+<li class="y">
+{if $config['pic']}
+<a class="mode_p {if $_GET['view']!='list'}al{/if}"  href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{eval echo intval(3)}_{eval echo intval($_GET['region1'])}.html{else}plugin.php?id=aljbd&view=pic&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&region1={$_GET['region1']}&order={$_GET['order']}{/if}">{lang aljbd:s45}</a>
+<a class="mode_l {if $_GET['view']=='list'}al{/if}"  href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{eval echo intval(4)}_{eval echo intval($_GET['region1'])}.html{else}plugin.php?id=aljbd&view=list&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&region1={$_GET['region1']}&order={$_GET['order']}{/if}">{lang aljbd:s44}</a>
+{else}
+<a class="mode_l {if $_GET['view']!='pic'}al{/if}"  href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{eval echo intval(4)}_{eval echo intval($_GET['region1'])}.html{else}plugin.php?id=aljbd&view=list&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&region1={$_GET['region1']}&order={$_GET['order']}{/if}">{lang aljbd:s44}</a>
+<a class="mode_p {if $_GET['view']=='pic'}al{/if}"  href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{if $_GET['order']=='dateline'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{eval echo intval(3)}_{eval echo intval($_GET['region1'])}.html{else}plugin.php?id=aljbd&view=pic&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&region1={$_GET['region1']}&order={$_GET['order']}{/if}">{lang aljbd:s45}</a>
+{/if}
+</li>
+<li class="order">
+<a style="{if $_GET['order']=='comment'||empty($_GET['order'])}color:#ff6600;{/if}"  href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{eval echo intval($_GET['order'])}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval($_GET['region1'])}.html{else}plugin.php?id=aljbd&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&region1={$_GET['region1']}&order=comment&view=$_GET['view']{/if}">{lang aljbd:s46}</a>
+<a style="{if $_GET['order']=='view'}color:#ff6600;{/if}"  href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{eval echo intval(1)}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval($_GET['region1'])}.html{else}plugin.php?id=aljbd&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&region1={$_GET['region1']}&order=view&view=$_GET['view']{/if}"  class="view">{lang aljbd:s47}</a>
+<a style="{if $_GET['order']=='dateline'}color:#ff6600;{/if}" href="{if $config['isrewrite']}brand_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['region'])}_{eval echo intval($_GET['subregion'])}_{eval echo intval(2)}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}_{eval echo intval($_GET['region1'])}.html{else}plugin.php?id=aljbd&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&region1={$_GET['region1']}&order=dateline&view=$_GET['view']{/if}" class="dateline">{lang aljbd:s48}</a>
+</li>
+</ul>
+</div>
+
+<div class="cl">
+{if $_GET['view']=='list'||(empty($_GET['view'])&&empty($config['pic']))}
+<ul class="viewlist cl">
+{loop $bdlist $bd}
+{eval $sign=DB::result_first("select sign from ".DB::table('aljbd_attestation')." where sign=1 and bid=".$bd['id'])}
+<!--newcomment--><li>
+<div class="thumb"><a href="{if $config['isrewrite']}brand_shop_{$bd['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}" target="_blank"><img alt="$bd['name']" src="{if file_exists($bd['logo'])}$bd['logo']{else}source/plugin/aljbd/images/zz.jpg{/if}" width="100px" height="100px"></a></div>
+<div class="info">
+<h3 class="xi2"><a title="$bd['name']" href="{if $config['isrewrite']}brand_shop_{$bd['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}" target="_blank">$bd['name']</a>{if $sign}<img title="{lang aljbd:attestation_9}" src="source/plugin/aljbd/images/vip.gif">{/if}</h3>
+<p class="xg1">$bd['addr'], $bd['tel']</p>
+{if $config['isqq']}<p style="padding-top:5px;">{if $bd['qq']&&strlen($bd['qq']) > 6}QQ: $bd['q']{/if}</p>{/if}
+<p class="discount xg1"></p>
+</div>
+
+{eval $avg=C::t('#aljbd#aljbd_comment')->count_avg_by_bid($bd['id']);$avg=intval($avg);}
+<div class="attribute cl"><p class="s2 xg1 cl"><span class="score z"><img title="{$avg}" alt="{$avg}" src="source/plugin/aljbd/images/{$avg}.gif"></span><span class="y"><a href="{if $config['isrewrite']}brand_shop_{$bd['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}" target="_blank">{lang aljbd:s49}({$bd['view']})</a> <a href="{if $config['isrewrite']}brand_shop_{$bd['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}" target="_blank">{lang aljbd:s50}({$bd['comment']})</a></span></p>
+{if $bd['c']['uid']}
+<div class="comment cl"><a href="home.php?mod=space&uid={$bd['c']['uid']}&do=profile" target="_blank"><img width="20" height="20" src="{eval echo avatar($bd['c']['uid'],'small',true)}" alt="avatar"><span class="author">
+$bd['c']['username']
+</span></a>
+<span>:</span>
+<a href="plugin.php?id=aljbd&act=view&bid={$bd['id']}#comment{$bd['c']['id']}" target="_blank"><span>{eval echo mb_substr($bd['c']['content'],0,7,$_G['charset']);}..</span></a>
+</div>
+{/if}
+{if $config['isqq']}<p class="y"><br/><br/><a href="{if $config['isrewrite']}brand_shop_{$bd['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}" target="_blank"><img src="$config['dptb']"></a></p>{/if}
+</div>
+</li>
+{/loop}
+</ul>
+{else}
+<ul class="viewlist_enlarge cl">
+{eval $ii=1;}
+{loop $bdlist $bd}
+{eval $sign=DB::result_first("select sign from ".DB::table('aljbd_attestation')." where sign=1 and bid=".$bd['id'])}
+{eval $avg=C::t('#aljbd#aljbd_comment')->count_avg_by_bid($bd['id']);$avg=intval($avg);}
+<li {if $ii%3==0}class="mr0"{/if} {if $config['isqq']}style="height:358px;"{/if}>
+<div class="thumb"><a href="{if $config['isrewrite']}brand_shop_{$bd['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}" target="_blank"><img alt="$bd['name']" src="{if file_exists($bd['logo'])}$bd['logo']{else}source/plugin/aljbd/images/zz.jpg{/if}"></a></div>
+<h3 class="xi2 cl">
+<a title="$bd['name']" href="{if $config['isrewrite']}brand_shop_{$bd['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}" target="_blank" class="v"><!--{eval echo cutstr($bd['name'],23,'');}-->{if $sign}<img title="{lang aljbd:attestation_9}" src="source/plugin/aljbd/images/vip.gif">{/if}</a>
+</h3>
+<p class="xg1 mtn address_n_tel" >
+{eval echo mb_substr($bd['addr'],0,25,$_G['charset']);}, $bd['tel']...</p>
+<p class="s2 xg1 cl"><span class="score z"><img title="{$bd['avg']}" alt="{$avg}" src="source/plugin/aljbd/images/{$avg}.gif"></span><span class="y">{lang aljbd:s51}({$bd['view']}) {lang aljbd:s52}($bd['comment'])</span></p>
+{if $config['isqq']}<p class="s2 xg1 cl"><span class="score z">{if $bd['qq']&&strlen($bd['qq']) > 6}{$bd['q']}{/if}</span><span class="y" ><a  href="{if $config['isrewrite']}brand_shop_{$bd['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}" target="_blank">{if $config['dptb']}<img src="$config['dptb']">{/if}</a></span></p>{/if}
+
+{if $bd['c']}
+<div class="comment cl"><a href="home.php?mod=space&uid={$bd['c']['uid']}&do=profile" target="_blank"><img width="20" height="20" src="{eval echo avatar($bd['c']['uid'],'small',true)}" alt="avatar"><span class="author">$bd['c']['username']</span></a>
+<span>:</span>
+<a href="plugin.php?id=aljbd&act=view&bid={$bd['id']}#comment{$bd['c']['id']}" target="_blank"><span>{eval echo mb_substr($bd['c']['content'],0,7,$_G['charset']);}..</span></a></div>
+{/if}
+</li>
+{eval $ii++;}
+{/loop}
+</ul>
+{/if}
+<div class="mtm cl">
+$paging</div>
+</div>
+</div></div>
+{template aljbd:list_side}
+<script src="source/plugin/aljbd/js/simpleslide.js" type="text/javascript" charset="utf-8"></script>
+<script>
+jq(function(){
+jq('.hotvip li').mouseover(function(){
+jq(this).addClass('active').siblings().removeClass('active');
+});
+jq('.hotvip:eq(0) ul').simpleSlideClass({intervalTime: 2});
+});
+jq(function(){
+jq('.hotvip2 li').mouseover(function(){
+jq(this).addClass('active').siblings().removeClass('active');
+});
+jq('.hotvip2:eq(0) ul').simpleSlideClass({intervalTime: 2});
+})
+</script>
+
+</div>
+
+{template common/footer}

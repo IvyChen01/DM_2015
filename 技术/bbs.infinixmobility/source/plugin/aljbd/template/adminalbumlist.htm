@@ -1,0 +1,13 @@
+
+
+
+<tr>	
+{loop $alist $key $value}				
+<td width="20%" style="text-align:center;">
+<a href="admin.php?action=plugins&operation=config&identifier=aljbd&pmod=admin&brand=album&act=editalbum&aid={$value['id']}">{if $value[subjectimage]}<img width="120" height="120" src="$value[subjectimage]" alt="{$value[albumname]}" />{else}<img width="120" height="120" src="source/plugin/aljbd/images/nophoto.jpg" alt="{$value[albumname]}" />{/if}</a>
+</div>
+<p class="ptm"><a href="admin.php?action=plugins&operation=config&identifier=aljbd&pmod=admin&brand=album&act=editalbum&aid={$value['id']}" class="xi2">$value[albumname]</a>($value[picnum])&nbsp;<a onclick="showWindow('addalbum',this.href)" href="admin.php?action=plugins&operation=config&identifier=aljbd&pmod=admin&brand=album&act=adminaedit&aid={$value[id]}" class="xi2"><font color="red">{lang aljbd:albumlist_2}</font></a></p>					
+<span style="height:22px;"><a onclick="showWindow('addalbum',this.href)" href="admin.php?action=plugins&operation=config&identifier=aljbd&pmod=admin&brand=album&act=admin_addimg&aid={$value[id]}&bid={$value[bid]}&uid={$value[uid]}" style="color:#900;">{lang aljbd:albumlist_3}</a></span><p><input class="checkbox" type="checkbox" name="delete[]" value="{$value[id]}"/></p>
+</td><!--{if !(($key+1)%5)}--></tr><!--{/if}-->
+{/loop}			
+<tr><td colspan="2"><div class="fixsel"><input type="checkbox" onclick="checkAll('prefix', this.form, 'delete')" class="checkbox" id="chkallUMP3" name="chkall"><label for="chkallUMP3">{lang aljbd:adminalbumall_2}</label>&nbsp;<input type="submit" value="{lang aljbd:adminalbumall_3}" title="{lang aljbd:adminalbumall_4}" name="submit" id="submit_submit" class="btn"></div></td><td>$paging</td></tr>

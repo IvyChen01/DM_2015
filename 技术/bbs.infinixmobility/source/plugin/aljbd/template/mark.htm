@@ -1,0 +1,142 @@
+{template common/header}
+<script src="static/js/seditor.js" type="text/javascript" reload="1"></script>
+<h3 class="flb">
+	<em>{lang aljbd:s65}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<div style="padding:5px;"><input placeholder="{lang aljbd:adminmark_1}" type="text" name="ss" id="ss" style="width:275px;"><input type="submit" onclick="initialize()"  value="{lang aljbd:adminmark_2}"></div>
+		<div style="width: 560px; height: 400px;" class="main_map" id="mapObj">
+        
+        
+<script type="text/javascript" charset="utf-8" reload="1">
+
+var map;
+var marker;
+var infowindow;
+var draggable = false;
+var contentString = "<div style=\"text-align:center;\">{if $bd['x']&&$bd['y']}<b>{$bd['name']}</b><br />{lang aljbd:s66}{$bd['tel']}<br />{lang aljbd:s67}{$bd['addr']}{else}{lang aljbd:s68}{/if}</div>";
+var confirmString = "<div style=\"text-align:center;\">{lang aljbd:s69}<br><font color=\"red\">{lang aljbd:s70}</font><br><div><a id=\"correctOk\" class=\"mapmark left\"><font color=\"blue\">{lang aljbd:s71}</font></a><a id=\"correctCancel\" class=\"mapmark right\">&nbsp;&nbsp;<font color=\"blue\">{lang aljbd:s72}</font></a></div></div>";
+
+function initialize() {
+
+var point;
+var op = "mark";
+var mapapimark = "{if $bd['x']&&$bd['y']}({$bd['x']}, {$bd['y']}){/if}";
+var local = document.getElementById("ss").value;
+
+if(mapapimark) {
+var mapapimarkaction = true;
+point = new BMap.Point({$bd['x']}, {$bd['y']});
+} else {
+if(!local) {
+var defaultmapaction = true;
+point = new BMap.Point({$config['x']},{$config['y']});
+} else {
+var geoaction = true;
+}
+}
+
+
+
+
+var map = new BMap.Map("mapObj");
+map.enableScrollWheelZoom();
+map.centerAndZoom(point, 14);
+if(mapapimarkaction || (defaultmapaction && (op == 'mark'))) {
+marker = new BMap.Marker(point, {title: "{$bd['name']}"});
+map.addOverlay(marker);
+var opts = {  
+width : 250,
+title : ''
+}
+infoWindow = new BMap.InfoWindow(contentString, opts); 
+marker.openInfoWindow(infoWindow);
+marker.enableDragging();
+} else if(geoaction) {
+var Geocoder = new BMap.Geocoder();
+if(Geocoder) {
+Geocoder.getPoint(local, function(point){
+if (point) {
+map.centerAndZoom(point, 14);
+if(op == 'mark') {
+marker = new BMap.Marker(point, {title: "{$bd['name']}"});
+map.addOverlay(marker);
+marker.enableDragging();
+var opts = {  
+width : 250,
+title : ''
+}
+infoWindow = new BMap.InfoWindow(contentString, opts); 
+marker.addEventListener("click", function(e){
+marker.openInfoWindow(infoWindow);
+});
+infoWindow.setContent(contentString);
+marker.openInfoWindow(infoWindow);
+marker.addEventListener("dragstart", function(e){  
+marker.closeInfoWindow();
+});
+marker.addEventListener("dragend", function(e){
+infoWindow.setContent(confirmString);
+marker.openInfoWindow(infoWindow);
+infoWindow.enableAutoPan();
+marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+marker.setAnimation(null);
+jq("#correctOk").click(function() {
+newpoint = "("+e.point.lng + ", " + e.point.lat+")";
+jq.get('plugin.php?id=aljbd&act=mark&formhash={FORMHASH}&bid=' + {$bd['id']} + '&x='+e.point.lng+'&y='+e.point.lat , function(data) {
+infoWindow.setContent(data);
+marker.openInfoWindow(infoWindow);
+marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+marker.setAnimation(null);
+});
+});
+jq("#correctCancel").click(function() {
+map.closeInfoWindow();
+});
+});
+}
+} else {
+alert("{lang aljbd:s73}");
+}
+}, "");
+}
+}
+var opts = {  
+width : 250,
+title : ''
+}
+infoWindow = new BMap.InfoWindow(contentString, opts); 
+marker.addEventListener("click", function(e){
+marker.openInfoWindow(infoWindow);
+});
+infoWindow.setContent(contentString);
+marker.openInfoWindow(infoWindow);
+marker.addEventListener("dragstart", function(e){  
+marker.closeInfoWindow();
+});
+marker.addEventListener("dragend", function(e){
+infoWindow.setContent(confirmString);
+marker.openInfoWindow(infoWindow);
+infoWindow.enableAutoPan();
+marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+marker.setAnimation(null);
+jq("#correctOk").click(function() {
+newpoint = "("+e.point.lng + ", " + e.point.lat+")";
+jq.get('plugin.php?id=aljbd&act=mark&formhash={FORMHASH}&bid=' + {$bd['id']} + '&x='+e.point.lng+'&y='+e.point.lat , function(data) {
+infoWindow.setContent(data);
+marker.openInfoWindow(infoWindow);
+marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+marker.setAnimation(null);
+});
+});
+jq("#correctCancel").click(function() {
+map.closeInfoWindow();
+});
+});
+}
+initialize();
+</script>
+	
+</div>
+{template common/footer}

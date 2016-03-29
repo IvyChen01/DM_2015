@@ -1,0 +1,9 @@
+{template common/header}
+{if $rlist}
+<select name="region1" style="width:120px;" >
+<!--{loop $rlist $rid $r}-->
+<option value="$r['catid']">$r['name']</option>
+<!--{/loop}-->
+</select>
+{/if}
+{template common/footer}

@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2.5,X3,X3.1,X3.2]]></item>
+	<item id="Time"><![CDATA[2014-11-07 20:30]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://localhost/x32/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[【亮剑】二手市场]]></item>
+			<item id="identifier"><![CDATA[aljes]]></item>
+			<item id="description"><![CDATA[亮剑致力于打造最佳的二手市场模块]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[aljes/]]></item>
+			<item id="copyright"><![CDATA[亮剑(http://www.dzx30.com)]]></item>
+			<item id="version"><![CDATA[1.3.9]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[aljes]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[亮剑二手市场]]></item>
+					<item id="url"><![CDATA[plugin.php?id=aljes]]></item>
+					<item id="type"><![CDATA[1]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[admin]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[数据管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[sj]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[28]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="3">
+					<item id="name"><![CDATA[region]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[地区管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="4">
+					<item id="name"><![CDATA[upgrade]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[修复插件]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[4]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="5">
+					<item id="name"><![CDATA[app]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[亮剑应用中心]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[5]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2.5,X3,X3.1,X3.2]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[新旧程度]]></item>
+				<item id="description"><![CDATA[格式：ID=新旧程度]]></item>
+				<item id="variable"><![CDATA[new]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[1=全新
+2=99成新
+3=95成新
+4=9成新
+5=8成新
+6=7成新
+7=6成新
+8=5成新及以下]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[游客登录查看电话号码]]></item>
+				<item id="description"><![CDATA[选是游客未登录只能看到带*号的电话号码需要登录才能看到完整电话，反之游客直接可以看到完整电话号码]]></item>
+				<item id="variable"><![CDATA[isyouke]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[价格]]></item>
+				<item id="description"><![CDATA[格式：价格1-价格2=价格
+例：500元以下如：500-=500元以下
+例：3000-4000元如：3000-4000=3000-4000元
+例：4000元以上如：-4000=4000元以上]]></item>
+				<item id="variable"><![CDATA[jg]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[500-=500元以下
+500-1500=500-1500元
+1500-2000=1500-2000元
+2000-3000=2000-3000元
+3000-4000=3000-4000元
+4000-5000=4000-5000元
+-5000=5000元以上]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[供求]]></item>
+				<item id="description"><![CDATA[格式：ID=供求]]></item>
+				<item id="variable"><![CDATA[gongqiu]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[1=求购
+2=转让]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[类型]]></item>
+				<item id="description"><![CDATA[格式：ID=品牌名]]></item>
+				<item id="variable"><![CDATA[pinpai]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[1=手机
+2=电脑
+3=房子]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[是否审核数据]]></item>
+				<item id="description"><![CDATA[选是用户发布数据将需要管理员审核后才会显示
+选否发布数据直接显示]]></item>
+				<item id="variable"><![CDATA[isreview]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[列表页默认显示图文方式]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[isitem]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[列表页广告位]]></item>
+				<item id="description"><![CDATA[安装广告位组件后才会生效]]></item>
+				<item id="variable"><![CDATA[img]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<a href="#"><img src="source/plugin/aljes/images/3932_ad2_1.jpg" style="width:240px;"></img></a>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[详情页广告位]]></item>
+				<item id="description"><![CDATA[安装广告位组件后才会生效]]></item>
+				<item id="variable"><![CDATA[img2]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<a href="#"><img src="source/plugin/aljes/images/img2.jpg" style="width:268px;height:230px;"></a>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[列表页分页数量]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[page]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[列表页公告]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[gg]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[这是测试公告可以在插件设置中编辑]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[列表页公告链接]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ggurl]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[#]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="12">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[列表页公告文字颜色]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ggcolor]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="13">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[刷新积分类型]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[reflashextcredit]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="14">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[刷新需要消耗的积分数量]]></item>
+				<item id="description"><![CDATA[需安装刷新组件]]></item>
+				<item id="variable"><![CDATA[reflashpay]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="15">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[置顶积分类型]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[topextcredit]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="16">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[置顶需要消耗的积分数量]]></item>
+				<item id="description"><![CDATA[需安装置顶组件]]></item>
+				<item id="variable"><![CDATA[toppay]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="17">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[列表页SEO-标题]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[title]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[亮剑二手市场]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="18">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[列表页SEO-关键词]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[keywords]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[亮剑二手市场]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="19">
+				<item id="displayorder"><![CDATA[12]]></item>
+				<item id="title"><![CDATA[列表页SEO-描述]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[description]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[亮剑二手市场]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="20">
+				<item id="displayorder"><![CDATA[13]]></item>
+				<item id="title"><![CDATA[允许发布用户组]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[lj_groups]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[10]]></item>
+					<item id="1"><![CDATA[11]]></item>
+					<item id="2"><![CDATA[12]]></item>
+					<item id="3"><![CDATA[13]]></item>
+					<item id="4"><![CDATA[14]]></item>
+					<item id="5"><![CDATA[15]]></item>
+					<item id="6"><![CDATA[20]]></item>
+					<item id="7"><![CDATA[16]]></item>
+					<item id="8"><![CDATA[17]]></item>
+					<item id="9"><![CDATA[18]]></item>
+					<item id="10"><![CDATA[19]]></item>
+					<item id="11"><![CDATA[1]]></item>
+					<item id="12"><![CDATA[2]]></item>
+					<item id="13"><![CDATA[3]]></item>
+				</item>
+			</item>
+			<item id="21">
+				<item id="displayorder"><![CDATA[14]]></item>
+				<item id="title"><![CDATA[不允许发布提示语]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[lj_tsy]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[您所在的用户组暂时无法发布，请努力升级！]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="22">
+				<item id="displayorder"><![CDATA[15]]></item>
+				<item id="title"><![CDATA[导航名称]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[daohang]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[二手市场]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="23">
+				<item id="displayorder"><![CDATA[16]]></item>
+				<item id="title"><![CDATA[是否显示手机版链接]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[sjurl]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="24">
+				<item id="displayorder"><![CDATA[17]]></item>
+				<item id="title"><![CDATA[查看页声明]]></item>
+				<item id="description"><![CDATA[{sitename}=网站名称]]></item>
+				<item id="variable"><![CDATA[shengming]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[(^_^)联系的时候告诉我是在{sitename}看到的这条消息]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="25">
+				<item id="displayorder"><![CDATA[18]]></item>
+				<item id="title"><![CDATA[未传图默认图片地址]]></item>
+				<item id="description"><![CDATA[默认地址：source/plugin/aljes/images/photo_64.jpg]]></item>
+				<item id="variable"><![CDATA[mr_src]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[source/plugin/aljes/images/photo_64.jpg]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="26">
+				<item id="displayorder"><![CDATA[19]]></item>
+				<item id="title"><![CDATA[是否开启伪静态]]></item>
+				<item id="description"><![CDATA[请上传插件规则后再开启此开关，否则会找不到页面]]></item>
+				<item id="variable"><![CDATA[isrewrite]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="27">
+				<item id="displayorder"><![CDATA[20]]></item>
+				<item id="title"><![CDATA[首页伪静态规则]]></item>
+				<item id="description"><![CDATA[默认：ershou.html
+修改此设置请对应修改伪静态规则中的规则]]></item>
+				<item id="variable"><![CDATA[re_index]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[ershou.html]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="28">
+				<item id="displayorder"><![CDATA[21]]></item>
+				<item id="title"><![CDATA[信息查看页伪静态规则]]></item>
+				<item id="description"><![CDATA[默认：ershou_{id}.html
+{id}=编号ID
+修改此设置请对应修改伪静态规则中的规则]]></item>
+				<item id="variable"><![CDATA[re_view]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[ershou_{id}.html]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="29">
+				<item id="displayorder"><![CDATA[22]]></item>
+				<item id="title"><![CDATA[分享代码]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[fenxiang]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<div class="jiathis_style">
+	<span class="jiathis_txt">分享到：</span>
+	<a class="jiathis_button_tools_1"></a>
+	<a class="jiathis_button_tools_2"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1375634427209135" charset="utf-8"></script>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="30">
+				<item id="displayorder"><![CDATA[23]]></item>
+				<item id="title"><![CDATA[上传图片大小限制]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[img_size]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1024]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="31">
+				<item id="displayorder"><![CDATA[24]]></item>
+				<item id="title"><![CDATA[信息同步到版块]]></item>
+				<item id="description"><![CDATA[需安装同步组件
+留空不同步]]></item>
+				<item id="variable"><![CDATA[es_fid]]></item>
+				<item id="type"><![CDATA[forum]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="32">
+				<item id="displayorder"><![CDATA[25]]></item>
+				<item id="title"><![CDATA[同步到版块主题分类ID下]]></item>
+				<item id="description"><![CDATA[请填写版块下的主题分类ID]]></item>
+				<item id="variable"><![CDATA[threadtypes]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="33">
+				<item id="displayorder"><![CDATA[26]]></item>
+				<item id="title"><![CDATA[是否开启评论站内通知]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[is_ping]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="34">
+				<item id="displayorder"><![CDATA[26]]></item>
+				<item id="title"><![CDATA[页面色调自定义]]></item>
+				<item id="description"><![CDATA[组件版需要安装页面色调自定义组件
+可以修改原先页面上红色为自定义颜色]]></item>
+				<item id="variable"><![CDATA[y_color]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[#e74c3c]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="35">
+				<item id="displayorder"><![CDATA[27]]></item>
+				<item id="title"><![CDATA[作者其它信息显示条数]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[qitanum]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[5]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="36">
+				<item id="displayorder"><![CDATA[28]]></item>
+				<item id="title"><![CDATA[发布信息消耗积分类型]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[releaseextcredit]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="37">
+				<item id="displayorder"><![CDATA[29]]></item>
+				<item id="title"><![CDATA[发布信息消耗积分数量]]></item>
+				<item id="description"><![CDATA[需安装发布信息收费组件]]></item>
+				<item id="variable"><![CDATA[releasepay]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="38">
+				<item id="displayorder"><![CDATA[30]]></item>
+				<item id="title"><![CDATA[微社区链接1描述]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[wsq_1]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[访问二手市场，开始你的淘宝之路]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="39">
+				<item id="displayorder"><![CDATA[31]]></item>
+				<item id="title"><![CDATA[微社区链接2描述]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[wsq_2]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[有宝贝待售？快来发布吧]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="aljes_1"><![CDATA[请先登录！]]></item>
+				<item id="aljes_2"><![CDATA[标题不能为空]]></item>
+				<item id="aljes_3"><![CDATA[请上传.jpg .gif .png格式的图片]]></item>
+				<item id="aljes_4"><![CDATA[发布成功]]></item>
+				<item id="aljes_5"><![CDATA[更新成功]]></item>
+				<item id="aljes_6"><![CDATA[您查看的租房信息不存在]]></item>
+				<item id="aljes_7"><![CDATA[删除成功]]></item>
+				<item id="aljes_8"><![CDATA[您无权此操作！]]></item>
+				<item id="aljes_9"><![CDATA[内容不能为空！]]></item>
+				<item id="aljes_10"><![CDATA[留言成功！]]></item>
+				<item id="aljes_11"><![CDATA[求购]]></item>
+				<item id="aljes_12"><![CDATA[转让]]></item>
+				<item id="aljes_23"><![CDATA[面议]]></item>
+				<item id="aljes_24"><![CDATA[所在地必须选择！]]></item>
+				<item id="aljes_25"><![CDATA[联系电话必须填写！]]></item>
+				<item id="aljes_26"><![CDATA[上传图片不能超过]]></item>
+				<item id="aljes_27"><![CDATA[您发布的信息]]></item>
+				<item id="aljes_28"><![CDATA[有一条新的评论]]></item>
+				<item id="aljes_29"><![CDATA[点击查看]]></item>
+				<item id="aljes_30"><![CDATA[您在]]></item>
+				<item id="aljes_31"><![CDATA[中的评论有新的回复]]></item>
+				<item id="aljes_32"><![CDATA[评论管理]]></item>
+				<item id="region_1"><![CDATA[你确认要删除吗？]]></item>
+				<item id="region_2"><![CDATA[排序]]></item>
+				<item id="region_3"><![CDATA[名称]]></item>
+				<item id="region_4"><![CDATA[操作]]></item>
+				<item id="region_5"><![CDATA[删除]]></item>
+				<item id="region_6"><![CDATA[添加地区]]></item>
+				<item id="region_7"><![CDATA[添加成功！]]></item>
+				<item id="region_8"><![CDATA[添加子地区]]></item>
+				<item id="top_1"><![CDATA[不足]]></item>
+				<item id="top_2"><![CDATA[置顶成功]]></item>
+				<item id="top_3"><![CDATA[天数不能为负数！！]]></item>
+				<item id="reflash_1"><![CDATA[刷新成功]]></item>
+				<item id="admin_1"><![CDATA[更新成功]]></item>
+				<item id="admin_2"><![CDATA[标题]]></item>
+				<item id="admin_3"><![CDATA[发布时间]]></item>
+				<item id="admin_4"><![CDATA[最后更新时间]]></item>
+				<item id="admin_5"><![CDATA[价格]]></item>
+				<item id="admin_6"><![CDATA[推荐&nbsp;操作]]></item>
+				<item id="admin_7"><![CDATA[编辑]]></item>
+				<item id="admin_8"><![CDATA[<font style="font-size:26px;color:red">您未安装二手信息管理组件(<a href="http://addon.discuz.com/?@aljes.plugin.34388">去安装</a>)</br>友情提示：商业版包含全部组件哦！</font>]]></item>
+				<item id="sj_1"><![CDATA[上一页]]></item>
+				<item id="sj_2"><![CDATA[下一页]]></item>
+				<item id="thread_1"><![CDATA[[size=4][url=plugin.php?id=aljes&act=view&lid={lid}]{title}[/url] [url=plugin.php?id=aljes&act=view&lid={lid}][color=red](点击查看详情)[/color][/url]<br/>]]></item>
+				<item id="thread_2"><![CDATA[供求:{wanted}<br/>价格:{zujin}<br/>类型:{zf_type}<br/>联系电话:{tel}<br/>]]></item>
+				<item id="thread_3"><![CDATA[新旧程度：{new}<br/>]]></item>
+				<item id="thread_4"><![CDATA[QQ：[qq]{qq}[/qq]<br/>]]></item>
+				<item id="thread_5"><![CDATA[联系人：{lxr}<br/>]]></item>
+				<item id="thread_6"><![CDATA[地区：{region} - {region1} - {region2}<br/>]]></item>
+				<item id="thread_7"><![CDATA[地区：{region} - {region1}<br/>]]></item>
+				<item id="thread_8"><![CDATA[地区：{region}<br/>]]></item>
+				<item id="thread_9"><![CDATA[[color=red]声明：[/color]{shengming}<br/><br/>]]></item>
+				<item id="thread_10"><![CDATA[(点击查看详情)]]></item>
+				<item id="wsq_1"><![CDATA[访问二手市场，开始你的淘宝之路]]></item>
+				<item id="wsq_2"><![CDATA[有宝贝待售？快来发布吧]]></item>
+				<item id="admin_15"><![CDATA[操作]]></item>
+				<item id="admin_16"><![CDATA[批量审核]]></item>
+				<item id="admin_17"><![CDATA[审/删?]]></item>
+				<item id="admin_18"><![CDATA[批量删除]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="post_1"><![CDATA[二手市场]]></item>
+				<item id="post_2"><![CDATA[1. 选择类目]]></item>
+				<item id="post_3"><![CDATA[ > 类型)]]></item>
+				<item id="post_4"><![CDATA[2. 填写信息]]></item>
+				<item id="post_5"><![CDATA[3. 完成发布]]></item>
+				<item id="post_6"><![CDATA[基本信息]]></item>
+				<item id="post_7"><![CDATA[标题：]]></item>
+				<item id="post_8"><![CDATA[类型：]]></item>
+				<item id="post_9"><![CDATA[价格：]]></item>
+				<item id="post_10"><![CDATA[元]]></item>
+				<item id="post_11"><![CDATA[描述：]]></item>
+				<item id="post_12"><![CDATA[上传照片：]]></item>
+				<item id="post_13"><![CDATA[所在地：]]></item>
+				<item id="post_14"><![CDATA[地区]]></item>
+				<item id="post_15"><![CDATA[地区其他]]></item>
+				<item id="post_16"><![CDATA[所在地]]></item>
+				<item id="post_17"><![CDATA[具体地点]]></item>
+				<item id="post_18"><![CDATA[联系电话：]]></item>
+				<item id="post_19"><![CDATA[例:138******** 或 0591-88888888]]></item>
+				<item id="post_20"><![CDATA[展开]]></item>
+				<item id="post_21"><![CDATA[补充信息]]></item>
+				<item id="post_22"><![CDATA[（填写更多信息，获得更好推广效果！）]]></item>
+				<item id="post_23"><![CDATA[免费发布]]></item>
+				<item id="post_24"><![CDATA[联系电话]]></item>
+				<item id="post_25"><![CDATA[描述]]></item>
+				<item id="post_26"><![CDATA[价格]]></item>
+				<item id="post_27"><![CDATA[类型]]></item>
+				<item id="post_28"><![CDATA[500元以下,500-1000元,1000-1500元,1500-2000元,2000-3000元,3000-4000元,4000元以上]]></item>
+				<item id="post_29"><![CDATA[供求：]]></item>
+				<item id="post_30"><![CDATA[转让]]></item>
+				<item id="post_31"><![CDATA[求购]]></item>
+				<item id="post_32"><![CDATA[供求]]></item>
+				<item id="post_33"><![CDATA[QQ号：]]></item>
+				<item id="post_34"><![CDATA[QQ号]]></item>
+				<item id="post_35"><![CDATA[新旧程度：]]></item>
+				<item id="post_36"><![CDATA[新旧程度]]></item>
+				<item id="post_37"><![CDATA[联系人：]]></item>
+				<item id="post_38"><![CDATA[如：李先生]]></item>
+				<item id="post_39"><![CDATA[(填写0与未填写都为面议)]]></item>
+				<item id="mnav_1"><![CDATA[发布的信息]]></item>
+				<item id="mnav_2"><![CDATA[管理二手信息]]></item>
+				<item id="mnav_3"><![CDATA[用户管理]]></item>
+				<item id="mnav_4"><![CDATA[刷新记录]]></item>
+				<item id="mnav_5"><![CDATA[置顶记录]]></item>
+				<item id="member_1"><![CDATA[发布信息]]></item>
+				<item id="member_2"><![CDATA[编号]]></item>
+				<item id="member_3"><![CDATA[标题]]></item>
+				<item id="member_4"><![CDATA[发布时间]]></item>
+				<item id="member_5"><![CDATA[最后更新时间]]></item>
+				<item id="member_6"><![CDATA[操作]]></item>
+				<item id="member_7"><![CDATA[你确定要更新吗？更新需要消耗]]></item>
+				<item id="member_8"><![CDATA[更新]]></item>
+				<item id="member_9"><![CDATA[你确定要置顶吗？置顶一天需要]]></item>
+				<item id="member_10"><![CDATA[置顶]]></item>
+				<item id="member_11"><![CDATA[编辑]]></item>
+				<item id="member_12"><![CDATA[你确定要删除吗？]]></item>
+				<item id="member_13"><![CDATA[删除]]></item>
+				<item id="index_1"><![CDATA[修改/删除信息]]></item>
+				<item id="index_2"><![CDATA[地区]]></item>
+				<item id="index_3"><![CDATA[全部地区]]></item>
+				<item id="index_4"><![CDATA[全部]]></item>
+				<item id="index_5"><![CDATA[类型]]></item>
+				<item id="index_6"><![CDATA[不限]]></item>
+				<item id="index_7"><![CDATA[价格]]></item>
+				<item id="index_8"><![CDATA[500元以下]]></item>
+				<item id="index_9"><![CDATA[500-1000元]]></item>
+				<item id="index_10"><![CDATA[1000-1500元]]></item>
+				<item id="index_11"><![CDATA[1500-2000元]]></item>
+				<item id="index_12"><![CDATA[2000-3000元]]></item>
+				<item id="index_13"><![CDATA[3000-4000元]]></item>
+				<item id="index_14"><![CDATA[4000元以上]]></item>
+				<item id="index_15"><![CDATA[自定义区间：]]></item>
+				<item id="index_16"><![CDATA[元]]></item>
+				<item id="index_17"><![CDATA[筛选]]></item>
+				<item id="index_18"><![CDATA[点此免费发布]]></item>
+				<item id="index_19"><![CDATA[置顶]]></item>
+				<item id="index_20"><![CDATA[天]]></item>
+				<item id="index_21"><![CDATA[置顶信息]]></item>
+				<item id="index_22"><![CDATA[最新信息]]></item>
+				<item id="index_23"><![CDATA[人气]]></item>
+				<item id="index_24"><![CDATA[今日浏览]]></item>
+				<item id="index_25"><![CDATA[昨日浏览]]></item>
+				<item id="index_26"><![CDATA[[转让]]]></item>
+				<item id="index_27"><![CDATA[[求购]]]></item>
+				<item id="index_28"><![CDATA[推荐]]></item>
+				<item id="index_29"><![CDATA[浏览方式：]]></item>
+				<item id="index_30"><![CDATA[图文]]></item>
+				<item id="index_31"><![CDATA[列表]]></item>
+				<item id="index_32"><![CDATA[顶]]></item>
+				<item id="index_33"><![CDATA[发布信息]]></item>
+				<item id="index_34"><![CDATA[信息管理]]></item>
+				<item id="index_35"><![CDATA[今天]]></item>
+				<item id="index_36"><![CDATA[信息]]></item>
+				<item id="adminuser_1"><![CDATA[发布信息]]></item>
+				<item id="adminuser_2"><![CDATA[用户名]]></item>
+				<item id="adminuser_3"><![CDATA[信息数量]]></item>
+				<item id="adminuser_4"><![CDATA[更新数量]]></item>
+				<item id="adminuser_5"><![CDATA[置顶数量]]></item>
+				<item id="adminuser_6"><![CDATA[最后活动时间]]></item>
+				<item id="admintop_1"><![CDATA[发布者]]></item>
+				<item id="admintop_2"><![CDATA[操作人]]></item>
+				<item id="admintop_3"><![CDATA[消耗]]></item>
+				<item id="admintop_4"><![CDATA[置顶时间]]></item>
+				<item id="admintop_5"><![CDATA[到期时间]]></item>
+				<item id="admintop_6"><![CDATA[旧数据]]></item>
+				<item id="admintop_7"><![CDATA[相同信息的到期时间以排在最前的一条为准！！]]></item>
+				<item id="adminreflash_1"><![CDATA[更新者]]></item>
+				<item id="adminreflash_2"><![CDATA[刷新时间]]></item>
+				<item id="adminlp_1"><![CDATA[选择用户：]]></item>
+				<item id="adminlp_2"><![CDATA[请选择]]></item>
+				<item id="adminlp_3"><![CDATA[发布者用户名]]></item>
+				<item id="adminlp_4"><![CDATA[发布时间]]></item>
+				<item id="adminlp_5"><![CDATA[操作]]></item>
+				<item id="adminlp_6"><![CDATA[友情提示：更新可以让信息更靠前的位置展示哦，刷新每次需要]]></item>
+				<item id="view_1"><![CDATA[[地图及交通]]]></item>
+				<item id="view_2"><![CDATA[首次发布于：]]></item>
+				<item id="view_3"><![CDATA[Y年m月d日 H:i]]></item>
+				<item id="view_4"><![CDATA[次浏览]]></item>
+				<item id="view_5"><![CDATA[信息编号：]]></item>
+				<item id="view_6"><![CDATA[小贴士：本页信息由用户及第三方发布，真实性、合法性由发布人负责。]]></item>
+				<item id="view_7"><![CDATA[注册时间：]]></item>
+				<item id="view_8"><![CDATA[在线咨询]]></item>
+				<item id="view_9"><![CDATA[地区：]]></item>
+				<item id="view_10"><![CDATA[作者其它信息]]></item>
+				<item id="view_11"><![CDATA[声明：]]></item>
+				<item id="view_12"><![CDATA[发私信]]></item>
+				<item id="view_13"><![CDATA[添加关注]]></item>
+				<item id="view_14"><![CDATA[面议]]></item>
+				<item id="so_1"><![CDATA[搜索二手市场]]></item>
+				<item id="so_2"><![CDATA[搜索]]></item>
+				<item id="sj_1"><![CDATA[返回首页]]></item>
+				<item id="sj_2"><![CDATA[发布]]></item>
+				<item id="sj_3"><![CDATA[类型：]]></item>
+				<item id="sj_6"><![CDATA[价格：]]></item>
+				<item id="sj_11"><![CDATA[所在地：]]></item>
+				<item id="sj_12"><![CDATA[点击拨打]]></item>
+				<item id="sj_13"><![CDATA[免费发布]]></item>
+				<item id="sj_14"><![CDATA[选择地区：]]></item>
+				<item id="sj_15"><![CDATA[选择类型：]]></item>
+				<item id="sj_16"><![CDATA[选择价格：]]></item>
+				<item id="sj_17"><![CDATA[选择新旧程度]]></item>
+				<item id="sj_18"><![CDATA[选择供求]]></item>
+				<item id="sj_19"><![CDATA[当前时间：]]></item>
+				<item id="commen_1"><![CDATA[留言]]></item>
+				<item id="commen_2"><![CDATA[不能给自己发布的信息留言。]]></item>
+				<item id="commen_3"><![CDATA[回复]]></item>
+				<item id="commen_4"><![CDATA[删除]]></item>
+				<item id="addtop_1"><![CDATA[购买置顶]]></item>
+				<item id="addtop_2"><![CDATA[购买置顶服务可以让您的信息排在靠前的位置，效果更好！]]></item>
+				<item id="addtop_3"><![CDATA[日价格：]]></item>
+				<item id="addtop_4"><![CDATA[您目前可以购买：]]></item>
+				<item id="addtop_5"><![CDATA[购买天数：]]></item>
+				<item id="addtop_6"><![CDATA[所需]]></item>
+				<item id="addtop_7"><![CDATA[到期时间：]]></item>
+				<item id="addtop_8"><![CDATA[购买]]></item>
+				<item id="admin_c_1"><![CDATA[评论内容管理]]></item>
+				<item id="admin_c_2"><![CDATA[用户名]]></item>
+				<item id="admin_c_3"><![CDATA[内容]]></item>
+				<item id="admin_c_4"><![CDATA[提交时间]]></item>
+				<item id="admin_c_5"><![CDATA[操作]]></item>
+				<item id="admin_c_6"><![CDATA[删除]]></item>
+				<item id="qrcode_1"><![CDATA[扫描二维码进入手机版]]></item>
+				<item id="qrcode_2"><![CDATA[二维码]]></item>
+				<item id="qrcode_3"><![CDATA[扫描二维码进入]]></item>
+				<item id="qrcode_4"><![CDATA[手机版]]></item>
+				<item id="view_100"><![CDATA[点击查看完整号码]]></item>
+				<item id="view_101"><![CDATA[经纪人]]></item>
+				<item id="view_102"><![CDATA[该信息来至“]]></item>
+				<item id="view_103"><![CDATA[客户端]]></item>
+				<item id="view_104"><![CDATA[”]]></item>
+				<item id="index_100"><![CDATA[共有 ]]></item>
+				<item id="index_101"><![CDATA[ 条数据]]></item>
+				<item id="more"><![CDATA[更多]]></item>
+				<item id="all"><![CDATA[的全部信息]]></item>
+				<item id="admin_nav_1"><![CDATA[未审]]></item>
+				<item id="admin_nav_2"><![CDATA[已审]]></item>
+				<item id="Management_Center"><![CDATA[管理中心]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+	</item>
+</root>

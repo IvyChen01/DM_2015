@@ -1,0 +1,119 @@
+{template common/header}
+<style type="text/css">
+	.bdtr {
+		 padding-left: 10px !important;
+	}
+</style>
+<script charset="$_G['charset']" src="source/plugin/aljbd/js/editor/kindeditor-min.js" reload="true"></script>
+<!--{if $_G['charset']=='gbk'}-->
+<script charset="gbk" src="source/plugin/aljbd/js/editor/lang/zh_CN.js" reload="true"></script>
+<!--{else}-->
+<script charset="utf-8" src="source/plugin/aljbd/js/editor/lang/zh_CN_U8.js" reload="true"></script>
+<!--{/if}-->
+<script type="text/javascript" reload="true">
+        KindEditor.ready(function(K) {
+              window.editor = KindEditor.create('#intro');
+        });
+		KindEditor.options.cssData = 'img { max-width:400px; }';
+</script>
+<div class="bm cl" id="pt">
+<div class="z">
+<a title="{$_G['setting']['bbname']}" class="nvhm" href="./">{$_G['setting']['bbname']}</a> <em>&rsquot;</em>
+        <a href="plugin.php?id=aljbd">{lang aljbd:s93}</a>
+</div>
+</div>
+<div class="ct2_a wp cl" id="ct">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">{lang aljbd:s94}</h2>
+{template aljbd:mnav}
+</div>
+</div>
+<iframe  name="formsubmit" style="display:none;"></iframe>
+<div  style="float:left;">
+<h1 class="ph mbm xi1" style="margin-left:10px;">{if $_GET['act']=='addgoods'}{lang aljbd:s281}{else}{lang aljbd:s282}{/if}</h1>
+<form enctype="multipart/form-data" target="formsubmit"  action="plugin.php?id=aljbd&act={$_GET['act']}" autocomplete="off" id="addgoods_form" method="post">
+ <input type="hidden" name="formhash" value="{FORMHASH}">
+ <input type="hidden" name="gid" value="{$_GET['gid']}">
+  <table cellspacing="0" cellpadding="0" class="tfm">
+      <tbody>
+          <tr>
+              <th class="bdtr">{lang aljbd:s283}</th>
+				<td>
+					<select name="bid">
+					<option value="">{lang aljbd:s252}</option>
+					{loop $bdlist $b}
+					<option value="$b['id']" {if $g['bid']==$b['id']}selected{/if}>$b['name']</option>
+					{/loop}
+					</select>
+				</td>
+              <td>&nbsp;</td>
+          </tr>
+		  <tr><td class="bdtr">{lang aljbd:s284}</td><td><input type="text" class="px" name="name" value="$g['name']"></td></tr>
+		  <tr>
+						<td class="bdtr">{lang aljbd:s223}</td>
+    				<td colspan="4">
+						<select name="type" id="type" style="width:120px;" onchange="ajaxget('plugin.php?id=aljbd&act=gettype&type=goods&upid='+$('type').value,'subtype')">
+							<option value="">{lang aljbd:s224}</option>
+							<!--{loop $typelist $typeid $type}-->
+							<option value="$typeid" {if $typeid==$g['type']}selected{/if}>$type['subject']</option>
+							<!--{/loop}-->
+						</select>
+						&nbsp;&nbsp;&nbsp;
+						<span name="subtype" id="subtype">
+						{if $g['subtype']}
+						<select name="subtype" id="type" style="width:120px;">
+							<!--{loop C::t('#aljbd#aljbd_type_goods')->fetch_all_by_upid($g['type']) $typeid $type}-->
+							<option value="$typeid" {if $typeid==$g['subtype']}selected{/if}>$type['subject']</option>
+							<!--{/loop}-->
+						</select>
+						{/if}
+						</span>
+					</td>
+				</tr>
+		  <tr><td class="bdtr">{lang aljbd:s285}</td><td><input type="text" class="px" name="price1" value="$g['price1']"></td></tr>
+		  <tr><td class="bdtr">{lang aljbd:s286}</td><td><input type="text" class="px" name="price2" value="$g['price2']"></td></tr>
+		  <tr>
+              <th class="bdtr">{lang aljbd:s287}1</th>
+              <td><input type="file"  name="pic1"><br>{if $g['pic1']}<img src="$g['pic1']" width="80" height="80">{/if}</td>
+              <td>&nbsp;</td>
+        </tr>
+		<tr>
+              <th class="bdtr">{lang aljbd:s287}2</th>
+              <td><input type="file"  name="pic2"><br>{if $g['pic2']}<img src="$g['pic2']" width="80" height="80">{/if}</td>
+              <td>&nbsp;</td>
+        </tr>
+		<tr>
+              <th class="bdtr">{lang aljbd:s287}3</th>
+              <td><input type="file"  name="pic3"><br>{if $g['pic3']}<img src="$g['pic3']" width="80" height="80">{/if}</td>
+              <td>&nbsp;</td>
+        </tr>
+		<tr>
+              <th class="bdtr">{lang aljbd:s287}4</th>
+              <td><input type="file"  name="pic4"><br>{if $g['pic4']}<img src="$g['pic4']" width="80" height="80">{/if}</td>
+              <td>&nbsp;</td>
+        </tr>
+		<tr>
+              <th class="bdtr">{lang aljbd:s287}5</th>
+              <td><input type="file"  name="pic5"><br>{if $g['pic5']}<img src="$g['pic5']" width="80" height="80">{/if}</td>
+              <td>&nbsp;</td>
+        </tr>
+		<tr>
+				<td class="bdtr"><span style="color:red;"></span>{lang aljbd:gwurl_1}</td>
+				<td colspan="4">
+					
+					<input type="text" name="gwurl" class="pt" id="replymessage" style="background:#FFF;" value="{$g['gwurl']}">&nbsp;{lang aljbd:gwurl_2}
+					
+				</td>
+				
+				</tr>
+		  <tr><td class="bdtr">{lang aljbd:s288}</td><td><textarea name="intro"  id="intro" style="height:500px;">$g['intro']</textarea></td></tr>
+          <tr>
+              <th></th>
+              <td colspan="2"><button  class="pn pnc vm" value="true" id="submit" name="submit" type="submit"><strong>{lang aljbd:s289}</strong></button></td>
+          </tr>
+      </tbody>
+  </table>
+  </form>
+</div></div>
+{template common/footer}

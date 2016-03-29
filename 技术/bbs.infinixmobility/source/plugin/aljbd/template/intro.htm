@@ -1,0 +1,58 @@
+{template common/header}
+
+<script charset="$_G['charset']" src="source/plugin/aljbd/js/editor/kindeditor-min.js" reload="true"></script>
+<!--{if $_G['charset']=='gbk'}-->
+<script charset="gbk" src="source/plugin/aljbd/js/editor/lang/zh_CN.js" reload="true"></script>
+<!--{else}-->
+<script charset="utf-8" src="source/plugin/aljbd/js/editor/lang/zh_CN_U8.js" reload="true"></script>
+<!--{/if}-->
+<script type="text/javascript" reload="true">
+        KindEditor.ready(function(K) {
+              window.editor = KindEditor.create('#intro');
+			  
+        });
+		KindEditor.options.cssData = 'img { max-width:400px; }';
+</script>
+<div class="bm cl" id="pt">
+<div class="z">
+<a title="{$_G['setting']['bbname']}" class="nvhm" href="./">{$_G['setting']['bbname']}</a> <em>&rsquot;</em>
+        <a href="plugin.php?id=aljbd">{lang aljbd:s93}</a>
+</div>
+</div>
+<div class="ct2_a wp cl" id="ct">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">{lang aljbd:s94}</h2>
+{template aljbd:mnav}
+</div>
+</div>
+<div style="border:none; margin:0" class="mn pbm">
+<iframe name="formsubmit" style="display:none"></iframe>
+<form id="addbc" method="post" action="plugin.php?id=aljbd&act=intro"  target="formsubmit" enctype="multipart/form-data">
+<div class="cl">
+<b style="color:red">{lang aljbd:s250}</b>
+<p style="margin-top:2px;margin-bottom:2px;">
+{lang aljbd:s251}<select name="bid" onchange="location.href='plugin.php?id=aljbd&act=intro&bid='+this.value">
+<option value="">{lang aljbd:s252}</option>
+{loop $bdlist $b}
+<option value="$b['id']" {if $_GET['bid']==$b['id']}selected{/if}>$b['name']</option>
+{/loop}
+</select>
+</p>
+<input type="hidden" name="formhash" value="{FORMHASH}">
+<table cellspacing="0" cellpadding="0" class="dt">
+<tbody>
+<tr>
+<td style="padding:0;border:none;">
+
+<textarea name="intro"  id="intro" style="height:500px;width:800px;">$bd['intro']</textarea>
+<p style="margin-top:3px;">
+<button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljbd:s35}</strong></button>	
+</p>
+</td>
+</tr>
+</tbody></table>
+</div>
+</form>
+</div>
+{template common/footer}

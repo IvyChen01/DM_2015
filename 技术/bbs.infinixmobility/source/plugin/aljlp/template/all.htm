@@ -1,0 +1,95 @@
+{template common/header}
+<link href="source/plugin/aljlp/css/v3.css" rel="stylesheet">
+<link href="source/plugin/aljlp/css/v2.css" rel="stylesheet">
+<iframe style="display:none" name="myiframe" id="myiframe"></iframe>
+<script type="text/javascript" src="source/plugin/aljlp/js/jquery.js"></script>
+<script type="text/javascript">
+    var jq = jQuery.noConflict();
+</script>
+<style type="text/css">
+.media-cap img {width: 100px;height:85px;}
+.media-cap {background: none repeat scroll 0 0 #F8F8F8;border: 1px solid #F2F1EC;display: block;float: left;height: 85px;margin-right: 10px;overflow: hidden;width: 100px;}
+.grid-4{width: 180px;}
+.filter-box, .filter-box input {font-size: 12px;line-height: 22px;}
+.filter-box { border-top: 2px solid #e74c3c;margin-bottom: 10px;}
+.grid-16{width: 760px;}
+.media-body-title a {color: #333;font-size: 14px;}
+.verify-info span {position: relative;top: 4px;}
+.img {padding-left: 630px;position: relative;width: 50px;}
+.sep {margin-bottom: 1em;}
+.img .active {display: block;}
+.c1:after {clear: both; content: ".";display: block; height: 0;visibility: hidden;}
+.img-pane1{height:463px;width:620px;*font-size:374px;border:1px solid #f2f1ec;background:#f2f1ec url(../images/loading.gif) no-repeat center center;text-align:center;position:absolute;left:0;top:0;display:none;overflow:hidden}
+.img .active{display:block}
+.img-pane1 img{max-height:100%;height:100%}
+.img-trigger1{border:1px solid #f2f1ec;display:block;height:50px;width:50px;margin-bottom:7px;position:relative}
+.img-trigger1 img{width:50px;opacity:.5;filter:alpha(opacity=50)}
+.comcontent {float: left;padding: 14px;width: 730px;}
+.combasic { float: left; width: 730px;}
+.combasicl { float: left; width: 480px;}
+.combasicr { float: right;  height: 85px; padding-top: 0; width: 248px;}
+.combasicl ul li { color: #777;float: left; font-size: 14px; height: 30px;line-height: 30px; text-align: left; width: 480px;}
+.comintc {float: left;font-size: 14px; overflow: auto; padding-bottom: 10px;padding-top: 8px;text-align: left; width: 730px;word-break: break-all;}
+.combasicr img {border: 1px solid #ddd;height: 80px; padding: 2px; width: 240px;}
+</style>
+{eval $user=getuserbyuid($_GET['uid']); }
+<div class="bm cl" id="pt">
+    <div class="z">
+        <a title="{$_G['setting']['bbname']}" class="nvhm" href="./">{$_G['setting']['bbname']}</a><em>&rsaquo;</em><a href="<!--{if $config['isrewrite']}-->{$config['re_index']}<!--{else}-->plugin.php?id=aljlp<!--{/if}-->">$config['daohang']</a><em>&rsaquo;</em><a href="<!--{if $config['isrewrite']}-->{$config['re_index']}<!--{else}-->plugin.php?id=aljlp<!--{/if}-->">{$user['username']}{lang aljlp:all}</a></div>
+    <div class="z"></div>
+</div>
+<div class="wp cl">
+    <div class="container c1">
+		<div class="grid grid-4 c1">
+			<div class="profile sep c1">
+				<div class="avatar sep" data-toggle="hoverClass">
+					<img width="180px" src="{eval echo avatar($_GET['uid'],'big',true);}">
+				</div>
+				<ul class="typo-small">
+					<li title="$user['username']">&nbsp;$user['username']</li>
+					<li title="$user['username']"><i class="icon-clock"></i>&nbsp;{eval $user=getuserbyuid($_GET['uid']); echo gmdate('Y-m-d H:i:s',$user['regdate']+28800);}</li>
+				</ul>
+				
+			</div>
+		</div>
+
+		<div class="grid grid-16 last c1">
+			<div class="filter-box compact" id="top-filters">
+			
+			</div>
+			<div style="border-top:1px solid #eee" id="media" class="c1">
+				
+				<ul class="sep ad-list" id="media">
+					{loop $lplist $t}
+					<li class="media clearfix_lj " data-cpm-sign="" data-aid="335957312">
+						<a class="media-cap" target="_blank" href="<!--{if $config['isrewrite']}-->{$t['rewrite']}<!--{else}-->plugin.php?id=aljlp&act=view&lid={$t['id']}<!--{/if}-->">
+						<img alt="$t['title']" src="{if $t['pic1']}{eval echo $t['pic1'].'.64x64.jpg';}{else}{$config['mr_src']}{/if}">
+						</a>
+						<div class="media-body">
+							<div class="media-body-title">
+								<small class="pull-right">{eval echo dgmdate($t['updatetime'],'u');}</small>
+								<a title="$t['title']" href="<!--{if $config['isrewrite']}-->{$t['rewrite']}<!--{else}-->plugin.php?id=aljlp&act=view&lid={$t['id']}<!--{/if}-->">{if $t['wanted']}<font class="lj_wanted">[{$gq_wanted[$t['wanted']]}]</font>&nbsp;{/if}<!--{eval echo cutstr($t['title'],23,'');}--></a>&nbsp;{if TIMESTAMP < $t['topetime']}&nbsp;<small class="tag tag-warn">{lang aljlp:index_32}</small>{/if}{if $t['zufangtype']}&nbsp;<a class="tag" style="font-size:12px;" href="plugin.php?id=aljlp&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype=$t['zufangtype']&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=item">{$zufangtype[$t['zufangtype']]}</a>{/if}
+							</div>
+						<div class="typo-small"><!--{eval echo cutstr($t['content'],90,'');}--> </div>
+						<div class="typo-small">{$regions[$t['region']]['subject']} {if $t['region1']}- {$regions[$t['region1']]['subject']}{/if} - {$t['region2']}</div>
+						<div class="typo-small"><span class="highlight">{if $t['zujin']}<em>$t['zujin']</em>{lang aljlp:index_16}{else}{lang aljlp:index_32}{/if}</span></div>
+						</div>
+					</li>
+					{/loop}
+					</ul>
+				
+				</div>
+				
+				<div class="pagenav clearfix sep">
+                    $paging
+                </div>
+				
+			</div>
+		</div>
+
+	</div>
+
+{if file_exists('source/plugin/aljlp/template/com/color.htm')}
+{template aljlp:com/color}
+{/if}
+{template common/footer}

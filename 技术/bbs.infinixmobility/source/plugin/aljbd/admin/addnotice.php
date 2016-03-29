@@ -1,0 +1,29 @@
+<?php
+	if(submitcheck('formhash')){
+		if(empty($_GET['bid'])){
+			showerror(lang('plugin/aljbd','s51'));
+		}
+		if(empty($_GET['subject'])){
+			showerror(lang('plugin/aljbd','aljbd_1'));
+		}
+		if(empty($_GET['intro'])){
+			showerror(lang('plugin/aljbd','aljbd_2'));
+		}
+		C::t('#aljbd#aljbd_notice')->insert(array(
+				'bid'=>$_GET['bid'],
+				'uid'=>$_G['uid'],
+				'username'=>$_G['username'],
+				'subject'=>$_GET['subject'],
+				'content'=>$_GET['intro'],
+				'dateline'=>TIMESTAMP,
+				'type'=>$_GET['type'],
+				'subtype'=>$_GET['subtype'],
+		));
+		showmsg(lang('plugin/aljbd','s53'));
+	}else{
+		$typelist=C::t('#aljbd#aljbd_type_notice')->fetch_all_by_upid(0);
+		$bdlist=C::t('#aljbd#aljbd')->fetch_all_by_status(1,'','',$_G['uid']);
+		$n=C::t('#aljbd#aljbd_notice')->fetch($_GET['nid']);
+		include template('aljbd:editnotice');
+	}
+?>

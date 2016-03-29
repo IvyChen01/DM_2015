@@ -1,0 +1,21 @@
+{template common/header_ajax}
+<h3 class="flb">
+	<em>{lang aljlp:admin_c_1}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('edit');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+		<div class="c" style="width:600px;">
+        
+        
+        	<table cellspacing="0" cellpadding="0" class="dt">
+<tbody><tr>
+<th>UID</th><th>{lang aljlp:admin_c_2}</th><th>{lang aljlp:admin_c_3}</th><th>{lang aljlp:admin_c_4}</th><th>{lang aljlp:admin_c_5}</th>
+</tr>
+{loop $commentlist $c}
+<tr class="header"><td>{$c['uid']}</td><td>{$c['username']}</td><td>{eval echo dhtmlspecialchars($c['content']);}</td><td>{eval echo gmdate('Y-m-d H:i:s',$c['dateline']+8*3600);}</td><td><a href="admin.php?action=plugins&operation=config&identifier=aljlp&pmod=admin&act=deletecomment&lid={$_GET['lid']}&cid={$c['id']}" ajaxtarget="fwin_content_edit">{lang aljlp:admin_c_6}</a></td></tr>
+{/loop}
+<tr><td colspan="6">$paging</td></tr>
+</tbody></table>
+	
+</div>
+{template common/footer_ajax}

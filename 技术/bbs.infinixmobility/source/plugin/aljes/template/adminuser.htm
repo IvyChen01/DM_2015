@@ -1,0 +1,37 @@
+{template common/header}
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="{$_G['setting']['bbname']}">{$_G['setting']['bbname']}</a> <em>&amp;rsquot;</em>
+        <a href="<!--{if $config['isrewrite']}-->{$config['re_index']}<!--{else}-->plugin.php?id=aljes<!--{/if}-->">$config['daohang']</a>
+</div>
+</div>
+
+<div id="ct" class="ct2_a wp cl">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">$config['daohang']</h2>
+{template aljes:mnav}
+</div>
+</div>
+<div class="mn pbm" style="border:none; margin:0">
+<div class="tbmu cl">
+<a href="plugin.php?id=aljes&act=post" class="y pn pnc"><strong>{lang aljes:adminuser_1}</strong></a>
+<table cellspacing="0" cellpadding="0" class="dt">
+<tbody><tr>
+<th>UID</th><th>{lang aljes:adminuser_2}</th><th>{lang aljes:adminuser_3}</th><th>{lang aljes:adminuser_4}</th><th>{lang aljes:adminuser_5}</th><th>{lang aljes:adminuser_6}</th>
+</tr>
+{loop $users $user}
+<tr class="header">
+    <td>{$user['uid']}</td>
+    <td>{$user['username']}</td>
+    <td>{$user['count']}</td>
+    <td>{$user['updatecount']}</td>
+    <td>{$user['top']}</td>
+    <td>{eval echo dgmdate($user['last']);}</td>
+</tr>
+{/loop}
+</tbody></table>
+<div style="margin-top:10px;">$paging</div>
+</div>
+</div>	</div>
+{template common/footer}

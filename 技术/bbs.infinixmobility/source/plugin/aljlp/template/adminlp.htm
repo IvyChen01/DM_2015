@@ -1,0 +1,44 @@
+{template common/header}
+<iframe style="display:none" name="myiframe" id="myiframe"></iframe>
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="{$_G['setting']['bbname']}">{$_G['setting']['bbname']}</a> <em>&amp;rsquot;</em>
+        <a href="<!--{if $config['isrewrite']}-->{$config['re_index']}<!--{else}-->plugin.php?id=aljlp<!--{/if}-->">$config['daohang']</a>
+</div>
+</div>
+
+<div id="ct" class="ct2_a wp cl">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">$config['daohang']</h2>
+{template aljlp:mnav}
+</div>
+</div>
+<div class="mn pbm" style="border:none; margin:0">
+<div class="tbmu cl">
+    {lang aljlp:adminlp_1}
+<select name="user" id="user" onchange="location.href='plugin.php?id=aljlp&act=adminlp&uid='+$('user').value">
+    {loop $users $user}
+    <option value="">{lang aljlp:adminlp_2}</option>
+    <option value="{$user['uid']}">{$user['username']}</option>
+    {/loop}
+</select>
+<a href="plugin.php?id=aljlp&act=post" class="y pn pnc"><strong>{lang aljlp:adminlp_3}</strong></a>
+<table cellspacing="0" cellpadding="0" class="dt">
+<tbody><tr>
+<th>{lang aljlp:adminlp_4}</th><th>{lang aljlp:adminlp_5}</th><th>{lang aljlp:adminlp_6}</th><th>{lang aljlp:adminlp_7}</th><th>{lang aljlp:adminlp_8}</th><th>{lang aljlp:adminlp_9}</th>
+</tr>
+{loop $lplist $lp}
+<tr class="header"><td>{$lp['id']}</td><td>{$lp['uid']}</td><td>{$lp['username']}</td><td>{$lp['title']}</td><td>{eval echo dgmdate($lp['addtime']);}</td>
+    <td><a href="plugin.php?id=aljlp&act=reflash&lid={$lp['id']}" target="myiframe">{lang aljlp:adminlp_11}</a>&nbsp;
+        <a href="plugin.php?id=aljlp&act=top&lid={$lp['id']}" onclick="showWindow('resumeadd',this.href)">{lang aljlp:adminlp_13}</a>&nbsp;
+        <a href="plugin.php?id=aljlp&act=edit&lid={$lp['id']}">{lang aljlp:adminlp_14}</a>
+<a onclick="showDialog('{lang aljlp:adminlp_15}','confirm','',function(){location.href='plugin.php?id=aljlp&act=delete&lid={$lp['id']}'});return false;" href="#">{lang aljlp:adminlp_16}</a>
+</td></tr>
+{/loop}
+</tbody></table>
+<div style="margin-top:10px;">$paging</div>
+<div style="border:1px dashed #f60;background-color:#FFC" class="notice">{lang aljlp:adminlp_17} <font color="red">{$config['reflashpay']}</font> {$_G['setting']['extcredits'][$config['reflashextcredit']]['title']}</div>
+</div>
+</div>	</div>
+{template common/footer}

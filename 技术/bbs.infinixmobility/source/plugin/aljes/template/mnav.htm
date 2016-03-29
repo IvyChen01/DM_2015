@@ -1,0 +1,23 @@
+<ul>
+    <li {if $_GET['act']=='member'}class="a"{/if}><a href="plugin.php?id=aljes&act=member" >{lang aljes:mnav_1}</a></li>
+    {if file_exists("source/plugin/aljes/template/com/admin.php")}
+    {if $_G['groupid']==1}
+    <li {if $_GET['act']=='adminlp'}class="a"{/if}><a href="plugin.php?id=aljes&act=adminlp" >{lang aljes:mnav_2}</a></li>
+    {/if}
+    {/if}
+    {if $_G['groupid']==1}
+    {if file_exists("source/plugin/aljes/template/com/user.php")}
+    <li {if $_GET['act']=='adminuser'}class="a"{/if}><a href="plugin.php?id=aljes&act=adminuser" >{lang aljes:mnav_3}</a></li>
+    {/if}
+    {/if}
+    {if file_exists("source/plugin/aljes/template/com/reflash.php")}
+    {if $_G['groupid']==1}
+    <li {if $_GET['act']=='adminreflash'}class="a"{/if}><a href="plugin.php?id=aljes&act=adminreflash" >{lang aljes:mnav_4}</a></li>
+    {/if}
+    {/if}
+    {if file_exists("source/plugin/aljes/template/com/top.php")}
+    {if $_G['groupid']==1}
+    <li {if $_GET['act']=='admintop'}class="a"{/if}><a href="plugin.php?id=aljes&act=admintop" >{lang aljes:mnav_5}</a></li>
+    {/if}
+    {/if}
+</ul>

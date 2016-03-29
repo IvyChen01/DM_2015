@@ -1,0 +1,30 @@
+<div class="itemtitle">
+	<h3>
+		
+	</h3>
+	<ul class="tab1">
+		<li <!--{if !$_GET['brand']}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&identifier=$pluginid&pmod=admin"><span>{lang aljbd:admin_nav_1}</span></a></li>
+		{if file_exists('source/plugin/aljbd/com/good.php')}
+		<li <!--{if $_GET['brand']=='goods'}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&do=39&identifier=$pluginid&pmod=admin&brand=goods"><span>{lang aljbd:admin_nav_2}</a></li>
+		{/if}
+		{if file_exists('source/plugin/aljbd/com/notice.php')}
+		<li <!--{if $_GET['brand']=='notice'}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&do=39&identifier=$pluginid&pmod=admin&brand=notice"><span>{lang aljbd:admin_nav_3}</a></li>
+		{/if}
+		{if file_exists('source/plugin/aljbd/com/album.php')}
+		<li <!--{if $_GET['brand']=='album'}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&do=39&identifier=$pluginid&pmod=admin&brand=album"><span>{lang aljbd:admin_nav_4}</a></li>
+		{/if}
+		{if file_exists('source/plugin/aljbd/com/consume.php')}
+		<li <!--{if $_GET['brand']=='consume'}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&do=39&identifier=$pluginid&pmod=admin&brand=consume"><span>{lang aljbd:admin_nav_5}</a></li>
+		{/if}
+		{if file_exists('source/plugin/aljbd/com/attestation.php')}
+		<li {if $_GET['brand']=='attestation'}class="current"{/if}><a href="admin.php?action=plugins&operation=config&do=39&identifier=$pluginid&pmod=admin&brand=attestation">{lang aljbd:admin_nav_6}</a></li>
+		{/if}
+		{if file_exists('source/plugin/aljbd/com/yhzqx.php')}
+		<li {if $_GET['brand']=='yhzqx'}class="current"{/if} style="margin-left:10px;"><a href="admin.php?action=plugins&operation=config&identifier=$pluginid&pmod=admin&brand=yhzqx">{lang aljbd:admin_nav_7}</a></li>
+		{/if}
+		{if file_exists('source/plugin/aljbd/com/seo.php')}
+		<li {if $_GET['brand']=='seo'}class="current"{/if} style="margin-left:10px;"><a href="admin.php?action=plugins&operation=config&identifier=$pluginid&pmod=admin&brand=seo">{lang aljbd:seo}</a></li>
+		{/if}
+	</ul>
+	
+</div>

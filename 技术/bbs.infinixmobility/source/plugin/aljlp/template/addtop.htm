@@ -1,0 +1,59 @@
+{template common/header_ajax}
+<script type="text/javascript" src="static/js/calendar.js"></script>
+<h3 class="flb">
+	<em>{lang aljlp:addtop_1}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<iframe name="submitiframe" style="display:none;"></iframe>
+<form id="apply" method="post" action="plugin.php?id=aljlp&act=top&lid={$_GET['lid']}" enctype="multipart/form-data" target="submitiframe">
+<input type="hidden" value="{FORMHASH}" id="formhash" name="formhash">
+
+<div class="notice" style="border:1px dashed #f60;background-color:#FFC">{lang aljlp:addtop_2}</div>
+		<div class="c">
+        	<table cellspacing="0" cellpadding="0" class="tfm">
+      <tbody>
+          
+		  <tr><td class="bdtr"><label class="p-label">{lang aljlp:addtop_3}</label></td><td>$config['toppay']{$_G['setting']['extcredits'][$config['topextcredit']]['title']}</td></tr>
+		  <tr>
+			<td class="bdtr"><label class="p-label">{lang aljlp:addtop_4}</label></td>
+			<td colspan="4">
+				{eval echo  floor(getuserprofile('extcredits' . $config['topextcredit'])/$config['toppay'])}
+				</div>
+			</td>
+		</tr>
+		  <tr><td class="bdtr"><label class="p-label">{lang aljlp:addtop_5}</label></td>
+				<td><input type="text" size="2" name="days" value="7"  onkeyup="money_1(this.value)"></td></tr>
+		  <tr><td class="bdtr">{lang aljlp:addtop_6}{$_G['setting']['extcredits'][$config['topextcredit']]['title']}£º</td>
+				<td><span id="credits_need" fwin="group">{eval echo 7*$config['toppay']}</span> 
+				<script language="javascript">
+					var dailyprice = $config['toppay'];
+					function money_1(daynum) {
+					if(!isNaN(parseInt(daynum))) {
+					$('credits_need').innerHTML = parseInt(daynum) * dailyprice;
+					} else {
+					$('credits_need').innerHTML = '0';
+					}
+					}
+					money_1(7);
+				</script></td></tr> 
+          <tr>
+		  {if $lp['topetime']}
+		   <tr>
+			<td class="bdtr"><label class="p-label">{lang aljlp:addtop_7}</label></td>
+			<td colspan="4">
+				{eval echo gmdate('Y-m-d H:i',$lp['topetime']+8*3600);}
+				</div>
+			</td>
+		</tr>
+		{/if}
+              <th></th>
+              <td colspan="2"><button  class="pn pnc vm" value="true" id="submit" name="submit" type="submit"><strong>{lang aljlp:addtop_8}</strong></button></td>
+          </tr>
+      </tbody>
+  </table>
+
+</div>
+
+</form>
+{template common/footer_ajax}

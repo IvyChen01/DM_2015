@@ -1,0 +1,211 @@
+{template common/header}
+<script src="static/js/seditor.js" type="text/javascript" reload="1"></script>
+<style type="text/css">
+	.bdtr {
+		 padding-left: 10px !important;
+	}
+</style>
+<script charset="$_G['charset']" src="source/plugin/aljbd/js/editor/kindeditor-min.js" reload="true"></script>
+<!--{if $_G['charset']=='gbk'}-->
+<script charset="gbk" src="source/plugin/aljbd/js/editor/lang/zh_CN.js" reload="true"></script>
+<!--{else}-->
+<script charset="utf-8" src="source/plugin/aljbd/js/editor/lang/zh_CN_U8.js" reload="true"></script>
+<!--{/if}-->
+<script type="text/javascript" reload="true">
+        KindEditor.ready(function(K) {
+              window.editor = KindEditor.create('#intro');
+        });
+		KindEditor.options.cssData = 'img { max-width:400px; }';
+</script>
+<div class="bm cl" id="pt">
+<div class="z">
+<a title="{$_G['setting']['bbname']}" class="nvhm" href="./">{$_G['setting']['bbname']}</a> <em>&rsquot;</em>
+        <a href="plugin.php?id=aljbd">{lang aljbd:s93}</a>
+</div>
+</div>
+<div class="ct2_a wp cl" id="ct">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">{lang aljbd:s94}</h2>
+{template aljbd:mnav}
+</div>
+</div>
+<iframe  name="formsubmit" style="display:none;"></iframe>
+<div  style="float:left;">
+<h1 class="ph mbm xi1" style="margin-left:10px;">{if $_GET['act']=='attend'}{lang aljbd:adddp_1}{else}{lang aljbd:adddp_2}{/if}</h1>
+{if $config['money']&&$_GET['act']=='attend'}<div class="notice" style="border:1px dashed #f60;background-color:#FFC;color:red;margin-left:10px;font-size:13px;">{lang aljbd:adddp_3}{$config['money']}{$_G['setting']['extcredits'][$config['money_lx']]['title']}</div>{/if}
+<form enctype="multipart/form-data" target="formsubmit"  action="plugin.php?id=aljbd&act={$_GET['act']}" autocomplete="off" id="addgoods_form" method="post">
+ <input type="hidden" name="formhash" value="{FORMHASH}">
+ <input type="hidden" name="bid" value="{$_GET['bid']}">
+ {eval $sign=DB::result_first("select sign from ".DB::table('aljbd_attestation')." where sign=1 and bid=".intval($_GET['bid']))}
+  <table cellspacing="0" cellpadding="0" class="tfm">
+      <tbody>
+          <tr>
+              <th class="bdtr"><span style="color:red;">*</span>{lang aljbd:s230}</th>
+				<td>
+					{if $_GET['act']=='attend'}<input type="text" name="name" class="px" value="{$bd['name']}" >{else}{if $sign}{$bd['name']}&nbsp;<font color="red">{lang aljbd:aedit_23}</font><input type="hidden" name="name" value="{$bd['name']}">{else}<input type="text" name="name" class="px" value="{$bd['name']}" >{/if}{/if}
+				</td>
+              <td>&nbsp;</td>
+          </tr>
+		  <tr>
+				<td class="bdtr"><span style="color:red;">*</span>{lang aljbd:s231}</td>
+				<td><input type="text" name="tel" class="px" value="{$bd['tel']}" ></td>
+		  </tr>
+		  <tr>
+    				<td class="bdtr"><span style="color:red;">*</span>{lang aljbd:s232}</td>
+    				<td colspan="4"><input type="file" name="logo"><font color="red">{lang aljbd:s233}</font></td>
+                </tr>
+				{if $bd['logo']}
+				<tr><td class="bdtr"></td><td colspan="4"><img src="$bd['logo']" width="100px" height="100px"></td></tr>
+				{/if}
+				<tr>
+				<tr>
+    				<td class="bdtr"><span style="color:red;">*</span>{lang aljbd:s234}</td>
+    				<td colspan="4"><input type="text" name="addr" class="px" style="width:350px;" value="{$bd['addr']}"></td>
+                </tr>
+		  <tr>
+			<td class="bdtr"><span style="color:red;">*</span>{lang aljbd:s223}</td>
+				<td colspan="4">
+					<select name="type" id="type" style="width:120px;" onchange="ajaxget('plugin.php?id=aljbd&act=gettype&upid='+$('type').value,'subtype')">
+						<option value="">{lang aljbd:s224}</option>
+						<!--{loop $typelist $typeid $type}-->
+						<option value="$typeid" {if $typeid==$bd['type']}selected{/if}>$type['subject']</option>
+						<!--{/loop}-->
+					</select>
+					&nbsp;&nbsp;&nbsp;
+					<span name="subtype" id="subtype">
+					{if $bd['subtype']}
+					<select name="subtype" id="type" style="width:120px;">
+						<!--{loop C::t('#aljbd#aljbd_type')->fetch_all_by_upid($bd['type']) $typeid $type}-->
+						<option value="$typeid" {if $typeid==$bd['subtype']}selected{/if}>$type['subject']</option>
+						<!--{/loop}-->
+					</select>
+					{/if}
+					</span>
+				</td>
+			</tr>
+		<tr>
+						<td class="bdtr"><span style="color:red;">*</span>{lang aljbd:s16}</td>
+    				<td colspan="4">
+						<select name="region" id="region" style="width:120px;" onchange="ajaxget('plugin.php?id=aljbd&act=getregion&upid='+$('region').value,'subregion')">
+							<option value="">{lang aljbd:s17}</option>
+							<!--{loop $rlist $rid $r}-->
+							<option value="$rid" {if $rid==$bd['region']}selected{/if}>$r['name']</option>
+							<!--{/loop}-->
+						</select>
+						&nbsp;&nbsp;&nbsp;
+						<span name="subregion" id="subregion">
+						{if $bd['subregion']}
+						<select name="subregion" style="width:120px;">
+						<!--{loop C::t('#aljbd#aljbd_region')->fetch_all_by_upid('','',$bd['region']) $rid $r}-->
+						<option value="$rid" {if $rid==$bd['subregion']}selected{/if}>$r['name']</option>
+						<!--{/loop}-->
+						</select>
+						{/if}
+						</span>
+						<span name="region1" id="region1">
+						{if $bd['region1']}
+						<select name="region1" style="width:120px;">
+						<!--{loop C::t('#aljbd#aljbd_region')->fetch_all_by_upid('','',$bd['subregion']) $rid $r}-->
+						<option value="$rid" {if $rid==$bd['region1']}selected{/if}>$r['name']</option>
+						<!--{/loop}-->
+						</select>
+						{/if}
+						</span>
+					</td>
+				</tr>
+		
+				<tr>
+				<td class="bdtr"><span style="color:red;">&nbsp;&nbsp;</span>{lang aljbd:qq}</td>
+				<td colspan="4">
+					
+					<input type="text" name="qq" class="pt"   value="{$bd['qq']}">
+					
+				</td>
+				</tr>
+				{if file_exists('source/plugin/aljbd/template/com/businesstype.htm')}
+				{template aljbd:com/businesstype}
+				{/if}
+				<tr>
+				<td class="bdtr"><span style="color:red;">&nbsp;&nbsp;</span>{lang aljbd:wurl_1}</td>
+				<td colspan="4">
+					
+					<input type="text" name="wurl" class="pt"  style="background:#FFF;" value="{$bd['wurl']}">&nbsp;{lang aljbd:wurl_2}
+					
+				</td>
+				
+				</tr>
+				<tr>
+				<td class="bdtr"><span style="color:red;">&nbsp;&nbsp;</span>{lang aljbd:s244}</td>
+				<td colspan="4">
+					
+					<input type="text" name="other" class="pt"  value="{$bd['other']}">
+					
+				</td>
+				</tr>
+				<tr>
+				<td class="bdtr"><span style="color:red;">&nbsp;&nbsp;</span>{lang aljbd:business_hours}</td>
+				<td colspan="4">
+					
+					<input type="text" name="business_hours" class="pt"  value="{$bd['business_hours']}">
+					
+				</td>
+				</tr>
+				<tr>
+				<td class="bdtr"><span style="color:red;">&nbsp;&nbsp;</span>{lang aljbd:bus_routes}</td>
+				<td colspan="4">
+					
+					<input type="text" name="bus_routes" class="pt"  value="{$bd['bus_routes']}">
+					
+				</td>
+				</tr>
+				{if !file_exists('source/plugin/aljbd/com/intro.php')}
+		<tr>
+		<td class="bdtr"><span style="color:red;">*</span>{lang aljbd:s18}</td>
+		<td colspan="4">
+			
+			<div class="tedt" style="width:100%;">
+			<div class="bar">
+			<div class="fpd">
+			<a href="javascript:;" title="{lang aljbd:s19}" class="fbld" onclick="seditor_insertunit('reply', '[b]', '[/b]');doane(event);">B</a>
+			<a fwin="apply" href="javascript:;" title="{lang aljbd:s20}" class="fclr" id="replyforecolor" onclick="showColorBox(this.id, 2, 'reply');doane(event);" initialized="true">Color</a>
+			<a fwin="apply" id="replyimg" href="javascript:;" title="{lang aljbd:s21}" class="fmg" onclick="seditor_menu('reply', 'img');doane(event);">Image</a>
+			<a fwin="apply" id="replyurl" href="javascript:;" title="{lang aljbd:s22}" class="flnk" onclick="seditor_menu('reply', 'url');doane(event);">Link</a>
+			</div></div>
+			<div class="area" style="background:#FFF;">
+			<textarea fwin="apply" rows="3" name="intro" class="pt" id="replymessage" style="background:#FFF;">{if $bd['intro']}{$bd['intro']}{else}$config['yushe']{/if}</textarea>
+			</div>
+			</div>
+		</td>
+		</tr>
+		{else}
+		<tr><td class="bdtr"><span style="color:red;">*</span>{lang aljbd:s18}</td><td><textarea name="intro"  id="intro" style="height:500px;">{if $bd['intro']}{$bd['intro']}{else}{eval echo str_replace ("\r\n", "<br/>", $config['yushe']);}{/if}</textarea></td></tr>
+		{/if} 
+              <th></th>
+              <td colspan="2"><button  class="pn pnc vm" value="true" id="submit" name="submit" type="submit"><strong>{lang aljbd:s289}</strong></button></td>
+          </tr>
+      </tbody>
+  </table>
+  </form>
+</div></div>
+<SCRIPT LANGUAGE="JavaScript"> 
+
+function countChoices(obj) 
+{	
+	var inputs = document.getElementsByName("businesstype[]");
+
+	var checked_counts = 0;
+
+	for(var i=0;i<inputs.length;i++){
+		if(inputs[i].checked){
+			checked_counts++;
+		}
+	}
+	max = 3; 
+	if (checked_counts > max) { 
+		alert("{lang aljbd:dianping_3}" + max + "{lang aljbd:dianping_4}"); 
+		obj.checked = false; 
+	} 
+} //--> 
+</script>
+{template common/footer}

@@ -1,0 +1,24 @@
+{template common/header_ajax}
+<script src="static/js/seditor.js" type="text/javascript" reload="1"></script>
+<h3 class="flb">
+	<em>{lang aljbd:s176}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('edit');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+<input name="bid" type="hidden" value="{$_GET['bid']}" />
+		<div class="c" style="width:600px;">
+        
+        
+        	<table cellspacing="0" cellpadding="0" class="dt">
+<tbody><tr>
+<th>{lang aljbd:s177}</th><th>{lang aljbd:s178}</th><th>{lang aljbd:s179}</th><th>{lang aljbd:s180}</th>
+</tr>
+{loop $winfolist $winfo}
+<tr class="header"><td>{$winfo['uid']}</td><td>{$winfo['username']}</td><td>{$winfo['winfo']}</td><td>{eval echo gmdate('Y-m-d H:i:s',$winfo['dateline']+8*3600);}</td></td></tr>
+{/loop}
+<tr><td colspan="6">$paging</td></tr>
+</tbody></table>
+	
+</div>
+{template common/footer_ajax}

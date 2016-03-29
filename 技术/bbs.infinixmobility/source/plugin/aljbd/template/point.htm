@@ -1,0 +1,35 @@
+{template common/header}
+<script src="http://api.map.baidu.com/api?v=1.3" type="text/javascript" charset="utf-8"></script>
+<script src="source/plugin/aljbd/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+</script>
+<div class="bm cl" id="pt">
+<div class="z">
+<a title="{$_G['setting']['bbname']}" class="nvhm" href="./">{$_G['setting']['bbname']}</a> <em>&rsquot;</em>
+        <a href="plugin.php?id=aljbd">{lang aljbd:s93}</a>
+</div>
+</div>
+<div class="ct2_a wp cl" id="ct">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">{lang aljbd:s94}</h2>
+{template aljbd:mnav}
+</div>
+</div>
+<div style="border:none; margin:0" class="mn pbm">
+<div class="tbmu cl">
+<b>http://api.map.baidu.com/lbsapi/getpoint/{lang aljbd:s98}</b>
+<iframe name="formsubmit" width="1" height="1" ></iframe>
+<table cellspacing="0" cellpadding="0" class="dt">
+<tbody><tr>
+<th>{lang aljbd:s99}</th><th>{lang aljbd:s100}</th><th>{lang aljbd:s101}</th><th>{lang aljbd:s102}</th><th>{lang aljbd:s103}</th>
+</tr>
+{loop $pointlist $point}
+<tr class="header"><td>{if $point['username']}$point['username']{else}{lang aljbd:s104}{/if}</td><td>{$point['name']}</td><td>{eval echo $point['x'].','.$point['y'];}</td><td>{eval echo gmdate('Y-m-d H:i:s',$point['dateline']+8*3600);}</td><td><a href="plugin.php?id=aljbd&act=pointok&x={$point['x']}&y={$point['y']}&pid={$point['id']}&bid={$point['bid']}" target="formsubmit">{lang aljbd:s105}<a>&nbsp;&nbsp;<a href="plugin.php?id=aljbd&act=pointdel&pid={$point['id']}" target="formsubmit">{lang aljbd:s106}<a></td></tr>
+{/loop}
+<tr><td colspan="5">$paging</td></tr>
+</tbody></table>
+</div>
+</div></div>
+{template common/footer}

@@ -1,0 +1,39 @@
+{template common/header}
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="{$_G['setting']['bbname']}">{$_G['setting']['bbname']}</a> <em>&amp;rsquot;</em>
+        <a href="<!--{if $config['isrewrite']}-->{$config['re_index']}<!--{else}-->plugin.php?id=aljlp<!--{/if}-->">$config['daohang']</a>
+</div>
+</div>
+
+<div id="ct" class="ct2_a wp cl">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">$config['daohang']</h2>
+{template aljlp:mnav}
+</div>
+</div>
+<div class="mn pbm" style="border:none; margin:0">
+<div class="tbmu cl">
+<a href="plugin.php?id=aljlp&act=post" class="y pn pnc"><strong>{lang aljlp:adminlp_3}</strong></a>
+<table cellspacing="0" cellpadding="0" class="dt">
+<tbody><tr>
+<th>{lang aljlp:adminlp_4}</th><th>{lang aljlp:adminlp_7}</th><th>{lang aljlp:adminlp_6}</th><th>{lang aljlp:admintop_1}</th><th>{lang aljlp:adminreflash_2}{$_G['setting']['extcredits'][$config['reflashextcredit']]['title']}</th><th>{lang aljlp:admintop_2}</th><th>{lang aljlp:admintop_5}</th>
+</tr>
+{loop $logs $log}
+{eval $lp=C::t('#aljlp#aljlp')->fetch($log['lid']);}
+<tr class="header">
+    <td>{$log['lid']}</td>
+    <td>{if $log['title']}{$log['title']}{elseif $lp['title']}{$lp['title']}{else}{lang aljlp:admintop_6}{/if}</td>
+    <td>{if $log['name']}{$log['name']}{elseif $lp['username']}{$lp['username']}{else}{lang aljlp:admintop_6}{/if}</td>
+    <td>{$log['username']}</td>
+    <td>{$log['pay']}</td>
+    <td>{eval echo dgmdate($log['dateline']);}</td>
+	<td>{if $log['endtime']}{eval echo dgmdate($log['endtime']);}{else}{lang aljlp:admintop_6}{/if}</td>
+</tr>
+{/loop}
+</tbody></table>
+<div style="margin-top:10px;">$paging</div>
+</div>
+</div>	</div>
+{template common/footer}

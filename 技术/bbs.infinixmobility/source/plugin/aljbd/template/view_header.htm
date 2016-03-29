@@ -1,0 +1,161 @@
+{template common/header_common}
+<script src="source/plugin/aljbd/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+</script>
+<link href="source/plugin/aljbd/css/common_store.css" type="text/css" rel="stylesheet">
+<script type="text/javascript">var cookiepre = 'VOz_', cookiedomain = '', cookiepath = '/';</script>
+</head>
+
+<body>
+{eval $sign=DB::result_first("select sign from ".DB::table('aljbd_attestation')." where sign=1 and bid=".$_GET['bid'])}
+<div class="topnav">
+<div class="navbg" {if file_exists('source/plugin/aljbd/com/nav.php')}style="background: none repeat scroll 0 0 {$config['nav_color']};"{/if}>
+<div class="wp">
+<a href="{if $config['isrewrite']}brand.html{else}plugin.php?id=aljbd{/if}" class="back"></a>
+<h1>
+<a href="{if $config['isrewrite']}brand.html{else}plugin.php?id=aljbd{/if}">{$bd['name']}</a>
+</h1>
+<div class="nav_wrap">
+<ul class="cl y" {if file_exists('source/plugin/aljbd/com/nav.php')}style="background: none repeat scroll 0 0 {$config['nav_color']};border-left: 1px solid {$config['nav_color']};border-right: 1px solid {$config['nav_color']};"{/if}>
+<li class="navlogo" {if file_exists('source/plugin/aljbd/com/nav.php')}style="border-right: 1px solid {$config['nav_color']};"{/if}><a href="./">{$_G['setting']['bbname']}</a></li>
+{if $_G['uid']==$bd['uid']}<li ><a target="_blank"  href="plugin.php?id=aljbd&act=member">{lang aljbd:s55}</a></li>{/if}
+<style type="text/css">
+	.topnav .navname,.topnav .navlogin{ border-right: 1px solid {$config['nav_color']};}
+</style>
+{if $_G['uid']}
+<li class="navname" >
+<img width="20" height="20" src="{eval echo avatar($bd['uid'],'small',true)}" alt="avatar">
+<span >{$_G['username']}</span><a  href="member.php?mod=logging&action=logout&formhash={FORMHASH}" rel="nofollow">[{lang aljbd:s116}]</a>
+</li>
+{else}
+<li class="navlogin">
+<a onclick="return showWindow('bdlogin', 'member.php?mod=logging&action=login&infloat=yes', 'get', 1);" href="javascript:;">{lang aljbd:s117}</a>
+</li>
+<li><a href="{$config['register']}" target="_blank">{lang aljbd:s118}</a></li>
+{/if}
+
+</ul>
+</div>
+</div>
+</div>
+<div class="shadow"></div>
+</div>
+<div class="wp" id="hdw">
+
+<div id="slider_wrap">
+<div class="slideblock">
+<ul class="slideimg">
+{if $adv}
+{eval $i=0}
+{loop $adv $k $a}
+<li class="{if empty($i)}active{/if}">
+{if $advurl[$k]}<a href="$advurl[$k]" target="_blank"><img width="960" height="220" id="wimg_1" src="$a">{else}<img width="960" height="220" id="wimg_1" src="$a">{/if}
+</li>
+{eval $i++}
+{/loop}
+{else}
+<li class="active">
+<img width="960" height="220" id="wimg_1" src="{$config['adv1']}">
+</li><li class="">
+<img width="960" height="220" id="wimg_2" src="{$config['adv2']}">
+</li>
+{/if}
+</ul>
+<div class="slidenumwrap">
+{if file_exists('source/plugin/aljbd/com/nav.php')}
+<style type="text/css">
+	#main_menu li.mouseover {
+  background: none repeat scroll 0 0 {$config['nav_color']};
+}
+</style>
+{/if}
+<ul class="slidenum">
+{if count($adv)>1}
+{eval $i=1}
+{loop $adv $k $a}
+<li class="{if $i==1}active{/if}">$i</li>
+{eval $i++}
+{/loop}
+{elseif empty($adv)}
+<li class="active">1</li>
+<li class="">2</li>
+{/if}
+</ul>
+</div>
+<div class="slidebar"></div>
+</div>
+</div>
+<div class="cl" id="main_menu">
+<ul>
+<li {if $_GET['act']=='view'}class="mouseover"{/if}><a title="{lang aljbd:s124}" href="{if $config['isrewrite']}brand_shop_{$bd['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}"><span>{lang aljbd:s124}</span></a></li>
+{if file_exists('source/plugin/aljbd/com/good.php')}
+<li {if $_GET['act']=='good'||$_GET['act']=='goodview'}class="mouseover"{/if}><a title="{lang aljbd:s124}" href="{if $config['isrewrite']}brand_good_{$bd['id']}.html{else}plugin.php?id=aljbd&act=good&bid={$bd['id']}{/if}"><span>{lang aljbd:s257}</span></a></li>
+{/if}
+{if file_exists('source/plugin/aljbd/com/notice.php')}
+<li {if $_GET['act']=='notice'||$_GET['act']=='noticeview'}class="mouseover"{/if}><a title="{lang aljbd:view_header_1}" href="{if $config['isrewrite']}brand_notice_{$bd['id']}.html{else}plugin.php?id=aljbd&act=notice&bid={$bd['id']}{/if}"><span>{lang aljbd:view_header_1}</span></a></li>
+{/if}
+{if file_exists('source/plugin/aljbd/com/album.php')}
+<li {if $_GET['act']=='album'||$_GET['act']=='albumview'}class="mouseover"{/if}><a title="{lang aljbd:view_header_2}" href="{if $config['isrewrite']}brand_album_{$bd['id']}.html{else}plugin.php?id=aljbd&act=album&bid={$bd['id']}{/if}"><span>{lang aljbd:view_header_2}</span></a></li>
+{/if}
+{if file_exists('source/plugin/aljbd/com/consume.php')}
+<li {if $_GET['act']=='consume'||$_GET['act']=='consumeview'}class="mouseover"{/if}><a title="{lang aljbd:view_header_3}" href="{if $config['isrewrite']}brand_consume_{$bd['id']}.html{else}plugin.php?id=aljbd&act=consume&bid={$bd['id']}{/if}"><span>{lang aljbd:view_header_3}</span></a></li>
+{/if}
+
+</ul>
+</div>
+</div>
+<div id="append_parent"></div>
+<script type="text/javascript">
+jq(function() {
+jq('#for_mod_sshop').click(function(){
+jq('#mod_sshop').attr("checked","checked");
+jq('#mod_sgood').removeAttr("checked");
+jq('#form_search').submit();
+});
+jq('#for_mod_sgood').click(function(){
+jq('#mod_sgood').attr("checked","checked");
+jq('#mod_sshop').removeAttr("checked");
+jq('#form_search').submit();
+});
+jq('#myshopmenu,#navmsg').parent().hover(function(){
+jq(this).addClass('h');
+jq(this).find('ul').show();
+},function(){
+jq(this).removeClass('h');
+jq(this).find('ul').hide();
+});
+jq('#shop_info .siteurl').hover(function(){
+jq(this).addClass('h');
+},function(){
+jq(this).removeClass('h');
+});
+jq('#slider_wrap .slidenum li').mouseover(function(){
+if(!jq(this).hasClass('active')){
+jq(this).addClass('active').siblings().removeClass('active');
+var i=jq(this).index();
+jq('#slider_wrap .slideimg li:eq('+i+')').addClass('active').siblings().removeClass('active');
+}
+clearInterval(slideloop);
+}).mouseout(function(){
+autoactive();
+});
+var slideloop;
+function autoactive(){
+slideloop = setInterval(function(){
+var index = jq('#slider_wrap .slidenum li.active').index();
+index = index<(jq('#slider_wrap .slidenum li').length-1)?(index+1):0;
+jq('#slider_wrap .slidenum li:eq('+index+')').trigger('mouseover').trigger('mouseout');
+},3000);
+}
+autoactive();
+jq('#messages .message_tab h3').click(function(){
+jq(this).addClass('c').siblings().removeClass('c');
+var i = jq(this).index();
+jq('#messages>div:not(.message_tab)').removeClass('c').eq(i).addClass('c');
+});
+jq('#messages .replylink').click(function(){
+jq(this).closest('.commentli').find('.replies_wp').toggle().end().find('#commentmessage_r').focus();
+})
+});
+</script>

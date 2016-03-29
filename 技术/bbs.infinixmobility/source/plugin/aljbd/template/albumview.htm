@@ -1,0 +1,32 @@
+{template aljbd:view_header}
+<div class="wp cl" id="bdw">
+<div class="main layout">
+<div class="store_detail content"><div class=" cl">
+<h3 class="z">{lang aljbd:albumview_1} <span>{lang aljbd:albumview_2}{$num}{lang aljbd:albumview_3}</span></h3>
+<a href="{if $config['isrewrite']}brand_album_{$_GET['bid']}.html{else}plugin.php?id=aljbd&act=album&bid={$_GET['bid']}{/if}" class=" y" style="height: 21px;margin: 9px 0 10px;color: #568C10;text-decoration: none;">{lang aljbd:albumview_4} &gt;&gt;</a>
+</div>
+<div class="description">{$ab['albumname']}</div>
+<div class="picwrap cl">
+<div class="targetpic cl" id="targetpic">
+<div class="targetpic_main"><a href="javascript:void(0)"><img alt="" src="{$ab['subjectimage']}.550x550.jpg" onclick="window.open($('.goodlist .curr_pic').find('img').attr('bigimg'))" id="tarpic"><span class="zoom"> </span></a></div>
+</div>
+
+<div class="cl" id="album_show_thumb_panel">
+<div class="prev"><a title="{lang aljbd:albumview_5}" href="javascript:void(0);">{lang aljbd:albumview_5}</a></div>
+<div class="thumb_pic_list">
+<ul class="goodlist">
+<!--{eval  $i=1;}-->
+{loop $alist $al}
+<li <!--{if $i==1}-->class="curr_pic"<!--{/if}-->>
+<a title="$al['alt']" href="javascript:void(0);"><img alt="$al['alt']" disp="$al['alt']" midimg="{$al['pic']}.550x550.jpg" bigimg="{$al['pic']}" src="{$al['pic']}.72x72.jpg"></a>
+</li>
+<!--{eval  $i++;}-->
+{/loop}
+</ul>
+</div>
+<div class="next"><a title="{lang aljbd:albumview_6}" href="javascript:void(0);">{lang aljbd:albumview_6}</a></div>
+</div>
+</div>
+</div><script src="source/plugin/aljbd/js/eye_album_photo_list.js" type="text/javascript" charset="utf8"></script></div>
+
+{template aljbd:side}

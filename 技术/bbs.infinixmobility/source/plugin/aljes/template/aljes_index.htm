@@ -1,0 +1,218 @@
+{template common/header}
+<link href="source/plugin/aljes/css/v3.css" rel="stylesheet">
+<link href="source/plugin/aljes/css/category.css" rel="stylesheet">
+<style id="diy_style" type="text/css"></style>
+<div class="bm cl" id="pt">
+    <div class="z">
+        <a title="{$_G['setting']['bbname']}" class="nvhm" href="./">{$_G['setting']['bbname']}</a><em>&rsaquo;</em><a href="<!--{if $config['isrewrite']}-->{$config['re_index']}<!--{else}-->plugin.php?id=aljes<!--{/if}-->">$config['daohang']</a></div>
+    {if $_G['uid']}<div class="z" style="float:right;padding-right:0;"><a data-type="user" data-toggle="userAuth" href="plugin.php?id=aljes&act=member" id="manage"><i class="icon-cog"></i>{lang aljes:index_1}</a></div>{/if}
+</div>
+<style type="text/css">
+.filter-box .items {
+  overflow: hidden;
+}
+span.more-link, a.button, .button{
+	margin-top:0px;
+}
+h4{
+	margin:0px;
+}
+</style>
+<!--[diy=aljes_00]--><div id="aljes_00" class="area"></div><!--[/diy]-->
+<div class="wp cl" style="margin-bottom:10px;">
+    <div class="container">
+        <div class="filter-box" id="top-filters">
+            <form method="post" action="{eval echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];}">
+                <div class="fieldset">
+                    <h4 class="legend">{lang aljes:index_2}</h4>
+                    <div class="areas items">
+                        {if empty($_GET['rid'])}<strong>{lang aljes:index_3}</strong>{else}<a rel="" href="plugin.php?id=aljes&zufangtype={$_GET['zufangtype']}&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=$_GET['view']">{lang aljes:index_3}</a>{/if} 
+                        {loop $rs $r}
+                        {if $_GET['rid']==$r['id']}<strong>$r['subject']</strong>{else}<a href="plugin.php?id=aljes&rid={$r['id']}&subrid={$_GET['subrid']}&zufangtype={$_GET['zufangtype']}&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=$_GET['view']">$r['subject']</a>{/if}
+                        {/loop}
+                    </div>
+                    {if $_GET['rid']&&$rrs}
+                    <div class="subareas items">
+                        {if empty($_GET['subrid'])}<strong>{lang aljes:index_4}</strong>{else}<a rel="" href="plugin.php?id=aljes&rid={$_GET['rid']}&zufangtype={$_GET['zufangtype']}&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=$_GET['view']">{lang aljes:index_4}</a>{/if}  
+                        {loop $rrs $s}
+                        {if $_GET['subrid']==$s['id']}<strong>$s['subject']</strong>{else}<a href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$s['id']}&zufangtype={$_GET['zufangtype']}&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=$_GET['view']">$s['subject']</a>{/if}
+                        {/loop}
+                    </div>
+                    {/if}
+                </div>
+                <div class="fieldset ">
+                    <h4 class="legend">{lang aljes:index_5}</h4>
+                    <div class="items">
+                        {if empty($_GET['zufangtype'])}<strong>{lang aljes:index_6}</strong>{else}<a href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=$_GET['view']">{lang aljes:index_6}</a>{/if} 
+                        {loop $zufangtype $typeid $type}
+                        {if $_GET['zufangtype']==$typeid}<strong>$type</strong>{else}<a href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype={$typeid}&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=$_GET['view']">$type</a>{/if} 
+                        {/loop}
+                    </div>
+                </div>
+                <div class="fieldset ">
+                    <h4 class="legend">{lang aljes:index_7}</h4>
+                    <div class="items">
+                        {if empty($_GET['pay1']) && empty($_GET['pay2'])}<strong>{lang aljes:index_6}</strong>{else}<a href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype=$_GET['zufangtype']&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=$_GET['view']">{lang aljes:index_6}</a>{/if}
+						
+						{loop $pay_types $k $v}
+						{eval $arr=explode('-',$k);}
+                        {if $_GET['pay1']==$arr['0']&$_GET['pay2']==$arr['1']}<strong>$v</strong>{else}<a rel="nofollow" href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype=$_GET['zufangtype']&pay1=$arr['0']&pay2=$arr['1']&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=$_GET['view']">$v</a>{/if}
+                        {/loop}
+                        {if file_exists('source/plugin/aljes/template/com/so.htm')}
+                        <span class="range">
+                            <label>{lang aljes:index_15}</label>
+                            <input type="number" class="number from-number" value="$_GET['pay1']" name="pay1" min="0">
+                            <label>~</label>
+                            <input type="number" class="number to-number" value="$_GET['pay2']" name="pay2" min="0">
+                            <label>{lang aljes:index_16}</label>
+                            <input type="submit" class="button button-inline" value="{lang aljes:index_17}">
+                        </span>
+                        {/if}
+                    </div>
+                </div>
+				 <div class="fieldset "><h4 class="legend">{lang aljes:post_36}</h4><div class="items">{if empty($_GET['new'])}<strong>{lang aljes:index_6}</strong>{else}<a rel="nofollow" href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype=$_GET['zufangtype']&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&view=$_GET['view']">{lang aljes:index_6}</a>{/if} 
+				 {loop $new_types $k $n}
+				 {if $_GET['new']==$k}<strong>$n</strong>{else}<a rel="nofollow" href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype=$_GET['zufangtype']&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new={$k}&view=$_GET['view']">$n</a>{/if}
+				 {/if}
+				 </div></div>
+                <div class="fieldset ">
+					<h4 class="legend">{lang aljes:post_32}</h4>
+					<div class="items">{if empty($_GET['wanted'])}<strong>{lang aljes:index_6}</strong>{else}<a rel="nofollow" href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype=$_GET['zufangtype']&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&new=$_GET['new']&view=$_GET['view']">{lang aljes:index_6}</a>{/if} 
+					{loop $wanted_types $k $v}
+					{if $_GET['wanted']==$k}<strong>$v</strong>{else}<a rel="nofollow" href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype=$_GET['zufangtype']&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$k&new=$_GET['new']&view=$_GET['view']">$v</a>{/if} 
+					{/if}
+					</div>
+				</div>
+            </form>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="grid grid-16" id="main">
+            <!--改变view的功能栏--><div class="section" id="content">
+                <div id="listpub"><a class="sep" href="plugin.php?id=aljes&act=post">
+                        <i class="icon-plus"></i>
+                        <span>&nbsp;{lang aljes:index_18}{$config['daohang']}{lang aljes:index_36}</span></a>
+                    {if file_exists('source/plugin/aljes/template/com/gg.htm')}
+                    {template aljes:com/gg}
+                    {/if}
+                </div>
+            </div>
+
+			<div id="changeview"><div id="hasImage"><label id="viewImage">{lang aljes:index_100}<font style="color:#ec5524;font-size:16px;">{$num}</font>{lang aljes:index_101}</label></div><ul class="item"><span>{lang aljes:index_29}</span><li ><a {if $_GET['view']=='item'||($_GET['view']!='table'&&$config['isitem'])} style="background: none repeat scroll 0 0 {if file_exists('source/plugin/aljes/template/com/color.htm')}$config['y_color']{else}#e74c3c{/if};border: 0 none;color: white;pointer-events: none;"{/if} href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype=$_GET['zufangtype']&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=item"><i class="icon-viewItem"></i> &nbsp;{lang aljes:index_30}</a></li><li class="table"><a href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype=$_GET['zufangtype']&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=table" {if $_GET['view']=='table'||($_GET['view']!='item'&&!$config['isitem'])} style="background: none repeat scroll 0 0 {if file_exists('source/plugin/aljes/template/com/color.htm')}$config['y_color']{else}#e74c3c{/if};border: 0 none;color: white;pointer-events: none;"{/if}><i class="icon-viewTitle"></i> &nbsp;{lang aljes:index_31}</a></li></ul></div>
+
+            
+            <div class="section">
+                
+                <div class="section" id="normal-list">
+                    <ul class="sep" id="media">
+					{if $_GET['view']=='item'||($_GET['view']!='table'&&$config['isitem'])}
+                        {loop $lplist $lp}
+                        <li class="media clearfix" data-aid="310701844">
+                            <a class="media-cap" target="_blank" href="<!--{if $config['isrewrite']}-->{$lp['rewrite']}<!--{else}-->plugin.php?id=aljes&act=view&lid={$lp['id']}<!--{/if}-->">
+                                <img alt="$lp['title']" src="{if $lp['pic1']}{eval echo $lp['pic1'].'.640x480.jpg';}{else}{$config['mr_src']}{/if}">
+                            </a>
+                            <div class="media-body">
+                                <div class="media-body-title">
+                                    <small class="pull-right"><span class="highlight"><b>{if $lp['zujin']}$lp['zujin']{lang aljes:index_16}{else}{lang aljes:view_14}{/if}</b></span></small>
+                                    <a target="_blank" href="<!--{if $config['isrewrite']}-->{$lp['rewrite']}<!--{else}-->plugin.php?id=aljes&act=view&lid={$lp['id']}<!--{/if}-->">{if $lp['wanted']}<font style="color:#e74c3c">[{$wanted_types[$lp['wanted']]}]</font>&nbsp;{/if}&nbsp;$lp['title']</a>{if TIMESTAMP < $lp['topetime']}&nbsp;<small class="tag tag-warn">{lang aljes:index_32}</small>{/if}{if $lp['zufangtype']}&nbsp;<a class="tag" style="font-size:12px;" href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype=$lp['zufangtype']&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=item">{$zufangtype[$lp['zufangtype']]}</a>{/if}
+                                </div>
+								<div class="typo-small"><!--{eval echo cutstr($lp['content'],90,'');}--> </div>
+								<div class="typo-small">{$regions[$lp['region']]['subject']} - {$regions[$lp['region1']]['subject']}</div>
+                                <div class="typo-small">
+                                    {eval echo dgmdate($lp['updatetime'],'u');}&nbsp;/&nbsp;{$zufangtype[$lp['zufangtype']]}&nbsp;/&nbsp;$new_types[$lp['new']]
+                                </div>
+                            </div>
+                        </li>
+                        {/loop}
+						{elseif $_GET['view']=='table'||($_GET['view']!='item'&&!$config['isitem'])}
+						{loop $lplist $lp}
+						<li class="table-view-item clearfix  item-regular" data-cpm-sign="" data-aid="232798484"><div class="clearfix"><span class="table-view-body" ><a target="_blank" href="<!--{if $config['isrewrite']}-->{$lp['rewrite']}<!--{else}-->plugin.php?id=aljes&act=view&lid={$lp['id']}<!--{/if}-->">{if $lp['wanted']}<font style="color:#e74c3c">[{$wanted_types[$lp['wanted']]}]</font>&nbsp;{/if}&nbsp;$lp['title']</a>{if TIMESTAMP < $lp['topetime']}&nbsp;<small class="tag tag-warn">{lang aljes:index_32}</small>{/if}{if $lp['zufangtype']}&nbsp;<a class="tag"  href="plugin.php?id=aljes&rid={$_GET['rid']}&subrid={$_GET['subrid']}&zufangtype=$lp['zufangtype']&pay1={$_GET['pay1']}&pay2={$_GET['pay2']}&fangxing=$_GET['fangxing']&wanted=$_GET['wanted']&new=$_GET['new']&view=table">{$zufangtype[$lp['zufangtype']]}</a>{/if}</span><div class="table-view-cap"><span class="highlight" ><b>{if $lp['zujin']}$lp['zujin']{lang aljes:index_16}{else}{lang aljes:view_14}{/if}</b></span></div><div class="table-view-block">{if $lp['content']}<!--{eval echo cutstr($lp['content'],24,'');}-->{else}&nbsp;{/if}</div><div class="table-view-cap">
+						<!--{eval $today=date('Y-m-d',$lp['updatetime']);}-->
+						<!--{eval $todays=date('Y-m-d',$_G['timestamp']);}-->
+						{if $today==$todays}{lang aljes:index_35}{eval echo date('H:i',$lp['updatetime']);}{else}{eval echo date('m-d',$lp['updatetime']);}{/if}</div></div></li>
+						{/loop}
+						{/if}
+                    </ul>
+                </div>
+
+                <div class="pagenav clearfix sep">
+                    $paging
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-4 last" id="side">
+            {if file_exists('source/plugin/aljes/template/com/so.htm')}
+            {template aljes:com/so}
+            {/if}
+			<div class="sidebar-filter sep" style="font-size:14px;">
+			<table style="width:100%">
+			<tbody>
+			<tr style="text-align:center;">
+			<td style="text-align:center;"><a class=" button_lj"  href="plugin.php?id=aljes&act=post" id="publistbtn"><i class="icon-post"></i>{lang aljes:index_33}</a></td>
+			<td style="text-align:center;"><a class=" button_lj"  href="plugin.php?id=aljes&act=member" id="publistbtn"><i class="icon-post"></i>{lang aljes:index_34}</a></td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+            <div class="sidebar-filter sep">
+                <h4 class="typo-h5">{$config['daohang']}{lang aljes:index_23}</h4>
+                <table class="pvdata">
+                    <tbody>
+                        <tr>
+                            <td>{$todayviews[0]['views']}<br>{lang aljes:index_24}</td>
+                            <td>{if $todayviews[1]['views']}{$todayviews[1]['views']}{else}0{/if}<br>{lang aljes:index_25}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+			{if file_exists('source/plugin/aljes/images/qrcode/aljes_qrcode.jpg')}
+			<div style="height:auto;width:100%;border: 1px solid #eee;padding: 0 0 10px 0px;" >
+						<h4 style="background: none repeat scroll 0 0 #f2f1ec;margin: 0;padding: 10px;">{$config['daohang']}{lang aljes:qrcode_2}</h4>
+						<div style="text-align:center;">
+                        <img style="height:auto;width:100%;" src="{$_G['siteurl']}/source/plugin/aljes/images/qrcode/aljes_qrcode.jpg">
+						</div>
+						<p style="text-align:center;">{lang aljes:qrcode_3}{$config['daohang']}{lang aljes:qrcode_4}</p>
+            </div>
+			{/if}
+			<style type="text/css">
+.sidebar-filter dl{ width:96%;  padding:5px; height:70px; border-bottom:1px #e3e3e3 solid; border-top:1px #fff solid}
+.sidebar-filter dl dt{ float:left;}
+.sidebar-filter dl dt img{ width:64px; height:64px }
+.sidebar-filter dl dd{ float:left; width:69%; height:65px; padding-top:5px;padding-left:5px}
+.sidebar-filter dl dd p em{color:#e74c3c; padding:0 5px 0 0; font-family:Arial; font-size:14px;}
+.sidebar-filter ul{ padding:10px}
+.lj_wanted{color:#e74c3c};
+			</style>
+			{if $tuijian}
+			<div class="sidebar-filter sep" style="margin-top: 10px;">
+<h4 class="typo-h5">{lang aljes:index_28}</h4>
+              {loop $tuijian $t}          
+            <dl>
+                <dt>
+                                    <a href="<!--{if $config['isrewrite']}-->{$t['rewrite']}<!--{else}-->plugin.php?id=aljes&act=view&lid={$t['id']}<!--{/if}-->"><img src="{if $t['pic1']}{eval echo $t['pic1'].'.64x64.jpg';}{else}{$config['mr_src']}{/if}"></a>
+                                </dt>
+                <dd>
+               		<p><a href="<!--{if $config['isrewrite']}-->{$t['rewrite']}<!--{else}-->plugin.php?id=aljes&act=view&lid={$t['id']}<!--{/if}-->">{if $t['wanted']}<font style="color:#e74c3c">[{$wanted_types[$t['wanted']]}]</font>&nbsp;{/if}<!--{eval echo cutstr($t['title'],17,'');}--></a></p>
+                	<p><a href="<!--{if $config['isrewrite']}-->{$t['rewrite']}<!--{else}-->plugin.php?id=aljes&act=view&lid={$t['id']}<!--{/if}-->">{if $t['zujin']}<em>$t['zujin']</em>{lang aljes:index_16}{else}{lang aljes:view_14}{/if}</a></p>
+                    <p>{eval echo dgmdate($t['updatetime'],'u');}</p>
+                </dd>
+            </dl>
+               {/loop} 
+                </div>
+				{/if}
+            {if file_exists('source/plugin/aljes/template/com/viewadv1.htm')}
+            {$config['img']}
+            {/if}
+			<!--[diy=aljes_02]--><div id="aljes_02" class="area"></div><!--[/diy]-->
+        </div>
+    </div>
+	<!--[diy=aljes_01]--><div id="aljes_01" class="area"></div><!--[/diy]-->
+</div>
+{if file_exists('source/plugin/aljes/template/com/color.htm')}
+{template aljes:com/color}
+{/if}
+{template common/footer}

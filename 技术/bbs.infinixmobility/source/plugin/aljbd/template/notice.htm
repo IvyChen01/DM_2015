@@ -1,0 +1,18 @@
+{template aljbd:view_header}
+<div class="wp cl" id="bdw"><div class="main layout store_list" id="goodslist">
+<div class="main layout store_list" id="newslist">
+<div class="content">
+<h3>{lang aljbd:notice_1}</h3>
+<ul class="listcontent">
+{loop $nlist $n}
+<li>
+<a href="{if $config['isrewrite']}brand_notice_{$n['bid']}_{$n[id]}.html{else}plugin.php?id=aljbd&act=noticeview&bid={$n['bid']}&nid=$n['id']{/if}" target="_blank" style="font-style:none;font-weight:bold;text-decoration:none">$n['subject']</a>
+<span>{eval echo gmdate('Y-m-d H:i:s',$n['dateline']+8*3600);}</span>
+</li>
+{/loop}
+</ul>
+{$paging}
+</div>
+</div>
+</div>
+{template aljbd:side}

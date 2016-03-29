@@ -1,0 +1,32 @@
+<script>disallowfloat = 'newthread';</script>
+<script src="source/plugin/aljbd/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var lj_jq=jQuery.noConflict();
+</script>
+<table style="width:1050px;" id="tips" class="tb tb2 ">
+<tbody><tr><th class="partition">{lang aljbd:s107}&nbsp;(<a href="admin.php?action=plugins&operation=config&identifier=aljbd&pmod=region&act=empty">{lang aljbd:empty_region}</a>)</th></tr>
+<tr><td class="tipsblock"><ul id="tipslis"><li>{lang aljbd:s108}</li>{lang aljbd:empty_annotation}
+</ul></td></tr></tbody></table>
+
+<form id="cpform" action="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljbd&pmod=region" target="_self" method="post" name="cpform">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<input type="hidden" value="{$_GET['upid']}" name="upid">
+<table style="width:1050px;" class="tb tb2 ">
+<tbody><tr class="header"><td colspan=10>{lang aljbd:s109}<a href="admin.php?action=plugins&operation=config&do={$_GET['_do']}&identifier=aljbd&pmod=region">{lang all}</a>{if $upid_data['name']}<img src="static/image/common/pt_item.png"><a href="admin.php?action=plugins&operation=config&do={$_GET['_do']}&identifier=aljbd&pmod=region&upid=$upid_data['upid']">$upid_data['name']</a>{/if}</td></tr>
+<script>
+	function newregion() {
+		var anew = lj_jq("#newfirst").clone();
+		anew.find("input").attr("value", "");
+		lj_jq("#newfirst").after(anew);
+		lj_jq("#newfirst").find("a").remove();
+		lj_jq("#newfirst").attr("id", "");
+		return false;
+	}
+</script>
+<tr class="header"><th></th><th>{lang aljbd:Sorting_region}</th><th>{lang aljbd:Name_region}</th><th>{lang aljbd:Operation_region}</th></tr>
+<!--{loop $region $key $value}-->
+<tr class="hover" style="height:20px"><td class="td25"><input type="checkbox" value="$value['catid']" name="delete[]" class="checkbox"></td><td class="td25"><input  class="txt" type="text" value="$value['displayorder']" name="displayorder[{$value[catid]}]" class="checkbox"></td><td class="td24"><input  class="txt" type="text" value="$value[name]" name="name[{$value[catid]}]" size="15" onfocus="this.className='txt'" onblur="this.className='txtnobd'" class="txtnobd"></td>{if $upid_data[level] < 1}<td><a href="admin.php?action=plugins&operation=config&do={$_GET['_do']}&identifier=aljbd&pmod=region&upid={$value[catid]}">{lang aljbd:s110}</a></td>{/if}</tr>
+<!--{/loop}-->
+<tr class="hover" style="height:20px" id="newfirst"><td class="td25">{lang aljbd:s111}</td><td class="td25"><input  class="txt" type="text" value="" name="newdisplayorder[]" class="checkbox"></td><td class="td24"><input type="text" value="" name="newregion[]" class="txt"></td><td><a onclick="newregion();return false;" href="#" class="addtr">{lang aljbd:add_region}</a>&nbsp;&nbsp;&nbsp;{if !$_GET['upid']}<a href="admin.php?action=plugins&operation=config&identifier=aljbd&pmod=region&act=import" onclick="showWindow('edit',this.href)" class="addtr">{lang aljbd:Import_region}</a>{/if}</td></tr>
+<tr><td class="td25"><input type="checkbox" onclick="checkall(this.form, 'delete')" class="checkbox" id="chkall" name="chkall"><label for="chkall">{lang aljbd:s112}</label></td><td colspan="15"><div class="fixsel"><div id="ajax_status_display"></div><input type="submit" value="{lang aljbd:s113}" title="{lang aljbd:s114}" name="submit" id="submit_submit" class="btn">&nbsp;&nbsp;<a href="admin.php?action=plugins&operation=config&identifier=aljbd&pmod=region&act=importall" class="addtr"> &#23548;&#20837;&#31995;&#32479;&#20840;&#37096;&#22320;&#21306;</a></div></td><td>$paging</td></tr></tbody></table>
+</form>

@@ -1,0 +1,11 @@
+<form id="cpform" action="$url" autocomplete="off" method="post" name="cpform"><input type="hidden" value="{FORMHASH}" name="formhash"><input type="hidden" value="" name="scrolltop" id="formscrolltop"><input type="hidden" value="" name="anchor">
+<table class="tb tb2 ">
+<tbody>
+<!--<tr>&nbsp;文字搜索：<input type="text" value="" name="lang" style="width:50px">&nbsp;&nbsp;<input type="submit" value="搜索" name="num_submit"></td></tr>-->
+{loop $plugin_bw $s}
+<tr onmouseover="setfaq(this, 'faq14c4')"><td s="1" class="td27" colspan="2">{$s['plugin_b']}:</td></tr>
+<tr onmouseover="setfaq(this, 'faq14c4')" class="noborder"><td class="vtop rowform">
+<input type="text" class="txt" value="{$s['plugin_w']}" name="plugin_all[{$s[plugin_b]}]"></td><td s="1" class="vtop tips2"></td></tr>
+{/loop}
+<tr><td colspan="15"><div class="fixsel"><input type="submit" value="提交" title="按 Enter 键可随时提交您的修改" name="addsubmit" id="submit_addsubmit" class="btn"></div></td></tr><script type="text/JavaScript">_attachEvent(document.documentElement, 'keydown', function (e) { entersubmit(e, 'addsubmit'); });</script></tbody></table>
+</form>

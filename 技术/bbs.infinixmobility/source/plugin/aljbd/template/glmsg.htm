@@ -1,0 +1,27 @@
+{template common/header_ajax}
+<h3 class="flb">
+	<em>$_GET['username']{lang aljbd:glmsg_1}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('aljbd');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+
+		<div class="c">
+        
+        
+        	<table cellspacing="0" cellpadding="0" border="0">
+                
+  				<tbody>
+			   
+				$welcome
+				<!--{loop $bdlist $k $v}-->
+				<tr>
+				<td  height="40">$v['name']</td>
+    			<td colspan="4">&nbsp;&nbsp;<a href="{if $config['isrewrite']}brand_shop_{$v['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$v['id']}{/if}" >{lang aljbd:glmsg_2}</a></td>
+				</tr>
+                <!--{/loop}-->   
+				<tr><td colspan="12">$paging</td></tr>
+            </tbody></table>		
+	
+</div>
+
+{template common/footer_ajax}

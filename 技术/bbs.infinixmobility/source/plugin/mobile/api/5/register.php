@@ -1,0 +1,57 @@
+<?php
+
+/**
+ *      [Discuz!] (C)2001-2099 Comsenz Inc.
+ *      This is NOT a freeware, use is subject to license terms
+ *
+ *      $Id: register.php 32489 2013-01-29 03:57:16Z monkey $
+ */
+
+if(!defined('IN_MOBILE_API')) {
+	exit('Access Denied');
+}
+$_GET['regsubmit'] = 'yes';
+include_once 'member.php';
+
+class mobile_api {
+
+	function common() {
+		global $_G;
+		if(empty($_POST['regsubmit'])) {
+			$_G['mobile_version'] = intval($_GET['version']);
+		}
+	    if (isset($_GET['code'])){
+	        $code = $_GET['code'];
+	        $return = C::t('common_seccheck')->check_seccode($code);
+	        if (!$return){
+	            $variable = array(
+	                'message' => 'invalid seccode',
+	            );
+	            mobile_core::result(mobile_core::variable($variable));
+	            exit;
+	        }
+	    }
+		
+		
+		require_once libfile('class/member');
+		$_GET['username'] = getgpc('username');
+		$_GET['password'] = getgpc('password');
+		$_GET['password2'] = getgpc('password2');
+		$_GET['email'] = getgpc('email');
+		
+		$ctl_obj = new register_ctl();
+		$ctl_obj->setting = $_G['setting'];
+		//$ctl_obj->template = 'mobile:register';
+		$ctl_obj->on_register();
+		if(empty($_POST['regsubmit'])) {
+			exit;
+		}
+	}
+
+	function output() {
+		mobile_core::result(mobile_core::variable());
+	}
+
+}
+
+?>

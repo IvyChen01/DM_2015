@@ -1,0 +1,61 @@
+{template common/header}
+<script src="http://api.map.baidu.com/api?v=1.3" type="text/javascript" charset="utf-8"></script>
+<script src="source/plugin/aljbd/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+</script>
+<div class="bm cl" id="pt">
+<div class="z">
+<a title="$_G['setting']['bbname']" class="nvhm" href="./">{$_G['setting']['bbname']}</a> <em>&rsquot;</em>
+        <a href="{if $config['isrewrite']}brand.html{else}plugin.php?id=aljbd{/if}">{lang aljbd:s74}</a>
+</div>
+</div>
+<div class="ct2_a wp cl" id="ct">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">{lang aljbd:s75}</h2>
+{template aljbd:mnav}
+</div>
+</div>
+<div style="border:none; margin:0" class="mn pbm">
+<div class="tbmu cl">
+<a class="y pn pnc" onclick="showWindow('addalbum',this.href)" href="plugin.php?id=aljbd&act=addalbum"><strong>{lang aljbd:albumlist_1}</strong></a>
+
+<style>
+			.ml p{height:22px;}
+			.ml li{
+			overflow:hidden;
+			}
+			.mlp .d{height:210px;}
+			.conbar {
+				text-align:center; 
+				display:none; 
+				position:relative; 
+				z-index:99;
+			}
+			.conbar a{
+				color:#FF0000
+			}
+			</style>
+
+</div>
+			<ul class="ml mlp cl">
+					{loop $alist $key $value}
+<li class="d" >
+<div style="height:25px;">
+
+</div>
+<div>
+<div>
+<div class="c">
+<a href="plugin.php?id=aljbd&act=albumall&aid={$value['id']}">{if $value[subjectimage]}<img width="120" height="120" src="$value[subjectimage]" alt="{$value[albumname]}" />{else}<img width="120" height="120" src="source/plugin/aljbd/images/nophoto.jpg" alt="{$value[albumname]}" />{/if}</a>
+</div>
+<p class="ptm"><a href="plugin.php?id=aljbd&act=albumall&aid={$value['id']}" class="xi2">$value[albumname]</a>($value[picnum])&nbsp;<a onclick="showWindow('addalbum',this.href)" href="plugin.php?id=aljbd&act=editalbum&aid={$value[id]}" class="xi2"><font color="red">{lang aljbd:albumlist_2}</font></a>&nbsp;<a href="plugin.php?id=aljbd&act=delalbum&aid={$value[id]}&formhash={FORMHASH}" class="xi2"><font color="red">{lang aljbd:s280}</font></a></p>					
+<span style="height:22px;"><a onclick="showWindow('addalbum',this.href)" href="plugin.php?id=aljbd&act=addalbumimg&aid={$value[id]}&bid={$value[bid]}" style="color:#900;">{lang aljbd:albumlist_3}</a></span>
+</div>
+</div>
+</li>
+					{/loop}
+				</ul>
+</div></div>
+{template common/footer}

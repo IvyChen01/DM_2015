@@ -1,0 +1,64 @@
+{template common/header}
+<script src="http://api.map.baidu.com/api?v=1.3" type="text/javascript" charset="utf-8"></script>
+<script src="source/plugin/aljbd/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+</script>
+<div class="bm cl" id="pt">
+<div class="z">
+<a title="$_G['setting']['bbname']" class="nvhm" href="./">{$_G['setting']['bbname']}</a> <em>&rsquot;</em>
+        <a href="{if $config['isrewrite']}brand.html{else}plugin.php?id=aljbd{/if}">{lang aljbd:s74}</a>
+</div>
+</div>
+<div class="ct2_a wp cl" id="ct">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">{lang aljbd:s75}</h2>
+{template aljbd:mnav}
+</div>
+</div>
+<div style="border:none; margin:0" class="mn pbm">
+<div class="tbmu cl">
+<a class="y pn pnc"  href="plugin.php?id=aljbd&act=attend" ><strong>{lang aljbd:s79}</strong></a>
+
+
+<table cellspacing="0" cellpadding="0" class="dt">
+<tbody><tr>
+<th>{lang aljbd:s80}</th><th>{lang aljbd:s82}</th><th>{lang aljbd:s83}</th><th>{lang aljbd:s84}</th><th>{lang aljbd:s85}</th><th>{lang aljbd:s86}</th>
+</tr>
+{loop $bdlist $bd}
+{eval $sign=DB::result_first("select sign from ".DB::table('aljbd_attestation')." where sign=1 and bid=".$bd['id'])}
+<tr class="header"><td>{$bd['id']}</td><td><!--{eval echo cutstr($bd['name'],14,'');}-->{if $sign}<img title="{lang aljbd:attestation_9}" src="source/plugin/aljbd/images/vip.gif">{/if}</td><td>{$typelist[$bd['type']]['subject']}</td><td>{$rlist[$bd['region']]['name']}</td><td>{eval echo gmdate('Y-m-d',$bd['dateline']+8*3600);}</td><td><a href="plugin.php?id=aljbd&act=edit&bid={$bd['id']}" >{lang aljbd:s279}</a>
+{if file_exists('source/plugin/aljbd/com/mark.php')}
+<a href="plugin.php?id=aljbd&act=mark&bid={$bd['id']}" onclick="showWindow('edit',this.href)"><font color="red">{lang aljbd:s88}</font></a>
+{/if}
+{if file_exists('source/plugin/aljbd/com/gg.php')}
+<a href="plugin.php?id=aljbd&act=gg&bid={$bd['id']}" onclick="showWindow('edit',this.href)">{lang aljbd:s89}</a>
+{/if}
+<a href="plugin.php?id=aljbd&act=adv&bid={$bd['id']}" onclick="showWindow('edit',this.href)">{lang aljbd:s90}</a>
+{if file_exists('source/plugin/aljbd/com/winfo.php')}
+<a href="plugin.php?id=aljbd&act=winfolist&bid={$bd['id']}" onclick="showWindow('edit',this.href)">{lang aljbd:s91}</a>
+{/if}
+{if file_exists('source/plugin/aljbd/template/com/iwantclaim.htm')}
+<a href="plugin.php?id=aljbd&act=iwantclaim&bid={$bd['id']}" onclick="showWindow('edit',this.href)"><font style="color:green">{lang aljbd:s245}</font></a>
+{/if}
+{if file_exists('source/plugin/aljbd/template/com/commentlist.htm')}
+{template aljbd:com/commentlist}
+{/if}
+{if file_exists('source/plugin/aljbd/com/attestation.php')}
+{if $sign}
+<a href="plugin.php?id=aljbd&act=attestation&bid={$bd['id']}" ><font color="green">{lang aljbd:attestation_8}</font></a>
+{else}
+<a href="plugin.php?id=aljbd&act=attestation&bid={$bd['id']}" ><font color="red">{lang aljbd:attestation_1}</font></a>
+{/if}
+{/if}
+<a href="#"  onclick="showDialog('{lang aljbd:s249}','confirm','',function(){location.href='plugin.php?id=aljbd&act=delete&bid={$bd['id']}'});return false;">{lang aljbd:s7}</a>
+<a href="{if $config['isrewrite']}brand_shop_{$bd['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}" target="_blank">{lang aljbd:s87}</a>
+</td></tr>
+{/loop}
+<tr><td colspan="13">{$paging}</td></tr>
+
+</tbody></table>
+</div>
+</div></div>
+{template common/footer}

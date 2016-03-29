@@ -1,0 +1,140 @@
+
+
+.search {
+    position: relative;
+}
+.search-keyword {
+    width: 100%;
+    padding: 0 0 0 5px;
+    font-size: 1em;
+    color: #3C3C3C;
+    background: #F4F4F4;
+    line-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #CFCBC5;
+    box-shadow: 0 1px 3px #C8C8C8 inset;
+}
+.search-button {
+    position: absolute;
+    display:inline-block;
+    right:10px;
+    top: 10px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -999px;
+    border: 0;
+    width: 30px;
+    height: 25px;
+    background-position:-605px 6px;
+    vertical-align:middle;
+}
+
+.swipe-box {
+    width:320px;
+    height:85px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.swipe-box > .swipe {
+    width:320px;
+    height:85px;
+}
+.swipe-box > .swipe img {
+   border:1px solid #eee;
+}
+
+
+
+.activities {
+    padding: 8px 0 0;
+}
+.activities .list {
+    width: 308px;
+    margin: 0 auto;
+}
+.activities .list ul {
+    width: 310px;
+}
+.activities .list .one-img {
+
+}
+.activities .list .one-img .app li {
+    float: left;
+    width: 77px;
+    margin: 0 0 6px;
+}
+.activities .list .one-img dl {
+    font-size: .75em;
+    text-align: center;
+}
+.activities .tabbox {
+    margin: 15px auto;
+}
+.activities .tabs-hd {
+    background:#EEE;
+    border-top:1px solid #DDD;
+    border-bottom:1px solid #DDD;
+}
+.activities .tabs {
+
+    position: relative;
+}
+.activities .tabs li {
+    text-align: center;
+    float: left;
+    width:33%;
+    font-size:14px;
+    border-right:1px solid #DDD;
+}
+.activities .tabs li:last-child {
+    border-right:0;
+}
+.activities .tabs li a {
+    display: block;
+    padding:6px 0;
+}
+.activities .tabs li.selected {
+    background: #f2f2f2;
+}
+.activities .tabs li.selected a {
+    color: #cc0000;
+}
+.activities .tab-show {
+    width: 300px;
+    margin:15px auto;
+}
+.activities .tab-show .subjects:after {
+    content:" ";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.activities .tab-show .subjects li {
+    float:left;
+    width:50%;
+    height: 110px;
+    font-size:12px;
+}
+.activities .tab-show .subjects li .subject-item {
+    width: 135px;
+    height: 100px;
+    margin:auto;
+    position:relative;
+}
+.activities .tab-show .subjects li .subject-item img {
+    width: 135px;
+    height: 100px;
+}
+.activities .tab-show .subjects li .subject-item .subject-title {
+    position:absolute;
+    bottom:0px;
+    display:block;
+    text-align:center;
+    width:100%;
+    padding:2px 0;
+    background: rgba(0,0,0,0.5);
+}
+.activities .tab-show .subjects li .subject-item .subject-title a {
+    color:#FFF;
+}

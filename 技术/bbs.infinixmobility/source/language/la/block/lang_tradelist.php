@@ -1,0 +1,98 @@
+<?php
+
+/**
+ *      [Discuz!] (C)2001-2099 Comsenz Inc.
+ *      This is NOT a freeware, use is subject to license terms
+ *
+ *      $Id: lang_tradelist.php by Valery Votintsev, codersclub.org
+ *	Lao language by Do_Thavisak, http://www.deklao.com/
+ */
+
+if(!defined('IN_DISCUZ')) {
+	exit('Access Denied');
+}
+
+$lang = array
+(
+	'tradelist_fids' => 'ເລືອກບອດ',
+	'tradelist_fids_comment' => 'ກຳນົດບອດທີ່ຕ້ອງການໃຫ້ສະແດງຂໍ້ມູນ, ສາມາດກົດປຸ່ມ CTRL ຢູ່ຄີບອດຄ້າງໄວ້ເພື່ອເລືອກຫຼາຍບອດ, ຫາກຕ້ອງການໃຫ້ສະແດງທຸກບອດ ບໍ່ຕ້ອງເລືອກເລີຍ',
+	'tradelist_uids' => 'UID ສະມາຊິກ',
+	'tradelist_uids_comment' => 'ກຳນົດ  UID ສະມາຊິກ, ຫາກມີຫຼາຍກວ່າໜຶ່ງ UID ກະລຸນາໃຊ້ເຄື່ອງໝາຍຄອມມ່າ “,” ເພື່ອເປັນຕົວຂັ້ນຫຼືແຍກແຕ່ລະ UID',
+	'tradelist_startrow' => 'ຈຳນວນແຖວເລີ່ມຕົ້ນຂອງຂໍ້ມູນ',
+	'tradelist_startrow_comment' => 'ຖ້າຈຳເປັນຕ້ອງຕັ້ງຄ່າແຖວຂອງຂໍ້ມູນເລີ່ມຕົ້ນ, ກະລຸນາໃສ່ຄ່າທີ່ຕ້ອງການ, 0 ແມ່ນຈະເລີ່ມຈາກແຖວທຳອິດ, ເປັນຕົ້ນ',
+	'tradelist_items' => 'ຈຳນວນຂໍ້ມູນທີ່ສະແດງ',
+	'tradelist_items_comment' => 'ກຳນົດຈຳນນຂໍ້ມູນທີ່ສະແດງ, ກະລຸນາກຳນົດເປັນຈຳນວນເຕັມທີ່ຫຼາຍກວ່າ 0',
+	'tradelist_titlelength' => 'ຈຳນວນໄບຣສູງສຸດຂອງຊື່ກະທູ້',
+	'tradelist_titlelength_comment' => 'ກຳນົດຄວາມຍາວຂອງຊື່ກະທູ້, ຫາກກຳນົດຈຳນວນໄບຣເກີນຈະບໍ່ລົດລົງໂດຍອັດຕະໂນມັດ, 0 ແມ່ນຈະລົດໂດຍອັດຕະໂນມັດ',
+	'tradelist_fnamelength' => 'ຈຳນວນໄບຣສູງສຸດຂອງຊື່ບອດ',
+	'tradelist_fnamelength_comment' => 'ກຳນົດຄວາມຍາວຂອງຊື່ບອດ ແລະຄວາມຍາວຂອງຊື່ກະທູ້ຈະຖືກນັບເຂົ້ານຳກັນ',
+	'tradelist_summarylength' => 'ຈຳນວນໄບຣສູງສຸດຂອງເນື້ອຫາ',
+	'tradelist_summarylength_comment' => 'ກຳນົດຈຳນວນໄບຣສູງສຸດຂອງເນື້ອຫາ, 0 ແມ່ນຄ່າເລີ່ມຕົ້ນ ສາມາດກຳນົດໄດ້ສູງສຸດເຖິງ 255',
+	'tradelist_tids' => 'ກຳນົດຫົວຂໍ້',
+	'tradelist_tids_comment' => 'ກຳນົດ tid ຂອງຫົວຂໍ້ທີ່ຕ້ອງການ, ຫາກມີຫຼາຍກວ່າໜຶ່ງ tid ກະລຸນາໃຊ້ເຄື່ອງໝາຍຄອມມ່າ “,” ເພື່ອເປັນຕົວຂັ້ນຫຼືແຍກແຕ່ລະ tid ໝາຍເຫດ: ປ່ອຍໃຫ້ວ່າງໄວ້ຫາກບໍ່ມີຕົວກອງໃດໆ',
+	'tradelist_keyword' => 'ແທັກຂອງຫົວຂໍ້',
+	'tradelist_keyword_comment' => 'ຕັ້ງຄ່າແທັກຂອງກະທູ້ ໝາຍເຫດ: ປ່ອຍວ່າງໄວ້ຫາກບໍ່ມີແທັກໃດໆ ສາມາດໃຊ້ສັນຍາລັກ * ແທນແທັກຫຼັກ ຄົ້ນຫາໂດຍແທັກຫຼັກເພີ່ມເຕີມ, ສາມາດໃຊ້ຊ່ອງວ່າງລະຫວ່າງຄຳ ຫຼື AND ໃນການເຊື່ອມຕໍ່ ເຊັ່ນ win32 AND unix ເພື່ອໃຫ້ຄືກັບແທັກຫຼັກທີ່ຫຼາຍກວ່າໜຶ່ງຄຳ, ສາມາດໃຊ້ | ຫຼື OR ໃນການເຊື່ອມຕໍ່ ເຊັ່ນ win32 OR unix',
+	'tradelist_typeids' => 'ໝວດໝູ່ຫົວຂໍ້',
+	'tradelist_typeids_comment' => 'ກຳນົດໝວດໝູ່ຫົວຂໍ້ ໝາຍເຫດ: ເລືອກທັງໝົດຫຼືເລືອກທີ່ຈະບໍ່ມີຕົວກອງໃດໆ',
+	'tradelist_typeids_all' => 'ໝວດໝູ່ຫົວຂໍ້ທັງໝົດ',
+	'tradelist_sortids' => 'ໝວດໝູ່ຂໍ້ມູນ',
+	'tradelist_sortids_comment' => 'ກຳນົດໝວດໝູ່ຂໍ້ມູນ ໝາຍເຫດ: ເລືອກທັງໝົດຫຼືເລືອກທີ່ຈະບໍ່ມີຕົວກອງໃດໆ',
+	'tradelist_sortids_all' => 'ໝວດໝູ່ຂໍ້ມູນທັງໝົດ',
+	'tradelist_digest' => 'ກອງກະທູ້ສຳຄັນ',
+	'tradelist_digest_comment' => 'ຕັ້ງຄ່າໃຫ້ກອງສະເພາະກະທູ້ສຳຄັນ ໝາຍເຫດ: ເລືອກທັງໝົດຫຼືເລືອກທີ່ຈະບໍ່ມີຕົວກອງໃດໆ',
+	'tradelist_digest_0' => 'ກະທູ້ທົ່ວໄປ',
+	'tradelist_digest_1' => 'ກະທູ້ສຳຄັນ I',
+	'tradelist_digest_2' => 'ກະທູ້ສຳຄັນ II',
+	'tradelist_digest_3' => 'ກະທູ້ສຳຄັນ III',
+	'tradelist_stick' => 'ກອງກະທູ້ປັກໝຸດ',
+	'tradelist_stick_comment' => 'ຕັ້ງຄ່າໃຫ້ກອງກະເພາະກະທູ້ປັກໝຸດ ໝາຍເຫດ: ເລືອກທັງໝົດຫຼືເລືອກທີ່ຈະບໍ່ມີຕົວກອງໃດໆ',
+	'tradelist_stick_0' => 'ກະທູ້ທົ່ວໄປ',
+	'tradelist_stick_1' => 'ປັກໝຸດ I',
+	'tradelist_stick_2' => 'ປັກໝຸດ II',
+	'tradelist_stick_3' => 'ປັກໝຸດ III',
+	'tradelist_special' => 'ກອງກະທູ້ພິເສດ',
+	'tradelist_special_comment' => 'ຕັ້ງຄ່າໃຫ້ກອງກະເພາະກະທູ້ພິເສດ ໝາຍເຫດ: ເລືອກທັງໝົດຫຼືເລືອກທີ່ຈະບໍ່ມີຕົວກອງໃດໆ',
+	'tradelist_special_1' => 'ກະທູ້ສຳຫຼວດ',
+	'tradelist_special_2' => 'ກະທູ້ຂາຍສິນຄ້າ',
+	'tradelist_special_3' => 'ກະທູ້ລາງວັນ',
+	'tradelist_special_4' => 'ກະທູ້ກິດຈະກຳ',
+	'tradelist_special_5' => 'ກະທູ້ໂຕ້ວາທີ',
+	'tradelist_special_0' => 'ກະທູ້ທົ່ວໄປ',
+	'tradelist_special_reward' => 'ກອງກະທູ້ລາງວັນ',
+	'tradelist_special_reward_comment' => 'ກຳນົດວ່າຈະສະແດງສະເພາະກະທູ້ລາງວັນຫຼືບໍ່',
+	'tradelist_special_reward_0' => 'ທັງໝົດ',
+	'tradelist_special_reward_1' => 'ໄດ້ຮັບການແກ້ໄຂ',
+	'tradelist_special_reward_2' => 'ບໍ່ແນ່ນອນ',
+	'tradelist_recommend' => 'ກອງກະທູ້ແນະນຳ',
+	'tradelist_recommend_comment' => 'ກຳນົດວ່າຈະສະແດງສະເພາະກະທູ້ແນະນຳຫຼືບໍ່',
+	'tradelist_orderby' => 'ການຈັດລຽງລຳດັບກະທູ້',
+	'tradelist_orderby_comment' => 'ຕັ້ງຄ່າການຈັດລຽງລຳດັບຂອງກະທູ້',
+	'tradelist_orderby_lastpost' => 'ຈັດລຽງຕາມກະທູ້ທີ່ມີຕອບກັບຫຼ້າສຸດ',
+	'tradelist_orderby_dateline' => 'ຈັດລຽງຕາມມື້ທີ່ຕັ້ງກະທູ້',
+	'tradelist_orderby_replies' => 'ຈັດລຽງຕາມຈຳນວນຂໍ້ຄວາມຕອບກັບ',
+	'tradelist_orderby_views' => 'ຈັດລຽງຕາມຈຳນວນການເຂົ້າຊົມ/ເບິ່ງ',
+	'tradelist_orderby_heats' => 'ຈັດລຽງຕາມຄວາມນິຍົມ',
+	'tradelist_orderby_recommends' => 'ຈັດລຽງຕາມກະທູ້ແນະນຳ',
+	'tradelist_orderby_hourviews' => 'ຈັດລຽງຕາມການເຂົ້າຊົມຕໍ່ຊົ່ວໂມງ',
+	'tradelist_orderby_todayviews' => 'ຈັດລຽງຕາມການເຂົ້າຊົມຕໍ່ມື້',
+	'tradelist_orderby_weekviews' => 'ຈັດລຽງຕາມການເຂົ້າຊົມຕໍ່ອາທິດ',
+	'tradelist_orderby_monthviews' => 'ຈັດລຽງຕາມການເຂົ້າຊົມຕໍ່ເດືອນ',
+	'tradelist_orderby_hours' => 'ກຳນົດເວລາ (ຊົ່ວໂມງ)',
+	'tradelist_orderby_hours_comment' => 'ກຳນົດເວລາໃນການຈັດລຽງລຳດັບກະທູ້',
+	'tradelist_orderby_todayhots' => 'ຈັດລຽງຕາມຄວາມນິຍົມຕໍ່ມື້',
+	'tradelist_orderby_weekhots' => 'ຈັດລຽງຕາມຄວາມນິຍົມຕໍ່ອາທິດ',
+	'tradelist_orderby_monthhots' => 'ຈັດລຽງຕາມຄວາມນິຍົມຕໍ່ເດືອນ',
+	'tradelist_price_add' => ' ເພີ່ມເຕີມ ',
+	'tradelist_place' => 'ສະຖານທີ່ຈັດກິດຈະກຳ',
+	'tradelist_class' => 'ປະເພດກິດຈະກຳ',
+	'tradelist_gender' => 'ຜູ້ທີ່ສາມາດເຂົ້າຮ່ວມ',
+	'tradelist_gender_0' => 'ບໍ່ຈຳກັດ',
+	'tradelist_gender_1' => 'ຜູ້ຊາຍເທົ່ານັ້ນ',
+	'tradelist_gender_2' => 'ຜູ້ຍິງເທົ່ານັ້ນ',
+	'tradelist_orderby_weekstart' => 'ຈັດລຽງຕາມອາທິດທີ່ເລີ່ມຕົ້ນ',
+	'tradelist_orderby_monthstart' => 'ຈັດລຽງຕາມເດືອນທີ່ເລີ່ມຕົ້ນ',
+	'tradelist_orderby_weekexp' => 'ຈັດລຽງຕາມອາທິດທີ່ສິ້ນສຸດ',
+	'tradelist_orderby_monthexp' => 'ຈັດລຽງຕາມເດືອນທີ່ສິ້ນສຸດ',
+	'tradelist_highlight' => 'ເນັ້ນສີ',
+);
+

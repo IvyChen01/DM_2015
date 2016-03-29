@@ -1,0 +1,73 @@
+<div  style="float:left;">
+<h1 class="ph mbm xi1" style="margin-left:10px;">{lang aljbd:aedit_1}</h1>
+<form enctype="multipart/form-data"   action="admin.php?action=plugins&operation=config&identifier=$pluginid&pmod=admin&brand=attestation&act=edit" autocomplete="off" id="addgoods_form" method="post">
+ <input type="hidden" name="formhash" value="{FORMHASH}">
+ <input type="hidden" name="bid" value="{$_GET['bid']}">
+  <table cellspacing="0" cellpadding="0" class="tfm">
+      <tbody>
+			 <tr><td class="bdtr"><label class="p-label"><span style="color:red;">*</span> {lang aljbd:aedit_17}</label></td><td>$bdlist[$_GET[bid]]['name']</td>
+			</tr>
+		  <tr><td class="bdtr"><span style="color:red;">*</span> {lang aljbd:aedit_2}</td>
+				<td><input type="text" style="width:250px;" name="name" required="required" value="{$lp['name']}" title="{lang aljbd:aedit_3}" class="input input-5" data-parent=".p-line"></td>
+		  </tr>
+		  <tr>
+						<td class="bdtr"><span style="color:red;">*</span> {lang aljbd:aedit_4}</td>
+    				<td colspan="4">
+						<input type="text" style="width:250px;" name="id_card" value="{$lp['id_card']}" title="{lang aljbd:aedit_5}" class="input input-10" data-parent=".p-line">
+					</td>
+				</tr>
+		  <tr><td class="bdtr"><span style="color:red;">*</span> {lang aljbd:aedit_6}</td>
+				<td><input type="file" name="id_pic"><br><br>
+					{if $lp['id_pic']}<img src="{eval echo $lp['id_pic'];}" style="width:300px;height:200px;"><br>{/if}
+				</td>
+				<td class="xg1">{lang aljbd:aedit_18}<br><img class="mtm" src="source/plugin/aljbd/images/certification_id.jpg" width="150"></td>
+		  </tr>
+		<tr>
+			<th class="bdtr"><span style="color:red;">*</span> {lang aljbd:aedit_19}</th>
+			<td>
+			<input type="file" name="ban_pic" class="pf" size="40"><br>
+			{if $lp['ban_pic']}<img src="{eval echo $lp['ban_pic'];}" style="width:300px;height:200px;"><br>{/if}
+			</td>
+			<td class="xg1">{lang aljbd:aedit_20}<br><img class="mtm" src="source/plugin/aljbd/images/certification_id2.jpg" width="150"></td>
+		</tr>
+		<tr>
+			<th class="bdtr"><span style="color:red;">*</span> {lang aljbd:aedit_21}</th>
+			<td>
+			<input type="file" name="id_pic1" class="pf" size="40"><br>
+			{if $lp['id_pic1']}<img src="{eval echo $lp['id_pic1'];}" style="width:300px;height:200px;"><br>{/if}
+			</td>
+
+		</tr>
+		  <tr><td class="bdtr"><span style="color:red;">*</span> {lang aljbd:aedit_7}</td>
+		  <td><input type="text" style="width:250px;"  name="qiyename" value="{$lp['qiyename']}" title="{lang aljbd:aedit_8}" class="input input-10" data-parent=".p-line"></td></tr>
+		  <tr>
+              <th class="bdtr"><span style="color:red;">*</span> {lang aljbd:aedit_9}</th>
+              <td><input type="text" style="width:250px;"  name="email" value="{$lp['email']}" title="{lang aljbd:aedit_10}" class="input input-10" data-parent=".p-line"></td>
+              <td></td>
+        </tr>
+		<tr>
+              <th class="bdtr"><span style="color:red;">*</span> {lang aljbd:aedit_11}</th>
+              <td><input type="text" style="width:250px;"  name="tel" value="{$lp['tel']}" title="{lang aljbd:aedit_12}" class="input input-10" data-parent=".p-line"></td>
+              <td>&nbsp;</td>
+        </tr>
+		<tr>
+              <th class="bdtr"><span style="color:red;">*</span> {lang aljbd:aedit_13}</th>
+              <td><input type="file" name="pic"><br><br>
+					{if $lp['pic']}<img src="{eval echo $lp['pic'];}" style="width:300px;height:200px;"><br>{/if}</td>
+              <td>&nbsp;</td>
+        </tr>
+		<tr>
+              <th class="bdtr"><span style="color:red;">*</span> {lang aljbd:aedit_14}</th>
+              <td><textarea rows="5" cols="60" type="text" maxlength="5000" name="jieshao" value="{$lp['jieshao']}" title="{lang aljbd:aedit_15}" class="input" data-parent=".p-line">{$lp['jieshao']}</textarea></td>
+              <td>&nbsp;</td>
+        </tr>
+		
+		
+          <tr>
+              <th></th>
+              <td colspan="2"><button  class="pn pnc vm" value="true" id="submit" name="submit" type="submit"><strong>{lang aljbd:aedit_16}</strong></button></td>
+          </tr>
+      </tbody>
+  </table>
+  </form>
+</div>

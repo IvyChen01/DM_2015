@@ -1,0 +1,169 @@
+{template common/header}
+<script src="source/plugin/aljbd/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+</script>
+<link href="source/plugin/aljbd/css/common.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.dz_nvsec {
+  border-bottom: 2px solid #FF6600;
+  height: 40px;
+  margin: 10px 0;
+}
+.dz_nav {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+}
+.dz_nav a {
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 20px;
+  color:#666666;
+}
+.dz_nav a.a {
+  background: none repeat scroll 0 0 #FF6600;
+  color: #FFFFFF;
+}
+.dz_nav a:hover {
+  background: none repeat scroll 0 0 #FF6600;
+  color:#FFFFFF;
+  text-decoration: none;
+}
+.fr {
+  display: inline;
+  float: right !important;
+}
+.descxxx {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: block;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: -20px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+.descxxx{
+  color: #FFFFFF;
+}
+.profile a{
+color: #105CB6;
+    text-decoration: none;
+}
+.profile a:hover{
+color: #105CB6;
+    text-decoration: underline;
+}
+</style>
+<div class="wrap cl">
+<div class="main_lj">
+
+<div id="pt"> <a href="{if $config['isrewrite']}brand_index.html{else}plugin.php?id=aljbd{/if}" id="fjump" class="nvvv" title="{lang aljbd:index_header_3}">{lang aljbd:index_header_3}</a><em>&rsaquo;</em><a href="{if $config['isrewrite']}notice.html{else}plugin.php?id=aljbd&act=nlist{/if}">{lang aljbd:index_header_13}</a>
+
+
+</div>
+<div class="search_lj">
+<div class="z">{lang aljbd:s37} <strong>$num</strong> {lang aljbd:index_header_22}</div>
+{if !$config['is_daohang']}
+<div id="search_form_wrap" class="y" style="width:300px;">
+<form method="post" name="" action="plugin.php?id=aljbd&act=nlist"  onsubmit="return brand_search(this)" id="form_search">			
+<input type="text" autocomplete="off" name="kw" placeholder="{lang aljbd:list_1}" value="$_GET['kw']"  id="srchtxt">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<input type="submit" id="for_mod_sshop"  value="{lang aljbd:index_37}" name="submit" >
+</form>
+</div>
+{/if}
+</div>
+<div class="selection mbm">
+<dl class="cl">
+<dt>{lang aljbd:s39}</dt>
+{if $_GET['type']}
+{eval $check=C::t('#aljbd#aljbd_type_notice')->fetch_all_by_upid($_GET['type']);}
+{/if}
+{if empty($_GET['type'])||empty($check)}
+<dd class="cl">
+<ul>
+<li><a {if empty($_GET['type'])}class="a"{/if} href="{if $config['isrewrite']}notice_0_0_0.html{else}plugin.php?id=aljbd&act=nlist{/if}">{lang aljbd:s40}</a></li>
+{loop $tlist $t}
+<li>
+<a {if $t['id']==$_GET['type']}class="a"{/if} href="{if $config['isrewrite']}notice_{$t['id']}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['order'])}.html{else}plugin.php?id=aljbd&act=nlist&type={$t['id']}&subtype={$_GET['subtype']}{/if}">
+$t['subject']({if $tcs[$t['id']]}$tcs[$t['id']]{else}0{/if})</a>
+</li>
+{/loop}
+</ul>
+</dd>
+{else}
+<dd class="cl">
+<ul>
+<li><a {if empty($_GET['subtype'])}class="a"{/if} href="{if $config['isrewrite']}notice_{eval echo intval(0)}_{eval echo intval(0)}_{eval echo intval($_GET['order'])}.html{else}plugin.php?id=aljbd&act=nlist{/if}">{lang aljbd:s40}</a></li>
+{loop C::t('#aljbd#aljbd_type_notice')->fetch_all_by_upid($_GET['type'])  $tt}
+<li><a {if $_GET['subtype']==$tt['id']}class="a"{/if} href="{if $config['isrewrite']}notice_{eval echo intval($_GET['type'])}_{eval echo intval($tt['id'])}_{eval echo intval($_GET['order'])}.html{else}plugin.php?id=aljbd&act=nlist&type={$_GET['type']}&subtype={$tt['id']}{/if}">$tt['subject']</a></li>
+{/loop}
+</ul>
+</dd>
+{/if}
+</dl>
+<style type="text/css">
+	.mbm {
+  margin-bottom: 10px !important;
+}
+</style>
+</div>
+<div class="bm mbm">
+<div class="bm_h">
+<ul class="filter cl">
+<li class="order y">
+<a style="{if !$_GET['order']}color:#ff6600;{/if}border-right:0;"  href="{if $config['isrewrite']}notice_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval(0)}.html{else}plugin.php?id=aljbd&act=nlist&type={$_GET['type']}&subtype={$_GET['subtype']}{/if}">{lang aljbd:index_19}</a>
+<a style="{if $_GET['order']=='1'}color:#ff6600;{/if}border-right:0;"  href="{if $config['isrewrite']}notice_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval(1)}.html{else}plugin.php?id=aljbd&act=nlist&type={$_GET['type']}&subtype={$_GET['subtype']}&order=1{/if}">{lang aljbd:index_20}</a>
+<a style="{if $_GET['order']=='2'}color:#ff6600;{/if}border-right:0;"  href="{if $config['isrewrite']}notice_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval(2)}.html{else}plugin.php?id=aljbd&act=nlist&type={$_GET['type']}&subtype={$_GET['subtype']}&order=2{/if}">{lang aljbd:index_21}</a>
+<a style="{if $_GET['order']=='3'}color:#ff6600;{/if}border-right:0;"  href="{if $config['isrewrite']}notice_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval(3)}.html{else}plugin.php?id=aljbd&act=nlist&type={$_GET['type']}&subtype={$_GET['subtype']}&order=3{/if}">{lang aljbd:index_22}</a>
+<a style="{if $_GET['order']=='4'}color:#ff6600;{/if}"  href="{if $config['isrewrite']}notice_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval(4)}.html{else}plugin.php?id=aljbd&act=nlist&type={$_GET['type']}&subtype={$_GET['subtype']}&order=4{/if}">{lang aljbd:index_23}</a>
+</li>
+</ul>
+</div>
+<div class="cl">
+<ul class="viewlist cl">
+{loop $nlist $n}
+<li class="notice">
+<div class="thumb">
+<a href="{if $config['isrewrite']}brand_notice_{$n['bid']}_{$n[id]}.html{else}plugin.php?id=aljbd&act=noticeview&bid={$n['bid']}&nid=$n['id']{/if}" target="_blank"><img alt="$n['subject']" src="$aljbd[$n[bid]][logo]"></a>
+<p class="name"><a href="{if $config['isrewrite']}brand_notice_{$n['bid']}_{$n[id]}.html{else}plugin.php?id=aljbd&act=noticeview&bid={$n['bid']}&nid=$n['id']{/if}" target="_blank">$aljbd[$n['bid']]['name']</a></p>
+</div>
+<div class="info">
+<h3 class="xi2"><a title="$n['subject']" href="{if $config['isrewrite']}brand_notice_{$n['bid']}_{$n[id]}.html{else}plugin.php?id=aljbd&act=noticeview&bid={$n['bid']}&nid=$n['id']{/if}" target="_blank"><font color="black"><b>{if $n['subtype']}[{$typelist[$n['subtype']]['subject']}]{elseif $n['type']&&!$n['subtype']}[{$typelist[$n['type']]['subject']}]{/if}</b></font> <b>$n['subject']</b></a></h3>
+<p><font color="#999">{lang aljbd:index_24} </font><!--{eval echo date('Y-m-d',$n['dateline']);}--> &nbsp;&nbsp;<font color="#999">{lang aljbd:index_25} </font>$n['view']  &nbsp;&nbsp;<font color="#999">{lang aljbd:index_26} </font>{eval $replynum=C::t('#aljbd#aljbd_comment_notice')->count_by_bid_all($n[id])}{$replynum}</p>
+<p class="xg1">{eval echo cutstr(strip_tags(preg_replace('/\<img.*?\>/is', '', $n['content'])),200);}</p>
+</div><div class="goodthumb">
+{if $n['pic']}<span class="s2 xg1">	<a href="{if $config['isrewrite']}brand_notice_{$n['bid']}_{$n[id]}.html{else}plugin.php?id=aljbd&act=noticeview&bid={$n['bid']}&nid=$n['id']{/if}" target="_blank"><img alt="$n['subject']"  src="$n['pic']" style="max-width: 100px; max-height: 100px;"></a></span>{/if}
+</div></li>
+{/loop}
+</ul>
+<div class="mtm cl">
+<div class="pages cl">$paging</div></div>
+</div>
+</div>
+</div>
+{template aljbd:list_side}
+<script src="source/plugin/aljbd/js/simpleslide.js" type="text/javascript" charset="utf-8"></script>
+<script>
+jq(function(){
+jq('.hotvip li').mouseover(function(){
+jq(this).addClass('active').siblings().removeClass('active');
+});
+jq('.hotvip:eq(0) ul').simpleSlideClass({intervalTime: 2});
+});
+
+jq(function(){
+jq('.hotvip2 li').mouseover(function(){
+jq(this).addClass('active').siblings().removeClass('active');
+});
+jq('.hotvip2:eq(0) ul').simpleSlideClass({intervalTime: 2});
+})
+</script>
+
+</div>
+
+{template common/footer}

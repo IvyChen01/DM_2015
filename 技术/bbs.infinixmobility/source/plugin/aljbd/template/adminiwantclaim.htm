@@ -1,0 +1,30 @@
+{template common/header_ajax}
+<h3 class="flb">
+	<em>{lang aljbd:s245}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<iframe name="formsubmit" width="1" height="1" ></iframe>
+<form id="addbc" method="post" action="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljbd&pmod=admin&act=iwantclaim&bid={$bd['id']}"  target="formsubmit">
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+<input name="bid" type="hidden" value="{$_GET['bid']}" />
+		<div class="c">
+        
+        
+        	<table cellspacing="0" cellpadding="0" border="0">
+                
+  				<tbody>
+				<tr>
+				<td width="110" height="30"><span style="color:red;">*</span>{lang aljbd:s246}</td>
+				<td colspan="4">
+					<input type="text" name="name"><b style="color:red">{lang aljbd:s247}</b>
+				</td>
+				</tr>                            
+            </tbody></table>
+	
+</div>
+<p class="o pns">
+	<button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljbd:s35}</strong></button>
+</p>
+</form>
+{template common/footer_ajax}

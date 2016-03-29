@@ -1,0 +1,11 @@
+<div class="itemtitle">
+	<h3>
+		{lang aljbd:nav_1}
+	</h3>
+	<ul class="tab1">
+		<li <!--{if !$_GET['cache']}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&identifier=$pluginid&pmod=cache"><span>{lang aljbd:nav_2}</span></a></li>
+		<li <!--{if $_GET['cache']=='p_s'}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&do=39&identifier=$pluginid&pmod=cache&cache=p_s"><span>{lang aljbd:nav_3}</a></li>
+		<li <!--{if $_GET['cache']=='gl'}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&do=39&identifier=$pluginid&pmod=cache&cache=gl"><span>{lang aljbd:nav_8}</a></li>
+	</ul>
+	
+</div>

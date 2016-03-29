@@ -1,0 +1,174 @@
+<style type="text/css">
+	.bdtr {
+		 padding-left: 10px !important;
+	}
+</style>
+<style type="text/css">
+	.tedt {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #999999 #CCCCCC #CCCCCC #999999;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px;
+  width: 98%;
+}
+.tedt .bar {
+  background: none repeat scroll 0 0 #F2F2F2;
+  border-bottom: 1px solid #CDCDCD;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px 0 0;
+}
+
+.fpd a {
+  background: url("static/image/editor/editor.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  margin: 2px 5px 0 0;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 20px;
+}
+.fpd a.fbld {
+  background-position: 0 0;
+}
+.fpd a.fclr {
+  background-position: -60px 0;
+}
+.fpd a.fmg {
+  background-position: 0 -20px;
+}
+.fpd a.flnk {
+  background-position: -40px -20px;
+}
+.tedt .area {
+  background: none repeat scroll 0 0 #FFFFFF;
+  padding: 4px;
+}
+.tedt .pt {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: medium none;
+  margin-right: 0;
+  padding: 0 !important;
+  width: 100%;
+}
+</style>
+<script src="static/js/seditor.js" type="text/javascript" reload="1"></script>
+<script type="text/javascript" src="static/js/calendar.js"></script>
+<script charset="$_G['charset']" src="source/plugin/aljbd/js/editor/kindeditor-min.js" reload="true"></script>
+<!--{if $_G['charset']=='gbk'}-->
+<script charset="gbk" src="source/plugin/aljbd/js/editor/lang/zh_CN.js" reload="true"></script>
+<!--{else}-->
+<script charset="utf-8" src="source/plugin/aljbd/js/editor/lang/zh_CN_U8.js" reload="true"></script>
+<!--{/if}-->
+<script type="text/javascript" reload="true">
+        KindEditor.ready(function(K) {
+              window.editor = KindEditor.create('#intro');
+        });
+		KindEditor.options.cssData = 'img { max-width:400px; }';
+</script>
+
+<iframe  name="formsubmit" style="display:none;"></iframe>
+<div  style="float:left;">
+<h1 class="ph mbm xi1" style="margin-left:10px;">{if $_GET['act']=='addconsume'}{lang aljbd:addconsume_1}{else}{lang aljbd:addconsume_2}{/if}</h1>
+<form enctype="multipart/form-data" target="formsubmit"  action="admin.php?action=plugins&operation=config&identifier=$pluginid&pmod=admin&brand=consume&act={$_GET['act']}" autocomplete="off" id="addgoods_form" method="post">
+ <input type="hidden" name="formhash" value="{FORMHASH}">
+ <input type="hidden" name="cid" value="{$_GET['cid']}">
+  <table cellspacing="0" cellpadding="0" class="tfm">
+      <tbody>
+         <tr>
+				<th class="bdtr"><span style="color:red;">*</span>{lang aljbd:s283}</th>
+				  
+					<td>
+						<select name="bid">
+						<option value="">{lang aljbd:s252}</option>
+						{loop $bdlist $b}
+						<option value="$b['id']" {if $n['bid']==$b['id']}selected{/if}>$b['name']</option>
+						{/loop}
+						</select>
+					</td>
+				  <td>&nbsp;</td>
+			  </tr>
+				<tr>
+    				<th class="bdtr"><span style="color:red;">*</span>{lang aljbd:addconsume_3}</th>
+    				<td colspan="4"><input type="text" name="name" class="px" value="$n['subject']" ></td>
+                </tr>
+		  <tr>
+						<td class="bdtr"><span style="color:red;">*</span>{lang aljbd:s223}</td>
+    				<td colspan="4">
+						<select name="type" id="type" style="width:120px;" onchange="ajaxget('plugin.php?id=aljbd&act=gettype&type=consume&upid='+$('type').value,'subtype')">
+							<option value="">{lang aljbd:s224}</option>
+							<!--{loop $typelist $typeid $type}-->
+							<option value="$typeid" {if $typeid==$n['type']}selected{/if}>$type['subject']</option>
+							<!--{/loop}-->
+						</select>
+						&nbsp;&nbsp;&nbsp;
+						<span name="subtype" id="subtype">
+						{if $n['subtype']}
+						<select name="subtype" id="type" style="width:120px;">
+							<!--{loop C::t('#aljbd#aljbd_type_consume')->fetch_all_by_upid($n['type']) $typeid $type}-->
+							<option value="$typeid" {if $typeid==$n['subtype']}selected{/if}>$type['subject']</option>
+							<!--{/loop}-->
+						</select>
+						{/if}
+						</span>
+					</td>
+				</tr>
+				<tr>
+    				<th class="bdtr"><span style="color:red;">*</span>{lang aljbd:addconsume_4}</th>
+    				<td colspan="4"><input type="file" name="logo"><font color="red">555*345</font></td>
+                </tr>
+				{if $n['pic']}
+				<tr><td width="100" height="30"></td><td colspan="4"><img src="$n['pic']" width="80px" height="80px"></td></tr>
+				{/if}
+				<tr>
+				<th class="bdtr"><span style="color:red;">*</span>{lang aljbd:addconsume_5}</th>
+				<td colspan="4">
+					
+					<textarea fwin="apply" rows="3" name="jieshao" class="pt" id="intro" style="background:#FFF;">$n['jieshao']</textarea>
+					
+				</td>
+				</tr>
+				<tr>
+				<th class="bdtr"><span style="color:red;">&nbsp;</span>{lang aljbd:addconsume_6}</th>
+				<td colspan="4">
+					<div class="tedt" style="width:100%;">
+					<div class="bar">
+					<div class="fpd">
+					<a href="javascript:;" title="{lang aljbd:s240}" class="fbld" onclick="seditor_insertunit('reply', '[b]', '[/b]');doane(event);">B</a>
+					<a fwin="apply" href="javascript:;" title="{lang aljbd:s241}" class="fclr" id="replyforecolor" onclick="showColorBox(this.id, 2, 'reply');doane(event);" initialized="true">Color</a>
+					<a fwin="apply" id="replyimg" href="javascript:;" title="{lang aljbd:s242}" class="fmg" onclick="seditor_menu('reply', 'img');doane(event);">Image</a>
+					<a fwin="apply" id="replyurl" href="javascript:;" title="{lang aljbd:s243}" class="flnk" onclick="seditor_menu('reply', 'url');doane(event);">Link</a>
+					</div></div>
+					<div class="area" style="background:#FFF;">
+					<textarea fwin="apply" rows="3" name="xianzhi" class="pt" id="replymessage" style="background:#FFF;">$n['xianzhi']</textarea>
+					</div>
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<th class="bdtr"><span style="color:red;">&nbsp;</span>{lang aljbd:addconsume_7}</th>
+				<td colspan="4">
+					
+					<input type="text" value="{if $n['end']}<!--{eval echo date('Y-m-d H:i:s',$n['end']);}-->{/if}" name="end" class="txt" onclick="showcalendar(event, this, 1)" style="width:100px;">&nbsp;{lang aljbd:addconsume_8}
+					
+				</td>
+				</tr>
+				<tr>
+				<th class="bdtr"><span style="color:red;">&nbsp;</span>{lang aljbd:addconsume_9}</th>
+				<td colspan="4">
+					<textarea name="mianze" rows="2" cols="53">{if $n['mianze']}$n['mianze']{else}{$config['mianze']}{/if}</textarea>
+				</td>
+				</tr>
+          <tr>
+              <th></th>
+              <td colspan="2"><button  class="pn pnc vm" value="true" id="submit" name="submit" type="submit"><strong>{lang aljbd:s289}</strong></button></td>
+          </tr>
+      </tbody>
+  </table>
+  </form>
+</div></div>

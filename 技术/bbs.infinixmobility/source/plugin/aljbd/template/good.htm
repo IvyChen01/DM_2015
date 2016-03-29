@@ -1,0 +1,40 @@
+{template aljbd:view_header}
+<div class="wp cl" id="bdw"><div class="main layout store_list" id="goodslist">
+<div class="content">
+<h3>{lang aljbd:s270}</h3>
+<div class="shop_list cl">
+{if $glist}
+<ul>
+<!--{eval  $i=1;}-->
+{loop $glist $g}
+<!--newcomment--><li <!--{if $i%3===0}-->class="mr0"<!--{/if}-->>
+<div class="thumb"><a href="{if $config['isrewrite']}brand_good_{$g['bid']}_{$g[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$g['bid']}&gid={$g[id]}{/if}" target="_blank"><img alt="{$g['name']}" src="{eval echo $g['pic1'].'.205x205.jpg'}"></a></div>
+<h3 class="xi2">
+<a title="{$g['name']}" href="{if $config['isrewrite']}brand_good_{$g['bid']}_{$g[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$g['bid']}&gid={$g[id]}{/if}" target="_blank">{$g['name']}</a>
+</h3>
+<p class="xg1 mtn cl">
+<a target="_blank" title="{$bdlist[$g['bid']]['name']}" href="{if $config['isrewrite']}brand_good_{$bd['id']}.html{else}plugin.php?id=aljbd&act=good&bid={$g['bid']}{/if}" class="z address">{$bdlist[$g['bid']]['name']}</a>
+<span class="y"></span>
+</p>
+<p class="xi1"><strong>{if $g['price1']}&#65509;{eval echo number_format($g['price1'],2);}{else}{lang aljbd:s271}{/if}</strong>{if $g['price2']}&nbsp;&nbsp;&nbsp;<s>&#65509;{eval echo number_format($g['price2'],2);}</s>{/if}</p>
+<p class="s2 xg1 cl">
+<span class="z">{eval echo gmdate('Y-m-d',$g['dateline']+8*3600);}</span>
+<span class="y">
+<a href="{if $config['isrewrite']}brand_good_{$g['bid']}_{$g[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$g['bid']}&gid={$g[id]}{/if}" target="_blank">{lang aljbd:s272}({$g['view']})</a>
+</span>
+</p>
+<div class="comment cl"></div>
+</li>
+<!--{eval  $i++;}-->
+{/loop}
+</ul>
+{else}
+<div style="padding-bottom:20px;">{lang aljbd:s290}</div>
+{/if}
+</div>
+<div class="pages cl" style="padding-top:5px;">
+{$paging}
+</div>
+</div>
+</div>
+{template aljbd:side}

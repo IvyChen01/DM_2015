@@ -1,0 +1,100 @@
+<div class="side">
+<div class="mbm cl" id="button">
+<a style="float:left;" class="btn" href="plugin.php?id=aljbd&act=attend" >{lang aljbd:s53}</a><a class="btn btnr" href="plugin.php?id=aljbd&act=member" onclick="{if empty($aljbd)}showDialog('{lang aljbd:s54}');return false;{else}location.href=this.href{/if}">{lang aljbd:s55}</a></div>
+{if !$config['is_daohang']&&$yd_types}
+	 <div class="daren_lj bor " style="width:223px;margin-top: 10px;margin-bottom: 10px;">
+	   <style type="text/css">
+		.daren_lj ul li {
+		  display: inline;
+		  float: left;
+		  height: 74px;
+		  margin: 5px;
+		  width: 64px;
+		  text-align: center;
+		}
+		.clear {
+		  clear: both;
+		  height: auto;
+		}
+		.bor {
+		  background: none repeat scroll 0 0 #fff;
+		  border: 1px solid #eef0eb;
+		}
+	   </style>
+		<ul>
+			{loop $yd_types $yd}
+			<li><a href="$yd['1']"><img src="$yd['2']" width="54" height="54" alt="">$yd['0']
+			</a>
+			</li>
+			{/loop}
+			
+	   </ul>
+		<div class="clear">
+		</div>
+	</div>
+{/if}
+{if file_exists('source/plugin/aljbd/images/qrcode/aljbd_qrcode.jpg')}
+<div class="cl hotvip" >
+<div class="sidetitle cl">
+<h2 class="z">{lang aljbd:side_5}</h2>
+</div>
+<div style="text-align:center;">
+                        <img style="height:200px;width:200px;" src="{$_G['siteurl']}/source/plugin/aljbd/images/qrcode/aljbd_qrcode.jpg">
+						</div>
+						<p style="text-align:center;">{lang aljbd:side_6}</p>
+</div>
+{/if}
+<div class="cl hotvip">
+<div class="sidetitle cl">
+<h2 class="z">{lang aljbd:s56}</h2>
+</div>
+
+<ul>
+{eval $i=1;}
+{loop $recommendlist $recommend}
+<li {if $i==1}class="active"{/if}>
+<a href="{if $config['isrewrite']}brand_shop_{$recommend['id']}.html{else}plugin.php?id=aljbd&act=view&bid={$recommend['id']}{/if}" target="_blank">
+<img width="205" alt="{$recommend['name']}" src="{$recommend['logo']}">
+<span>{$recommend['name']}</span>
+</a>
+</li>
+{eval $i++;}
+{/loop}
+</ul>
+</div>
+{if file_exists('source/plugin/aljbd/com/good.php')}
+<div class="cl hotvip2">
+<div class="sidetitle cl">
+<h2 class="z">{lang aljbd:list_goods_6}</h2>
+<h2><a class="more y" href="{if $config['isrewrite']}goods.html{else}plugin.php?id=aljbd&act=goods{/if}">{lang aljbd:list_goods_7}</a></h2>
+</div>
+
+<ul>
+{eval $i=1;}
+{loop $recommendlist_goods $recommend}
+<li {if $i==1}class="active"{/if}>
+<a href="{if $config['isrewrite']}brand_good_{$recommend['bid']}_{$recommend[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$recommend['bid']}&gid={$recommend[id]}{/if}" target="_blank">
+<img width="205" alt="{$recommend['name']}" src="{$recommend['pic1']}">
+<span>{$recommend['name']}</span>
+</a>
+</li>
+{eval $i++;}
+{/loop}
+</ul>
+</div>
+{/if}
+{if file_exists('source/plugin/aljbd/com/notice.php')}
+<div class="wgt" id="notice_list" style="margin-bottom:10px;">
+<div class="title cl" style="padding-top:0px;">
+<h2 class="z">{lang aljbd:list_goods_8}</h2>
+
+</div>
+<ul>
+{loop $notice $n}
+<li><a title="$n['subject']" style="" href="{if $config['isrewrite']}brand_notice_{$n['bid']}_{$n[id]}.html{else}plugin.php?id=aljbd&act=noticeview&bid={$n['bid']}&nid=$n['id']{/if}" target="_blank">{eval echo mb_substr($n['subject'],0,20,$_G['charset']);}</a></li>
+{/loop}
+</ul>
+</div>
+{/if}
+$config['ad']
+</div>

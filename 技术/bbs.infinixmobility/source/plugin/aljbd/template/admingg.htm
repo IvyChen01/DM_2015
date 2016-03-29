@@ -1,0 +1,33 @@
+{template common/header_ajax}
+<script src="static/js/seditor.js" type="text/javascript" reload="1"></script>
+<h3 class="flb">
+	<em>{lang aljbd:s199}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<iframe name="formsubmit" width="1" height="1" ></iframe>
+<form id="addbc" method="post" action="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljbd&pmod=admin&act=gg"  target="formsubmit">
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+<input name="bid" type="hidden" value="{$_GET['bid']}" />
+		<div class="c">
+        
+        
+        	<table cellspacing="0" cellpadding="0" border="0">
+                
+  				<tbody>
+				<tr>
+				<td width="80" height="30"><span style="color:red;">*</span>{lang aljbd:s199}</td>
+				<td colspan="4">
+					<div class="tedt" style="width:400px;">
+					<textarea fwin="apply" rows="3" name="gg" class="pt" id="replymessage" style="background:#FFF;width:400px;">$bd['gg']</textarea>
+					</div>
+				</td>
+				</tr>                            
+            </tbody></table>
+	
+</div>
+<p class="o pns">
+	<button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljbd:s207}</strong></button>
+</p>
+</form>
+{template common/footer_ajax}

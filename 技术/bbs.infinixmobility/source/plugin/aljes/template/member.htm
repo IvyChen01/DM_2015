@@ -1,0 +1,52 @@
+{template common/header}
+<iframe style="display:none" name="myiframe" id="myiframe"></iframe>
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="{$_G['setting']['bbname']}">{$_G['setting']['bbname']}</a> <em>&amp;rsquot;</em>
+        <a href="<!--{if $config['isrewrite']}-->{$config['re_index']}<!--{else}-->plugin.php?id=aljes<!--{/if}-->">$config['daohang']</a>
+</div>
+</div>
+
+<div id="ct" class="ct2_a wp cl">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">$config['daohang']</h2>
+{template aljes:mnav}
+</div>
+</div>
+<div class="mn pbm" style="border:none; margin:0">
+<div class="tbmu cl">
+<a href="plugin.php?id=aljes&act=post" class="y pn pnc"><strong>{lang aljes:member_1}</strong></a>
+<style type="text/css">
+	.tag-warn, .tag-green {
+  background: none repeat scroll 0 0 #f1c40d;
+  color: #fff !important;
+  font-size:12px;
+  padding: 2px 5px;
+}
+</style>
+
+<table cellspacing="0" cellpadding="0" class="dt">
+<tbody><tr>
+<th>{lang aljes:member_2}</th><th>{lang aljes:member_3}</th><th>{lang aljes:member_4}</th><th>{lang aljes:member_5}</th><th>{lang aljes:member_6}</th>
+</tr>
+{loop $lplist $lp}
+<tr class="header"><td>{$lp['id']}</td><td><a target="_blank" href="plugin.php?id=aljes&act=view&lid={$lp['id']}">{$lp['title']}</a>{if TIMESTAMP < $lp['topetime']}&nbsp;<small class="tag tag-warn">{lang aljes:index_32}</small>{/if}</td><td>{eval echo dgmdate($lp['addtime']);}</td><td>{eval echo dgmdate($lp['updatetime']);}</td>
+    <td>
+        {if file_exists("source/plugin/aljes/template/com/reflash.php")}
+        <a href="plugin.php?id=aljes&act=reflash&lid={$lp['id']}" target="myiframe">{lang aljes:member_8}</a>&nbsp;
+        {/if}
+        {if file_exists("source/plugin/aljes/template/com/top.php")}
+        <a href="plugin.php?id=aljes&act=top&lid={$lp['id']}" onclick="showWindow('resumeadd',this.href)">{lang aljes:member_10}</a>&nbsp;
+        {/if}
+        <a href="plugin.php?id=aljes&act=edit&lid={$lp['id']}">{lang aljes:member_11}</a>
+<a onclick="showDialog('{lang aljes:member_12}','confirm','',function(){location.href='plugin.php?id=aljes&act=delete&lid={$lp['id']}'});return false;" href="#">{lang aljes:member_13}</a>
+</td></tr>
+{/loop}
+<tr><td colspan="14">$paging</td></tr>
+</tbody></table>
+<div style="border:1px dashed #f60;background-color:#FFC" class="notice">{lang aljes:adminlp_6} <font color="red">{$config['reflashpay']}</font> {$_G['setting']['extcredits'][$config['reflashextcredit']]['title']}</div>
+</div>
+
+</div>	</div>
+{template common/footer}

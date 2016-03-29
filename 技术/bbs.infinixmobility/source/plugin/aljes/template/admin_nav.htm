@@ -1,0 +1,10 @@
+<div class="itemtitle">
+	<h3>
+		<ul class="tab1">
+		<li <!--{if !$_GET['state']}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&identifier=$pluginid&pmod=admin"><span>{lang aljes:admin_nav_1}</span></a></li>
+		<li <!--{if $_GET['state']=='audited'}-->class="current"<!--{/if}-->><a href="admin.php?action=plugins&operation=config&identifier=$pluginid&pmod=admin&state=audited"><span>{lang aljes:admin_nav_2}</a></li>
+	</ul>
+	</h3>
+	
+	
+</div>

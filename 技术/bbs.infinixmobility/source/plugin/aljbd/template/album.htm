@@ -1,0 +1,21 @@
+{template aljbd:view_header}
+<div class="wp cl" id="bdw"><div class="main layout store_list" id="goodslist">
+<div class="main layout store_list" id="store_album_list">
+<div class="store content">
+<h3>{lang aljbd:album_1}</h3>
+<ul class="cl" id="albumlist">
+<!--{eval  $i=1;}-->
+{loop $alist $a}
+<li class="mr0">
+<div class="thumb">
+<a href="{if $config['isrewrite']}brand_album_{$a['bid']}_{$a['id']}.html{else}plugin.php?id=aljbd&act=albumview&bid={$a['bid']}&aid={$a['id']}{/if}"><img alt="$a['albumname']" src="{if $a['subjectimage']}$a['subjectimage']{else}source/plugin/aljbd/images/nophoto.jpg{/if}" height='100' width="100"></a>
+</div>
+<div class="album_desc"><a href="{if $config['isrewrite']}brand_album_{$a['bid']}_{$a['id']}.html{else}plugin.php?id=aljbd&act=albumview&bid={$a['bid']}&aid={$a['id']}{/if}">$a['albumname']</a><span>{lang aljbd:album_2}{$a['picnum']}{lang aljbd:album_3}</span></div>
+<div class="album_date">{if $a['lastpost']}{eval echo gmdate('Y-m-d',$a['lastpost']+8*3600);}{else}{eval echo gmdate('Y-m-d',$a['dateline']+8*3600);}{/if} {lang aljbd:album_4}</div>
+</li>
+<!--{eval  $i++;}-->
+{/loop}
+</ul>
+</div></div>
+</div>
+{template aljbd:side}

@@ -1,0 +1,208 @@
+{template common/header}
+<script src="source/plugin/aljbd/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+</script>
+<link href="source/plugin/aljbd/css/common.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.dz_nvsec {
+  border-bottom: 2px solid #FF6600;
+  height: 40px;
+  margin: 10px 0;
+}
+.dz_nav {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+}
+.dz_nav a {
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 20px;
+  color:#666666;
+}
+.dz_nav a.a {
+  background: none repeat scroll 0 0 #FF6600;
+  color: #FFFFFF;
+}
+.dz_nav a:hover {
+  background: none repeat scroll 0 0 #FF6600;
+  color:#FFFFFF;
+  text-decoration: none;
+}
+.fr {
+  display: inline;
+  float: right !important;
+}
+.descxxx {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: block;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: -20px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+.descxxx{
+  color: #FFFFFF;
+}
+.profile a{
+color: #105CB6;
+    text-decoration: none;
+}
+.profile a:hover{
+color: #105CB6;
+    text-decoration: underline;
+}
+</style>
+<div class="wrap cl">
+<div class="main_lj">
+
+<div id="pt"> <a href="./" id="fjump" class="nvvv" title="{$_G['setting']['bbname']}">{$_G['setting']['bbname']}</a><em>&rsaquo;</em><a href="{if $config['isrewrite']}brand.html{else}plugin.php?id=aljbd{/if}">{lang aljbd:s36}</a><em>&rsaquo;</em><a href="{if $config['isrewrite']}goods.html{else}plugin.php?id=aljbd&act=goods{/if}">{lang aljbd:list_goods_1}</a>
+
+
+</div>
+<div class="search_lj">
+<div class="z">{lang aljbd:s37} <strong>$num</strong> {lang aljbd:s38}</div>
+<div id="search_form_wrap" class="y" style="width:300px;">
+<form method="post" name="" action="plugin.php?id=aljbd&act=goods"  onsubmit="return brand_search(this)" id="form_search">			
+<input type="text" autocomplete="off" name="kw" placeholder="{lang aljbd:list_1}" value="$_GET['kw']"  id="srchtxt">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<input type="submit" id="for_mod_sshop"  value="{lang aljbd:list_goods_2}" name="submit" >
+</form>
+</div>
+</div>
+<div class="selection">
+<dl class="cl">
+<dt>{lang aljbd:s39}</dt>
+{if $_GET['type']}
+{eval $check=C::t('#aljbd#aljbd_type_goods')->fetch_all_by_upid($_GET['type']);}
+{/if}
+{if empty($_GET['type'])||empty($check)}
+<dd class="cl">
+<ul>
+<li><a {if empty($_GET['type'])}class="a"{/if} href="{if $config['isrewrite']}goods_0_0_{if $_GET['order']=='price1'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&act=goods&order={$_GET['order']}&view={$_GET['view']}{/if}">{lang aljbd:s40}</a></li>
+{loop $tlist $t}
+<li>
+<a {if $t['id']==$_GET['type']}class="a"{/if} href="{if $config['isrewrite']}goods_{$t['id']}_{eval echo intval($_GET['subtype'])}_{if $_GET['order']=='price1'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&act=goods&type={$t['id']}&subtype={$_GET['subtype']}&order={$_GET['order']}&view={$_GET['view']}{/if}">
+$t['subject']({if $tcs[$t['id']]}$tcs[$t['id']]{else}0{/if})</a>
+</li>
+{/loop}
+</ul>
+</dd>
+{else}
+<dd class="cl">
+<ul>
+<li><a {if empty($_GET['subtype'])}class="a"{/if} href="{if $config['isrewrite']}goods_{eval echo intval(0)}_{eval echo intval(0)}_{if $_GET['order']=='price1'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&act=goods&type=0&subtype=&order={$_GET['order']}&view={$_GET['view']}{/if}">{lang aljbd:s40}</a></li>
+{loop C::t('#aljbd#aljbd_type_goods')->fetch_all_by_upid($_GET['type'])  $tt}
+<li><a {if $_GET['subtype']==$tt['id']}class="a"{/if} href="{if $config['isrewrite']}goods_{eval echo intval($_GET['type'])}_{eval echo intval($tt['id'])}_{if $_GET['order']=='price1'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&act=goods&type={$_GET['type']}&subtype={$tt['id']}&order={$_GET['order']}&view={$_GET['view']}{/if}">$tt['subject']</a></li>
+{/loop}
+</ul>
+</dd>
+{/if}
+</dl>
+
+</div><div class="mbm">
+<div class="bm_h">
+<ul class="filter cl">
+<li class="y">
+{if $config['pic']}
+<a class="mode_p {if $_GET['view']!='list'}al{/if}"  href="{if $config['isrewrite']}goods_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{if $_GET['order']=='price1'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{eval echo intval(3)}.html{else}plugin.php?id=aljbd&act=goods&view=pic&order={$_GET['order']}{/if}">{lang aljbd:s45}</a>
+<a class="mode_l {if $_GET['view']=='list'}al{/if}"  href="{if $config['isrewrite']}goods_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{if $_GET['order']=='price1'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{eval echo intval(4)}.html{else}plugin.php?id=aljbd&act=goods&view=list&order={$_GET['order']}{/if}">{lang aljbd:s44}</a>
+{else}
+<a class="mode_l {if $_GET['view']!='pic'}al{/if}"  href="{if $config['isrewrite']}goods_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{if $_GET['order']=='price1'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{eval echo intval(4)}.html{else}plugin.php?id=aljbd&act=goods&view=list&order={$_GET['order']}{/if}">{lang aljbd:s44}</a>
+<a class="mode_p {if $_GET['view']=='pic'}al{/if}"  href="{if $config['isrewrite']}goods_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{if $_GET['order']=='price1'}2{elseif $_GET['order']=='view'}1{else}{eval echo intval($_GET['order'])}{/if}_{eval echo intval(3)}.html{else}plugin.php?id=aljbd&act=goods&view=pic&order={$_GET['order']}{/if}">{lang aljbd:s45}</a>
+{/if}
+</li>
+<li class="order">
+<a style="{if $_GET['order']=='p'||empty($_GET['order'])}color:#ff6600;{/if}"  href="{if $config['isrewrite']}goods_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval($_GET['order'])}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&act=goods&type={$_GET['type']}&subtype={$_GET['subtype']}&order=&view=$_GET['view']{/if}">{lang aljbd:s46}</a>
+<a style="{if $_GET['order']=='view'}color:#ff6600;{/if}"  href="{if $config['isrewrite']}goods_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval(1)}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&act=goods&type={$_GET['type']}&subtype={$_GET['subtype']}&order=view&view=$_GET['view']{/if}"  class="view">{lang aljbd:s47}</a>
+<a style="{if $_GET['order']=='price1'}color:#ff6600;{/if}" href="{if $config['isrewrite']}goods_{eval echo intval($_GET['type'])}_{eval echo intval($_GET['subtype'])}_{eval echo intval(2)}_{if $_GET['view']=='pic'}3{elseif $_GET['view']=='list'}4{else}{eval echo intval($_GET['view'])}{/if}.html{else}plugin.php?id=aljbd&act=goods&type={$_GET['type']}&subtype={$_GET['subtype']}&order=price1&view=$_GET['view']{/if}" class="price">{lang aljbd:list_goods_3}</a>
+</li>
+</ul>
+</div>
+
+<div class="cl">
+{if $_GET['view']=='list'||(empty($_GET['view'])&&empty($config['pic']))}
+<ul class="viewlist cl">
+{loop $bdlist $bd}
+<!--newcomment--><li>
+<div class="thumb"><a href="{if $config['isrewrite']}brand_good_{$bd['bid']}_{$bd[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$bd['bid']}&gid={$bd[id]}{/if}" target="_blank"><img alt="$bd['name']" src="{if file_exists($bd['pic1'])}$bd['pic1']{else}source/plugin/aljbd/images/zz.jpg{/if}" width="100px" height="100px"></a></div>
+<div class="info">
+<h3 class="xi2"><a title="$bd['name']" href="{if $config['isrewrite']}brand_good_{$bd['bid']}_{$bd[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$bd['bid']}&gid={$bd[id]}{/if}" target="_blank">$bd['name']</a></h3>
+<p class="xg1"><a href="{if $config['isrewrite']}brand_shop_{$bd['bid']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['bid']}{/if}" target="_blank">$aljbd[$bd['bid']]['name']</a><br/>{eval echo mb_substr(strip_tags(preg_replace('/\<img.*?\>/is', '', $bd['intro'])),0,80,$_G['charset']);}...</p>
+{if $aljbd[$bd['bid']]['qq']&&strlen($aljbd[$bd['bid']]['qq'])>6}<p class="xg1">{lang aljbd:list_goods_4}<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$aljbd[$bd['bid']]['qq']}&amp;site=qq&amp;menu=yes">
+<img style="position:relative;top:4px;" border="0" src="http://wpa.qq.com/pa?p=2:{$aljbd[$bd['bid']]['qq']}:16" alt="{lang aljbd:list_goods_5}" title="{lang aljbd:list_goods_5}"></a></p>{/if}
+</div>
+
+
+<div class="attribute cl"><p class="s2 xg1 cl"><span class="y"><b style="color:#FF6600">{if $bd['price1']}&#65509;{eval echo number_format($bd['price1'],2);}{/if}</b><br/>{if $bd['price2']}{lang aljbd:s261}<s>&#65509;{eval echo number_format($bd['price2'],2);}</s>{else}{lang aljbd:s271}{/if}<br/>{lang aljbd:s49}({$bd['view']})</span></p>
+
+</div>
+</li>
+{/loop}
+</ul>
+{else}
+<ul class="viewlist_enlarge cl">
+{eval $ii=1;}
+{loop $bdlist $bd}
+<li {if $ii%3==0}class="mr0"{/if} style="height:335px;">
+<div class="thumb"><a href="{if $config['isrewrite']}brand_good_{$bd['bid']}_{$bd[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$bd['bid']}&gid={$bd[id]}{/if}" target="_blank"><img alt="$bd['name']" src="{if file_exists($bd['pic1'])}$bd['pic1']{else}source/plugin/aljbd/images/zz.jpg{/if}"></a></div>
+<h3 class="xi2 cl">
+<a title="$bd['name']" href="{if $config['isrewrite']}brand_good_{$bd['bid']}_{$bd[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$bd['bid']}&gid={$bd[id]}{/if}" target="_blank" class="v">$bd['name']</a>
+</h3>
+<p class="xg1 mtn address_n_tel" style="height:48px;">
+<a href="{if $config['isrewrite']}brand_shop_{$bd['bid']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['bid']}{/if}" target="_blank">$aljbd[$bd['bid']]['name']</a><br/>{if $bd['price2']}{lang aljbd:list_goods_9}<s>&#65509;{eval echo number_format($bd['price2'],2);}</s>{else}{lang aljbd:s261}{/if}<br/>{lang aljbd:list_goods_10}<b style="color:#FF6600">{if $bd['price1']}&#65509;{eval echo number_format($bd['price1'],2);}{/if}</b></p>
+<p class="s2 xg1 cl"><span class="score z">{eval echo gmdate('Y-m-d',$bd['dateline']+8*3600);}</span><span class="y">{lang aljbd:s51}({$bd['view']}) </span></p>
+<style type="text/css">
+.lj_qq{
+	border-top: 1px dotted #DDDDDD;
+	line-height: 20px;
+	margin-top: 5px;
+	padding-top: 5px;
+}
+.lj_qq p{
+	color: #999999;
+display: block;
+height: 20px;
+width: 100%;
+word-break: break-all;
+}
+</style>
+<div class="lj_qq">
+{if $aljbd[$bd['bid']]['qq']&&strlen($aljbd[$bd['bid']]['qq'])>6}<p >{lang aljbd:list_goods_4}<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$aljbd[$bd['bid']]['qq']}&amp;site=qq&amp;menu=yes">
+<img style="position:relative;top:2px;" border="0" src="http://wpa.qq.com/pa?p=2:{$aljbd[$bd['bid']]['qq']}:16" alt="{lang aljbd:list_goods_5}" title="{lang aljbd:list_goods_5}"></a></p>{/if}
+</div>
+</li>
+{eval $ii++;}
+{/loop}
+</ul>
+{/if}
+<div class="mtm cl">
+$paging</div>
+</div>
+</div></div>
+{template aljbd:list_side}
+<script src="source/plugin/aljbd/js/simpleslide.js" type="text/javascript" charset="utf-8"></script>
+<script>
+jq(function(){
+jq('.hotvip li').mouseover(function(){
+jq(this).addClass('active').siblings().removeClass('active');
+});
+jq('.hotvip:eq(0) ul').simpleSlideClass({intervalTime: 2});
+});
+
+jq(function(){
+jq('.hotvip2 li').mouseover(function(){
+jq(this).addClass('active').siblings().removeClass('active');
+});
+jq('.hotvip2:eq(0) ul').simpleSlideClass({intervalTime: 2});
+})
+</script>
+
+</div>
+
+{template common/footer}

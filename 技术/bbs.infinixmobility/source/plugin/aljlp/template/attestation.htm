@@ -1,0 +1,381 @@
+{template common/header}
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="{$_G['setting']['bbname']}">{$_G['setting']['bbname']}</a> <em>&amp;rsquot;</em>
+        <a href="<!--{if $config['isrewrite']}-->{$config['re_index']}<!--{else}-->plugin.php?id=aljlp<!--{/if}-->">$config['daohang']</a>
+</div>
+</div>
+<iframe style="display:none" name="myiframe" id="myiframe"></iframe>
+<style type="text/css">
+	.title01 {
+  background: url("source/plugin/aljlp/images/tab-bluebg.gif") repeat-x scroll 0 bottom rgba(0, 0, 0, 0);
+  font-size: 16px;
+  height: 33px;
+  line-height: 33px;
+  padding-bottom: 2px;
+  width: 100%;
+}
+.title01 a:hover, .title01 .title01-on {
+  background-color: #2badfe;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.title01 .title01-on {
+  background-color: #2193ea;
+}
+.title01 a {
+  color: #333;
+  display: block;
+  float: left;
+  text-align: center;
+  width: 150px;
+}
+.title01 {
+  font-size: 16px;
+  line-height: 33px;
+}
+.rzdiv{ height:auto; padding:16px 0 8px; border:1px solid #e7e7e7; font-size:16px; overflow:hidden; zoom:1; background-color:#f5f5f5; }
+.rzdiv02{ _width:200px; margin-right:5px }
+.rzdiv02,.current{ display:inline; float:left }
+.rzdiv02 dl,.rzdiv02 dt,.rzdiv02 dd{ display:block; float:left }
+.rzdiv02 dt{ text-align:center; padding-right:12px }
+.rzdiv02 dt p{ padding-bottom:3px }
+.rzdiv02 dd .state{ height:22px; line-height:16px; padding-bottom:8px; text-align:left }
+.zsdiv03 {display:inline; float:left }
+.current{ padding-left:16px }
+.clear {
+  clear: both;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.lj_red{color: #f30;}
+.alertword01,.alertword02,.alertword04{ background-color:#ffffe1; border:1px solid #ffcf8b }
+.alertword01{ padding:6px 10px; font:normal 14px/26px 'Microsoft YaHei' }
+.tab-list-04 .time02 tr, .tab-list-04 .time02 td, .tab-list-04 .time02 { border:0; padding:0; text-align:left; vertical-align:top}
+</style>
+<div id="ct" class="ct2_a wp cl">
+<div class="appl">
+<div class="tbn">
+<h2 class="mt bbda">$config['daohang']</h2>
+{template aljlp:mnav}
+</div>
+</div>
+<div class="mn pbm" style="border:none; margin:0">
+<div class="tbmu cl">
+<h3 class="title01"><a href="#" class="title01-on">{lang aljlp:attes_1}</a></h3>
+<div>
+<div class="clear mt20"></div>
+
+<div class="rzdiv02">
+	<dl>
+		<dt>
+			<p>
+				{eval $shenfen=C::t('#aljlp#aljlp_attestation')->fetch_uid_type_sign($_G['uid'],'1','1')}
+				<img width="44" height="26" src="{if $shenfen}source/plugin/aljlp/images/icorz_r3_c1.gif{else}source/plugin/aljlp/images/icon_id.gif{/if}" alt="{if $shenfen}{lang aljlp:attes_2}{else}{lang aljlp:attes_3}{/if}">
+				
+			</p>
+			<p class=" ft12 simsun">{lang aljlp:attes_4}</p>
+		</dt>
+		<dd>
+			
+			<p class="lj_red state bold">{if $shenfen}{lang aljlp:attes_5}{else}{lang aljlp:attes_6}{/if}</p>
+			<p class=" ft12 simsun lj_red">{if $shenfen}{lang aljlp:attes_7}{else}{lang aljlp:attes_8}{/if} </p>
+			
+		</dd>
+	</dl>
+</div>
+<div class="rzdiv02">
+	<dl>
+		<dt>
+			<p>
+				{eval $mingpian=C::t('#aljlp#aljlp_attestation')->fetch_uid_type_sign($_G['uid'],'2','1')}
+				<img width="44" height="26" src="{if $mingpian}source/plugin/aljlp/images/icorz_r1_c1.gif{else}source/plugin/aljlp/images/icon_card.gif{/if}" alt="{if $mingpian}{lang aljlp:attes_2}{else}{lang aljlp:attes_3}{/if}">
+				
+			</p>
+			<p class="ft12 simsun">{lang aljlp:attes_9}</p>
+		</dt>
+		<dd>
+			
+			<p class="lj_red state bold">{if $mingpian}{lang aljlp:attes_5}{else}{lang aljlp:attes_6}{/if}</p>
+			<p class=" ft12 simsun lj_red">{if $shenfen}{lang aljlp:attes_10}{else}{lang aljlp:attes_11}{/if} </p>
+			
+		</dd>
+	</dl>
+</div>
+
+<div class="rzdiv02">
+	<dl>
+		<dt>
+			<p>
+				{eval $zhizhao=C::t('#aljlp#aljlp_attestation')->fetch_uid_type_sign($_G['uid'],'3','1')}
+				<img width="44" height="26" src="{if $zhizhao}source/plugin/aljlp/images/zhongji1.gif{else}source/plugin/aljlp/images/icon_hat1.gif{/if}" alt="{if $zhizhao}{lang aljlp:attes_2}{else}{lang aljlp:attes_3}{/if}">
+				
+			</p>
+			<p class=" ft12 simsun">{lang aljlp:attes_12}</p>
+		</dt>
+		<dd>
+			
+			<p class="lj_red state bold">{if $zhizhao}{lang aljlp:attes_5}{else}{lang aljlp:attes_6}{/if}</p>
+			<p class=" ft12 simsun lj_red">{if $zhizhao}{lang aljlp:attes_16}{else}{lang aljlp:attes_14}{/if} </p>
+			
+		</dd>
+	</dl>
+</div>
+<div class="rzdiv02">
+	<dl>
+		<dt>
+			<p>
+				{eval $gongsi=C::t('#aljlp#aljlp_attestation')->fetch_uid_type_sign($_G['uid'],'4','1')}
+				<img width="44" height="26" src="{if $gongsi}source/plugin/aljlp/images/icorz_r5_c1.gif{else}source/plugin/aljlp/images/icon_zige.gif{/if}" alt="{if $gongsi}{lang aljlp:attes_2}{else}{lang aljlp:attes_3}{/if}">
+				
+			</p>
+			<p class=" ft12 simsun">{lang aljlp:attes_15}</p>
+		</dt>
+		<dd>
+			
+			<p class="lj_red state bold">{if $gongsi}{lang aljlp:attes_5}{else}{lang aljlp:attes_6}{/if}</p>
+			<p class=" ft12 simsun lj_red">{if $gongsi}{lang aljlp:attes_16}{else}{lang aljlp:attes_17}{/if} </p>
+			
+		</dd>
+	</dl>
+</div>
+</div>
+<div class="clear"></div>
+<div class="clear mt20"></div>
+<div class=" alertword01">
+	$config['r_tsy']
+</div>
+<div class="clear mt20"></div>
+<h2 class="title01"><a href="" class="title01-on">{lang aljlp:attes_32}</a></h2>
+<div class="clear mt20"></div>
+<style type="text/css">
+.tab-list-04 th, .tab-list-04 td {
+  border-bottom: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  font: 14px/24px 'Microsoft YaHei';
+  padding: 10px 15px;
+}
+.tab-list-04 th {
+  background: none repeat scroll 0 0 #f5f5f5;
+  text-align: right;
+  vertical-align: top;
+}
+.wid120 {
+  width: 120px;
+}
+.photo02, .photo03 {
+  height: 135px;
+  overflow: hidden;
+  position: relative;
+  width: 222px;
+}
+.zhengshu-zizhi {
+  border: 1px solid #7f9db9;
+  height: 127px;
+  padding: 3px;
+  width: 214px;
+}
+	.upload {
+  background-color: #ff5f00;
+  bottom: 0;
+  color: #fff;
+  height: 22px;
+  line-height: 22px;
+  padding: 0 12px;
+  position: absolute;
+  right: 0;
+}
+.align-center {
+  text-align: center;
+}
+.wid200 {
+  width: 200px;
+}
+.mt15 {
+  margin-top: 15px;
+}
+.ml80 {
+  margin-left: 80px;
+}
+.ml155 {
+  margin-left: 155px;
+}
+.btu01, .btu03, .btu-search {
+  background: none repeat scroll 0 0 #2193ea;
+  border: 0 none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 30px;
+  text-align: center;
+  margin: 20px 15px;
+}
+</style>
+<form class="form" method="post" id="postform"  enctype="multipart/form-data" action="plugin.php?id=aljlp&act={$_GET['act']}" target="myiframe">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<input type="hidden" value="shenfen" name="form">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tab-list-04">
+	<tbody>
+		<tr>
+			<th class="wid120 align-top"><span class="lj_red">* </span>{lang aljlp:attes_18}</th>
+			<td>
+				<div class="zsdiv03">
+					<div class="photo03">
+						<img class="zhengshu-zizhi" src="{if $rz1}{$rz1['pic']}{else}source/plugin/aljlp/images/dentity-card.gif{/if}" name="id_pic" id="image1">
+						
+						<a class="upload" href="javascript:void(0);" style="color: #fff;">{lang aljlp:attes_19}</a>
+						<input type="file"  name="pic" id="immageurl1" class="upload" style="filter: Alpha(opacity=0); opacity: 0;" size="4">
+						
+					</div>
+					<p class="align-center wid200 mt15">{lang aljlp:attes_20}</p>
+				</div>
+				<div class="zsdiv03 ml80">
+					<img src="source/plugin/aljlp/images/dentity-card-eg.gif"  class="zhengshu-zizhi"><p class="align-center wid200 mt15">{lang aljlp:attes_21}</p>
+				</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<th><span class="lj_red">* </span>{lang aljlp:attes_22}</th>
+			<td><span class="mt8">
+				<input type="text" class="input01 wid200" onblur="ShowTip('str_idcard',false);CheckIDCard('str_idcard');" onfocus="ShowTip('str_idcard',true);" id="str_idcard" name="str_idcard" value="{$rz1['num']}">
+			</span><span id="str_idcard_tip">{lang aljlp:attes_23}</span>
+				<span style="display: none;" id="str_idcard_error"></span></td>
+		</tr>
+		
+	</tbody>
+</table>
+<div class="btu ml155">
+	<input type="submit"  value="{lang aljlp:attes_24}" class="btu01"  name="Button1">
+</div>
+</form>
+
+<div class="clear mt20"></div>
+<h2 class="title01 mt10"><a href="" class="title01-on">{lang aljlp:attes_9}</a></h2>
+<form class="form" method="post" id="postform"  enctype="multipart/form-data" action="plugin.php?id=aljlp&act={$_GET['act']}" target="myiframe">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<input type="hidden" value="mingpian" name="form">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tab-list-04 mt20">
+	<tbody>
+		
+		<tr>
+			<th class="wid120 align-top"><span class="lj_red">* </span>{lang aljlp:attes_25}</th>
+			<td>
+				<div class="zsdiv03">
+					<div class="photo03">
+						<img class="zhengshu-zizhi" src="{if $rz2}{$rz2['pic']}{else}source/plugin/aljlp/images/business-card.gif{/if}" id="image2" name="pic">
+						
+						<a class="upload" href="javascript:void(0);" style="color: #fff;">{lang aljlp:attes_19}</a>
+						<input type="file"  name="pic" id="immageurl2" class="upload" style="filter: Alpha(opacity=0); opacity: 0;" size="4">
+						
+					</div>
+					<p class="align-center wid200 mt15">{lang aljlp:attes_20}</p>
+				</div>
+				<div class="zsdiv03 ml80">
+					<img src="source/plugin/aljlp/images/business-card-eg.gif" alt="" class="zhengshu-zizhi"><p class="align-center wid200 mt15">{lang aljlp:attes_21}</p>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="btu ml155">
+	<input type="submit" value="{lang aljlp:attes_24}" class="btu01"  name="Button2">
+</div>
+</form>
+
+<div class="clear mt20"></div>
+<h2 class="title01 mt10"><a href="" class="title01-on">{lang aljlp:attes_12}</a></h2>
+<form class="form" method="post" id="postform"  enctype="multipart/form-data" action="plugin.php?id=aljlp&act={$_GET['act']}&lid={$lp['id']}" target="myiframe">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<input type="hidden" value="zhizhao" name="form">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tab-list-04 mt20">
+<tbody>
+	<tr>
+		<th class="wid120 align-top"><span class="lj_red">* </span>{lang aljlp:attes_26}</th>
+		<td>
+			<div class="zsdiv03 ">
+				<div class="photo03">
+					<img class="zhengshu-zizhi" src="{if $rz3}{$rz3['pic']}{else}source/plugin/aljlp/images/profession.gif{/if}" id="image3" name="pic">
+					
+					<a class="upload" href="javascript:void(0);" style="color: #fff;">{lang aljlp:attes_19}</a>
+					<input type="file"  name="pic" id="immageurl3" class="upload" style="filter: Alpha(opacity=0); opacity: 0;" size="4">
+					
+				</div>
+				<p class="align-center wid200 mt15">{lang aljlp:attes_20}</p>
+			</div>
+			<div class="zsdiv03 ml80">
+				<img src="source/plugin/aljlp/images/profession-eg.gif"  class="zhengshu-zizhi"><p class="align-center wid200 mt15">{lang aljlp:attes_21}</p>
+			</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<th><span class="lj_red">* </span>{lang aljlp:attes_27}</th>
+		<td><span class="mt8">
+			<input type="text" class="input01 wid200" id="agentcardmun" name="agentcardmun" value="$rz3['num']">
+		</span></td>
+	</tr>
+	
+</tbody>
+</table>
+<div class="btu ml155">
+	<input type="submit" value="{lang aljlp:attes_24}" class="btu01"  name="Button3">
+</div>
+</form>
+<div class="clear mt20"></div>
+<h2 class="title01 mt10"><a href="" class="title01-on">{lang aljlp:attes_33}</a></h2>
+<form class="form" method="post" id="postform"  enctype="multipart/form-data" action="plugin.php?id=aljlp&act={$_GET['act']}&lid={$lp['id']}" target="myiframe">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<input type="hidden" value="gongsi" name="form">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tab-list-04">
+                    <tbody>
+						<tr>
+                            <th class="wid120">{lang aljlp:attes_28}</th>
+                            <td><span class="mt8">
+                                <input type="text" class="input01 wid200" id="businesslicence" name="gongsiname" value="$rz4['gongsiname']">
+                            </span></td>
+                        </tr>
+						<tr>
+                            <th class="wid120">{lang aljlp:attes_29}</th>
+                            <td><span class="mt8">
+                                <input type="text" class="input01 wid200" id="businesslicence" name="mendianname" value="$rz4['mendianname']">
+                            </span></td>
+                        </tr>
+                        <tr>
+                            <th class="wid120">{lang aljlp:attes_30}</th>
+                            <td><span class="mt8">
+                                <input type="text" class="input01 wid200" id="businesslicence" name="num" value="$rz4['num']">
+                            </span></td>
+                        </tr>
+                        <tr>
+                            <th class="align-top">{lang aljlp:attes_31}</th>
+                            <td>
+                                <div class="photo03">
+                                    <img class="zhengshu-zizhi" src="{if $rz4}{$rz4['pic']}{else}source/plugin/aljlp/images/business-license.gif{/if}" id="image3">
+                                    <a class="upload" href="javascript:void(0);" style="color: #fff;">{lang aljlp:attes_19}</a>
+                                    <input type="file"  name="pic" id="immageurl3" class="upload" style="filter: Alpha(opacity=0); opacity: 0;" size="4">
+
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+</div>
+<div class="btu ml155">
+                    <input type="submit" class="btu01" value="{lang aljlp:attes_24}"  name="submit3">
+                </div>
+</form>
+
+</div>	</div>
+{template common/footer}

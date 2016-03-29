@@ -1,0 +1,146 @@
+{template aljbd:view_header}
+<div class="wp cl" id="bdw">
+<div class="main" id="goods">
+
+<table cellspacing="0" cellpadding="0" class="fwin" id="imgzoom" style="width:506px;height:514px;position:absolute;display:none;top:400px;left:210px;z-index:11000;"><tbody><tr><td class="t_l"></td><td class="t_c"></td><td class="t_r"></td></tr><tr><td class="m_l">&nbsp;&nbsp;</td><td class="m_c">
+<h3 class="flb"><em>[[[title]]]</em><a target="_blank" href="[[[srcimg]]]" class="originimg"><font color="#568C10">{lang aljbd:goodview_1}</font></a><span><a href="javascript:;" id="fwin_dialog_close" class="flbc" onclick="zoomclose();return false;" title="{lang aljbd:goodview_2}">{lang aljbd:goodview_2}</a></span></h3>
+<div class="c altw">
+<div class="box">
+<a target="_blank" href="javascript:;" onclick="zoomclose();return false;"><img src="[[[src]]]" alt="[[[title]]]"></a>
+</div>
+</div>
+</td><td class="m_r"></td></tr><tr><td class="b_l"></td><td class="b_c"></td><td class="b_r"></td></tr></tbody></table> 
+
+<div id="imgzoomhtml" style='display:none'>
+<h3 class="flb"><em>[[[title]]]</em><a target="_blank" href="[[[srcimg]]]" class="originimg"><font color="#568C10">{lang aljbd:goodview_1}</font></a></a><span><a href="javascript:;" id="fwin_dialog_close" class="flbc" onclick="zoomclose();return false;" title="{lang aljbd:goodview_2}">{lang aljbd:goodview_2}</a></span></h3>
+<div class="c altw">
+<div class="box">
+<a target="_blank" href="javascript:;" onclick="zoomclose();return false;"><img src="[[[src]]]" alt="[[[title]]]"></a>
+</div>
+</div>
+</div>
+<div id="append_parent"></div><script>
+jq(function(){
+var product = jq('#product');
+jq('.thumb-list li').mouseover(function(){
+var src=jq(this).find('img').attr('data-src');
+var srcimg=jq(this).find('img').attr('srcimg');
+if (srcimg!='source/plugin/aljbd/images/nophoto.jpg') {
+jq(this).addClass('cur').siblings().removeClass('cur');;
+jq('#J_PicCover').attr('src',src).attr('srcimg',srcimg);
+};
+})
+})
+</script> 
+
+<div id="product" class="cl">
+<div class="gallery">
+<div class="pic-box"><a onclick="zoomopen(this, jq('#J_PicCover').attr('srcimg'), jq('#J_PicCover').attr('src'), jq('#J_PicCover').attr('alt'))" title="{lang aljbd:s259}" class="pic-link" href="javascript:;" rel="nofollow"><img id="J_PicCover" srcimg="{$g['pic1']}" src="{eval echo $g['pic1'].'.470x470.jpg';}" alt="{$g['name']}" width="470" height="470"><span class="zoom"> </span></a></div>
+<div class="thumb cl">
+<div class="thumb-list">
+<ul class="cl">
+<li class="cur">
+<a href="javascript:;">
+<img srcimg="{if $g['pic1']}{$g['pic1']}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" data-src="{if $g['pic1']}{eval echo $g['pic1'].'.470x470.jpg'}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" src="{if $g['pic1']}{eval echo $g['pic1'].'.60x60.jpg'}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" alt="{$g['name']}"></a>
+</li><li>
+<a href="javascript:;">
+<img srcimg="{if $g['pic2']}{$g['pic2']}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" data-src="{eval echo $g['pic2'].'.470x470.jpg'}" src="{if $g['pic2']}{eval echo $g['pic2'].'.60x60.jpg'}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" alt="{$g['name']}"></a>
+</li><li>
+<a href="javascript:;">
+<img srcimg="{if $g['pic3']}{$g['pic3']}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" data-src="{eval echo $g['pic3'].'.470x470.jpg'}" src="{if $g['pic3']}{eval echo $g['pic3'].'.60x60.jpg'}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" alt="{$g['name']}" ></a>
+</li><li >
+<a href="javascript:;">
+<img srcimg="{if $g['pic4']}{$g['pic4']}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" data-src="{eval echo $g['pic4'].'.470x470.jpg'}" src="{if $g['pic4']}{eval echo $g['pic4'].'.60x60.jpg'}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" alt="{$g['name']}"></a>
+</li><li class="">
+<a href="javascript:;">
+<img srcimg="{if $g['pic5']}{$g['pic5']}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" data-src="{if $g['pic5']}{eval echo $g['pic5'].'.470x470.jpg'}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" src="{if $g['pic5']}{eval echo $g['pic5'].'.60x60.jpg'}{else}source/plugin/aljbd/images/nophoto.jpg{/if}" alt="{$g['name']}"></a>
+</li></ul>
+</div>
+</div>
+</div>
+<!--gallery end--><div class="gallery-text">
+<h2 class="cl">{$g['name']}</h2><div class="gallery-info">
+<p>{eval echo mb_substr(strip_tags(preg_replace('/\<img.*?\>/is', '', $g['intro'])),0,80,$_G['charset']);}...<a onclick="jq('#messages .message_tab h3:eq(1)').click();jq('body,html').animate({scrollTop:jq('#messages').offset().top},200);" href="javascript:;">[{lang aljbd:s260}]</a></p>
+</div><div class="buy-box">
+<div class="cl" id="J_BuyBox">
+<div class="buy-meta">
+<p class="price-limit">{if $g['price1']}&#65509;{eval echo number_format($g['price1'],2);}{/if}</p>
+<p class="goodprice xg1">{if $g['price2']}{lang aljbd:s261}<s>&#65509;{eval echo number_format($g['price2'],2);}</s>{else}{lang aljbd:s261}{/if}</p>
+</div>
+<div class="comment-meta xg1 cl">
+<p class="z">{lang aljbd:s262}({$g['view']})</p>
+{if $g['gwurl']}<a target="_blank" href="$g['gwurl']" class="y" >goumai</a>{/if}
+</div>
+</div>
+
+</div>
+<div class="shop-info">
+<dl class="address cl">
+<dt class="xg1">{lang aljbd:s263}</dt><dd>{$bd['addr']}<!--<a onclick="openmap();return false;" href="#goodsName"><img src="static/image/mapmarker1.gif" style="vertical-align: middle; text-decoration: none;margin:0 0 2px 3px;"></a>--></dd>
+</dl>
+<dl class="tel cl"><dt class="xg1">{lang aljbd:s264}</dt><dd>{$bd['tel']}</dd></dl>
+</div>
+</div>
+</div>
+<div id="messages">
+<div class="message_tab cl">
+<h3 class="c">{lang aljbd:s265}</h3>
+</div>
+
+
+
+
+<script charset="gbk" type="text/javascript">
+//	bindform('msgForm');
+function zoomopen(obj, srcimg, src, alt){
+var imgw= jq('img',obj).width();
+var imgh= jq('img',obj).height();
+var imgzoomhtml = jq('#imgzoomhtml').html();
+var patttitle=/\[\[\[title\]\]\]/ig;
+var pattsrc=/\[\[\[src\]\]\]/ig;
+var pattsrcimg=/\[\[\[srcimg\]\]\]/ig;
+imgzoomhtml = imgzoomhtml.replace(patttitle,alt);
+imgzoomhtml = imgzoomhtml.replace(pattsrc,src);
+imgzoomhtml = imgzoomhtml.replace(pattsrcimg,srcimg);
+console.log(imgh);
+jq('#imgzoom .m_c').html(imgzoomhtml);
+jq('#imgzoom').css({'width':imgw+36+'px','height':imgh+44+'px'}).show();
+}
+function zoomclose(){
+document.getElementById('imgzoom').style.display = "none";
+} 
+</script><div class="details c">
+<div class="content"><p>{$g['intro']}</p></div>
+</div>
+</div>
+<div class="shop_list cl">
+<div class="title cl">
+<h2>{lang aljbd:s266}</h2>
+<a href="{if $config['isrewrite']}brand_good_{$_GET['bid']}.html{else}plugin.php?id=aljbd&act=good&bid={$bd['id']}{/if}" class="more">{lang aljbd:s267}</a>
+</div>
+<!--shop new good--><ul>
+<!--{eval  $i=1;}-->
+{loop $t $g}
+<li <!--{if $i%3===0}-->class="mr0"<!--{/if}-->>
+<div class="thumb"><a href="{if $config['isrewrite']}brand_good_{$g['bid']}_{$g[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$g['bid']}&gid={$g[id]}{/if}" target="_blank"><img alt="$g['name']" src="{$g['pic1']}.205x205.jpg"></a></div>
+<h3 class="xi2">
+<a title="$g['name']" href="{if $config['isrewrite']}brand_good_{$g['bid']}_{$g[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$g['bid']}&gid={$g[id]}{/if}" target="_blank">$g['name']</a>
+</h3>
+<p class="xg1 mtn cl">
+<a target="_blank" title="{$bdlist[$g['bid']]['name']}" href="{if $config['isrewrite']}brand_shop_{$g['bid']}.html{else}plugin.php?id=aljbd&act=view&bid={$bd['id']}{/if}" class="z address">{$bdlist[$g['bid']]['name']}</a>
+<span class="y"></span>
+</p>
+<p class="xi1"><strong>{if $g['price1']}&#65509;{eval echo number_format($g['price1'],2);}{else}{lang aljbd:s268}{/if}</strong>{if $g['price2']}&nbsp;&nbsp;&nbsp;<s>&#65509;{eval echo number_format($g['price2'],2);}</s>{/if}</p>
+<p class="s2 xg1 cl">
+<span class="z">{eval echo gmdate('Y-m-d',$g['dateline']+8*3600);}</span>
+<span class="y">
+<a href="{if $config['isrewrite']}brand_good_{$g['bid']}_{$g[id]}.html{else}plugin.php?id=aljbd&act=goodview&bid={$g['bid']}&gid={$g[id]}{/if}" target="_blank">{lang aljbd:s269}({$g['view']})</a>
+</span>
+</p><!--newcomment-->
+<div class="comment cl"></div>
+</li>
+<!--{eval  $i++;}-->
+{/loop}
+</ul></div>
+</div>
+{template aljbd:side}

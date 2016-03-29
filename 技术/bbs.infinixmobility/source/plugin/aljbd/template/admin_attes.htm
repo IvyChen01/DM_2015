@@ -1,0 +1,14 @@
+<script>disallowfloat = 'newthread';</script>
+<form id="cpform" action="admin.php?action=plugins&operation=config&identifier=aljbd&pmod=admin&brand=attestation&act=$_GET['act']" autocomplete="off" method="post" name="cpform">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<table class="tb tb2 nobdb">
+<tbody>{template aljbd:attes}
+<tr class="header"><th></th><th >{lang aljbd:admin_19}</th><th> {lang aljbd:admin_20}</th><th>{lang aljbd:admin_15}</th><th>{lang aljbd:admin_16}</th><th>{lang aljbd:admin_17}</th><th>{lang aljbd:admin_18}</th><th>{lang aljbd:admin_7}</th><th>{lang aljbd:admin_8}</th></tr>
+{loop $atlist $bd}
+<tr class="header"><td><input type="checkbox" value="{$bd['uid']}" name="delete[]" class="checkbox"></td>
+<td>{$bd['name']}</td><td>{$bd['id_card']}</td><td><img src="{$bd['id_pic']}" style="width:140px;height:100px;"></td><td>{$bd['qiyename']}</td><td>{$bd['tel']}</td><td><img src="{$bd['pic']}" style="width:140px;height:100px;"></td><td>{eval echo gmdate('Y-m-d H:i:s',$bd['timestamp']+8*3600);}</td><td><a href="admin.php?action=plugins&operation=config&identifier=aljbd&pmod=admin&brand=attestation&act=edit&bid={$bd['bid']}">{lang aljbd:admin_9}<a>
+</td></tr>
+{/loop}
+<tr><td colspan="3"><div class="fixsel"><input type="checkbox" onclick="checkAll('prefix', this.form, 'delete','chkallUMP3')" class="checkbox" id="chkallUMP3" name="chkall"><label for="chkallUMP3">{if $_GET['act']!='yes'}{lang aljbd:admin_10}{/if}{lang aljbd:admin_11}</label>&nbsp;{if $_GET['act']!='yes'}<input type="submit" value="{lang aljbd:admin_12}"  name="sh_submit" id="sh_submit" class="btn">&nbsp;<input type="submit" value="{lang aljbd:admin_13}"  name="del_submit" id="del_submit" class="btn">{else}<input type="submit" value="{lang aljbd:admin_14}" title="" name="submit" id="submit_submit" class="btn">{/if}</div></td><td>$paging</td></tr>
+</tbody></table>
+</form>

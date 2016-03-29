@@ -1,0 +1,158 @@
+{template common/header}
+<link type="text/css" rel="stylesheet" href="source/plugin/aljbd/css/so/main.css">
+
+
+<div id="pt" class="bm cl">
+<div class="z">
+<a title="{$_G['setting']['bbname']}" href="./" class="nvhm">{$_G['setting']['bbname']}</a>
+<em></em>
+<a href="plugin.php?id=aljbd">{lang aljbd:s74}</a>
+<em></em>
+<a href="plugin.php?id=aljbd:so">{lang aljbd:so6}</a>
+</div>
+</div>
+<div class="homepage-map">
+	<div class="map-header">
+		<div class="map-search">
+			<form id="searchdist" action="plugin.php" method="get">
+			<input type="hidden" value="aljbd:so" name="id">
+			<input type="hidden" value="{$_GET['order']}" name="order">
+			<input type="hidden" value="{FORMHASH}" name="formhash">
+			<div class="TSelectdiv">     
+                  <div class="select-box">
+					   <input type="hidden" value="9" id="province_id">
+					   					   <div class="select-info">
+										   <select class="select-info" name="type" id="type"  onchange="ajaxget('plugin.php?id=aljbd&act=gettype&s=1&upid='+$('type').value,'subtype')">
+												<option value="">{lang aljbd:so7}</option>
+												<!--{loop $typelist $typeid $type}-->
+												<option value="$typeid" {if $typeid==$_GET['type']}selected{/if}>$type['subject']</option>
+												<!--{/loop}-->
+										   </select>
+										   
+											</div>
+					   
+				  </div>
+				  <div id="subtype">
+				{if $subtypelist}
+				  <div class="select-box">
+					<div class="select-info">
+						<select name="subtype" class="select-info">
+					<!--{loop $subtypelist $typeid $type}-->
+					<option value="$typeid" {if $_GET['subtype']==$typeid}selected{/if}>$type['subject']</option>
+					<!--{/loop}-->
+					</select>
+					</div>
+					</div>
+				{/if}
+				 </div>
+				  <input class="search-txt" value="{$_GET['kw']}" name="kw">
+				  <span onclick="$('searchdist').submit()" class="btn btn-orange">{lang aljbd:so2}</span>
+			</div>	
+			</form>
+		</div>
+		<ul class="addr f-r">
+			 <li><a href="plugin.php?id=aljbd:so&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&order=dateline&kw={$_GET['kw']}" class="add-btn">{lang aljbd:s48}</a></li>
+			 <li><a  href="plugin.php?id=aljbd:so&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&order=view&kw={$_GET['kw']}" class="add-btn">{lang aljbd:s47}</a></li>
+			  <li><a  href="plugin.php?id=aljbd:so&type={$_GET['type']}&subtype={$_GET['subtype']}&region={$_GET['region']}&subregion={$_GET['subregion']}&order=comment&kw={$_GET['kw']}" class="add-btn">{lang aljbd:s46}</a></li>
+			 		</ul>
+	</div>
+	<div class="map-main" id="map_main">
+		<div id="maptable">
+				<div class="index-left">
+					<div class="result">
+					<p class="result-info">&nbsp;{lang aljbd:so3}<b id="totalCount">{$num}</b>{lang aljbd:so4}</p>
+					</div>
+					     <div id="list1" class="item-list" style="height: 445px;">
+						 {eval $i=1;}
+						 {loop $bdlist $bd}
+						 <div onclick="mapclick({$bd['id']},{$bd['lng']},{$bd['lat']})"  class="data" id="shop_10077"><div class="number num{$i}"></div>
+						 <div class="item-info">
+						 <div class="info-tit"><a>{$bd['name']}</a><em class="vip3"></em></div><p>{lang aljbd:s125} {$bd['addr']}</p><p>{lang aljbd:s126} {$bd['tel']}</p></div><div class="clear"></div></div>
+						 {eval $i++}
+						 {/loop}
+						  <div class="pageMainDiv" style="float:left;margin-top:10px;">
+						 {$paging}
+						 </div>
+						 </div>
+						
+						 </div>
+				
+				</div>
+				<div class="index-right" id="container" style="height: 470px; overflow: hidden; position: relative; z-index: 0; background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); text-align: left;">
+				</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Mz8y6VOGZv8AbIfQas83nf1B"></script>
+
+<script type="text/javascript">
+
+var nodes={$maplist};
+var nodes=eval(nodes); 
+var shop_markers = Array();
+var map='';
+var infowindows = '';
+function baiduMapFunction(divId, aljbdArray) {
+	map = new BMap.Map(divId);
+	map.centerAndZoom(new BMap.Point({$config[x]}, {$config[y]}), 12);
+	map.enableScrollWheelZoom(); 
+	map.enableContinuousZoom(); 
+	map.addControl(new BMap.NavigationControl()); 
+	map.addControl(new BMap.ScaleControl()); 
+	map.addControl(new BMap.MapTypeControl({
+		anchor : BMAP_ANCHOR_TOP_RIGHT
+	})); 
+	for ( var o in aljbdArray) {
+		var point = new BMap.Point(aljbdArray[o].lng, aljbdArray[o].lat);
+
+
+		var nameLabel = new BMap.Label(aljbdArray[o].name, {
+			offset : new BMap.Size(20, -10)
+		});
+
+		var sContent = "<div style=\"text-align:center;\"><b>"+aljbdArray[o].name+"(<a style=\"color:blue;\" target=\"_blank\" href=\"plugin.php?id=aljbd&act=view&bid="+aljbdArray[o].id+"\">{lang aljbd:so1}</a>)</b><br />{lang aljbd:s126}"+aljbdArray[o].tel+"<br />{lang aljbd:s125}"+aljbdArray[o].addr+"</div>";
+		
+		nameLabel.setStyle({
+			"borderColor" : "red",
+			"color" : "red",
+			"cursor" : "pointer"
+		});
+		var  info_html=sContent;
+		shop_markers[aljbdArray[o].id]=info_html;
+		var lng = aljbdArray[o].lng;
+		var lng = aljbdArray[o].lat;
+		
+		createMark = function(lng, lat, info_html) {
+			var _marker = new BMap.Marker(new BMap.Point(lng, lat));
+			
+			_marker.addEventListener("click", function(e) {
+				this.openInfoWindow(new BMap.InfoWindow(info_html));
+			});
+			_marker.addEventListener("mouseover", function(e) {
+				this.setTitle("{lang aljbd:so5} " + lng + "," + lat);
+			});
+			return _marker;
+		};
+		var marker = createMark(aljbdArray[o].lng, aljbdArray[o].lat, sContent);
+		map.addOverlay(marker);
+		marker.setLabel(nameLabel); 
+	}
+	
+}
+
+baiduMapFunction("container",nodes);
+
+
+function mapclick(id,x,y){
+	var infowindow = new BMap.InfoWindow(shop_markers[id]);
+	map.openInfoWindow(infowindow,new BMap.Point(x, y));
+}
+
+</script>
+
+
+
+
+{template common/footer}
