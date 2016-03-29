@@ -1,0 +1,439 @@
+<?php exit;?>
+<!--{template common/header}-->
+<!--{if $isfirstpost && $sortid}-->
+	<script type="text/javascript">
+		var forum_optionlist = <!--{if $forum_optionlist}-->'$forum_optionlist'<!--{else}-->''<!--{/if}-->;
+	</script>
+	<script type="text/javascript" src="template/webshow_mtb0115/touch/img/js/threadsort.js"></script>
+<!--{/if}-->
+
+<!--{eval $adveditor = $isfirstpost && $special && ($_GET['action'] == 'newthread' || $_GET['action'] == 'reply' && !empty($_GET['addtrade']) || $_GET['action'] == 'edit' );}-->
+<!--{if $_GET['action'] == 'newthread'}-->
+<div class="mv_post_nav">
+<div class="cl">
+<!--{if !$_G['forum']['allowspecialonly']}--><!--<a href="forum.php?mod=post&action=newthread&fid=$_G[fid]" {if ($_GET[sortid] || !$special) && $_GET['action'] != 'edit' && $_GET['action'] != 'reply' && !$sortid}class="current"{/if}>Thread</a>--><!--{/if}-->
+<!--{if $_G['group']['allowpostpoll']}--><!--<a href="forum.php?mod=post&action=newthread&fid=$_G[fid]&special=1" {if !$_GET[sortid] && $special == 1}class="current"{/if}>Vote</a>--><!--{/if}-->
+<!--{if $_G['group']['allowpostreward']}--><!--<a href="forum.php?mod=post&action=newthread&fid=$_G[fid]&special=3" {if !$_GET[sortid] && $special == 3}class="current"{/if}>{lang post_newthreadreward}</a>--><!--{/if}-->
+<!--{if $_G['group']['allowpostdebate']}--><!--<a href="forum.php?mod=post&action=newthread&fid=$_G[fid]&special=5" {if !$_GET[sortid] && $special == 5}class="current"{/if}>{lang post_newthreaddebate}</a>--><!--{/if}-->
+<!--{loop $_G['forum']['threadsorts'][types] $tsortid $name}-->
+<a href="forum.php?mod=post&action=newthread&fid=$_G[fid]&sortid=$tsortid"{if $sortid == $tsortid} class="current"{/if}><!--{echo strip_tags($name);}--></a>
+<!--{/loop}-->
+</div>
+</div>
+<!--{/if}-->
+<style>
+.mv_post_main li{margin: 0 0 25px;}
+.mv_post_c{padding: 25px;;}
+.button2{background: #29A0E0;border-radius: 4px;width: 54px; }
+</style>
+
+<script type="text/javascript">
+function validate(theform,tax) {
+	if( $('price') != null && $('price').value > 0 )
+	{
+		var x =parseInt($('price').value); 
+		var y=(1-tax)*x;
+		if (y < 1)
+			{
+			var error ='Thread selling price after tax will decrease your points to 0.';
+			//showError(error);
+			alert(error);
+			return false;
+			}	
+	}
+}
+</script>
+
+<form method="post" name="postform" id="postform" 
+			{if $_GET[action] == 'newthread'}action="forum.php?mod=post&action={if $special != 2}newthread{else}newtrade{/if}&fid=$_G[fid]&extra=$extra&topicsubmit=yes&mobile=2"
+			{elseif $_GET[action] == 'reply'}action="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&extra=$extra&replysubmit=yes&mobile=2"
+			{elseif $_GET[action] == 'edit'}action="forum.php?mod=post&action=edit&extra=$extra&editsubmit=yes&mobile=2" $enctype
+			{/if} onsubmit="return validate(this,<!--{echo $_G['setting']['creditstax']}-->)">
+<input type="hidden" name="formhash" id="formhash" value="{FORMHASH}" />
+<input type="hidden" name="posttime" id="posttime" value="{TIMESTAMP}" />
+<!--{if !empty($_GET['modthreadkey'])}--><input type="hidden" name="modthreadkey" id="modthreadkey" value="$_GET['modthreadkey']" /><!--{/if}-->
+<!--{if $_GET[action] == 'reply'}-->
+	<input type="hidden" name="noticeauthor" value="$noticeauthor" />
+	<input type="hidden" name="noticetrimstr" value="$noticetrimstr" />
+	<input type="hidden" name="noticeauthormsg" value="$noticeauthormsg" />
+	<!--{if $reppid}-->
+		<input type="hidden" name="reppid" value="$reppid" />
+	<!--{/if}-->
+	<!--{if $_GET[reppost]}-->
+		<input type="hidden" name="reppost" value="$_GET[reppost]" />
+	<!--{elseif $_GET[repquote]}-->
+		<input type="hidden" name="reppost" value="$_GET[repquote]" />
+	<!--{/if}-->
+<!--{/if}-->
+<!--{if $_GET[action] == 'edit'}-->
+	<input type="hidden" name="fid" id="fid" value="$_G[fid]" />
+	<input type="hidden" name="tid" value="$_G[tid]" />
+	<input type="hidden" name="pid" value="$pid" />
+	<input type="hidden" name="page" value="$_GET[page]" />
+<!--{/if}-->
+
+<!--{if $special}-->
+	<input type="hidden" name="special" value="$special" />
+<!--{/if}-->
+<!--{if $specialextra}-->
+	<input type="hidden" name="specialextra" value="$specialextra" />
+<!--{/if}-->
+
+<div class="mv_post_dp mv_post_main">
+    <!--<h2></h2>--><!--{if $_GET[action] == 'edit'}--><!--{lang edit}--><!--{else}--><!--Edit--><!--{/if}-->
+    <div class="mv_post_c">
+
+        <ul>
+            <li class="li_1">
+			<!--{if $_GET['action'] != 'reply'}-->
+			<span class="opera_menu" style="display:none;font: 14px/1.5 Microsoft YaHei, Helvetica, sans-serif;float: left;width: 66px;color: #4DB74D;height: 40px;line-height: 40px;">title:</span>
+			<input type="text" tabindex="1" class="px" id="needsubject" size="30" autocomplete="off" value="$postinfo[subject]" name="subject" placeholder="Title" fwin="login" style="width:140px;">
+			<!--{else}-->
+				RE: $thread['subject']
+				<!--{if $quotemessage}-->$quotemessage<!--{/if}-->
+			<!--{/if}-->
+            </li>
+
+			<!--{if $isfirstpost && !empty($_G['forum'][threadtypes][types])}-->
+			<li class="li_3">
+				<span class="opera_menu" style="display:none;font: 14px/1.5 Microsoft YaHei, Helvetica, sans-serif;float: left;width: 66px;color: #4DB74D;height: 40px;line-height: 40px;">sort:</span>
+				<select id="typeid" name="typeid" class="sort_sel">
+					<!--{loop $_G['forum'][threadtypes][types] $typeid $name}-->
+					<!--{if empty($_G['forum']['threadtypes']['moderators'][$typeid]) || $_G['forum']['ismoderator']}-->
+					<option value="$typeid"{if $thread['typeid'] == $typeid || $_GET['typeid'] == $typeid } selected="selected"{/if}><!--{echo strip_tags($name);}--></option>
+					<!--{/if}-->
+					<!--{/loop}-->
+				</select>
+			</li>
+			<!--{/if}-->
+
+        <!--{if $showthreadsorts}-->
+            <!--null_108-->
+	        <!--{if $sortid}-->
+		        <input type="hidden" name="sortid" value="$sortid" />
+	        <!--{/if}-->
+		    <!--{template forum/post_sortoption}-->
+        <!--{elseif $adveditor}--> 
+            <div class="mv_post_s">   
+            <!--{if $special == 1}--><!--{template forum/post_poll}-->
+            <!--{elseif $special == 3}--><!--{template forum/post_reward}-->
+            <!--{elseif $special == 5}--><!--{template forum/post_debate}-->
+            <!--{elseif $specialextra}--><div>$threadplughtml</div>
+            <!--{/if}--> 
+            </div>      
+        <!--{/if}-->
+
+            <!--{if $_GET[action] !== 'reply'}-->
+			<!--{if $_G['group']['allowposttag']}-->
+            <!--<li class="li_6 cl">
+                <input type="text" id="tags" name="tags" value="$postinfo[tag]" onblur="extraCheck(4)" /> ({lang post_tag})
+                <p style="color:#999; margin:3px 0 0 0;">{lang posttag_comment}</p>
+			</li>-->
+			<!--{/if}-->
+            <!--{/if}-->
+
+            <li class="li_2 cl">
+			    <a class="a1" href="javascript:;" style="display:block;"><input type="file" name="Filedata" id="filedata" style="width:30px;height:30px;font-size:30px;opacity:0;" accept="image/*" capture="camera"/></a>
+                <!--{if $_G[setting][fastsmilies]}-->
+                <a class="a2" onclick="$(this).hide(); $('#fastsmiliesdiv_data').fadeIn();"></a>
+                <div class="cl"></div>
+                <div id="fastsmiliesdiv_data" style="display:none;"><div id="fastsmilies"></div></div>
+                <!--{/if}-->
+            </li>
+            
+			<!--{if $_GET[action] == 'edit' && $isorigauthor && ($isfirstpost && $thread['replies'] < 1 || !$isfirstpost) && !$rushreply && $_G['setting']['editperdel']}-->
+			<li class="li_4">
+				<input type="checkbox" name="delete" id="delete" class="pc" value="1" title="{lang post_delpost}{if $thread[special] == 3}{lang reward_price_back}{/if}"> {lang delete_check}
+			</li>
+			<!--{/if}--> 
+            
+			<li class="li_5">
+			<textarea class="pt" id="needmessage" tabindex="3" autocomplete="off" id="{$editorid}_textarea" name="$editor[textarea]" cols="80" rows="2"  placeholder="Content at least 10 BYTES" fwin="reply"></textarea>
+			<div class="opera_menu" style="display:none;font: 14px/1.5 Microsoft YaHei, Helvetica, sans-serif;color: #4DB74D;height: 40px;line-height: 40px;">Content at least 10 BYTES</div>
+			</li>
+        </ul>
+
+
+		<!--{if $_GET[action] != 'edit' && ($secqaacheck || $seccodecheck)}-->
+		    <!--{subtemplate common/seccheck}-->
+		<!--{/if}-->
+        
+		<ul id="imglist" class="post_imglist cl">
+		</ul>
+        <style>
+		.btn_pn_grey{width:60px;background:#efefef;border-radius:3px;}
+		.btn_pn_blue{width:60px;background:#29A0E0;border-radius:3px;}
+		
+		</style>
+		<!--{if $_G['group']['maxprice'] }-->	
+		<li><label>Thread Price:</label></li>
+ 		<li>
+ 		<input type="text" id="price" name="price" style="width:80px;" value="<!--{eval echo $thread['pricedisplay'];}-->"/> 
+ 		<span class="xg1">Money (Highest <!--{eval  echo $_G['group']['maxprice'];}-->)</span> 
+ 		</li>
+ 		<!--{/if}-->
+        <button id="postsubmit" class="btn_pn <!--{if $_GET[action] == 'edit' }-->btn_pn_blue" disable="false"<!--{else}-->btn_pn_grey" disable="true"<!--{/if}-->><span><!--{if $_GET[action] == 'newthread'}-->Publish<!--{elseif $_GET[action] == 'reply'}-->Reply<!--{elseif $_GET[action] == 'edit'}-->Edit<!--{/if}--></span></button>
+        <input type="hidden" name="{if $_GET[action] == 'newthread'}topicsubmit{elseif $_GET[action] == 'reply'}replysubmit{elseif $_GET[action] == 'edit'}editsubmit{/if}" value="yes">
+    </div>
+</div>
+</form>
+
+<script>
+        $(document).ready(function(){
+                var isOperaMini = Object.prototype.toString.call(window.operamini) === "[object OperaMini]";
+                if( isOperaMini == true ){
+                        $(".a1").css("display", "none");
+                }
+        });
+</script>
+
+<!--{if $_G[setting][fastsmilies]}-->
+<script src="data/cache/common_smilies_var.js" type="text/javascript"></script>
+<script type="text/javascript">
+function seditor_insertunit(key, smilies) {
+ textarea = document.postform.message;
+ textarea.value += smilies;
+ jQuery('#needmessage').keyup();
+ textarea.focus();
+}
+var j = 1, smilies_fastdata = '',  img, seditorkey = "fastpost";
+for(i = 0;i < smilies_fast.length; i++) {
+if(j == 0) {
+smilies_fastdata += '<tr>';
+}
+j = ++j > 10 ? 0 : j;
+s = smilies_array[smilies_fast[i][0]][smilies_fast[i][1]][smilies_fast[i][2]];
+smilieimg = "static/" + 'image/smiley/' + smilies_type['_' + smilies_fast[i][0]][1] + '/' + s[2];
+smilies_fastdata += s ? '<td onclick="' + (typeof wysiwyg != 'undefined' ? 'insertSmiley(' + s[0] + ')': 'seditor_insertunit(\'' + seditorkey + '\', \'' + s[1].replace(/'/, '\\\'') + '\')') +
+'" ><img src="' + smilieimg + '" />' : '<td>';
+}
+</script>
+<!--{/if}-->
+
+<script type="text/javascript">
+(function() {
+
+	var isOperaMini = Object.prototype.toString.call(window.operamini) === "[object OperaMini]";
+	if (isOperaMini == true){
+		$("button#postsubmit").attr({"class":"btn_pn btn_pn_blue", "disable":"false"});
+	}
+	else {
+		var needsubject = needmessage = false;
+
+		<!--{if $_GET[action] == 'reply'}-->
+			needsubject = true;
+		<!--{elseif $_GET[action] == 'edit'}-->
+			needsubject = needmessage = true;
+		<!--{/if}-->
+
+		<!--{if $_GET[action] == 'newthread' || ($_GET[action] == 'edit' && $isfirstpost)}-->
+		$('#needsubject').on('keyup input', function() {
+			var obj = $(this);
+			if(obj.val()) {
+				needsubject = true;
+				if(needmessage == true) {
+					$('.btn_pn').removeClass('btn_pn_grey').addClass('btn_pn_blue');
+					$('.btn_pn').attr('disable', 'false');
+				}
+			} else {
+				needsubject = false;
+				$('.btn_pn').removeClass('btn_pn_blue').addClass('btn_pn_grey');
+				$('.btn_pn').attr('disable', 'true');
+			}
+		});
+		<!--{/if}-->
+		$('#needmessage').on('keyup input', function() {
+			var obj = $(this);
+			if(obj.val()) {
+				needmessage = true;
+				if(needsubject == true) {
+					$('.btn_pn').removeClass('btn_pn_grey').addClass('btn_pn_blue');
+					$('.btn_pn').attr('disable', 'false');
+				}
+			} else {
+				needmessage = false;
+				$('.btn_pn').removeClass('btn_pn_blue').addClass('btn_pn_grey');
+				$('.btn_pn').attr('disable', 'true');
+			}
+		});
+
+	       $('#price').on('keyup input', function() {
+			var obj = $(this);
+			
+			if(obj.val()) {
+				needmessage = true;
+				if(needsubject == true) {
+					$('.btn_pn').removeClass('btn_pn_grey').addClass('btn_pn_blue');
+					$('.btn_pn').attr('disable', 'false');
+				}
+			} else {
+				needmessage = false;
+				$('.btn_pn').removeClass('btn_pn_blue').addClass('btn_pn_grey');
+				$('.btn_pn').attr('disable', 'true');
+			}
+		});
+
+		$('#needmessage').on('scroll', function() {
+			var obj = $(this);
+			if(obj.scrollTop() > 0) {
+				obj.attr('rows', parseInt(obj.attr('rows'))+2);
+			}
+		}).scrollTop($(document).height());
+	}
+})();
+</script>
+<script type="text/javascript" src="{STATICURL}js/mobile/ajaxfileupload.js?{VERHASH}"></script>
+<script type="text/javascript" src="{STATICURL}js/mobile/buildfileupload.js?{VERHASH}"></script>
+<script type="text/javascript">
+	var imgexts = typeof imgexts == 'undefined' ? 'jpg, jpeg, gif, png' : imgexts;
+
+	var file_chk = true;
+
+	var STATUSMSG = {
+		'-1' : '{lang uploadstatusmsgnag1}',
+		'0' : '{lang uploadstatusmsg0}',
+		'1' : '{lang uploadstatusmsg1}',
+		'2' : '{lang uploadstatusmsg2}',
+		'3' : '{lang uploadstatusmsg3}',
+		'4' : '{lang uploadstatusmsg4}',
+		'5' : '{lang uploadstatusmsg5}',
+		'6' : '{lang uploadstatusmsg6}',
+		'7' : '{lang uploadstatusmsg7}(' + imgexts + ')',
+		'8' : '{lang uploadstatusmsg8}',
+		'9' : '{lang uploadstatusmsg9}',
+		'10' : '{lang uploadstatusmsg10}',
+		'11' : '{lang uploadstatusmsg11}'
+	};
+	var form = $('#postform');
+	$(document).on('change', '#filedata', function() {
+
+			if (isOperaMini == true){
+                		$("button#postsubmit").attr({"class":"btn_pn btn_pn_blue", "disable":"false"});
+		        }
+
+			popup.open('<img src="' + IMGDIR + '/imageloading.gif">');
+
+			uploadsuccess = function(data) {
+				if(data == '') {
+					popup.open('{lang uploadpicfailed}', 'alert');
+				}
+				var dataarr = data.split('|');
+				if(dataarr[0] == 'DISCUZUPLOAD' && dataarr[2] == 0) {
+					popup.close();
+					$('#imglist').append('<li><span aid="'+dataarr[3]+'" class="del"><a href="javascript:;"><img src="{STATICURL}image/mobile/images/icon_del.png"></a></span><span class="p_img"><a href="javascript:;"><img style="height:54px;width:54px;" id="aimg_'+dataarr[3]+'" title="'+dataarr[6]+'" src="{$_G[setting][attachurl]}forum/'+dataarr[5]+'" /></a></span><input type="hidden" name="attachnew['+dataarr[3]+'][description]" /></li>');
+				} else {
+					var sizelimit = '';
+					if(dataarr[7] == 'ban') {
+						sizelimit = '{lang uploadpicatttypeban}';
+					} else if(dataarr[7] == 'perday') {
+						sizelimit = '{lang donotcross}'+Math.ceil(dataarr[8]/1024)+'K)';
+					} else if(dataarr[7] > 0) {
+						sizelimit = '{lang donotcross}'+Math.ceil(dataarr[7]/1024)+'K)';
+					}
+					popup.open(STATUSMSG[dataarr[2]] + sizelimit, 'alert');
+				}
+			};
+
+			if(typeof FileReader != 'undefined' && this.files[0]) {//note 支持html5上传新特性
+
+				ext_name = this.files[0].name.split(".");
+
+                                if ( ext_name.length = 1 || imgexts.indexOf(ext_name.pop()) > -1)
+				{		
+					$.buildfileupload({
+						uploadurl:'misc.php?mod=swfupload&operation=upload&type=image&inajax=yes&infloat=yes&simple=2',
+						files:this.files,
+						uploadformdata:{uid:"$_G[uid]", hash:"<!--{eval echo md5(substr(md5($_G[config][security][authkey]), 8).$_G[uid])}-->"},
+						uploadinputname:'Filedata',
+						maxfilesize:"$swfconfig[max]",
+						success:uploadsuccess,
+						error:function() {
+							popup.open('{lang uploadpicfailed}', 'alert');
+						}
+					});
+				}
+				else{
+					file_chk = false;
+					popup.open('It is not a picture!','Galert');
+				}
+
+			} else {
+
+				$.ajaxfileupload({
+					url:'misc.php?mod=swfupload&operation=upload&type=image&inajax=yes&infloat=yes&simple=2',
+					data:{uid:"$_G[uid]", hash:"<!--{eval echo md5(substr(md5($_G[config][security][authkey]), 8).$_G[uid])}-->"},
+					dataType:'text',
+					fileElementId:'filedata',
+					success:uploadsuccess,
+					error: function() {
+						popup.open('{lang uploadpicfailed}', 'alert');
+					}
+				});
+
+			}
+		return file_chk;
+	});
+
+	<!--{if 0 && $_G['setting']['mobile']['geoposition']}-->
+	geo.getcurrentposition();
+	<!--{/if}-->
+	$('#postsubmit').on('click', function() {
+		var obj = $(this);
+		if(obj.attr('disable') == 'true') {
+			return false;
+		}
+	
+		if($("#needsubject").val().length < 5) {
+         	   popup.open('Thread title should be at least 5 digits.<br />Please try again with a new title after press surroundings.');
+	            return false;
+	        }
+	        if($("#needmessage").val().length < 10) {
+        	    popup.open('Thread content should be at least 10 digits.Please try again with a new content.', 'alert');
+	            return false;
+        	}
+		obj.attr('disable', 'true').removeClass('btn_pn_blue').addClass('btn_pn_grey');
+	
+		if ($("#price").val() > 30){
+                        popup.open("Thread max price is 30.","Galert");
+                        return false;
+                }
+	
+		popup.open('<img src="' + IMGDIR + '/imageloading.gif">');
+
+		var postlocation = '';
+		if(geo.errmsg === '' && geo.loc) {
+			postlocation = geo.longitude + '|' + geo.latitude + '|' + geo.loc;
+		}
+
+		$.ajax({
+			type:'POST',
+			url:form.attr('action') + '&geoloc=' + postlocation + '&handlekey='+form.attr('id')+'&inajax=1',
+			data:form.serialize(),
+			dataType:'xml'
+		})
+		.success(function(s) {
+			popup.open(s.lastChild.firstChild.nodeValue);
+		})
+		.error(function() {
+			popup.open('{lang networkerror}', 'alert');
+		});
+		return false;
+	});
+
+	$(document).on('click', '.del', function() {
+		var obj = $(this);
+		$.ajax({
+			type:'GET',
+			url:'forum.php?mod=ajax&action=deleteattach&inajax=yes&aids[]=' + obj.attr('aid')
+		})
+		.success(function(s) {
+			obj.parent().remove();
+		})
+		.error(function() {
+			popup.open('{lang networkerror}', 'alert');
+		});
+		return false;
+	});
+
+</script>
+<!--{template common/footer}-->

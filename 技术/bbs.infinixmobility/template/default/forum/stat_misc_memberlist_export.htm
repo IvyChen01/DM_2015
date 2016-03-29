@@ -1,0 +1,12 @@
+<!--{if $op == 'memberlist'}-->
+	Member Stat- {$nationality}
+	<!--{echo "\r\n";}-->
+	{$primarybegin} {lang stats_modworks_to} {$primaryend} member statistics
+	<!--{echo "\r\n";}-->
+	username,uid,nationality,gender,regdate,last visit,threads,posts,xpoints,total online
+	<!--{echo "\n";}-->
+	<!--{loop $memberlist $member}-->
+		$member[username],$member[uid],$member[nationality],<!--{if $member['gender'] == '1'}-->{lang male}<!--{elseif $member['gender'] == 2}-->{lang female}<!--{else}-->&nbsp;<!--{/if}-->,$member[regdate],$member[lastvisit],$member[threads],$member[posts],$member[credits],$member[oltime]
+		<!--{echo "\n";}-->
+	<!--{/loop}-->
+<!--{/if}-->

@@ -1,0 +1,96 @@
+<!--{subtemplate common/header_common}-->
+
+<div style="background:#fff;min-height:300px;">
+    <div class="ct">
+
+        <!--{if $_G['setting']['version'] != 'X2'}-->
+        <!--{if helper_access::check_module('follow')}-->
+        <!--{if $_G['forum']['fid'] == $follows }-->
+        <!--{eval header("location: home.php?mod=follow"); }-->
+        <!--{/if}-->
+        <!--{/if}-->
+        <!--{/if}-->
+        <!--{hook/viewthread_top_mobile}-->
+
+        <!--{if count($postlist) > 1}-->	
+        <!--{eval $postlist = array_slice($postlist,0,1);}-->
+        <!--{/if}-->
+        <!--{eval $post=array_pop($postlist);}-->
+
+        <h1 class="vt_th"><a>$post[subject]</a></h1>
+        <div class="usr user_first">
+            <span class="p_usr">
+                <!--{if $post['authorid'] && $post['username'] && !$post['anonymous']}--> 
+                <span>{avatar($post[authorid],'small')}</span>
+                <span class="nick">$post[author]</span>
+                {eval $thread_author_info = getuserbyuid($_G[forum_thread][authorid]);}				
+                <span class="group">-{$_G['cache']['usergroups'][$thread_author_info['groupid']]['grouptitle']}</span>
+                <!--{else}--> 
+                <!--{if !$post['authorid']}--> 
+                <span class="nick">{lang guest} <em>$post[useip]</em></span>
+                <!--{elseif $post['authorid'] && $post['username'] && $post['anonymous']}--> 
+                <!--{if $_G['forum']['ismoderator']}--> 
+                <span class="nick">{lang anonymous}</span>
+                <!--{else}--> 
+                {lang anonymous} 
+                <!--{/if}--> 
+                <!--{else}--> 
+                $post[author] <em>{lang member_deleted}</em> 
+                <!--{/if}--> 
+                <!--{/if}-->
+            </span>
+
+            <span class="p_dl"> 
+                <!--{if $post['authorid'] && !$post['anonymous']}--> 
+                <em id="authorposton$post[pid]"><!--{if $post['first']}-->{echo date('Y-m-d H:i',$post['dbdateline']);}<!--{else}-->{echo date('m-d H:i',$post['dbdateline']);}<!--{/if}--></em> 
+                <!--{elseif $post['authorid'] && $post['username'] && $post['anonymous']}--> 
+
+                <em id="authorposton$post[pid]"><!--{if $post['first']}-->{echo date('Y-m-d H:i',$post['dbdateline']);}<!--{else}-->{echo date('m-d H:i',$post['dbdateline']);}<!--{/if}--></em> 
+                <!--{elseif !$post['authorid'] && !$post['username']}--> 
+
+                <em id="authorposton$post[pid]"><!--{if $post['first']}-->{echo date('Y-m-d H:i',$post['dbdateline']);}<!--{else}-->{echo date('m-d H:i',$post['dbdateline']);}<!--{/if}--></em> 
+                <!--{/if}--> 
+            </span> 
+        </div>
+        <div class="pbody">
+            <div class="mes">
+
+                <!--{if !$_G[forum_thread][special]}-->
+                <div id="postmessage_$post[pid]" class="postmessage">$post[message]</div>
+                <!--{elseif $_G[forum_thread][special] == 1}--> 
+                <!--{template forum/viewthread_poll}--> 
+                <!--{elseif $_G[forum_thread][special] == 2}--> 
+                <!--{template forum/viewthread_trade}--> 
+                <!--{elseif $_G[forum_thread][special] == 3}--> 
+                <!--{template forum/viewthread_reward}--> 
+                <!--{elseif $_G[forum_thread][special] == 4}--> 
+                <!--{template forum/viewthread_activity}--> 
+                <!--{elseif $_G[forum_thread][special] == 5}--> 
+                <!--{template forum/viewthread_debate}--> 
+                <!--{elseif $threadplughtml}--> 
+                $threadplughtml
+                <div id="postmessage_$post[pid]" class="postmessage">$post[message]</div>
+                <!--{else}-->
+                <div id="postmessage_$post[pid]" class="postmessage">$post[message]</div>
+                <!--{/if}--> 
+
+                <!--{if $post['attachment']}-->
+
+                <!--{elseif $post['imagelist'] || $post['attachlist']}--> 
+                <!--{if $post['imagelist']}--> 
+                {echo showattach($post, 1)} 
+                <!--{/if}--> 
+                <!--{if $post['attachlist']}--> 
+                {echo showattach($post)} 
+                <!--{/if}--> 
+                <!--{/if}--> 
+                <!--{hook/viewthread_useraction_mobile}-->
+            </div>
+        </div>
+
+        <!--{hook/viewthread_bottom_mobile}-->
+
+
+    </div>
+</div>
+<div style="display:none;"><!--{if $_G['setting']['statcode']}-->$_G['setting']['statcode']<!--{/if}--></div>

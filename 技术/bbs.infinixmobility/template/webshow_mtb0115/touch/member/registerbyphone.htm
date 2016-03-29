@@ -1,0 +1,156 @@
+<!--{template common/header}-->
+<!-- registerbox start -->
+<script type="text/javascript">
+    function verificationPhone(){
+        var phone = jQuery('#phone').attr('value');
+        var nick = jQuery('#nick').attr('value');
+        var email = jQuery('#email').attr('value');
+        var flag = false;
+        if(phone==''){
+            jQuery('#mobile_phone').css('color','red');
+            jQuery('#mobile_phone').html('Mobile phone format is not correct');
+            /*return;*/
+            flag = true;
+         } else {
+            jQuery('#mobile_phone').css('color','green');
+            jQuery('#mobile_phone').html('Correct');
+        }
+       if(nick.length < 3 || nick.length > 16 || (!nick.match(/^[a-zA-Z0-9_]{3,16}$/ ))){ 
+        	jQuery('#nick_name').css('color','red');
+        	jQuery('#nick_name').html('nickName format is not correct');
+        	/*return;*/
+        	flag = true;
+        } else {
+        	jQuery('#nick_name').css('color','green');
+        	jQuery('#nick_name').html('Correct');
+        }
+       if(!email.match(/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/) || email.length >=25){
+    	   jQuery('#email_name').css('color','red');
+    	   jQuery('#email_name').html('emil format is not correct');
+    	   flag = true;
+       } else {
+    	   jQuery('#email_name').css('color','green');
+    	   jQuery('#email_name').html('Correct');
+       }
+       if(flag){
+    	   return;
+       } 
+        //window.location.href='member.php?mod=verification&mobile=2&mobile_phone='+phone;
+      window.location.href='member.php?mod=verification&mobile=2&mobile_phone='+phone+'&email='+email+'&nick='+nick;
+        return ;
+    }
+    </script>
+<div class="loginbox registerbox">
+	<div class="logo-box">
+		<a href="forum.php?mod=forumdisplay&fid=37&mobile=2"><img
+			src="template/webshow_mtb0115/touch/img/logo_regester.png" alt="" /></a>
+	</div>
+	<div class="login_from">
+		<form method="post" autocomplete="off" name="register"
+			id="registerform" action="member.php?mod=registerbyphone&mobile=2">
+			<input type="hidden" name="regsubmit" value="yes" /> <input
+				type="hidden" name="formhash" value="{FORMHASH}" />
+			<!--{eval $dreferer = str_replace('&amp;', '&', dreferer());}-->
+			<input type="hidden" name="referer" value="$dreferer" /> <input
+				type="hidden" name="activationauth"
+				value="{if $_GET[action] == 'activation'}$activationauth{/if}" /> <input
+				type="hidden" name="agreebbrule" value="$bbrulehash"
+				id="agreebbrule" checked="checked" />
+			<ul>
+				<!-- {if $_G['setting']['phone_verification'] } -->
+				<li><input type="text" tabindex="1" class="px p_fre" size="30"
+					name="{$_G['setting']['reginput']['password']}" value="Password"
+					fwin="login"
+					onfocus="if(this.value==defaultValue) {this.value='';} this.type = 'password';"
+					onblur="if(!value) {value=defaultValue;this.type = 'text';}"/>
+					<p class="val-note">Password must combine numbers and letters,
+						at least 6 digits, case sensitive.</p></li>
+				<li><input type="text" tabindex="2" class="px p_fre" size="30"
+					name="{$_G['setting']['reginput']['password2']}"
+					value="Confirm Password" fwin="login"
+					onfocus="if(this.value==defaultValue) {this.value='';} this.type = 'password';"
+					onblur="if(!value) {value=defaultValue;this.type = 'text';}">
+					<p class="val-note">Please enter the confirmation password</p></li>
+				<!--{/if}-->
+				<li class="bl_none">
+					<!--{if $_G['setting']['phone_verification'] }--> 
+					<p>
+						phone : <input type="text" tabindex="3" class="px p_fre" size="20"
+							autocomplete="off" id='phone' name="phone"
+							value="{$_G['setting']['mobile_phone']}" readonly fwin="login"
+							onfocus="if(this.value==defaultValue) {this.value='';}"
+							onblur="if(!value) {value=defaultValue; ;}">
+					</p>
+					<p>
+						nickName : <input type="text" tabindex="3" class="px p_fre"
+							size="17" autocomplete="off" id='nick' name="nick"
+							value="{$_G['setting']['nick_name']}" readonly fwin="login"
+							onfocus="if(this.value==defaultValue) {this.value='';}"
+							onblur="if(!value) {value=defaultValue; ;}">
+					</p>
+
+					<p>
+						email : <input type="text" tabindex="3" class="px p_fre" size="21"
+							autocomplete="off" id='email' name="email"
+							value="{$_G['setting']['email']}" readonly fwin="login"
+							onfocus="if(this.value==defaultValue) {this.value='';}"
+							onblur="if(!value) {value=defaultValue; ;}">
+					</p> 
+					<!-- <div class="btn_register"><button tabindex="7" value="true" name="regsubmit" type="submit" class="formdialog pn pnc"><span>Register</span></button></div> -->
+					<!-- {else} -->
+					<p>
+						phone : <input type="text" tabindex="3" class="px p_fre" size="20"
+							autocomplete="off" id='phone' name="phone"
+							value="{$_G['setting']['mobile_phone']}" fwin="login"
+							onfocus="if(this.value==defaultValue) {this.value='';}"
+							onblur="if(!value) {value=defaultValue; ;}">
+					</p>
+					<p class="val-note" id='mobile_phone'>Please enter the digit
+						phone number 8 to 13</p>
+					<p>
+						nickName : <input type="text" tabindex="3" class="px p_fre"
+							size="17" autocomplete="off" id='nick' name="nick" value="">
+					</p>
+					<p class="val-note" id='nick_name'>Please enter the correct
+						nickname (3 to 16 characters)</p>
+					<p>
+						email : <input type="text" tabindex="3" class="px p_fre" size="21"
+							autocomplete="off" id='email' name="email" value="">
+					</p>
+					<p class="val-note" id='email_name'>Please enter the correct
+						mailbox number (less than 25 characters)</p>
+
+					<div class="btn_register">
+						<button name="regbutton" onclick="verificationPhone()"
+							type="button" class="pn pnc">
+							<span>Verification Code</span>
+						</button>
+					</div> 
+					<!--{/if}-->
+				</li>
+				<!--{if empty($invite) && ($_G['setting']['regstatus'] == 2 || $_G['setting']['regstatus'] == 3)}-->
+				<li><input type="text" name="invitecode" autocomplete="off"
+					tabindex="4" class="px p_fre" size="30" value="{lang invite_code}"
+					placeholder="{lang invite_code}" fwin="login"></li>
+				<!--{/if}-->
+				<!--{if $_G['setting']['regverify'] == 2}-->
+				<li><input type="text" name="regmessage" autocomplete="off"
+					tabindex="5" class="px p_fre" size="30"
+					value="{lang register_message}"
+					placeholder="{lang register_message}" fwin="login"></li>
+				<!--{/if}-->
+			</ul>
+	</div>
+	<!--{if $_G['setting']['phone_verification'] }-->
+	<div class="btn_register">
+		<button tabindex="6" value="true" name="regsubmit" type="submit"
+			class="pn pnc">
+			<span>Register</span>
+		</button>
+	</div>
+	<!--{/if}-->
+	</form>
+</div>
+<!-- registerbox end -->
+
+<!--{eval updatesession();}-->

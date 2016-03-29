@@ -1,0 +1,76 @@
+<!--{if $param['login']}-->
+	<!--{if $_G['inajax']}-->
+	<!--{eval dheader('Location:member.php?mod=logging&action=login&inajax=1&infloat=1');exit;}-->
+	<!--{else}-->
+	<!--{eval dheader('Location:member.php?mod=logging&action=login');exit;}-->
+	<!--{/if}-->
+<!--{/if}-->
+<!--{template common/header}-->
+<!--{if $_G['inajax']}-->
+<div class="tip" style="height:150px;">
+	<dt id="messagetext">
+		<p>$show_message</p>
+        <!--{if $_G['forcemobilemessage']}-->
+        	<p >
+            	<a href="forum.php?mod=guide&view=hot" class="mtn">null_101</a>
+            </p>
+        <!--{/if}-->
+		<!--{if $url_forward && !$_GET['loc']}-->
+			<!--<p><a class="grey" href="$url_forward">{lang message_forward_mobile}</a></p>-->
+			<script type="text/javascript">
+				setTimeout(function() {
+					window.location.href = '$url_forward';
+				}, '3000');
+			</script>
+		<!--{elseif $allowreturn}-->
+			<p><input type="button" class="button" onclick="popup.close();" value="Dismiss" style="background: #28a0de;border-radius: 4px;margin-top: 10px;"></p>
+		<!--{/if}-->
+	</dt>
+</div>
+<!--{else}-->
+<!--null_102-->
+<!-- main jump start -->
+<div class="jump_c">
+	<p>$show_message in 3 seconds</p>
+    <!--{if $_G['forcemobilemessage']}-->
+		<p>
+            <a href="forum.php?mod=guide&view=hot" class="mtn">null_103</a>
+        </p>
+    <!--{/if}-->
+	<!--{if $url_forward}-->
+		<p><a class="grey" href="$url_forward">Click here to skip.</a></p>
+	<!--{elseif $allowreturn}-->
+		<p><a class="grey" href="javascript:history.back();">{lang message_go_back} </a></p>
+	<!--{/if}-->
+</div>
+<script>
+window.setTimeout(function(){
+var lastPage = document.referrer;
+
+if(lastPage == undefined) lastPage = 'forum.php?mod=forumdisplay&fid=41&mobile=2';
+
+var mes = "\"$show_message\"";
+if(lastPage.indexOf('login') > -1 && mes.indexOf('failed') < 0){    //If login susscess && lastPage is login,Jump into home page
+        window.location.href = 'touch_index.php?mobile=2';
+}
+
+else if(lastPage.indexOf('register') > -1){
+//window.location.href = 'forum.php?mod=forumdisplay&fid=37&mobile=2';
+window.location.href = 'member.php?mod=logging&action=login&mobile=2';
+}
+
+else if(lastPage.indexOf('pay') > -1 && mes.indexOf('Buy thread successfully') > -1 ){
+	window.location.href = 'forum.php?mod=viewthread&tid=<?=$_GET[tid]?>';
+}
+
+else {
+//window.location.href = lastPage;
+window.location.href = "$url_forward";
+}
+
+},3000);
+</script>
+<!-- main jump end -->
+
+<!--{/if}-->
+<!--{template common/footer}-->

@@ -1,0 +1,99 @@
+/**/
+body, #mwp, #mcontent { background:#FFF!important;}
+
+
+/*TAB 切换*/
+.th_tab { margin:10px 5px 0 5px;}
+.th_tab a { display:block; float:left; height:25px; line-height:25px; margin:0 5px 0 0; border:1px solid #E4E4E4; padding:0 10px; border-radius:5px; background:url(../p_tab.png) 0 0 repeat-x; cursor:pointer; }
+.th_tab a.on { background:#1A8FF2; color:#FFF;}
+.th_tab a.onn { background:#FF7777; color:#FFF;}
+.th_np { display:none;}
+
+/*群组推荐*/
+.wap_p4 { margin:10px 0 0 0; background:#FFF; }
+    .wap_p4 h2 { height:30px; line-height:30px; color:#262626; margin:0 0 10px 0; padding:0 10px; border:1px solid #DFE1E3; border-left:0; border-right:0; background:#F4F6F8; font-weight:normal;}
+	.wap_p4 dl { height:45px; padding:0 0 5px 65px; margin:0 0 5px 0; border-bottom:1px solid #E8EAEB; position:relative; overflow:hidden; background:url(../forum_icon_r.png) 100% center no-repeat;}
+	.wap_p4 dt { position:absolute; left:10px; top:0px; width:45px; height:45px; overflow:hidden;}
+	    .wap_p4 dt img { width:45px; height:45px; border-radius:23px;}
+	.wap_p4 .dd1 { height:28px; line-height:28px; overflow:hidden;}
+	    .wap_p4 .dd1 a { color:#262626; font-size:14px;}
+	.wap_p4 .dd2 { height:17px; padding:0 40px 0 0; overflow:hidden; color:#999;}
+	
+/*群组首页*/
+#box_a2, #box_a3 { margin:10px 0 0 0; background:#FFF;}
+#box_a2 h2, #box_a3 h2 { height:30px; line-height:30px; color:#262626; margin:0 0 10px 0; padding:0 10px; border:1px solid #DFE1E3; border-left:0; border-right:0; background:#F4F6F8; font-weight:normal;}
+
+#box_a2 dl { padding:6px; border-bottom:1px solid #E8EAEB;}
+#box_a2 dl dt strong a { color:#FF5500; font-size:14px;}
+#box_a2 dl dt .xg1 { color:#FF5500; margin:0 0 0 3px;}
+#box_a2 dl dt span a { color:#999;}
+#box_a2 dl dd a { font-size:12px; display:block; float:left; margin:0 5px 5px 0; height:20px; line-height:20px; padding:0 5px; background:#DDD; color:#666; border-radius:3px;}
+
+#box_a3 ul { }
+#box_a3 ul li { padding:5px 10px; border-bottom:1px dashed #E8EAEB; position:relative;}
+#box_a3 ul li a { font-size:14px; }
+#box_a3 ul li span { position:absolute; top:0px; right:10px; display:block; background:#FF7777; padding:2px 8px; color:#FFF; border-radius:5px;}
+
+/*群组分类列表*/
+.g_list { background:#FFF;}
+.g_list .h2_title { height:30px; line-height:30px; color:#262626; margin:0 0 10px 0; padding:0 10px; border:1px solid #DFE1E3; border-left:0; border-right:0; background:#F4F6F8; font-weight:normal;}
+
+.g_cat_list { margin:10px 10px 5px 10px;}
+.g_cat_list a { font-size:12px; display:block; float:left; margin:0 5px 5px 0; height:20px; line-height:20px; padding:0 5px; background:#DDD; color:#666; border-radius:3px;}
+
+.g_list_c { padding:0 10px;}
+.g_list_c th, .g_list_c td { vertical-align:top; padding:5px 0 0 0;}
+.g_list_c th { width:60px; border-bottom:1px solid #EEE;}
+    .g_list_c th img { width:50px; height:50px; border-radius:25px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);}
+.g_list_c td { border-bottom:1px solid #EEE;}
+.g_list_c dt a { font-size:14px; color:#FF5500;}
+.g_list_c .dd3 { color:#999;}
+
+/*我的群组 帖子列表*/
+.mfmlist2 { margin:5px 0 0 0; }
+.mfmlist2 ul li ul, .mfmlist2 ul li p { display:block;}
+
+.mfmlist2 .li_main { padding:10px 1px 1px 1px; margin:0 5px 8px 5px; border:1px solid #D6D8D9; background:#FFF; border-radius:5px; position:relative; overflow:hidden; box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);}
+.mfmlist2 dt { }
+    .mfmlist2 dt span { display:block; font-size:16px; line-height:120%; padding:0 10px; margin:0 0 5px 0; }
+	.mfmlist2 dt span em, .mfmlist2 dt span a { display:block; float:left;}
+    .mfmlist2 dt span a { color:#000;}
+	.mfmlist2 dt span em { font-size:12px; border-radius:3px; height:15px; line-height:15px; padding:0 3px; margin:0 3px 0 0; border:1px solid #1D78C6; color:#1D78C6;}
+	.mfmlist2 dt p { font-size:14px; color:#999; line-height:130%; margin:5px 10px 10px 10px; color:#545454;}
+.mfmlist2 dd { height:30px; line-height:30px; margin:7px 0 0 0; padding:0 10px; border-top:1px dotted #E4E4E4; overflow:hidden;}
+    .mfmlist2 dd span { display:block;}
+    .mfmlist2 dd span, .wap_p dd span a { color:#B2B3B5;}
+	.mfmlist2 dd span em { margin:0 0 0 10px;}
+    .mfmlist2 dd .s1 { float:left;}
+    .mfmlist2 dd .s2 { float:right; padding:0 0 0 20px; color:#1D78C6; background:url(../p_list_icon_2.png) 0 center no-repeat;}
+
+/*成员列表*/
+.gmlist { margin:10px;}
+.gmlist li { float:left; width:68px; height:73px; text-align:center; overflow:hidden; margin:0 10px 10px 0;}
+.gmlist li img { width:48px; height:48px; border-radius:24px;}
+.gmlist li p { padding:0px; margin:0px; height:25px; width:68px; overflow:hidden;}
+
+.gmlist_admin li{ height:100px;}
+
+
+/*群组管理 主题分类设置界面*/
+.cc_group_type_c { margin:10px; background:#FFF; border:1px solid #DDD;}
+    .cc_group_type_c textarea { border:1px solid #EEE; background:#F8F8F8; padding:5px; color:#999;}
+	.cc_group_type_c input { border:1px solid #EEE; background:#F8F8F8; padding:5px; color:#999;}
+	.cc_group_type_c select { border:1px solid #EEE; background:#F8F8F8; padding:5px; color:#999;}
+	.cc_group_type_c button { vertical-align:middle;}
+	
+	.cc_group_type_c th { padding:0 5px; text-align: center; border-bottom:1px solid #EEE; border-right:1px solid #EEE; background:#F8F8F8;}
+	.cc_group_type_c td { padding:5px; border-bottom:1px solid #EEE;}
+	.cc_group_type_c td p { color:#999;}
+	
+	.cc_group_type_c .td_input_none input { padding:0px; margin:0px; border:none; background:none; width:150px;}
+	
+/*群组转让*/
+.mg_zr { }
+.mg_zr_tip { }
+.mg_zr_tip p { margin:0 10px;}
+.mg_zr_tip h2 { height:30px; line-height:30px; color:#262626; margin:0 0 10px 0; padding:0 10px; border:1px solid #DFE1E3; border-left:0; border-right:0; background:#F4F6F8; font-weight:normal; position:relative;}
+.mg_zr_tip h2 i { color:#FF5500;}
+.mg_zr_tip h2 span { position:absolute; top:0px; right:10px;}
+.mg_zr_tip h2 span a { color:#999;}

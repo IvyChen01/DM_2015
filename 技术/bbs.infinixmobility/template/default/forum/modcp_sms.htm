@@ -1,0 +1,79 @@
+
+<div class="bm bw0 mdcp">
+	<h1 class="mt">Send message</h1>
+	<form method="post" autocomplete="off" action="{$cpscript}?mod=modcp&action=$_GET[action]" id="list_adminnote">
+		<input type="hidden" name="formhash" value="{FORMHASH}" />
+		<input type="hidden" name="op" value="addsms" />
+		<div class="exfm">
+			<table cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td rowspan="2" width="75%"><textarea name="newmessage" class="pt" rows="5" style="width: 95%; height: 120px;"></textarea></td>
+					<td width="25%">
+						<ul>
+							<li>To:</li>
+<!--vot-->					<li><select name="nation" id="nation_id" width="168" class="ps">
+								    <option value="">select country</option>
+								    <!--{loop $nation_arr $id $nation}-->
+								    <option value="$id">$nation['name']</option>
+								    <!--{/loop}-->
+							    </select>
+							 </li>
+							 <li>Remark:</li>
+							 <li><textarea name="remark" class="pt" rows="2" ></textarea></li>
+<!--vot-->						
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- <p>{lang expire}:
+							<label><input type="text" id="newexpiration" name="newexpiration" autocomplete="off" value="30" class="px" tabindex="1" size="2" /> {lang days}</label>
+						</p> -->
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit" class="pn" name="submit" value="true"><strong>Send message</strong></button></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>
+<!-- {if $flag} -->
+<div style="color:red">Total send <strong>{$i}</strong> message,cost <strong>{$total}</strong> EUR</div>
+<!-- {/if} -->
+<div class="bm bw0 mdcp">
+	
+	
+	<!--{if !empty($messagelist)}-->
+		 <h2 class="mtm mbm">Message list</h2>
+			<table id="list_modcp_logs" cellspacing="0" cellpadding="0" class="dt">
+				<thead>
+					<tr>
+					    <th width="10%">id</th>
+						<th width="12%">time</th>
+						<th width="15%">username</th>
+						<th width="15%">nation</td>
+						<th width="15%">phone</th>
+						<th width="13%">moderator</th>
+						<th width="20%">remark</th>
+					</tr>
+				</thead>
+				<!--{if $search_data}-->
+					<!--{loop $search_data $message}-->
+						<tr>
+							<td>$message['id']</td>
+							<td>$message['date']</td>
+							<td>$message['username']</td>
+							<td>$message['nation']</td>
+							<td>$message['phone']</td>
+							<td>$message['moderator']</td>
+							<td>$message['remark']</td>
+						</tr>
+					<!--{/loop}-->
+				<!--{else}-->
+					<tr><td colspan="6"><p class="emp">{lang search_nomatch}</p></td></tr>
+				<!--{/if}-->
+			</table>
+			<!--{if !empty($multipage)}--><div class="pgs cl mtm">$multipage</div><!--{/if}-->
+	<!--{/if}-->
+</div>

@@ -1,0 +1,82 @@
+<!--{template common/header}-->
+<!-- registerbox start -->
+<div class="loginbox registerbox">
+    <div class="logo-box">
+        <a href="forum.php?mod=forumdisplay&fid=37&mobile=2"><img src="template/webshow_mtb0115/touch/img/logo_regester.png" alt=""/></a>
+    </div>
+	<div class="login_from">
+		<form method="post" autocomplete="off" name="register" id="registerform" action="member.php?mod={$_G[setting][regname]}&mobile=2">
+		<input type="hidden" name="regsubmit" value="yes" />
+		<input type="hidden" name="formhash" value="{FORMHASH}" />
+		<!--{eval $dreferer = str_replace('&amp;', '&', dreferer());}-->
+		<input type="hidden" name="referer" value="$dreferer" />
+		<input type="hidden" name="activationauth" value="{if $_GET[action] == 'activation'}$activationauth{/if}" />
+		<input type="hidden" name="agreebbrule" value="$bbrulehash" id="agreebbrule" checked="checked" />
+		<ul>
+			<li>
+				<span class="opera_menu" style="display:none;font: 14px/1.5 Microsoft YaHei, Helvetica, sans-serif;float: left;width: 66px;color: #4DB74D;height: 40px;line-height: 40px;">username</span>
+				<input type="text" tabindex="1" class="px p_fre" size="30" autocomplete="off" name="{$_G['setting']['reginput']['username']}" placeholder="Username" fwin="login" onfocus="textfocus(this)" onblur="textblur(this)"/>
+		                <p class="val-note">Username should be 3-20 digits</p>
+		        </li>
+			<li>
+				<span class="opera_menu" style="display:none;font: 14px/1.5 Microsoft YaHei, Helvetica, sans-serif;float: left;width: 66px;color: #4DB74D;height: 40px;line-height: 40px;">password</span>
+				<input type="password" tabindex="2" class="px p_fre" size="30"  name="{$_G['setting']['reginput']['password']}" placeholder="Password" fwin="login"  onfocus="textfocus(this)" onblur="textblur(this)"/>
+		                <p class="val-note">Password must combine numbers and letters, at least 6 digits, case sensitive.</p>
+		        </li>
+			<li>
+				<span class="opera_menu" style="display:none;font: 14px/1.5 Microsoft YaHei, Helvetica, sans-serif;float: left;width: 66px;color: #4DB74D;height: 40px;line-height: 40px;">confirm password</span>
+				<input type="password" tabindex="3" class="px p_fre" size="30" name="{$_G['setting']['reginput']['password2']}" placeholder="Confirm Password" fwin="login" onfocus="textfocus(this)" onblur="textblur(this)"/>
+		        </li>
+			<li class="bl_none">
+				<span class="opera_menu" style="display:none;font: 14px/1.5 Microsoft YaHei, Helvetica, sans-serif;float: left;width: 66px;color: #4DB74D;height: 40px;line-height: 40px;">e-mail</span>
+				<input type="text" tabindex="4" class="px p_fre" size="30" autocomplete="off"  name="{$_G['setting']['reginput']['email']}" placeholder="Email Address" fwin="login" onfocus="textfocus(this)" onblur="textblur(this)"/>
+		                <p class="val-note">Use to reset password.</p>
+		        </li>
+			<!--{if empty($invite) && ($_G['setting']['regstatus'] == 2 || $_G['setting']['regstatus'] == 3)}-->
+				<li><input type="text" name="invitecode" autocomplete="off" tabindex="5" class="px p_fre" size="30" value="{lang invite_code}" placeholder="{lang invite_code}" fwin="login" onfocus="textfocus(this)" onblur="textblur(this)"></li>
+			<!--{/if}-->
+			<!--{if $_G['setting']['regverify'] == 2}-->
+				<li><input type="text" name="regmessage" autocomplete="off" tabindex="6" class="px p_fre" size="30" value="{lang register_message}" placeholder="{lang register_message}" fwin="login" onfocus="textfocus(this)" onblur="textblur(this)"></li>
+			<!--{/if}-->
+		</ul>
+		<!--{if $secqaacheck || $seccodecheck}-->
+			<!--{subtemplate common/seccheck}-->
+		<!--{/if}-->
+	</div>
+	<div class="btn_register"><button tabindex="7" value="true" name="regsubmit" type="submit" class="formdialog pn pnc"><span>Register</span></button></div>
+	</form>
+</div>
+<!-- registerbox end -->
+
+<!--{eval updatesession();}-->
+<script>
+	$(document).ready(function(){
+		 $("#float-open").css("display","none");
+		 
+	});
+</script>
+
+<script src="http://localhost/infinix1/source/language/en/lang_js.js"></script>
+<script>
+	$(".btn_register button").click(function(){
+		return charge_valid();
+	});
+	function charge_valid(){
+		if ($("input.px:first").val().length < 3 || $("input.px:first").val().length > 15){
+			popup.open("The length of username is invalid!","Galert");
+			return false;
+		}
+		else
+			return ;
+	}
+	function textfocus(o){
+        $('.login_from').css({position:"fixed",top:"50px",overflow-y:"auto"});
+        
+    }
+    function textblur(o){
+        o.style.position = 'static';
+        o.style.top = 'auto';
+    }
+</script>
+
+<!--{template common/footer}-->

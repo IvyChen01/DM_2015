@@ -1,0 +1,274 @@
+<!--{hook/global_footer_mobile}-->
+<!--{eval $useragent = strtolower($_SERVER['HTTP_USER_AGENT']);$clienturl = ''}-->
+<!--{if strpos($useragent, 'iphone') !== false || strpos($useragent, 'ios') !== false}-->
+<!--{eval $clienturl = $_G['cache']['mobileoem_data']['iframeUrl'] ? $_G['cache']['mobileoem_data']['iframeUrl'].'&platform=ios' : 'http://www.discuz.net/mobile.php?platform=ios';}-->
+<!--{elseif strpos($useragent, 'android') !== false}-->
+<!--{eval $clienturl = $_G['cache']['mobileoem_data']['iframeUrl'] ? $_G['cache']['mobileoem_data']['iframeUrl'].'&platform=android' : 'http://www.discuz.net/mobile.php?platform=android';}-->
+<!--{elseif strpos($useragent, 'windows phone') !== false}-->
+<!--{eval $clienturl = $_G['cache']['mobileoem_data']['iframeUrl'] ? $_G['cache']['mobileoem_data']['iframeUrl'].'&platform=windowsphone' : 'http://www.discuz.net/mobile.php?platform=windowsphone';}-->
+<!--{/if}-->
+
+<div id="mask" style="display:none;"></div>
+<!--{if !$nofooter}--><!--{/if}-->
+</div>
+<div class="b_blank"></div>
+
+<div id="ttoolbar">
+    <!--{if $_G['setting']['domain']['app']['mobile']}-->
+			{eval $nav = 'http://'.$_G['setting']['domain']['app']['mobile'];}
+		<!--{else}-->
+			{eval $nav = "forum.php";}
+    <!--{/if}-->
+    <div class="ttool cl">
+       
+        <div class="m_txt{if $_GET['mod'] == 'guide'} m_txt_logo{/if}">
+            {if $_GET['mod'] == 'guide'}
+            {elseif $_GET['mod'] == 'forumdisplay'}
+                <span>
+                    <a href="forum.php?mod=forumdisplay&fid={$_GET['fid']}&filter=lastpost&orderby=lastpost" class="sa1{if $_GET['filter'] == 'lastpost'} sa_cur{/if}">Discover</a><a href="forum.php?mod=forumdisplay&fid={$_GET['fid']}&mobile=2&filter=digest&digest=1" class="sa2{if $_GET['filter'] == 'digest'} sa_cur{/if}">HotTopic</a>
+                </span>
+            {elseif $_GET['mod'] == 'viewthread'}
+                Thread
+            {elseif $_GET['mod'] == 'logging'}   
+		{if $_GET['viewlostpw'] == '1' }
+			Forget Password
+		{else}
+			Login 
+		{/if}
+
+            {elseif $_GET['mod'] == 'tag'}   
+                Tag
+            {elseif $_GET['mod'] == 'post'}
+                 New Thread
+	    {elseif $_GET['mod'] == 'register'}
+                 Register	
+            {elseif $_GET['mod'] == 'spacecp'}
+                {if $_GET['ac'] == 'friend'}
+                        {if $_GET['op'] == 'changenum'}
+                            Hot Value
+                        {elseif $_GET['op'] == 'changegroup' || $_GET['op'] == 'group' || $_GET['op'] == 'groupname'}
+                            Friend Group
+                        {elseif $_GET['op'] == 'editnote'}
+                            Remark
+                        {elseif $_GET['op'] == 'ignore'}
+                            Ignore Friend
+                        {elseif $_GET['op'] == 'add'}
+                            Add Friend
+			{elseif $_GET['op'] == 'find'}
+                            Maybe Known
+			{elseif $_GET['op'] == 'request'}
+			    Friend Request
+                        {else}
+                            Friend
+                        {/if}
+		{elseif $_GET['ac'] == 'search'}
+                    Friend Search
+                {elseif $_GET['ac'] == 'poke'}
+                        {if $_GET['op'] == 'send'}
+                            Send Greeting
+                        {elseif $_GET['op'] == 'ignore'}
+                            Ignore Greeting
+                        {else}
+                            Greeting
+                        {/if}
+                {/if} 
+            {elseif $_G['basescript'] == 'search'}
+                Search
+            {elseif $_GET['do'] == 'pm'}
+                Pm
+            {elseif $_GET['do'] == 'profile'}
+                {if $_GET['mycenter'] == '1'}
+		    Setting
+		{else}
+		    Profile
+		{/if}
+	    {elseif $_GET['do'] == 'friend'}
+                Friend
+            {elseif $_G['basescript'] == 'forum'}
+                Forum
+            {else}
+                <a href="forum.php?mod=guide&view=hot">{$_G[setting][bbname]}</a>
+            {/if}
+        </div>
+        <div class="ttool_l">
+            {if $_GET['mod'] == 'guide'}
+            <a class="m_1" href="forum.php?forumlist=1"></a>
+            {elseif $_GET['mod'] == 'view'}
+            <a class="m_2" href="portal.php?mod=list&catid=$article[catid]&mobile=2"></a>
+            {else}
+            <a href="javascript:history.back();" class="m_2"></a>
+            <!--<a {if $_GET['mod'] == 'forumdisplay'}href="forum.php?forumlist=1"{elseif $_GET['mod'] == 'viewthread'}href="forum.php?mod=forumdisplay&fid=$_G[fid]"{else}onclick="javascript:history.back(-1);"{/if} class="m_2"></a>-->
+            {/if}
+        </div>
+        <div class="ttool_r">
+            {if !$_G[uid] && !$_G['connectguest']}
+            <!--<a href="javascript:void(0);" class="a_1 a_menu"></a>-->
+                <div id="signin_menu" class="{if $_GET['mod'] == 'forumdisplay' || $_GET['do'] == 'pm'}signin_menuv{/if}">
+                    <ul>
+                        <li><a href="member.php?mod=logging&action=login">Login</a></li>
+                        {if $_G['setting']['connect']['allow'] && !$_G['setting']['bbclosed']}
+                        <li><a href="$_G[connect][login_url]&statfrom=login_simple">login</a></li>
+                        {/if}
+                        {if $_G['setting']['regstatus']}
+                        <li><a href="member.php?mod={$_G[setting][regname]}">Register</a></li>
+                        {/if}
+                    </ul>
+                </div>
+            {elseif $_GET['mod'] !== 'viewthread'}
+            <!--<a href="javascript:void(0);" class="a_1 a_menu"></a>-->
+                <div id="signin_menu" class="{if $_GET['mod'] == 'forumdisplay' || $_GET['do'] == 'pm'}signin_menuv{/if}">
+                    <ul>
+                        <li><a href="home.php?mod=space&do=pm">Message{if $_G[member][newpm]}<i>(new)</i>{/if}</a></li>
+                        <li><a href="home.php?mod=space&do=notice">Notification{if $_G[member][newprompt]}<i>({$_G[member][newprompt]})</i>{/if}</a></li>
+                        <!--{if helper_access::check_module('doing')}-->
+                        <li><a href="home.php?mod=space&do=doing">˵˵</a></li>
+                        <!--{/if}-->
+                        <!--<li><a href="home.php?mod=medal">medal</a></li>-->
+                        <li><a href="misc.php?mod=tag">Tags</a></li>
+                        <!--{if $_G[uid]}-->
+                        <!--{if $webshow_group_link ==1}-->
+                        <li><a href="group.php?mod=my">My Group</a></li>
+                        <li><a href="forum.php?mod=group&action=create">Create New Group</a>
+                        <!--{/if}--> 
+                        <li><a href="home.php?mod=space&uid={$_G[uid]}&do=profile&mycenter=1">Profile Edit</a></li>
+                        <li><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">Sign Out</a></li>
+                        <!--{/if}-->  
+                    </ul>
+                </div>
+            {/if}
+            {if $_GET['mod'] == 'forumdisplay'}
+                <a href="forum.php?mod=post&action=newthread&fid=$_G[fid]" class="a_2"></a>
+            {elseif $_GET['mod'] == 'viewthread'}
+                {if $_G[uid]}<a href="forum.php?mod=post&action=newthread&fid=$_G[fid]" class="a_2"></a>{/if}
+			    <!--{if !IS_ROBOT && !$_GET['authorid'] && !$_G['forum_thread']['archiveid']}-->
+			    <!--<a href="forum.php?mod=viewthread&tid=$_G[tid]&page=$page&authorid=$_G[forum_thread][authorid]" class="a_4" rel="nofollow">Thread Starter</a>-->
+			    <!--{elseif !$_G['forum_thread']['archiveid']}-->
+			    <!--<a href="forum.php?mod=viewthread&tid=$_G[tid]&page=$page" class="a_4 a_5" rel="nofollow">Thread Starter</a>-->
+			    <!--{/if}-->
+            {elseif $_GET['do'] == 'pm'}
+                <a href="home.php?mod=spacecp&ac=pm" class="a_2"></a>
+            {/if}
+            <div id="float-open" class="float-open"><a class="open-btn" href="javascript:;">{if $_G[member][newpm] || $_G[member][newprompt]}<em class="new">{if $_G[member][newprompt]}{$_G[member][newprompt]}{/if}</em>{/if}</a></div>
+        </div>
+    </div>
+</div>
+
+<!--{if $webshow_nav_b ==1}-->
+<!--{if $_GET['mod'] !== 'forumdisplay' && $_GET['mod'] !== 'viewthread' && $_GET['mod'] !== 'post'}-->
+<div id="btoolbar">
+    <div class="btool btoolft cl">
+        <ul>
+            <li class="li1{if $_GET['mod'] == 'guide'} current{/if}"><a href="forum.php?mod=guide&view=hot">Home</a></li>
+            <li class="li2{if $_GET['mod'] !== 'guide' && $_GET['mod'] !== 'space' && $_GET['mod'] !== 'forum'} current{/if} current2"><a href="forum.php?forumlist=1">null_3</a></li>
+            <li class="li4 current4"><a href="search.php?mod=forum">Search</a></li>
+            <li class="li3 current3{if $_G[member][newpm]} current3_pm{/if}"><a href="{if $_G[uid]}home.php?mod=space&do=pm{else}member.php?mod=logging&action=login{/if}">Message</a></li>
+            <li class="li5{if $_GET['mod'] == 'space'} current{/if} current5"><a href="{if $_G[uid]}home.php?mod=space&uid=$_G[uid]&do=profile&mycenter=1{else}member.php?mod=logging&action=login{/if}">{if $_G[uid]}null_1{else}null_2{/if}</a></li>
+        </ul>
+    </div>
+</div>
+<!--{/if}-->
+<!--{/if}-->
+
+<div id="float-news" class="float-news">
+    <div class="nv_c cl" style="height:100%!important;">
+      <a class="float-close" href="javascript:void(0);">X</a>
+
+      <!--{if $_G[uid]}-->
+          <div class="umenu">
+              <div class="login-u-pic">
+              <div class="umenu_ava">
+                  <a href="space_avatar.php?uid=<!--{$_G[uid]}-->"><img src="{avatar($_G[uid], small, true)}" /></a>
+              </div>
+              </div>
+              <p class="label-user-name">$_G['username']</p>
+              <ul>
+                <li class="li0 cl"><span></span><a href="forum.php?mobile=2">Home</a></li>
+                <li class="li1 cl"><span></span><a href="touch.money.php" >Xgold<em style="display:block"><!--{eval echo getuserprofile('extcredits'.$_G['setting']['creditstrans'])}--></em></a></li>
+                <li class="li2 cl"><span></span><a href="usergroup.mobile.php">Xpoint<em style="display:inline;margin-left:5px;"><!--{eval echo $_G[member][credits]}--><br/> <!--{eval echo $_G[group][grouptitle]}--></em></a></li>
+                <li class="li3 cl"><span></span><a href="home.php?mod=space&amp;uid={$_G[uid]}&amp;do=profile&amp;mobile=2">Profile</a></li>
+                <li class="li4 cl"><span></span><a href="home.php?mod=space&amp;do=pm&amp;mobile=2">Message<!--{if $_G[member][newpm]--}<em>(new)</em></a><!--{/if}--></a></li>
+                <li class="li8 cl"><span></span><a href="home.php?mod=space&amp;do=notice&amp;mobile=2">Notification{if $_G[member][newprompt]}<em>({$_G[member][newprompt]})</em>{/if}</a></li>
+                <li class="li5 cl"><span></span><a href="home.php?mod=space&amp;uid={$_G[uid]}&amp;do=thread&amp;type=thread&amp;mobile=2">My Thread</a></li>
+                <li class="li10 c1"><span></span><a href="home.php?mod=space&amp;uid={$_G[uid]}&amp;do=favorite&amp;view=me&amp;type=thread&amp;mobile=2">My Favorite</a></li>
+                <li class="li6 cl"><span></span><a href="home.php?mod=space&amp;uid={$_G[uid]}&amp;do=profile&amp;mycenter=1&amp;mobile=2">Setting</a></li>
+                <!--<li class="li7 cl"><span></span><a href="search.php?mod=forum&amp;mobile=2">search</a></li>-->
+		<li class="li11 cl"><span></span><a href="home.php?mod=space&do=friend&mobile=2">Friend</a></li>
+                <li class="li9 cl"><span></span><a href="member.php?mod=logging&action=logout&formhash=<?=FORMHASH?>">Sign Out</a></li>
+              </ul>
+          </div>
+      <!--{else}-->
+          <!--{subtemplate common/login_s}-->
+      <!--{/if}-->
+    </div>
+</div>
+
+<script src="template/webshow_mtb0115/touch/img/js/expand.js"></script>
+<script type="text/javascript">
+<!--{if $_G['basescript'] == 'forum' && CURMODULE == post || $_GET['mod'] == 'viewthread'}-->
+window.onload=function(){
+	setTimeout(function(){
+	$('#fastsmilies').html('<table cellspacing="0" cellpadding="0"><tr>' + smilies_fastdata + '</tr></table>');},0);
+};
+<!--{/if}-->
+</script>
+
+
+<!--<div class="footer-copyright"></div>-->
+</body>
+
+    <script>
+    function includeLinkStyle(url) {
+                var link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.type = "text/css";
+                link.href = url;
+                document.getElementsByTagName("head")[0].appendChild(link);
+        }
+        var isOperaMini = Object.prototype.toString.call(window.operamini) === "[object OperaMini]";
+        if( isOperaMini == true ){
+            $('.opera_menu').css("display","block");
+            $('.login_si .p_frec').css("width","90px");
+            $('.sel_list').attr('class','opera_sel_list');
+            $('.login-btn-inner').css('display','none');
+            $('.login_select').css('min-height','30px');
+            $('.answerli').css('display', 'block');
+            $('.questionli').removeClass('bl_none');
+        }
+        else{
+           $(document).on('change', '.sel_list', function() {
+           var obj = $(this);
+           $('.span_question').text(obj.find('option:selected').text());
+           if(obj.val() == 0) {
+                $('.answerli').css('display', 'none');
+                $('.questionli').addClass('bl_none');
+           } else {
+                $('.answerli').css('display', 'block');
+                $('.questionli').removeClass('bl_none');
+           }
+        });
+        //formdialog.init();
+        }
+
+    </script>
+
+<!-- <script src="uc_server/language/en/lang_js.js" type="text/javascript"></script> -->
+<script>
+$(document).ready(function(){
+	var totalH = document.body.scrollHeight + document.body.scrollTop;
+        var mwpH = Number($("#mwp").css("height").slice(0, -2));
+        var visibelH = document.body.offsetHeight;
+        var menuH = Math.max(totalH, mwpH, visibelH);
+
+        $("#float-news").css("height", menuH);
+	if ("$_GET['mod']" == "viewthread"){
+		$("#float-news").css("height", menuH + 70);
+	}
+});
+</script>
+</html>
+<!--{eval updatesession();}-->
+<!--{if defined('IN_MOBILE')}-->
+	
+<!--{else}-->
+
+<!--{/if}-->

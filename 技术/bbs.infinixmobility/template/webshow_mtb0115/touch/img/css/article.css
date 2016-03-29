@@ -1,0 +1,52 @@
+/*全局*/
+body, #mcontent { background:#FFF!important;}
+.mawap { margin:10px;}
+    /*列表  分类*/
+.mawap_cat { margin:0 0 3px 0;}
+.mawap_cat_line { border-bottom:1px dotted #DDD; padding:0 0 8px 0; margin:0 0 15px 0;}
+.mawap_cat i, .mawap_cat span, .mawap_cat a { display:block; float:left;}
+.mawap_cat i { margin:0 10px 0 0;}
+.mawap_cat span { margin:0 3px;}
+.mawap_cat a, .mawap_cat span { color:#999;}
+
+    /*列表  循环*/
+.mawap_list { }
+.mawap_list_in { border-bottom:1px dashed #DDD; padding:0 0 10px 0; margin:0 0 10px 0;}
+.mawap_list_in .tn { display:block; float:right; width:100px; height:100px; margin:0 0 0 10px;}
+.mawap_list_in .dd1 { font-size:14px; margin:0 0 5px 0; height:20px; overflow:hidden;}
+.mawap_list_in .dd2 { color:#999; max-height:75px; overflow:hidden;}
+.mawap_list_in p { margin:7px 0 0 0;}
+.mawap_list_in p a { display:block; float:left; color:#666;} 
+.mawap_list_in p span { display:block; float:right; color:#666;}
+
+
+/*通用框架*/
+.mawap_bm { border:1px solid #DDD; margin:0 0 10px 0;}
+.mawap_bm h3 { border-bottom:1px solid #DDD; height:30px; line-height:30px; padding:0 10px; background:#F8F8F8; position:relative;}
+.mawap_bm h3 a { position:absolute; top:0px; right:10px; font-weight: normal;}
+.mawap_bm_c { padding:10px;}
+
+.mawapv_title { border-bottom:1px solid #DDD; padding:0 0 10px 0; margin:0 0 10px 0;}
+.mawapv_title h1 { font-size:16px; text-align:center; font-weight:normal;}
+.mawapv_title p { color:#999;}
+.mawapv_title p span { margin:0 5px;}
+.mawapv_summary { border-bottom:1px dashed #DDD; padding:0 0 5px 0; margin:0 0 5px 0; color:#999;}
+
+
+.mawapv_content img { width:100%;}
+
+    /*评论循环*/
+.mawap_clist { }
+.mawap_clist td { vertical-align:top; border-bottom:1px solid #DDD; padding:5px;}
+.mawap_clist .tdl { width:40px; text-align:center;}
+    .mawap_clist .tdl img { width:40px; height:40px; border-radius:20px;}
+.mawap_clist .tdr { }
+.mawap_clist .tdr p { position:relative; height:25px; color:#999;}
+.mawap_clist .tdr p cite { position: absolute; left:0px; top:0px;}
+.mawap_clist .tdr p span { position:absolute; top:0px; right:0px;}
+
+.mawap_fast_post { padding:0 10px 10px 10px;}
+.mawap_post_input { border:1px solid #DDD; background:#F8F8F8; padding:0 10px; width:90%; height:50px;}
+.mawap_post_btn { border:1px solid #DDD; background:#F8F8F8; font-size:14px; padding:2px 10px; margin:10px 0 0 0;}
+.mawap_check .sec_code { padding:10px 0 0 0;}
+.mawap_check .txt { border:1px solid #DDD; background:#F8F8F8;}

@@ -1,0 +1,43 @@
+{eval
+	$sechash = 'S'.random(4);
+	$sectpl = !empty($sectpl) ? explode("<sec>", $sectpl) : array('<br />',': ','<br />','');	
+	$ran = random(5, 1);
+}
+<!--{if $secqaacheck}-->
+<!--{eval
+	$message = '';
+	$question = make_secqaa();
+	$secqaa = lang('core', 'secqaa_tips').$question;
+}-->
+<!--{/if}-->
+<!--{if $sectpl}-->
+	<!--{if $secqaacheck}-->
+		<!--<p>
+        {lang secqaa}: 
+        <span class="xg2">$secqaa</span>
+	<input name="secqaahash" type="hidden" value="$sechash" />
+        <input name="secanswer" id="secqaaverify_$sechash" type="text" class="txt" />
+        </p>-->
+	<!--{/if}-->
+	<!--{if $seccodecheck}-->
+		<div class="sec_code vm">
+		<input name="seccodehash" type="hidden" value="$sechash" />
+		<input type="text" class="txt px vm" style="ime-mode:disabled;width:120px;display:block;margin-bottom:5px;background:white;" autocomplete="off"  id="seccodeverify_$sechash" name="seccodeverify" value="{lang seccode}" onfocus="if(this.value==defaultValue) {this.value='';}" onblur="if(!value) {value=defaultValue; this.type='text';}" fwin="seccode">
+        <img src="misc.php?mod=seccode&update={$ran}&idhash={$sechash}&mobile=2" class="seccodeimg" style="width:80px;"/>
+        <a href="javascript:;" class="refresh-iden-code" style="padding:0px;">Refresh</a>
+		</div>
+	<!--{/if}-->
+<!--{/if}-->
+<script type="text/javascript">
+	(function() {
+		$('.seccodeimg').on('click', function() {
+			$('#seccodeverify_$sechash').attr('value', '');
+			var tmprandom = 'S' + Math.floor(Math.random() * 1000);
+			$('.sechash').attr('value', tmprandom);
+			$(this).attr('src', 'misc.php?mod=seccode&update={$ran}&idhash='+ tmprandom +'&mobile=2');
+		});
+        $(".refresh-iden-code").click(function(){
+            $('.seccodeimg').click();
+        })
+	})();
+</script>

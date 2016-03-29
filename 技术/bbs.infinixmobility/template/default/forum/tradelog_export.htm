@@ -1,0 +1,8 @@
+	Tradelog
+	<!--{echo "\r\n";}-->
+	Order No.,Product name,Buyer,Seller,Amount,Points(Money),Fee,Order status
+	<!--{echo "\n";}-->
+	<!--{loop $tradelog_export $tradelog}-->
+		$tradelog[tradeno],$tradelog[subject],$tradelog[buyer],$tradelog[seller],$tradelog[price],$tradelog[credit],$tradelog[tax],$tradelog[status]
+		<!--{echo "\n";}-->
+	<!--{/loop}-->

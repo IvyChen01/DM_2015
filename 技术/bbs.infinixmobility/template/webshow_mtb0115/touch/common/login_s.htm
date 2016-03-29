@@ -1,0 +1,127 @@
+<div class="login_s">
+    <form id="loginform" method="post" action="member.php?mod=logging&action=login&loginsubmit=yes&loginhash=$loginhash&mobile=2" onsubmit="{if $_G['setting']['pwdsafety']}pwmd5('password3_$loginhash');{/if}" >
+	<input type="hidden" name="formhash" id="formhash" value='{FORMHASH}' />
+	<input type="hidden" name="referer" id="referer" value="<!--{if dreferer()}-->{echo dreferer()}<!--{else}-->forum.php?mobile=2<!--{/if}-->" />
+	<input type="hidden" name="fastloginfield" value="username">
+	<input type="hidden" name="cookietime" value="2592000">
+	<!--{if $auth}-->
+		<input type="hidden" name="auth" value="$auth" />
+	<!--{/if}-->
+  
+	<div class="login_si">
+        <div class="login-u-pic">
+            <div class="logins_ava"><img src="{avatar(0, middle, true)}" /></div>
+        </div>
+        <div class="login-right-box clearfix">
+            <ul>
+                <li class="lic lic1">
+		    <span class="opera_menu" style="display:none;font: 14px/1.5 Microsoft YaHei, Helvetica, sans-serif;float: left;width: 66px;color: #4DB74D;height: 40px;line-height: 40px;">username</span>
+                    <input type="text" tabindex="1" class="p_frec p_frec1" size="30" autocomplete="off" placeholder="username" name="username" fwin="login" >
+                </li>
+                <li class="lic lic2">
+		    <span class="opera_menu" style="display:none;font: 14px/1.5 Microsoft YaHei, Helvetica, sans-serif;float: left;width: 66px;color: #4DB74D;height: 40px;line-height: 40px;">password</span>
+                    <input type="password" tabindex="2" class="p_frec p_frec2" size="30" placeholder="password" name="password" fwin="login" >
+                </li>
+
+		<!--{if empty($_GET['auth']) || $questionexist}-->
+                        <li class="lic questionli">
+				<span class="opera_menu" style="display:none;font: 14px/1.5 Microsoft YaHei, Helvetica, sans-serif;float: left;width: 66px;color: #4DB74D;height: 40px;line-height: 40px;">security</span>
+                                <div class="login_select p_frec">
+                                <span class="login-btn-inner">
+                                        <span class="login-btn-text">
+                                                <span class="span_question">{lang security_question}</span>
+                                        </span>
+                                        <span class="icon-arrow">&nbsp;</span>
+                                </span>
+                                <select id="questionid_{$loginhash}" name="questionid" class="sel_list">
+                                        <option value="0" selected="selected">{lang security_question}</option>
+                                        <option value="1">{lang security_question_1}</option>
+                                        <option value="2">{lang security_question_2}</option>
+                                        <option value="3">{lang security_question_3}</option>
+                                        <option value="4">{lang security_question_4}</option>
+                                        <option value="5">{lang security_question_5}</option>
+                                        <option value="6">{lang security_question_6}</option>
+                                        <option value="7">{lang security_question_7}</option>
+                                </select>
+                                </div>
+                        </li>
+                        <li class="lic answerli" style="display:none;">
+                                <span class="opera_menu" style="display:none;font: 14px/1.5 Microsoft YaHei, Helvetica, sans-serif;float: left;width: 66px;color: #4DB74D;height: 40px;line-height: 40px;">answer</span>
+                                <input type="text" name="answer" id="answer_{$loginhash}" class="px p_frec p_frec2" size="25" placeholder="answer">
+                        </li>
+		<!--{/if}-->
+
+
+                <!--Mark <li class="answerli" style="display:none;"><input type="text" name="answer" id="answer_{$loginhash}" class="px p_fre" size="30" placeholder="{lang security_a}"></li>-->
+            </ul>
+            <!--{if 1 == 0}--> <!--{/if}-->
+            <!--{if $secqaacheck || $seccodecheck}-->
+                
+            <!--{/if}-->
+            <div class="btn_login"><button tabindex="3" value="true" name="submit" type="submit" style="height:80px;"><span>Login</span></button></div>
+
+        </div>
+	</div>
+	</form>
+	<!--{if $_G['setting']['connect']['allow'] && !$_G['setting']['bbclosed']}-->
+	<div class="btn_qqlogin"><a href="$_G[connect][login_url]&statfrom=login_simple">{lang qqconnect:connect_mobile_login}</a></div>
+	<!--{/if}-->
+	<!--{if $_G['setting']['regstatus']}-->
+        <p class="reg_link"><a href="member.php?mod=register&mobile=2">Register</a></p>
+	<p class="reg_link"><a href="member.php?mod=registerbyphone&mobile=2">Phone Register</a></p>
+	<!--{/if}-->
+    <p class="forget-pwd-mobile">
+        <a href="member.php?mod=logging&action=login&viewlostpw=1&mobile=1" >Forget password ?</a>
+    </p>
+<!--2015.5.6 chenyanhui 添加第三方登陆  -->
+    <p><a href="Twitter/twitteroauth/redirect.php" class="reg_link" style="height:40px;font-weight: 700;  color: #8ec31e;">Twitter</a>&nbsp;&nbsp;&nbsp;<a href="LoginOauth/Oauth/examples/requestFacebook.php" class="reg_link" style="height:40px;font-weight: 700;  color: #8ec31e;">Facebook</a>&nbsp;&nbsp;&nbsp;<a href="LoginOauth/Oauth/examples/requestGoogle.php" class="reg_link" style="height:40px;font-weight: 700; color: #8ec31e;">Google</a></p>
+
+</div>
+<!-- userinfo end -->
+
+<!--{if $_G['setting']['pwdsafety']}-->
+	<script type="text/javascript" src="{$_G['setting']['jspath']}md5.js?{VERHASH}" reload="1"></script>
+<!--{/if}-->
+<!--{eval updatesession();}-->
+<script type="text/javascript">
+
+	$(document).ready(function(){
+   	    var isOperaMini = Object.prototype.toString.call(window.operamini) === "[object OperaMini]";
+	    if( isOperaMini == false ){
+		$(document).on('change', '.sel_list', function() {
+			var obj = $(this);
+			$('.span_question').text(obj.find('option:selected').text());
+			if(obj.val() == 0) {
+				$('.answerli').css('display', 'none');
+				$('.questionli').addClass('bl_none');
+			} else {
+				$('.answerli').css('display', 'block');
+				$('.questionli').removeClass('bl_none');
+			}
+		});
+	    }
+	    else{
+			$('.sel_list').attr('class','opera_sel_list');
+			$('.login-btn-inner').css('display','none');
+                        $('.login_select').css('min-height','30px');
+                        $('.answerli').css('display', 'block');
+                        $('.questionli').removeClass('bl_none');
+	    }
+	});
+	
+
+$(function(){
+    $('.p_frec').bind({
+	    focus:function(){
+		if (this.value == this.defaultValue){
+		    this.value="";
+		}
+	},
+	blur:function(){
+	    if (this.value == ""){
+		    this.value = this.defaultValue;
+		}
+	}
+	});
+}); 
+</script> 

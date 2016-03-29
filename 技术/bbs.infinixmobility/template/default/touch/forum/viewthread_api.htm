@@ -1,0 +1,268 @@
+<!--{subtemplate common/header_common}-->
+<style>
+/*头像区域*/
+.headin {
+	height: 50px;
+	position: relative;
+	margin: 0 0 10px 0;
+	overflow: hidden;
+}
+
+.headin dl {
+	height: 50px;
+	padding: 0 0 0 40px;
+	overflow: hidden;
+}
+
+.headin dt {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.headin dt img {
+	width: 35px;
+	height: 35px;
+	border-radius: 5px;
+}
+
+.headin .dd1 {
+	margin: 0px 0 2px 0;
+}
+
+.headin .s1 {
+	height: 18px;
+	overflow: hidden;
+}
+
+.headin .s1 span {
+	display: block;
+	float: left;
+	margin: 0 3px 0 0;
+	overflow: hidden;
+}
+
+.headin .s1 .ss1 {
+	margin: 0 5px 0 0;
+}
+
+.headin .s1 .ss1, .mv_headin .s1 .ss1 a {
+	color: #787878;
+}
+
+.headin .s1 .ss2 {
+	width: 20px;
+	height: 18px;
+	text-align: center;
+	font-size: 10px;
+	color: #FFF;
+	background-repeat: no-repeat;
+}
+
+.headin .s1 .ss21, .mv_headin .s1 .ss22, .mv_headin .s1 .ss23 {
+	background-image: url(../mv_icon_11.png);
+}
+
+.headin .s1 .ss24, .mv_headin .s1 .ss25, .mv_headin .s1 .ss26,
+	.mv_headin .s1 .ss27 {
+	background-image: url(../mv_icon_7.png);
+}
+
+.headin .s1 .ss2red {
+	background: #00FFFF;
+}
+.headin .s1 .ss2title {
+	font-size: 14px;
+	color:#009b7a;
+    font-weight:bold;
+}
+.headin .s1 .ss41 {
+	width: 18px;
+	height: 18px;
+	text-indent: -99px;
+	color: #FFF;
+	background: url(../mv_icon_10.png) 0 0 no-repeat;
+}
+
+.headin .s1 .ss42 {
+	width: 18px;
+	height: 18px;
+	text-indent: -99px;
+	color: #FFF;
+	background: url(../mv_icon_5.png) 0 0 no-repeat;
+}
+
+.headin .s1 .ss5 {
+	width: 18px;
+	height: 18px;
+	text-indent: -99px;
+	color: #FFF;
+	background: url(../mv_icon_6.png) 0 0 no-repeat;
+}
+
+.headin .s1 .ss6 {
+	height: 18px;
+	line-height: 18px;
+	padding: 0 3px;
+	background: #36A3F0;
+	color: #FFF;
+	border-radius: 3px;
+}
+
+.headin .s2 {
+	right: 0px;
+	top: 0px;
+	float: right;
+}
+
+.headin .s2 a {
+	color: #93A6B8;
+	display: block;
+	height: 22px;
+	line-height: 24px;
+	padding: 0 5px 0 20px;
+	border: 1px solid #DBDCDD;
+	background: url(../mv_icon_12.png) 3px center no-repeat;
+	border-radius: 3px;
+}
+
+.headin .s21 a {
+	background-image: url(../mv_icon_3.png);
+}
+
+.headin .s22 a {
+	background: none;
+	padding: 0 5px;
+}
+
+.headin .s1 .male {
+	background-image: url(../img/man.png);
+}
+
+.headin .s1 .female {
+	background-image: url(../img/women.png);
+}
+
+.headin .dd2 {
+	color: #999;
+}
+</style>
+<div style="background: #fff; min-height: 300px; margin-left:10px;margin-right:10px">
+	<div class="ct">
+
+		<!--{if $_G['setting']['version'] != 'X2'}-->
+		<!--{if helper_access::check_module('follow')}-->
+		<!--{if $_G['forum']['fid'] == $follows }-->
+		<!--{eval header("location: home.php?mod=follow"); }-->
+		<!--{/if}-->
+		<!--{/if}-->
+		<!--{/if}-->
+		<!--{hook/viewthread_top_mobile}-->
+
+		<!--{if count($postlist) >= 1}-->
+		<!--{eval $postlist = array_slice($postlist,0,1);}-->
+		<!--{/if}-->
+		<!--{eval $post=array_pop($postlist);}-->
+
+		<h1 class="vt_th"
+			style="font-size: 16px; font-family: Roboto-Regular;">
+			<a>$post[subject]</a>
+		</h1>
+		<div class="headin">
+			<dl class="cl">
+				<dt>
+					<img
+						src="<!--{if !$post['authorid'] || $post['anonymous']}--><!--{avatar(0, small, true)}--><!--{else}--><!--{avatar($post[authorid], small, true)}--><!--{/if}-->" />
+				</dt>
+				<dd class="dd1">
+					<div class="s1 cl">
+						<span class="ss1"> <!--{if $post['authorid'] && $post['username'] && !$post['anonymous']}-->
+							<span style="font: bold 16px Roboto-Regular;">$post[author]</span>
+							<!--{else}--> <!--{if !$post['authorid']}--> <a
+							href="javascript:;">{lang guest} <em>$post[useip]{if
+									$post[port]}:$post[port]{/if}</em></a> <!--{elseif $post['authorid'] && $post['username'] && $post['anonymous']}-->
+							<!--{if $_G['forum']['ismoderator']}-->
+							<a href="home.php?mod=space&uid=$post[authorid]" target="_blank">{lang
+								anonymous}</a>
+						<!--{else}-->{lang anonymous}<!--{/if}--> <!--{else}-->
+							$post[author] <em>{lang member_deleted}</em> <!--{/if}--> <!--{/if}-->
+						</span> 
+						{eval $thread_author_info =getuserbyuid($_G[forum_thread][authorid]);}
+						<!--{if $post['api_groupicon']}-->
+						<span><img  src="{$post['api_groupicon']}" height="20px"></span>
+						<!--{/if}-->
+						<!--{if $post['api_grouptitle']}-->
+                        <span style="color:{$post['api_titlecolor']};font-size: 12px;font-weight:bold;font-style:italic;padding-top:5px">{$post['api_grouptitle']}</span>
+                        <!--{else}-->
+                         <span class="ss2red">{$_G['cache']['usergroups'][$thread_author_info['groupid']]['grouptitle']}</span>
+                        <!--{/if}-->
+						<!--{if !$post['anonymous']}-->
+						<!--{if $post['authorid']}-->
+						<!-- <span class="ss2 ss2{$post[stars]}{if $post[stars]>7} ss2red{/if}">{$post[stars]}</span> -->
+						<!--{/if}-->
+						<!--{if $post['api_gendericon']}-->
+						<span style="padding-top:2px"><img  src="{$post['api_gendericon']}" height="16px"></span>
+						<!--{/if}-->
+						<!--{/if}-->
+
+						<!--{if $post['authorid'] == $_G[forum_thread][authorid]}-->
+						<span class="ss6">Thread Starter</span>
+						<!--{/if}-->
+					</div>
+				</dd>
+				<dd class="dd2">{$post[dateline]}</dd>
+			</dl>
+		</div>
+		<div class="pbody">
+			<div class="mes" style="word-wrap:break-word;word-break:break-all; ">
+
+				<!--{if !$_G[forum_thread][special]}-->
+				<div id="postmessage_$post[pid]" class="postmessage"
+					style="font: 16px Roboto-Light;color:#707070">$post[message]</div>
+				<!--{elseif $_G[forum_thread][special] == 1}-->
+				<!--{template forum/viewthread_poll}-->
+				<!--{elseif $_G[forum_thread][special] == 2}-->
+				<!--{template forum/viewthread_trade}-->
+				<!--{elseif $_G[forum_thread][special] == 3}-->
+				<!--{template forum/viewthread_reward}-->
+				<!--{elseif $_G[forum_thread][special] == 4}-->
+				<!--{template forum/viewthread_activity}-->
+				<!--{elseif $_G[forum_thread][special] == 5}-->
+				<!--{template forum/viewthread_debate}-->
+				<!--{elseif $threadplughtml}-->
+				$threadplughtml
+				<div id="postmessage_$post[pid]" class="postmessage">$post[message]</div>
+				<!--{else}-->
+				<div id="postmessage_$post[pid]" class="postmessage">$post[message]</div>
+				<!--{/if}-->
+
+				<!--{if $post['attachment']}-->
+
+				<!--{elseif $post['imagelist'] || $post['attachlist']}-->
+				<!--{if $post['imagelist']}-->
+				{echo showattach($post, 1)}
+				<!--{/if}-->
+				<!--{if $post['attachlist']}-->
+				{echo showattach($post)}
+				<!--{/if}-->
+				<!--{/if}-->
+				<!--{hook/viewthread_useraction_mobile}-->
+			</div>
+		</div>
+		<!--{if $postcount == 0}-->
+		<div class="addthis_sharing_toolbox"></div>
+		{/if}
+		<!--{hook/viewthread_bottom_mobile}-->
+
+
+	</div>
+</div>
+<div style="display: none;">
+	<!--{if $_G['setting']['statcode']}-->
+	$_G['setting']['statcode']
+	<!--{/if}-->
+</div>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript"
+	src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53fecabb2ad6464c"
+	async="async"></script>

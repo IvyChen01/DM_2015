@@ -1,0 +1,82 @@
+<!--{template common/header}-->
+<div id="pt" class="bm cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&rsaquo;</em>
+		<a href="misc.php?mod=stat">{lang stats}</a><em>&rsaquo;</em>
+		{lang member_list}
+	</div>
+</div>
+<div id="ct" class="ct2_a wp cl">
+	<div class="mn">
+		<div class="bm bw0">
+			<div class="cl">
+				<form method="post" action="misc.php?mod=stat&op=memberlist_reg" class="mbm y" style="float:left">
+					<input type="hidden" name="formhash" value="{FORMHASH}" />
+					<script type="text/javascript" src="{$_G[setting][jspath]}calendar.js?{VERHASH}"></script>
+					Date Range:<input type="text" name="primarybegin" class="px" value="$begin" onclick="showcalendar(event, this, false)"/> - <input type="text" name="primaryend" class="px" value="$end" onclick="showcalendar(event, this, false)" />
+					&nbsp;<button type="submit" class="pn vm"><em>{lang search}</em></button>
+					
+				</form>
+				<h1 class="mt">{lang member_list}</h1>
+			</div>
+			<!-- {if $nation==null} -->
+			<table summary="{lang member_list}" class="dt bm">
+				<tr>
+					<th>country</th>
+					<th>num</th>
+					<th>begin</th>
+					<th>end</th>
+				</tr>
+				<!--{loop $country $cnt=>$num}-->
+					<tr class="{echo swapclass('alt')}">
+						<td><a href="misc.php?mod=stat&op=memberlist_reg&nation=$cnt&primarybegin=$begin&primaryend=$end" class="xw1">$cnt</a></td>
+						<td>$num</td>
+						<td>$begin</td>
+						<td>$end</td>
+					</tr>
+				<!--{/loop}-->
+				    <tr class="{echo swapclass('alt')}">
+						<td>total</td>
+						<td>$total</td>
+						<td>$begin</td>
+						<td>$end</td>
+					</tr>
+			</table>
+			<!-- {/if} -->
+			<!-- {if $nation} -->
+			    <table summary="{lang member_list}" class="dt bm">
+				<tr>
+					<th>{lang username}</th>
+					<th>{lang uid}</th>
+					<th>nationality</th>
+					<!-- <th><a href="misc.php?mod=stat&op=memberlist&order=gender{if !$_GET[asc]}&asc=1{/if}" class="showmenu">{lang gender}</a></th> -->
+				    <th>{lang regdate}</th>
+					<!-- <th><a href="misc.php?mod=stat&op=memberlist&order=lastvisit{if !$_GET[asc]}&asc=1{/if}" class="showmenu">{lang lastvisit}</a></th> -->
+					<!-- <th><a href="misc.php?mod=stat&op=memberlist&order=threads{if !$_GET[asc]}&asc=1{/if}" class="showmenu">threads</a></th> -->
+					<th>{lang posts}</th>
+					<th>{lang credits}</th>
+					<th>Money</th>
+				</tr>
+				<!--{loop $userlist $member}-->
+				    
+					<tr class="{echo swapclass('alt')}">
+						<td><a href="home.php?mod=space&uid=$member[uid]" class="xw1">$member[username]</a></td>
+						<td>$member[uid]</td>
+						<td>$member[nation]</td>
+						<!-- <td>{if $member['gender'] == '1'}{lang male}{elseif $member['gender'] == 2}{lang female}{else}&nbsp;{/if}</td> -->
+						<td>$member[regdate]</td>
+						<!-- <td>$member[lastvisit]</td> -->
+						<!-- <td>$member[threads]</td> -->
+						<td>$member[posts]</td>
+						<td>$member[credits]</td>
+						<td>$member[extcredits2]</td>
+					</tr>
+				<!--{/loop}-->
+			</table>
+			<!-- {/if} -->
+			<!--{if !empty($multipage)}--><div class="pgs cl">$multipage</div><!--{/if}-->
+		</div>
+	</div>
+	<!--{subtemplate common/stat}-->
+</div>
+<!--{template common/footer}-->

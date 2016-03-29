@@ -1,0 +1,435 @@
+<!--{template common/header}-->
+<link rel="stylesheet" type="text/css" href="template/webshow_mtb0115/touch/img/css/forumdisplay_list.css" media="all" />
+<link rel="stylesheet" type="text/css" href="template/webshow_mtb0115/touch/img/css/forumdisplay_list.css" id="JCSS" media="all" />
+<script src="template/webshow_mtb0115/touch/img/js/jquery.cookie.js" type="text/javascript"></script>
+
+<!--{if !in_array($_G[fid],array(36,115,2000))}-->
+<div class="mforum_head">
+	<!--{if $subexists && $_G['page'] == 1 || ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0}-->
+    <div class="mforum_h_2">
+        <!--{if $subexists && $_G['page'] == 1}-->
+        <ul class="cl">
+            <li class="li_w">null_5</li>
+		    <!--{loop $sublist $sub}-->
+		    <li><a href="forum.php?mod=forumdisplay&fid={$sub[fid]}">{$sub['name']}</a></li>
+		    <!--{/loop}-->
+		</ul>
+        <!--{/if}-->
+        <!--{if ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0}-->
+        <ul class="cl">
+						<li id="ttp_all" {if !$_GET['typeid'] && !$_GET['sortid']}class="a"{/if}><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_G['forum']['threadsorts']['defaultshow']}&filter=sortall&sortall=1{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">{lang forum_viewall}</a></li>
+						<!--{if $_G['forum']['threadtypes']}-->
+							<!--{loop $_G['forum']['threadtypes']['types'] $id $name}-->
+								<!--{if $_GET['typeid'] == $id}-->
+								<li class="a"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><!--<span class="xg1 num">--><!--$showthreadclasscount[typeid][$id]--></span><!--{/if}--></a></li>
+								<!--{else}-->
+								<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$id$forumdisplayadd[typeid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><!--<span class="xg1 num">$showthreadclasscount[typeid][$id]</span>--><!--{/if}--></a></li>
+								<!--{/if}-->
+							<!--{/loop}-->
+						<!--{/if}-->
+						<!--{if $_G['forum']['threadsorts']}-->
+							<!--{if $_G['forum']['threadtypes']}--><li><span class="pipe">|</span></li><!--{/if}-->
+							<!--{loop $_G['forum']['threadsorts']['types'] $id $name}-->
+								<!--{if $_GET['sortid'] == $id}-->
+								<li class="xw1 a"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name<!--{if $showthreadclasscount[sortid][$id]}--><!--<span class="xg1 num">$showthreadclasscount[sortid][$id]</span>--><!--{/if}--></a></li>
+								<!--{else}-->
+								<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$id$forumdisplayadd[sortid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name<!--{if $showthreadclasscount[sortid][$id]}--><!--<span class="xg1 num">$showthreadclasscount[sortid][$id]</span>--><!--{/if}--></a></li>
+								<!--{/if}-->
+							<!--{/loop}-->
+						<!--{/if}-->
+									<li class="search-btn-toggle"><a href="javascript:;">Search</a></li>
+
+         </ul>
+
+
+        <!--{/if}-->
+
+	    <!--{if $quicksearchlist && !$_GET['archiveid']}-->
+		     <!--{subtemplate forum/search_sortoption}-->
+	    <!--{/if}-->
+    </div>
+    <!--{/if}-->
+
+    <!--<div class="mskin">
+        <a rel="template/webshow_mtb0115/touch/img/css/forumdisplay_list_simple_1.css">null_7</a>
+        {if $webshow_forumdisplay_txt ==1}<a rel="template/webshow_mtb0115/touch/img/css/forumdisplay_list_simple_2.css">null_8</a>{/if}
+        {if $webshow_forumdisplay_pic ==1}<a rel="">null_6</a>{/if}
+    </div>-->
+	
+<script>
+//    $(function(){
+//        var arg1 = "",arg2 = "",url=location.href;
+//
+//        if(url.indexOf('heats') > -1) arg1 = '&filter=heats';
+//        else if(url.indexOf('lastpost') > -1) arg1 = '&filter=lastpost';
+//        var index = 0;
+//       $('.mforum_h_2 li').each(function(){
+//            if($(this).hasClass('a')){
+//                index = $(this).index();
+//            }
+//       })
+//       switch(index){
+//           case 0 :
+//                break;
+//           case 1 :arg2 = "&typeid=1";
+//                break;
+//           case 2 :arg2 = "&typeid=3";
+//                break;
+//           case 3 :arg2 ="&typeid=4";
+//                break;
+//       }
+//        $(".m_txt .sa1").attr("href",$(".m_txt .sa1").attr("href") + arg2);
+//        $(".m_txt .sa2").attr("href",$(".m_txt .sa2").attr("href") + arg2);
+//
+//        $('.mforum_h_2 li').each(function(){
+//           if($(this).index() == 1)
+//           $(this).children("a").attr("href","forum.php?mod=forumdisplay&fid=37&filter=typeid&typeid=1&mobile=2" + arg1);
+//            else{
+//               $(this).children("a").attr("href",$(this).children("a").attr("href") + arg1);
+//           }
+//        })
+//    })
+</script>
+<style>
+
+.btool .li2.current2 { background-position: center 0!important;}
+.btool .li2.current2 a { color:#8A98AA!important;}
+.btool .li4.current4 { background-position: center -80px!important;}
+.btool .li4.current4 a { color:#1A8FF2!important;}
+/*G #searchform{display:none;position:absolute;top:53px;width:100%;background:#fff;left:0;box-shadow:0 3px 5px rgba(0, 0, 0, 0.2)} */
+#searchform{display:none;top:53px;width:100%;background:#fff;left:0;box-shadow:0 3px 5px rgba(0, 0, 0, 0.2)}
+.search{padding:5px;margin-bottom:15px;}
+/*G .mfmlist2{margin-top:100px;} */
+</style>
+
+<form id="searchform" class="searchform" method="post" autocomplete="off" action="search.php?mod=forum&mobile=2">
+			<input type="hidden" name="formhash" value="{FORMHASH}" />
+
+			<!--{if !empty($srchtype)}--><input type="hidden" name="srchtype" value="$srchtype" /><!--{/if}-->
+			<div class="search">
+					<table width="100%" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr>
+							<td>
+									<input value="$keyword" autocomplete="off" class="input" name="srchtxt" id="scform_srchtxt"  value="Searching" onblur="if(!value) {value=defaultValue; this.type='text';}" onfocus="if(this.value==defaultValue) {this.value='';}">
+						    </td>
+                            <td width='66' style="padding-right: 13px;">
+                            <div ><input type="hidden" name="searchsubmit" value="yes"><input type="submit" value="Go" class="button2" id="scform_submit"></div>
+                            </td>
+							</tr>
+						</tbody>
+					</table>
+			</div>
+
+			<!--{eval $policymsgs = $p = '';}-->
+			<!--{loop $_G['setting']['creditspolicy']['search'] $id $policy}-->
+			<!--{block policymsg}--><!--{if $_G['setting']['extcredits'][$id][img]}-->$_G['setting']['extcredits'][$id][img] <!--{/if}-->$_G['setting']['extcredits'][$id][title] $policy $_G['setting']['extcredits'][$id][unit]<!--{/block}-->
+			<!--{eval $policymsgs .= $p.$policymsg;$p = ', ';}-->
+			<!--{/loop}-->
+			<!--{if $policymsgs}--><p>{lang search_credit_msg}</p><!--{/if}-->
+
+			<script>
+				$(function(){
+				document.onkeydown = function(e){
+                if(!e) e = window.event;
+                 if((e.keyCode || e.which) == 13){
+                    $("#scform_submit").click();
+                 }
+                 }
+				})
+			</script>
+</form>
+</div>
+<!--{/if}-->
+
+<!--{if !$subforumonly}-->
+  <!--{if in_array($_G[fid],array(36,115,2000))}-->
+  <script type="text/javascript" src="template/webshow_mtb0115/touch/img/js/jquery.masonry.js"></script>
+  <div class="wf_wrap">
+    <div id="waterfall" class="cl">
+    <!--{if $_G['forum_threadcount']}-->
+        <!--{loop $_G['forum_threadlist'] $key $thread}-->
+        <!--{if $thread[attachment]==2}-->
+        <div class="wf_item">
+            <div class="wf_main">
+                <div class="wf_pic"><a href="forum.php?mod=viewthread&tid=$thread[tid]"><img src="tpic.php?tid=$thread[tid]&size=140x0" /></a></div>
+                <div class="wf_title"><a href="forum.php?mod=viewthread&tid=$thread[tid]" $thread[highlight]>{$thread[subject]}</a></div>
+            </div>
+        </div>
+        <!--{/if}-->
+        <!--{/loop}-->
+    <!--{/if}-->
+    </div>
+  </div>
+  {if $multipage}{$multipage}{/if}
+  <script type="text/javascript">
+  jQuery(function(){
+      var jQuerycontainer = jQuery('#waterfall');
+	  jQuerycontainer.imagesLoaded(function(){
+	  jQuerycontainer.masonry({
+	      itemSelector: '.wf_item',
+		  columnWidth: 140,
+		  gutterWidth: 16,
+		  isAnimated: '!Modernizr.csstransitions',
+		  cornerStampSelector: '.category',
+		  isFitWidth: true
+	  });
+	  });
+  });
+  </script>
+
+  <!--{else}-->
+
+ 
+<!--{eval require DISCUZ_ROOT.'template/webshow_mtb0115/touch/img/plus/plus.php';}-->
+<div class="mfmlist mfmlist2">
+    <ul id="alist">
+    <!--{if $_G['forum_threadcount']}-->
+        <!--{loop $_G['forum_threadlist'] $key $thread}-->
+		    <!--{if $thread['moved']}--><!--{eval $thread[tid]=$thread[closed];}--><!--{/if}-->
+            <!--{if $_GET['filter'] == 'lastpost'}-->
+                <!--{if !in_array($thread['displayorder'], array(1, 2, 3, 4)) && $thread['digest'] <= 0 }-->
+                <li class="li_main">
+            <dl class="cl">
+                <dt class="cl">
+                        <span class="cl">
+                            <!--{if $thread[folder] == 'lock'}-->
+                            <em class="em1"><!--Locked--></em>
+                            <!--{elseif $thread['special'] == 1}-->
+                            <em class="em1"><!--Vote-->Vote</em>
+                            <!--{elseif $thread['special'] == 2}-->
+                            <!--<em class="em1">null_8</em>-->
+                            <!--{elseif $thread['special'] == 3}-->
+                            <!--<em class="em1">null_9</em>-->
+                            <!--{elseif $thread['special'] == 4}-->
+                            <!--<em class="em1">null_10</em>-->
+                            <!--{elseif $thread['special'] == 5}-->
+                            <!--<em class="em1">null_11</em>-->
+                            <!--{elseif in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+                            <em class="em1">Top</em>
+					        <!--{elseif $thread['digest'] > 0}-->
+					        <em class="em1">Recommend</em>
+					        <!--{elseif $thread['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+                            <!--<em class="em1">Image</em>-->
+                            <!--{else}-->
+                            <!--<em class="em1">null_12</em>-->
+                            <!--{/if}-->
+                            <i><font class="ft1">{$thread[typehtml]}</font><font class="ft2">{$thread[replies]}</font>Comments&nbsp;&nbsp;$&nbsp;{$thread[price]}</i>
+                            <cite>
+                                {$thread[dateline]}<a href="home.php?mod=space&uid=$thread[authorid]&do=profile" title="$thread[author]" target="_blank"><img src="{avatar($thread[authorid], small, true)}" align="absmiddle" /></a>
+                            </cite>
+                        </span>
+
+                <div class="mfmlist_title cl">
+                    <a href="forum.php?mod=viewthread&tid=$thread[tid]&extra=$extra" $thread[highlight]>{$thread[subject]}
+					 <!--{if $thread['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+						<em class="em1"><img src="static/image/filetype/image_s.gif" style="vertical-align: middle;"></em>
+					  <!--{/if}-->
+					</a>
+					 
+                </div>
+                <!--{if $webshow_forumdisplay_pic ==1}-->
+                <!--{eval $piclist=threadpics($thread[tid],3);}-->
+                <!--{eval $medialist=mmsgtaglist('media',$thread[message],2);}-->
+                <!--{eval $flashlist=mmsgtaglist('flash',$thread[message],2);}-->              
+                <!--{/if}-->
+
+                <!--{if $webshow_forumdisplay_txt ==1}-->
+                {if $thread[message] && $thread[price] <= 0 }<p><!--{echo delubb(messagecutstr($thread[message],70,"..."));}--></p>{/if}
+                <!--{/if}-->
+                </dt>
+                <!--{if $stemplate && $sortid}--><div class="dd_sort cl">{$stemplate[$sortid][$thread[tid]]}</div><!--{/if}-->
+            </dl>
+        </li>
+
+        <!--{/if}-->
+            <!--{elseif $_GET['filter'] == 'heats'}-->
+             <!--{if in_array($thread['displayorder'], array(1, 2, 3, 4)) || $thread['digest'] > 0 }-->
+
+                <li class="li_main">
+            <dl class="cl">
+                <dt class="cl">
+                        <span class="cl">
+                            <!--{if $thread[folder] == 'lock'}-->
+                            <em class="em1"><!--Locked--></em>
+                            <!--{elseif $thread['special'] == 1}-->
+                            <em class="em1"><!--Vote--></em>
+                            <!--{elseif $thread['special'] == 2}-->
+                            <!--<em class="em1">null_13</em>-->
+                            <!--{elseif $thread['special'] == 3}-->
+                            <!--<em class="em1">null_14</em>-->
+                            <!--{elseif $thread['special'] == 4}-->
+                            <!--<em class="em1">null_15</em>-->
+                            <!--{elseif $thread['special'] == 5}-->
+                            <!--<em class="em1">null_16</em>-->
+                            <!--{elseif in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+                            <em class="em1">Top</em>
+					        <!--{elseif $thread['digest'] > 0}-->
+					        <em class="em1">Recommend</em>
+					        <!--{elseif $thread['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+                            <!--<em class="em1">Image</em>-->
+                            <!--{else}-->
+                            <!--<em class="em1">null_17</em>-->
+                            <!--{/if}-->
+                            <i><font class="ft1">{$thread[typehtml]}</font><font class="ft2">{$thread[replies]}</font>Comments&nbsp;&nbsp;$&nbsp;{$thread[price]}</i>
+                            <cite>
+                                {$thread[dateline]}<a href="home.php?mod=space&uid=$thread[authorid]&do=profile" title="$thread[author]" target="_blank"><img src="{avatar($thread[authorid], small, true)}" align="absmiddle" /></a>
+                            </cite>
+                        </span>
+
+                <div class="mfmlist_title cl">
+                    <a href="forum.php?mod=viewthread&tid=$thread[tid]&extra=$extra" $thread[highlight]>{$thread[subject]}
+					  <!--{if $thread['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+						<em class="em1"><img src="static/image/filetype/image_s.gif" style="vertical-align: middle;"></em>
+					  <!--{/if}-->
+					</a>
+                </div>
+                <!--{if $webshow_forumdisplay_pic ==1}-->
+                <!--{eval $piclist=threadpics($thread[tid],3);}-->
+                <!--{eval $medialist=mmsgtaglist('media',$thread[message],2);}-->
+                <!--{eval $flashlist=mmsgtaglist('flash',$thread[message],2);}-->                
+                <!--{/if}-->
+
+                <!--{if $webshow_forumdisplay_txt ==1}-->
+                {if $thread[message] && $thread[price] <= 0 }<p><!--{echo delubb(messagecutstr($thread[message],70,"..."));}--></p>{/if}
+                <!--{/if}-->
+                </dt>
+                <!--{if $stemplate && $sortid}--><div class="dd_sort cl">{$stemplate[$sortid][$thread[tid]]}</div><!--{/if}-->
+            </dl>
+        </li>
+             <!--{/if}-->
+            <!--{else}-->
+    <li class="li_main">
+        <dl class="cl">
+            <dt class="cl">
+                        <span class="cl">
+                            <!--{if $thread[folder] == 'lock'}-->
+                            <em class="em1"><!--Locked--></em>
+                            <!--{elseif $thread['special'] == 1}-->
+                            <em class="em1"><!--Vote--></em>
+                            <!--{elseif $thread['special'] == 2}-->
+                            <!--<em class="em1">null_18</em>-->
+                            <!--{elseif $thread['special'] == 3}-->
+                            <!--<em class="em1">null_19</em>-->
+                            <!--{elseif $thread['special'] == 4}-->
+                            <!--<em class="em1">null_20</em>-->
+                            <!--{elseif $thread['special'] == 5}-->
+                            <!--<em class="em1">null_21</em>-->
+                            <!--{elseif in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+                            <em class="em1">Top</em>
+					        <!--{elseif $thread['digest'] > 0}-->
+					        <em class="em1">Recommend</em>
+					        <!--{elseif $thread['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+                            <!--<em class="em1">Image</em>-->
+                            <!--{else}-->
+                            <!--<em class="em1">null_22</em>-->
+                            <!--{/if}-->
+                            <i><font class="ft1">{$thread[typehtml]}</font><font class="ft2">{$thread[replies]}</font>Comments&nbsp;&nbsp;$&nbsp;{$thread[price]}</i>
+                            <cite>
+                                {$thread[dateline]}<a href="home.php?mod=space&uid=$thread[authorid]&do=profile" title="$thread[author]" target="_blank"><img src="{avatar($thread[authorid], small, true)}" align="absmiddle" /></a>
+                            </cite>
+                        </span>
+
+            <div class="mfmlist_title cl">
+                <a href="forum.php?mod=viewthread&tid=$thread[tid]&extra=$extra" $thread[highlight]>{$thread[subject]}
+				  <!--{if $thread['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+						<em class="em1"><img src="static/image/filetype/image_s.gif" style="vertical-align: middle;"></em>
+                  <!--{/if}-->
+				</a>
+            </div>
+            <!--{if $webshow_forumdisplay_pic ==1}-->
+            <!--{eval $piclist=threadpics($thread[tid],3);}-->
+            <!--{eval $medialist=mmsgtaglist('media',$thread[message],2);}-->
+            <!--{eval $flashlist=mmsgtaglist('flash',$thread[message],2);}-->
+           
+            <!--{/if}-->
+
+            <!--{if $webshow_forumdisplay_txt ==1}-->
+            {if $thread[message] && $thread[price] <= 0 }<p><!--{echo delubb(messagecutstr($thread[message],70,"..."));}--></p>{/if}
+            <!--{/if}-->
+            </dt>
+            <!--{if $stemplate && $sortid}--><div class="dd_sort cl">{$stemplate[$sortid][$thread[tid]]}</div><!--{/if}-->
+        </dl>
+    </li>
+
+    <!--{/if}-->
+
+        <!--{/loop}-->
+
+        <div class="cl page-turn" itemCount = "$_G['forum_threadcount']"><a title="{lang scrolltop}" onclick="window.scrollTo('0','0')" style="margin:150px"><b>{lang scrolltop}</b></a>{$multipage}</div>
+    <script>
+
+    </script>
+    <!--{else}-->
+		<li class="mforum_no">{lang forum_nothreads}</li>
+	<!--{/if}-->
+	</ul>
+</div>
+  {if $multipage}<div class="mforum_page none">{$multipage}</div>{/if}
+  <!--{/if}-->
+<!--{/if}-->
+
+<!--{if !in_array($_G[fid],array(36,115,2000))}-->
+<a class="mfresh" href="forum.php?mod=forumdisplay&fid={$_G[fid]}&filter={$filter}&orderby={$_GET[orderby]}{$forumdisplayadd[page]}&{$multipage_archive}"></a>
+<!--{/if}-->
+
+
+
+<script type="text/javascript">
+$(function(){
+    var threadCount = parseInt($(".mfmlist2 .page-turn").attr("itemCount")),
+            pageCount = Math.ceil(threadCount / 100);
+    $("#dumppage option").each(function(){
+        if($(this).index() > pageCount -1){
+            $(this).remove();
+        }
+    });
+    var href = window.location.href;
+    var curPageNum = href.match(/page=(\d+)/) ? href.match(/page=(\d+)/)[1] : 1;
+    if(/heats/.test(href)){
+        if(curPageNum != 1){
+            $(".page-turn .page a").eq(0).attr('href',href.replace(/page=\d+/,'page=' + (curPageNum-1)))
+        }
+        if(!$(".page-turn .page a").eq(2).hasClass('grey')){
+            $(".page-turn .page a").eq(2).attr('href',$(".page-turn .page a").eq(2).attr('href') + "&filter=heats")
+        }
+
+   }
+});
+
+
+
+$('.favorite').on('click', function() {
+		var obj = $(this);
+		$.ajax({
+			type:'POST',
+			url:obj.attr('href') + '&handlekey=favorite&inajax=1',
+			data:{'favoritesubmit':'true', 'formhash':'{FORMHASH}'},
+			dataType:'xml',
+		})
+		.success(function(s) {
+			popup.open(s.lastChild.firstChild.nodeValue);
+			evalscript(s.lastChild.firstChild.nodeValue);
+		})
+		.error(function() {
+			window.location.href = obj.attr('href');
+			popup.close();
+		});
+		return false;
+});
+
+$(function(){
+    var setSkin = function(){
+    $('#JCSS').attr('href',$('.mskin a').eq($.cookie('CK_EQ')).attr('rel'));
+    $('.mskin a').eq($.cookie('CK_EQ')).addClass('seleted').siblings('a').removeClass('seleted');
+    };
+    $('.mskin a').click(function(){
+    $.cookie('CK_EQ', $(this).index(), {expires:7, path: '/' });
+    setSkin();
+    });
+    setSkin();
+});
+</script>
+
+
+<!--{template common/footer}-->
