@@ -1,0 +1,126 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <!-- 主页面的布局 -->
+    <dimen name="nav_thumbnail_height">48.0dip</dimen>
+    <dimen name="img_horizontal_width">10.0dip</dimen>
+    <dimen name="line_vertical_height">0.5dip</dimen>
+    <dimen name="title_bar_height">48.0dip</dimen>
+    <dimen name="subscribe_text_height">40dip</dimen>
+    <dimen name="nav_bottom_height">45dip</dimen>
+    <dimen name="news_item_picture_one_width">130.0dip</dimen>
+    <dimen name="news_item_picture_one_height">90.0dip</dimen>
+    <dimen name="news_item_picture_two_height">70.0dip</dimen>
+    
+    
+     <dimen name="alt_mark_size">15.0dip</dimen>
+     <dimen name="item_image_height">60.0dip</dimen>
+     <dimen name="item_image_width">86.0dip</dimen>
+    
+    <dimen name="right_image_width">86.0dip</dimen>
+    <dimen name="right_image_height">60.0dip</dimen>
+    
+    <!-- 主页面控件间距 -->
+    <dimen name="button_padding_left">10.0dp</dimen>
+    <dimen name="button_padding_right">10.0dp</dimen>
+    <dimen name="section_padding_horizontal">16.0dp</dimen>
+    <dimen name="section_padding_vertical">2.0dp</dimen>
+    <dimen name="news_item_title_marginLeft">14.0dip</dimen>
+    <dimen name="news_item_title_marginTop">22.0dip</dimen>
+    
+    <dimen name="list_item_horizontal_paddingright">8.0dip</dimen>
+    <dimen name="list_item_horizontal_paddingleft">15.0dip</dimen>
+    <dimen name="list_item_horizontal_paddingtop">10.0dip</dimen>
+    <dimen name="list_item_title_horizontal_paddingright">7.0dip</dimen>
+    <dimen name="list_image_padding_right">4.0dip</dimen>
+     <dimen name="list_image_padding_left">3.0dip</dimen>
+     <dimen name="main_bottom_padding">50.0dip</dimen>
+     <dimen name="title_bar_padding">18.0dip</dimen>
+     
+     <!-- Channel -->
+     <dimen name="subscribe_text_paddingleft">10.0dip</dimen>
+     <dimen name="subscribe_text_size">12sp</dimen>
+     <dimen name="channel_module_padding_top">33.0dip</dimen>
+     <dimen name="channel_other_padding_top">56.0dip</dimen>
+     <dimen name="channel_item_padding_top">19.0dip</dimen>
+     <dimen name="channel_item_padding_left">12.0dip</dimen>
+     
+     <!-- mine -->
+     <dimen name="Mine_top_bg_height">120.0dip</dimen>
+     <dimen name="Mine_header_size">90.0dip</dimen>
+     <dimen name="Mine_header_marginTop">84.0dip</dimen>
+     <dimen name="Mine_header_marginLeft">10.0dip</dimen>
+     <dimen name="Mine_share_marginTop">13.0dip</dimen>
+     <dimen name="Mine_share_marginRight">18.0dip</dimen>
+     <dimen name="Mine_btn_marginTop">132.0dip</dimen>
+     <dimen name="Mine_btn_marginRight">13.0dip</dimen>
+     <dimen name="Mine_layout_margin">14.0dip</dimen>
+     <dimen name="Mine_layout_marginTop">25.0dip</dimen>
+     <dimen name="Mine_text_marginLeft">32.0dip</dimen>
+     <dimen name="Mine_followers_marginLeft">11.0dip</dimen>
+     <dimen name="Mine_friends_marginTop">8.0dip</dimen>
+     <dimen name="Mine_friends_marginLeft">9.0dip</dimen>
+     <dimen name="Mine_item_text_marginLeft">6.0dip</dimen>
+     <dimen name="Mine_item_layout_marginLeft">23.0dip</dimen>
+     <dimen name="Mine_item_text_marginTop">17.0dip</dimen>
+     
+     
+     <dimen name="Mine_layout_height">41.0dip</dimen>
+     <dimen name="Mine_friends_height">49.0dip</dimen>
+     <dimen name="Mine_bottom_height">250.0dip</dimen>
+     <dimen name="Mine_news_item_btn_height">20.0dip</dimen>
+     
+     <dimen name="Mine_name_text_size">18sp</dimen>
+      <dimen name="Mine_present_text_size">15sp</dimen>
+      <dimen name="Mine_btn_width_size">102.0sp</dimen>
+      <dimen name="Mine_btn_height_size">37.0sp</dimen>
+      
+      <dimen name="line_height">1.0dip</dimen>
+      <dimen name="Mine_news_height">72.0dip</dimen>
+      <dimen name="Mine_news_image_width">88.0dip</dimen>
+       <dimen name="Mine_news_image_height">66.0dip</dimen>
+       <dimen name="Mine_news_item_height">44.0dip</dimen>
+       <dimen name="news_comment_item_height">60.0dip</dimen>
+       
+       <!-- System Message -->
+       <dimen name="message_item_marginTop">24.0dip</dimen>
+       <dimen name="feedback_layout_marginTop">21.0dip</dimen>
+       
+       <!-- Add Friends -->
+       <dimen name="add_friends_search_height">36.dip</dimen>
+       
+       <dimen name="add_friends_search_marginLeft">30.0dip</dimen>
+       <dimen name="add_friends_item_height">78.0dip</dimen>
+       <dimen name="add_friends_item_head_size">54.0dip</dimen>
+       
+       <dimen name="login_logo_marginTop">27.0dip</dimen>
+       <dimen name="login_picture_marginTop">100.0dip</dimen>
+       
+       <dimen name="login_editText_height">42.0dip</dimen>
+       <dimen name="find_password_image_height">82.0dip</dimen>
+       <dimen name="signature_edit_height">85.0dip</dimen>
+       
+       <dimen name="share_layout_height">218.0dip</dimen>
+       <dimen name="share_item_height">109.0dip</dimen>
+      
+      <!-- 字体大小 -->
+      <dimen name="News_text_size_10">10sp</dimen>
+      <dimen name="News_text_size_11">11sp</dimen>
+      <dimen name="News_text_size_12">12sp</dimen>
+      <dimen name="News_text_size_13">13sp</dimen>
+      <dimen name="News_text_size_14">14sp</dimen>
+      <dimen name="News_text_size_15">15sp</dimen>
+      <dimen name="News_text_size_16">16sp</dimen>
+      <dimen name="News_text_size_17">17sp</dimen>
+      <dimen name="News_text_size_18">18sp</dimen>
+      <dimen name="News_text_size_19">19sp</dimen>
+      <dimen name="News_text_size_20">20sp</dimen>
+      <dimen name="News_text_size_21">21sp</dimen>
+      <dimen name="News_text_size_22">22sp</dimen>
+      <dimen name="News_text_size_24">24sp</dimen>
+      
+     
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="121dip"
+        android:orientation="horizontal"
+        android:paddingLeft="18dip"
+        android:paddingRight="24dip"
+        android:background="#F7F7F7">
+        <LinearLayout
+            android:id="@+id/nigthMode" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+            <ImageView 
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginLeft="10dip"
+                android:background="@drawable/me_icon_nigthmode"/>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dip"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:text="Night Mode"/>
+        </LinearLayout>
+        <LinearLayout 
+            android:id="@+id/fontSettings" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginLeft="10dip"
+                android:background="@drawable/me_icon_fontsettings"/>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dip"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:text="Font Settings"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/settings"  
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+            <ImageView 
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:background="@drawable/me_icon_settings"/>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dip"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:text="Settings"/>
+        </LinearLayout>
+        
+    </RelativeLayout>
+
+</LinearLayout>

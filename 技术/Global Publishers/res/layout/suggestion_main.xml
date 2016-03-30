@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    <com.trassion.newstop.view.XwScrollView
+        android:id="@+id/xwScrollView_chat"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="@dimen/main_bottom_padding"
+        android:layout_alignParentTop="true"
+        android:divider="@null"
+        android:scrollbars="none">
+        <LinearLayout 
+            android:id="@+id/layout_message"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+        </LinearLayout>
+    </com.trassion.newstop.view.XwScrollView>
+     <LinearLayout
+         android:id="@+id/imgSend" 
+         android:layout_width="fill_parent"
+         android:layout_height="@dimen/nav_bottom_height"
+         android:layout_alignParentBottom="true"
+         android:background="@color/home_bottom_color"
+         android:orientation="horizontal">
+        <TextView 
+            android:layout_width="fill_parent"
+            android:layout_height="30dip"
+            android:layout_gravity="center_vertical"
+            android:textColorHint="@color/detail_title_text_color"
+            android:padding="5dip"
+            android:hint="Say something..."
+            android:layout_marginLeft="@dimen/channel_item_padding_left"
+             android:layout_marginRight="@dimen/channel_item_padding_left"
+            android:textSize="@dimen/News_text_size_15"
+            android:background="@drawable/input_line"
+            android:textColor="@color/subscribe_textcolor_color"/>
+     </LinearLayout>   
+</RelativeLayout>

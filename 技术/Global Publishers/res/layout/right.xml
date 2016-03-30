@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="horizontal" >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/list_item_horizontal_paddingleft"
+        android:layout_marginLeft="@dimen/list_item_horizontal_paddingleft"
+        android:layout_marginRight="@dimen/list_item_horizontal_paddingleft">
+        <TextView 
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/News_text_size_12"
+            android:textColor="@color/detail_title_text_color"
+            android:text="2015.12.30 14:28"/>
+        <ImageView 
+            android:id="@+id/imgHeader"
+            android:layout_width="@dimen/subscribe_text_height"
+            android:layout_height="@dimen/subscribe_text_height"
+            android:layout_marginTop="@dimen/Mine_share_marginTop"
+            android:layout_below="@+id/tvTime"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/feedback_headprotrait"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/Mine_share_marginTop"
+            android:layout_marginRight="@dimen/channel_item_padding_left"
+            android:layout_toLeftOf="@+id/imgHeader"
+            android:layout_below="@+id/tvTime"
+            android:background="@drawable/message_right"
+            android:orientation="vertical" >
+        <TextView 
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/News_text_size_16"
+            android:textColor="@color/subscribe_textcolor_color"
+            android:text="Color-database derived from Sample Books @ Dainippon Ink and Chemicals,Inc.,licensed to Adobe Systems Incorporated."
+            />
+        <ImageView 
+            android:id="@+id/imgView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

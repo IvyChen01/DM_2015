@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/search_color"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:id="@+id/btnSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/list_item_horizontal_paddingright"
+        android:layout_marginBottom="@dimen/list_item_horizontal_paddingright"
+        android:layout_marginLeft="@dimen/section_padding_horizontal"
+        android:layout_marginRight="@dimen/section_padding_horizontal"
+        android:background="@drawable/btn_search"
+        android:orientation="horizontal">
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/button_padding_left"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/af_icon_search"/>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/list_item_horizontal_paddingright"
+            android:layout_gravity="center_vertical"
+            android:textSize="@dimen/News_text_size_14"
+            android:textColor="@color/detail_title_text_color"
+            android:text="Search"/>
+        
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/channel_item_padding_top"
+        android:layout_marginBottom="@dimen/Mine_friends_marginLeft"
+        android:orientation="horizontal">
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/section_padding_horizontal"
+            android:background="@drawable/feedback_cp_icon_q"/>
+        <TextView
+            android:id="@+id/tvTitle" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/Mine_friends_marginLeft"
+            android:layout_marginRight="@dimen/section_padding_horizontal"
+            android:textSize="@dimen/News_text_size_16"
+            android:textColor="@color/default_text"
+            android:text="How do I pay for my order?"/>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/list_item_horizontal_paddingleft"
+        android:layout_marginRight="@dimen/channel_item_padding_top"
+        android:background="@drawable/common_problem_bg"
+        android:orientation="vertical">
+        <TextView 
+            android:id="@+id/tvAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mine_present_text_color"
+            android:textSize="@dimen/News_text_size_16"
+            android:text="Color-database derived from Sample Books @ Dainippon Ink and Chemicals,Inc.,licensed to Adobe Systems Incorporated."/>
+        
+    </LinearLayout>
+
+</LinearLayout>

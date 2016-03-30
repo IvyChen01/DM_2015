@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/title_news_bar_style" >
+
+    <TextView
+        android:id="@+id/back"
+        style="@style/back_news_view" 
+        android:onClick="doBack"/>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/title_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/back"
+        android:layout_centerVertical="true"
+        android:text="@string/drawer_btn_rss"/>
+
+    <TextView
+        android:id="@+id/tvfinish"
+        style="@style/title_bar_button"
+        android:layout_alignParentRight="true"
+        android:visibility="gone" />
+    <ImageView
+        android:id="@+id/imgAdd" 
+        style="@style/title_bar_button"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/content_nav_icon_setting"/>
+
+    <ProgressBar
+        android:id="@+id/right_progress"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15.0dip"
+        android:indeterminateOnly="true"
+        android:visibility="gone" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/home_line"/>
+
+</RelativeLayout>

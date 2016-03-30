@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/subscribe_activity_bg" >
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/title_bar" >
+        <LinearLayout
+            android:id="@+id/subscribe_main_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/subscribe_text_paddingleft" >
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/subscribe_text_height"
+            android:background="@color/subscribe_text_bg">
+            <TextView 
+                style="@style/subscribe_item_text"/>
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/list_item_horizontal_paddingleft"
+                android:layout_marginTop="@dimen/channel_module_padding_top"
+                android:gravity="bottom"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/my_category_text"
+                    style="@style/subscribe_my_tip_text"
+                    android:text="@string/subscribe_my_category" />
+            </LinearLayout>
+            
+            <com.trassion.newstop.view.DragGrid
+                android:id="@+id/userGridView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/channel_item_padding_top"
+                android:layout_marginLeft="@dimen/channel_item_padding_left"
+                android:layout_marginRight="@dimen/channel_item_padding_left"
+                android:gravity="center"
+                android:horizontalSpacing="@dimen/subscribe_text_paddingleft"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3"
+                android:scrollbars="vertical"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="@dimen/subscribe_text_paddingleft" />
+            
+            <TextView
+                android:id="@+id/more_category_text"
+                style="@style/subscribe_more_tip_text"
+                android:layout_marginTop="@dimen/channel_other_padding_top"
+                android:layout_marginBottom="@dimen/channel_item_padding_top"
+                android:layout_marginLeft="@dimen/channel_item_padding_left"
+                android:text="@string/subscribe_more_category" />
+
+            <com.trassion.newstop.view.OtherGridView
+                android:id="@+id/otherGridView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/channel_item_padding_left"
+                android:layout_marginRight="@dimen/channel_item_padding_left"
+                android:gravity="center"
+                android:horizontalSpacing="@dimen/subscribe_text_paddingleft"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3"
+                android:scrollbars="vertical"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="@dimen/subscribe_text_paddingleft" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/category_layout"
+        layout="@layout/channel_item"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/image_loading_bg"
+    android:orientation="vertical" >
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar" />
+    <TextView
+        android:id="@+id/twoTitle" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/Mine_layout_marginTop"
+        android:layout_marginLeft="@dimen/section_padding_horizontal"
+        android:layout_marginBottom="@dimen/button_padding_right"
+        android:textSize="@dimen/News_text_size_13"
+        android:textColor="@color/detail_title_text_color"
+        android:text="REQUIRED"/>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <View 
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@drawable/home_line"/>
+    <EditText
+        android:id="@+id/editName" 
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/login_editText_height"
+        android:paddingLeft="@dimen/section_padding_horizontal"
+        android:textSize="@dimen/News_text_size_16"
+        android:textColor="@color/subscribe_textcolor_color"
+        android:textColorHint="@color/subscribe_textcolor_color"
+        android:hint="Please input your current email"
+        android:singleLine="true"
+        android:gravity="center|left"
+        android:background="@null"/>
+    <View 
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@drawable/home_line"/>
+    <EditText
+        android:id="@+id/editNewEmail" 
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/login_editText_height"
+        android:paddingLeft="@dimen/section_padding_horizontal"
+        android:textSize="@dimen/News_text_size_16"
+        android:textColor="@color/subscribe_textcolor_color"
+        android:textColorHint="@color/detail_title_text_color"
+        android:hint="please input your new email"
+        android:singleLine="true"
+        android:gravity="center|left"
+        android:background="@null"/>
+    <View 
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@drawable/home_line"/>
+    </LinearLayout>
+</LinearLayout>

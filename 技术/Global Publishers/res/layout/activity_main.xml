@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg_color"
+    android:orientation="vertical">
+   <LinearLayout 
+       android:id="@+id/home_layout"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_alignParentTop="true"
+       android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_thumbnail_height"
+        android:background="@color/nav_bg_color"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/rl_column"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/nav_thumbnail_height"
+            android:layout_weight="1.0" >
+
+            <com.trassion.newstop.view.ColumnHorizontalScrollView
+                android:id="@+id/mColumnHorizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/nav_thumbnail_height"
+                android:scrollbars="none"
+                android:overScrollMode="never" >
+
+                <LinearLayout
+                    android:id="@+id/mRadioGroup_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/nav_thumbnail_height"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/button_padding_left"
+                    android:paddingRight="@dimen/button_padding_right" />
+            </com.trassion.newstop.view.ColumnHorizontalScrollView>
+
+            <ImageView
+                android:id="@+id/shade_left"
+                android:layout_width="@dimen/img_horizontal_width"
+                android:layout_height="@dimen/nav_thumbnail_height"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/channel_leftblock"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/shade_right"
+                android:layout_width="@dimen/img_horizontal_width"
+                android:layout_height="@dimen/nav_thumbnail_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/channel_rightblock"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_more_columns"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/nav_thumbnail_height" >
+
+            <ImageView
+                android:id="@+id/button_more_columns"
+                android:layout_width="@dimen/nav_thumbnail_height"
+                android:layout_height="@dimen/nav_thumbnail_height"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/channel_glide_day_bg" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/category_line"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/line_vertical_height"
+        android:background="@color/line_bg_color" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+   </LinearLayout>
+   
+   <LinearLayout
+        android:id="@+id/manager_main_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        android:background="#0000"
+        android:orientation="vertical" >
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/nav_bottom_height"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="@dimen/main_bottom_padding"
+        android:paddingRight="@dimen/main_bottom_padding"
+        android:background="@color/home_bottom_color">
+     <LinearLayout 
+         android:id="@+id/news_home"
+         style="@style/home_bottom_item"
+         android:layout_weight="1"
+         android:layout_gravity="center_vertical">
+        <ImageView
+            android:id="@+id/imgHome" 
+            style="@style/home_bottom_image"
+            android:background="@drawable/tab_icon_home_press"/>
+         <TextView
+             android:id="@+id/tvHome" 
+             style="@style/home_bottom_textview"
+             android:textColor="@color/home_bottom_text_press"
+             android:text="@string/news_bottom_home"/>
+     </LinearLayout>
+     <LinearLayout 
+         android:id="@+id/news_video"
+         android:visibility="gone"
+          style="@style/home_bottom_item"
+         android:layout_centerInParent="true">
+        <ImageView 
+            android:id="@+id/imgVideo" 
+            style="@style/home_bottom_image"
+            android:background="@drawable/tab_icon_video_normal"/>
+         <TextView 
+            android:id="@+id/tvVideo" 
+            style="@style/home_bottom_textview"
+             android:textColor="@color/home_bottom_text_normal"
+             android:text="@string/news_bottom_video"/>
+     </LinearLayout>
+     <LinearLayout 
+         android:id="@+id/news_mine"
+         style="@style/home_bottom_item"
+         android:layout_weight="1"
+         android:layout_gravity="center_vertical">
+        <ImageView 
+            android:id="@+id/imgMine" 
+            style="@style/home_bottom_image"
+            android:background="@drawable/tab_icon_mine_normal"/>
+         <TextView 
+             android:id="@+id/tvMine" 
+             style="@style/home_bottom_textview"
+             android:textColor="@color/home_bottom_text_normal"
+             android:text="@string/news_bottom_mine"/>
+     </LinearLayout>
+        
+    </LinearLayout>
+
+</RelativeLayout>

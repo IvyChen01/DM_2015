@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar" />
+             <LinearLayout 
+                   android:layout_width="fill_parent"
+                   android:layout_height="@dimen/Mine_friends_height"
+                   android:background="@color/white"
+                   android:orientation="horizontal">
+              <RelativeLayout
+                   android:id="@+id/mySuggestion"
+                   android:layout_width="0dp"
+                   android:layout_height="@dimen/Mine_friends_height"
+                   android:layout_weight="1">
+                   <TextView
+                       android:id="@+id/tvMySuggestion" 
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       android:textSize="@dimen/Mine_present_text_size"
+                       android:textColor="@color/home_bottom_text_press"
+                       android:text="@string/feedback_layout_mysuggestion"/>
+              <ImageView
+                   android:id="@+id/oneTab" 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentBottom="true"
+                   android:background="@drawable/feedback_tab_bar"/>
+     </RelativeLayout>
+               <RelativeLayout
+                   android:id="@+id/mCommonProblem"
+                   android:layout_width="0dp"
+                   android:layout_height="@dimen/Mine_friends_height"
+                   android:layout_weight="1">
+                   <TextView 
+                       android:id="@+id/tvCommon"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       android:textSize="@dimen/Mine_present_text_size"
+                       android:textColor="@color/subscribe_textcolor_color"
+                       android:text="@string/feedback_layout_common_problem"/>
+              <ImageView
+                   android:id="@+id/twoTab" 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:visibility="gone"
+                   android:layout_alignParentBottom="true"
+                   android:background="@drawable/feedback_tab_bar"/>
+           </RelativeLayout>
+     </LinearLayout>
+              <View 
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@drawable/home_line"/>
+           <LinearLayout
+                android:id="@+id/manager_main_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+    </LinearLayout>
+
+</LinearLayout>

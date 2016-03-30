@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+   <LinearLayout 
+    android:layout_width="310dip"
+    android:layout_height="170dip"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/as_dialog"
+    android:orientation="vertical">
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="65dip"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvNewsName" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/section_padding_horizontal"
+            android:textColor="@color/share_dialog_title_color"
+            android:textSize="@dimen/News_text_size_22"
+            android:text="Clear Cache..."/>
+    </LinearLayout>
+          <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:layout_gravity="center"
+            android:src="@drawable/line_blue"/>
+          <TextView 
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/Mine_news_item_btn_height"
+              android:layout_marginLeft="@dimen/list_item_horizontal_paddingleft"
+              android:textSize="@dimen/News_text_size_16"
+              android:textColor="@color/subscribe_textcolor_color"
+              android:text="Are you sure to delete all the cache?"/>
+          
+          <LinearLayout 
+              android:layout_width="fill_parent"
+              android:layout_height="48dip"
+              android:layout_marginTop="@dimen/list_item_horizontal_paddingleft"
+              android:orientation="horizontal">
+              <Button 
+                  android:id="@+id/btnDialogCancel"
+                  android:layout_width="0dip"
+                  android:layout_height="48dip"
+                  android:layout_weight="1"
+                  android:layout_gravity="center"
+                  android:background="@drawable/btn_dilog_view"
+                  android:textColor="@color/subscribe_textcolor_color"
+                  android:textSize="@dimen/News_text_size_14"
+                  android:text="Cancel"/>
+              <Button 
+                  android:id="@+id/btnDialogYes"
+                  android:layout_width="0dip"
+                  android:layout_height="48dip"
+                  android:layout_weight="1"
+                   android:layout_gravity="center"
+                  android:background="@drawable/btn_dilog_view"
+                  android:textColor="@color/subscribe_textcolor_color"
+                  android:textSize="@dimen/News_text_size_14"
+                  android:text="Yes"/>
+          </LinearLayout>
+    
+    </LinearLayout>
+
+</LinearLayout>

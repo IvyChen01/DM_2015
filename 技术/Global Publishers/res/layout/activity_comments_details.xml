@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar" />
+    <ListView 
+       android:id="@+id/listView"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/title_bar"
+       android:layout_marginBottom="@dimen/nav_bottom_height"
+       android:divider="@null"
+       android:scrollbars="@null"/>
+     <LinearLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="@dimen/nav_bottom_height"
+         android:layout_alignParentBottom="true"
+         android:background="@color/home_bottom_color"
+         android:orientation="horizontal">
+        <EditText 
+            android:id="@+id/editMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:textColorHint="@color/detail_title_text_color"
+            android:padding="5dip"
+            android:hint="Say something..."
+            android:layout_marginLeft="@dimen/channel_item_padding_left"
+            android:textSize="@dimen/News_text_size_15"
+            android:background="@drawable/input_line"
+            android:textColor="@color/subscribe_textcolor_color"/>
+        <ImageButton 
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_marginLeft="@dimen/channel_item_padding_left"
+            android:layout_marginRight="@dimen/channel_item_padding_left"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bottom_icon_send"/>
+     </LinearLayout>   
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Global Publishers</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="favorite_btn_delete">删除</string>
+    <string name="dislike_dlg_lable_speech">读文章</string>
+    <string name="label_cancel_dislike">撤消</string>
+    
+    <string name="common_param_error">请求地址错误</string>
+    <string name="common_request_error">请求失败！</string>
+    <string name="common_nonet">Using the Internet, please check the network connection</string>
+    <string name="common_cannot_connect">No network connection timeout or network</string>
+    <string name="common_handling">加载中&#8230;</string>
+    
+    <string name="clear_cache_title">Clear Cache...</string>
+    <string name="clear_cache_message">Are you sure to delete all the cache?</string>
+    <string name="news_blog_yes">Yes</string>
+    <string name="news_blog_cancel">Cancel</string>
+    
+    <string name="version_change_title">Found the new version...</string>
+    <string name="version_change_message">It\'s involved in the upgrade of this software.It\'s involved in the upgrade...</string>
+    <string name="version_change_upgrade">Upgrade</string>
+    
+    <string name="city_category_list_header">点击选择其他城市</string>
+    <string name="city_category_list_hint">选择城市，立即查看本地新闻</string>
+    <string name="ss_pattern_update">发现%1$d条更新</string>
+    <string name="subscribe_my_category">My Module</string>
+    <string name="subscribe_manager_category_info_2">Click to add or delete channels; Long press to drag and sort.</string>
+    <string name="subscribe_more_category">Recommended Module</string>
+    <string name="drawer_btn_rss">Edit Channel</string>
+    <string name="drawer_btn_finish">DONE</string>
+    
+    <!-- main -->
+    <string name="news_bottom_home">Home</string>
+    <string name="news_bottom_video">Video</string>
+    <string name="news_bottom_mine">Mine</string>
+    
+    <!-- mine -->
+    <string name="mine_layout_friends">Friends</string>
+    <string name="mine_layout_notice">Notice</string>
+    <string name="mine_layout_feedback">Feedback</string>
+    <string name="mine_layout_myfeed">My Feed</string>
+    <string name="mine_layout_collection">Collection</string>
+    <string name="feedback_layout_mysuggestion">My Suggestion</string>
+    <string name="feedback_layout_common_problem">Common Problem</string>
+    
+    <!-- 照相 -->
+    <string name="select">Insert image from...</string>
+	<string name="take_camera">Camera</string>
+	<string name="select_pic">Phone</string>
+    
+    
+    <string name="pull_to_refresh">Pull refresh</string>
+    <string name="release_to_refresh">Let go to refresh</string>
+    <string name="refreshing">Refreshing</string>
+    <string name="refresh_succeed">Refresh the success</string>
+    <string name="refresh_fail">Refresh the failure</string>
+    <string name="pullup_to_load">The load more</string>
+    <string name="release_to_load">Release immediately load</string>
+    <string name="loading">Being loaded</string>
+    <string name="load_succeed">success</string>
+    <string name="load_fail">failure</string>
+    
+    <string name="proj_name">ShareSDK_TPL</string>
+    <string name="share_sdk">Share SDK</string>
+    <string name="auth_cancel">Login has been canceled</string>
+    <string name="auth_error">Logon failure</string>
+    
+   
+
+</resources>

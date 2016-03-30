@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.trassion.newstop.activity"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="20" />
+    
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+    <!-- 手机imei权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:name="com.trassion.newstop.application.NewsApplication"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar">
+        <activity
+            android:name="com.trassion.newstop.activity.WelcomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name="com.trassion.newstop.activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+        <activity 
+            android:name="com.trassion.newstop.activity.ChannelActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+        <activity 
+            android:name="com.trassion.newstop.activity.AccountSettingsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:configChanges="locale"/>
+        <activity 
+            android:name="com.trassion.newstop.activity.FriendsMessageActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+        <activity 
+            android:name="com.trassion.newstop.activity.SystemMessageActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+        <activity 
+            android:name="com.trassion.newstop.activity.FeedbackActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:label="@string/app_name"
+            android:screenOrientation="nosensor"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.AddFriendsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.PostMessageActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.SettingsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.TermsAndConditionsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.RegisterActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:configChanges="locale"/>
+         
+         <activity 
+            android:name="com.trassion.newstop.activity.FindPasswordActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         
+         <activity 
+            android:name="com.trassion.newstop.activity.ChangePasswordActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.image.ImageCutActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.ChangeEmailActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.NickNameActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.SignatureActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.NewsContentActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.CommentsDetailsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.LikedFriendsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+         <activity 
+            android:name="com.trassion.newstop.activity.SearchActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="locale"/>
+          <activity
+             android:name="com.mob.tools.MobUIShell"
+             android:theme="@android:style/Theme.Translucent.NoTitleBar"
+             android:configChanges="keyboardHidden|orientation|screenSize"
+             android:windowSoftInputMode="stateHidden|adjustResize"/>
+         <service android:name="com.trassion.newstop.download.DownloadService"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_item_marginTop"
+        android:layout_marginLeft="@dimen/Mine_item_text_marginTop"
+        android:textSize="@dimen/News_text_size_12"
+        android:textColor="@color/detail_title_text_color"
+        android:text="2015.12.30 14.28"/>
+    <TextView 
+        android:id="@+id/tvContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/channel_item_padding_top"
+        android:layout_marginLeft="@dimen/Mine_item_text_marginTop"
+         android:layout_marginRight="@dimen/Mine_item_text_marginTop"
+        android:textSize="@dimen/News_text_size_16"
+        android:textColor="@color/subscribe_textcolor_color"
+        android:text="Lorem ipsum dolor sit amet,consectetur adipiscing elit.Aenean euismod bibendum laoreet.Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.Proin sodales pulvinar tempor.Cum sociis natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus.Nam fermentum,nulla luctus pharetra vulputate,felis tellus mollis orci,sed rhoncus sapien nunc eget odio."/>
+
+</LinearLayout>
