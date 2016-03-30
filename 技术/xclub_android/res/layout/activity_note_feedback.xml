@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/layout_top" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_background"
+        android:orientation="horizontal">
+      <LinearLayout
+          android:id="@+id/tvback"
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_alignParentLeft="true">
+          <ImageView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/btn_back_selector"/>
+          </LinearLayout> 
+          <TextView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:textSize="24dp"
+              android:textColor="@color/card_white"
+              android:text="FEEDBACK"/> 
+    </RelativeLayout>
+     <ListView
+        android:id="@+id/listView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:listSelector="#FFFFFF"
+        android:fadingEdge="none"
+        android:divider="@null"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:background="@drawable/message_body_bg"/>
+</LinearLayout>

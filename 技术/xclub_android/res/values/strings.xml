@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Xclub</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="app_icon"># infinix Mobile</string>
+    <!-- 下拉刷新 -->
+    <string name="xlistview_header_hint_normal">Pull down</string>
+    <string name="xlistview_header_hint_ready">Release</string>
+    <string name="xlistview_header_hint_loading">Loading...</string>
+    <string name="xlistview_header_last_time">Last update:</string>
+    <string name="xlistview_footer_hint_normal">More</string>
+    <string name="xlistview_footer_hint_ready">Release and you can get more</string>
+    
+    <!-- 个人资料 -->
+    <string name="time_choice">Time selecte:</string>
+    <string name="sure">OK</string>
+    <!-- 修改密码提示 -->
+    <string name="version_phone">Infinix Mobile</string>
+    <!-- 图片 -->
+    <string name="choose_pic_nofile">亲~ 没有找到图片哦</string>
+    <string name="choose_pic_floder">请选择相册</string>
+    <string name="choose_pic_img">请选择图片</string>
+    <string name="choose_pic_noraml">使用原图</string>
+    <string name="common_ok">确定</string>
+    
+    <!-- 自定义表情控件 -->
+	<string name="face_default">Emoj</string>
+	<string name="face_monkey">Coolmonkey</string>
+	<string name="face_daidai">Dullboy</string>
+    
+     <!-- 表情符号，以“,”为每个符号的分隔符,顺序不能乱，每个符号都是对应好表情的 -->
+    <string name="emote_face_str">:),:(,:D,:\'(,:@,:o,:P,:$,;P,:L,:Q,:lol,:loveliness:,:funk:,:curse:,:dizzy:,:shutup:,:sleepy:,:hug:,:victory:,:time:,:kiss:,:handshake,:call:,{:2_25:},{:2_26:},{:2_27:},{:2_28:},{:2_29:},{:2_30:},{:2_31:},{:2_32:},{:2_33:},{:2_34:},{:2_35:},{:2_36:},{:2_37:},{:2_38:},{:2_39:},{:2_40:},{:3_41:},{:3_42:},{:3_43:},{:3_44:},{:3_45:},{:3_46:},{:3_47:},{:3_48:},{:3_49:},{:3_50:},{:3_51:},{:3_52:},{:3_53:},{:3_54:},{:3_55:},{:3_56:},{:3_57:},{:3_58:},{:3_59:},{:3_60:},{:3_61:},{:3_62:},{:3_63:},{:3_64:}
+	</string>
+     <!-- 图片上传错误提示 -->
+    <string name="upload_pic_tips1">Image format error, can only upload PNG, BMP, JPG format</string>
+    <string name="upload_pic_tips2">Picture file is too large</string>
+    <string name="upload_pic_tips3">"Your user group can't upload this size picture"</string>
+    <string name="upload_pic_tips4">File type limit can not upload so big picture</string>
+    <string name="upload_pic_tips5">"You can't upload more pictures today"</string>
+    <string name="upload_pic_tips6">Attachment file can not be saved</string>
+    <string name="upload_pic_tips7">No legal file is uploaded</string>
+    <string name="upload_pic_tips8">Illegal request </string>
+    <string name="upload_pic_tips9">"Today you can't upload so big picture"</string>
+    
+    <string name="upload_photo_error">Picture upload failed, please try again later</string>
+    
+    <!-- 退出App -->
+    <string name="home_exit_tip">Just press one more time to exit</string>
+    
+    <!-- facebook APP_ID -->
+    <string name="app_id">882253475198721</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    
+    <string name="proj_name">ShareSDK_TPL</string>
+    <string name="share_sdk">Share SDK</string>
+    <string name="auth_cancel">Login has been canceled</string>
+    <string name="auth_error">Logon failure</string>
+</resources>

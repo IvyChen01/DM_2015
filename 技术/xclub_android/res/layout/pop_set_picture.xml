@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/pop_set_picture"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="255dp"
+        android:layout_height="140dp"
+        android:orientation="vertical">
+       <TextView 
+           android:layout_width="fill_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:gravity="center"
+           android:textColor="#628EE8"
+           android:textSize="18sp"
+           android:text="High Quality"/>
+       <ImageView 
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:background="@drawable/line_set_bg"/>
+       <TextView 
+           android:layout_width="fill_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:gravity="center"
+           android:textColor="#628EE8"
+           android:textSize="18sp"
+           android:text="Smart Download"/>
+       <ImageView 
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:background="@drawable/line_set_bg"/>
+       <TextView 
+           android:layout_width="fill_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:gravity="center"
+           android:textColor="#628EE8"
+           android:textSize="18sp"
+           android:text="Data Saving"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="MDialog_load" parent="android:style/Theme.Dialog">
+		<item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+	</style>
+	<style name="MDialog_loading" parent="android:style/Theme.Dialog">
+		<item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+	</style>
+    
+    <style name="MDialog" parent="android:style/Theme.Dialog">
+		<item name="android:windowBackground">@drawable/dialog_dialcontactsnum_top</item><!-- 这里解决黑边框的问题，dialog_black_bg -->
+		<item name="android:backgroundDimEnabled">true</item><!-- 屏幕不会变暗 -->
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:layout_gravity">center</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:windowIsFloating">true</item>
+		<item name="android:windowFrame">@null</item>
+	</style>
+    
+    <style name="loading_small" parent="@android:style/Widget.ProgressBar.Small">
+		
+		<item name="android:layout_width">21dip</item> 
+		<item name="android:layout_height">21dip</item>
+		<item name="android:layout_gravity">center_vertical</item>
+	</style>
+    
+     <style name="pop_anim">
+        <item name="android:windowEnterAnimation">@anim/popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/popup_exit</item>
+    </style>
+     <style name="xclub_dialog_style_with_title" parent="@android:style/Theme.Dialog">
+	    <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>  
+         <item name="android:windowBackground">@color/white</item>
+         <item name="android:textColor">@color/black</item>
+         <item name="android:windowFullscreen">true</item> 
+	</style>
+	<style name="dialog_anim">
+	    <item name="android:windowEnterAnimation">@anim/dialog_enter_anim</item>
+	    <item name="android:windowExitAnimation">@anim/dialog_exit_anim</item>
+	</style>
+	<style
+        name="dialog"
+        parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+	    <!-- 这里解决黑边框的问题， 不设置背景会有一个黑边框 -->
+        <item name="android:windowBackground">@drawable/dialog_bg</item>
+        <item name="android:backgroundDimEnabled">true</item><!-- 屏幕不会变暗 -->
+	    <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+    </style>
+    <style name="WhiteDialog" parent="@android:style/Theme.Dialog">
+       <item name="android:windowBackground">@color/dialog_white_bg</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="cricleBottomAnimation">
+        <item name="android:windowEnterAnimation">@anim/avatar_animation_right_in</item>
+        <item name="android:windowExitAnimation">@anim/avatar_animation_right_out</item>
+    </style>
+    <style name="ActionSheet01" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@style/ActionSheetAnimation</item>
+    </style>
+     <style name="ActionSheetAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/push_up_in</item>
+        <item name="android:windowExitAnimation">@anim/push_up_out</item>
+    </style>
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="common_btn_height">40dip</dimen><!-- 按钮高度 -->
+    <!-- xclub dimen -->
+    <dimen name="xclub_10">10dip</dimen>
+    <dimen name="xclub_1">1dip</dimen>
+    <!-- 字体大小 -->
+    <dimen name="xclub_textSize_17">17sp</dimen>
+    <dimen name="xclub_textSize_18">18sp</dimen>
+    <dimen name="xclub_textSize_25">25sp</dimen>
+    <dimen name="font_normal">15dip</dimen>
+    
+    <!-- 选择图片界面 -->
+	<dimen name="choose_folder_icon_height">65dip</dimen><!-- 相册缩略图高度 -->
+	<dimen name="choose_folder_maginL">10dip</dimen><!-- 相册图片左间距 -->
+	<dimen name="choose_foloder_maginR">10dip</dimen><!-- 相册图片右间距 -->
+	<dimen name="choose_folder_maginTB">10dip</dimen><!-- 相册上下间距 -->
+	<dimen name="choose_size_name_magin">10dip</dimen><!-- 相册名字与文件数的间距 -->
+	<dimen name="choose_view_ok_height">50dip</dimen><!-- 预览与确定按钮栏高度 -->
+	
+	<dimen name="choose_checkbox_magirnR">10dip</dimen><!-- 使用原图按钮左间距 -->
+	<dimen name="choose_btn_width">95dip</dimen><!-- 按钮的宽度 -->
+	<dimen name="choose_btn_magirnLR">15dip</dimen><!-- 按钮左右间隔 -->
+</resources>

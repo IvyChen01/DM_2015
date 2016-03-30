@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:background="#0f2234"
+    android:padding="10dip"
+    >
+
+    <Button
+        android:id="@+id/pop_camera_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_button_bg"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:text="Photo" />
+
+    <Button
+        android:id="@+id/btnSelectPhoto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_button_bg"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:layout_marginTop="5dip"
+        android:text="Gallery" />
+    
+    
+    <Button
+        android:id="@+id/pop_close_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gray_button_bg"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:layout_marginTop="10dip"
+        android:text="Cancel" />
+
+</LinearLayout>

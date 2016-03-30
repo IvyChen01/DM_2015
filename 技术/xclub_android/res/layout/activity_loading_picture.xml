@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/black">
+
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_background"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/tvback"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_back_selector" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Check photo"
+            android:textColor="@color/card_white"
+            android:textSize="24dp" />
+       <RelativeLayout
+              android:id="@+id/btSaveOrshare" 
+              android:layout_width="60dp"
+              android:layout_height="60dp"
+              android:layout_alignParentRight="true">
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:layout_alignParentRight="true"
+              android:layout_marginRight="15dp"
+              android:background="@drawable/post_oval_bg"/>
+          </RelativeLayout>
+        <!-- 
+        <LinearLayout
+            android:id="@+id/tvSave"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" >
+            
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/pictrue_download" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/share_bg" />
+        
+         </LinearLayout>
+         -->
+    </RelativeLayout>
+
+     <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pictureViewPager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/indexTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="20dip"
+            android:layout_marginRight="20dip"
+            android:text="1/2"
+            android:textColor="@color/white" />
+    </FrameLayout>
+    
+
+</LinearLayout>

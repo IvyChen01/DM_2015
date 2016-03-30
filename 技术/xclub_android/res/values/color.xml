@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 公共 -->
+    <color name="title_background">#222836</color>
+    <color name="page_back">#fff2f2f2</color>
+    <color name="logo_text_color">#ff7f7f7f</color>
+    <color name="gay">#0066ff</color>
+    <color name="hui">#08111a</color>
+    <color name="gray">#acacac</color> <!-- 灰色 -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color> <!-- 纯黑色 -->
+    <color name="transparent">#00000000</color>
+	<color name="sister_item_content">#828282</color>
+    <color name="comment_view_bg_color">#f8f8f8</color><!-- 界面背景颜色 -->
+     <color name="grenn">#4ab5ab</color><!-- 绿色 -->
+     <color name="search_grenn_color">#91C347</color>
+     <color name="gray_textview">#D1D1D1</color>
+     <color name="dialog_white_bg">#fbfbfb</color>
+    <!-- 名片 -->
+    <color name="card_gray">#343434</color>
+    <color name="card_white">#ffffff</color>
+    <!-- 等级颜色 -->
+    <color name="level_jade">#009B7A</color>
+    <color name="level_sapphire">#2B749F</color>
+    <color name="level_golden">#E5A134</color>
+     <!-- 自定义表情控件 -->
+    <color name="msg_emotebar_backgroud">#ff73797d</color>
+    <color name="msg_emotebar_item_press">#ff3b3e40</color>
+    <color name="msg_emotebar_item_selected">#ffececec</color>
+    <color name="light_notes_color">#ff999999</color>
+    
+</resources>

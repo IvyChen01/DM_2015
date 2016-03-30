@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_background"
+        android:orientation="horizontal">
+      <LinearLayout
+          android:id="@+id/tvback"
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_alignParentLeft="true">
+          <ImageView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/btn_back_selector"/>
+          </LinearLayout> 
+          <TextView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:textSize="24dp"
+              android:textColor="@color/card_white"
+              android:text="FEEDBACK"/> 
+    </RelativeLayout>
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+         <LinearLayout
+              android:id="@+id/layout_post" 
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:layout_marginLeft="13dp"
+              android:layout_marginRight="13dp"
+              android:orientation="vertical">
+          <EditText
+             android:id="@+id/etTitle" 
+              android:layout_width="fill_parent"
+              android:layout_height="45dp"
+              android:hint=" Title"
+              android:padding="5dp"
+              android:textColorHint="#AAAAAA"
+              android:textSize="17sp"
+              android:background="@drawable/title_edittext_bg"/>
+          <EditText
+              android:id="@+id/etContact" 
+              android:layout_width="fill_parent"
+              android:layout_height="160dp"
+              android:textColorHint="#AAAAAA"
+              android:layout_marginTop="20dp"
+              android:padding="5dp"
+              android:textSize="17sp"
+              android:hint=" Enter here"
+              android:gravity="top|left"
+              android:background="@drawable/content_edittext_background"/>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:text="Add image(Up to Nine)"/> 
+            <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:fadingEdge="none"
+                android:overScrollMode="never"
+                android:layout_marginTop="16dp" >
+            <LinearLayout
+                android:id="@+id/imagesUploadView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_image_bg"
+                android:gravity="center_vertical" >
+
+                <ImageView
+                    android:id="@+id/addImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginRight="8dip"
+                    android:src="@drawable/add_image" />
+            </LinearLayout>
+        </HorizontalScrollView>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        <EditText
+             android:id="@+id/etContactInformation" 
+              android:layout_width="fill_parent"
+              android:layout_height="45dp"
+              android:layout_marginTop="20dp"
+              android:padding="5dp"
+              android:hint="Please leave your contact information;Phone/Email/whatsapp et."
+              android:textColorHint="#AAAAAA"
+              android:textSize="11sp"
+              android:background="@drawable/title_edittext_bg"/> 
+           </LinearLayout>
+          <Button 
+             android:id="@+id/btPublish"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="25dp"
+             android:layout_marginLeft="11dp"
+             android:layout_marginRight="11dp"
+             android:layout_marginBottom="20dp"
+             android:gravity="center"
+             android:textColor="#FFFFFF"
+             android:textSize="18sp"
+             android:text="SUBMIT"
+             android:background="@drawable/submit_button_selector"/>   
+     </LinearLayout>
+     </LinearLayout>
+     </ScrollView>
+</LinearLayout>

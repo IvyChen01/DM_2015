@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<previews>
+
+    <preview
+        name="3.2&quot; HVGA slider (ADP1)"
+        activity="com.example.xclub.fragment.PageFragment1"
+        config="layout-ldltr-sw320dp-w320dp-h533dp-normal-long-port-desk-notnight-hdpi-finger-keyssoft-nokeys-navhidden-nonav-800x480-v20"
+        device="Nexus S"
+        devicestate="Portrait"
+        target="Android 4.4W"
+        theme="@style/AppTheme" >
+    </preview>
+
+</previews>

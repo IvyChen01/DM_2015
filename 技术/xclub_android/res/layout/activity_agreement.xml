@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_background"
+        android:orientation="horizontal">
+      <LinearLayout
+          android:id="@+id/tvback"
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_alignParentLeft="true">
+          <ImageView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/btn_back_selector"/>
+          </LinearLayout> 
+          <TextView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:textSize="24dp"
+              android:textColor="@color/card_white"
+              android:text="About"/> 
+    </RelativeLayout>
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:scrollbars="none">
+    <LinearLayout 
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+      <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:layout_marginTop="32dp"
+          android:textColor="#6B6B6B"
+          android:textStyle="bold"
+          android:textSize="19sp"
+          android:text="Infinix X'Club"/>
+      <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:textColor="#6B6B6B"
+          android:textStyle="bold"
+          android:textSize="19sp"
+          android:text="Service and Use Agreement"/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="20dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="Such Infinix x’club Service and Use Agreement (hereinafter referred to as the “Use Agreement”) is the code of relevant rights and obligations entered into by the User (you) and Infinix x’club with respect to the services, such service articles are binding upon you and Infinix x’club."/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="13dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="15dp"
+           android:textStyle="bold"
+           android:textColor="#6B6B6B"
+           android:textSize="14sp"
+           android:text="1.Acknowledgment and acceptance"/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="8dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="1.1 Providing you with services according to the following articles. Such articles may be updated by Infinix x’club team at any time without notice otherwise. When you use Infinix x’club special services, you and Infinix x’club shall comply with the guidelines and rules relating to such services that may be issued by Infinix x’club at any time. All the guidelines and rules mentioned above are part of this Use Agreement."/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="1.2 Before using all services provided by Infinix x’club, you should carefully read this Use Agreement. If you do not agree with this Use Agreement or any modification hereto at any time, please immediately stop using all services provided by Infinix x’club; if you continue to use Infinix x’club services, you shall be deemed as you have understood and fully agreed with all contents of this Use Agreement, including any modification made by Infinix x’club to the Use Agreement at any time, and you become an Infinix x’club user (hereinafter referred to as the “user”)."/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="1.3 Please be noted that all articles, pictures and any other information you uploaded and/or provided via Infinix x’club platform can be used for commercial and/or non-commercial purpose of use once you become the Infinix x’club User free of charges."/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="15dp"
+           android:textStyle="bold"
+           android:textColor="#6B6B6B"
+           android:textSize="14sp"
+           android:text="2. Service instructions"/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="8dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="2.1 At present, according to the contents, Infinix x’club can provide users with the following services: photo uploading, sharing, ranking and voting, in Infinix x’club, the users may release their own From Zero to Hero topic pictures in the form of photo, share the experience and participate in TOP ranking list. He/she may also share, vote for, comment on and collect the photos released by himself/herself or others. You acknowledge and agree that, such services are provided based upon the current status, Infinix x’club will not assume any liability for any user information or any individually set time effectiveness, deletion, transmission error, failure to store or any other problem. Infinix x’club reserves the rights to suspend any part of such services for the purpose of upgrading, maintenance or any other purpose without prior notice."/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="2.2 Please understand that, Infinix x’club only provides relevant network services, beyond that, the users shall on their own prepare the equipment relating to relevant network services (for example, any device for personal mobile phone to access the internet or mobile network) and bear necessary expenses (for example, the mobile phone fee paid for accessing the internet or using the mobile network)."/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="2.3 When any user accepts all services provided by Infinix x’club, the user agrees to accept all kinds of information services provided by Infinix x’club. The contents involved in such information include all kinds of propaganda information, activity information, order information, business information and Infinix x’club partner information expressed in the form of word and photo, the method for the provision of such information shall include but be not limited to email and SMS. When you authorize to log in or actually use “Infinix x’club” services in “Infinix x’club”, you shall be deemed as you have agreed to accept such services."/>
+      <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="2.4 Infinix x’club provides users with legal and health products and services, however, the users shall on their own bear liabilities and risks for the use of Infinix x’club, under no circumstance shall Infinix x’club assume compensation liability for any special, accidental, direct or indirect loss due to the use or failure to use the services provided by Infinix x’club."/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="2.5 Unless otherwise set forth by you and Infinix x’club, Infinix x’club reserves the rights to modify or suspend the services at any time without notice sent to you. Infinix x’club does not need to be liable for any user or any third party. "/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="15dp"
+           android:textStyle="bold"
+           android:textColor="#6B6B6B"
+           android:textSize="14sp"
+           android:text="3. Basic rules for the User’s use"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.1 If you successfully authorize to log in, you become a legal user of Infinix x’club; if your password and account suffers unauthorized use or any other security problem, you shall immediately notify Infinix x’club."/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.2 You agree to comply with all provisions of relevant laws and regulations of the country, if any of your behaviors violate any provision of laws and regulations of the country, which may constitute crime, you will be investigated about the criminal liabilities and shall assume all legal liabilities." />
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.3 Infinix x’club undertakes only to useall information you provided according to the service purposes of the website. The range of use shall include but be not limited to transaction confirmation, transaction payment, policy updating, user notice, transmission of activity information, business information and other auxiliary services relating to the services and so on. If you consider that Infinix x’club uses your personal information beyond the scope, please immediately contact the Customer Service Center, Infinix x’club will investigate and handle."/>
+        <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.4 In In, users may release and share their own photos etc. or participate in all kinds of online activities in the form of photo, however, users shall not send or spread sensitive information or any information violating national laws, regulations or policies by making use of In services, such information shall include but be not limited to:"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.5 In Infinix x’club, users may release and share their own photos etc. or participate in all kinds of online activities in the form of photo, however, users shall not send or spread sensitive information or any information violating national laws, regulations or policies by making use of Infinix x’club services, such information shall include but be not limited to:"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text=" 3.5.1 Objection to the basic rules determined by the laws of the country;"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.5.2 The information jeopardizing state security, disclosing state secrets, overturning state power and breaking state unity;"/>
+        <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.5.3 The information jeopardizing state honors and interests;" />
+        <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.5.4 The information inciting ethnic hostility, ethnic discrimination and breaking ethnic unity;"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.5.5 The information breaking state religious policies, advocating heresy and feudalistic superstition;"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.5.6 The information spreading rumors, disturbing the social order and destroying the social stability;"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.5.7 The information spreading obscenity, eroticism, gambling, violence, murder, terror or instigating crime;"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.5.8 The information humiliating or defaming others, or jeopardizing the legal rights and interests of others;"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.5.9 The information containing other contents prohibited by laws and administrative regulations;"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.5.10 The information containing the contents that In deems as inappropriate;"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.6 When users release photos and use Infinix x’club services, they shall also comply with the following principles:"/>
+        <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.6.1 Shall not jeopardize the legal rights and interests of others with any method;"/>
+         <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.6.2 Shall not use the network service system for any illegal purpose, shall comply with all network protocols, regulations and procedures relating to the network service; shall not commit any behavior that may generate adverse influence on the normal running of the network by making use of In network service system;"/>
+         <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.6.3 Shall not publish any commercial advertisement without the permission of Infinix x’club, shall not upload, download, paste, email or transmit the advertisement letters, promotion materials and junk mails etc. with any method; shall not by making commercial use of any data in Infinix x’club;" />
+         <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.6.4 Shall comply with relevant laws and regulations of the country:Shall not upload, download, paste, email or transmit the contents jeopardizing the patent, trademark, copyright, trade secrets or other proprietary rights of any other etc. with any method; Shall not upload, download, paste, email or transmit the contents that they are not entitled to transit (for example, the internal materials and confidential materials) with any method;" />
+      <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.6.5 Shall not disturb or destroy such services or any server or network connecting to such services, shall not violate the regulations, procedures, policies or codes relating to the network such services connect to;"/>
+      <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.6.6 Shall not harass any other person with the method of tracking, cyber man-hunting or any other method."/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.6.7 Shall not intentionally or unintentionally violate any applicable local or national law or any other rules with legal force;"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="3.7 You hereby undertake that, without written consent of Infinix x’club, shall not commit sale or any other commercial behavior in the platform of Infinix x’club by making use of Infinix x’club services. If any user violates such provision, Infinix x’club will investigate your breach liabilities according to law, and Infinix x’club will also be entitled to claim for compensation for any loss caused against Infinix x’club."/>
+        <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="15dp"
+           android:textStyle="bold"
+           android:textColor="#6B6B6B"
+           android:textSize="14sp"
+           android:text="4.User privacy protection"/>
+         <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="The registration materials provided by you and relevant other materials of yours reserved by Infinix x’club will be protected by the laws of the country on privacy and the Declaration on Privacy of our company."/>
+         <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="15dp"
+           android:textStyle="bold"
+           android:textColor="#6B6B6B"
+           android:textSize="14sp"
+           android:text="5.Released public information"/>
+         <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="5.1 Infinix x’club this Use Agreement, “the region in which such services are publicly used” refers to the region in which general public may use;"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="5.2 For any contents uploaded or released by any user in Infinix x’club, the user shall guarantee that he/she is the copyright owner or has obtained legal authorization, and such content will not infringe upon the legal rights and interests of any third party, the user agrees to grant In free, irrevocable, permanent, sub-licensable or transferable exclusive permission of access to all of the above contents, according to such permission, Infinix x’club will be entitled to exhibit, promote or use the above contents with any other method not prohibited by law."/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="15dp"
+           android:textStyle="bold"
+           android:textColor="#6B6B6B"
+           android:textSize="14sp"
+           android:text="6.Disclaimer"/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="6.1 Infinix x’club will not guarantee the authenticity, accuracy and completeness of any information including any information, contents or advertisement propaganda etc. of others obtained from such application (hereinafter referred to as the “information”). If any unit or individual commits any behavior through the above “information”, it shall on its own identify the authenticity or falseness and be careful to prevent risks, otherwise, no matter due to what kind of reason, such application will not assume any direct, indirect, joint or derivative loss or liability for any transaction and/or behavior occurring directly with such application."/>
+       <TextView 
+          android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="6.2 Infinix x’club is entitled but not obliged to improve or correct any omission or mistake of any part of such application."/>
+        <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="6.3 Infinix x’club will not guarantee that (including but not limited to):Such application is suitable for the use requirements of any user;Such application is not disturbed, is timely, safe, and reliable or free from mistakes;Any product, service or other material obtained by users from such application is compliance with any user’s expectation."/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="6.4 Any user shall on its own assume the risks of any material obtained by the user from such application; any user shall be fully liable for the damage on the user’s mobile phone system or loss of materials due to such use."/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="6.5 Infinix x’club will not assume any direct, indirect, joint, derivative or punitive compensation liability for the profit, goodwill, material loss or any other tangible or intangible loss caused by any of the following reasons:"/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="6.5.1 The use or failure to use such application;"/>
+        <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="6.5.2 Any product, material or service purchase or obtained through such application;"/>
+        <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="6.5.3 The user materials are used or modified without authorization;"/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="6.5.4 Other matters relating to such application;"/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="6.5.5 Any third party releases or delivers fraudulent information with any method or causes any user to suffer economic loss."/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="15dp"
+           android:textStyle="bold"
+           android:textColor="#6B6B6B"
+           android:textSize="14sp"
+           android:text="7.Compensation"/>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="If the contents provided, released or transmitted through such services, your linkage with such services, your violation of such Use Agreement or your jeopardizing of any other person’s any right derive or cause any third party to file any claim or request, including reasonable attorney’s fees, you agree to compensate Infinix x’club, associated enterprises, officers, agents, brand co-owners or other partners and employees, hold them from damages, and assume all legal liabilities caused thereby."/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="15dp"
+           android:textStyle="bold"
+           android:textColor="#6B6B6B"
+           android:textSize="14sp"
+           android:text="8.Service termination"/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="You agree that, due to any reason, including but not limited to lack of use, or because In deems that you have violated the words or spirits of such Use Agreement, Infinix x’club may at its own discretion terminate the use of your account or such services (or any part of the services) as well as remove and delete any of your contents in such services. You agree that, such services provided according to any provision hereof may be suspended or terminated without prior notice, Infinix x’club may immediately close or delete your account or all related information and documents in your account, and forbid continuing to use the above documents or such services. In addition, you agree that, if the use of such services is suspended or terminated or your account and related information and documents are closed or deleted, Infinix x’club will not assume any liability for you or any third party."/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="15dp"
+           android:textStyle="bold"
+           android:textColor="#6B6B6B"
+           android:textSize="14sp"
+           android:text="9.Infinix x’club trademark information"/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="Without prior written consent of Infinix x’club, you agree not to exhibit, use or make other disposal of Infinix x’club and any other Infinix x’club registered trademark, logo or product, service name with any method."/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="15dp"
+           android:textStyle="bold"
+           android:textColor="#6B6B6B"
+           android:textSize="14sp"
+           android:text="10. Governing law and jurisdiction"/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="10.1 The Use Agreement and the relationship between you and Infinix x’club shall be governed by the laws of the country where the services are provided. Any dispute between you and Infinix x’club with respect to such services, this Use Agreement and other related matters shall be firstly settled through friendly negotiation; should negotiation do no good, it shall be submitted to the court of the authority where the services are provided and the judgment of the court shall be final and binding upon both parties;"/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="10.2 No exercise or implementation of any right or regulation as set forth herein will not constitute the waiver of the above right or rights;"/>
+      <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="10.3 No matter what kind of reason causes full or partial invalidity or unenforceability of any article hereof, other articles hereof shall remain effective and binding."/>
+        <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="10.4 The headlines are only set for convenience, and do not have any legal or contractual effect;" />
+        <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:layout_marginBottom="20dp"
+           android:textSize="15sp"
+           android:textColor="#6B6B6B"
+           android:text="10.5 Infinix X’Club has ultimate rights for interpretation of such Use Agreement."/>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

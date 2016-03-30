@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+    <!--  
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="12sp"
+        android:textColor="#ACACAC"
+        android:textStyle="bold"
+        android:text="Rita Silvas Peggy Wells,et895 people like this"/>
+        -->
+</LinearLayout>

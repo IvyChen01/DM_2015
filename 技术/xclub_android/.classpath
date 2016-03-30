@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="lib" path="libs/nineoldandroids-2.4.0.jar"/>
+	<classpathentry kind="lib" path="libs/twitter4j-core-4.0.2.jar"/>
+	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="libs/bolts-android-1.1.4.jar"/>
+	<classpathentry kind="lib" path="libs/fastjson-1.1.23.jar"/>
+	<classpathentry kind="lib" path="libs/gson-2.2.2.jar"/>
+	<classpathentry kind="lib" path="libs/httpmime-4.2.jar"/>
+	<classpathentry kind="lib" path="libs/MobTools.jar"/>
+	<classpathentry kind="lib" path="libs/umeng_social_sdk.jar"/>
+	<classpathentry kind="lib" path="libs/umeng-analytics-v5.5.3.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Core-2.6.4.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Email-2.6.4.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Facebook-2.6.4.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Instagram-2.6.4.jar"/>
+	<classpathentry kind="lib" path="libs/MobCommons.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-ShortMessage-2.6.4.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Twitter-2.6.4.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-WhatsApp-2.6.4.jar"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

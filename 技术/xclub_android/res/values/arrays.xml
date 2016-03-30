@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="country">
+    <item>Cote dlvoire</item>
+    <item>Egypt</item>
+    <item>France</item>
+    <item>Ghana</item>
+    <item>Kenya</item>
+    <item>Morocco</item>
+    <item>Nigeria</item>
+    <item>Pakistan</item>
+    <item>Saudi Arabia</item>
+    <item>UAE</item>
+    <item>Other Country</item>
+</string-array>
+<string-array name="profession">
+    <item>Computer/Internet/Communication</item>
+    <item>Production/Technology/Manufacture</item>
+    <item>Commercial/Service/Individual managemen</item>
+    <item>Financial/Bank/Investment/Insurence</item>
+    <item>Culture/Media/Advertisement</item>
+    <item>Entertainment/Art/Performance</item>
+    <item>Medical treatment/Medicine/nursing</item>
+     <item>Education/Traning</item>
+    <item>Lawyer/Law</item>
+    <item>Civil servant/Governmental agencies</item>
+    <item>Student</item>
+</string-array>
+</resources>

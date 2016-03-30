@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/comment_view_bg_color"
+    android:orientation="vertical"
+    android:weightSum="10.0" >
+
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_background"
+        android:orientation="horizontal">
+      <LinearLayout
+          android:id="@+id/tvback"
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_alignParentLeft="true">
+          <ImageView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="15dp"
+              android:background="@drawable/previous_back"/>
+          </LinearLayout> 
+          <TextView
+              android:id="@+id/post_title_text" 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:textSize="24dp"
+              android:textColor="@color/card_white"
+              android:text="请选择相册"/>
+          <TextView
+            android:id="@+id/choose_ok_btn"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:background="@drawable/common_btn_selector"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:enabled="false"
+            android:visibility="gone"
+            android:text="确定"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/font_normal" 
+            android:layout_marginRight="10dip"
+            android:layout_weight="1.0"/> 
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/choose_floder_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="8.5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/choose_floder_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/line_set_bg" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/choose_image_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" 
+        >
+
+        <GridView
+            android:id="@+id/choose_image_gv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:horizontalSpacing="5dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:numColumns="3"
+            android:listSelector="@color/comment_view_bg_color"
+            android:stretchMode="columnWidth"/>
+    </LinearLayout>
+ 
+    <!-- 图片选择界面按钮栏 -->
+    <!-- 
+    <LinearLayout
+        android:id="@+id/choose_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/choose_view_pic"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:background="@drawable/none_btn_selector"
+            android:gravity="center"
+            android:enabled="false"
+            android:text="预览"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_normal"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="50dip"
+            android:layout_weight="1.0" />
+
+        <TextView
+            android:id="@+id/choose_ok_btn"
+            android:layout_width="0dip"
+            android:layout_height="40dp"
+            android:background="@drawable/common_btn_selector"
+            android:gravity="center"
+            android:enabled="false"
+            android:text="确定"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/font_normal" 
+            android:layout_marginLeft="50dip"
+            android:layout_marginRight="10dip"
+            android:layout_weight="1.0"/>
+    </LinearLayout>
+     -->
+    <!-- 当期手机没有本地图片提示 -->
+   <LinearLayout
+        android:id="@+id/choose_nofile_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" 
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/picture" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:text="@string/choose_pic_nofile"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_normal" />
+    </LinearLayout>    
+
+</LinearLayout>

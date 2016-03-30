@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_background"
+        android:orientation="horizontal">
+      <LinearLayout
+          android:id="@+id/tvback"
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_alignParentLeft="true">
+          <ImageView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/btn_back_selector"/>
+          </LinearLayout> 
+          <TextView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:textSize="24dp"
+              android:textColor="@color/card_white"
+              android:text="About"/> 
+    </RelativeLayout>
+     <LinearLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
+         <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="32dp"
+             android:layout_gravity="center_horizontal"
+             android:textColor="#6B6B6B"
+             android:textStyle="bold"
+             android:textSize="19sp"
+             android:text="Disclaimer"/>
+         <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="20dp"
+             android:layout_marginLeft="15dp"
+             android:layout_marginRight="15dp"
+             android:textColor="#6B6B6B"
+             android:textSize="15sp"
+             android:text="The views, opinions, or anything thereof discussed on this site and forums are by no means the views, opinions, oranything there of supported by the X’Club Forum Staff or the Infinix Team. While we will try ourbest to moderate and delete any troublesome content, we may not be held responsible for any content that is posted."/>
+    <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="20dp"
+             android:layout_marginLeft="15dp"
+             android:layout_marginRight="15dp"
+             android:textColor="#6B6B6B"
+             android:textSize="15sp"
+             android:text="The X’Club Forum Staff reserves the rightto modify these and any other guidelines found throughout the site and forumsat any time and without notification and an Administrator's word is final."/>
+         </LinearLayout>
+         <RelativeLayout 
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent">
+             <TextView 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginBottom="32dp"
+                 android:textSize="15sp"
+                 android:textColor="#6b6b6b"
+                 android:text="Infinix X'Club"/>
+         </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/comment_view_bg_color"
+    android:orientation="vertical" >
+
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_background"
+        android:orientation="horizontal">
+      <LinearLayout
+          android:id="@+id/tvback"
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_alignParentLeft="true">
+          <ImageView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="15dp"
+              android:background="@drawable/previous_back"/>
+          </LinearLayout> 
+          <TextView
+              android:id="@+id/post_title_text" 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:textSize="24dp"
+              android:textColor="@color/card_white"
+              android:text="请选择相册"/> 
+    </RelativeLayout>
+
+
+    <com.transsion.infinix.xclub.image.ZoomImageView
+        android:id="@+id/img_preview"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="9.0"/>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:layout_marginLeft="@dimen/choose_btn_magirnLR"
+            android:gravity="center_vertical|left"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/preview_pic_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/image_checkbox_selector"
+                android:layout_marginRight="@dimen/choose_checkbox_magirnR"
+                android:button="@null" />
+
+            <TextView
+                android:id="@+id/preview_pic_original"
+                android:layout_width="@dimen/choose_btn_width"
+                android:layout_height="@dimen/common_btn_height"
+                android:background="@drawable/none_btn_selector"
+                android:gravity="center"
+                android:text="@string/choose_pic_noraml"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:layout_marginRight="@dimen/choose_btn_magirnLR"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/preview_ok_btn"
+                android:layout_width="@dimen/choose_btn_width"
+                android:layout_height="@dimen/common_btn_height"
+                android:background="@drawable/common_btn_selector"
+                android:gravity="center"
+                android:text="@string/common_ok"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_normal" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/card_white"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#222836" >
+
+        <RelativeLayout
+            android:id="@+id/title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title_bg"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/xclub_10"
+            android:paddingRight="@dimen/xclub_10" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/btn_back_selector" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="个性签名"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/xclub_textSize_25" />
+        <LinearLayout
+            android:id="@+id/title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_bg"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:id="@+id/listview_foot_progress"
+                style="@style/loading_small"
+                android:layout_marginRight="5dip"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/blue_button_bg"
+                android:gravity="center"
+                android:text="完成"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </RelativeLayout> 
+     <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/input_bg"
+            android:gravity="top"
+            android:lines="6"
+            android:maxLength="50"
+            android:textColor="#cccccc"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/contentNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="15dip"
+            android:text="0"
+            android:textColor="#666666"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="20dip"
+        android:text="提示：最多只能输入50个汉字"
+        android:textColor="#666666"
+        android:textSize="18sp" />
+    
+</LinearLayout>

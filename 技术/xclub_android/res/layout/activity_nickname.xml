@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/card_white"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_background"
+        android:orientation="horizontal">
+      <LinearLayout
+          android:id="@+id/tvback"
+          android:layout_width="60dp"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_alignParentLeft="true">
+          <ImageView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/btn_back_selector"/>
+          </LinearLayout> 
+          <TextView 
+              android:id="@+id/tvTitle"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:textSize="24dp"
+              android:textColor="@color/card_white"
+              android:text="NickName"/> 
+    </RelativeLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+     <EditText 
+         android:id="@+id/etNickName"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:hint=" Enter NickName"
+         android:padding="5dp"
+         android:singleLine="true"
+         android:textSize="17sp"
+         android:textColor="#AAAAAA"
+         android:background="@drawable/edittext_backgroud"/>
+     <TextView 
+         android:id="@+id/tv"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:visibility="gone"
+         android:textSize="12sp"
+         android:textColor="#AAAAAA"
+         android:text="Can only enter a number"/>
+       <Button 
+             android:id="@+id/btComplete"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="24dp"
+             android:gravity="center"
+             android:textSize="18sp"
+             android:textColor="@color/card_white"
+             android:text="COMPLETE"
+             android:background="@drawable/button_complete"/>
+   </LinearLayout>
+    
+
+</LinearLayout>
