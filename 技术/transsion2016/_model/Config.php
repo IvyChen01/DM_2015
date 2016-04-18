@@ -11,7 +11,7 @@ class Config
 	public static $hongBaoEnabled = false;//红包开关
 	public static $isLocal = false;//是否为本地模式
 	public static $systemName = 'transsion2016';//系统名称
-	public static $key = '12.transsion2016<ffd.<>f';//密钥
+	public static $key = '';//密钥
 	public static $backupDir = 'data/backup/';//数据库备份目录
 	public static $recoverDir = 'data/recover/';//数据库恢复目录
 	public static $logDir = 'data/log/';//日志目录
@@ -73,26 +73,26 @@ class Config
 	//本地数据库配置信息
 	private static $dbLocal = array
 	(
-		'hostname' => 'localhost',//数据库主机
-		'username' => 'root',//用户名
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
 		'password' => '',//密码
-		'dbName' => 'transsion2016',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//transsion数据库配置信息
 	private static $dbTranssion = array
 	(
-		'hostname' => 'localhost',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'd17b39b0c9',//密码
-		'dbName' => 'transsion2016',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
