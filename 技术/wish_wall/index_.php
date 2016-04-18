@@ -6274,104 +6274,104 @@ class Config
 	//本地数据库配置信息
 	private static $dbLocal = array
 	(
-		'hostname' => 'localhost',//数据库主机
-		'username' => 'root',//用户名
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
 		'password' => '',//密码
-		'dbName' => 'wishwall',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//HK数据库配置信息
-	private static $dbHk = array
+	private static $d = array
 	(
-		'hostname' => 'localhost',//数据库主机
-		'username' => 'root',//用户名
-		'password' => '7ff2c7392c',//密码
-		'dbName' => 'wishwall',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => ',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//wishwalleg数据库配置信息
-	private static $dbWishwall = array
+	private static $db = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'wishwall',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//wishwallke数据库配置信息
-	private static $dbWishwallke = array
+	private static $db = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'wishwallke',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//wishwalluae数据库配置信息
-	private static $dbWishwalluae = array
+	private static $db = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'wishwalluae',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//wishwallksa数据库配置信息
-	private static $dbWishwallksa = array
+	private static $db = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'wishwallksa',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//wishwallksa数据库配置信息
-	private static $dbNewYearEg = array
+	private static $db = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'wishwallegchristmas',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//摩洛哥数据库配置信息
-	private static $dbMa = array
+	private static $dbM= array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'wishwallma',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
