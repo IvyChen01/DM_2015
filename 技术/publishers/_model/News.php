@@ -801,9 +801,9 @@ class News
 	
 	public function test()
 	{
-		//$res = Http::phpPost('http://127.0.0.1:8015/?m=news&a=getRecentNews', array('imei' => '11', 'page' => 1, 'pagesize' => 5, 'channel' => 'Dar Live'), 10);
+		//$res = Http::phpPost('http://IP/?m=news&a=getRecentNews', array('imei' => '11', 'page' => 1, 'pagesize' => 5, 'channel' => 'Dar Live'), 10);
 		
-		//$res = Http::phpPost('http://159.8.94.68/publishers/?m=news&a=getMyComments&imei=868455015018234&page=1&pagesize=20&auth=53195939c846146be484b16acdea4abc&saltkey=cbbeccbedghdbb4a25ed75c8c12186c2030a7d89e1095efhaeacfcaeedibeagf', array(), 10);
+		//$res = Http::phpPost('http://IP/publishers/?m=news&a=getMyComments&imei=868455015018234&page=1&pagesize=20&auth=53195939c846146be484b16acdea4abc&saltkey=cbbeccbedghdbb4a25ed75c8c12186c2030a7d89e1095efhaeacfcaeedibeagf', array(), 10);
 		
 		$res = Http::phpPost('http://127.0.0.1:8015/?m=news&a=getMyComments', array('imei' => '11', 'page' => 1, 'pagesize' => 5, 'channel' => 'Dar Live'), 10);
 		
