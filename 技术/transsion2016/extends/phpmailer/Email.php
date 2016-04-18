@@ -10,11 +10,11 @@ class Email
  		self::$config['SMTP_HOST']=isset($config['SMTP_HOST'])?$config['SMTP_HOST']:'smtp.qq.com';//smtp服务器地址
 		self::$config['SMTP_PORT']=isset($config['SMTP_PORT'])?$config['SMTP_PORT']:25;//smtp服务器端口
 		self::$config['SMTP_SSL']=isset($config['SMTP_SSL'])?$config['SMTP_SSL']:false;//是否启用SSL安全连接	，gmail需要启用sll安全连接
-		self::$config['SMTP_USERNAME']=isset($config['SMTP_USERNAME'])?$config['SMTP_USERNAME']:'404352772@qq.com';//smtp服务器帐号，如：你的qq邮箱
-		self::$config['SMTP_PASSWORD']=isset($config['SMTP_PASSWORD'])?$config['SMTP_PASSWORD']:'123456';//smtp服务器帐号密码，如你的qq邮箱密码
+		self::$config['SMTP_USERNAME']=isset($config['SMTP_USERNAME'])?$config['SMTP_USERNAME']:'m';//smtp服务器帐号，如：你的qq邮箱
+		self::$config['SMTP_PASSWORD']=isset($config['SMTP_PASSWORD'])?$config['SMTP_PASSWORD']:'';//smtp服务器帐号密码，如你的qq邮箱密码
 		self::$config['SMTP_AUTH']=isset($config['SMTP_AUTH'])?$config['SMTP_AUTH']:true;//启用SMTP验证功能，一般需要开启
-		self::$config['SMTP_CHARSET']=isset($config['SMTP_CHARSET'])?$config['SMTP_CHARSET']:'utf-8';//发送的邮件内容编码	
-		self::$config['SMTP_FROM_TO']=isset($config['SMTP_FROM_TO'])?$config['SMTP_FROM_TO']:'404352772@qq.com';//发件人邮件地址
+		self::$config['SMTP_CHARSET']=isset($config['SMTP_CHARSET'])?$config['SMTP_CHARSET']:'';//发送的邮件内容编码	
+		self::$config['SMTP_FROM_TO']=isset($config['SMTP_FROM_TO'])?$config['SMTP_FROM_TO']:'';//发件人邮件地址
 		self::$config['SMTP_FROM_NAME']=isset($config['SMTP_FROM_NAME'])?$config['SMTP_FROM_NAME']:'CanPHP官方';//发件人姓名
 		self::$config['SMTP_DEBUG']=isset($config['SMTP_DEBUG'])?$config['SMTP_DEBUG']:false;//是否显示调试信息	
 
