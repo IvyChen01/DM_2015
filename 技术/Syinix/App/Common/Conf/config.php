@@ -29,7 +29,7 @@ $sysConfig = array(
     /* 自定义配置信息 */
     'STATIC_PATH' => '/Static/',
     'AUTH_CODE' => 'vZwXcj',
-    'ADMIN_AUTH_KEY' => '652806154@qq.com',
+    'ADMIN_AUTH_KEY' => '',
 
     /* 提示信息 */
     'ALERT_MSG' => array(
@@ -48,9 +48,9 @@ $sysConfig = array(
 
     /* 数据缓存设置 */
     'DATA_CACHE_TIME'       =>  60,
-    'DATA_CACHE_PREFIX'     =>  'syinix_',
+    'DATA_CACHE_PREFIX'     =>  '_',
     'DATA_CACHE_TYPE'       =>  'file',
-    'DATA_CACHE_HOST'       =>  '10.127.122.151',
+    'DATA_CACHE_HOST'       =>  '',
 );
 $config_site = APP_PATH . "Common/Conf/config_site.php";
 $siteConfig = file_exists($config_site) ? include "$config_site" : array();
