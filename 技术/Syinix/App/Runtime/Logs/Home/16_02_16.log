@@ -1,4 +1,4 @@
-[ 2016-02-16T23:13:54+08:00 ] 159.8.94.69 /index.php
+[ 2016-02-16T23:13:54+08:00 ] IP /index.php
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
@@ -43,7 +43,7 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000366s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000405s ]
 
-[ 2016-02-16T23:14:57+08:00 ] 159.8.94.69 /index.php
+[ 2016-02-16T23:14:57+08:00 ] IP /index.php
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
