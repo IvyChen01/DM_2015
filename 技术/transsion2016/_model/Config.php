@@ -84,7 +84,7 @@ class Config
 	);
 	
 	//transsion数据库配置信息
-	private static $dbTranssion = array
+	private static $db = array
 	(
 		'hostname' => '',//数据库主机
 		'username' => '',//用户名
