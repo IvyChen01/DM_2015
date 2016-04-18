@@ -69,52 +69,52 @@ class Config
 	//本地数据库配置信息
 	private static $dbLocal = array
 	(
-		'hostname' => 'localhost',//数据库主机
-		'username' => 'root',//用户名
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
 		'password' => '',//密码
-		'dbName' => 'pricesurvey',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//Tecno数据库配置信息
 	private static $dbTecno = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB77transsion',//密码
-		'dbName' => 'pricesurvey',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//Infinix数据库配置信息
 	private static $dbInfinix = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'pricesurvey',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//itel数据库配置信息
 	private static $dbItel = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB68transsion',//密码
-		'dbName' => 'pricesurvey',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
