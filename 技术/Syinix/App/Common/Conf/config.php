@@ -2,13 +2,13 @@
 $sysConfig = array(
     
     /* 数据库配置 */
-    'DB_TYPE' => 'mysql', // 数据库类型
-    'DB_HOST' => '10.127.122.151',
-    'DB_NAME' => 'syinix',
-    'DB_USER' => 'root',
-    'DB_PWD' => 'DB68transsion',
-    'DB_PORT' => '3306',
-    'DB_PREFIX' => 'ec_',
+    'DB_TYPE' => '', // 数据库类型
+    'DB_HOST' => '',
+    'DB_NAME' => '',
+    'DB_USER' => '',
+    'DB_PWD' => '',
+    'DB_PORT' => '',
+    'DB_PREFIX' => '',
 
 	/* 系统配置信息 */
     'WEB_ROOT' => '',
