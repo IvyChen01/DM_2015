@@ -4,14 +4,14 @@
 $_config = array();
 
 // ----------------------------  CONFIG DB  ----------------------------- //
-$_config['db']['1']['dbhost'] = '127.0.0.1';
-$_config['db']['1']['dbuser'] = 'root';
-$_config['db']['1']['dbpw'] = 'DB69transsion';
+$_config['db']['1']['dbhost'] = '';
+$_config['db']['1']['dbuser'] = '';
+$_config['db']['1']['dbpw'] = '';
 $_config['db']['1']['dbcharset'] = 'utf8';
 $_config['db']['1']['pconnect'] = '0';
 #$_config['db']['1']['dbname'] = 'infinixbbs_new';
-$_config['db']['1']['dbname'] = 'infinixbbs';
-$_config['db']['1']['tablepre'] = 'infinixbbs_';
+$_config['db']['1']['dbname'] = '';
+$_config['db']['1']['tablepre'] = '_';
 $_config['db']['slave'] = '';
 $_config['db']['common']['slave_except_table'] = '';
 
