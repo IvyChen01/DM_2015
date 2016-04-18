@@ -7,8 +7,8 @@ class Config
 	public static $configType = 10;//配置方案//5：尼日利亚，6：肯尼亚，7：埃及，8：沙特阿拉伯，9：巴基斯坦，10：印尼
 	public static $isLocal = false;//调试开关
 	public static $isFb = false;//是否连接Facebook
-	public static $systemName = 'p67_zero_to_hero';//系统名称
-	public static $key = '22a,p67__zer.,o_to_hero1.f9f';//密钥
+	public static $systemName = '';//系统名称
+	public static $key = '';//密钥
 	public static $dirBackup = 'extends/db_backup/';//数据库备份目录
 	public static $dirRecover = 'extends/db_recover/';//数据库恢复目录
 	public static $dirLog = 'extends/log/';//日志目录
@@ -47,130 +47,128 @@ class Config
 	//本地数据库配置信息
 	private static $dbLocal = array
 	(
-		'hostname' => 'localhost',//数据库主机
-		'username' => 'root',//用户名
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
 		'password' => '',//密码
-		'dbName' => 'zero',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//qumuwu数据库配置信息
 	private static $dbQumuwu = array
 	(
-		'hostname' => 'localhost',//数据库主机
-		'username' => 'root',//用户名
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
 		'password' => '',//密码
-		'dbName' => 'zero',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//infinixmobility数据库配置信息
 	private static $dbInfinix = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
 		'password' => '',//密码
-		'dbName' => 'zero',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//infinix2数据库配置信息
 	private static $dbInfinixZero = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
 		'password' => '',//密码
-		'dbName' => 'zerotohero',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//尼日利亚数据库配置信息
 	private static $dbZeroNg = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'zero_ng',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//肯尼亚数据库配置信息
 	private static $dbZeroKe = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'zero_ke',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//埃及数据库配置信息
 	private static $dbZeroEg = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'zero_eg',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => ',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//沙特阿拉伯数据库配置信息
 	private static $dbZeroSa = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'zero_sa',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => ',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//巴基斯坦数据库配置信息
 	private static $dbZeroPk = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'zero_pk',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//印尼数据库配置信息
 	private static $dbZeroId = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB69transsion',//密码
-		'dbName' => 'zero_id',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => ',//数据库名
+		'dbDriver' => '',',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
