@@ -71,91 +71,91 @@ class Config
 	//本地数据库配置信息
 	private static $dbLocal = array
 	(
-		'hostname' => 'localhost',//数据库主机
-		'username' => 'root',//用户名
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
 		'password' => '',//密码
-		'dbName' => 'phantom5game',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//埃及数据库配置信息
 	private static $dbPhantom5game = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB77transsion',//密码
-		'dbName' => 'phantom5game',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//bj数据库配置信息
 	private static $dbBj = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => '7ff2c7392c',//密码
-		'dbName' => 'phantom5game',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//南苏丹数据库配置信息
 	private static $dbSsd = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB77transsion',//密码
-		'dbName' => 'phantom5ssd',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//肯尼亚数据库配置信息
 	private static $dbKe = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB77transsion',//密码
-		'dbName' => 'phantom5ke',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//肯尼亚数据库配置信息
 	private static $dbGh = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB77transsion',//密码
-		'dbName' => 'phantom5gh',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
 	//沙特数据库配置信息
 	private static $dbSa = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB77transsion',//密码
-		'dbName' => 'phantom5sa',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);
 	
