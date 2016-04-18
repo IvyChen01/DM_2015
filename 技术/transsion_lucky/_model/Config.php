@@ -6,7 +6,7 @@ class Config
 {
 	public static $debug_enabled = false;//调试开关
 	public static $system_name = 'transsion_weixin';//系统名称
-	public static $key = '13232,g[][3.ba.f,c..fa3[]23a34';//密钥
+	public static $key = ';//密钥
 	public static $base_url = 'http://www.geyaa.com/transsion_weixin/';//当前网址，线上或本地
 	public static $dir_backup = 'extends/db_backup/';//数据库备份目录
 	public static $dir_recover = 'extends/db_recover/';//数据库恢复目录
