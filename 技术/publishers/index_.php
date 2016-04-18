@@ -5927,25 +5927,25 @@ class Config
 	
 	private static $dbLocal = array
 	(
-		'hostname' => 'localhost',//数据库主机
-		'username' => 'root',//用户名
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
 		'password' => '',//密码
-		'dbName' => 'publishers',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);//本地数据库配置信息
 	
 	private static $db68 = array
 	(
-		'hostname' => 'localhost',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB68transsion',//密码
-		'dbName' => 'publishers',//数据库名
-		'dbDriver' => 'mysql',//数据库驱动
-		'dbCharset' => 'utf8',//数据库字符集
-		'dbCollat' => 'utf8_general_ci',//排序规则
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'dbName' => '',//数据库名
+		'dbDriver' => '',//数据库驱动
+		'dbCharset' => '',//数据库字符集
+		'dbCollat' => '',//排序规则
 		'dbPconnect' => false//是否永久连接
 	);//线上68数据库配置信息
 	
