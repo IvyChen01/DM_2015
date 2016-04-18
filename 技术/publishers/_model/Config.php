@@ -166,8 +166,8 @@ class Config
 		@error_reporting(0);
 		@date_default_timezone_set('Etc/GMT-8');//北京时间
 		self::$dbConfig = self::$db68;//数据库配置信息，线上或本地
-		self::$baseUrl = 'http://159.8.94.68/publishers';//当前网址，线上或本地
-		self::$resUrl = 'http://159.8.94.68/publishers';//资源文件地址
+		self::$baseUrl = 'http://IP/publishers';//当前网址，线上或本地
+		self::$resUrl = 'http://IP/publishers';//资源文件地址
 		self::$systemName = 'publishers';//系统名称
 		self::$key = 'iexcvmn12,_,1anxl,,..';//密钥
 		self::$newsEnabled = false;//新闻开关
