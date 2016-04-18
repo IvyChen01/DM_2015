@@ -92,7 +92,7 @@ class Email
 		 	{
 				echo "Mailer Error: " . $mail->ErrorInfo;
 			}
-		  	return false;		  
+		  	return false;；		  
 		} 
 		else 
 		{
