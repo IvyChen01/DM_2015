@@ -15,19 +15,19 @@
 
 // ** MySQL 设置 - 具体信息来自您正在使用的主机 ** //
 /** WordPress数据库的名称 */
-define('DB_NAME', 'et_aftwo');
+define('DB_NAME', '');
 
 /** MySQL数据库用户名 */
-define('DB_USER', 'root');
+define('DB_USER', '');
 
 /** MySQL数据库密码 */
-define('DB_PASSWORD', 'DB68transsion');
+define('DB_PASSWORD', '');
 
 /** MySQL主机 */
-define('DB_HOST', '127.0.0.1');
+define('DB_HOST', '');
 
 /** 创建数据表时默认的文字编码 */
-define('DB_CHARSET', 'utf8');
+define('DB_CHARSET', '');
 
 /** 数据库整理类型。如不确定请勿更改 */
 define('DB_COLLATE', '');
