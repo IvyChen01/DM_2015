@@ -2,13 +2,13 @@
 $sysConfig = array(
     
     /* 数据库配置 */
-    'DB_TYPE' => 'mysql', // 数据库类型
-    'DB_HOST' => '127.0.0.1',
-    'DB_NAME' => 'tecno_new',
-    'DB_USER' => 'root',
-    'DB_PWD' => 'DB77transsion',
-    'DB_PORT' => '3306',
-    'DB_PREFIX' => 'ec_',
+    'DB_TYPE' => '', // 数据库类型
+    'DB_HOST' => '',
+    'DB_NAME' => '',
+    'DB_USER' => '',
+    'DB_PWD' => '',
+    'DB_PORT' => '',
+    'DB_PREFIX' => '',
 
 	/* 系统配置信息 */
     'WEB_ROOT' => '',
