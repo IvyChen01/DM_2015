@@ -8241,7 +8241,7 @@ class Config
 	
 	public static $url = '';//当前网址，线上或本地
 	public static $url_online = 'http://www.transsion.com';//线上网址
-	public static $url_local = 'http://172.16.23.121:5020';//本地网址
+	public static $url_local = 'http://';//本地网址
 	
 	public static $url_tecno = 'http://www.tecno-mobile.com';//tecno官网
 	public static $url_itel = 'http://www.itel-mobile.com';//itel官网
