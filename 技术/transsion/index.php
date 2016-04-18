@@ -8387,13 +8387,13 @@ class Config
 	//本地数据库配置信息
 	private static $db_local = array
 	(
-		'hostname' => 'localhost',//数据库主机
-		'username' => 'root',//用户名
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
 		'password' => '',//密码
-		'db_name' => 'transsion',//数据库名
-		'db_driver' => 'mysql',//数据库驱动
-		'db_charset' => 'utf8',//数据库字符集
-		'db_collat' => 'utf8_general_ci',
+		'db_name' => '',//数据库名
+		'db_driver' => '',//数据库驱动
+		'db_charset' => '',//数据库字符集
+		'db_collat' => '',
 		'db_pconnect' => false//是否永久连接
 	);
 	
@@ -8401,13 +8401,13 @@ class Config
 	//线上数据库配置信息
 	private static $db_cn = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'iejf34root123',//密码
-		'db_name' => 'transsion',//数据库名
-		'db_driver' => 'mysql',//数据库驱动
-		'db_charset' => 'utf8',//数据库字符集
-		'db_collat' => 'utf8_general_ci',
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => '',//密码
+		'db_name' => '',//数据库名
+		'db_driver' => '',//数据库驱动
+		'db_charset' => '',//数据库字符集
+		'db_collat' => '',
 		'db_pconnect' => false//是否永久连接
 	);
 	
@@ -8415,13 +8415,13 @@ class Config
 	//线上数据库配置信息
 	private static $db_ireland = array
 	(
-		'hostname' => '127.0.0.1',//数据库主机
-		'username' => 'root',//用户名
-		'password' => 'DB68transsion',//密码
-		'db_name' => 'transsion',//数据库名
-		'db_driver' => 'mysql',//数据库驱动
-		'db_charset' => 'utf8',//数据库字符集
-		'db_collat' => 'utf8_general_ci',
+		'hostname' => '',//数据库主机
+		'username' => '',//用户名
+		'password' => ',//密码
+		'db_name' => '',//数据库名
+		'db_driver' => '',//数据库驱动
+		'db_charset' => '',//数据库字符集
+		'db_collat' => '',
 		'db_pconnect' => false//是否永久连接
 	);
 	
