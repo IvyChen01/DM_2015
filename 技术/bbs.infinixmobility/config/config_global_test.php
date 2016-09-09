@@ -6,11 +6,11 @@ $_config = array();
 // ----------------------------  CONFIG DB  ----------------------------- //
 $_config['db']['1']['dbhost'] = '127.0.0.1';
 $_config['db']['1']['dbuser'] = 'root';
-$_config['db']['1']['dbpw'] = '649c727eae3e309f3';
+$_config['db']['1']['dbpw'] = '3';
 $_config['db']['1']['dbcharset'] = 'utf8';
 $_config['db']['1']['pconnect'] = '0';
-$_config['db']['1']['dbname'] = 'infinixbbs_new';
-$_config['db']['1']['tablepre'] = 'infinixbbs1_';
+$_config['db']['1']['dbname'] = '';
+$_config['db']['1']['tablepre'] = '_';
 $_config['db']['slave'] = '';
 $_config['db']['common']['slave_except_table'] = '';
 
@@ -55,7 +55,7 @@ $_config['cookie']['cookiedomain'] = '';
 $_config['cookie']['cookiepath'] = '/';
 
 // -------------------------  CONFIG SECURITY  -------------------------- //
-$_config['security']['authkey'] = 'b40609dKn4zgfK81';
+$_config['security']['authkey'] = '';
 $_config['security']['urlxssdefend'] = 1;
 $_config['security']['attackevasive'] = '0';
 $_config['security']['querysafe']['status'] = 1;
@@ -91,7 +91,7 @@ $_config['admincp']['dbimport'] = 1;
 // --------------------------  CONFIG REMOTE  --------------------------- //
 $_config['remote']['on'] = '0';
 $_config['remote']['dir'] = 'remote';
-$_config['remote']['appkey'] = '62cf0b3c3e6a4c9468e7216839721d8e';
+$_config['remote']['appkey'] = '';
 $_config['remote']['cron'] = '0';
 
 // ---------------------------  CONFIG INPUT  --------------------------- //
