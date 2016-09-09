@@ -4,13 +4,13 @@
 $_config = array();
 
 // ----------------------------  CONFIG DB  ----------------------------- //
-$_config['db']['1']['dbhost'] = '172.18.10.10';
+$_config['db']['1']['dbhost'] = '';
 $_config['db']['1']['dbuser'] = 'root';
-$_config['db']['1']['dbpw'] = '21a2601293';
+$_config['db']['1']['dbpw'] = '';
 $_config['db']['1']['dbcharset'] = 'utf8';
 $_config['db']['1']['pconnect'] = '0';
-$_config['db']['1']['dbname'] = 'infinixbbs_new';
-$_config['db']['1']['tablepre'] = 'infinixbbs_';
+$_config['db']['1']['dbname'] = 'ew';
+$_config['db']['1']['tablepre'] = '_';
 $_config['db']['slave'] = '';
 $_config['db']['common']['slave_except_table'] = '';
 
@@ -91,7 +91,7 @@ $_config['admincp']['dbimport'] = 1;
 // --------------------------  CONFIG REMOTE  --------------------------- //
 $_config['remote']['on'] = '0';
 $_config['remote']['dir'] = 'remote';
-$_config['remote']['appkey'] = '62cf0b3c3e6a4c9468e7216839721d8e';
+$_config['remote']['appkey'] = '';
 $_config['remote']['cron'] = '0';
 
 // ---------------------------  CONFIG INPUT  --------------------------- //
