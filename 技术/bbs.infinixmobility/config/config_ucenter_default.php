@@ -20,8 +20,8 @@ define('UC_DBTABLEPRE', '`ucenter`.uc_');	// UCenter Database table prefix
 define('UC_DBCONNECT', '0');			// UCenter Database persistent connection 0 = off, 1 = On
 
 // Communication related
-define('UC_KEY', 'yeN3g9EbNfiaYfodV63dI1j8Fbk5HaL7W4yaW4y7u2j4Mf45mfg2v899g451k576');	// UCenter communication key, consistent with the UCenter
-define('UC_API', 'http://42.96.164.235:5555/ucenter/branches/1.5.0/server'); // UCenter URL address for connect to
+define('UC_KEY', '');	// UCenter communication key, consistent with the UCenter
+define('UC_API', ''); // UCenter URL address for connect to
 define('UC_CHARSET', 'utf-8');			// UCenter Character set
 define('UC_IP', '');			// UCenter IP address.
 define('UC_APPID', '1');			// The current application ID
